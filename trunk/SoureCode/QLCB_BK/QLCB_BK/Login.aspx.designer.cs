@@ -55,6 +55,6 @@ namespace QLCB_BK {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkLogin;
+        protected global::System.Web.UI.WebControls.LinkButton lnkLogin;
     }
 }

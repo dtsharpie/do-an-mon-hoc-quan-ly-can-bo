@@ -12,3 +12,20 @@ C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.pdb
 C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.dll
 C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.pdb
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.BO.dll
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.Common.dll
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.DAL.dll
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.BO.pdb
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.Common.pdb
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.DAL.pdb
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.dll
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.pdb
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.BO.dll
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.Common.dll
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.DAL.dll
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.BO.pdb
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.Common.pdb
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.DAL.pdb
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\obj\Debug\ResolveAssemblyReference.cache
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\obj\Debug\QLCB_BK.dll
+D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\obj\Debug\QLCB_BK.pdb

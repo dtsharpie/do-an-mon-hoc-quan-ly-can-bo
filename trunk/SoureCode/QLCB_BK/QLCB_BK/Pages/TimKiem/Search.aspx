@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
     CodeBehind="Search.aspx.cs" Inherits="QLCB_BK.Pages.TimKiem.Search" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

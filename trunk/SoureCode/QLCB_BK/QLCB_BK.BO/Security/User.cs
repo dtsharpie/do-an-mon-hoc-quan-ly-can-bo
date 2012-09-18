@@ -74,9 +74,9 @@ namespace QLCB_BK.BO.Security
 
         public static string ChangePass(int userId, string password, string oldpass)
         {
-            if (GetById(userId).Rows[0]["Password"] == HashPass(oldpass))
+            if (GetById(userId).Rows[0]["Password"].ToString() == HashPass(oldpass))
             {
-                DAL.Security.User.ChangePass(userId, password);
+                DAL.Security.User.ChangePass(userId, HashPass(password));
                 return "alert('Cập nhật thành công!');$('.popup').hidePopup();";
             }
             else

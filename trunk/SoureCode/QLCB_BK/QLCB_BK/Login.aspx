@@ -34,7 +34,9 @@
                 </tr>
             </table>
             <div id="divAlert">Tài khoản không tồn tại hoặc sai mật khẩu.</div>
-            <a href="/Default.aspx" runat="server" id="lnkLogin" />
+            <%--<a href="/Default.aspx" id="lnkLogin" />--%>
+            <asp:LinkButton ID="lnkLogin" runat="server" CssClass="lnk-login" 
+                onclick="lnkLogin_Click" />
             <a href="/Pages/TaiKhoan/ChangePass.aspx" id="lnkForgotPass" >Quên mật khẩu ?</a>
 
         </div>
