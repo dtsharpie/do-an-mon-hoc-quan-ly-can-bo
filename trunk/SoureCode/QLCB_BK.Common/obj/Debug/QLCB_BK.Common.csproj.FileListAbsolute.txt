@@ -1,0 +1,4 @@
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.Common\bin\Debug\QLCB_BK.Common.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.Common\bin\Debug\QLCB_BK.Common.pdb
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.Common\obj\Debug\QLCB_BK.Common.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.Common\obj\Debug\QLCB_BK.Common.pdb
