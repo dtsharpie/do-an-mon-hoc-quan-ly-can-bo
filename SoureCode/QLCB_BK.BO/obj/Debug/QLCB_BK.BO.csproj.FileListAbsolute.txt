@@ -1,0 +1,9 @@
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\bin\Debug\QLCB_BK.BO.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\bin\Debug\QLCB_BK.BO.pdb
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\obj\Debug\QLCB_BK.BO.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\obj\Debug\QLCB_BK.BO.pdb
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\obj\Debug\QLCB_BK.BO.csprojResolveAssemblyReference.cache
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\bin\Debug\QLCB_BK.Common.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\bin\Debug\QLCB_BK.DAL.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\bin\Debug\QLCB_BK.Common.pdb
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.BO\bin\Debug\QLCB_BK.DAL.pdb

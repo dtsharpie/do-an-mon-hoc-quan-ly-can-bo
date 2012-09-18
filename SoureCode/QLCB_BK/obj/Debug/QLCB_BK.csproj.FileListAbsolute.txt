@@ -1,0 +1,14 @@
+D:\BigMidu\Project\Study\QLCB_BK\QLCB_BK\bin\QLCB_BK.dll
+D:\BigMidu\Project\Study\QLCB_BK\QLCB_BK\bin\QLCB_BK.pdb
+D:\BigMidu\Project\Study\QLCB_BK\QLCB_BK\obj\Debug\ResolveAssemblyReference.cache
+D:\BigMidu\Project\Study\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.dll
+D:\BigMidu\Project\Study\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.pdb
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.pdb
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.dll
+C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.pdb
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.dll
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\bin\QLCB_BK.pdb
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.dll
+C:\Users\BigMidu\Desktop\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.pdb
