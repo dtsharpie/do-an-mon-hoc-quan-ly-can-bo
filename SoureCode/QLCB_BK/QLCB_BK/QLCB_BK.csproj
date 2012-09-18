@@ -250,11 +250,21 @@
     <Content Include="Master\View.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Site\" />
+    <Folder Include="Controls\Admin\" />
     <Folder Include="Controls\View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLCB_BK.BO\QLCB_BK.BO.csproj">
+      <Project>{8E0EA3E4-95A0-499A-B35B-4046FF64CFFC}</Project>
+      <Name>QLCB_BK.BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLCB_BK.Common\QLCB_BK.Common.csproj">
+      <Project>{E38BAA54-29DC-4265-ADAF-7C33E62A3DA0}</Project>
+      <Name>QLCB_BK.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
