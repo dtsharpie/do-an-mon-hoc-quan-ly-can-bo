@@ -129,6 +129,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Xemthongtin\Default.aspx" />
     <Content Include="Xemthongtin\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +239,13 @@
       <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xemthongtin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xemthongtin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Xemthongtin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,8 +258,14 @@
     <Content Include="Master\View.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Admin\" />
-    <Folder Include="Controls\View\" />
+    <Folder Include="Controls\BaoCao\" />
+    <Folder Include="Controls\HoSo\" />
+    <Folder Include="Controls\HuongDan\" />
+    <Folder Include="Controls\QuanLy\" />
+    <Folder Include="Controls\TaiKhoan\" />
+    <Folder Include="Controls\TimKiem\" />
+    <Folder Include="Xemthongtin\Controls\" />
+    <Folder Include="Xemthongtin\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
