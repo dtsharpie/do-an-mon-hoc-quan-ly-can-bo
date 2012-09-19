@@ -29,3 +29,14 @@ D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\bin\QLCB_BK.DAL.pdb
 D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\obj\Debug\ResolveAssemblyReference.cache
 D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\obj\Debug\QLCB_BK.dll
 D:\BigMidu\Project\Study\QLCB_BK - SVN\QLCB_BK\obj\Debug\QLCB_BK.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.BO.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.Common.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.DAL.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.BO.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.Common.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\bin\QLCB_BK.DAL.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\obj\Debug\ResolveAssemblyReference.cache
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK\obj\Debug\QLCB_BK.pdb
