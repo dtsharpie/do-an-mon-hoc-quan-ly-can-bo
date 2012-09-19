@@ -5,3 +5,10 @@ C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.DAL\obj\Debug\QLCB_BK.DAL.pdb
 C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.DAL\bin\Debug\QLCB_BK.Common.dll
 C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.DAL\bin\Debug\QLCB_BK.Common.pdb
 C:\Users\Ha\Desktop\QLCB_BK\QLCB_BK.DAL\obj\Debug\QLCB_BK.DAL.csprojResolveAssemblyReference.cache
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\bin\Debug\QLCB_BK.DAL.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\bin\Debug\QLCB_BK.DAL.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\bin\Debug\QLCB_BK.Common.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\bin\Debug\QLCB_BK.Common.pdb
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\obj\Debug\QLCB_BK.DAL.dll
+E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.DAL\obj\Debug\QLCB_BK.DAL.pdb
