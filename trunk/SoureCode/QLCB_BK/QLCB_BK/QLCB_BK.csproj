@@ -106,7 +106,10 @@
     <Content Include="Images\xtt2.png" />
     <Content Include="Images\menu_bg1.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Pages\BaoCao\BaoCaoThongKe.aspx" />
     <Content Include="Pages\BaoCao\InBaoCao.aspx" />
+    <Content Include="Pages\BaoCao\KhenThuong.aspx" />
+    <Content Include="Pages\BaoCao\XetNangLuong.aspx" />
     <Content Include="Pages\HoSo\HoSo.aspx" />
     <Content Include="Pages\HuongDan\HuongDan.aspx" />
     <Content Include="Pages\QuanLy\BangDanhMuc.aspx" />
@@ -168,12 +171,33 @@
     <Compile Include="Master\View.Master.designer.cs">
       <DependentUpon>View.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.cs">
+      <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.designer.cs">
+      <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.designer.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaoCao\KhenThuong.aspx.cs">
+      <DependentUpon>KhenThuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BaoCao\KhenThuong.aspx.designer.cs">
+      <DependentUpon>KhenThuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaoCao\XetNangLuong.aspx.cs">
+      <DependentUpon>XetNangLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BaoCao\XetNangLuong.aspx.designer.cs">
+      <DependentUpon>XetNangLuong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\HoSo\HoSo.aspx.cs">
       <DependentUpon>HoSo.aspx</DependentUpon>
