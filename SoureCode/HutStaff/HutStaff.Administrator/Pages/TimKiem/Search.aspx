@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="Search.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.Search" %>
+    CodeBehind="Search.aspx.cs" Inherits="QLCB_BK.Pages.TimKiem.Search" %>
 
 <%@ Register Src="../../Controls/TimKiem/SearchResult.ascx" TagName="SearchResult"
     TagPrefix="uc1" %>
@@ -17,7 +17,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="content tim-kiem">
         <h1 class="title">
-            Quản lý</h1>
+           Tìm kiếm</h1>
         <hr width="750px" />
         <uc2:SearchForm ID="SearchForm1" runat="server" />
         <hr width="750px" />

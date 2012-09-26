@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Pages.BaoCao {
+namespace QLCB_BK.Pages.BaoCao {
     
     
     public partial class XetNangLuong {

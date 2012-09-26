@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Pages.TaiKhoan {
+namespace QLCB_BK.Pages.TaiKhoan {
     
     
     public partial class ChangePass {
