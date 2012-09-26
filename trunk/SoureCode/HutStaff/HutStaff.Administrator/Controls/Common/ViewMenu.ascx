@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ViewMenu.ascx.cs" Inherits="HutStaff.Administrator.Controls.Common.ViewMenu" %>
 <div id="divNav">
     <ul class="mainNav">
-        <li class="ml active"><a href="/Default.aspx">Thông tin cán bộ</a></li>
+        <li class="ml"><a href="javascript:void(0)">Thông tin cán bộ</a></li>
         <li>
             <ul class="subNav">
                 <asp:Repeater ID="rptBoxes" runat="server">
@@ -17,14 +17,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         loadContentView({ 'alias': '<%= sDefaultMenu %>' }, false);
-
-        $('.mainNav .ml').click(function () {
-            $('.mainNav .ml').removeClass("active");
-            $('.subNav > li').removeClass("active");
-
-            $(this).addClass("active");
-        });
-
+        $('.subNav > li:first-child').addClass("active");
         $('.subNav > li').click(function () {
             $('.subNav > li').removeClass("active");
             $(this).addClass("active");
