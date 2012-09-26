@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Pages.TimKiem
+namespace QLCB_BK.Pages.TimKiem
 {
     public partial class Search : System.Web.UI.Page
     {

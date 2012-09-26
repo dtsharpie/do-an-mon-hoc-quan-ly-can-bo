@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="ImportLuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.ImportLuong" %>
+    CodeBehind="ImportLuong.aspx.cs" Inherits="QLCB_BK.Pages.QuanLy.ImportLuong" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
@@ -14,4 +14,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="content">
+        <h1 class="title">
+            Quản lý</h1>
+        <hr width="750px" />
+        
+    </div>
 </asp:Content>

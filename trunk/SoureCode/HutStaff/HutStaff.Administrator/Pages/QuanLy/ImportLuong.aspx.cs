@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Pages.QuanLy
+namespace QLCB_BK.Pages.QuanLy
 {
     public partial class ImportLuong : System.Web.UI.Page
     {

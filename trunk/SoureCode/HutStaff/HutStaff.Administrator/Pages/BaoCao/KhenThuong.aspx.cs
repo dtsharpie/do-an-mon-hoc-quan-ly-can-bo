@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Pages.BaoCao
+namespace QLCB_BK.Pages.BaoCao
 {
     public partial class KhenThuong : System.Web.UI.Page
     {

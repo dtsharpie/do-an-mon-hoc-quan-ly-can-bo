@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Pages.HoSo
+namespace QLCB_BK.Pages.HoSo
 {
     public partial class HoSo : System.Web.UI.Page
     {

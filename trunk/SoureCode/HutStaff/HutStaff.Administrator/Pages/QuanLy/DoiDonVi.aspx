@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="DoiDonVi.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.DoiDonVi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="DoiDonVi.aspx.cs" Inherits="QLCB_BK.Pages.QuanLy.DoiDonVi" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
