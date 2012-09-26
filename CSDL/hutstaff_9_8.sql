@@ -119,7 +119,7 @@ GO
 	CREATE TABLE dm_dv(
 	  ma_dv int identity(1,1) NOT NULL,
 	  dv nvarchar(200) DEFAULT NULL,
-	  cap tinyint DEFAULT NULL,
+	  cap int DEFAULT NULL,
 	  cha int DEFAULT NULL,
 	  PRIMARY KEY (ma_dv),
 	);
@@ -318,11 +318,11 @@ GO
 	
 	
 	
-	CREATE TABLE dm_vbtd 
+	CREATE TABLE dm_vbdt 
 	(
-		ma_vbtd		INT IDENTITY(1,1),
-		vbtd		NVARCHAR(60),
-		CONSTRAINT PK_dm_vbtd PRIMARY KEY (ma_vbtd)
+		ma_vbdt		INT IDENTITY(1,1),
+		vbdt		NVARCHAR(60),
+		CONSTRAINT PK_dm_vbdt PRIMARY KEY (ma_vbdt)
 	)
 	GO
 	
@@ -554,7 +554,7 @@ GO
 		ndtcm			INT REFERENCES dm_qg(ma_qg),
 		ma_cndt			INT REFERENCES dm_cn(ma_cn),
 		htdtcm			INT REFERENCES dm_htdt(ma_htdt),
-		vbdtcm			INT REFERENCES dm_tdcm(ma_tdcm),
+		vbdtcm			INT REFERENCES dm_vbdt(ma_vbdt),
 		xl_dtcm			NVARCHAR(40),
 		cmpcp_cndt		BIT,
 		hvcn_cndt		BIT,
