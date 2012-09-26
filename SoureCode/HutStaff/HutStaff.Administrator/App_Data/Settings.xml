@@ -7,7 +7,7 @@
     <menu name="Các chức danh" permission="0" alias="xtt-cac-chuc-danh" path="/Xemthongtin/Controls/Cacchucdanh.ascx"></menu>
     <menu name="Chức vụ chính quyền" permission="0" alias="xtt-chuc-vu-chinh-quyen" path="/Xemthongtin/Controls/Chucvuchinhquyen.ascx"></menu>
     <menu name="Chức vụ Đảng" permission="0" alias="xtt-chuc-vu-dang" path="/Xemthongtin/Controls/Chucvudang.ascx"></menu>
-    <menu name="Chức vụ đoàn thể" permission="0" alias="xtt-chuc-vu-dang" path="/Xemthongtin/Controls/Chucvudoanthe.ascx"></menu>
+    <menu name="Chức vụ đoàn thể" permission="0" alias="xtt-chuc-vu-doan-the" path="/Xemthongtin/Controls/Chucvudoanthe.ascx"></menu>
     <menu name="Khen thưởng" permission="0" alias="xtt-khen-thuong" path="/Xemthongtin/Controls/Khenthuong.ascx"></menu>
     <menu name="Kỷ luật" permission="0" alias="xtt-ky-luat" path="/Xemthongtin/Controls/Kyluat.ascx"></menu>
     <menu name="Diễn biến lương" permission="0" alias="xtt-dien-bien-luong" path="/Xemthongtin/Controls/Dienbienluong.ascx"></menu>
