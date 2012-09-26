@@ -1,0 +1,7 @@
+C:\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+C:\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+C:\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+C:\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+C:\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
+C:\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+C:\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
