@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HutStaff.Common;
 
 namespace HutStaff.Administrator.Xemthongtin.Controls
 {
-    public partial class Chucvudoanthe : System.Web.UI.UserControl
+    public partial class Chucvudoanthe : ControlBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
