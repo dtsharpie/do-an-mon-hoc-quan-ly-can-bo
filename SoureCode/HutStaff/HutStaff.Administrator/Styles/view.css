@@ -129,14 +129,14 @@ body
     line-height: 40px;
 }
 
-#divMenu .mainNav > li.active
+#divMenu .mainNav > li.ml
 {
     background: url("/Images/menu_tag.png") repeat-y;
     background-color: #fff;
     color: #006699;
 }
 
-#divMenu .mainNav > li.active a
+#divMenu .mainNav > li.ml a
 {
     color: #006699 !important;
 }
