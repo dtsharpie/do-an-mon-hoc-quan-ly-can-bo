@@ -20,11 +20,11 @@ namespace HutStaff.Common
 
             get
             {
-                return HttpContext.Current.Session[Constants.Session.ViewSessionName] == null ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : clientscript;
+                return (HttpContext.Current.Session[Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : clientscript;
             }
             set
             {
-                clientscript = HttpContext.Current.Session[Constants.Session.ViewSessionName] == null ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : value;
+                clientscript = (HttpContext.Current.Session[Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : value;
             }
 
         }
