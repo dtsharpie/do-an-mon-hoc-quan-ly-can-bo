@@ -406,7 +406,8 @@ GO
 		ngaybh			DATETIME,
 		thanggd			INT,
 		ngaybhct		DATETIME,
-		mochuongtn		DATETIME,		
+		mochuongtn		DATETIME,
+		xoahs			BIT DEFAULT 0,		
 		CONSTRAINT PK_soyeu PRIMARY KEY (shcc)
 	) 
 	GO
