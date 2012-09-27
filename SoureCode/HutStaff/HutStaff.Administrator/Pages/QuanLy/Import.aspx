@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="Import.aspx.cs" Inherits="QLCB_BK.Pages.QuanLy.Import" %>
+    CodeBehind="Import.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.Import" %>
 
 <%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

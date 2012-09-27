@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.QuanLy {
+namespace HutStaff.Administrator.Pages.QuanLy {
     
     
     public partial class NguoiDung {
@@ -37,7 +37,7 @@ namespace QLCB_BK.Pages.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.Common.Pager Pager3;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager3;
         
         /// <summary>
         /// Pager4 control.
@@ -46,6 +46,6 @@ namespace QLCB_BK.Pages.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.Common.Pager Pager4;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager4;
     }
 }

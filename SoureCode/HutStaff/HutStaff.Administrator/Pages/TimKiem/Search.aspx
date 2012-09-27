@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="Search.aspx.cs" Inherits="QLCB_BK.Pages.TimKiem.Search" %>
+    CodeBehind="Search.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.Search" %>
 
 <%@ Register Src="../../Controls/TimKiem/SearchResult.ascx" TagName="SearchResult"
     TagPrefix="uc1" %>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.QuanLy {
+namespace HutStaff.Administrator.Pages.QuanLy {
     
     
     public partial class Import {
@@ -37,7 +37,7 @@ namespace QLCB_BK.Pages.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.Common.Pager Pager2;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager2;
         
         /// <summary>
         /// Pager1 control.
@@ -46,7 +46,7 @@ namespace QLCB_BK.Pages.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.Common.Pager Pager1;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager1;
         
         /// <summary>
         /// Text1 control.
@@ -73,7 +73,7 @@ namespace QLCB_BK.Pages.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.Common.Pager Pager3;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager3;
         
         /// <summary>
         /// Pager4 control.
@@ -82,6 +82,6 @@ namespace QLCB_BK.Pages.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.Common.Pager Pager4;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager4;
     }
 }

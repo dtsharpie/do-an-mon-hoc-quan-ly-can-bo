@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.HuongDan
+namespace HutStaff.Administrator.Pages.HuongDan
 {
 
 
