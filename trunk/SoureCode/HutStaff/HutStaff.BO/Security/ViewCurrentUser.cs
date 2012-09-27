@@ -21,17 +21,10 @@ namespace HutStaff.BO.Security
             set;
         }
 
-        public int Role
-        {
-            get;
-            set;
-        }
-
-        public ViewCurrentUser(string username, int userId, int role)
+        public ViewCurrentUser(string username, int userId)
         {
             this.UserName = username;
             this.UserId = userId;
-            this.Role = role;
         }
 
         public static ViewCurrentUser GetViewCurrentUser()
