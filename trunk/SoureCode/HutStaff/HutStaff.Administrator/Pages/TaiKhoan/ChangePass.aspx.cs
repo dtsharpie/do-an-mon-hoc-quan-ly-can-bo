@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace QLCB_BK.Pages.TaiKhoan
+namespace HutStaff.Administrator.Pages.TaiKhoan
 {
     public partial class ChangePass : System.Web.UI.Page
     {

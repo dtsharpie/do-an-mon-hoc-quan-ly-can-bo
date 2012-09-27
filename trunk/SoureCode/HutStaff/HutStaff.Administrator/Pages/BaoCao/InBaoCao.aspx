@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="InBaoCao.aspx.cs" Inherits="QLCB_BK.Pages.BaoCao.InBaoCao" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="InBaoCao.aspx.cs" Inherits="HutStaff.Administrator.Pages.BaoCao.InBaoCao" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {

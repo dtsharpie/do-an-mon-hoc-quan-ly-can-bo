@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.TimKiem
+namespace HutStaff.Administrator.Pages.TimKiem
 {
 
 

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.QuanLy
+namespace HutStaff.Administrator.Pages.QuanLy
 {
 
 

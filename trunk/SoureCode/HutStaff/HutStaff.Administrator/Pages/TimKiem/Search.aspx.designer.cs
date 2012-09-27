@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.TimKiem {
+namespace HutStaff.Administrator.Pages.TimKiem {
     
     
     public partial class Search {
@@ -19,7 +19,7 @@ namespace QLCB_BK.Pages.TimKiem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.TimKiem.SearchForm SearchForm1;
+        protected global::HutStaff.Administrator.Controls.TimKiem.SearchForm SearchForm1;
         
         /// <summary>
         /// SearchResult1 control.
@@ -28,6 +28,6 @@ namespace QLCB_BK.Pages.TimKiem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::QLCB_BK.Controls.TimKiem.SearchResult SearchResult1;
+        protected global::HutStaff.Administrator.Controls.TimKiem.SearchResult SearchResult1;
     }
 }

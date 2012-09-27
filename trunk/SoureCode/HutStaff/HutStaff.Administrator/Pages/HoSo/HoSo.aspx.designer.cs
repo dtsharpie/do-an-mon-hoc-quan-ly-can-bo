@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLCB_BK.Pages.HoSo
+namespace HutStaff.Administrator.Pages.HoSo
 {
 
 

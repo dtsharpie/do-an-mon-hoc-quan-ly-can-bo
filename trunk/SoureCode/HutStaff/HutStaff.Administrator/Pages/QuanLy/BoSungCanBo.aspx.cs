@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace QLCB_BK.Pages.QuanLy
+namespace HutStaff.Administrator.Pages.QuanLy
 {
     public partial class BoSungCanBo : System.Web.UI.Page
     {

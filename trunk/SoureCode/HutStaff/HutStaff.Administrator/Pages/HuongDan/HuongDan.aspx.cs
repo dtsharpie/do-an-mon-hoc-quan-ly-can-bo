@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace QLCB_BK.Pages.HuongDan
+namespace HutStaff.Administrator.Pages.HuongDan
 {
     public partial class HuongDan : System.Web.UI.Page
     {
