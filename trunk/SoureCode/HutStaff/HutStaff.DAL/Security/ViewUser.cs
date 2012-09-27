@@ -7,16 +7,16 @@ using HutStaff.Common;
 
 namespace HutStaff.DAL.Security
 {
-    public class User
+    public class ViewUser
     {
         public static DataTable Authenticate(string username, string password)
         {
             using (MainDB db = new MainDB())
             {
-                return db.Execute("[HutStaff_User_Authenticate]",
+                return db.Execute("[HutStaff_ViewUser_Authenticate]",
                     new string[] { "@username", "@password" },
                     new object[] { username, password });
             }
-        }    
+        }   
     }
 }
