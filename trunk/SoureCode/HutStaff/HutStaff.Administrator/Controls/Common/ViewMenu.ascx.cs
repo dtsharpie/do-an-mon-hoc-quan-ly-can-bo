@@ -26,17 +26,7 @@ namespace HutStaff.Administrator.Controls.Common
                 XmlDocument xmlDocument = HutStaff.Common.Menu.GetData();
                 foreach (XmlNode xmlMenu in xmlDocument.SelectNodes("//menu"))
                 {
-                    int iPermission;
-                    if (xmlMenu.Attributes["permission"] != null)
-                    {
-                        if (int.TryParse(xmlMenu.Attributes["permission"].Value, out iPermission))
-                        {
-                            if (BO.Security.ViewCurrentUser.GetViewCurrentUser().Role <= iPermission)
-                            {
-                                BindBoxItem(xmlMenu.Attributes["alias"].Value, xmlMenu.Attributes["name"].Value);
-                            }
-                        }
-                    }
+                    BindBoxItem(xmlMenu.Attributes["alias"].Value, xmlMenu.Attributes["name"].Value);
                 }
             }
             rptBoxes.DataSource = tblTab;

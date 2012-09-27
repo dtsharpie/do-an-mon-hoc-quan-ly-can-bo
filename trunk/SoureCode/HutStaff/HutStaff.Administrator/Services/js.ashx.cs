@@ -24,8 +24,7 @@ namespace HutStaff.Administrator.Services
 
         public void ProcessRequest(HttpContext context)
         {
-
-            sClientScript = HttpContext.Current.Session[HutStaff.Common.Constants.Session.ViewSessionName] == null ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : CallMethod();
+            sClientScript = (HttpContext.Current.Session[HutStaff.Common.Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[HutStaff.Common.Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : CallMethod();
             context.Response.ContentType = "application/x-javascript";
             context.Response.Write(sClientScript);
         }
