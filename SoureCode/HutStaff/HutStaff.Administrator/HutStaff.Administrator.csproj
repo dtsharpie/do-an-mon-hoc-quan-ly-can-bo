@@ -123,6 +123,7 @@
     <Content Include="Pages\QuanLy\BangDanhMuc.aspx" />
     <Content Include="Pages\QuanLy\BoSungCanBo.aspx" />
     <Content Include="Pages\QuanLy\DoiDonVi.aspx" />
+    <Content Include="Pages\QuanLy\Import.aspx" />
     <Content Include="Pages\QuanLy\ImportLuong.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
@@ -294,6 +295,12 @@
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.designer.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\ImportLuong.aspx.cs">
       <DependentUpon>ImportLuong.aspx</DependentUpon>
