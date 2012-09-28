@@ -17,14 +17,14 @@ GO
 
 	
 	CREATE TABLE baohiem93 (
-	  id bigint  NOT NULL identity(1,1),
-	  tgbd_bh93 date DEFAULT NULL,
-	  tgkt_bh93 date DEFAULT NULL,
+	  id int  NOT NULL identity(1,1),
+	  tgbd_bh93 datetime DEFAULT NULL,
+	  tgkt_bh93 datetime DEFAULT NULL,
 	  mota nvarchar(255) DEFAULT NULL,
 	  hsluong float DEFAULT NULL,
 	  phucap float DEFAULT NULL,
 	  sothang int DEFAULT 0,
-	  tongtien bigint  DEFAULT NULL,
+	  tongtien int  DEFAULT NULL,
 	  shcc int  DEFAULT NULL,
 	  PRIMARY KEY (id)
 	);
