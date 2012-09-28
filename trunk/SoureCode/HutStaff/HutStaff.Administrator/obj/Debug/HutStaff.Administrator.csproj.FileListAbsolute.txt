@@ -20,3 +20,14 @@ C:\Users\Ha\Desktop\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
 C:\Users\Ha\Desktop\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 C:\Users\Ha\Desktop\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.dll
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.dll
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.pdb
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.pdb
+D:\.NET\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
+D:\.NET\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
+D:\.NET\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
+D:\.NET\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
