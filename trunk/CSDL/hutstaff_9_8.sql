@@ -32,7 +32,7 @@ GO
 	
 	CREATE TABLE db_log_tbl (
 	  id bigint identity(1,1) NOT NULL ,
-	  sys_user varchar(20) DEFAULT NULL,
+	  sys_user nvarchar(20) DEFAULT NULL,
 	  system_time_access datetime DEFAULT NULL,
 	  system_time_release datetime DEFAULT NULL,
 	  system_action NTEXT,
@@ -373,9 +373,9 @@ GO
 		ma_gdtdcs		INT REFERENCES dm_gdcs(ma_gdcs),
 		ma_tpxt			INT REFERENCES dm_tpxt(ma_tpxt),
 		ntgcm			DATETIME,
-		vdpc			INT REFERENCES dm_cvdn(ma_cvdn),
+		vdpc			NVARCHAR(100),
 		nvbc			DATETIME,
-		cvdn			INT REFERENCES dm_cvdn(ma_cvdn),
+		cvdn			NVARCHAR(100),
 		nvd				DATETIME,
 		nct				DATETIME,
 		nnn				DATETIME,
@@ -398,6 +398,7 @@ GO
 		tthn			INT REFERENCES dm_tthn(ma_tthn),
 		email			VARCHAR(100),
 		tel				VARCHAR(100),
+		cthktt			NVARCHAR(255),
 		kcb				INT REFERENCES dm_kcb(ma_kcb),
 		ma_hktt			INT REFERENCES dm_dd(ma_huyen),
 		ngay_kthd		DATETIME,
