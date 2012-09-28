@@ -51,9 +51,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\QLCB.mdf" />
-    <Content Include="App_Data\QLCB_log.ldf">
-      <DependentUpon>QLCB.mdf</DependentUpon>
+    <Content Include="App_Data\hutstaff_9_8.mdf" />
+    <Content Include="App_Data\hutstaff_9_8_log.ldf">
+      <DependentUpon>hutstaff_9_8.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\Settings.xml" />
     <Content Include="Controls\Common\DanhSachTinhThanh.ascx" />

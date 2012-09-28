@@ -16,3 +16,12 @@ C:\Users\Ha\Desktop\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
 C:\Users\Ha\Desktop\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
 C:\Users\Ha\Desktop\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
 C:\Users\Ha\Desktop\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
+D:\.NET\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
+D:\.NET\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
+D:\.NET\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
+D:\.NET\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
+D:\.NET\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
+D:\.NET\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
+D:\.NET\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.csprojResolveAssemblyReference.cache
+D:\.NET\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
+D:\.NET\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
