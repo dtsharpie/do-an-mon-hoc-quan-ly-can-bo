@@ -49,6 +49,7 @@
     <Compile Include="ControlBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LibCrypto.cs" />
     <Compile Include="MainDB.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
