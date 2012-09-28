@@ -3510,13 +3510,13 @@ INSERT INTO dm_tpxt (tpxt) VALUES
 	Danh mục tình trạng hôn nhân
   */
 INSERT INTO dm_tthn (tthn) VALUES
-('Sống độc thân'),
-('Đã kết hôn'),
-('Đã kết hôn lần 2'),
-('Đã ly hôn'),
-('Ly thân'),
-('Chưa kết hôn nhưng có con'),
-('Chưa kết hôn­');
+(N'Sống độc thân'),
+(N'Đã kết hôn'),
+(N'Đã kết hôn lần 2'),
+(N'Đã ly hôn'),
+(N'Ly thân'),
+(N'Chưa kết hôn nhưng có con'),
+(N'Chưa kết hôn­');
 
 /** Bảng 38 
 	Danh mục văn bằng đào tạo

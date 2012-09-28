@@ -35,14 +35,14 @@ GO
 	  sys_user varchar(20) DEFAULT NULL,
 	  system_time_access datetime DEFAULT NULL,
 	  system_time_release datetime DEFAULT NULL,
-	  system_action text,
+	  system_action NTEXT,
 	  PRIMARY KEY (id),
 	);
 	GO
 
 	CREATE TABLE dm_cn (
 	  ma_cn int identity(1,1) NOT NULL,
-	  cn varchar(255) DEFAULT NULL,
+	  cn nvarchar(255) DEFAULT NULL,
 	  PRIMARY KEY (ma_cn)
 	);
 	GO
@@ -50,7 +50,7 @@ GO
 
 	CREATE TABLE dm_cu (
 	  ma_cu int identity(1,1) NOT NULL,
-	  cu varchar(60) DEFAULT NULL,
+	  cu nvarchar(60) DEFAULT NULL,
 	  PRIMARY KEY (ma_cu)
 	) ;
 	GO
@@ -58,14 +58,14 @@ GO
 
 	CREATE TABLE dm_cud (
 	  ma_cud int identity(1,1) NOT NULL,
-	  cud varchar(60) DEFAULT NULL,
+	  cud nvarchar(60) DEFAULT NULL,
 	  PRIMARY KEY (ma_cud)
 	);
 	GO
 
 	CREATE TABLE dm_cv (
 	  ma_cv int identity(1,1) NOT NULL,
-	  cv varchar(60) DEFAULT NULL,
+	  cv nvarchar(60) DEFAULT NULL,
 	  pccv decimal(4,2) DEFAULT NULL,
 	  PRIMARY KEY (ma_cv)
 	);
@@ -373,10 +373,9 @@ GO
 		ma_gdtdcs		INT REFERENCES dm_gdcs(ma_gdcs),
 		ma_tpxt			INT REFERENCES dm_tpxt(ma_tpxt),
 		ntgcm			DATETIME,
-		ttc				NVARCHAR(100),
-		vdpc			NVARCHAR(100),
+		vdpc			INT REFERENCES dm_cvdn(ma_cvdn),
 		nvbc			DATETIME,
-		cvdn			NVARCHAR(70),
+		cvdn			INT REFERENCES dm_cvdn(ma_cvdn),
 		nvd				DATETIME,
 		nct				DATETIME,
 		nnn				DATETIME,
@@ -388,7 +387,7 @@ GO
 		kn_tht			Nvarchar(100),
 		ma_tdllct		INT REFERENCES dm_tdll(ma_tdll),
 		ma_tdqlnn		INT REFERENCES dm_tdql(ma_tdql),
-		nlstnk			Nvarchar(100),
+		nlstnk			Nvarchar(255),
 		ma_ttsk			NVARCHAR(30),
 		ma_nm			NVARCHAR(10),
 		ddlsbt			NVARCHAR(255),
@@ -400,7 +399,7 @@ GO
 		email			VARCHAR(100),
 		tel				VARCHAR(100),
 		kcb				INT REFERENCES dm_kcb(ma_kcb),
-		ma_hktt			INT,
+		ma_hktt			INT REFERENCES dm_dd(ma_huyen),
 		ngay_kthd		DATETIME,
 		ld_kthd			NVARCHAR(255),
 		ngaybh			DATETIME,
