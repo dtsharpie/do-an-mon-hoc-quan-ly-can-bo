@@ -43,6 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\User.cs" />
     <Compile Include="Security\ViewUser.cs" />
+    <Compile Include="Tinhthanhpho\Tinhthanpho.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HutStaff.Common\HutStaff.Common.csproj">
@@ -50,6 +51,7 @@
       <Name>HutStaff.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
