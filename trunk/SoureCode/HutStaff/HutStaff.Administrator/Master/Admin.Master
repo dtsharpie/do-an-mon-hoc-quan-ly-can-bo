@@ -24,7 +24,7 @@
         </div>
         <hr />
         <div id="divMenuLogo">
-            <img src="/Images/logo.png" width="150" height="120" />
+            <img alt="logo" title="logo" src="/Images/logo.png" width="150" height="120" />
         </div>
         <hr />
         <asp:ContentPlaceHolder ID="MenuContentPlaceHolder" runat="server">

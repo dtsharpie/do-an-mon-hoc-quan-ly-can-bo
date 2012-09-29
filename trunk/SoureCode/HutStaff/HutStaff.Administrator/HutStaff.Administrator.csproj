@@ -51,12 +51,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\hutstaff_9_8.mdf" />
-    <Content Include="App_Data\hutstaff_9_8_log.ldf">
-      <DependentUpon>hutstaff_9_8.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Settings.xml" />
-    <Content Include="Controls\Common\DanhSachTinhThanh.ascx" />
+    <Content Include="Controls\Common\Dropdownlist.ascx" />
     <Content Include="Controls\Common\ViewMenu.ascx" />
     <Content Include="Controls\Common\Pager.ascx" />
     <Content Include="Controls\Common\SideMenu.ascx" />
@@ -129,12 +125,16 @@
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
     <Content Include="Pages\TimKiem\AdvancedSearch.aspx" />
     <Content Include="Pages\TimKiem\Search.aspx" />
+    <Content Include="Script\chosen\chosen-sprite.png" />
+    <Content Include="Script\chosen\chosen.css" />
+    <Content Include="Script\chosen\chosen.jquery.min.js" />
     <Content Include="Script\common.js" />
     <Content Include="Script\jquery-1.8.1.min.js" />
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\login.css" />
     <Content Include="Styles\reset.css" />
     <Content Include="Styles\view.css" />
+    <Content Include="ViduDropdownlist.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -163,12 +163,12 @@
     <Content Include="Xemthongtin\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Common\DanhSachTinhThanh.ascx.cs">
-      <DependentUpon>DanhSachTinhThanh.ascx</DependentUpon>
+    <Compile Include="Controls\Common\Dropdownlist.ascx.cs">
+      <DependentUpon>Dropdownlist.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\Common\DanhSachTinhThanh.ascx.designer.cs">
-      <DependentUpon>DanhSachTinhThanh.ascx</DependentUpon>
+    <Compile Include="Controls\Common\Dropdownlist.ascx.designer.cs">
+      <DependentUpon>Dropdownlist.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Common\ViewMenu.ascx.cs">
       <DependentUpon>ViewMenu.ascx</DependentUpon>
@@ -298,6 +298,7 @@
     </Compile>
     <Compile Include="Pages\QuanLy\Import.aspx.cs">
       <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\Import.aspx.designer.cs">
       <DependentUpon>Import.aspx</DependentUpon>
@@ -343,6 +344,13 @@
     </Compile>
     <Compile Include="Services\text.ashx.cs">
       <DependentUpon>text.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ViduDropdownlist.aspx.cs">
+      <DependentUpon>ViduDropdownlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViduDropdownlist.aspx.designer.cs">
+      <DependentUpon>ViduDropdownlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\BHXH.ascx.cs">
       <DependentUpon>BHXH.ascx</DependentUpon>
@@ -488,6 +496,7 @@
     <Folder Include="Controls\HuongDan\" />
     <Folder Include="Controls\QuanLy\" />
     <Folder Include="Controls\TaiKhoan\" />
+    <Folder Include="Dll\" />
     <Folder Include="Xemthongtin\Pages\" />
   </ItemGroup>
   <ItemGroup>
