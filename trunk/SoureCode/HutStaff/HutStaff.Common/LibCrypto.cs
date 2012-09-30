@@ -18,7 +18,7 @@ namespace HutStaff.Common
         {
             public static string StringToMD5(string src)
             {
-                return FormsAuthentication.HashPasswordForStoringInConfigFile(src, "MD5");
+                return FormsAuthentication.HashPasswordForStoringInConfigFile(src, "MD5").ToLower();
             }
 
             public static string StringToBase64(string src)

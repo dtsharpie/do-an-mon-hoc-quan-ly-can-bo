@@ -22,17 +22,24 @@ namespace HutStaff.BO.Security
             set;
         }
 
-        public int Role
+        public int Quyen
         {
             get;
             set;
         }
 
-        public CurrentUser(string username,int userId,int role)
+        public int Ma_Dv
+        {
+            get;
+            set;
+        }
+
+        public CurrentUser(string username, int userId, int quyen, int ma_dv)
         {
             this.UserName = username;
             this.UserId = userId;
-            this.Role = role;
+            this.Quyen = quyen;
+            this.Ma_Dv = ma_dv;
         }
 
         public static CurrentUser GetCurrentUser()

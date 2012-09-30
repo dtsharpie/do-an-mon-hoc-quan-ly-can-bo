@@ -408,7 +408,7 @@ table
     background: none repeat scroll 0 0 #D9ECFF;
 }
 
-.table-result th,tr.title
+.table-result th, tr.title
 {
     background: none repeat scroll 0 0 #448CCB;
     color: #FFFFFF;
@@ -417,14 +417,35 @@ table
     vertical-align: middle;
 }
 
-.table-result th,tr.title td
+.table-result th, tr.title td
 {
     text-align: center;
 }
 
-.table-result td {
+.table-result td
+{
     border-left: 2px solid #FFFFFF;
     border-right: 2px solid #FFFFFF;
     padding: 3px 10px;
     vertical-align: middle;
+}
+
+.button
+{
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
+    border-color: #CCCCCC #CCCCCC #BBBBBB;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 5px 14px;
+}
+
+.divInfo .table-result tr td label span 
+{
+    font-weight: bold;
+    margin-left: 10px;
 }

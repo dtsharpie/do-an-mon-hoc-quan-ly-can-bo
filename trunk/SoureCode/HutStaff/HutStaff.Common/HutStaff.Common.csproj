@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMail.cs" />
-    <Compile Include="CacheManager.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Control.cs" />
     <Compile Include="ControlBase.cs">

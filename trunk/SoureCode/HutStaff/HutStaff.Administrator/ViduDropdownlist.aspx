@@ -11,9 +11,9 @@
     <script src="/Script/jquery-1.8.1.min.js" type="text/javascript"></script>
     <script src="/Script/common.js" type="text/javascript"></script>
     <script src="/Script/chosen/chosen.jquery.min.js" type="text/javascript"></script>
-    <link href="/Script/chosen/chosen.css" rel="stylesheet" type="text/css" />
+    <link href="/Script/chosen/chosen.css" rel="stylesheet" type="text/css" /> 
 </head>
-<body>
+<body >
     <form id="form1" runat="server">
     <div>
         <uc1:Dropdownlist ID="Dropdownlist1" runat="server" />
@@ -22,7 +22,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $("#test1").click(function () {
-                    alert( $("select[id$='ddlSelectUserControl']").val()  );
+                    alert($("select[id$='ddlSelectUserControl']").val());
                 });
 
             });

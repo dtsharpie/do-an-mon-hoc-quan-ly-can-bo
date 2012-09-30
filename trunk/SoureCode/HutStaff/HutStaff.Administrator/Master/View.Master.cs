@@ -11,10 +11,10 @@ namespace HutStaff.Administrator.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (BO.Security.ViewCurrentUser.GetViewCurrentUser() == null)
-            //{
-            //    Response.Redirect("/Xemthongtin/Login.aspx");
-            //}
+            if (BO.Security.ViewCurrentUser.GetViewCurrentUser() == null)
+            {
+                Response.Redirect("/Xemthongtin/Login.aspx");
+            }
         }
 
         protected void lnkLogout_Click(object sender, EventArgs e)

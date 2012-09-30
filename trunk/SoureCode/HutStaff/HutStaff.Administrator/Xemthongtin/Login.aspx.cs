@@ -18,15 +18,20 @@ namespace HutStaff.Administrator.Xemthongtin
 
         protected void lnkLogin_Click(object sender, EventArgs e)
         {
-            //string sUsername = txtUsername.Text;
-            //string sPass = txtPassword.Text;
-            //DataTable tblAuthenticate = BO.Security.User.Authenticate(sUsername, sPass);
-            //if (tblAuthenticate.Rows.Count > 0)
-            //{
-            //    BO.Security.ViewCurrentUser crUser = new BO.Security.ViewCurrentUser(sUsername, Convert.ToInt32(tblAuthenticate.Rows[0]["Id"]));
-            //    Session[Common.Constants.Session.ViewSessionName] = crUser;
+            string sUsername = txtUsername.Text;
+            string sPass = txtPassword.Text;
+            DataTable tblAuthenticate = BO.Security.ViewUser.Authenticate(sUsername, sPass);
+            if (tblAuthenticate.Rows.Count > 0)
+            {
+                int iShcc = Convert.ToInt32(tblAuthenticate.Rows[0]["shcc"]);
+                string sFullname = tblAuthenticate.Rows[0]["hodem"].ToString() + " " + tblAuthenticate.Rows[0]["ten"].ToString();
+                int iGender = Convert.ToInt32(tblAuthenticate.Rows[0]["gt"]);
+                DateTime dtBirthday = Convert.ToDateTime(tblAuthenticate.Rows[0]["ntns"]);
+                string sImage = "";
+                BO.Security.ViewCurrentUser crUser = new BO.Security.ViewCurrentUser(sUsername, iShcc, sFullname, iGender, dtBirthday, sImage);
+                Session[Common.Constants.Session.ViewSessionName] = crUser;
                 Response.Redirect("/Xemthongtin/Default.aspx");
-            //}
+            }
         }
     }
 }
