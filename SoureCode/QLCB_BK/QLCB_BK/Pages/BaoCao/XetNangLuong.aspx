@@ -32,7 +32,7 @@
                         <asp:DropDownList ID="ddlLuaChonBang" runat="server">
                         <asp:ListItem Value="1">Danh sách đến hạn nhận lương</asp:ListItem>
                         <asp:ListItem Value="2">Danh sách xét duyệt 5%</asp:ListItem>
-                        <asp:ListItem Value="2">Danh sách vượt khung</asp:ListItem>
+                        <asp:ListItem Value="3">Danh sách vượt khung</asp:ListItem>
                     </asp:DropDownList>
                     </td>
                 </tr>
@@ -55,18 +55,24 @@
                         <asp:ListItem Value="11">11</asp:ListItem>
                         <asp:ListItem Value="12" Selected="True">12</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:TextBox ID="txtNam" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNam" runat="server">2012</asp:TextBox>
                     </td>
                 </tr>
                 
                 <tr>
                     <td>
-                       <asp:Button ID="btnOk" runat="server" Text="OK" /> 
+                       <asp:Button ID="btnOk" runat="server" Text="OK" onclick="btnOk_Click" /> 
                     </td>
                     <td>       
                     </td>
                 </tr>
             </table>
         </div>
+    </div>
+    <div>
+    
+        <asp:GridView ID="salaryIncrementListDataGridView" runat="server">
+        </asp:GridView>
+    
     </div>
 </asp:Content>
