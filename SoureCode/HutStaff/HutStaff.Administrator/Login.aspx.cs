@@ -17,15 +17,15 @@ namespace HutStaff.Administrator
 
         protected void lnkLogin_Click(object sender, EventArgs e)
         {
-            //string sUsername = txtUsername.Text;
-            //string sPass = txtPassword.Text;
-            //DataTable tblAuthenticate = BO.Security.User.Authenticate(sUsername, sPass);
-            //if (tblAuthenticate.Rows.Count > 0)
-            //{
-            //    BO.Security.CurrentUser crUser = new BO.Security.CurrentUser(sUsername, Convert.ToInt32(tblAuthenticate.Rows[0]["Id"]), Convert.ToInt32(tblAuthenticate.Rows[0]["Role"]));
-            //    Session[Common.Constants.Session.AdminSessionName] = crUser;
+            string sUsername = txtUsername.Text;
+            string sPass = txtPassword.Text;
+            DataTable tblAuthenticate = BO.Security.User.Authenticate(sUsername, sPass);
+            if (tblAuthenticate.Rows.Count > 0)
+            {
+                BO.Security.CurrentUser crUser = new BO.Security.CurrentUser(sUsername, Convert.ToInt32(tblAuthenticate.Rows[0]["Id"]), Convert.ToInt32(tblAuthenticate.Rows[0]["quyen"]), Convert.ToInt32(tblAuthenticate.Rows[0]["ma_dv"]));
+                Session[Common.Constants.Session.AdminSessionName] = crUser;
                 Response.Redirect("/Default.aspx");
-            //}
+            }
         }
     }
 }

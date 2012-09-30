@@ -46,6 +46,7 @@
     <Compile Include="Security\User.cs" />
     <Compile Include="Security\ViewCurrentUser.cs" />
     <Compile Include="Security\ViewUser.cs" />
+    <Compile Include="Soyeu\Soyeu.cs" />
     <Compile Include="Tinhthanhpho\Tinhthanhpho.cs" />
   </ItemGroup>
   <ItemGroup>

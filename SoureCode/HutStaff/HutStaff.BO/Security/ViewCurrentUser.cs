@@ -9,22 +9,49 @@ namespace HutStaff.BO.Security
 {
     public class ViewCurrentUser
     {
-         public string UserName
+        public string UserName
         {
             get;
             set;
         }
 
-        public int UserId
+        public int Shcc
         {
             get;
             set;
         }
 
-        public ViewCurrentUser(string username, int userId)
+        public string FullName
+        {
+            get;
+            set;
+        }
+
+        public string Gender
+        {
+            get;
+            set;
+        }
+
+        public DateTime Birthday
+        {
+            get;
+            set;
+        }
+
+        public string Image
+        {
+            get;
+            set;
+        }
+        public ViewCurrentUser(string username, int shcc, string fullname, int gender, DateTime birthday, string image)
         {
             this.UserName = username;
-            this.UserId = userId;
+            this.Shcc = shcc;
+            this.FullName = fullname;
+            this.Gender = (gender == 0) ? "Nữ" : "Nam";
+            this.Birthday = birthday;
+            this.Image = image;
         }
 
         public static ViewCurrentUser GetViewCurrentUser()

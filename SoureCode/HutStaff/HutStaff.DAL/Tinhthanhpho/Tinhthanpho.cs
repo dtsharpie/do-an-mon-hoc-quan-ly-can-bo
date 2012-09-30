@@ -13,7 +13,7 @@ namespace HutStaff.DAL.Tinhthanhpho
         {
             using (MainDB db = new MainDB())
             {
-                return db.Execute("HutStaff_ViewUser_dmttp_GetAll",
+                return db.Execute("[HutStaff_ViewUser_dmttp_GetAll]",
                      new string[] { },
                      new object[] { });
             }
