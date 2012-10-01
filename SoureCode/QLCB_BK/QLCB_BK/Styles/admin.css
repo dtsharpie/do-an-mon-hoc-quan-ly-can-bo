@@ -172,7 +172,7 @@ body
 
 #divContent .content
 {
-    width: 100%;
+    
     padding: 45px 0;
     background: url("/images/quanly.png") no-repeat scroll 25% 10% transparent;
     min-height: 500px;
@@ -243,10 +243,10 @@ body
 
 /********   HungPV Style *************/
 #content {left: 235px;margin-left: 10px;margin-top: 30px;position: absolute;top: 0;width: 750px;}
-#content {background: url("css/images/search.png") no-repeat scroll 30% 0 transparent;}
+#content {background: url("/Images/search.png") no-repeat scroll 30% 0 transparent;}
 h1 {color: #0054A6;font-style: normal;font-weight: normal;margin: 0;padding: 0;}
 hr {margin: 3px 1px 1px;}
-#timkiem {background: url("images/nen.png") repeat scroll 0 0 transparent;border: 1px solid #999999;height: auto;margin: 10px 0 10px 10px;padding: 10px;width: 755px;}
+#timkiem {background: url("/Images/nen.png") repeat scroll 0 0 transparent;border: 1px solid #999999;height: auto;margin: 10px 0 10px 10px;padding: 10px;width: 755px;}
 .hang {float: none;margin: 1px;padding-bottom:5px;}
 h4 {float: left;font-weight: normal;margin: 1px;padding: 0;width: 120px;}
 a {color: #0066CC;text-decoration: none;}
@@ -254,4 +254,11 @@ a {color: #0066CC;text-decoration: none;}
 #noidung {margin-top: 10px;}
 table {font-size: 9pt;}
 .tieude {background: none repeat scroll 0 0 #448CCB;color: #FFFFFF;font-weight: bold;height: 30px;}
+
+/*Báo cáo*/
+.thHead {background: url("/Images/nen.png") repeat scroll 0 0 transparent;border: 1px solid #999999;font-weight: bold;}
+.row3 {border: 1px solid #999999;color: #0066FF;font-weight: bold;padding:5px;}
+.row1 {border: 1px solid #999999;font-weight: bold;padding:5px;}
+.row1 a {color: #333333;}
+.forumline{border-spacing:1px; font-size:13px;}
 /******** End of HungPV Style *************/
