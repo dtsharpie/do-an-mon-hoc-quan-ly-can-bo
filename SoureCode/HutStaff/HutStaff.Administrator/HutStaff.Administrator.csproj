@@ -33,7 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -56,6 +62,10 @@
     <Content Include="Controls\Common\ViewMenu.ascx" />
     <Content Include="Controls\Common\Pager.ascx" />
     <Content Include="Controls\Common\SideMenu.ascx" />
+    <Content Include="Controls\QuanLy\DatePicker.ascx" />
+    <Content Include="Controls\QuanLy\DropDownChosen.ascx" />
+    <Content Include="Controls\QuanLy\HintTextBox.ascx" />
+    <Content Include="Controls\QuanLy\ThongTinCanBoControl.ascx" />
     <Content Include="Controls\TimKiem\SearchForm.ascx" />
     <Content Include="Controls\TimKiem\SearchResult.ascx" />
     <Content Include="Default.aspx" />
@@ -125,17 +135,31 @@
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
     <Content Include="Pages\TimKiem\AdvancedSearch.aspx" />
     <Content Include="Pages\TimKiem\Search.aspx" />
-    <Content Include="Script\chosen\chosen-sprite.png" />
-    <Content Include="Script\chosen\chosen.css" />
-    <Content Include="Script\chosen\chosen.jquery.min.js" />
+    <Content Include="Script\zebra_datepicker.js" />
+    <Content Include="Styles\chosen-sprite.png" />
+    <Content Include="Styles\chosen.css" />
+    <Content Include="Script\chosen.jquery.js" />
+    <Content Include="Script\chosen.jquery.min.js" />
     <Content Include="Script\common.js" />
     <Content Include="Script\jquery-1.8.1.min.js" />
     <Content Include="Styles\admin.css" />
+    <Content Include="Styles\container.css" />
     <Content Include="Styles\login.css" />
     <Content Include="Styles\reset.css" />
     <Content Include="Styles\view.css" />
+    <Content Include="Styles\ZebraDatePicker\calendar-disabled.png" />
+    <Content Include="Styles\ZebraDatePicker\calendar.png" />
+    <Content Include="Styles\ZebraDatePicker\metallic\default-date.png" />
+    <Content Include="Styles\ZebraDatePicker\metallic\disabled-date.png" />
+    <Content Include="Styles\ZebraDatePicker\metallic\header.png" />
+    <Content Include="Styles\ZebraDatePicker\metallic\selected-date.png" />
+    <Content Include="Styles\ZebraDatePicker\metallic\titles.png" />
+    <Content Include="Styles\ZebraDatePicker\zebra_datepicker.css" />
+    <Content Include="Styles\ZebraDatePicker\zebra_datepicker_metallic.css" />
     <Content Include="ViduDropdownlist.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -190,6 +214,34 @@
     </Compile>
     <Compile Include="Controls\Common\SideMenu.ascx.designer.cs">
       <DependentUpon>SideMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\DatePicker.ascx.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\DatePicker.ascx.designer.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\DropDownChosen.ascx.cs">
+      <DependentUpon>DropDownChosen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\DropDownChosen.ascx.designer.cs">
+      <DependentUpon>DropDownChosen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\HintTextBox.ascx.cs">
+      <DependentUpon>HintTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\HintTextBox.ascx.designer.cs">
+      <DependentUpon>HintTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\ThongTinCanBoControl.ascx.cs">
+      <DependentUpon>ThongTinCanBoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\ThongTinCanBoControl.ascx.designer.cs">
+      <DependentUpon>ThongTinCanBoControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\TimKiem\SearchForm.ascx.cs">
       <DependentUpon>SearchForm.ascx</DependentUpon>
@@ -494,7 +546,6 @@
     <Folder Include="Controls\BaoCao\" />
     <Folder Include="Controls\HoSo\" />
     <Folder Include="Controls\HuongDan\" />
-    <Folder Include="Controls\QuanLy\" />
     <Folder Include="Controls\TaiKhoan\" />
     <Folder Include="Dll\" />
     <Folder Include="Xemthongtin\Pages\" />
@@ -514,6 +565,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\View.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
