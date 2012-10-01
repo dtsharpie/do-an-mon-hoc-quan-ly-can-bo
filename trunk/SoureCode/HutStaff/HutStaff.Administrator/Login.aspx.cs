@@ -26,6 +26,10 @@ namespace HutStaff.Administrator
                 Session[Common.Constants.Session.AdminSessionName] = crUser;
                 Response.Redirect("/Default.aspx");
             }
+            else
+            {
+                divAlert.Style["display"] = "block";
+            }
         }
     }
 }

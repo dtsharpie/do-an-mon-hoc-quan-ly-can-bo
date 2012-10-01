@@ -19,3 +19,10 @@ D:\.NET\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
 D:\.NET\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
 D:\.NET\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 D:\.NET\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+D:\.NET\HutStaf\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+D:\.NET\HutStaf\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+D:\.NET\HutStaf\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+D:\.NET\HutStaf\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+D:\.NET\HutStaf\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
+D:\.NET\HutStaf\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+D:\.NET\HutStaf\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb

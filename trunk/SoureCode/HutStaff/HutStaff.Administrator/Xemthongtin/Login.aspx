@@ -24,27 +24,25 @@
             </div>
             <div id="divLoginTitle1">
             </div>
-            <table id="tblLoginForm">
-                <tr>
-                    <td class="tdLabel">
-                        Tên đăng nhập
-                    </td>
-                    <td class="tdField">
-                        <asp:TextBox ID="txtUsername" runat="server" CssClass="loginTextBox" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tdLabel">
-                        Mật khẩu
-                    </td>
-                    <td class="tdField">
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="loginTextBox" TextMode="Password" />
-                    </td>
-                </tr>
-            </table>
-            <div id="divAlert">
-                Tài khoản không tồn tại hoặc sai mật khẩu.</div>
+            <div style="margin-bottom:10px;">
+                <div class="textdn">
+                    Tên đăng nhập:</div>
+                <div class="khungdn">
+                    <asp:TextBox ID="txtUsername" runat="server" CssClass="loginTextBox" /></div>
+                <div class="clear">
+                </div>
+            </div>
+            <div>
+                <div class="textdn">
+                    Mật khẩu:</div>
+                <div class="khungdn">
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="loginTextBox" TextMode="Password" /></div>
+                <div class="clear">
+                </div>
+            </div>
             <asp:LinkButton ID="lnkLogin" runat="server" CssClass="lnk-login" OnClick="lnkLogin_Click" />
+            <div class="divAlert" style="display: none;" runat="server" id="divAlert">
+                Tài khoản không tồn tại hoặc sai mật khẩu.</div>
             <a href="/Pages/TaiKhoan/ChangePass.aspx" id="lnkForgotPass">Quên mật khẩu ?</a>
         </div>
     </div>

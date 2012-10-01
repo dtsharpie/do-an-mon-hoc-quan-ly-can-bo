@@ -429,3 +429,73 @@ body
     
     background: url("/Images/timkiem.png") no-repeat;
 }
+
+/*
+Toan ' css
+
+*/
+
+#container .header
+{
+    padding: 3px 3px 5px 3px;
+    border-width: 1px;
+    background-color: #E0E0E0;
+    height: auto;
+    width: 95%;
+    font-size: medium;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+}
+
+#container .body 
+{
+    padding: 10px 10px 20px 30px;
+    background-color: #F5F5F5;
+    border: 1px solid;
+    height: auto;
+    width: 95%;
+}
+
+#container .body tr td:first-child
+{
+    text-align: right;
+    width: 25%;
+}
+
+#container table 
+{
+    width: 100%;
+}
+
+#container table .inputextbox_short
+{
+    width: 200px;
+}
+
+#container table .inputtextbox_long
+{
+    width: 400px;
+}
+
+#container table .droplist_medium
+{
+    width: 120px;
+}
+
+#container table .droplist_large
+{
+    width: 200px;
+}
+
+#container table .datepicker
+{
+    width: 120px;
+}
+
+#container table .labelColumn
+{
+    width: 30%;
+}
+
+/* end toan 'css */

@@ -10,6 +10,9 @@ C:\Users\Ha\Desktop\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 C:\Users\Ha\Desktop\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
 D:\.NET\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
 D:\.NET\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
-D:\.NET\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.csprojResolveAssemblyReference.cache
 D:\.NET\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 D:\.NET\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
+D:\.NET\HutStaf\HutStaff.Common\bin\Debug\HutStaff.Common.dll
+D:\.NET\HutStaf\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
+D:\.NET\HutStaf\HutStaff.Common\obj\Debug\HutStaff.Common.dll
+D:\.NET\HutStaf\HutStaff.Common\obj\Debug\HutStaff.Common.pdb

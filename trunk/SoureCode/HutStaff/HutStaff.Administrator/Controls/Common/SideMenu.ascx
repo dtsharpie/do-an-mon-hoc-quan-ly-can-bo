@@ -37,28 +37,5 @@
         $(this).addClass("active");
         $('.mainNav .ml').removeClass("active");
         $(this).parent().parent().prev().addClass("active");
-
     });
-
-//    function CheckEnterKey(e) {
-//        var keycode;
-//        if (e) keycode = e.which;
-//        else
-//            if (window.event) keycode = window.event.keyCode;
-
-//        window.history.back(1);
-
-//        var alias = window.location.hash;
-//        if (alias != '') {
-//            alias = alias.substring(1);
-
-//            if (keycode == 8) {
-//                loadContent({ 'alias': alias }, false);
-//                $('.menu').removeClass('selected');
-//                $("ul#mainnav li a.menu[alias='" + alias + "']").addClass('selected');
-//            }
-//        }
-//        return false;
-//    }
-//    document.onkeypress = CheckEnterKey;
 </script>
