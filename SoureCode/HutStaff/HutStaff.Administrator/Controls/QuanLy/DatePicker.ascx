@@ -1,10 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DatePicker.ascx.cs"
     Inherits="HutStaff.Administrator.Controls.QuanLy.DatePicker" %>
-<script src="../../Script/zebra_datepicker.js" type="text/javascript"></script>
-<link href="../../Styles/ZebraDatePicker/zebra_datepicker.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#<%= mainTextBox.ClientID %>").Zebra_DatePicker();
+        $("#<%= mainTextBox.ClientID %>").datepick({
+            dateFormat: 'dd/mm/yyyy',
+            yearRange: '1920:2020'
+        });
     });
 </script>
 <asp:TextBox ID="mainTextBox" runat="server" CssClass="DatePickerTextBox" />

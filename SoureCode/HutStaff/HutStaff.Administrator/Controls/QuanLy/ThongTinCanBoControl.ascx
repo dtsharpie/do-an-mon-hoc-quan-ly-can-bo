@@ -3,14 +3,12 @@
 <%@ Register Src="DatePicker.ascx" TagName="DatePicker" TagPrefix="uc1" %>
 <%@ Register Src="DropDownChosen.ascx" TagName="DropDownChosen" TagPrefix="uc2" %>
 <%@ Register Src="HintTextBox.ascx" TagName="HintTextBox" TagPrefix="uc3" %>
-<link href="../../Styles/container.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
     .style1
     {
         width: 100%;
     }
 </style>
-<script src="../../Script/chosen.jquery.min.js" type="text/javascript"></script>
 <div id="container">
     <br />
     <br />

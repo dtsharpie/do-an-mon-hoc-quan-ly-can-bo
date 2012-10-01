@@ -426,10 +426,15 @@ table
 {
     border-left: 2px solid #FFFFFF;
     border-right: 2px solid #FFFFFF;
-    padding: 3px 10px;
+    padding: 3px 0px;
+    padding-left: 10px;
     vertical-align: middle;
 }
 
+.table-result td label
+{
+    vertical-align: middle;
+}
 .button
 {
     background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
@@ -448,4 +453,9 @@ table
 {
     font-weight: bold;
     margin-left: 10px;
+}
+
+#rptData_ddlHktt_0_ddlSelectUserControl_0_chzn
+{
+    vertical-align: middle;
 }

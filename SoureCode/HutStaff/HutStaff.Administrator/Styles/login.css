@@ -1,12 +1,15 @@
-﻿.left {
+﻿.left
+{
     float: left;
 }
 
-.right {
+.right
+{
     float: right;
 }
 
-.clear {
+.clear
+{
     clear: both;
 }
 
@@ -16,7 +19,8 @@ html
     width: 100%;
 }
 
-body {
+body
+{
     font-family: Arial, Tahoma, Verdana, sans-serif;
     font-size: 12px;
     overflow: hidden;
@@ -26,13 +30,15 @@ body {
     text-align: center;
 }
 
-#form1 {
+#form1
+{
     overflow: hidden;
     height: 100%;
     width: 100%;
 }
 
-#header {
+#header
+{
     width: 100%;
     height: 150px;
     position: absolute;
@@ -41,14 +47,16 @@ body {
     background: none repeat scroll 0 0 #006699;
 }
 
-    #header #logo {
-        background: url('/Images/title.png') no-repeat;
-        width: 1024px;
-        height: 150px;
-        margin: auto;
-    }
+#header #logo
+{
+    background: url('/Images/title.png') no-repeat;
+    width: 1024px;
+    height: 150px;
+    margin: auto;
+}
 
-#footer {
+#footer
+{
     width: 100%;
     height: 100px;
     border-top: 1px solid black;
@@ -59,35 +67,41 @@ body {
     color: #ffffff;
 }
 
-    #footer a {
-        color: #ffffff;
-        line-height: 40px;
-    }
+#footer a
+{
+    color: #ffffff;
+    line-height: 40px;
+}
 
-#divLogin {
+#divLogin
+{
     width: 350px;
     height: auto;
     margin: 155px auto;
 }
 
-#divSwitch {
+#divSwitch
+{
     height: 30px;
 }
 
-.lnkSwitchButton {
+.lnkSwitchButton
+{
     display: block;
     width: 170px;
     height: 30px;
 }
 
-#divLoginTitle {
+#divLoginTitle
+{
     background: url("/Images/dangnhap1.png") no-repeat;
     width: 310px;
     height: 60px;
-    margin: auto;
+    margin: auto auto 10px;
 }
 
-#divLoginTitle1 {
+#divLoginTitle1
+{
     background: url("/Images/dangnhap2.png") no-repeat;
     width: 310px;
     height: 60px;
@@ -95,40 +109,47 @@ body {
 }
 
 
-#tblLoginForm {
+#tblLoginForm
+{
     width: 100%;
 }
 
-    #tblLoginForm td, tr {
-        height: 50px;
-        line-height: 50px;
-        vertical-align: middle;
-    }
+#tblLoginForm td, tr
+{
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
 
-        #tblLoginForm td.tdLabel {
-            width: 100px;
-            text-align: right;
-            font-weight: bold;
-        }
+#tblLoginForm td.tdLabel
+{
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+}
 
-        #tblLoginForm td.tdField {
-            padding-left: 15px;
-            text-align: left;
-        }
+#tblLoginForm td.tdField
+{
+    padding-left: 15px;
+    text-align: left;
+}
 
-.loginTextBox {
+.loginTextBox
+{
     width: 200px;
     height: 30px;
     font-size: 14px;
     border: 2px solid #000;
 }
 
-#divAlert {
+.divAlert
+{
     color: red;
 }
 
-#lnkLogin {
-    margin: 30px 0 20px 120px;
+#lnkLogin
+{
+    margin: 10px 0 20px 133px;
     display: block;
     width: 150px;
     height: 50px;
@@ -143,12 +164,13 @@ body {
     height: 50px;
 }
 
-.lnk-login {
-    
+.lnk-login
+{
     background: url("/Images/nutdn.png") no-repeat;
 }
 
-#lnkForgotPass {
+#lnkForgotPass
+{
     margin-left: 230px;
 }
 
@@ -168,4 +190,20 @@ body {
 {
     width: 100%;
     min-height: 100%;
+}
+
+.textdn
+{
+    width: 120px;
+    font-weight: bold;
+    float: left;
+    height: auto;
+    margin-top: 10px;
+}
+
+.khungdn
+{
+    float: right;
+    height: 40px;
+    width: 230px;
 }

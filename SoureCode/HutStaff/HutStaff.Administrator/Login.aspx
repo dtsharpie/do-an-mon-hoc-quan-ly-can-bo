@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="HutStaff.Administrator.Login" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>QLCB</title>
@@ -12,33 +11,39 @@
 <body>
     <form id="form1" runat="server">
     <div id="header">
-        <div id="logo"></div>
+        <div id="logo">
+        </div>
     </div>
     <div id="content">
         <div id="divLogin">
             <div id="divSwitch">
                 <a id="lnkAdminPage" href="javascript:void(0);" class="lnkSwitchButton left">
-                    <img src="/Images/tql2.png" alt="trang_quan_ly" /></a>
-                <a id="lnkViewPage" href="/Xemthongtin/Login.aspx" class="lnkSwitchButton left">
-                    <img src="/Images/xtt.png" alt="trang_xem_thong_tin" /></a>
+                    <img src="/Images/tql2.png" alt="trang_quan_ly" /></a> <a id="lnkViewPage" href="/Xemthongtin/Login.aspx"
+                        class="lnkSwitchButton left">
+                        <img src="/Images/xtt.png" alt="trang_xem_thong_tin" /></a>
             </div>
-            <div id="divLoginTitle"></div>
-            <table id="tblLoginForm">
-                <tr>
-                    <td class="tdLabel">Tên đăng nhập</td>
-                    <td class="tdField"><asp:TextBox ID="txtUsername" runat="server" CssClass="loginTextBox" /></td>
-                </tr>
-                <tr>
-                    <td class="tdLabel">Mật khẩu</td>
-                    <td class="tdField"><asp:TextBox ID="txtPassword" runat="server" CssClass="loginTextBox" TextMode="Password" /></td>
-                </tr>
-            </table>
-            <div id="divAlert">Tài khoản không tồn tại hoặc sai mật khẩu.</div>
-            <%--<a href="/Default.aspx" id="lnkLogin" />--%>
-            <asp:LinkButton ID="lnkLogin" runat="server" CssClass="link-button lnk-login" 
-                onclick="lnkLogin_Click" />
-            <a href="/Pages/TaiKhoan/ChangePass.aspx" id="lnkForgotPass" >Quên mật khẩu ?</a>
-
+            <div id="divLoginTitle">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <div class="textdn">
+                    Tên đăng nhập:</div>
+                <div class="khungdn">
+                    <asp:TextBox ID="txtUsername" runat="server" CssClass="loginTextBox" /></div>
+                <div class="clear">
+                </div>
+            </div>
+            <div>
+                <div class="textdn">
+                    Mật khẩu:</div>
+                <div class="khungdn">
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="loginTextBox" TextMode="Password" /></div>
+                <div class="clear">
+                </div>
+            </div>
+            <asp:LinkButton ID="lnkLogin" runat="server" CssClass="link-button lnk-login" OnClick="lnkLogin_Click" />
+            <div runat="server" style="display: none" class="divAlert" id="divAlert">
+                Tài khoản không tồn tại hoặc sai mật khẩu.</div>
+            <a href="/Pages/TaiKhoan/ChangePass.aspx" id="lnkForgotPass">Quên mật khẩu ?</a>
         </div>
     </div>
     <div id="footer">
@@ -67,7 +72,7 @@
             });
 
             $('#lnkLogin').mouseout(function () {
-                $(this).css('background', 'url("/Images/nutdn.png") no-repeat');                
+                $(this).css('background', 'url("/Images/nutdn.png") no-repeat');
             });
         });
     </script>

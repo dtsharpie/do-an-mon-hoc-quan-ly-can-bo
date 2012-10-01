@@ -18,5 +18,15 @@ namespace HutStaff.DAL.Tinhthanhpho
                      new object[] { });
             }
         }
+
+        public static DataTable GetAllCity()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_ttp]",
+                     new string[] { },
+                     new object[] { });
+            }
+        }
     }
 }

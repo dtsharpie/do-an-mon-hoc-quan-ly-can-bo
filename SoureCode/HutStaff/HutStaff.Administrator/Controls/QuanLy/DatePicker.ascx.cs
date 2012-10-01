@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
-using AjaxControlToolkit;
+using System.Text.RegularExpressions;
 
 namespace HutStaff.Administrator.Controls.QuanLy
 {
@@ -35,10 +35,12 @@ namespace HutStaff.Administrator.Controls.QuanLy
             get
             {
                 DateTime date = DateTime.MinValue;
-
                 try
                 {
-                    date = DateTime.Parse(mainTextBox.Text);
+                    string pattern = @"(?<day>\d+)/(?<month>\d+)/?<year>\d+)";
+                    Regex regex = new Regex(pattern);
+                    Match m = regex.Match(mainTextBox.Text);
+                    date = new DateTime(Convert.ToInt32(m.Groups["year"].Value), Convert.ToInt32(m.Groups["month"].Value), Convert.ToInt32(m.Groups["day"].Value));
                 }
                 catch (Exception)
                 {

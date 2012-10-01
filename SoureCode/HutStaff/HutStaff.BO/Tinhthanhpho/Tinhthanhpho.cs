@@ -12,5 +12,10 @@ namespace HutStaff.BO.Tinhthanhpho
        {
            return DAL.Tinhthanhpho.Tinhthanpho.GetAll();
        }
+
+       public static DataTable GetAllCity()
+       {
+           return DAL.Tinhthanhpho.Tinhthanpho.GetAllCity();
+       }
     }
 }

@@ -32,6 +32,10 @@ namespace HutStaff.Administrator.Xemthongtin
                 Session[Common.Constants.Session.ViewSessionName] = crUser;
                 Response.Redirect("/Xemthongtin/Default.aspx");
             }
+            else
+            {
+                divAlert.Style["display"] = "block";
+            }
         }
     }
 }

@@ -33,13 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HtmlAgilityPack">
-      <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="SanitizerProviders">
-      <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -135,7 +129,11 @@
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
     <Content Include="Pages\TimKiem\AdvancedSearch.aspx" />
     <Content Include="Pages\TimKiem\Search.aspx" />
-    <Content Include="Script\zebra_datepicker.js" />
+    <Content Include="Script\datepicker\calendar-blue.gif" />
+    <Content Include="Script\datepicker\calendar-green.gif" />
+    <Content Include="Script\datepicker\calendar.gif" />
+    <Content Include="Script\datepicker\jquery.datepick.css" />
+    <Content Include="Script\datepicker\jquery.datepick.js" />
     <Content Include="Styles\chosen-sprite.png" />
     <Content Include="Styles\chosen.css" />
     <Content Include="Script\chosen.jquery.js" />
@@ -143,19 +141,9 @@
     <Content Include="Script\common.js" />
     <Content Include="Script\jquery-1.8.1.min.js" />
     <Content Include="Styles\admin.css" />
-    <Content Include="Styles\container.css" />
     <Content Include="Styles\login.css" />
     <Content Include="Styles\reset.css" />
     <Content Include="Styles\view.css" />
-    <Content Include="Styles\ZebraDatePicker\calendar-disabled.png" />
-    <Content Include="Styles\ZebraDatePicker\calendar.png" />
-    <Content Include="Styles\ZebraDatePicker\metallic\default-date.png" />
-    <Content Include="Styles\ZebraDatePicker\metallic\disabled-date.png" />
-    <Content Include="Styles\ZebraDatePicker\metallic\header.png" />
-    <Content Include="Styles\ZebraDatePicker\metallic\selected-date.png" />
-    <Content Include="Styles\ZebraDatePicker\metallic\titles.png" />
-    <Content Include="Styles\ZebraDatePicker\zebra_datepicker.css" />
-    <Content Include="Styles\ZebraDatePicker\zebra_datepicker_metallic.css" />
     <Content Include="ViduDropdownlist.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
