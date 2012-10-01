@@ -7,3 +7,8 @@ E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-l
 E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.Common\obj\Debug\ResolveAssemblyReference.cache
 E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.Common\obj\Debug\QLCB_BK.Common.dll
 E:\IT_IN_BK\Do an mon hoc phat trien phan mem chuyen nghiep\do-an-mon-hoc-quan-ly-can-bo\SoureCode\QLCB_BK\QLCB_BK.Common\obj\Debug\QLCB_BK.Common.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\QLCB_BK\QLCB_BK.Common\bin\Debug\QLCB_BK.Common.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\QLCB_BK\QLCB_BK.Common\bin\Debug\QLCB_BK.Common.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\QLCB_BK\QLCB_BK.Common\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\QLCB_BK\QLCB_BK.Common\obj\Debug\QLCB_BK.Common.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\QLCB_BK\QLCB_BK.Common\obj\Debug\QLCB_BK.Common.pdb

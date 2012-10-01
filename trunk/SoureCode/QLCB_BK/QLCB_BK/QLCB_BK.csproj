@@ -55,6 +55,7 @@
     <Content Include="App_Data\QLCB_log.ldf">
       <DependentUpon>QLCB.mdf</DependentUpon>
     </Content>
+    <Content Include="Controls\Common\Dropdownlist.ascx" />
     <Content Include="Controls\Common\SideMenu.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\1.png" />
@@ -136,6 +137,13 @@
     <Content Include="Xemthongtin\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Common\Dropdownlist.ascx.cs">
+      <DependentUpon>Dropdownlist.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\Dropdownlist.ascx.designer.cs">
+      <DependentUpon>Dropdownlist.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Common\SideMenu.ascx.cs">
       <DependentUpon>SideMenu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
