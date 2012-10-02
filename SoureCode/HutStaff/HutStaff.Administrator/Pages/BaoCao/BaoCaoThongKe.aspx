@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div class="content" id="content">
+    <div id="content">
         <br />
         <h1>In báo cáo</h1>
         <hr width="750px" />
