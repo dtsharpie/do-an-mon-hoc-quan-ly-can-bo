@@ -70,19 +70,21 @@
 		        </tbody>
             </table>
             <br/>
+
             <table width="95%" border="0" cellspacing="1" cellpadding="4" class="forumline">
 		        <tbody>
                     <tr>
 		                <td valign="top" align="center" colspan="2" class="column_title">CÁC BÁO CÁO THỐNG KÊ MỚI</td>			
 		            </tr>
 		            <tr>
-		  	            <td width="50%" class="row1"><a href="javascript: openNew('rpt26.php');">Thống kê Thành tích khen thưởng</a></td>
+		  	            <td width="50%" class="row1"><a href="ThongKeKhenthuong.aspx">Thống kê Thành tích khen thưởng</a></td>
 			            <td class="row1"><a href="javascript: openNew('rpt27.php');">Thống kê DS Cán bộ nâng lương không thuộc ngạch cao cấp</a></td>
 		            </tr>
 		            <tr>
-		  	            <td width="50%" class="row1"><a href="javascript: openNew('rpt28.php');">Thống kê DS Cán bộ nâng lương thuộc ngạch cao cấp</a></td>
+		  	            <td width="50%" class="row1"><a href="ThongKeCanBoCaoCap.aspx">Thống kê DS Cán bộ nâng lương thuộc ngạch cao cấp</a></td>
 			            <td class="row1"><a href="javascript: openNew('rpt29.php');">Bảng thanh toán lương hàng tháng</a></td>
 		            </tr>
+
 		        </tbody>
             </table>
         </div>
