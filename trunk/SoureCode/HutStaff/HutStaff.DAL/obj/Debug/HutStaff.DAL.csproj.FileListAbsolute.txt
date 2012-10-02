@@ -33,3 +33,10 @@ D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\Hu
 D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
