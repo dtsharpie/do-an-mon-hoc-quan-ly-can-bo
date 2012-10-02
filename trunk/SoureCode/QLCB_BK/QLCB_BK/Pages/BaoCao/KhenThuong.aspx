@@ -5,14 +5,135 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+ <style type="text/css">
+        .button
+        {
+            margin-left:650px;
+        }
+        .timkiem
+        {
+            background-color:Green;
+        }
+    </style>
 <div id="content">
+   
 	<!-- InstanceBeginEditable name="content" -->
     <br />
     <h1>Tìm kiếm thông tin khen thưởng</h1>
     <hr width="800px" />
     <form name="myform" action="" method="post" onsubmit="return false">  
-    <div id="timkiem">
+    <div id="timkiem" class="timkiem" style="background-color:Aqua; color:Black; border-color:Blue;">
+        <div class="hang">
+            <h4>Hình thức khen thưởng:</h4>
+            <asp:DropDownList ID="ddlHtkt" runat="server">
+                <asp:ListItem Value ="0"></asp:ListItem>
+                <asp:ListItem Value ="88" Text ="Bằng khen"></asp:ListItem>
+                <asp:ListItem Value ="98" Text ="Bằng khen Bộ Quốc phòng"></asp:ListItem>
+                <asp:ListItem Value ="01" Text ="Bằng khen cấp Bộ"></asp:ListItem>
+                <asp:ListItem Value ="94" Text ="Bằng khen cấp thành đoàn"></asp:ListItem>
+                <asp:ListItem Value ="03" Text ="Bằng khen của Thủ tướng chính phủ"></asp:ListItem>
+                <asp:ListItem Value ="96" Text ="Bằng khen của Trung ương đoàn"></asp:ListItem>
+                <asp:ListItem Value ="02" Text ="Bằng khen của Ủy ban nhân dân tỉnh"></asp:ListItem>
+                <asp:ListItem Value ="04" Text ="Bằng khen Lao động sáng tạo"></asp:ListItem>
+                <asp:ListItem Value ="05" Text ="Bằng khen Chiến sĩ thi đua cấp bộ"></asp:ListItem>
+                <asp:ListItem Value ="06" Text ="Bằng khen Chiến sĩ thi đua cấp cơ sở"></asp:ListItem>
+                <asp:ListItem Value ="08" Text ="Bằng khen Chiến sĩ thi đua cấp tỉnh"></asp:ListItem>
+                <asp:ListItem Value ="07" Text ="Bằng khen Chiến sĩ thi đua toàn quốc"></asp:ListItem>
+                <asp:ListItem Value ="09" Text ="Bằng khen Chiến sĩ thi đua cấp trường"></asp:ListItem>
+                <asp:ListItem Value ="12" Text ="Bằng khen Giảng viên giỏi"></asp:ListItem>
+                <asp:ListItem Value ="10" Text ="Bằng khen Giảng viên dậy giỏi cấp Bộ"></asp:ListItem>
+                <asp:ListItem Value ="11" Text ="Bằng khen Giảng viên dậy giỏi cấp tỉnh/thành phố"></asp:ListItem>
+                <asp:ListItem Value ="95" Text ="Giấy khen của trung ương đoàn"></asp:ListItem>
+                <asp:ListItem Value ="16" Text ="Huân chương chiến công gải phóng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="17" Text ="Huân chương chiến công gải phóng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="18" Text ="Huân chương chiến công gải phóng hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="19" Text ="Huân chương chiến công hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="20" Text ="Huân chương chiến công hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="21" Text ="Huân chương chiến công hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="22" Text ="Huân chương chiến sĩ giải phóng hạng  1"></asp:ListItem>
+                <asp:ListItem Value ="23" Text ="Huân chương chiến sĩ giải phóng hạng  2"></asp:ListItem>
+                <asp:ListItem Value ="24" Text ="Huân chương chiến sĩ giải phóng hạng  3"></asp:ListItem>
+                <asp:ListItem Value ="25" Text ="Huân chương chiến sĩ vẻ vang hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="26" Text ="Huân chương chiến sĩ vẻ vang hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="27" Text ="Huân chương chiến sĩ vẻ vang hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="28" Text ="Huân chương chiến thắng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="29" Text ="Huân chương chiến thắng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="30" Text ="Huân chương chiến thắng hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="31" Text ="Huân chương  gải phóng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="32" Text ="Huân chương  gải phóng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="33" Text ="Huân chương  gải phóng hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="35" Text ="Huân chương Hồ Chí Minh"></asp:ListItem>
+                <asp:ListItem Value ="34" Text ="Huân chương Hữu nghị"></asp:ListItem>
+                <asp:ListItem Value ="36" Text ="Huân chương Kháng chiến hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="37" Text ="Huân chương Kháng chiến chống Mĩ hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="38" Text ="Huân chương Kháng chiến chống Mĩ hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="39" Text ="Huân chương Kháng chiến chống Mĩ hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="40" Text ="Huân chương Kháng chiến chống Pháp hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="41" Text ="Huân chương Kháng chiến chống Pháp hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="42" Text ="Huân chương Kháng chiến chống Pháp hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="43" Text ="Huân chương Kháng chiến hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="44" Text ="Huân chương Kháng chiến hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="47" Text ="Huân chương Kháng chiến hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="48" Text ="Huân chương Lao động hang 1"></asp:ListItem>
+                <asp:ListItem Value ="49" Text ="Huân chương Lao động hang 2"></asp:ListItem>
+                <asp:ListItem Value ="50" Text ="Huân chương Lao động hang 3"></asp:ListItem>
+                <asp:ListItem Value ="51" Text ="Huân chuong Quân công giải phóng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="52" Text ="Huân chuong Quân công giải phóng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="53" Text ="Huân chuong Quân công giải phóng hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="54" Text ="Huân chuong Quân công hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="55" Text ="Huân chuong Quân công hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="56" Text ="Huân chuong Quân công hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="57" Text ="Huân chương quyết thắng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="58" Text ="Huân chương quyết thắng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="59" Text ="Huân chương quyết thắng hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="60" Text ="Huân chương Sao vàng"></asp:ListItem>
+                <asp:ListItem Value ="61" Text ="Huân chương Thành đồng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="62" Text ="Huân chương Thành đồng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="63" Text ="Huân chương Thành đồng hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="13" Text ="Huân chương độc lập hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="14" Text ="Huân chương độc lập hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="15" Text ="Huân chương độc lập hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="64" Text ="Huy chương anh hùng lao động"></asp:ListItem>
+                <asp:ListItem Value ="65" Text ="Huy chương anh hùng LLVT Giải phóng"></asp:ListItem>
+                <asp:ListItem Value ="66" Text ="Huy chương anh hùng LLVT"></asp:ListItem>
+                <asp:ListItem Value ="91" Text ="Huy chương chiến sĩ vẻ vang hạng 3"></asp:ListItem>
+                <asp:ListItem Value ="89" Text ="Huy chương chiến sĩ vẻ vang hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="90" Text ="Huy chương chiến sĩ vẻ vang hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="67" Text ="Huy chương chiến sĩ giải phóng"></asp:ListItem>
+                <asp:ListItem Value ="68" Text ="Huy chương chiến thắng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="69" Text ="Huy chương chiến thắng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="70" Text ="Huy chương giải phóng hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="71" Text ="Huy chương giải phóng hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="72" Text ="Huy chương Kháng chiến chống Mĩ hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="73" Text ="Huy chương Kháng chiến chống Mĩ hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="74" Text ="Huy chương Kháng chiến chống Pháp hạng 1"></asp:ListItem>
+                <asp:ListItem Value ="75" Text ="Huy chương Kháng chiến chống Pháp hạng 2"></asp:ListItem>
+                <asp:ListItem Value ="76" Text ="Huy chương Quân giải phóng Việt Nam"></asp:ListItem>
+                <asp:ListItem Value ="77" Text ="Huy chương Quân kì quyết thắng"></asp:ListItem>
+                <asp:ListItem Value ="78" Text ="Huy chương quyết thắng"></asp:ListItem>
+                <asp:ListItem Value ="79" Text ="Huy chương vì an ninh tổ quốc"></asp:ListItem>
+                <asp:ListItem Value ="97" Text ="Huy chương vì sự nghiệp công đoàn"></asp:ListItem>
+                <asp:ListItem Value ="82" Text ="Huy chương vì sự nghiệp giải phóng phụ nữ"></asp:ListItem>
+                <asp:ListItem Value ="81" Text ="Huy chương vì sự nghiệp Giáo dục"></asp:ListItem>
+                <asp:ListItem Value ="83" Text ="Huy chương vì sự nghiệp Ngoại giao"></asp:ListItem>
+                <asp:ListItem Value ="84" Text ="Huy chương vì sự nghiệp TDTT"></asp:ListItem>
+                <asp:ListItem Value ="85" Text ="Huy chương vì sự nghiệp Thanh tra"></asp:ListItem>
+                <asp:ListItem Value ="80" Text ="Huy chương vì sức khỏe nhân dân"></asp:ListItem>
+                <asp:ListItem Value ="86" Text ="Huy chương vì thế hệ trẻ"></asp:ListItem>
+                <asp:ListItem Value ="93" Text ="Huy chương vì sự nghiệp Khoa học"></asp:ListItem>
+                <asp:ListItem Value ="87" Text ="Kỉ niệm chương tổ quốc ghi công"></asp:ListItem>
+                <asp:ListItem Value ="92" Text ="Lao động giỏi"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+
+        <div class="hang">
+            Năm khen thưởng:
+                Từ năm <asp:TextBox ID="tbFrom" runat="server" Width="50px">2007</asp:TextBox>
+                đến năm <asp:TextBox ID="tbTo" runat="server" Width="50px">2012</asp:TextBox>
+        </div>
+            
     	<div class="hang">
+
             <h4> Đơn vị cấp 1,2,3:</h4>
             <div class="f_input row-right">
                <asp:DropDownList ID="ddlUnit123" runat="server">
@@ -329,8 +450,10 @@
           
         
     </div>
-    
-    <input type="image" src="../../Images/timkiem.png" style=" margin-left:650px;"  onclick="this.form.submit();"/>  
+   
+    <asp:ImageButton ID="btnSearch" runat="server" Text="Tìm kiếm" 
+        ImageUrl="~/Images/timkiem.png" CssClass="button" onclick="btnSearch_Click"/>
+    <%--<input type="image" src="../../Images/timkiem.png" style=" margin-left:650px;"  onclick="this.form.submit();"/>  --%>
     </form> 							
 	<!-- InstanceEndEditable -->
 </div><!--id=content -->
