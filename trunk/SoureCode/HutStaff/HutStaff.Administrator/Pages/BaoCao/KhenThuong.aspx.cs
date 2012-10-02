@@ -13,5 +13,10 @@ namespace HutStaff.Administrator.Pages.BaoCao
         {
 
         }
+		
+		protected void btnSearch_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }
