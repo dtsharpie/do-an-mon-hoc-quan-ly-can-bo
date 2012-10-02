@@ -34,3 +34,12 @@ D:\.NET\HutStaf\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
 D:\.NET\HutStaf\HutStaff.BO\obj\Debug\HutStaff.BO.csprojResolveAssemblyReference.cache
 D:\.NET\HutStaf\HutStaff.BO\obj\Debug\HutStaff.BO.dll
 D:\.NET\HutStaf\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
