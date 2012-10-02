@@ -13,5 +13,10 @@ namespace QLCB_BK.Pages.BaoCao
         {
 
         }
+
+        protected void btnSearch_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }
