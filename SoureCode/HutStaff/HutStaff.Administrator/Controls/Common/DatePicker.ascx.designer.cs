@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Controls.QuanLy {
+namespace HutStaff.Administrator.Controls.Common {
     
     
-    public partial class HintTextBox {
+    public partial class DatePicker {
         
         /// <summary>
         /// mainTextBox control.

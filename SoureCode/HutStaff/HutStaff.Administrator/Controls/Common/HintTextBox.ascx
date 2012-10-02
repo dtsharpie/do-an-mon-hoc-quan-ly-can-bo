@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HintTextBox.ascx.cs" Inherits="HutStaff.Administrator.Controls.QuanLy.HintTextBox" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HintTextBox.ascx.cs" Inherits="HutStaff.Administrator.Controls.Common.HintTextBox" %>
 <script type="text/javascript">
     $(document).ready(function () {
         var tb = $("#<%= mainTextBox.ClientID %>");

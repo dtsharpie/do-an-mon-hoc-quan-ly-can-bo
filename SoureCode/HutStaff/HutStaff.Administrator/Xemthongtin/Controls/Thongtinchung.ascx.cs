@@ -12,9 +12,10 @@ namespace HutStaff.Administrator.Xemthongtin.Controls
     public partial class Thongtinchung : ControlBase
     {
         DataTable tblData;
+        protected int iShcc;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int iShcc = BO.Security.ViewCurrentUser.GetViewCurrentUser().Shcc;
+            iShcc = BO.Security.ViewCurrentUser.GetViewCurrentUser().Shcc;
             if (iShcc > 0)
             {
                 tblData = BO.Soyeu.Soyeu.GetById(iShcc);
@@ -23,42 +24,38 @@ namespace HutStaff.Administrator.Xemthongtin.Controls
             }
         }
 
-        protected void ddlHktt_OnDataBinding(object sender, EventArgs e)
+        protected string GenHktt()
         {
+            string sHtml = "<select id=\"ddlHktt\" class=\"ddlChosen\">";
             if (tblData != null && tblData.Rows.Count > 0)
             {
                 DataTable tblHktt = BO.Tinhthanhpho.Tinhthanhpho.GetAll();
-                Administrator.Controls.Common.Dropdownlist ddl = (Administrator.Controls.Common.Dropdownlist)sender;
-                ddl.DisplayMember = "display";
-                ddl.ValueMember = "ma_huyen";
-                ddl.Datasource = tblHktt;
-                int iHktt = Convert.ToInt32(tblData.Rows[0]["ma_hktt"]);
-                if (iHktt > 0)
+
+                string sHktt = tblData.Rows[0]["ma_hktt"].ToString();
+                foreach (DataRow dr in tblHktt.Rows)
                 {
-                    ddl.Value = iHktt.ToString();
+                    sHtml += (dr["ma_huyen"].ToString() != sHktt ? "<option value=\"" + dr["ma_huyen"].ToString() + "\">" : "<option selected=\"selected\" value=\"" + dr["ma_huyen"].ToString() + "\">") + dr["display"].ToString() + "</option>";
                 }
             }
+            sHtml += "</select>";
+            return sHtml;
         }
 
-        protected void ddlNoicap_OnDataBinding(object sender, EventArgs e)
+        protected string GenNoicap()
         {
+            string sHtml = "<select id=\"ddlNoicap\" class=\"ddlChosen\">";
             if (tblData != null && tblData.Rows.Count > 0)
             {
-                DataTable tblTP = BO.Tinhthanhpho.Tinhthanhpho.GetAllCity();
-                if (tblTP.Rows.Count > 0 && String.IsNullOrEmpty(tblTP.Rows[0][1].ToString()))
+                DataTable tblNoicap = BO.Tinhthanhpho.Tinhthanhpho.GetAllCity();
+
+                string sNc = tblData.Rows[0]["nc"].ToString();
+                foreach (DataRow dr in tblNoicap.Rows)
                 {
-                    tblTP.Rows[0][1] = "Chưa xác định";
-                }
-                Administrator.Controls.Common.Dropdownlist ddl = (Administrator.Controls.Common.Dropdownlist)sender;
-                ddl.DisplayMember = "ttp";
-                ddl.ValueMember = "ma_ttp";
-                ddl.Datasource = tblTP;
-                int iNoicap = Convert.ToInt32(tblData.Rows[0]["nc"]);
-                if (iNoicap > 0)
-                {
-                    ddl.Value = iNoicap.ToString();
+                    sHtml += (dr["ma_ttp"].ToString() != sNc ? "<option value=\"" + dr["ma_ttp"].ToString() + "\">" : "<option selected=\"selected\" value=\"" + dr["ma_ttp"].ToString() + "\">") + (!String.IsNullOrEmpty(dr["ttp"].ToString()) ? dr["ttp"].ToString() : "Chưa xác định") + "</option>";
                 }
             }
+            sHtml += "</select>";
+            return sHtml;
         }
     }
 }

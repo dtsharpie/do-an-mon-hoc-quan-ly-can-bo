@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Controls.QuanLy
+namespace HutStaff.Administrator.Controls.Common
 {
     public partial class DropDownChosen : System.Web.UI.UserControl
     {

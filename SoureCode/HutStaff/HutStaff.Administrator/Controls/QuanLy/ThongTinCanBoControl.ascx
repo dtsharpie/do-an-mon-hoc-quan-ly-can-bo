@@ -1,8 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ThongTinCanBoControl.ascx.cs"
     Inherits="HutStaff.Administrator.Controls.QuanLy.ThongTinCanBoControl" %>
-<%@ Register Src="DatePicker.ascx" TagName="DatePicker" TagPrefix="uc1" %>
-<%@ Register Src="DropDownChosen.ascx" TagName="DropDownChosen" TagPrefix="uc2" %>
-<%@ Register Src="HintTextBox.ascx" TagName="HintTextBox" TagPrefix="uc3" %>
+<%@ Register Src="/Controls/Common/DatePicker.ascx" TagName="DatePicker" TagPrefix="uc1" %>
+<%@ Register Src="/Controls/Common/DropDownChosen.ascx" TagName="DropDownChosen" TagPrefix="uc2" %>
+<%@ Register Src="/Controls/Common/HintTextBox.ascx" TagName="HintTextBox" TagPrefix="uc3" %>
 <style type="text/css">
     .style1
     {

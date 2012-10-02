@@ -56,9 +56,9 @@
     <Content Include="Controls\Common\ViewMenu.ascx" />
     <Content Include="Controls\Common\Pager.ascx" />
     <Content Include="Controls\Common\SideMenu.ascx" />
-    <Content Include="Controls\QuanLy\DatePicker.ascx" />
-    <Content Include="Controls\QuanLy\DropDownChosen.ascx" />
-    <Content Include="Controls\QuanLy\HintTextBox.ascx" />
+    <Content Include="Controls\Common\DatePicker.ascx" />
+    <Content Include="Controls\Common\DropDownChosen.ascx" />
+    <Content Include="Controls\Common\HintTextBox.ascx" />
     <Content Include="Controls\QuanLy\ThongTinCanBoControl.ascx" />
     <Content Include="Controls\TimKiem\SearchForm.ascx" />
     <Content Include="Controls\TimKiem\SearchResult.ascx" />
@@ -136,7 +136,6 @@
     <Content Include="Script\datepicker\jquery.datepick.js" />
     <Content Include="Styles\chosen-sprite.png" />
     <Content Include="Styles\chosen.css" />
-    <Content Include="Script\chosen.jquery.js" />
     <Content Include="Script\chosen.jquery.min.js" />
     <Content Include="Script\common.js" />
     <Content Include="Script\jquery-1.8.1.min.js" />
@@ -203,25 +202,25 @@
     <Compile Include="Controls\Common\SideMenu.ascx.designer.cs">
       <DependentUpon>SideMenu.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\QuanLy\DatePicker.ascx.cs">
+    <Compile Include="Controls\Common\DatePicker.ascx.cs">
       <DependentUpon>DatePicker.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\QuanLy\DatePicker.ascx.designer.cs">
+    <Compile Include="Controls\Common\DatePicker.ascx.designer.cs">
       <DependentUpon>DatePicker.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\QuanLy\DropDownChosen.ascx.cs">
+    <Compile Include="Controls\Common\DropDownChosen.ascx.cs">
       <DependentUpon>DropDownChosen.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\QuanLy\DropDownChosen.ascx.designer.cs">
+    <Compile Include="Controls\Common\DropDownChosen.ascx.designer.cs">
       <DependentUpon>DropDownChosen.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\QuanLy\HintTextBox.ascx.cs">
+    <Compile Include="Controls\Common\HintTextBox.ascx.cs">
       <DependentUpon>HintTextBox.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\QuanLy\HintTextBox.ascx.designer.cs">
+    <Compile Include="Controls\Common\HintTextBox.ascx.designer.cs">
       <DependentUpon>HintTextBox.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\QuanLy\ThongTinCanBoControl.ascx.cs">

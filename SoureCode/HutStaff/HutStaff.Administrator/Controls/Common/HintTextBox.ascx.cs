@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
 
-namespace HutStaff.Administrator.Controls.QuanLy
+namespace HutStaff.Administrator.Controls.Common
 {
     public partial class HintTextBox : System.Web.UI.UserControl
     {
