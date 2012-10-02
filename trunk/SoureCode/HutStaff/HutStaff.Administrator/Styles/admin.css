@@ -524,4 +524,7 @@ table {font-size: 9pt;}
 .report-table td.Row2{background-color: #DEE3E7;}
 .report-table td.Row1{background-color: #EFEFEF;}
 .report-table td.Row3{background-color: #D1D7DC;}
+.report-table td.row2{background-color: #DEE3E7;vertical-align:top;}
+.report-table td.row1{background-color: #EFEFEF;font-weight:normal;}
+.report-table .p-title{font-weight:bold;}
 /******** End of HungPV Style *************/
