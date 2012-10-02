@@ -19,7 +19,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.HintTextBox htbHoVaTenDem;
+        protected global::HutStaff.Administrator.Controls.Common.HintTextBox htbHoVaTenDem;
         
         /// <summary>
         /// htbTen control.
@@ -28,7 +28,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.HintTextBox htbTen;
+        protected global::HutStaff.Administrator.Controls.Common.HintTextBox htbTen;
         
         /// <summary>
         /// dpkNgaySinh control.
@@ -37,7 +37,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgaySinh;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgaySinh;
         
         /// <summary>
         /// chzGioiTinh control.
@@ -46,7 +46,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzGioiTinh;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzGioiTinh;
         
         /// <summary>
         /// txbSoCmtnd control.
@@ -64,7 +64,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayCapCmtnd;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayCapCmtnd;
         
         /// <summary>
         /// chzNoiCapCmtnd control.
@@ -73,7 +73,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzNoiCapCmtnd;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzNoiCapCmtnd;
         
         /// <summary>
         /// txbEmail control.
@@ -100,7 +100,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTrinhDoHocVan;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTrinhDoHocVan;
         
         /// <summary>
         /// chzTrinhDoTinHoc control.
@@ -109,7 +109,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTrinhDoTinHoc;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTrinhDoTinHoc;
         
         /// <summary>
         /// chzTrinhDoLyLuan control.
@@ -118,7 +118,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTrinhDoLyLuan;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTrinhDoLyLuan;
         
         /// <summary>
         /// chzTrinhDoQuanLy control.
@@ -127,7 +127,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTrinhDoQuanLy;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTrinhDoQuanLy;
         
         /// <summary>
         /// txbSoTruong control.
@@ -145,7 +145,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayVeCoQuan;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayVeCoQuan;
         
         /// <summary>
         /// dpkNgayVaoBienChe control.
@@ -154,7 +154,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayVaoBienChe;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayVaoBienChe;
         
         /// <summary>
         /// chzKhoiCanBo control.
@@ -163,7 +163,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzKhoiCanBo;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzKhoiCanBo;
         
         /// <summary>
         /// chzDienCanBo control.
@@ -172,7 +172,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzDienCanBo;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzDienCanBo;
         
         /// <summary>
         /// chzDonViQuanLy control.
@@ -181,7 +181,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzDonViQuanLy;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzDonViQuanLy;
         
         /// <summary>
         /// txbViecDuocPhanCong control.
@@ -208,7 +208,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayBatDauTinhThamNien;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayBatDauTinhThamNien;
         
         /// <summary>
         /// dpkMocHuongThamNien control.
@@ -217,7 +217,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkMocHuongThamNien;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkMocHuongThamNien;
         
         /// <summary>
         /// dpkNgayKetThucHopDong control.
@@ -226,7 +226,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayKetThucHopDong;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayKetThucHopDong;
         
         /// <summary>
         /// txbLyDoKetThucHopDong control.
@@ -244,7 +244,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzThangGianDoan;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzThangGianDoan;
         
         /// <summary>
         /// dpkNgayThamGiaCachMang control.
@@ -253,7 +253,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayThamGiaCachMang;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayThamGiaCachMang;
         
         /// <summary>
         /// dpkNgayVaoDang control.
@@ -262,7 +262,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayVaoDang;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayVaoDang;
         
         /// <summary>
         /// dpkNgayChinhThuc control.
@@ -271,7 +271,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayChinhThuc;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayChinhThuc;
         
         /// <summary>
         /// dpkNgayNhapNgu control.
@@ -280,7 +280,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayNhapNgu;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayNhapNgu;
         
         /// <summary>
         /// dpkNgayXuatNgu control.
@@ -289,7 +289,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayXuatNgu;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayXuatNgu;
         
         /// <summary>
         /// txbQuanHam control.
@@ -307,7 +307,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzThuongBinh;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzThuongBinh;
         
         /// <summary>
         /// chzGiaDinhChinhSach control.
@@ -316,7 +316,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzGiaDinhChinhSach;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzGiaDinhChinhSach;
         
         /// <summary>
         /// chzThanhPhanXuatThan control.
@@ -325,7 +325,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzThanhPhanXuatThan;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzThanhPhanXuatThan;
         
         /// <summary>
         /// txbTenThuongDung control.
@@ -343,7 +343,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzNoiSinh;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzNoiSinh;
         
         /// <summary>
         /// DropDownChosen1 control.
@@ -352,7 +352,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen DropDownChosen1;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen DropDownChosen1;
         
         /// <summary>
         /// txbChiTietQueQuan control.
@@ -379,7 +379,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzHoKhauThuongTru;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzHoKhauThuongTru;
         
         /// <summary>
         /// txbChiTietHoKhauThuongTru control.
@@ -406,7 +406,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayBatDauDongBaoHiem;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayBatDauDongBaoHiem;
         
         /// <summary>
         /// dpkNgayNhanBaoHiemChinhThuc control.
@@ -415,7 +415,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DatePicker dpkNgayNhanBaoHiemChinhThuc;
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayNhanBaoHiemChinhThuc;
         
         /// <summary>
         /// chzTinhTrangSucKhoe control.
@@ -424,7 +424,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTinhTrangSucKhoe;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTinhTrangSucKhoe;
         
         /// <summary>
         /// chzNhomMau control.
@@ -433,7 +433,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzNhomMau;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzNhomMau;
         
         /// <summary>
         /// chzTinhTrangHonNhan control.
@@ -442,7 +442,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTinhTrangHonNhan;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTinhTrangHonNhan;
         
         /// <summary>
         /// txbLichSuBanThan control.
@@ -460,7 +460,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzDanToc;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzDanToc;
         
         /// <summary>
         /// chzTonGiao control.
@@ -469,7 +469,7 @@ namespace HutStaff.Administrator.Controls.QuanLy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.QuanLy.DropDownChosen chzTonGiao;
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTonGiao;
         
         /// <summary>
         /// txbThongTinKhac control.

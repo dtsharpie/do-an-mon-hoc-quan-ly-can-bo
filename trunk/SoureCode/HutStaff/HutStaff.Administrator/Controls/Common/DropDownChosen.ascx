@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DropDownChosen.ascx.cs"
-    Inherits="HutStaff.Administrator.Controls.QuanLy.DropDownChosen" %>
+    Inherits="HutStaff.Administrator.Controls.Common.DropDownChosen" %>
 <script type="text/javascript">
     $(document).ready(function () {
         $("#<%= mainDropDownList.ClientID %>").chosen({

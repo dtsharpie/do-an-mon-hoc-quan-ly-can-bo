@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 using System.Text.RegularExpressions;
 
-namespace HutStaff.Administrator.Controls.QuanLy
+namespace HutStaff.Administrator.Controls.Common
 {
     public partial class DatePicker : System.Web.UI.UserControl
     {

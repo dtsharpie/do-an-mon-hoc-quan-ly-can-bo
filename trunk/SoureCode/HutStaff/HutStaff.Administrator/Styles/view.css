@@ -455,7 +455,7 @@ table
     margin-left: 10px;
 }
 
-#rptData_ddlHktt_0_ddlSelectUserControl_0_chzn
+#ddlHktt_chzn , #ddlNoicap_chzn
 {
     vertical-align: middle;
 }

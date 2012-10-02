@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Controls.QuanLy {
+namespace HutStaff.Administrator.Controls.Common {
     
     
-    public partial class DropDownChosen {
+    public partial class HintTextBox {
         
         /// <summary>
-        /// mainDropDownList control.
+        /// mainTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList mainDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox mainTextBox;
     }
 }

@@ -2,7 +2,6 @@
     Inherits="HutStaff.Administrator.Xemthongtin.Controls.Thongtinchung" %>
 <%@ Register Src="~/Controls/Common/Dropdownlist.ascx" TagPrefix="uc" TagName="dropdownlist" %>
 <div class="content">
-    <form action="" id="frmComonInfo">
     <h1 class="title">
         Thông tin chung
     </h1>
@@ -58,7 +57,7 @@
                         </td>
                         <td>
                             <label>
-                                Hôn nhân:<span><%# Eval("tthn")%></span>
+                                Hôn nhân:<span><%# Eval("tt_hn")%></span>
                             </label>
                         </td>
                         <td>
@@ -82,13 +81,13 @@
                     <tr class="even">
                         <td>
                             <label>
-                                Hộ khẩu thường trú:&nbsp;&nbsp;&nbsp;<uc:dropdownlist ID="ddlHktt" OnDataBinding="ddlHktt_OnDataBinding"
-                                    runat="server" />
+                                Hộ khẩu thường trú:&nbsp;&nbsp;&nbsp;<%# GenHktt() %>
                             </label>
                         </td>
-                        <td colspan="2">
+                        <td colspan="3">
                             <label>
-                                Chi tiết:<span><%# Eval("hktt") %></span>
+                                Chi tiết:<input id="chitiet" value="<%# Eval("cthktt") %>" style="font-weight: bold;
+                                    width: 440px;" />
                             </label>
                         </td>
                     </tr>
@@ -96,37 +95,38 @@
                         <td colspan="3">
                             <label>
                                 Chỗ ở hiện nay:<span>
-                                    <input value="<%# Eval("dctt") %>" style="width: 960px; font-weight: bold;" /></span>
+                                    <input id="dctt" value="<%# Eval("dctt") %>" style="width: 960px; font-weight: bold;" /></span>
                             </label>
                         </td>
                     </tr>
                     <tr class="even">
                         <td>
                             <label>
-                                Điện thoại:<input style="font-weight: bold" value="<%# Eval("tel") %>" />
+                                Điện thoại:<input id="tel" style="font-weight: bold; margin-left: 10px;" value="<%# Eval("tel") %>" />
                             </label>
                         </td>
                         <td colspan="3">
                             <label>
-                                Email:<input style="font-weight: bold; width: 395px;" value="<%# Eval("email") %>" />
+                                Email:<input id="email" style="font-weight: bold; width: 435px; margin-left: 10px;"
+                                    value="<%# Eval("email") %>" />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                                Số CMND:<input style="font-weight: bold;" value="<%# Eval("scmnd") %>" />
+                                Số CMND:<input id="scmnd" style="font-weight: bold; margin-left: 10px;" value="<%# Eval("scmnd") %>" />
                             </label>
                         </td>
                         <td>
                             <label>
-                                Nơi cấp:<uc:dropdownlist ID="ddlNoicap" OnDataBinding="ddlNoicap_OnDataBinding" runat="server" />
+                                Nơi cấp:&nbsp;&nbsp;&nbsp;<%# GenNoicap() %>
                             </label>
                         </td>
                         <td>
                             <label>
-                                Ngày cấp:<input value="<%# Eval("ndbh") == DBNull.Value ? "" : Convert.ToDateTime(Eval("ndbh")).ToString("dd/MM/yyyy")%>"
-                                    style="font-weight:bold;" />
+                                Ngày cấp:<input id="ngay_cap" value="<%# Eval("ngay_cap") == DBNull.Value ? "" : Convert.ToDateTime(Eval("ngay_cap")).ToString("dd/MM/yyyy")%>"
+                                    style="font-weight: bold; margin-left: 10px;" />
                             </label>
                         </td>
                     </tr>
@@ -186,7 +186,7 @@
                         </td>
                         <td colspan="2">
                             <label>
-                                Khối cán bộ:<span><%# Eval("kcb")%></span>
+                                Khối cán bộ:<span><%# Eval("k_cb")%></span>
                             </label>
                         </td>
                     </tr>
@@ -318,16 +318,35 @@
         </asp:Repeater>
     </div>
     <div style="margin-top: 10px;">
-        <input class="button" type="submit" value="Cập nhật" id="btnUpdate" />
+        <input class="button" type="button" value="Cập nhật" id="btnUpdate" />
         <input class="button" type="reset" value="Khởi tạo lại" id="btnReset" />
     </div>
-    </form>
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#ab').datepick({
+        $('#ndbh').datepick({
             dateFormat: 'dd/mm/yyyy',
-            yearRange: '1920:2020'
+            yearRange: '1990:2050'
+        });
+
+        $(".ddlChosen").chosen({ no_results_text: "Không có kết quả phù hợp", placeholder_text: "Chọn giá trị" });
+
+        $("#btnUpdate").click(function () {
+            execution({ _fn: "HutStaff.BO.Soyeu.Soyeu.Update",
+                shcc: "<%= iShcc %>",
+                ma_hktt: $("#ddlHktt").val(),
+                cthktt: $("#chitiet").val(),
+                dctt: $("#dctt").val(),
+                tel: $("#tel").val(),
+                email: $("#email").val(),
+                scmnd: $("#scmnd").val(),
+                nc: $("#ddlNoicap").val(),
+                ngay_cap: $("#ngay_cap").val()
+            }, true);
+        });
+
+        $("#btnReset").click(function () {
+            loadContentView({ alias: "xtt-thong-tin-chung" }, false);
         });
     });
 </script>
