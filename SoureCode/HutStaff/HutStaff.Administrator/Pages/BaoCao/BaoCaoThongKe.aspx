@@ -19,7 +19,7 @@
 				        <td align="right" class="row3">BÁO CÁO LOẠI II</td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript: openNew('rpt01.php');">Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính.</a></td>
+				        <td class="row1"><a href="Report.aspx">Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính.</a></td>
 				        <td align="right" class="row1"><a href="javascript:openNew('rpt13.php');">Danh sách cán bộ đến tuổi nghỉ hưu.</a></td>
 			        </tr>
 			        <tr>
