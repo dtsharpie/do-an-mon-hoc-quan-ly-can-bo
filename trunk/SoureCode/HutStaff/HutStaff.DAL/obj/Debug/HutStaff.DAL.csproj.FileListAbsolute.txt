@@ -40,3 +40,10 @@ D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.p
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
