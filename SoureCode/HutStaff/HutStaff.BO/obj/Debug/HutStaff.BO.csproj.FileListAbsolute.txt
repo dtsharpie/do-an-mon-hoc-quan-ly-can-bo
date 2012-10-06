@@ -52,12 +52,3 @@ D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
-C:\Users\daubac402\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
