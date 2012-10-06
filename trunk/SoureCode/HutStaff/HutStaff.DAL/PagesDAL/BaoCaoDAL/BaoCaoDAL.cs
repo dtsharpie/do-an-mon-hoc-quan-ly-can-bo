@@ -7,7 +7,7 @@ using HutStaff.Common;
 
 namespace HutStaff.DAL.PagesDAL.BaoCaoDAL
 {
-    public class BaoCaoThongKeDAL
+    public class BaoCaoDAL
     {
         public static DataTable ViewAlldm_dv()
         {
@@ -25,6 +25,12 @@ namespace HutStaff.DAL.PagesDAL.BaoCaoDAL
             }
         }
 
-        
+        public static DataTable ViewAlldm_kt()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_view_all_dm_kt", new string[] { }, new object[] { });
+            }
+        }        
     }
 }
