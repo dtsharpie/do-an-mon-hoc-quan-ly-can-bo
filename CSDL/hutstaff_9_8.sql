@@ -117,10 +117,8 @@ GO
 	GO
 
 	CREATE TABLE dm_dv(
-	  ma_dv int identity(1,1) NOT NULL,
+	  ma_dv VARCHAR(6) NOT NULL,
 	  dv nvarchar(200) DEFAULT NULL,
-	  cap int DEFAULT NULL,
-	  cha int DEFAULT NULL,
 	  PRIMARY KEY (ma_dv),
 	);
 	GO
@@ -340,7 +338,7 @@ GO
 	CREATE TABLE Users
 	(
 		id INT IDENTITY(1,1) ,
-		ma_dv INT REFERENCES dm_dv(ma_dv),	
+		ma_dv VARCHAR(6) REFERENCES dm_dv(ma_dv),	
 		[user] VARCHAR(50) NOT NULL UNIQUE,
 		pass   VARCHAR(50)	NOT NULL,
 		quyen BIT NOT NULL,
@@ -358,7 +356,7 @@ GO
 		scmnd			VARCHAR(10),
 		nc				INT REFERENCES dm_ttp(ma_ttp),
 		ngay_cap		DATETIME,
-		ma_dvql			INT REFERENCES dm_dv(ma_dv),
+		ma_dvql			VARCHAR(6) REFERENCES dm_dv(ma_dv),
 		hodem			NVARCHAR(30),
 		ten				NVARCHAR(20),  
 		gt				DECIMAL(1,0),
@@ -418,6 +416,9 @@ GO
 		ma_huyhoso		INT IDENTITY(1,1),
 		user_id			INT REFERENCES Users(id),
 		hoten			NVARCHAR(50),
+		ngayyeucau		DATETIME,
+		Nguoiduyet		INT REFERENCES Users(id),
+		ngayduyet		DATETIME,
 		yeucau			NVARCHAR(255),
 		duyet			NVARCHAR(255),
 		trangthai		BIT DEFAULT 0,
@@ -599,8 +600,5 @@ GO
 		CONSTRAINT PK_tdnn_tbl PRIMARY KEY (id)
 	) 
 	GO
-	
-	
-	
 	
 	
