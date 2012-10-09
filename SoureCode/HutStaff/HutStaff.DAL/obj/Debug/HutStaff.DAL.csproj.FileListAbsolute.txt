@@ -47,3 +47,10 @@ D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.D
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
