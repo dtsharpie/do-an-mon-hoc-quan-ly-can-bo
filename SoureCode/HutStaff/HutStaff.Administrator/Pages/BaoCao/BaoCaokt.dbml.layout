@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.125" name="BaoCaokt">
+  <DataContextMoniker Name="/BaoCaoktDataContext" />
+  <nestedChildShapes>
+    <classShape Id="56a7a5c4-64c2-4b13-afc3-a72ffd5b079b" absoluteBounds="0.625, 2.75, 2, 10.135256347656251">
+      <DataClassMoniker Name="/BaoCaoktDataContext/soyeu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c223ae9-5b2f-4d50-8763-cc8e3b28df22" absoluteBounds="0.64000000000000012, 3.21, 1.9700000000000002, 9.57525634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a31d989-f866-450d-bfcc-ce9f4f9839aa" absoluteBounds="1, 0.5, 2, 1.75354248046875">
+      <DataClassMoniker Name="/BaoCaoktDataContext/qtkt_tbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b236100-a7ed-459d-b2bc-73d3f0542974" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.8125 : 2.75); (1.8125 : 2.25354248046875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BaoCaoktDataContext/soyeu/soyeu_qtkt_tbl" />
+      <nodes>
+        <classShapeMoniker Id="56a7a5c4-64c2-4b13-afc3-a72ffd5b079b" />
+        <classShapeMoniker Id="5a31d989-f866-450d-bfcc-ce9f4f9839aa" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5bb5071b-3695-4ef0-b241-b57dd5b6e637" absoluteBounds="3.5, 0.875, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/BaoCaoktDataContext/dm_dv" />
+      <nestedChildShapes>
+        <elementListCompartment Id="014e3220-0c3c-4bfa-9788-27c3c28e8f3a" absoluteBounds="3.5149999999999997, 1.335, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.40625 : 1.97115315755208); (5.40625 : 8.58445475260417); (2.625 : 8.58445475260417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BaoCaoktDataContext/dm_dv/dm_dv_soyeu" />
+      <nodes>
+        <classShapeMoniker Id="5bb5071b-3695-4ef0-b241-b57dd5b6e637" />
+        <classShapeMoniker Id="56a7a5c4-64c2-4b13-afc3-a72ffd5b079b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fc229553-3bac-4ecb-9091-b8072658ab3c" absoluteBounds="3.25, 3.125, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/BaoCaoktDataContext/dm_kt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d35a621-ff58-41c9-ba37-6c693ca2fa3a" absoluteBounds="3.265, 3.585, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.34375 : 3.125); (3.34375 : 0.65625); (3 : 0.65625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BaoCaoktDataContext/dm_kt/dm_kt_qtkt_tbl" />
+      <nodes>
+        <classShapeMoniker Id="fc229553-3bac-4ecb-9091-b8072658ab3c" />
+        <classShapeMoniker Id="5a31d989-f866-450d-bfcc-ce9f4f9839aa" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
