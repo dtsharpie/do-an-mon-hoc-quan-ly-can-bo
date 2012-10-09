@@ -42,6 +42,14 @@ namespace HutStaff.Administrator.Pages.BaoCao
 		
 		protected void btnSearch_Click(object sender, ImageClickEventArgs e)
         {
+            BaoCaoktDataContext dbKt = new BaoCaoktDataContext();
+            gvResultSearch.DataSource = dbKt.qtkt_tbls.ToList();
+
+            int count = (from tt in dbKt.qtkt_tbls
+                         select tt).Count();
+            Response.Write("<h1>" +count+"</h1>");
+            lbllblResultSearch.Text ="<u>"+ count.ToString() +" ket qua tim thay </u>";
+            gvResultSearch.DataBind();
 
         }
     }

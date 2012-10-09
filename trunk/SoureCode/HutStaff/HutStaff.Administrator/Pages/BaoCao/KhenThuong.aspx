@@ -336,10 +336,32 @@
         
     </div>
    
+   
     <asp:ImageButton ID="btnSearch" runat="server" Text="Tìm kiếm" 
         ImageUrl="~/Images/timkiem.png" CssClass="button" onclick="btnSearch_Click"/>
     <%--<input type="image" src="../../Images/timkiem.png" style=" margin-left:650px;"  onclick="this.form.submit();"/>  --%>
     </form> 							
 	<!-- InstanceEndEditable -->
+
+    <div id = "ResultSearch" class ="kqtk_kt">
+    <asp:Label ID="x" runat="server" Text="Ket qua: co "></asp:Label><asp:Label ID="lbllblResultSearch" runat="server"></asp:Label><br />
+    <h1><asp:HyperLink ID="xuatdata" Text="Xuat du lieu" CssClass="hpl" runat="server" NavigateUrl="~/Pages/BaoCao/KhenThuong.aspx"></asp:HyperLink></h1>
+        <asp:GridView ID = "gvResultSearch" runat="server" CssClass="gvResultSearch" 
+            Width="100%" PageSize="40" BackColor="White" BorderColor="#3366CC" 
+            BorderStyle="Groove" BorderWidth="2px" CellPadding="4">
+            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+            <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+            <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+            <RowStyle BackColor="White" ForeColor="#003399" />
+            <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+            <SortedAscendingCellStyle BackColor="#EDF6F6" />
+            <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+            <SortedDescendingCellStyle BackColor="#D6DFDF" />
+            <SortedDescendingHeaderStyle BackColor="#002876" />
+            
+
+        </asp:GridView>
+
+   </div>
 </div><!--id=content -->
 </asp:Content>
