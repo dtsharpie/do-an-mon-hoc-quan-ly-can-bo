@@ -24,8 +24,8 @@
     <div id="timkiem" class="timkiem" style="background-color:Aqua; color:Black; border-color:Blue;">
         <div class="hang">
             <h4>Hình thức khen thưởng:</h4>
-            <span class=”ddl”>
-                <asp:DropDownList ID="cmb_HinhThucKhenThuong" runat="server" />
+            <span class="ddl" >
+                <asp:DropDownList ID="cmb_HinhThucKhenThuong" runat="server" CssClass="ddl"/>
             </span>
         </div>
 
@@ -39,7 +39,7 @@
 
             <h4> Đơn vị cấp 1,2,3:</h4>
             <div class="f_input row-right">
-               <asp:DropDownList ID="ddlUnit123" runat="server">
+               <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl">
                 <asp:ListItem Value ="1.00200000" Text ="Toàn trường"></asp:ListItem>
                 <asp:ListItem Value ="2.00203000-2.00209000" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa + Viện"></asp:ListItem>
                 <asp:ListItem Value ="3.00203140" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa giáo dục quốc phòng"></asp:ListItem>
@@ -298,10 +298,11 @@
         <div class="hang">
         	<h4>Diện cán bộ:</h4>
              <div class="row-right">
-                 <span class=”ddl”><asp:DropDownList ID="cmb_DienCanBo" runat="server" CssClass ="ddl" /></span>
+                 <span class="ddl"><asp:DropDownList ID="cmb_DienCanBo" runat="server" CssClass ="ddl" /></span>
         	</div>
         </div>
-         <div class="hang">
+
+        <%-- <div class="hang">
         	<h4>Hiện nay:</h4>
              <div class="row-right">
                  <asp:DropDownList ID="ddlHiennay" runat="server">
@@ -314,7 +315,8 @@
                     <asp:ListItem Value ="5" Text ="Hiện không hưởng lương"></asp:ListItem>
                  </asp:DropDownList>  
         	</div> 
-        </div>
+        </div>--%>
+
           <div class="hang">
         	<h4>Khối cán bộ:</h4>
              <div class="row-right">

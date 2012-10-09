@@ -26,3 +26,8 @@ D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Commo
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
