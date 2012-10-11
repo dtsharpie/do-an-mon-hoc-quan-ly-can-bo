@@ -13,39 +13,21 @@ namespace HutStaff.Administrator.Pages.QuanLy {
     public partial class NguoiDung {
         
         /// <summary>
-        /// Text1 control.
+        /// SqlDataSource_User control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_User;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// GridView_User control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// Pager3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.Pager Pager3;
-        
-        /// <summary>
-        /// Pager4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.Pager Pager4;
+        protected global::System.Web.UI.WebControls.GridView GridView_User;
     }
 }

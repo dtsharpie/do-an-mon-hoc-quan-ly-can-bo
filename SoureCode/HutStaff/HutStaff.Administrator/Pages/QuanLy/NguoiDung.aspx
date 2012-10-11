@@ -1,169 +1,72 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="NguoiDung.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.NguoiDung" %>
-
-<%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
+﻿<%@ Page Title="Quản lý người dùng" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="NguoiDung.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.NguoiDung" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.mainNav .ml').removeClass("active");
-            $('.mainNav .ml').eq(1).addClass('active');
-            $('.subNav > li').removeClass("active");
-            $('.subNav > li').eq(2).addClass("active");
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="content">
-        <h1 class="title">
-            Quản lý người dùng</h1>
-        <hr width="750px" />
-        <div class="main clear">
-            <form id="Form1">
-            <div class="filterBox">
-                <table>
-                    <tr>
-                        <td style="width: 60px">
-                            Tìm kiếm
-                        </td>
-                        <td>
-                            <input type="text" runat="server" id="Text1" class="textbox" />
-                        </td>
-                        <td>
-                            <asp:DropDownList ID="DropDownList1" runat="server" DataTextField="Name" DataValueField="Id"
-                                Width="200px">
-                                <asp:ListItem Value="2">Trạng thái</asp:ListItem>
-                                <asp:ListItem Value="0">Chưa duyệt</asp:ListItem>
-                                <asp:ListItem Value="1">Đã duyệt</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            <input type="submit" id="Submit1" class="button" value="Tìm kiếm" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            </form>
-            <div class="footer-table">
-                <div class="left">
-                    <a target="_blank" href="javascript:void(0);" class="link-tool left">Duyệt / Không duyệt</a>
-                </div>
-                <div class="right">
-                    <uc1:Pager ID="Pager3" runat="server" />
-                </div>
-            </div>
-            <table class="table-result">
-                <tr>
-                    <th>
-                        STT
-                    </th>
-                    <th width="180">
-                        Tên truy cập
-                    </th>
-                    <th width="300">
-                        Chi tiết
-                    </th>
-                    <th>
-                        Tình trạng
-                    </th>
-                    <th>
-                        &nbsp;
-                    </th>
-                    <th>
-                        &nbsp;
-                    </th>
-                </tr>
-                <tr>
-                    <td class="Row1" width="30">
-                        1
-                    </td>
-                    <td class="Row2" width="80">
-                        <a href="javascript:view('anhcp');">anhcp</a>
-                    </td>
-                    <td class="Row1">
-                        Chuyên viên phòng TCCB
-                    </td>
-                    <td class="Row2" width="70">
-                        Hoạt động
-                    </td>
-                    <td class="Row1" width="70">
-                        <a href="huyhoso.php?sh=322">Xóa</a>
-                    </td>
-                    <td>
-                        <input type="checkbox" />
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td class="Row1" width="30">
-                        2
-                    </td>
-                    <td class="Row2" width="80">
-                        <a href="javascript:view('bdhung');">bdhung</a>
-                    </td>
-                    <td class="Row1">
-                        BCH Công đoàn
-                    </td>
-                    <td class="Row2" width="70">
-                        Hoạt động
-                    </td>
-                    <td class="Row1" width="70">
-                        <a href="huyhoso.php?sh=322">Xóa</a>
-                    </td>
-                    <td>
-                        <input type="checkbox" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="Row1" width="30">
-                        3
-                    </td>
-                    <td class="Row2" width="80">
-                        <a href="javascript:view('bklib');">bklib</a>
-                    </td>
-                    <td class="Row1">
-                        Phó Giám đốc Thư viện Tạ Quang Bửu
-                    </td>
-                    <td class="Row2" width="70">
-                        Hoạt động
-                    </td>
-                    <td class="Row1" width="70">
-                        <a href="huyhoso.php?sh=322">Xóa</a>
-                    </td>
-                    <td>
-                        <input type="checkbox" />
-                    </td>
-                </tr>
-                <tr class="even">
-                    <td class="Row1" width="30">
-                        4
-                    </td>
-                    <td class="Row2" width="80">
-                        <a href="javascript:view('btthuong');">btthuong</a>
-                    </td>
-                    <td class="Row1">
-                        Phong Tccb
-                    </td>
-                    <td class="Row2" width="70">
-                        Hoạt động
-                    </td>
-                    <td class="Row1" width="70">
-                        <a href="huyhoso.php?sh=322">Xóa</a>
-                    </td>
-                    <td>
-                        <input type="checkbox" />
-                    </td>
-                </tr>
-            </table>
-            <div class="footer-table">
-                <div class="left">
-                    <a target="_blank" href="javascript:void(0);" class="link-tool left">Tạo mới</a>
-                    <a target="_blank" href="javascript:void(0);" class="link-tool left">Xóa</a>
-                </div>
-                <div class="right">
-                    <uc1:Pager ID="Pager4" runat="server" />
-                </div>
-            </div>
-        </div>
+        <asp:SqlDataSource id="SqlDataSource_User" runat="server"
+            ConnectionString="<%$ ConnectionStrings:QLCB %>" 
+            SelectCommand="SELECT [user], [quyen], [isLock], dv FROM [Users], [dm_dv] WHERE [Users].ma_dv = [dm_dv].ma_dv"
+            DeleteCommand="DELETE [Users] WHERE [user]=@User">
+        </asp:SqlDataSource>
+
+        <h1>Danh sách người dùng</h1>
+
+        <asp:GridView id="GridView_User" DataSourceID="SqlDataSource_User" 
+            runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4"
+            ForeColor="#333333" GridLines="Vertical" AutoGenerateColumns="False" DataKeyNames="user"
+            EmptyDataText="Không có người dùng nào!" PageSize="2" >
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:TemplateField HeaderText="STT" HeaderStyle-Width="5em" HeaderStyle-HorizontalAlign="Left">
+                    <ItemTemplate>
+                        <%# Container.DataItemIndex + 1 %>
+                    </ItemTemplate>
+
+<HeaderStyle HorizontalAlign="Left" Width="5em"></HeaderStyle>
+                </asp:TemplateField>
+
+                <asp:HyperLinkField HeaderText="Tên truy cập" DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' DataTextField="user" HeaderStyle-Width="15em" Target="_blank">
+<HeaderStyle Width="15em"></HeaderStyle>
+                </asp:HyperLinkField>
+                <asp:BoundField HeaderText="Đơn vị" DataField="dv" />
+                <asp:CheckBoxField DataField="quyen" HeaderText="Có quyền sửa" 
+                    HeaderStyle-Width="15em" ItemStyle-HorizontalAlign="Center"
+                    SortExpression="quyen" >
+<HeaderStyle Width="15em"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Center"></ItemStyle>
+                </asp:CheckBoxField>
+                <asp:TemplateField HeaderText="Tình trạng" 
+                    SortExpression="isLock" ControlStyle-BackColor="Transparent">
+                    <ItemTemplate>
+                        <asp:Label runat="server" Text='<%# Eval("isLock").ToString() ==  "False" ? "Hoạt động" : "Khóa" %>'></asp:Label>
+                    </ItemTemplate>
+
+<ControlStyle BackColor="Transparent"></ControlStyle>
+                    </asp:TemplateField>
+                <asp:TemplateField HeaderText="">
+                        <ItemTemplate>
+                            <asp:LinkButton runat="server" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                </asp:TemplateField>
+                <asp:HyperLinkField DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' Target="_blank" Text="Sửa">
+
+                </asp:HyperLinkField>
+            </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+        </asp:GridView>
     </div>
+    <a href="SuaNguoiDung.aspx?task=add">Thêm mới người dùng</a>
 </asp:Content>

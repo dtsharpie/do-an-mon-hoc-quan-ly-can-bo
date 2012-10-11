@@ -127,6 +127,7 @@
     <Content Include="Pages\QuanLy\Import.aspx" />
     <Content Include="Pages\QuanLy\ImportLuong.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
+    <Content Include="Pages\QuanLy\SuaNguoiDung.aspx" />
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
     <Content Include="Pages\TimKiem\AdvancedSearch.aspx" />
     <Content Include="Pages\TimKiem\Search.aspx" />
@@ -285,11 +286,6 @@
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.designer.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BaoCao\DataClasses1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,6 +362,12 @@
     </Compile>
     <Compile Include="Pages\QuanLy\NguoiDung.aspx.designer.cs">
       <DependentUpon>NguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\SuaNguoiDung.aspx.cs">
+      <DependentUpon>SuaNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\SuaNguoiDung.aspx.designer.cs">
+      <DependentUpon>SuaNguoiDung.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TaiKhoan\ChangePass.aspx.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
@@ -573,11 +575,6 @@
       <LastGenOutput>BaoCaokt.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Pages\BaoCao\DataClasses1.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -585,11 +582,6 @@
   <ItemGroup>
     <None Include="Pages\BaoCao\BaoCaokt.dbml.layout">
       <DependentUpon>BaoCaokt.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pages\BaoCao\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
