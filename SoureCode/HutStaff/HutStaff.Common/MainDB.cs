@@ -21,8 +21,27 @@ namespace HutStaff.Common
         public MainDB()
         {
             //dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
-            dbConnection = new SqlConnection("Data Source=.;Initial Catalog=hutstaff_9_8;Integrated Security=True");
+            dbConnection = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=hutstaff_9_8;Integrated Security=True");
             dbConnection.Open();
+        }
+
+        // Execute a arbitrary SQL command
+        public DataTable Execute(string cmd)
+        {
+            try
+            {
+                SqlCommand sqlCmd = (SqlCommand)dbConnection.CreateCommand();
+                sqlCmd.CommandText = cmd;
+                sqlCmd.CommandType = CommandType.Text;
+
+                DataTable dataTable = new DataTable();
+                new System.Data.SqlClient.SqlDataAdapter((System.Data.SqlClient.SqlCommand)sqlCmd).Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception myException)
+            {
+                throw (new Exception(myException.Message));
+            }
         }
 
         public DataTable Execute(string spName, string[] parNames, object[] parValues)
