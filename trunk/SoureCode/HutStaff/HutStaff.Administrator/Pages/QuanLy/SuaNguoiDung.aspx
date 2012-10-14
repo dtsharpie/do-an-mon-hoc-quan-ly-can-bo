@@ -3,29 +3,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
+    <script type="text/javascript">
+        function ValidateForm() {
+            if (document.forms["frmUserInfo"]["txtUsername"].value == ""){
+                alert("Giá trị username không hợp lệ");
+                document.getElementById("txtUsername").focus();
+
+                return false;
+            }
+            //alert(document.forms["frmUserInfo"]["txtPassword"].value);
+            if (document.forms["frmUserInfo"]["txtPassword"].value == "" || document.forms["frmUserInfo"]["txtRePassword"].value == "") {
+                alert("Không thể bỏ trống trường mật khẩu");
+                document.getElementById("lblPassword").style.color = "Red";
+                document.getElementById("lblPassword").style.color = "Red";
+                document.getElementById("txtPassword").focus();
+
+                return false;
+            }
+            if (document.forms["frmUserInfo"]["txtPassword"].value != document.forms["frmUserInfo"]["txtRePassword"].value) {
+                alert("Mật khẩu không khớp");
+                document.forms["frmUserInfo"]["txtPassword"].value = "";
+                document.forms["frmUserInfo"]["txtRePassword"].value = "";
+                document.getElementById("txtPassword").focus();
+
+                return false;
+            }
+            else
+                return true;
+        }
+    </script>
 </head>
 <body>
     <div class="content">
     <h1 id="title"></h1>
-    <form id="form1" runat="server" defaultbutton="submit">
+    <form id="frmUserInfo" runat="server" defaultbutton="cmdSubmit" action="SuaNguoiDung.aspx" method="post" onsubmit="return ValidateForm();">
+        <asp:Label runat="server" ID="lblMessage"></asp:Label>
+        <asp:HiddenField runat="server" ID="hfAddEdit" />
         <table border="1">
             <tr>
                 <td><asp:Label runat="server" Text="Tên truy cập:"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="username"></asp:TextBox></td>
+                <td><asp:TextBox runat="server" ID="txtUsername"></asp:TextBox></td>
+                <td><asp:HiddenField runat="server" ID="hfUserID" /></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Mật khẩu"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="password" TextMode="Password"></asp:TextBox></td>
+                <td><asp:Label runat="server" Text="Mật khẩu" ID="lblPassword"></asp:Label></td>
+                <td><asp:TextBox runat="server" ID="txtPassword" ClientIDMode="Static" 
+                        TextMode="Password"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Gõ lại mật khẩu"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="re_password" TextMode="Password"></asp:TextBox></td>
+                <td><asp:Label runat="server" Text="Gõ lại mật khẩu" ID="lblRePassword"></asp:Label></td>
+                <td class="style1"><asp:TextBox runat="server" ID="txtRePassword" TextMode="Password"></asp:TextBox></td>
             </tr>
             <tr>
                 <td><asp:Label runat="server" Text="Đơn vị"></asp:Label></td>
-                <td><asp:DropDownList runat="server" ID="donvi" DataSourceID="SqlDataSource_ListDV" 
+                <td><asp:DropDownList runat="server" ID="ddlDonVi" DataSourceID="SqlDataSource_ListDV" 
                         DataTextField="dv" DataValueField="ma_dv"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource_ListDV" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:QLCB %>" 
@@ -34,15 +67,15 @@
             </tr>
             <tr>
                 <td><asp:Label runat="server" Text="Có quyền sửa"></asp:Label></td>
-                <td><asp:CheckBox runat="server" ID="quyen" /></td>
+                <td><asp:CheckBox runat="server" ID="chkQuyen" /></td>
             </tr>
             <tr>
                 <td><asp:Label runat="server" Text="Khóa"></asp:Label></td>
-                <td><asp:CheckBox runat="server" ID="isLock" /></td>
+                <td><asp:CheckBox runat="server" ID="chkIsLock" /></td>
             </tr>
             <tr>
-                <td><asp:Button runat="server" ID="submit" Text="Tạo người dùng"/></td>
-                <td><asp:Button runat="server" Text="Cancel" /></td>
+                <td><asp:Button runat="server" ID="cmdSubmit" Text="Tạo người dùng" /></td>
+                <td><asp:Button runat="server" Text="Cancel" OnClientClick="window.close();"/></td>
             </tr>
         </table>
     </form>
