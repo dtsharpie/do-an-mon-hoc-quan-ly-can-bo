@@ -350,7 +350,7 @@ GO
 	CREATE TABLE soyeu   
 	(
 		shcc			INT IDENTITY(1,1),
-		[user]			VARCHAR(50) NOT NULL UNIQUE,
+		[user]			VARCHAR(50) NOT NULL,
 		pass			VARCHAR(50) NOT NULL,
 		nvcqhn			DATETIME,
 		scmnd			VARCHAR(10),
