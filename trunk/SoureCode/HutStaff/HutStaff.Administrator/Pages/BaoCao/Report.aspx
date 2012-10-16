@@ -119,17 +119,6 @@
 	                <asp:CheckBox runat="server" value="17" ID="chkdcb18"/> Tuyển dụng 2012<br/>	 
                 </td>
             </tr>
-            <tr>
-	 	        <td valign="top" height="30" class="Row2">Chọn theo tình trạng hiện tại</td>
-		        <td height="30" class="Row1">		            
-	                <asp:CheckBox runat="server" value="1" ID="chktt1"/> Hiện đang công tác<br/>
-	                <asp:CheckBox runat="server" value="2" ID="chktt2"/> Đã nghỉ hưu<br/>
-	                <asp:CheckBox runat="server" value="3" ID="chktt3"/> Đã mất<br/>
-	                <asp:CheckBox runat="server" value="4" ID="chktt4"/> Đã chuyển cơ quan khác<br/>
-	                <asp:CheckBox runat="server" value="5" ID="chktt5"/> Thôi việc<br/>
-	                <asp:CheckBox runat="server" value="6" ID="chktt6"/> Hiện không hưởng lương<br/>	 
-                </td>
-	        </tr>
 	        <tr>
                 <td height="30" align="center" colspan="2" class="Row3">
                    <asp:Button Text="Xuất báo cáo để tải về máy" runat="server" ID="btnXuat" />

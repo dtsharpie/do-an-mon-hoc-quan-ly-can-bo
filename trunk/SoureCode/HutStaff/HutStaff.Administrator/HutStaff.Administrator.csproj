@@ -277,23 +277,12 @@
     <Compile Include="Master\View.Master.designer.cs">
       <DependentUpon>View.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BaoCao\BaoCaokt.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaoCaokt.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.designer.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\BaoCao\DataClasses1.designer.cs" />
-    <Compile Include="Pages\BaoCao\DataClasses11.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
@@ -311,18 +300,21 @@
     </Compile>
     <Compile Include="Pages\BaoCao\Report.aspx.cs">
       <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\Report.aspx.designer.cs">
       <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeCanBoCaoCap.aspx.cs">
       <DependentUpon>ThongKeCanBoCaoCap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeCanBoCaoCap.aspx.designer.cs">
       <DependentUpon>ThongKeCanBoCaoCap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeKhenthuong.aspx.cs">
       <DependentUpon>ThongKeKhenthuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeKhenthuong.aspx.designer.cs">
       <DependentUpon>ThongKeKhenthuong.aspx</DependentUpon>
@@ -598,29 +590,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pages\BaoCao\BaoCaokt.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>BaoCaokt.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Pages\BaoCao\DataClasses1.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses11.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pages\BaoCao\BaoCaokt.dbml.layout">
-      <DependentUpon>BaoCaokt.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pages\BaoCao\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

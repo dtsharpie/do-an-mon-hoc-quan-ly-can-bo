@@ -9,9 +9,22 @@ namespace HutStaff.Administrator.Pages.BaoCao
 {
     public partial class Report : System.Web.UI.Page
     {
+
+        private int typeOfPage = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                try
+                {
+                    typeOfPage = Convert.ToInt32(Request.QueryString["type"]);
+                }
+                catch (FormatException ex)
+                {
+                    typeOfPage = 1;
+                }
+            }
         }
     }
 }

@@ -184,60 +184,6 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.CheckBox chkdcb18;
         
         /// <summary>
-        /// chktt1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chktt1;
-        
-        /// <summary>
-        /// chktt2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chktt2;
-        
-        /// <summary>
-        /// chktt3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chktt3;
-        
-        /// <summary>
-        /// chktt4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chktt4;
-        
-        /// <summary>
-        /// chktt5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chktt5;
-        
-        /// <summary>
-        /// chktt6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chktt6;
-        
-        /// <summary>
         /// btnXuat control.
         /// </summary>
         /// <remarks>

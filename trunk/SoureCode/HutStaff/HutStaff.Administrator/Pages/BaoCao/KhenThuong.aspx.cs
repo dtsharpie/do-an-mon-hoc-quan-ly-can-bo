@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using HutStaff.BO.PagesBO.BaoCaoBO;
 using System.Data;
 
-//  by Anh Nguyen The - 20080070
+//  by Nguyen Vuong Quyen
 
 namespace HutStaff.Administrator.Pages.BaoCao
 {
@@ -42,14 +42,14 @@ namespace HutStaff.Administrator.Pages.BaoCao
 		
 		protected void btnSearch_Click(object sender, ImageClickEventArgs e)
         {
-            BaoCaoktDataContext dbKt = new BaoCaoktDataContext();
-            gvResultSearch.DataSource = dbKt.qtkt_tbls.ToList();
+            //BaoCaoktDataContext dbKt = new BaoCaoktDataContext();
+            //gvResultSearch.DataSource = dbKt.qtkt_tbls.ToList();
 
-            int count = (from tt in dbKt.qtkt_tbls
-                         select tt).Count();
-            Response.Write("<h1>" +count+"</h1>");
-            lbllblResultSearch.Text ="<u>"+ count.ToString() +" ket qua tim thay </u>";
-            gvResultSearch.DataBind();
+            //int count = (from tt in dbKt.qtkt_tbls
+            //             select tt).Count();
+            //Response.Write("<h1>" +count+"</h1>");
+            //lbllblResultSearch.Text ="<u>"+ count.ToString() +" ket qua tim thay </u>";
+            //gvResultSearch.DataBind();
 
         }
     }
