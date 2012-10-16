@@ -19,23 +19,23 @@
 				        <td align="right" class="row3">BÁO CÁO LOẠI II</td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="Report.aspx">Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính.</a></td>
-				        <td align="right" class="row1"><a href="javascript:openNew('rpt13.php');">Danh sách cán bộ đến tuổi nghỉ hưu.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=1">Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính.</a></td>
+				        <td align="right" class="row1"><a href="Report?type13.php');">Danh sách cán bộ đến tuổi nghỉ hưu.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript: openNew('rpt02.php');">Báo cáo chất lượng cán bộ công chức 1.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=2">Báo cáo chất lượng cán bộ công chức 1.</a></td>
 				        <td align="right" class="row1"><a href="javascript: openNew('rpt06.php');">Báo cáo ngạch, bậc công chức, viên chức.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript: openNew('rpt03.php');">Báo cáo chất lượng cán bộ công chức 2.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=3">Báo cáo chất lượng cán bộ công chức 2.</a></td>
 				        <td align="right" class="row1"><a href="javascript: openNew('rpt15.php');">Báo cáo kỷ luật.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript: openNew('rpt04.php');">Danh sách cán bộ hưởng lương chức vụ</a></td>
+				        <td class="row1"><a href="Report.aspx?type=4">Danh sách cán bộ hưởng lương chức vụ</a></td>
 				        <td align="right" class="row1"></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript: openNew('rpt05.php');">Thống kê đội ngũ cán bộ khoa học nghiệp vụ</a></td>
+				        <td class="row1"><a href="Report.aspx?type=5">Thống kê đội ngũ cán bộ khoa học nghiệp vụ</a></td>
 				        <td class="row1"></td>
 			        </tr>
 			        <tr>
@@ -44,24 +44,24 @@
 			        </tr>
 
 			        <tr>
-				        <td class="row1"><a href="javascript:openNew('rpt08.php');">Danh sách cán bộ thuộc ngạch cao cấp đề nghị nâng lương.</a></td>
-				        <td align="right" class="row1"><a href="javascript:openNew('rpt21.php');">Báo cáo chất lượng cán bộ công chức chia theo lĩnh vực.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=8">Danh sách cán bộ thuộc ngạch cao cấp đề nghị nâng lương.</a></td>
+				        <td align="right" class="row1"><a href="Report.aspx?type=21">Báo cáo chất lượng cán bộ công chức chia theo lĩnh vực.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript:openNew('rpt10.php');">Danh sách cán bộ thuộc ngạch chính đề nghị nâng lương.</a></td>
-				        <td align="right" class="row1"><a href="javascript:openNew('rpt22.php');">Báo cáo chất lượng cán bộ công chức chia theo đơn vị.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=10">Danh sách cán bộ thuộc ngạch chính đề nghị nâng lương.</a></td>
+				        <td align="right" class="row1"><a href="Report.aspx?type=22">Báo cáo chất lượng cán bộ công chức chia theo đơn vị.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript:openNew('rpt09.php');">Danh sách cán bộ không thuộc ngạch cao cấp và chính đề nghị nâng lương.</a></td>
-				        <td align="right" class="row1"><a href="javascript:openNew('rpt23.php');">Báo cáo số lượng công chức giữ các chức vụ lãnh đạo do bổ nhiệm.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=9">Danh sách cán bộ không thuộc ngạch cao cấp và chính đề nghị nâng lương.</a></td>
+				        <td align="right" class="row1"><a href="Report.aspx?type=23">Báo cáo số lượng công chức giữ các chức vụ lãnh đạo do bổ nhiệm.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript:openNew('rpt14.php');">Danh sách cán bộ có hệ lương tột khung.</a></td>
-				        <td align="right" class="row1"><a href="javascript:openNew('rpt24.php');">Báo cáo danh sách và tiền lương cán bộ công chức.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=14">Danh sách cán bộ có hệ lương tột khung.</a></td>
+				        <td align="right" class="row1"><a href="Report.aspx?type=24">Báo cáo danh sách và tiền lương cán bộ công chức.</a></td>
 			        </tr>
 			        <tr>
-				        <td class="row1"><a href="javascript: openNew('rpt07.php');">In quyết định đề nghị nâng lương.</a></td>
-				        <td align="right" class="row1"><a href="javascript:openNew('rpt25.php');">Báo cáo tổng hợp ngạch, bậc và phụ cấp công chức.</a></td>
+				        <td class="row1"><a href="Report.aspx?type=7">In quyết định đề nghị nâng lương.</a></td>
+				        <td align="right" class="row1"><a href="Report.aspx?type=25">Báo cáo tổng hợp ngạch, bậc và phụ cấp công chức.</a></td>
 			        </tr>
 			        <tr>
 				        <td class="row1"></td>
@@ -78,11 +78,11 @@
 		            </tr>
 		            <tr>
 		  	            <td width="50%" class="row1"><a href="ThongKeKhenthuong.aspx">Thống kê Thành tích khen thưởng</a></td>
-			            <td class="row1"><a href="javascript: openNew('rpt27.php');">Thống kê DS Cán bộ nâng lương không thuộc ngạch cao cấp</a></td>
+			            <td class="row1"><a href="ThongKeCanBoCaoCap.aspx?type=2">Thống kê DS Cán bộ nâng lương không thuộc ngạch cao cấp</a></td>
 		            </tr>
 		            <tr>
-		  	            <td width="50%" class="row1"><a href="ThongKeCanBoCaoCap.aspx">Thống kê DS Cán bộ nâng lương thuộc ngạch cao cấp</a></td>
-			            <td class="row1"><a href="javascript: openNew('rpt29.php');">Bảng thanh toán lương hàng tháng</a></td>
+		  	            <td width="50%" class="row1"><a href="ThongKeCanBoCaoCap.aspx?type=1">Thống kê DS Cán bộ nâng lương thuộc ngạch cao cấp</a></td>
+			            <td class="row1"><a href="#">Bảng thanh toán lương hàng tháng</a></td>
 		            </tr>
 
 		        </tbody>
