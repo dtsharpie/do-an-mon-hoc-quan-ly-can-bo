@@ -25,7 +25,7 @@
         <div class="hang">
             <h4>Hình thức khen thưởng:</h4>
             <span class="ddl" >
-                <asp:DropDownList ID="cmb_HinhThucKhenThuong" runat="server" CssClass="ddl"/>
+                <asp:DropDownList ID="ddl_HinhThucKhenThuong" runat="server" CssClass="ddl"/>
             </span>
         </div>
 
@@ -298,7 +298,7 @@
         <div class="hang">
         	<h4>Diện cán bộ:</h4>
              <div class="row-right">
-                 <span class="ddl"><asp:DropDownList ID="cmb_DienCanBo" runat="server" CssClass ="ddl" /></span>
+                 <span class="ddl"><asp:DropDownList ID="ddl_DienCanBo" runat="server" CssClass ="ddl" /></span>
         	</div>
         </div>
 
