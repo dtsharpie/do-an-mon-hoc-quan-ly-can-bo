@@ -23,12 +23,21 @@ namespace HutStaff.BO.PagesBO.BaoCaoBO
             return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAlldm_kt();
         }
 
-        public static DataTable search_Kt(string ma_dv, int shcc, string name,
-            int tunam, int dennam, int diencb, int khoicb,
-            int pageIndex, int pageSize)
-
+        public static DataTable ViewAlldm_kcb()
         {
-            return DAL.PagesDAL.BaoCaoDAL.KhenThuongDAL.searchKhenthuong(ma_dv,shcc,name,tunam,dennam,diencb,khoicb,pageIndex,pageSize);
+            return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAlldm_kcb();
         }
+
+
+
+        //public static DataTable search_Kt(string ma_dv, int shcc, string name,
+        //    int tunam, int dennam, int diencb, int khoicb,
+        //    int pageIndex, int pageSize)
+
+        //{
+        //    return DAL.PagesDAL.BaoCaoDAL.KhenThuongDAL.searchKhenthuong(ma_dv,shcc,name,tunam,dennam,diencb,khoicb,pageIndex,pageSize);
+        //}
+
+
     }
 }

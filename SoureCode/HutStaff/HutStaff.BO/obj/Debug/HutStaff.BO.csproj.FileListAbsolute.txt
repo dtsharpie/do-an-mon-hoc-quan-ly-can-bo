@@ -52,15 +52,6 @@ D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\obj\Debug\ResolveAssemblyReference.cache
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
