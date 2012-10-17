@@ -178,7 +178,7 @@ GO
 	CREATE TABLE dm_mlcb (
 	  ma_mlcb char(3) NOT NULL,
 	  mlcb nvarchar(15) NOT NULL,
-	  tgad date DEFAULT NULL,
+	  tgad DATETIME DEFAULT NULL,
 	  ttk_mlcb nvarchar(200) DEFAULT NULL,
 	  PRIMARY KEY (ma_mlcb),
 	)
