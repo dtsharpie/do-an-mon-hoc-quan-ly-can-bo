@@ -13,5 +13,10 @@ namespace HutStaff.Administrator.Pages.BaoCao
         {
 
         }
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,8 +26,10 @@
             </tr>
 	        <tr>
                 <td height="30" align="center" colspan="2" class="Row3">
-                   <asp:Button Text="Xuất báo cáo để tải về máy" runat="server" ID="btnXuat" />
-                   <asp:Button Text="Xem trước báo cáo" runat="server" ID="btnXem" />
+                   <asp:Button Text="Xuất báo cáo để tải về máy" runat="server" ID="btnXuat" 
+                        onclick="btnXuat_Click" />
+                   <asp:Button Text="Xem trước báo cáo" runat="server" ID="btnXem" 
+                        onclick="btnXem_Click" />
                 </td>
             </tr>
         </tbody>
