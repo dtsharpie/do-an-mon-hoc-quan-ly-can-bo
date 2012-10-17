@@ -25,7 +25,7 @@
         <div class="hang">
             <h4>Hình thức khen thưởng:</h4>
             <span class="ddl" >
-                <asp:DropDownList ID="ddl_HinhThucKhenThuong" runat="server" CssClass="ddl"/>
+                <asp:DropDownList ID="ddlHinhThucKhenThuong" runat="server" CssClass="ddl"/>
             </span>
         </div>
 
@@ -298,7 +298,7 @@
         <div class="hang">
         	<h4>Diện cán bộ:</h4>
              <div class="row-right">
-                 <span class="ddl"><asp:DropDownList ID="ddl_DienCanBo" runat="server" CssClass ="ddl" /></span>
+                 <span class="ddl"><asp:DropDownList ID="ddlDienCanBo" runat="server" CssClass ="ddl" /></span>
         	</div>
         </div>
 
@@ -321,12 +321,12 @@
         	<h4>Khối cán bộ:</h4>
              <div class="row-right">
                  <asp:DropDownList ID="ddlKhoiCb" runat="server" CssClass ="ddl">
-                    <asp:ListItem Value ="-1" Text ="---Không chọn---" Selected ="True"></asp:ListItem>
+                    <%--<asp:ListItem Value ="-1" Text ="---Không chọn---" Selected ="True"></asp:ListItem>
                     <asp:ListItem Value ="0" Text ="Giảng dạy"></asp:ListItem>
                     <asp:ListItem Value ="1" Text ="Phục vụ"></asp:ListItem>
                     <asp:ListItem Value ="2" Text ="Hành chính"></asp:ListItem>
                     <asp:ListItem Value ="3" Text ="Nghiên cứu"></asp:ListItem>
-                    <asp:ListItem Value ="4" Text ="Khác"></asp:ListItem>
+                    <asp:ListItem Value ="4" Text ="Khác"></asp:ListItem>--%>
                  </asp:DropDownList>
                  
                  

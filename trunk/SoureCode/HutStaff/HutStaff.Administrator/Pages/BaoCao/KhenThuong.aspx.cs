@@ -15,12 +15,12 @@ namespace HutStaff.Administrator.Pages.BaoCao
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cmb_HinhThucKhenThuong
+            //ddlHinhThucKhenThuong: dropdownList Hinh thuc khen thuong
             DataTable table_dm_kt = BaoCaoBO.ViewAlldm_kt();
-            cmb_HinhThucKhenThuong.DataSource = table_dm_kt;
-            cmb_HinhThucKhenThuong.DataValueField = table_dm_kt.Columns[0].ColumnName;
-            cmb_HinhThucKhenThuong.DataTextField = table_dm_kt.Columns[1].ColumnName;
-            cmb_HinhThucKhenThuong.DataBind();
+            ddlHinhThucKhenThuong.DataSource = table_dm_kt;
+            ddlHinhThucKhenThuong.DataValueField = table_dm_kt.Columns[0].ColumnName;
+            ddlHinhThucKhenThuong.DataTextField = table_dm_kt.Columns[1].ColumnName;
+            ddlHinhThucKhenThuong.DataBind();
 
             //tbFrom
             tbFrom.Text = "2007";
@@ -30,17 +30,23 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
             //Đơn vị cấp ... chưa làm
 
-            //cmb_DienCanBo
+            //ddlDienCanBo: dropdownList dien can bo
             DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
-            cmb_DienCanBo.DataSource = table_dm_dcb;
-            cmb_DienCanBo.DataValueField = table_dm_dcb.Columns[0].ColumnName;
-            cmb_DienCanBo.DataTextField = table_dm_dcb.Columns[1].ColumnName;
-            cmb_DienCanBo.DataBind();
+            ddlDienCanBo.DataSource = table_dm_dcb;
+            ddlDienCanBo.DataValueField = table_dm_dcb.Columns[0].ColumnName;
+            ddlDienCanBo.DataTextField = table_dm_dcb.Columns[1].ColumnName;
+            ddlDienCanBo.DataBind();
 
+            //ddlKhoiCanBo: dropdownList Khoi can bo
+            DataTable table_dm_kcb = BaoCaoBO.ViewAlldm_kcb();
+            ddlKhoiCb.DataSource = table_dm_kcb;
+            ddlKhoiCb.DataValueField = table_dm_kcb.Columns[0].ColumnName;
+            ddlKhoiCb.DataTextField = table_dm_kcb.Columns[1].ColumnName;
+            ddlKhoiCb.DataBind();
 
         }
-		
-		protected void btnSearch_Click(object sender, ImageClickEventArgs e)
+
+        protected void btnSearch_Click(object sender, ImageClickEventArgs e)
         {
             //BaoCaoktDataContext dbKt = new BaoCaoktDataContext();
             //gvResultSearch.DataSource = dbKt.qtkt_tbls.ToList();

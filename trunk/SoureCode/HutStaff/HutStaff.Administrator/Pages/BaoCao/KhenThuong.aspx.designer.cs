@@ -13,13 +13,13 @@ namespace HutStaff.Administrator.Pages.BaoCao {
     public partial class KhenThuong {
         
         /// <summary>
-        /// cmb_HinhThucKhenThuong control.
+        /// ddlHinhThucKhenThuong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmb_HinhThucKhenThuong;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHinhThucKhenThuong;
         
         /// <summary>
         /// tbFrom control.
@@ -58,13 +58,13 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.DropDownList ddlUnit4;
         
         /// <summary>
-        /// cmb_DienCanBo control.
+        /// ddlDienCanBo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmb_DienCanBo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDienCanBo;
         
         /// <summary>
         /// ddlKhoiCb control.
