@@ -15,5 +15,15 @@ namespace HutStaff.BO.Security
             string hashPass = Common.LibCrypto.StringToMD5(Password);
             return DAL.Security.User.Authenticate(UserName, hashPass);
         }
+
+        public static DataTable Search(int pageIndex, int pageSize, string keyword, int xoahs)
+        {
+            return DAL.Security.User.Search(pageIndex, pageSize, keyword.ToLower(), xoahs);
+        }
+
+        public static int SearchCount(string keyword, int xoahs)
+        {
+            return DAL.Security.User.SearchCount(keyword, xoahs);
+        }
     }
 }

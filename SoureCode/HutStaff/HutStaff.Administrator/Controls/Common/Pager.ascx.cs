@@ -4,17 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HutStaff.Common;
 
 namespace HutStaff.Administrator.Controls.Common
 {
-    public partial class Pager : System.Web.UI.UserControl
+    public partial class Pager : ControlBase
     {
         protected int totalItems;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
                 //Binding data to control
                 lblInfo.Text = string.Format(" {0} đến {1} của {2} ", ((PageIndex - 1) * PageSize + 1), (PageSize * PageIndex < TotalItem) ? PageSize * PageIndex : TotalItem, TotalItem);
                 txtPageIndex.Text = PageIndex.ToString();

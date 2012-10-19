@@ -28,18 +28,11 @@ namespace HutStaff.BO.Security
             set;
         }
 
-        public int Ma_Dv
-        {
-            get;
-            set;
-        }
-
-        public CurrentUser(string username, int userId, int quyen, int ma_dv)
+        public CurrentUser(string username, int userId, int quyen)
         {
             this.UserName = username;
             this.UserId = userId;
             this.Quyen = quyen;
-            this.Ma_Dv = ma_dv;
         }
 
         public static CurrentUser GetCurrentUser()

@@ -20,5 +20,9 @@
     <menu name="Thông tin BHXH" permission="0" alias="xtt-thong-tin-bhxh" path="/Xemthongtin/Controls/BHXH.ascx"></menu>
   </menus>
   <controls>
+    <control>
+      <control alias="danh-sach-can-bo" permission="0" path="/Controls/Quanly/Import/Search.ascx"></control>
+      <control alias="pager-danh-sach-can-bo" permission="0" path="/Controls/Quanly/Import/Pager.ascx"></control>
+    </control>
   </controls>
 </settings>

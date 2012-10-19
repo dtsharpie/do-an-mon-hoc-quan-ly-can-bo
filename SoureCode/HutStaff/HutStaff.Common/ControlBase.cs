@@ -11,22 +11,13 @@ namespace HutStaff.Common
     public class ControlBase : UserControl
     {
         #region Property
-        private string clientscript = "";
 
         public NameValueCollection Params { get; set; }
 
         public string ClientScript
         {
-
-            get
-            {
-                return (HttpContext.Current.Session[Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : clientscript;
-            }
-            set
-            {
-                clientscript = (HttpContext.Current.Session[Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx';" : value;
-            }
-
+            get;
+            set;
         }
 
         public int PageIndex
