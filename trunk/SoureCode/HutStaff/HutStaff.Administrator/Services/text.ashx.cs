@@ -24,17 +24,23 @@ namespace HutStaff.Administrator.Services
         {
             string sAlias = GetString("alias");
             string sResponse = string.Empty;
-
-            if (HutStaff.Common.Control.Contain(sAlias))
+            if (!String.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
             {
-                HutStaff.Common.Control control = HutStaff.Common.Control.GetByAlias(sAlias);
-                sResponse = RenderUserControl(control.ControlPath, context.Request.Form);
+                if (HutStaff.Common.Control.Contain(sAlias))
+                {
+                    HutStaff.Common.Control control = HutStaff.Common.Control.GetByAlias(sAlias);
+                    sResponse = RenderUserControl(control.ControlPath, context.Request.Form);
+                }
+
+                if (Menu.Contain(sAlias))
+                {
+                    Menu menu = Menu.GetByAlias(sAlias);
+                    sResponse = RenderUserControl(menu.ControlPath, context.Request.Form);
+                }
             }
-
-            if (Menu.Contain(sAlias))
+            else
             {
-                Menu menu = Menu.GetByAlias(sAlias);
-                sResponse = RenderUserControl(menu.ControlPath, context.Request.Form);
+                sResponse = "<script type=\"text/javascript\">alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx?action=logout';</script>";
             }
             context.Response.Write(sResponse);
         }

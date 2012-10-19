@@ -52,7 +52,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Settings.xml" />
+    <Content Include="App_Data\Settings.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Controls\Common\Dropdownlist.ascx" />
     <Content Include="Controls\Common\ViewMenu.ascx" />
     <Content Include="Controls\Common\Pager.ascx" />
@@ -60,6 +62,8 @@
     <Content Include="Controls\Common\DatePicker.ascx" />
     <Content Include="Controls\Common\DropDownChosen.ascx" />
     <Content Include="Controls\Common\HintTextBox.ascx" />
+    <Content Include="Controls\QuanLy\Import\Pager.ascx" />
+    <Content Include="Controls\QuanLy\Import\Search.ascx" />
     <Content Include="Controls\QuanLy\ThongTinCanBoControl.ascx" />
     <Content Include="Controls\TimKiem\SearchForm.ascx" />
     <Content Include="Controls\TimKiem\SearchResult.ascx" />
@@ -227,6 +231,20 @@
     </Compile>
     <Compile Include="Controls\Common\HintTextBox.ascx.designer.cs">
       <DependentUpon>HintTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\Import\Pager.ascx.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\Import\Pager.ascx.designer.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\Import\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\Import\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\QuanLy\ThongTinCanBoControl.ascx.cs">
       <DependentUpon>ThongTinCanBoControl.ascx</DependentUpon>

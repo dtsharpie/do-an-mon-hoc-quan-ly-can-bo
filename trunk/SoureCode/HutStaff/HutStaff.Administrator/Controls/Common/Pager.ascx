@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Pager.ascx.cs" Inherits="HutStaff.Administrator.Controls.Common.Pager" %>
-<table class="pager" cellpadding="4" id="<%= UID %>tblPager">
+<table cellpadding="4" id="<%= UID %>tblPager">
     <tr>
         <td>
             Đến trang
@@ -30,6 +30,7 @@
         </td>
         <td>
             <a href="javascript:void(0);" runat="server" id="lnkNextPage">
-                <img src="/images/pager/Next.jpg" border='0' title="Trang sau" alt="Trang sau" /></a></td>
+                <img src="/images/pager/Next.jpg" border='0' title="Trang sau" alt="Trang sau" /></a>
+        </td>
     </tr>
 </table>
