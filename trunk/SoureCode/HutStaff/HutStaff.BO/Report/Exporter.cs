@@ -21,7 +21,7 @@ namespace HutStaff.BO.Report
             HttpContext.Current.Response.AddHeader("Content-Disposition", String.Format("attachment;filename={0}", fileName));
             // HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment;filename=Reports.doc");
             HttpContext.Current.Response.Charset = "utf-8";
-            HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.UTF8;
+            HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("windows-1250");
             HttpContext.Current.Response.Write("<font style='font-size:12.0pt; font-family:Calibri;'>");
             HttpContext.Current.Response.Write("<BR><BR><BR>");
             HttpContext.Current.Response.Write("<Table border='1' bgColor='#ffffff' borderColor='#000000' cellSpacing='0' cellPadding='0' style='font-size:10.0pt; font-family:Calibri; background:white;'> <TR>");
