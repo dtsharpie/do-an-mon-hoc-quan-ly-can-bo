@@ -31,8 +31,8 @@
 
         <div class="hang">
             Năm khen thưởng:
-                Từ năm <span class="textbox"><asp:TextBox ID="tbFrom" runat="server" Width="50px" /></span>
-                đến năm <span class="textbox"><asp:TextBox ID="tbTo" runat="server" Width="50px" /></span>
+                Từ năm <span class="textbox"><asp:TextBox ID="tbFrom" runat="server" Width="50px" />2007</span>
+                đến năm <span class="textbox"><asp:TextBox ID="tbTo" runat="server" Width="50px" />2012</span>
         </div>
             
     	<div class="hang">
@@ -344,8 +344,12 @@
 	<!-- InstanceEndEditable -->
 
     <div id = "ResultSearch" class ="kqtk_kt">
-    <asp:Label ID="x" runat="server" Text="Ket qua: co "></asp:Label><asp:Label ID="lbllblResultSearch" runat="server"></asp:Label><br />
-    <h1><asp:HyperLink ID="xuatdata" Text="Xuat du lieu" CssClass="hpl" runat="server" NavigateUrl="~/Pages/BaoCao/KhenThuong.aspx"></asp:HyperLink></h1>
+    <%--<asp:Label ID="x" runat="server" Text="Ket qua: co "></asp:Label><asp:Label ID="lbllblResultSearch" runat="server"></asp:Label><br />--%>
+    <%--<h1><asp:HyperLink ID="xuatdata" Text="Xuat du lieu" CssClass="hpl" runat="server" NavigateUrl="~/Pages/BaoCao/KhenThuong.aspx"></asp:HyperLink></h1>--%>
+    <div>
+        <asp:Button ID="btnExport" runat="server" Text="Xuất dữ liệu" Visible="False" 
+            onclick="btnExport_Click" />
+    </div>
         <asp:GridView ID = "gvResultSearch" runat="server" CssClass="gvResultSearch" 
             Width="100%" PageSize="40" BackColor="White" BorderColor="#3366CC" 
             BorderStyle="Groove" BorderWidth="2px" CellPadding="4">
