@@ -7,7 +7,7 @@ using HutStaff.DAL.PagesDAL.QuanLy;
 
 namespace HutStaff.BO.PagesBO.QuanLy
 {
-    class BoSungCanBoBO
+    public class BoSungCanBoBO
     {
         public static DataTable getDienCanBo()
         {
@@ -15,6 +15,22 @@ namespace HutStaff.BO.PagesBO.QuanLy
             try
             {
                 dt = BoSungCanBoDAL.getDienCanBo();
+            }
+            catch (Exception e)
+            {
+            }
+            finally
+            {
+            }
+            return dt;
+        }
+
+        public static DataTable getDonVi()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = BoSungCanBoDAL.getDonVi();
             }
             catch (Exception e)
             {
