@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PagesBO\BaoCaoBO\BaoCaoBO.cs" />
+    <Compile Include="PagesBO\QuanLy\BoSungCanBoBO.cs" />
     <Compile Include="PagesBO\QuanLy\NguoiDungBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Exporter.cs" />
+    <Compile Include="Report\Report.cs" />
     <Compile Include="Security\CurrentUser.cs" />
     <Compile Include="Security\User.cs" />
     <Compile Include="Security\ViewCurrentUser.cs" />
