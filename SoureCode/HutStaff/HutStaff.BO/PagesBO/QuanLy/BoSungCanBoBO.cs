@@ -91,5 +91,60 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             return BoSungCanBoDAL.getTinh();
         }
+
+        public static object getDantoc()
+        {
+            return BoSungCanBoDAL.getDantoc();
+        }
+
+        public static object getTinhTrangHonNhan()
+        {
+            return BoSungCanBoDAL.getTinhTrangHonNhan();
+        }
+
+        public static object getTonGiao()
+        {
+            return BoSungCanBoDAL.getTonGiao();
+        }
+
+        public static object getThanhPhanXuatThan()
+        {
+            return BoSungCanBoDAL.getThanhPhanXuatThan();
+        }
+
+        public static object getGiaDinhChinhSach()
+        {
+            return BoSungCanBoDAL.getGiaDinhChinhSach();
+        }
+
+        public static object getKhoiCanBo()
+        {
+            return BoSungCanBoDAL.getKhoiCanBo();
+        }
+
+        public static object getTrinhDoLiLuan()
+        {
+            return BoSungCanBoDAL.getTrinhDoLiLuan();
+        }
+
+        public static object getTrinhDoNgoaiNgu()
+        {
+            return BoSungCanBoDAL.getTrinhDoNgoaiNgu();
+        }
+
+        public static object getTrinhDoHocVanPhoThong()
+        {
+            return BoSungCanBoDAL.getTrinhDoHocVanPhoThong();
+        }
+
+        public static object getTrinhDoTinHoc()
+        {
+            return BoSungCanBoDAL.getTrinhDoTinHoc();
+        }
+
+        public static object getDienUuTien()
+        {
+            return BoSungCanBoDAL.getDienUuTien();
+        }
     }
 }
