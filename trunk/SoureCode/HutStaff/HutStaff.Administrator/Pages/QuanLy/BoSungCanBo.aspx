@@ -54,8 +54,7 @@
                 <td>Số hiệu </td> <td><asp:TextBox ID="tbSohieu" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>Diện cán bộ </td> <td><asp:DropDownList ID="ddlDiencanbo" runat="server" 
-                    onselectedindexchanged="ddlDiencanbo_SelectedIndexChanged"></asp:DropDownList></td>
+                <td>Diện cán bộ </td> <td><asp:DropDownList ID="ddlDiencanbo" runat="server"></asp:DropDownList></td>
                 <td>Hiện nay  <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList></td>
                 <td>Trạng thái <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList></td>
             </tr>
