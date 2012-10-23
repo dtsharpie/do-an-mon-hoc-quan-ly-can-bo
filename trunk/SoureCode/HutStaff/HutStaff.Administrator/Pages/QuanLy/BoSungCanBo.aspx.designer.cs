@@ -238,13 +238,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
         
         /// <summary>
-        /// TextBox3 control.
+        /// tbHoTen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox tbHoTen;
         
         /// <summary>
         /// DropDownList4 control.
@@ -256,13 +256,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
         
         /// <summary>
-        /// TextBox4 control.
+        /// tbTenThuongDung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox tbTenThuongDung;
         
         /// <summary>
         /// lbHocham control.
@@ -292,13 +292,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
         
         /// <summary>
-        /// TextBox1 control.
+        /// tbNamSinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tbNamSinh;
         
         /// <summary>
         /// DropDownList7 control.
@@ -328,13 +328,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList9;
         
         /// <summary>
-        /// TextBox5 control.
+        /// tbChiTietQueQuan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox tbChiTietQueQuan;
         
         /// <summary>
         /// DropDownList10 control.
@@ -346,49 +346,49 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList10;
         
         /// <summary>
-        /// TextBox2 control.
+        /// tbChiTietHKTT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox tbChiTietHKTT;
         
         /// <summary>
-        /// TextBox6 control.
+        /// tbChoOHienNay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox tbChoOHienNay;
         
         /// <summary>
-        /// TextBox7 control.
+        /// tbDienThoai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox tbDienThoai;
         
         /// <summary>
-        /// TextBox8 control.
+        /// tbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox tbEmail;
         
         /// <summary>
-        /// TextBox9 control.
+        /// tbCMT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox tbCMT;
         
         /// <summary>
         /// DropDownList11 control.
@@ -400,13 +400,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList11;
         
         /// <summary>
-        /// TextBox10 control.
+        /// tbNgayCap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox tbNgayCap;
         
         /// <summary>
         /// DropDownList12 control.
@@ -472,13 +472,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList15;
         
         /// <summary>
-        /// TextBox11 control.
+        /// tbNamHopDong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox tbNamHopDong;
         
         /// <summary>
         /// DropDownList16 control.
@@ -499,31 +499,31 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList17;
         
         /// <summary>
-        /// TextBox12 control.
+        /// tbNamThiVienChuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox tbNamThiVienChuc;
         
         /// <summary>
-        /// ddlCoquantiepnhan control.
+        /// tbCoquantiepnhan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCoquantiepnhan;
+        protected global::System.Web.UI.WebControls.TextBox tbCoquantiepnhan;
         
         /// <summary>
-        /// DropDownList21 control.
+        /// tbCongviecduocgiao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList21;
+        protected global::System.Web.UI.WebControls.TextBox tbCongviecduocgiao;
         
         /// <summary>
         /// DropDownList22 control.
@@ -544,13 +544,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList23;
         
         /// <summary>
-        /// TextBox13 control.
+        /// tbNamVeCoQuan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox tbNamVeCoQuan;
         
         /// <summary>
         /// DropDownList24 control.
@@ -562,13 +562,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList24;
         
         /// <summary>
-        /// DropDownList25 control.
+        /// tbCongviechiennay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList25;
+        protected global::System.Web.UI.WebControls.TextBox tbCongviechiennay;
         
         /// <summary>
         /// tbBHXH control.
@@ -625,13 +625,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList29;
         
         /// <summary>
-        /// TextBox15 control.
+        /// tbNamVaoDang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.TextBox tbNamVaoDang;
         
         /// <summary>
         /// DropDownList30 control.
@@ -652,13 +652,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList31;
         
         /// <summary>
-        /// TextBox16 control.
+        /// tbNamChinhThuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.TextBox tbNamChinhThuc;
         
         /// <summary>
         /// DropDownList32 control.
@@ -679,13 +679,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList33;
         
         /// <summary>
-        /// TextBox17 control.
+        /// tbNamNhapNgu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.TextBox tbNamNhapNgu;
         
         /// <summary>
         /// DropDownList34 control.
@@ -706,13 +706,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList35;
         
         /// <summary>
-        /// TextBox18 control.
+        /// tbNamXuatNgu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.TextBox tbNamXuatNgu;
         
         /// <summary>
         /// DropDownList36 control.
@@ -787,13 +787,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList43;
         
         /// <summary>
-        /// TextBox19 control.
+        /// tbNamKetThucHD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.TextBox tbNamKetThucHD;
         
         /// <summary>
         /// taLido control.
@@ -823,13 +823,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList45;
         
         /// <summary>
-        /// TextBox20 control.
+        /// tbNamTinhThamNien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
+        protected global::System.Web.UI.WebControls.TextBox tbNamTinhThamNien;
         
         /// <summary>
         /// tbThanggiandoan control.

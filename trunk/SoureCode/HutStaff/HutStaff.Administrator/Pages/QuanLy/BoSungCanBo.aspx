@@ -63,21 +63,21 @@
                 </td>
             </tr>
             <tr>
-                <td>Họ tên </td> <td> <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                <td>Họ tên </td> <td> <asp:TextBox ID="tbHoTen" runat="server"></asp:TextBox></td>
                 <td>Giới tính <asp:DropDownList ID="DropDownList4" runat="server">
                     <asp:ListItem Text="Nam"></asp:ListItem>
                     <asp:ListItem Text="Nữ"></asp:ListItem>
                 </asp:DropDownList></td>
             </tr>
             <tr>
-                <td>Tên thường dùng </td> <td> <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
+                <td>Tên thường dùng </td> <td> <asp:TextBox ID="tbTenThuongDung" runat="server"></asp:TextBox></td>
                 <td>Học hàm - Học vị:  <asp:Label ID="lbHocham" runat="server"></asp:Label></td>
             </tr>
             <tr>
                 <td>Ngày sinh</td>
                 <td><asp:DropDownList ID="DropDownList5" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList6" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamSinh" runat="server"></asp:TextBox></td>
                 <td>Hôn nhân <asp:DropDownList ID="DropDownList7" runat="server"></asp:DropDownList></td>
                 <td>Nơi sinh <asp:DropDownList ID="DropDownList8" runat="server">
                     <asp:ListItem Text="Hà Nội"></asp:ListItem>
@@ -94,7 +94,7 @@
                     <asp:ListItem Text="Cao Bằng"></asp:ListItem>
                     <asp:ListItem Text="Lạng Sơn"></asp:ListItem>
                 </asp:DropDownList></td>
-                <td>Chi tiết <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox></td>
+                <td>Chi tiết <asp:TextBox ID="tbChiTietQueQuan" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Hộ khẩu thường trú</td>
@@ -104,19 +104,19 @@
                     <asp:ListItem Text="Cao Bằng"></asp:ListItem>
                     <asp:ListItem Text="Lạng Sơn"></asp:ListItem>
                 </asp:DropDownList></td>
-                <td>Chi tiết <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+                <td>Chi tiết <asp:TextBox ID="tbChiTietHKTT" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>Chỗ ở hiện nay</td> <td> <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox></td>
+                <td>Chỗ ở hiện nay</td> <td> <asp:TextBox ID="tbChoOHienNay" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>Điện thoại</td> <td> <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox></td>
-                <td>Email <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td>
+                <td>Điện thoại</td> <td> <asp:TextBox ID="tbDienThoai" runat="server"></asp:TextBox></td>
+                <td>Email <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox></td>
             </tr>
              <tr>
-                <td>Số CMND </td> <td> <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td>
+                <td>Số CMND </td> <td> <asp:TextBox ID="tbCMT" runat="server"></asp:TextBox></td>
                 <td>Nơi cấp <asp:DropDownList ID="DropDownList11" runat="server"></asp:DropDownList></td>
-                <td>Ngày cấp <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox></td>
+                <td>Ngày cấp <asp:TextBox ID="tbNgayCap" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Dân tộc</td>
@@ -133,29 +133,29 @@
                 <td>Ngày hợp đồng</td>
                 <td><asp:DropDownList ID="DropDownList13" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList15" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamHopDong" runat="server"></asp:TextBox></td>
                  <td>Ngày thi tuyển viên chức<asp:DropDownList ID="DropDownList16" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList17" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamThiVienChuc" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Cơ quan tiếp nhận làm việc</td>
-                <td><asp:DropDownList ID="ddlCoquantiepnhan" runat="server"></asp:DropDownList></td>
+                <td><asp:TextBox ID="tbCoquantiepnhan" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Công việc được giao</td>
-                <td><asp:DropDownList ID="DropDownList21" runat="server"></asp:DropDownList></td>
+                <td><asp:TextBox ID="tbCongviecduocgiao" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Ngày về cơ quan</td>
                 <td><asp:DropDownList ID="DropDownList22" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList23" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamVeCoQuan" runat="server"></asp:TextBox></td>
                 <td>Khối cán bộ <asp:DropDownList ID="DropDownList24" runat="server"></asp:DropDownList></td>
             </tr>
             <tr>
                 <td>Công việc hiện nay</td>
-                <td><asp:DropDownList ID="DropDownList25" runat="server"></asp:DropDownList></td>
+                <td><asp:TextBox ID="tbCongviechiennay" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Số BHXH</td>
@@ -169,19 +169,19 @@
                 <td>Ngày vào Đảng</td>
                 <td><asp:DropDownList ID="DropDownList28" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList29" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamVaoDang" runat="server"></asp:TextBox></td>
                  <td>Ngày chính thức <asp:DropDownList ID="DropDownList30" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList31" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamChinhThuc" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Ngày nhập ngũ</td>
-                <td><asp:DropDownList ID="DropDownList32" runat="server"></asp:DropDownList> /
+                <td><asp:DropDownList ID="DropDownList32" runat="server" Height="16px"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList33" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamNhapNgu" runat="server"></asp:TextBox></td>
                  <td>Ngày xuất ngũ<asp:DropDownList ID="DropDownList34" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList35" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamXuatNgu" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Trình độ LLCT</td>
@@ -202,14 +202,14 @@
                 <td>Ngày kết thúc HĐ</td>
                 <td><asp:DropDownList ID="DropDownList42" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList43" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamKetThucHD" runat="server"></asp:TextBox></td>
                 <td>Lí do <textarea id="taLido" runat="server"></textarea></td>
             </tr>
             <tr>
                 <td>Ngày bắt đầu tính thâm niên</td>
                 <td><asp:DropDownList ID="DropDownList44" runat="server"></asp:DropDownList> /
                     <asp:DropDownList ID="DropDownList45" runat="server"></asp:DropDownList> /
-                    <asp:TextBox ID="TextBox20" runat="server"></asp:TextBox></td>
+                    <asp:TextBox ID="tbNamTinhThamNien" runat="server"></asp:TextBox></td>
                 <td>Số tháng gián đoạn <asp:TextBox ID="tbThanggiandoan" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
@@ -223,8 +223,8 @@
         </table><br /><br />
         Nhập ảnh mới: <asp:FileUpload ID="fuAnh" runat="server"/><br /><br />
 
-        <asp:Button ID="btSave" runat="server" Text="Lưu"/>&nbsp
-        <asp:Button ID="btReset" runat="server" Text="Làm lại"/>
+        <asp:Button ID="btSave" runat="server" Text="Lưu" onclick="btSave_Click"/>&nbsp
+        <asp:Button ID="btReset" runat="server" Text="Làm lại" onclick="btReset_Click"/>
     </div>
 </asp:Content>
 
