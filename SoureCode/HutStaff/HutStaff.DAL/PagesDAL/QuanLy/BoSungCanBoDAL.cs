@@ -83,5 +83,181 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
             }
             return dt;
         }
+
+        public static object getDantoc()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_dt");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getTinhTrangHonNhan()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tthn");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getTonGiao()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tg");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getThanhPhanXuatThan()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tpxt ");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getGiaDinhChinhSach()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_gdcs");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getKhoiCanBo()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_kcb");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getTrinhDoLiLuan()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tdll");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getTrinhDoNgoaiNgu()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tdnn");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getTrinhDoHocVanPhoThong()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tdhv");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getTrinhDoTinHoc()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tdth");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
+
+        public static object getDienUuTien()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    dt = db.Execute("sp_view_all_dm_tb");
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            return dt;
+        }
     }
 }
