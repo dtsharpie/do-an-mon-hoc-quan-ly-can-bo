@@ -489,7 +489,6 @@ GO
 		cvct			INT REFERENCES dm_cv(ma_cv),
 		cvdn			INT REFERENCES dm_cvdn(ma_cvdn),
 		dgqtct			NVARCHAR(20),
-		dg_qtbd			NVARCHAR(100),
 		ttk_qtct		Nvarchar(255),
 		bctdv			NVARCHAR(255),
 		nlv				NVARCHAR(255),
