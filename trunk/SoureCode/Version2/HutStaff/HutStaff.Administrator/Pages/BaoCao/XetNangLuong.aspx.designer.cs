@@ -13,15 +13,6 @@ namespace HutStaff.Administrator.Pages.BaoCao {
     public partial class XetNangLuong {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// SlideBaocao1 control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HutStaff.Administrator.Controls.Common.SlideBaocao SlideBaocao1;
-        
-        /// <summary>
-        /// ddlLoaiHanNgach control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLoaiHanNgach;
         
         /// <summary>
         /// ddlLuaChonBang control.

@@ -11,9 +11,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
-    <form id="form1" runat="server">
     <uc1:SlideQuanLy ID="SlideQuanLy1" runat="server" />
-    </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h1 class="title">
