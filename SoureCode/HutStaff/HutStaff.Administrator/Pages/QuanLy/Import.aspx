@@ -2,7 +2,6 @@
     CodeBehind="Import.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.Import" %>
 
 <%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
-<%@ Register Src="/Controls/QuanLy/Import/Search.ascx" TagName="Search" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {

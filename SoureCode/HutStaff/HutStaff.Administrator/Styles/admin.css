@@ -432,7 +432,6 @@ body
 
 /*
 Toan ' css
-
 */
 
 #container .header
@@ -441,7 +440,7 @@ Toan ' css
     border-width: 1px;
     background-color: #E0E0E0;
     height: auto;
-    width: 95%;
+    width: 80%;
     font-size: medium;
     border-top-style: solid;
     border-right-style: solid;
@@ -454,7 +453,7 @@ Toan ' css
     background-color: #F5F5F5;
     border: 1px solid;
     height: auto;
-    width: 95%;
+    width: 80%;
 }
 
 #container .body tr td:first-child
@@ -493,12 +492,8 @@ Toan ' css
     width: 120px;
 }
 
-#container table .labelColumn
-{
-    width: 30%;
-}
-
 /* end toan 'css */
+
 /********   HungPV Style *************/
 #content {left: 235px;margin-left: 10px;margin-top: 30px;position: absolute;top: 0;width: 750px;}
 #content {background: url("/Images/search.png") no-repeat scroll 30% 0 transparent;}

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="dc09dc98-c1f6-4fff-8960-48da269951fd" name="Toan@JUBEI-LAPTOP 2012-10-16 03:31:23" runUser="JUBEI-LAPTOP\Toan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="826d4f6d-c0cb-4be1-9ed2-672b0d21f805">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Toan_JUBEI-LAPTOP 2012-10-16 03_31_23" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-10-16T03:31:23.4985707+07:00" queuing="2012-10-16T03:31:23.9456258+07:00" start="2012-10-16T03:31:24.2276630+07:00" finish="2012-10-16T03:31:27.2180410+07:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PasswordTest" storage="c:\users\toàn\appdata\local\temp\qya0bvxi.ilf\testproject.dll" id="0a8c5e7c-60a9-4b9f-ea80-1f929c9de975">
+      <Execution timeOut="1800000" id="bd97658b-e734-4417-ab3a-09a95e37728c" />
+      <TestMethod codeBase="C:/Users/Toàn/AppData/Local/Temp/qya0bvxi.ilf/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.SoYeuTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PasswordTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0a8c5e7c-60a9-4b9f-ea80-1f929c9de975" executionId="bd97658b-e734-4417-ab3a-09a95e37728c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="bd97658b-e734-4417-ab3a-09a95e37728c" testId="0a8c5e7c-60a9-4b9f-ea80-1f929c9de975" testName="PasswordTest" computerName="JUBEI-LAPTOP" duration="00:00:00.0239800" startTime="2012-10-16T03:31:25.6348406+07:00" endTime="2012-10-16T03:31:25.7538561+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd97658b-e734-4417-ab3a-09a95e37728c">
+    </UnitTestResult>
+  </Results>
+</TestRun>

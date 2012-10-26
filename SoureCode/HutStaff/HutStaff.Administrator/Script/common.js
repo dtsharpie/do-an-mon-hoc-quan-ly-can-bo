@@ -365,3 +365,23 @@ function replaceAll(val, oldChar, newChar) {
 
     return val;
 }
+}
+
+
+//---------- Toan's scripts begin -----------//
+
+function hintTextBox_onFocus(control, hintMessage) {
+    if (control.value === hintMessage) {
+        control.value = "";
+        control.style.color = "#000000";
+    }
+}
+
+function hintTextBox_onBlur(control, hintMessage) {
+    if (control.value === "") {
+        control.value = hintMessage;
+        control.style.color = "#C0C0C0";
+    }
+}
+
+//---------- Toan's scripts end -------------//

@@ -41,6 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhMuc\DanToc.cs" />
+    <Compile Include="DanhMuc\DiaDanh.cs" />
+    <Compile Include="DanhMuc\DienCanBo.cs" />
+    <Compile Include="DanhMuc\DonViQuanLy.cs" />
+    <Compile Include="DanhMuc\GiaDinhChinhSach.cs" />
+    <Compile Include="DanhMuc\KhoiCanBo.cs" />
+    <Compile Include="DanhMuc\ThanhPhanXuatThan.cs" />
+    <Compile Include="DanhMuc\ThuongBinh.cs" />
+    <Compile Include="DanhMuc\TinhThanhPho.cs" />
+    <Compile Include="DanhMuc\TinhTrangHonNhan.cs" />
+    <Compile Include="DanhMuc\TonGiao.cs" />
+    <Compile Include="DanhMuc\TrinhDoHocVan.cs" />
+    <Compile Include="DanhMuc\TrinhDoLyLuan.cs" />
+    <Compile Include="DanhMuc\TrinhDoQuanLy.cs" />
+    <Compile Include="DanhMuc\TrinhDoTinHoc.cs" />
     <Compile Include="PagesBO\BaoCaoBO\BaoCaoBO.cs" />
     <Compile Include="PagesBO\QuanLy\BoSungCanBoBO.cs" />
     <Compile Include="PagesBO\QuanLy\NguoiDungBO.cs" />
@@ -52,6 +67,7 @@
     <Compile Include="Security\ViewCurrentUser.cs" />
     <Compile Include="Security\ViewUser.cs" />
     <Compile Include="Soyeu\Soyeu.cs" />
+    <Compile Include="Tables\SoYeu.cs" />
     <Compile Include="Tinhthanhpho\Tinhthanhpho.cs" />
   </ItemGroup>
   <ItemGroup>
