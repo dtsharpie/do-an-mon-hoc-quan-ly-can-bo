@@ -1,0 +1,311 @@
+﻿/* RESET */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, font, img, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Segoe UI, sans-serif, tahoma, helvetica, arial, "Times New Roman";
+    color: #000;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a img {
+        border: none;
+    }
+
+/* SETTING */
+
+html, body, #form1, #login, #content {
+    width: 100%;
+    height: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.fw {
+    width: 100%;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.rlt {
+    position: relative;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.blue {
+    color: blue;
+}
+
+.lnk-img {
+    display: block;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.center {
+    text-align: center;
+}
+
+.gillsans {
+    font-family: GillSans;
+}
+
+.gillsans-bold {
+    font-family: GillSans-Bold;
+}
+
+.hide {
+    display: none;
+}
+
+.box-shadow {
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+
+.radius-top {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    -moz-border-top-right-radius: 10px;
+    -moz-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+.radius-bottom {
+    -moz-border-bottom-right-radius: 10px;
+    -moz-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+/* IDENTIFY */
+
+#divLogin {
+    width: 100%;
+    height: 300px;
+    background: url('/Images/headerbg.png') repeat transparent;
+    position: relative;
+    padding-top: 100px;
+    color: #fff;
+}
+
+#divLoginForm {
+    width: 900px;
+    margin: 0 auto;
+    height: 200px;
+    background: url('/Images/logo_art.png') no-repeat 0 50px;
+}
+
+    #divLoginForm > div {
+        width: 500px;
+        height: 120px;
+        margin-left: 366px;
+        padding: 40px 0;
+    }
+
+    #divLoginForm .login-form {
+        margin-top: 5px;
+    }
+
+    #divLoginForm .textbox {
+        border: 1px solid #F9AE17;
+        border-radius: 5px 5px 5px 5px;
+        height: 22px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 180px;
+    }
+
+    #divLoginForm .button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #f9ae17;
+        color: #433518;
+        border-radius: 5px;
+        border: 2px solid #715929;
+        cursor: pointer;
+    }
+
+        #divLoginForm .button:active {
+            background-color: #433518;
+            color: #f9ae17;
+        }
+
+    #divLoginForm a {
+        color: #fff;
+    }
+
+#login .footer {
+    width: 400px;
+    margin: 10px auto;
+    text-align: center;
+    color: #433518;
+}
+
+    #login .footer a {
+        color: #d18e07;
+    }
+
+#header {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    padding-top: 10px;
+    background: url('/Images1/header_bg.png') repeat-x 100% 100%;
+    background-size: 100% 100%;
+    color: #433518;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 3px solid #f9ae17;
+    z-index: 110;
+}
+
+    #header .logo {
+        width: 366px;
+        height: 110px;
+        background: url('/Images1/logo_art.png') no-repeat 0 0;
+    }
+
+#divNavigation {
+    z-index: 1;
+}
+
+#header ul.navigation {
+    position: absolute;
+    bottom: 0;
+    left: 450px;
+    z-index: 1;
+}
+
+    #header ul.navigation > li {
+        display: block;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #433518;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+    }
+
+        #header ul.navigation > li:hover {
+            background-color: #f9ae17;
+        }
+
+    #header ul.navigation .sub-nav {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        display: none;
+    }
+
+        #header ul.navigation .sub-nav li {
+            background-color: #f9ae17;
+            padding: 5px 10px;
+        }
+
+            #header ul.navigation .sub-nav li:last-child {
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+
+            #header ul.navigation .sub-nav li a {
+                display: block;
+                min-width: 150px;
+                height: 100%;
+                color: #433518;
+            }
+
+            #header ul.navigation .sub-nav li:hover {
+                background-color: #433518;
+                color: #f9ae17;
+            }
+
+                #header ul.navigation .sub-nav li:hover a {
+                    color: #f9ae17;
+                }
+
+#header div.profile {
+    width: 260px;
+    height: 130px;
+    position: absolute;
+    bottom: -40px;
+    right: 50px;
+}
+
+    #header div.profile .profile-tool {
+        text-align: right;
+        margin-top: 50px;
+    }
+
+        #header div.profile .profile-tool a {
+            color: #433518;
+            text-decoration: underline;
+        }
+
+    #header div.profile .avatar {
+        border: 2px solid #f9ae17;
+        width: 120px;
+        height: 120px;
+        padding: 5px;
+        background-color: #fff;
+        margin-left: 15px;
+    }
+
+#header .profile div.avatar img {
+    width: 120px;
+    height: 120px;
+}

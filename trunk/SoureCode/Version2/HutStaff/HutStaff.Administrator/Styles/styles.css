@@ -1,0 +1,701 @@
+﻿/* RESET */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, font, img, ol, ul, li
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+}
+input
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial, Segoe UI, sans-serif, tahoma, helvetica, "Times New Roman";
+    color: #000;
+}
+ol, ul
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: none;
+}
+a img
+{
+    border: none;
+}
+
+/* SETTING */
+
+html, body
+{
+    width: 100%;
+}
+
+.clear
+{
+    clear: both;
+}
+.fw
+{
+    width: 100%;
+}
+.fr
+{
+    float: right;
+}
+.fl
+{
+    float: left;
+}
+.rlt
+{
+    position: relative;
+}
+.bold
+{
+    font-weight: bold;
+}
+.blue
+{
+    color: blue;
+}
+.lnk-img
+{
+    display: block;
+}
+.justify
+{
+    text-align: justify;
+}
+.center
+{
+    text-align: center;
+}
+.gillsans
+{
+    font-family: GillSans;
+}
+.gillsans-bold
+{
+    font-family: GillSans-Bold;
+}
+.hide
+{
+    display: none;
+}
+
+.box-shadow
+{
+    box-shadow: 0 0 10px #888;
+    -moz-box-shadow: 0 0 10px #888;
+    -webkit-box-shadow: 0 0 10px #888;
+}
+
+.margin-left-10
+{
+    margin-left: 10px;
+}
+
+input, select, textarea
+{
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+
+button, input.button
+{
+    background-color: #eee;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.8;
+    padding: 5px 10px;
+}
+
+button:hover, input.button:hover
+{
+    opacity: 1;
+}
+
+input.button:active
+{
+    background-color: #333;
+    color: #eee;
+}
+
+.lnk-button
+{
+    display: inline-block;
+    background-color: #eee;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    color: #333;
+    font-weight: bold;
+    opacity: 0.8;
+    padding: 5px 10px;
+}
+
+.lnk-button:hover
+{
+    opacity: 1;  
+}
+
+.icon img
+{
+    width: 100%;
+    height: 100%;
+}
+
+div.sub-title
+{
+    margin-top: 20px;
+}
+
+div.sub-title h2
+{
+    display: inline;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #FB9337;
+    border: 50%;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.table-result
+{
+    border-collapse: collapse;
+    background: #fff;
+    width: 100%;
+    color: #333;
+}
+
+.table-result tr.header td, .table-result th
+{
+    background: url('/Images/headerbg.png');
+    font-weight: bold;
+    color: #fff;
+}
+
+.table-result td, .table-result th
+{
+    padding: 5px 10px;
+    vertical-align: middle;
+    border: 1px solid #DDD;
+}
+
+.table-result tr.even td
+{
+    background-color: #FFF6DA;
+}
+
+.table-container
+{
+    border-collapse: collapse;
+    background: #fff;
+    width: 100%;
+    color: #333;
+}
+
+.table-container tr.header td, .table-container.th
+{
+    background: url('/Images/headerbg.png');
+    font-weight: bold;
+    color: #fff;
+}
+
+.table-container td, .table-container th
+{
+    padding: 5px 10px;
+    vertical-align: middle;
+    border: 1px solid #DDD;
+}
+
+.table-container tr.even td
+{
+    background-color: #FFF6DA;
+}
+
+.header-table
+{
+    background-color: #F7F7F7;
+    border: 1px solid #DDD;
+    border-bottom: none;
+    padding: 5px 10px;
+    color: #333;
+}
+
+.header-table > div
+{
+    display: inline-block;
+}
+
+.footer-table
+{
+    background-color: #F7F7F7;
+    border: 1px solid #DDD;
+    border-top: none;
+    padding: 5px 10px;
+    color: #333;
+}
+
+.footer-table > div
+{
+    display: inline-block;
+}
+
+.paging span
+{
+    display: inline-block;
+}
+
+.paging .paging_button
+{
+    background-color: #FCFCFC;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 1px 1px 2px #DDDDDD;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 3px 7px;
+    cursor: pointer;
+}
+
+.paging .paging_button.active
+{
+    background-color: #F0882C;
+    border: 1px solid #F0882C;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+}
+
+.paging .paging_button.active:hover
+{
+    background-color: #F0882C !important;
+    
+}
+
+.paging .paging_button:hover
+{
+    background-color: #DDD;    
+}
+
+/* STYLES */
+#wrapper
+{
+    width: 100%;
+}
+
+#divHeader
+{
+    color: #fff;
+    width: 100%;
+    height: 36px;
+    background: url('/Images/headerbg.png');
+    border-bottom: 4px solid #FB9337;
+}
+
+#divHeader a
+{
+    color: #fff; 
+}
+
+#divHeader .nav
+{
+    height: 100%;
+}
+
+#divHeader .nav a
+{
+    float: left;
+    height: 100%;
+    width: 104px;
+    border-left: 1px solid #576A85;
+    border-right: 1px solid #394962;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+#divHeader .nav a.active
+{
+    background: url('/Images/indicator.png') no-repeat scroll center bottom transparent !important;
+}
+
+#divHeader .nav a:hover
+{
+    background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
+
+}
+
+#divHeader .nav a:active
+{
+    border-left: 1px solid #394962;
+    border-right: 1px solid #576A85;
+}
+
+#divHeader .nav a .icon
+{
+    width: 32px;
+    height: 32px;
+    margin: 10px 29px 10px;
+}
+
+#divHeader .nav a .label
+{
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    line-height: 36px;
+}
+
+#divHeader .acc-tool
+{
+    position: relative;
+    width: 124px;
+    height: 100%;
+    border-left: 1px solid #394962;
+    z-index: 1000;
+}
+
+#divHeader .acc-tool .icon img
+{
+    width: 32px;
+    height: 37px;
+    margin: 10px 45px;
+}
+
+#divHeader .acc-tool > a
+{
+    display: block;
+    width: 123px;
+    height: 100%;
+    border-left: 1px solid #576A85; 
+}
+
+#divHeader .acc-tool > a:hover
+{
+    background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
+       
+}
+
+#divHeader .acc-tool > a:active
+{
+    border-left: 1px solid #394962;
+}
+
+#divHeader .acc-tool > a span
+{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    height: 100%;
+    line-height: 36px;
+}
+
+#divHeader .acc-tool .acc-info
+{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -124px;
+    width: 250px;
+    height: 120px;
+    background-color: #fff;
+}
+
+#divHeader .acc-tool .acc-info .avatar
+{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#divHeader .acc-tool .acc-info .avatar img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#divHeader .acc-tool .acc-info .tool
+{
+    width: 130px;
+    height: 100px;
+    padding: 10px 0;
+}
+
+#divHeader .acc-tool .acc-info .tool a
+{
+    display: block;
+    width: 110px;
+    height: 29px;
+    line-height: 29px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+#divHeader .acc-tool .acc-info .tool a:hover
+{
+    color: #FB9337;
+}
+#divContent
+{
+    width: 100%;
+}
+
+#divSideBar
+{
+    width: 230px;
+}
+
+#divSideBar li > a
+{
+    text-transform: uppercase;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+#divSideBar ul > li
+{
+    position: relative;
+    display: block; 
+    overflow: hidden;
+}
+
+#divSideBar ul > li > a
+{
+    border-bottom: 1px solid #EEE;    
+    
+}
+
+#divSideBar ul > li > a:hover
+{
+    background-color: #F7F7F7;    
+}
+
+#divSideBar ul > li > a.active
+{
+    color: #FB9337;
+    background-color: #F7F7F7;
+}
+
+#divSideBar > ul > li
+{
+}
+
+#divSideBar > ul > li > a
+{
+    
+    padding-left: 20px;
+    
+}
+
+#divSideBar > ul > li > span
+{
+    position: absolute;
+    width: 8px;
+    height: 4px;
+    top: 18px;
+    right: 10px;
+}
+
+#divSideBar ul.subform
+{
+    display: none;
+    padding-left: 25px;
+    text-transform: lowercase;
+}
+
+#divSideBar ul.subform a
+{
+    text-transform: capitalize !important; 
+}
+
+#divSideBar ul.subform.show
+{
+    display: block !important;
+}
+
+#divSideBar ul.subform > li
+{
+    border-left: 1px dashed #ccc;
+}
+
+#divSideBar ul.subform > li > a
+{
+    padding-left: 20px;
+}
+
+#divSideBar .toggle
+{
+    background: url("/Images/menu_toggle.png") no-repeat scroll center -21px transparent;    
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    margin: 10px;
+}
+
+#divSideBar .toggle.collapse
+{
+    background: url("/Images/menu_toggle.png") no-repeat scroll center 0 transparent;
+    
+}
+
+#divMainContent
+{
+    margin-left: 230px;
+    border-left: 1px solid #ddd;
+    background: url("/Images/noise.white.png") repeat transparent;
+}
+
+#divMainContent .content
+{
+    width: 95%;
+    padding: 1.5% 2.5% 3%;
+}
+
+#divMainContent .content h1.title
+{
+    font-size: 20px;
+    display: block;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+div.form-container
+{
+    background-color: #fff6da;
+    border: 1px solid #DDD;
+    padding: 10px 20px;
+}
+
+div.form-container table tr, div.form-container table td
+{
+    height: 25px;
+    line-height: 25px;
+}
+
+div.form-container table td.spacing
+{
+    width: 50px;
+}
+div.form-container table td.short-spacing
+{
+    width: 10px;
+}
+
+.div-tool
+{
+    margin: 10px 0;
+}
+
+.avatar-info
+{
+    margin: 10px 0 20px;
+}
+
+.avatar-info .avatar
+{
+    margin-left: 10px;
+    width: 80px;
+    height: 100px; 
+}
+
+.avatar-info .avatar img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-info .tool
+{
+    height: 100px;
+    margin-left: 10px;
+}
+
+.avatar-info .tool > span
+{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+#divQuanLy .row
+{
+    border: 1px solid #0066FF;
+    height: 50px;
+    margin: 20px 0;
+    width: 750px;
+    background-color: #FFF;
+    
+}
+
+#divQuanLy .row:hover {
+    background-color: #FFF6DA;
+}
+
+#divQuanLy .row_logo
+{
+    border-right: 1px solid #0066FF;
+    float: left;
+    height: 50px;
+    margin-right: 5px;
+    width: 50px;
+}
+
+#divQuanLy .row_text
+{
+    float: left;
+}
+
+#divQuanLy .row_text a
+{
+    color: #000000;
+    font-size: 14pt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#divQuanLy .row_text a:hover
+{
+    color: #0054A6;
+}
+
+#divQuanLy .row_text p
+{
+    color: #333333;
+    padding: 0;
+}

@@ -1,0 +1,648 @@
+﻿/* RESET */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, font, img, ol, ul, li
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+}
+input
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-size: 12px;
+    font-family: Arial, Segoe UI, sans-serif, tahoma, helvetica, "Times New Roman";
+    color: #000;
+}
+ol, ul
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: none;
+}
+a img
+{
+    border: none;
+}
+
+/* SETTING */
+
+html, body, #form1
+{
+    width: 100%;
+    min-height: 100%;
+}
+
+.clear
+{
+    clear: both;
+}
+.fw
+{
+    width: 100%;
+}
+.fr
+{
+    float: right;
+}
+.fl
+{
+    float: left;
+}
+.rlt
+{
+    position: relative;
+}
+.bold
+{
+    font-weight: bold;
+}
+.blue
+{
+    color: blue;
+}
+.lnk-img
+{
+    display: block;
+}
+.justify
+{
+    text-align: justify;
+}
+.center
+{
+    text-align: center;
+}
+.gillsans
+{
+    font-family: GillSans;
+}
+.gillsans-bold
+{
+    font-family: GillSans-Bold;
+}
+.hide
+{
+    display: none;
+}
+
+.box-shadow
+{
+    box-shadow: 0 0 10px #888;
+    -moz-box-shadow: 0 0 10px #888;
+    -webkit-box-shadow: 0 0 10px #888;
+}
+
+input, select, textarea
+{
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    padding: 5px 5px;
+}
+
+button, input.button
+{
+    background-color: #eee;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.8;
+    padding: 7px 10px;
+}
+
+button:hover, input.button:hover
+{
+    opacity: 1;
+}
+
+input.button:active
+{
+    background-color: #333;
+    color: #eee;
+}
+
+.tool-border
+{
+    padding: 9px;
+    width: 81px;
+    height: 81px;
+    background-color: #EEE;
+    border: 1px solid #e8e8e8;
+    
+    box-shadow: inset 3px 3px 5px -3px #CCC;
+    -moz-box-shadow: inset 3px 3px 5px -3px #CCC;
+    -webkit-box-shadow: inset 3px 3px 5px -3px #CCC;
+}
+
+.tool-border
+{
+    margin-right: 20px;
+    display: inline-block
+}
+
+.tool-border .lnk-tool
+{
+    width: 80px;
+    height: 80px;
+    display: block;
+    border: 1px solid #EEE;
+    background-color: #fff;
+    font-size: 11px;
+}
+
+.tool-border .lnk-tool:hover
+{
+    border: 1px solid #FB9337;    
+}
+
+.tool-border .lnk-tool
+{
+    color: #333;
+    font-weight: bold;
+}
+
+.tool-border .lnk-tool .icon
+{
+    width: 40ps;
+    height: 40px;
+    margin: 10px 20px 10px;
+}
+
+.tool-border .lnk-tool .label
+{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.icon img
+{
+    width: 100%;
+    height: 100%;
+}
+
+div.sub-title
+{
+    margin-top: 20px;
+}
+
+div.sub-title h2
+{
+    display: inline;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #FB9337;
+    border: 50%;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.filterBox table
+{
+
+}
+
+.filterBox table td
+{
+    padding: 0 20px 0 0;
+}
+
+table.main-table
+{
+    border-collapse: collapse;
+    background: #fff;
+    width: 100%;
+    color: #333;
+}
+
+table.main-table tr.header td
+{
+    background-color: #F7F7F7;
+    font-weight: bold;
+    text-align: left;
+}
+
+table.main-table td, .main-table th
+{
+    padding: 5px 10px;
+    vertical-align: middle;
+    border: 1px solid #DDD;
+}
+
+table.main-table tr.even td
+{
+    background-color: #FCFCFC;
+}
+
+.paging a
+{
+    display: inline-block;
+}
+
+.paging .paging_button
+{
+    background-color: #FCFCFC;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 1px 1px 2px #DDDDDD;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 5px 7px;
+    cursor: pointer;
+}
+
+.paging .paging_button.active
+{
+    background-color: #F0882C;
+    border: 1px solid #F0882C;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+}
+
+.paging .paging_button.active:hover
+{
+    background-color: #F0882C !important;
+    
+}
+
+.paging .paging_button:hover
+{
+    background-color: #DDD;    
+}
+
+/* STYLES */
+#wrapper
+{
+    width: 100%;
+}
+
+#divHeader
+{
+    color: #fff;
+    width: 100%;
+    height: 85px;
+    background: url('/Images/headerbg.png');
+    border-bottom: 4px solid #FB9337;
+}
+
+#divHeader a
+{
+    color: #fff;    
+}
+
+#divHeader .nav
+{
+    height: 100%;
+}
+
+#divHeader .nav a
+{
+    float: left;
+    height: 100%;
+    width: 104px;
+    border-left: 1px solid #576A85;
+    border-right: 1px solid #394962;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+#divHeader .nav a.active
+{
+    background: url('/Images/indicator.png') no-repeat scroll center bottom transparent !important;
+}
+
+#divHeader .nav a:hover
+{
+    background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
+
+}
+
+#divHeader .nav a:active
+{
+    border-left: 1px solid #394962;
+    border-right: 1px solid #576A85;
+}
+
+#divHeader .nav a .icon
+{
+    width: 32px;
+    height: 32px;
+    margin: 10px auto;
+}
+
+#divHeader .nav a .label
+{
+    text-align: center;
+}
+
+#divHeader .acc-tool
+{
+    position: relative;
+    width: 124px;
+    height: 100%;
+    border-left: 1px solid #394962;
+    z-index: 1000;
+}
+
+#divHeader .acc-tool .icon img
+{
+    width: 32px;
+    height: 37px;
+    margin: 10px 45px;
+}
+
+#divHeader .acc-tool > a
+{
+    display: block;
+    width: 123px;
+    height: 100%;
+    border-left: 1px solid #576A85; 
+}
+
+#divHeader .acc-tool > a:hover
+{
+    background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
+       
+}
+
+#divHeader .acc-tool > a:active
+{
+    border-left: 1px solid #394962;
+}
+
+#divHeader .acc-tool > a span
+{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#divHeader .acc-tool .acc-info
+{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -124px;
+    width: 250px;
+    height: 120px;
+    background-color: #fff;
+}
+
+#divHeader .acc-tool .acc-info .avatar
+{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#divHeader .acc-tool .acc-info .avatar img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#divHeader .acc-tool .acc-info .tool
+{
+    width: 130px;
+    height: 100px;
+    padding: 10px 0;
+}
+
+#divHeader .acc-tool .acc-info .tool a
+{
+    display: block;
+    width: 110px;
+    height: 29px;
+    line-height: 29px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+#divHeader .acc-tool .acc-info .tool a:hover
+{
+    color: #FB9337;
+}
+
+#divContent
+{
+    width: 100%;
+}
+
+#divSideBar
+{
+    position: fixed;
+    top: 89px;
+    left: 0;
+    width: 230px;
+}
+
+#divSideBar li > a
+{
+    text-transform: uppercase;
+    display: block;
+    height: 39px;
+    line-height: 39px;
+    font-weight: bold;
+    color: #333;
+}
+
+#divSideBar ul > li
+{
+    position: relative;
+    display: block; 
+    overflow: hidden;
+}
+
+#divSideBar ul > li > a
+{
+    border-bottom: 1px solid #EEE;    
+    
+}
+
+#divSideBar ul > li > a:hover
+{
+    background-color: #F7F7F7;    
+}
+
+#divSideBar ul > li > a.active
+{
+    color: #FB9337;
+    background-color: #F7F7F7;
+}
+
+#divSideBar > ul > li
+{
+}
+
+#divSideBar > ul > li > a
+{
+    
+    padding-left: 20px;
+    
+}
+
+#divSideBar > ul > li > span
+{
+    position: absolute;
+    width: 8px;
+    height: 4px;
+    top: 18px;
+    right: 10px;
+}
+
+#divSideBar ul.subform
+{
+    padding-left: 25px;
+}
+
+#divSideBar ul.subform > li
+{
+    border-left: 1px dashed #ccc;
+}
+
+#divSideBar ul.subform > li > a
+{
+    padding-left: 20px;
+}
+
+#divSideBar .toggle
+{
+    background: url("/Images/menu_toggle.png") no-repeat scroll center -21px transparent;    
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    margin: 10px;
+}
+
+#divSideBar .toggle.collapse
+{
+    background: url("/Images/menu_toggle.png") no-repeat scroll center 0 transparent;
+    
+}
+
+#divMainContent
+{
+    margin-left: 230px;
+    border-left: 1px solid #ddd;
+    background: url("/Images/noise.white.png") repeat transparent;
+}
+
+#divMainContent .content
+{
+    width: 95%;
+    padding: 1.5% 2.5% 3%;
+}
+
+#divMainContent .content h1.title
+{
+    font-size: 20px;
+    display: block;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+div.form-container
+{
+    background-color: #fff;
+    border: 1px solid #DDD;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+div.form-container table tr, td
+{
+    height: 35px;
+}
+
+div.form-container table td.spacing
+{
+    width: 50px;
+}
+div.form-container table td.short-spacing
+{
+    width: 10px;
+}
+
+#divSearchTool
+{
+    margin: 20px 0;
+}
+
+.avatar-info
+{
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.avatar-info .avatar
+{
+    width: 120px;
+    height: 100%; 
+}
+
+.avatar-info .avatar img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-info .tool
+{
+    height: 100px;
+    margin-left: 20px;
+}
+
+.avatar-info .tool > span
+{
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-weight: bold;
+}
+
+#imgProfile
+{
+    cursor: pointer;
+}
+
+#profileImageMenu
+{
+    display: none;
+    margin-left: 20px;
+    width: 100px;
+    padding: 0 10px;
+    border: 1px solid gray;
+}
+
+#profileImageMenu span
+{
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+}
