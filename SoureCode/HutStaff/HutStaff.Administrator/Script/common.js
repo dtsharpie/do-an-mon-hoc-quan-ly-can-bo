@@ -365,7 +365,7 @@ function replaceAll(val, oldChar, newChar) {
 
     return val;
 }
-}
+
 
 
 //---------- Toan's scripts begin -----------//
