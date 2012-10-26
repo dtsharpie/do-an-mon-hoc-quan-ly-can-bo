@@ -20,21 +20,26 @@
                 <%# Eval("shcc") %></ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Đơn vị quản lý">
+        <asp:TemplateField HeaderText="Diễn biến lương">
             <ItemTemplate>
-                <%# Eval("dvql") %>
+                <%# Eval("dl_dbl") %>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Số điện thoại">
+        <asp:TemplateField HeaderText="Hệ số lương">
             <ItemTemplate>
-                <%# Eval("tel") %></ItemTemplate>
+                <%# Eval("hsl") %></ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Email">
+        <asp:TemplateField HeaderText="Thời gian bắt đầu diễn biến lương">
             <ItemTemplate>
-                <%# Eval("email") %>
+                <%# Eval("tgbd_dbl")%>
             </ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Thông tin khác">
+            <ItemTemplate>
+                <%# Eval("ttk_qtdbl")%>
+            </ItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField>
             <HeaderTemplate>
@@ -59,9 +64,9 @@
             selectAll($(this));
         });
 
-        $(".delete-row").click(function () { 
+        $(".delete-row").click(function () {
             $(this).closest("tr").remove();
-        
+
         });
     });
 </script>

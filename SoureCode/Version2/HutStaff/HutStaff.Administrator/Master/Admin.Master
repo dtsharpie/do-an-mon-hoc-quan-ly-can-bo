@@ -5,7 +5,11 @@
 <head runat="server">
     <title>Hệ thống quản lý cán bộ Bách Khoa</title>
     <script src="/Scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.9.0/js/jquery.ui.datepicker-vi.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.9.0/js/jquery-ui-1.9.0.custom.min.js" type="text/javascript"></script>
     <script src="/Scripts/common.js" type="text/javascript"></script>
+    <link href="/Scripts/jquery-ui-1.9.0/css/smoothness/jquery-ui-1.9.0.custom.min.css"
+        rel="stylesheet" />
     <link href="/Styles/styles.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -26,8 +30,7 @@
                     <label class="label">
                         In báo cáo
                     </label>
-                </a>
-                <a href="/Pages/HuongDan/HuongDan.aspx">
+                </a><a href="/Pages/HuongDan/HuongDan.aspx">
                     <label class="label">
                         Hướng dẫn
                     </label>
@@ -35,19 +38,19 @@
             </div>
             <div class="acc-tool fr">
                 <form id="form1" runat="server">
-                    <a href="javascript:void(0);"><span>username<img src="/Images/indicator_down.png"
-                        style="margin-left: 5px" width="8px" height="4px" alt="" /></span> </a>
-                    <div class="acc-info box-shadow">
-                        <div class="avatar fl">
-                            <img src="/Images/no_avatar.jpg" alt="avatar" />
-                        </div>
-                        <div class="tool fl">
-                            <a href="mailto:vuongvd@gmail.com">Gửi mail</a> <a href="javascript:void(0);">Xem thông
-                            tin</a><asp:LinkButton runat="server" ID="btnLogout" Text="Thoát" OnClick="btnLogout_Click"></asp:LinkButton>
-                        </div>
-                        <div class="clear">
-                        </div>
+                <a href="javascript:void(0);"><span>username<img src="/Images/indicator_down.png"
+                    style="margin-left: 5px" width="8px" height="4px" alt="" /></span> </a>
+                <div class="acc-info box-shadow">
+                    <div class="avatar fl">
+                        <img src="/Images/no_avatar.jpg" alt="avatar" />
                     </div>
+                    <div class="tool fl">
+                        <a href="mailto:vuongvd@gmail.com">Gửi mail</a> <a href="javascript:void(0);">Xem thông
+                            tin</a><asp:LinkButton runat="server" ID="btnLogout" Text="Thoát" OnClick="btnLogout_Click"></asp:LinkButton>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
                 </form>
             </div>
             <div class="clear">
