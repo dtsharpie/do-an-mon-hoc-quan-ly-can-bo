@@ -8,4 +8,7 @@
         });
     });
 </script>
-<asp:TextBox ID="mainTextBox" runat="server" CssClass="DatePickerTextBox" />
+<p>
+<asp:TextBox ID="mainTextBox" runat="server" />
+</p>
+

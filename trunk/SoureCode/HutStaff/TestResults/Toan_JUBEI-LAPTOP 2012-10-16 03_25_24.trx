@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="4a1bf0a3-99e4-4dd7-b738-069c6e52f15d" name="Toan@JUBEI-LAPTOP 2012-10-16 03:25:24" runUser="JUBEI-LAPTOP\Toan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="826d4f6d-c0cb-4be1-9ed2-672b0d21f805">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Toan_JUBEI-LAPTOP 2012-10-16 03_25_24" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-10-16T03:25:24.0388001+07:00" queuing="2012-10-16T03:25:24.3988465+07:00" start="2012-10-16T03:25:24.7058852+07:00" finish="2012-10-16T03:25:27.6572604+07:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PasswordTest" storage="c:\users\toàn\appdata\local\temp\lhlhvkqg.vgh\testproject.dll" id="0a8c5e7c-60a9-4b9f-ea80-1f929c9de975">
+      <Execution timeOut="1800000" id="a0903823-c497-47c3-a48b-42c887a0b2f2" />
+      <TestMethod codeBase="C:/Users/Toàn/AppData/Local/Temp/lhlhvkqg.vgh/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.SoYeuTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PasswordTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0a8c5e7c-60a9-4b9f-ea80-1f929c9de975" executionId="a0903823-c497-47c3-a48b-42c887a0b2f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="a0903823-c497-47c3-a48b-42c887a0b2f2" testId="0a8c5e7c-60a9-4b9f-ea80-1f929c9de975" testName="PasswordTest" computerName="JUBEI-LAPTOP" duration="00:00:00.0630983" startTime="2012-10-16T03:25:26.0850612+07:00" endTime="2012-10-16T03:25:26.2400804+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0903823-c497-47c3-a48b-42c887a0b2f2">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;16102012&gt;. Actual:&lt;162502012&gt;. </Message>
+          <StackTrace>   at TestProject.SoYeuTest.PasswordTest() in D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\HutStaff\TestProject\SoYeuTest.cs:line 92
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

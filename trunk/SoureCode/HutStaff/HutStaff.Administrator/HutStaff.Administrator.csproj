@@ -62,9 +62,7 @@
     <Content Include="Controls\Common\DatePicker.ascx" />
     <Content Include="Controls\Common\DropDownChosen.ascx" />
     <Content Include="Controls\Common\HintTextBox.ascx" />
-    <Content Include="Controls\QuanLy\Import\Pager.ascx" />
-    <Content Include="Controls\QuanLy\Import\Search.ascx" />
-    <Content Include="Controls\QuanLy\ThongTinCanBoControl.ascx" />
+    <Content Include="Controls\QuanLy\OfficialInfoInsertForm.ascx" />
     <Content Include="Controls\TimKiem\SearchForm.ascx" />
     <Content Include="Controls\TimKiem\SearchResult.ascx" />
     <Content Include="Default.aspx" />
@@ -246,12 +244,12 @@
     <Compile Include="Controls\QuanLy\Import\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\QuanLy\ThongTinCanBoControl.ascx.cs">
-      <DependentUpon>ThongTinCanBoControl.ascx</DependentUpon>
+    <Compile Include="Controls\QuanLy\OfficialInfoInsertForm.ascx.cs">
+      <DependentUpon>OfficialInfoInsertForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\QuanLy\ThongTinCanBoControl.ascx.designer.cs">
-      <DependentUpon>ThongTinCanBoControl.ascx</DependentUpon>
+    <Compile Include="Controls\QuanLy\OfficialInfoInsertForm.ascx.designer.cs">
+      <DependentUpon>OfficialInfoInsertForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\TimKiem\SearchForm.ascx.cs">
       <DependentUpon>SearchForm.ascx</DependentUpon>
