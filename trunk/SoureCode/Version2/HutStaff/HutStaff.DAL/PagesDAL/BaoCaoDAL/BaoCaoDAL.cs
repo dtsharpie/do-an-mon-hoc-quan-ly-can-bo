@@ -40,5 +40,15 @@ namespace HutStaff.DAL.PagesDAL.BaoCaoDAL
                 return db.Execute("sp_view_all_dm_kcb", new string[] { }, new object[] { });
             }
         }
+
+        public static DataTable ViewSetNangLuong(int loaiHanNgach, int loaiBang, DateTime thoiGian)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_get_salary_increment_list]",
+                    new string[] { "@loaiHanNgach", "@loaiBang", "@thoiGian" },
+                    new object[] { loaiHanNgach, loaiBang, thoiGian });
+            }
+        }
     }
 }

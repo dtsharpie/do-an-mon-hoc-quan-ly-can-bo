@@ -7,6 +7,37 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(2).addClass('active');
+
+            $(".datepicker").datepicker({
+                showButtonPanel: true,
+                dateFormat: 'dd/mm/yy',
+                yearRange: "1990:2020"
+            });
+
+            $("#formSearch").submit(function () {
+                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 400px;"><img src="/images/processing.gif" /></td></tr></table>');
+                loadControl(".pagerdata",
+                {
+                    alias: 'pager-danh-sach-can-bo',
+                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
+                    loaiBang: $('#ddlLuaChonBang').val(),
+                    thoiGian: $("#txtDate").val(),
+                    ps: 10000,
+                    pi: 1
+                }, true);
+
+
+                loadControl(".main-table",
+                {
+                    alias: 'danh-sach-can-bo',
+                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
+                    loaiBang: $('#ddlLuaChonBang').val(),
+                    thoiGian: $("#txtDate").val(),
+                    ps: 10000,
+                    pi: 1
+                }, false);
+                return false;
+            });
         });
     </script>
     <style type="text/css">
@@ -30,65 +61,49 @@
         <hr width="700px" />
         <br />
         <div>
-            <table border="1">
-                <tr>
-                    <td>
-                        <p>
-                            Loại hạn ngạch:
-                        </p>
-                    </td>
-                    <td>
-                        <select id="ddlLoaiHanNgach">
-                            <option value="2">2 năm</option>
-                            <option value="3">3 năm</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>
-                            Lựa chọn bảng:
-                        </p>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlLuaChonBang" runat="server">
-                            <asp:ListItem Value="1">Danh sách đến hạn nhận lương</asp:ListItem>
-                            <asp:ListItem Value="2">Danh sách xét duyệt 5%</asp:ListItem>
-                            <asp:ListItem Value="2">Danh sách vượt khung</asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>
-                            Tính đến tháng / năm: &nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlThoiHan" runat="server">
-                            <asp:ListItem Value="1">1</asp:ListItem>
-                            <asp:ListItem Value="2">2</asp:ListItem>
-                            <asp:ListItem Value="3">3</asp:ListItem>
-                            <asp:ListItem Value="4">4</asp:ListItem>
-                            <asp:ListItem Value="5">5</asp:ListItem>
-                            <asp:ListItem Value="6">6</asp:ListItem>
-                            <asp:ListItem Value="7">7</asp:ListItem>
-                            <asp:ListItem Value="8">8</asp:ListItem>
-                            <asp:ListItem Value="9">9</asp:ListItem>
-                            <asp:ListItem Value="10">10</asp:ListItem>
-                            <asp:ListItem Value="11">11</asp:ListItem>
-                            <asp:ListItem Value="12" Selected="True">12</asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:TextBox ID="txtNam" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Button ID="btnOk" runat="server" Text="OK" OnClick="btnOk_Click" />
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-            </table>
+            <form id="formSearch">
+            <div>
+                <label>
+                    Loại hạn ngạch:</label>
+                <select id="ddlLoaiHanNgach">
+                    <option value="2">2 năm</option>
+                    <option value="3">3 năm</option>
+                </select>
+            </div>
+            <div>
+                <label>
+                    Lựa chọn bảng:</label>
+                <select id="ddlLuaChonBang">
+                    <option value="1">Danh sách đến hạn nhận lương</option>
+                    <option value="2">Danh sách xét duyệt 5%</option>
+                    <option value="2">Danh sách vượt khung</option>
+                </select>
+            </div>
+            <div>
+                <label>
+                    Tính đến:</label>
+                <input class="datepicker" type="text" id="txtDate" />
+            </div>
+            <input type="submit" id="btnOk" value="OK" />
+            </form>
+        </div>
+        <div>
+            <div class="footer-table">
+                <div class="left">
+                    <a target="_blank" href="javascript:void(0);" class="link-tool left">Duyệt / Không duyệt</a>
+                </div>
+                <div class="right pagerdata">
+                </div>
+            </div>
+            <div class="main-table">
+            </div>
+            <div class="footer-table">
+                <div class="left">
+                    <a target="_blank" href="javascript:void(0);" class="link-tool left">Duyệt / Không duyệt</a>
+                </div>
+                <div class="right pagerdata">
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>
