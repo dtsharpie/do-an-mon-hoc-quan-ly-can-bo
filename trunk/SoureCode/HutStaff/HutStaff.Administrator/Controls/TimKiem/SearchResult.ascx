@@ -8,28 +8,15 @@
     <br />
     <div class="footer-table">
         <div class="left">
-            <a target="_blank" href="javascript:void(0);" class="link-tool left">Xuất dữ liệu</a>
-            <a target="_blank" href="javascript:void(0);" class="link-tool left" style="margin-left: 10px">
-                In sổ cái</a> <a href="mailto:abc@gmail.com" class="link-tool left" style="margin-left: 10px">
+            <a target="_blank" href="" class="link-tool left">Xuất dữ liệu</a>
+            <a target="_blank" href="" class="link-tool left" style="margin-left: 10px">
+                In sổ cái</a> <a href="" class="link-tool left" style="margin-left: 10px">
                     Gửi Email</a>
         </div>
         <div class="right">
-            <select name="pageview" id="pageview" size="1" style="float: left;">
-                <option value="0">-- Xem toàn bộ thông tin --</option>
-                <option value="1">Chỉ xem trình độ ngoại ngữ</option>
-                <option value="2">Chỉ xem quá trình chức danh </option>
-                <option value="3">Chỉ xem quá trình chức vụ chính quyền </option>
-                <option value="4">Chỉ xem quá trình chức vụ Đoàn thể </option>
-                <option value="5">Chỉ xem quá trình khen thưởng </option>
-                <option value="6">Chỉ xem quá trình kỷ luật </option>
-                <option value="7">Chỉ xem quá trình đào tạo</option>
-                <option value="8">Chỉ xem quá trình bồi dưỡng</option>
-                <option value="9">Chỉ xem quá trình công tác </option>
-                <option value="10">Chỉ xem quá trình diễn biến lương </option>
-                <option value="11">Chỉ xem quan hệ gia đình </option>
-                <option value="12">Chỉ xem nước ngoài đã đến </option>
-                <!--option value=12>Ch&#7881; xem quan h&#7879; th&#226;n nh&#226;n </option-->
-            </select>
+            <asp:DropDownList runat="server" id="pageview" size="1" style="float: left;">
+                
+            </asp:DropDownList>
         </div>
     </div>
     <table class="table-result">
@@ -157,22 +144,9 @@
                     Gửi Email</a>
         </div>
         <div class="right">
-            <select name="pageview" id="Select1" size="1" style="float: left;">
-                <option value="0">-- Xem toàn bộ thông tin --</option>
-                <option value="1">Chỉ xem trình độ ngoại ngữ</option>
-                <option value="2">Chỉ xem quá trình chức danh </option>
-                <option value="3">Chỉ xem quá trình chức vụ chính quyền </option>
-                <option value="4">Chỉ xem quá trình chức vụ Đoàn thể </option>
-                <option value="5">Chỉ xem quá trình khen thưởng </option>
-                <option value="6">Chỉ xem quá trình kỷ luật </option>
-                <option value="7">Chỉ xem quá trình đào tạo</option>
-                <option value="8">Chỉ xem quá trình bồi dưỡng</option>
-                <option value="9">Chỉ xem quá trình công tác </option>
-                <option value="10">Chỉ xem quá trình diễn biến lương </option>
-                <option value="11">Chỉ xem quan hệ gia đình </option>
-                <option value="12">Chỉ xem nước ngoài đã đến </option>
-                <!--option value=12>Ch&#7881; xem quan h&#7879; th&#226;n nh&#226;n </option-->
-            </select>
+            <asp:DropDownList runat="server" id="Select1" size="1" style="float: left;">
+                
+            </asp:DropDownList>
         </div>
     </div>
     <br />
