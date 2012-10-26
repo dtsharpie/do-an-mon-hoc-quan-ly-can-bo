@@ -13,6 +13,24 @@ namespace HutStaff.Administrator.Controls.TimKiem {
     public partial class SearchResult {
         
         /// <summary>
+        /// pageview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList pageview;
+        
+        /// <summary>
+        /// Select1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Select1;
+        
+        /// <summary>
         /// Pager2 control.
         /// </summary>
         /// <remarks>
