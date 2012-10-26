@@ -21,9 +21,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
-    <form id="form1" runat="server">
     <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
-    </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="content">
@@ -40,10 +38,10 @@
                         </p>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlLoaiHanNgach" runat="server">
-                            <asp:ListItem Value="2">2 năm</asp:ListItem>
-                            <asp:ListItem Value="3">3 năm</asp:ListItem>
-                        </asp:DropDownList>
+                        <select id="ddlLoaiHanNgach">
+                            <option value="2">2 năm</option>
+                            <option value="3">3 năm</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>

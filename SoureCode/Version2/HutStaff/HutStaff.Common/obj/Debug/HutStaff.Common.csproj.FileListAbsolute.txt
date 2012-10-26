@@ -2,3 +2,8 @@ C:\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
 C:\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
 C:\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 C:\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.csprojResolveAssemblyReference.cache

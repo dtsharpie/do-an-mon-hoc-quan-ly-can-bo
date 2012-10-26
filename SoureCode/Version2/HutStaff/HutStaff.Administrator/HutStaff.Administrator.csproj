@@ -152,156 +152,182 @@
   <ItemGroup>
     <Compile Include="Controls\Common\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\Common\Pager.ascx.designer.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Common\SlideBaocao.ascx.cs">
       <DependentUpon>SlideBaocao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\Common\SlideBaocao.ascx.designer.cs">
       <DependentUpon>SlideBaocao.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Common\SlideQuanLy.ascx.cs">
       <DependentUpon>SlideQuanLy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\Common\SlideQuanLy.ascx.designer.cs">
       <DependentUpon>SlideQuanLy.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\Common\ViewMenu.ascx.cs">
       <DependentUpon>ViewMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\Common\ViewMenu.ascx.designer.cs">
       <DependentUpon>ViewMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\QuanLy\Import\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\QuanLy\Import\Pager.ascx.designer.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\QuanLy\Import\Search.ascx.cs">
       <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\QuanLy\Import\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Master\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
     <Compile Include="Master\View.Master.cs">
       <DependentUpon>View.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Master\View.Master.designer.cs">
       <DependentUpon>View.Master</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.designer.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.designer.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\KhenThuong.aspx.cs">
       <DependentUpon>KhenThuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\KhenThuong.aspx.designer.cs">
       <DependentUpon>KhenThuong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\Report.aspx.cs">
       <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\Report.aspx.designer.cs">
       <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeCanBoCaoCap.aspx.cs">
       <DependentUpon>ThongKeCanBoCaoCap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeCanBoCaoCap.aspx.designer.cs">
       <DependentUpon>ThongKeCanBoCaoCap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeKhenthuong.aspx.cs">
       <DependentUpon>ThongKeKhenthuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\ThongKeKhenthuong.aspx.designer.cs">
       <DependentUpon>ThongKeKhenthuong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\XetNangLuong.aspx.cs">
       <DependentUpon>XetNangLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\XetNangLuong.aspx.designer.cs">
       <DependentUpon>XetNangLuong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\HuongDan\HuongDan.aspx.cs">
       <DependentUpon>HuongDan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\HuongDan\HuongDan.aspx.designer.cs">
       <DependentUpon>HuongDan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\BangDanhMuc.aspx.cs">
       <DependentUpon>BangDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\BangDanhMuc.aspx.designer.cs">
       <DependentUpon>BangDanhMuc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\BoSungCanBo.aspx.cs">
       <DependentUpon>BoSungCanBo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\BoSungCanBo.aspx.designer.cs">
       <DependentUpon>BoSungCanBo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.designer.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\Import.aspx.cs">
       <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\Import.aspx.designer.cs">
       <DependentUpon>Import.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\NguoiDung.aspx.cs">
       <DependentUpon>NguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\NguoiDung.aspx.designer.cs">
       <DependentUpon>NguoiDung.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\Quanly.aspx.cs">
       <DependentUpon>Quanly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\Quanly.aspx.designer.cs">
       <DependentUpon>Quanly.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\SuaNguoiDung.aspx.cs">
       <DependentUpon>SuaNguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\SuaNguoiDung.aspx.designer.cs">
       <DependentUpon>SuaNguoiDung.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TaiKhoan\ChangePass.aspx.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\TaiKhoan\ChangePass.aspx.designer.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
@@ -315,114 +341,133 @@
     </Compile>
     <Compile Include="Xemthongtin\Controls\BHXH.ascx.cs">
       <DependentUpon>BHXH.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\BHXH.ascx.designer.cs">
       <DependentUpon>BHXH.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Cacchucdanh.ascx.cs">
       <DependentUpon>Cacchucdanh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Cacchucdanh.ascx.designer.cs">
       <DependentUpon>Cacchucdanh.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Chucvuchinhquyen.ascx.cs">
       <DependentUpon>Chucvuchinhquyen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Chucvuchinhquyen.ascx.designer.cs">
       <DependentUpon>Chucvuchinhquyen.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Chucvudang.ascx.cs">
       <DependentUpon>Chucvudang.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Chucvudang.ascx.designer.cs">
       <DependentUpon>Chucvudang.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Chucvudoanthe.ascx.cs">
       <DependentUpon>Chucvudoanthe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Chucvudoanthe.ascx.designer.cs">
       <DependentUpon>Chucvudoanthe.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Danhgiacongchuc.ascx.cs">
       <DependentUpon>Danhgiacongchuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Danhgiacongchuc.ascx.designer.cs">
       <DependentUpon>Danhgiacongchuc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Dienbienluong.ascx.cs">
       <DependentUpon>Dienbienluong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Dienbienluong.ascx.designer.cs">
       <DependentUpon>Dienbienluong.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Dulieutruoc1993.ascx.cs">
       <DependentUpon>Dulieutruoc1993.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Dulieutruoc1993.ascx.designer.cs">
       <DependentUpon>Dulieutruoc1993.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Khenthuong.ascx.cs">
       <DependentUpon>Khenthuong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Khenthuong.ascx.designer.cs">
       <DependentUpon>Khenthuong.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Kyluat.ascx.cs">
       <DependentUpon>Kyluat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Kyluat.ascx.designer.cs">
       <DependentUpon>Kyluat.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Nuocngoaidaden.ascx.cs">
       <DependentUpon>Nuocngoaidaden.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Nuocngoaidaden.ascx.designer.cs">
       <DependentUpon>Nuocngoaidaden.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quanhegiadinh.ascx.cs">
       <DependentUpon>Quanhegiadinh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quanhegiadinh.ascx.designer.cs">
       <DependentUpon>Quanhegiadinh.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quatrinhboiduong.ascx.cs">
       <DependentUpon>Quatrinhboiduong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quatrinhboiduong.ascx.designer.cs">
       <DependentUpon>Quatrinhboiduong.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quatrinhcongtac.ascx.cs">
       <DependentUpon>Quatrinhcongtac.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quatrinhcongtac.ascx.designer.cs">
       <DependentUpon>Quatrinhcongtac.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quatrinhdaotao.ascx.cs">
       <DependentUpon>Quatrinhdaotao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Quatrinhdaotao.ascx.designer.cs">
       <DependentUpon>Quatrinhdaotao.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Thongtinchung.ascx.cs">
       <DependentUpon>Thongtinchung.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\Thongtinchung.ascx.designer.cs">
       <DependentUpon>Thongtinchung.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Controls\TrinhdoNgoaingu.ascx.cs">
       <DependentUpon>TrinhdoNgoaingu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Controls\TrinhdoNgoaingu.ascx.designer.cs">
       <DependentUpon>TrinhdoNgoaingu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Xemthongtin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Xemthongtin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>

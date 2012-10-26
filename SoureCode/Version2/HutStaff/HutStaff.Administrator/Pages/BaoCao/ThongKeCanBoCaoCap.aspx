@@ -21,9 +21,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
-    <form id="form1" runat="server">
     <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
-    </form>
 </asp:Content>
 <asp:Content runat="server" ID="content1" ContentPlaceHolderID="MainContentPlaceHolder">
     <div class="content" id="content">

@@ -10,9 +10,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
-    <form id="form1" runat="server">
         <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
-    </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 </asp:Content>
