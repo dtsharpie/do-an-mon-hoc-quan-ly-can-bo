@@ -124,7 +124,6 @@
 
             $('#divSideBar ul.subform > li > a').click(function () {
                 $('#divSideBar ul > li > a').removeClass('active');
-                $(this).addClass('active');
                 if ($(this).attr("alias") != undefined) {
                     if (location.hash == "#" + $(this).attr("alias")) {
                         loadContent({ alias: $(this).attr("alias") }, false);
@@ -134,6 +133,7 @@
                     }
                     lastAlias = $(this).attr("alias");
                 }
+                $(this).addClass('active');
             });
 
             window.onhashchange = function () {
@@ -141,13 +141,13 @@
                 if (alias != "") {
                     $(".active").removeClass("active");
                     loadContent({ alias: alias }, false);
-                    $(".subform a[alias='#" + alias + "']").addClass("active");
+                    $(".subform a[alias='" + alias + "']").addClass("active");
                 }
                 else {
                     if (lastAlias != "") {
                         $(".active").removeClass("active");
                         loadContent({ alias: lastAlias }, false);
-                        $(".subform a[alias='#" + lastAlias + "']").addClass("active");
+                        $(".subform a[alias='" + lastAlias + "']").addClass("active");
                     }
                 }
             }

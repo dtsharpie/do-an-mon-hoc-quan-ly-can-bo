@@ -45,7 +45,6 @@
     <Compile Include="PagesDAL\QuanLy\NguoiDung.cs" />
     <Compile Include="PagesDAL\QuanLy\XetDuyet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quanly\Import\Import.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Security\User.cs" />
     <Compile Include="Security\ViewUser.cs" />

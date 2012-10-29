@@ -17,8 +17,9 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
             int iLoaiHanNgach = GetInt("loaiHanNgach");
             int iloaiBang = GetInt("loaiBang");
             DateTime dtthoiGian = GetDate("thoiGian", DateTime.Now);
+            string sDelete = GetString("delete");
 
-            TotalItem = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuongCount( iLoaiHanNgach, iloaiBang, dtthoiGian);
+            TotalItem = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuongCount( iLoaiHanNgach, iloaiBang, dtthoiGian,sDelete);
             if (TotalItem > 0)
             {
                 //Pager
@@ -30,6 +31,7 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
                                    ",\"loaiHanNgach\":\"" + iLoaiHanNgach + "\"" +
                                    ",\"loaiBang\":\"" + iloaiBang + "\"" +
                                    ",\"thoiGian\":\"" + dtthoiGian.ToString("dd/MM/yyyy") + "\"" +
+                                   ",\"delete\":\"" + sDelete + "\"" +
                                   "}";
                 Pager1.Visible = true;
             }

@@ -33,7 +33,6 @@ function loadContentView(params, isSysnc) {
 
 
 function loadContent(params, isSysnc) {
-    $("#divMainContent > .content").html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 600px;"><img src="/images/processing.gif" /></td></tr></table>');
     loadControl("#divMainContent > .content", params, isSysnc);
 }
 
