@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using HutStaff.Common;
 using System.Data;
 
-namespace HutStaff.Administrator.Controls.QuanLy.Import
+namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
 {
     public partial class Search : ControlBase
     {
@@ -17,7 +17,7 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import
             int iloaiBang = GetInt("loaiBang");
             DateTime dtthoiGian = GetDate("thoiGian",DateTime.Now);
 
-            DataTable tblData = BO.PagesBO.BaoCaoBO.BaoCaoBO.ViewSetNangLuong(iLoaiHanNgach, iloaiBang, dtthoiGian);
+            DataTable tblData = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuong(PageIndex,PageSize,iLoaiHanNgach, iloaiBang, dtthoiGian);
             grdData.DataSource = tblData;
             grdData.DataBind();
         }

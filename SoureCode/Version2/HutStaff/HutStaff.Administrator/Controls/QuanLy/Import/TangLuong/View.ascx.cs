@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HutStaff.Common;
 
-namespace HutStaff.Administrator.Pages.Quanly
+namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
 {
-    public partial class Import : System.Web.UI.Page
+    public partial class View : ControlBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

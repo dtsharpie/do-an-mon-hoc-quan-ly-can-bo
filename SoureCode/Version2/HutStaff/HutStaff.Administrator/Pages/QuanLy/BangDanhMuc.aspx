@@ -14,7 +14,6 @@
         <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-<div class="content">
     <h1 class="title">Bảng danh mục</h1>
     <hr width="750px" />
     <div class="main">
@@ -94,5 +93,4 @@
 	
         </table>
     </div>
-</div>
 </asp:Content>

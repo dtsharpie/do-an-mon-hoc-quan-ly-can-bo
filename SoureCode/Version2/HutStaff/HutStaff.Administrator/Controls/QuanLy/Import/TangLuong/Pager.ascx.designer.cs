@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Controls.QuanLy.Import {
+namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong {
     
     
-    public partial class Search {
+    public partial class Pager {
         
         /// <summary>
-        /// grdData control.
+        /// Pager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdData;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager1;
     }
 }

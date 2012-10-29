@@ -24,7 +24,7 @@ namespace HutStaff.Administrator.Controls.Common
         {
             XmlDocument xmlDocument = HutStaff.Common.Menu.GetData();
             string sHtml = "";
-            XmlNodeList xmlMenus = xmlDocument.SelectNodes("//menu");
+            XmlNodeList xmlMenus = xmlDocument.SelectNodes("//menu[@type='view']");
             for (int i = 0; i < xmlMenus.Count; i++)
             {
                 XmlNode xmlMenu = xmlMenus[i];

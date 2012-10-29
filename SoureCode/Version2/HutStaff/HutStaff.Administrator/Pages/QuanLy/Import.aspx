@@ -1,71 +1,92 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="Import.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.Import" %>
-<%@ Register Src="/Controls/Common/SlideQuanLy.ascx" TagPrefix="uc1" TagName="SlideQuanLy" %>
-<%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
-<%@ Register Src="/Controls/QuanLy/Import/Search.ascx" TagName="Search" TagPrefix="uc2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="/Master/Admin.Master" AutoEventWireup="true"
+    CodeBehind="Import.aspx.cs" Inherits="HutStaff.Administrator.Pages.Quanly.Import" %>
+
+<%@ Register Src="/Controls/Common/SlideBaocao.ascx" TagName="SlideBaocao" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#form1").submit(function () {
+            $('#divHeader .nav a').removeClass("active");
+            $('#divHeader .nav a').eq(2).addClass('active');
+
+            $(".datepicker").datepicker({
+                showButtonPanel: true,
+                dateFormat: 'dd/mm/yy',
+                yearRange: "1990:2020"
+            });
+
+            $("#formSearch").submit(function () {
                 $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 400px;"><img src="/images/processing.gif" /></td></tr></table>');
                 loadControl(".pagerdata",
                 {
                     alias: 'pager-danh-sach-can-bo',
-                    keyword: $('#txtKeyword').val(),
-                    xoahs: 0
+                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
+                    loaiBang: $('#ddlLuaChonBang').val(),
+                    thoiGian: $("#txtDate").val(),
+                    ps: 10000,
+                    pi: 1
                 }, true);
 
 
                 loadControl(".main-table",
                 {
                     alias: 'danh-sach-can-bo',
-                    keyword: $('#txtKeyword').val(),
-                    xoahs: 0
+                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
+                    loaiBang: $('#ddlLuaChonBang').val(),
+                    thoiGian: $("#txtDate").val(),
+                    ps: 10000,
+                    pi: 1
                 }, false);
                 return false;
             });
         });
     </script>
     <style type="text/css">
-        .main
+        .button
         {
-            width: 100%;
+            margin-left: 650px;
+        }
+        .timkiem
+        {
+            background-color: Green;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
-        <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
+    <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div class="content">
         <h1 class="title">
-            Import dữ liệu</h1>
-        <hr width="750px" />
+            Xét nâng lương</h1>
+        <hr width="700px" />
         <br />
         <div>
-            <input type="button" id="btnLuong" value="Lương" class="button-blue active" />
-            <input type="button" id="btnKhen" value="Khen thưởng" class="button-blue" />
-            <input type="button" id="btnBHXH" value="Sổ BHXH" class="button-blue" />
-        </div>
-        <br />
-        <div class="main clear">
-            <form action="" id="formSearch">
-            <div class="filterBox">
-                <table>
-                    <tr>
-                        <td style="width: 60px">
-                            Tìm kiếm
-                        </td>
-                        <td>
-                            <input type="text" id="txtKeyword" class="textbox" />
-                        </td>
-                        <td>
-                            <input type="submit" id="btnSearch" class="button" value="Tìm kiếm" />
-                        </td>
-                    </tr>
-                </table>
+            <form id="formSearch">
+            <div>
+                <label>
+                    Loại hạn ngạch:</label>
+                <select id="ddlLoaiHanNgach">
+                    <option value="2">2 năm</option>
+                    <option value="3">3 năm</option>
+                </select>
             </div>
+            <div>
+                <label>
+                    Lựa chọn bảng:</label>
+                <select id="ddlLuaChonBang">
+                    <option value="1">Danh sách đến hạn nhận lương</option>
+                    <option value="2">Danh sách xét duyệt 5%</option>
+                    <option value="2">Danh sách vượt khung</option>
+                </select>
+            </div>
+            <div>
+                <label>
+                    Tính đến:</label>
+                <input class="datepicker" type="text" id="txtDate" />
+            </div>
+            <input type="submit" id="btnOk" value="OK" />
             </form>
+        </div>
+        <div>
             <div class="footer-table">
                 <div class="left">
                     <a target="_blank" href="javascript:void(0);" class="link-tool left">Duyệt / Không duyệt</a>
@@ -83,13 +104,4 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.button-blue').click(function () {
-                $('.button-blue').removeClass('active');
-                $(this).addClass('active');
-            });
-        });
-    </script>
 </asp:Content>
