@@ -100,11 +100,5 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
             return tempRewardListDataTable;
         }
-
-        public System.Data.DataTable RewardListDataTable
-        {
-            get { return rewardListDataTable; }
-            set { rewardListDataTable = value; }
-        }
     }
 }

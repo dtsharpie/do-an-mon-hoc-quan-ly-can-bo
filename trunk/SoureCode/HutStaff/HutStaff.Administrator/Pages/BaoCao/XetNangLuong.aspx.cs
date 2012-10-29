@@ -22,6 +22,26 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
+            this.LoadDataToGridView();
+            btnDownload.Visible = true;
+
+            string strHeaderText = "<h1>BỘ GIÁO DỤC VÀ ĐÀO TẠO</h1>"
+                                   + "<h2>Trường Đại học Bách Khoa Hà Nội</h2>"
+                                   + "<p align=\"center\"><h2>BẢNG DANH SÁCH XÉT NÂNG LƯƠNG HÀNG NĂM</h2></p>";
+            lblHeader.Text = Server.HtmlDecode(strHeaderText);
+            lblHeader.Visible = true;
+        }
+
+        protected void btnDownload_Click(object sender, EventArgs e)
+        {
+            DataTable salaryIncrementListDataTable = this.GetSalaryIncrementList();
+            BO.Report.Exporter.ExporttoExcel(salaryIncrementListDataTable, String.Format("XetNangLuong_{0}.xls", DateTime.Now.ToString()));
+        }
+
+        private DataTable GetSalaryIncrementList()
+        {
+            DataTable salaryIncrementListDataTable = new DataTable();
+
             loaiHanNgach = int.Parse(ddlLoaiHanNgach.SelectedValue);
             loaiBang = int.Parse(ddlLuaChonBang.SelectedValue);
             thang = int.Parse(ddlThoiHan.SelectedValue);
@@ -29,7 +49,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
             if (isValidYear)
             {
-                DataTable salaryIncrementListDataTable = BO.Report.Report.GetSalaryIncrementList(loaiHanNgach, loaiBang, thang, nam);
+                salaryIncrementListDataTable = BO.Report.Report.GetSalaryIncrementList(loaiHanNgach, loaiBang, thang, nam);
 
                 // Add order column
                 DataColumn orderColumn = salaryIncrementListDataTable.Columns.Add("STT");
@@ -42,17 +62,40 @@ namespace HutStaff.Administrator.Pages.BaoCao
                 }
 
                 // Change column name of salary increment list table
-                salaryIncrementListDataTable.Columns[1].ColumnName = "Ho dem";
-                salaryIncrementListDataTable.Columns[2].ColumnName = "Ten";
-                salaryIncrementListDataTable.Columns[3].ColumnName = "So hieu cong chuc";
-                salaryIncrementListDataTable.Columns[4].ColumnName = "Ma ngach";
-                salaryIncrementListDataTable.Columns[5].ColumnName = "Bac luong";
-                salaryIncrementListDataTable.Columns[6].ColumnName = "He so luong";
-                salaryIncrementListDataTable.Columns[7].ColumnName = "Thoi gian bat dau";
-                salaryIncrementListDataTable.Columns[8].ColumnName = "Thong tin khac";
+                salaryIncrementListDataTable.Columns[1].ColumnName = "Họ đệm";
+                salaryIncrementListDataTable.Columns[2].ColumnName = "Tên";
+                salaryIncrementListDataTable.Columns[3].ColumnName = "Số hiệu công chức";
+                salaryIncrementListDataTable.Columns[4].ColumnName = "Mã ngạch";
+                salaryIncrementListDataTable.Columns[5].ColumnName = "Bậc lương";
+                salaryIncrementListDataTable.Columns[6].ColumnName = "Hệ số lương";
+                salaryIncrementListDataTable.Columns[7].ColumnName = "Thời gian bắt đầu";
+                salaryIncrementListDataTable.Columns[8].ColumnName = "Thông tin khác";
+            }
 
-                BO.Report.Exporter.ExporttoExcel(salaryIncrementListDataTable, String.Format("XetNangLuong_{0}.xls", DateTime.Now.ToString()));
+            return salaryIncrementListDataTable;
+        }
+
+        private void LoadDataToGridView()
+        {
+            DataTable salaryIncrementListDataTable = this.GetSalaryIncrementList();
+            gvResultSearch.DataSource = salaryIncrementListDataTable;
+            gvResultSearch.DataBind();
+        }
+
+        protected void gvResultSearch_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            int newPage;
+            newPage = e.NewPageIndex;
+            if (newPage < 0 || newPage >= gvResultSearch.PageCount)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                gvResultSearch.PageIndex = newPage;
+                this.LoadDataToGridView();
             }
         }
+
     }
 }
