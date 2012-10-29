@@ -28,6 +28,16 @@ namespace HutStaff.BO.PagesBO.BaoCaoBO
             return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAlldm_kcb();
         }
 
+        public static DataTable ViewAll_4_dm_dv()
+        {
+            return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAll_4_dm_dv();
+        }
+
+        public static DataTable ViewAll_123_dm_dv()
+        {
+            return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAll_123_dm_dv();
+        }
+
 
 
         //public static DataTable search_Kt(string ma_dv, int shcc, string name,

@@ -20,3 +20,14 @@ C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pd
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb

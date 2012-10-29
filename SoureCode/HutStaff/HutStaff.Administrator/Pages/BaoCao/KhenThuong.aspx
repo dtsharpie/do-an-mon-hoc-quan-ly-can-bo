@@ -40,7 +40,7 @@
             <h4> Đơn vị cấp 1,2,3:</h4>
             <div class="f_input row-right">
                <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl">
-                <asp:ListItem Value ="1.00200000" Text ="Toàn trường"></asp:ListItem>
+                <%--<asp:ListItem Value ="1.00200000" Text ="Toàn trường"></asp:ListItem>
                 <asp:ListItem Value ="2.00203000-2.00209000" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa + Viện"></asp:ListItem>
                 <asp:ListItem Value ="3.00203140" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa giáo dục quốc phòng"></asp:ListItem>
                 <asp:ListItem Value ="3.00203150" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa giáo dục thể chất"></asp:ListItem>
@@ -120,7 +120,7 @@
                 <asp:ListItem Value ="3.0020E010" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Công ty TNHH MTV Tư vấn và CGCN Bách Khoa"></asp:ListItem>
                 <asp:ListItem Value ="3.0020E030" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nhà Xuất bản Bách Khoa Hà Nội"></asp:ListItem>
                 <asp:ListItem Value ="3.0020E040" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trung tâm Phục vụ Bách Khoa"></asp:ListItem>
-                <asp:ListItem Value ="3.0020E050" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bách Khoa Hà Nội-Holdings"></asp:ListItem>
+                <asp:ListItem Value ="3.0020E050" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bách Khoa Hà Nội-Holdings"></asp:ListItem>--%>
                </asp:DropDownList>
             </div>
           
@@ -130,7 +130,7 @@
             
             <div class="row-right">
                 <asp:DropDownList ID="ddlUnit4" runat="server" CssClass ="ddl">
-                    <asp:ListItem Value ="0" Text =""></asp:ListItem>
+                    <%--<asp:ListItem Value ="0" Text =""></asp:ListItem>
                     <asp:ListItem Value ="4.00203011" Text ="Bộ môn CN chế tạo máy"></asp:ListItem>
                     <asp:ListItem Value ="4.00203012" Text ="Bộ môn Cơ khí chính xác & Quang học"></asp:ListItem>
                     <asp:ListItem Value ="4.00203013" Text ="Bộ môn GCVL & Dụng cụ CN"></asp:ListItem>
@@ -288,7 +288,7 @@
                     <asp:ListItem Value ="4.0020B232" Text ="Phòng Giao tiếp tiếng nói"></asp:ListItem>
                     <asp:ListItem Value ="4.0020B233" Text ="Phòng Môi trường cảm thụ và Tương tác"></asp:ListItem>
                     <asp:ListItem Value ="4.0020B234" Text ="Phòng Thí nghiệm Tương tác người-máy đa phương thức"></asp:ListItem>
-                    <asp:ListItem Value ="4.0020B235" Text ="Trung tâm Phát triên ứng dụng và chuyển giao công nghệ"></asp:ListItem>
+                    <asp:ListItem Value ="4.0020B235" Text ="Trung tâm Phát triên ứng dụng và chuyển giao công nghệ"></asp:ListItem>--%>
                 </asp:DropDownList>
             </div>
         </div>
