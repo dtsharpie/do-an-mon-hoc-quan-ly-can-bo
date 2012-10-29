@@ -28,11 +28,6 @@ namespace HutStaff.BO.PagesBO.BaoCaoBO
             return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAlldm_kcb();
         }
 
-        public static DataTable ViewSetNangLuong(int loaiHanNgach, int loaiBang, DateTime thoiGian)
-        {
-            return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewSetNangLuong(loaiHanNgach, loaiBang, thoiGian);
-        }
-
         //public static DataTable search_Kt(string ma_dv, int shcc, string name,
         //    int tunam, int dennam, int diencb, int khoicb,
         //    int pageIndex, int pageSize)

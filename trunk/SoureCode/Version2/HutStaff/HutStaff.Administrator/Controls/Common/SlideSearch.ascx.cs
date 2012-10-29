@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Pages.Quanly
+namespace HutStaff.Administrator.Controls.Common
 {
-    public partial class Import : System.Web.UI.Page
+    public partial class SlideSearch : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

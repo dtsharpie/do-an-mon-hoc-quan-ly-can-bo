@@ -18,15 +18,15 @@
     <div id="wrapper">
         <div id="divHeader">
             <div class="nav fl">
-                <a href="/Pages/TimKiem/TimKiem.aspx">
+                <a class="active" href="/">
                     <label class="label">
                         Tìm kiếm
                     </label>
-                </a><a class="active" href="/">
+                </a><a href="/Pages/QuanLy/BangDanhMuc.aspx">
                     <label class="label">
                         Quản lý
                     </label>
-                </a><a href="/Pages/BaoCao/BaoCao.aspx">
+                </a><a href="/Pages/BaoCao/BaoCaoThongKe.aspx">
                     <label class="label">
                         In báo cáo
                     </label>
@@ -78,6 +78,15 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
+            var lastAlias = "";
+
+            var alias = getAlias();
+            if (alias != "") {
+                $(".active").removeClass("active");
+                loadContent({ alias: alias }, false);
+                $(".subform a[alias='" + alias + "']").addClass("active");
+            }
+
             $('#divHeader .acc-tool > a').click(function () {
                 $('#divHeader .acc-tool .acc-info').toggle();
             });
@@ -100,7 +109,7 @@
                 var subform = $(this).parent().find('.subform');
                 $('#divSideBar ul > li > a').removeClass('active');
                 $(this).addClass('active');
-
+           
                 if (!subform.is(':hidden')) {
                     subform.hide(500, function () {
                         subform.removeClass('show');
@@ -116,7 +125,32 @@
             $('#divSideBar ul.subform > li > a').click(function () {
                 $('#divSideBar ul > li > a').removeClass('active');
                 $(this).addClass('active');
+                if ($(this).attr("alias") != undefined) {
+                    if (location.hash == "#" + $(this).attr("alias")) {
+                        loadContent({ alias: $(this).attr("alias") }, false);
+                    }
+                    else {
+                        window.location = "#" + $(this).attr("alias");
+                    }
+                    lastAlias = $(this).attr("alias");
+                }
             });
+
+            window.onhashchange = function () {
+                var alias = getAlias();
+                if (alias != "") {
+                    $(".active").removeClass("active");
+                    loadContent({ alias: alias }, false);
+                    $(".subform a[alias='#" + alias + "']").addClass("active");
+                }
+                else {
+                    if (lastAlias != "") {
+                        $(".active").removeClass("active");
+                        loadContent({ alias: lastAlias }, false);
+                        $(".subform a[alias='#" + lastAlias + "']").addClass("active");
+                    }
+                }
+            }
         });
     </script>
 </body>

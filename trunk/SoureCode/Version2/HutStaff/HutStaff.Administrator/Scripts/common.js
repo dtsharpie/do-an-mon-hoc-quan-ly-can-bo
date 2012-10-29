@@ -31,6 +31,12 @@ function loadContentView(params, isSysnc) {
     loadControl("#divBody", params, isSysnc);
 }
 
+
+function loadContent(params, isSysnc) {
+    $("#divMainContent > .content").html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 600px;"><img src="/images/processing.gif" /></td></tr></table>');
+    loadControl("#divMainContent > .content", params, isSysnc);
+}
+
 function selectAll(ele) {
     if (ele.is(':checked')) {
         $('input:checkbox.chkId').attr('checked', 'checked');
@@ -147,18 +153,6 @@ function loadPaging(uId, htmlId, pageIndex, pageSize, params) {
     agrs += '&' + uId + 'pi=' + pageIndex;
     agrs += '&' + uId + 'ps=' + pageSize;
 
-    if ($('#txtSearch') != undefined) {
-        agrs += '&search=' + $('#txtSearch').val();
-    }
-
-    if ($('#ddlCategories') != undefined) {
-        agrs += '&filter=' + $('#ddlCategories').val();
-    }
-
-    if ($('#ddlStatus') != undefined) {
-        agrs += '&status=' + $('#ddlStatus').val();
-    }
-
     loadControl(htmlId, agrs, false);
 }
 
@@ -167,205 +161,4 @@ function loadPager(ele, params) {
     params.alias = 'pager';
 
     loadControl(ele, params);
-}
-
-function getParams() {
-    var result = '';
-    if ($.trim(location.hash) != '') {
-        result = $.trim(location.hash).substring(1);
-        result = replaceAll(result, '/', '&');
-    }
-    return result;
-}
-
-function getValueFromParam(key) {
-    var qs = getParams();
-
-    if (qs.length == 0) return null;
-    qs = qs.replace(/\+/g, ' ');
-    var args = qs.split('&');
-
-    for (var i = 0; i < args.length; i++) {
-        var pair = args[i].split('=');
-        var name = decodeURIComponent(pair[0]);
-        if (name == key)
-            return (pair.length == 2) ? decodeURIComponent(pair[1]) : '';
-    }
-
-    return null;
-}
-
-function setValueFromParam(key, value) {
-    if (containParam(key)) removeParam(key);
-
-    appendParam({ key: value });
-}
-
-function removeParam(key) {
-    var result = '';
-    var qs = getParams();
-
-    if (qs.length != 0) {
-        qs = qs.replace(/\+/g, ' ');
-        var args = qs.split('&');
-
-        for (var i = 0; i < args.length; i++) {
-            var pair = args[i].split('=');
-            var name = decodeURIComponent(pair[0]);
-
-            if (key != name) result += result != '' ? '&' + args[i] : args[i];
-        }
-    }
-    location.hash = replaceAll(result, '&', '/');
-}
-
-function appendParam(params) {
-
-    var qs = (typeof params === 'string') ? params : $.param(params);
-    if (qs.length != 0) {
-        qs = qs.replace(/\+/g, ' ');
-        var args = qs.split('&');
-
-        for (var i = 0; i < args.length; i++) {
-            var pair = args[i].split('=');
-            var name = decodeURIComponent(pair[0]);
-            if (containParam(name)) removeParam(name);
-            if (name.toLowerCase() != 'alias') {
-                var result = getParams();
-                result += result != '' ? '&' + args[i] : args[i];
-                location.hash = replaceAll(result, '&', '/');
-            }
-        }
-    }
-}
-
-function emptyParam() {
-    location.hash = '';
-}
-
-function containParam(key) {
-    var qs = getParams();
-    if (qs.length == 0) return false;
-
-    qs = qs.replace(/\+/g, ' ');
-    var args = qs.split('&');
-
-    for (var i = 0; i < args.length; i++) {
-        var pair = args[i].split('=');
-        var name = decodeURIComponent(pair[0]);
-        if (name == key)
-            return true;
-    }
-
-    return false;
-}
-
-function replaceAll(val, oldChar, newChar) {
-    if (val != '') {
-        while (val.indexOf(oldChar) >= 0)
-            val = val.replace(oldChar, newChar);
-    }
-
-    return val;
-}
-
-
-function getParams() {
-    var result = '';
-    if ($.trim(location.hash) != '') {
-        result = $.trim(location.hash).substring(1);
-        result = replaceAll(result, '/', '&');
-    }
-    return result;
-}
-
-function getValueFromParam(key) {
-    var qs = getParams();
-
-    if (qs.length == 0) return null;
-    qs = qs.replace(/\+/g, ' ');
-    var args = qs.split('&');
-
-    for (var i = 0; i < args.length; i++) {
-        var pair = args[i].split('=');
-        var name = decodeURIComponent(pair[0]);
-        if (name == key)
-            return (pair.length == 2) ? decodeURIComponent(pair[1]) : '';
-    }
-
-    return null;
-}
-
-function setValueFromParam(key, value) {
-    if (containParam(key)) removeParam(key);
-
-    appendParam({ key: value });
-}
-
-function removeParam(key) {
-    var result = '';
-    var qs = getParams();
-
-    if (qs.length != 0) {
-        qs = qs.replace(/\+/g, ' ');
-        var args = qs.split('&');
-
-        for (var i = 0; i < args.length; i++) {
-            var pair = args[i].split('=');
-            var name = decodeURIComponent(pair[0]);
-
-            if (key != name) result += result != '' ? '&' + args[i] : args[i];
-        }
-    }
-    location.hash = replaceAll(result, '&', '/');
-}
-
-function appendParam(params) {
-
-    var qs = (typeof params === 'string') ? params : $.param(params);
-    if (qs.length != 0) {
-        qs = qs.replace(/\+/g, ' ');
-        var args = qs.split('&');
-
-        for (var i = 0; i < args.length; i++) {
-            var pair = args[i].split('=');
-            var name = decodeURIComponent(pair[0]);
-            if (containParam(name)) removeParam(name);
-            if (name.toLowerCase() != 'alias') {
-                var result = getParams();
-                result += result != '' ? '&' + args[i] : args[i];
-                location.hash = replaceAll(result, '&', '/');
-            }
-        }
-    }
-}
-
-function emptyParam() {
-    location.hash = '';
-}
-
-function containParam(key) {
-    var qs = getParams();
-    if (qs.length == 0) return false;
-
-    qs = qs.replace(/\+/g, ' ');
-    var args = qs.split('&');
-
-    for (var i = 0; i < args.length; i++) {
-        var pair = args[i].split('=');
-        var name = decodeURIComponent(pair[0]);
-        if (name == key)
-            return true;
-    }
-
-    return false;
-}
-
-function replaceAll(val, oldChar, newChar) {
-    if (val != '') {
-        while (val.indexOf(oldChar) >= 0)
-            val = val.replace(oldChar, newChar);
-    }
-
-    return val;
 }

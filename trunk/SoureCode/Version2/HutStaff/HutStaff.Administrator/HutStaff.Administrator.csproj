@@ -13,6 +13,7 @@
     <RootNamespace>HutStaff.Administrator</RootNamespace>
     <AssemblyName>HutStaff.Administrator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,11 +55,14 @@
     <Content Include="Controls\Common\Pager.ascx" />
     <Content Include="Controls\Common\SlideBaocao.ascx" />
     <Content Include="Controls\Common\SlideQuanLy.ascx" />
+    <Content Include="Controls\Common\SlideSearch.ascx" />
     <Content Include="Controls\Common\ViewMenu.ascx" />
-    <Content Include="Controls\QuanLy\Import\Pager.ascx" />
-    <Content Include="Controls\QuanLy\Import\Search.ascx" />
+    <Content Include="Controls\QuanLy\Import\TangLuong\Pager.ascx" />
+    <Content Include="Controls\QuanLy\Import\TangLuong\Search.ascx" />
+    <Content Include="Controls\QuanLy\Import\TangLuong\View.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\bghover.png" />
+    <Content Include="Images\buttomTable-bg.png" />
     <Content Include="Images\headerbg.png" />
     <Content Include="Images\header_bg.jpg" />
     <Content Include="Images\icon_help.png" />
@@ -70,8 +74,10 @@
     <Content Include="Images\indicator_down.png" />
     <Content Include="Images\logo_art.png" />
     <Content Include="Images\menu_toggle.png" />
+    <Content Include="Images\Next.jpg" />
     <Content Include="Images\noise.white.png" />
     <Content Include="Images\no_avatar.jpg" />
+    <Content Include="Images\previous.jpg" />
     <Content Include="Images\processing.gif" />
     <Content Include="Images\quanly1.png" />
     <Content Include="Images\quanly2.png" />
@@ -171,6 +177,13 @@
     <Compile Include="Controls\Common\SlideQuanLy.ascx.designer.cs">
       <DependentUpon>SlideQuanLy.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Common\SlideSearch.ascx.cs">
+      <DependentUpon>SlideSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SlideSearch.ascx.designer.cs">
+      <DependentUpon>SlideSearch.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Common\ViewMenu.ascx.cs">
       <DependentUpon>ViewMenu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -178,19 +191,26 @@
     <Compile Include="Controls\Common\ViewMenu.ascx.designer.cs">
       <DependentUpon>ViewMenu.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\QuanLy\Import\Pager.ascx.cs">
+    <Compile Include="Controls\QuanLy\Import\TangLuong\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\QuanLy\Import\Pager.ascx.designer.cs">
+    <Compile Include="Controls\QuanLy\Import\TangLuong\Pager.ascx.designer.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\QuanLy\Import\Search.ascx.cs">
+    <Compile Include="Controls\QuanLy\Import\TangLuong\Search.ascx.cs">
       <DependentUpon>Search.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\QuanLy\Import\Search.ascx.designer.cs">
+    <Compile Include="Controls\QuanLy\Import\TangLuong\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuanLy\Import\TangLuong\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QuanLy\Import\TangLuong\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

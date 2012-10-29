@@ -26,11 +26,11 @@
         </td>
         <td>
             <a href="javascript:void(0);" runat="server" id="lnkPrePage">
-                <img src="/images/pager/previous.jpg" border='0' title="Trang trước" alt="Trang trước" /></a>
+                <img src="/Images/previous.jpg" border='0' title="Trang trước" alt="Trang trước" /></a>
         </td>
         <td>
             <a href="javascript:void(0);" runat="server" id="lnkNextPage">
-                <img src="/images/pager/Next.jpg" border='0' title="Trang sau" alt="Trang sau" /></a>
+                <img src="/Images/Next.jpg" border='0' title="Trang sau" alt="Trang sau" /></a>
         </td>
     </tr>
 </table>

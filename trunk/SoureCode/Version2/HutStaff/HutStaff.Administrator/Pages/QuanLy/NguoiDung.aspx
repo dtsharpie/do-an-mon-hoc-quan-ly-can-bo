@@ -13,7 +13,6 @@
         <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div class="content">
         <asp:SqlDataSource id="SqlDataSource_User" runat="server"
             ConnectionString="<%$ ConnectionStrings:QLCB %>" 
             SelectCommand="SELECT [user], [quyen], [isLock], dv FROM [Users], [dm_dv] WHERE [Users].ma_dv = [dm_dv].ma_dv"
@@ -80,6 +79,5 @@
             </div>
             <div style="clear:both"></div>
         </div>
-    </div>
     
 </asp:Content>
