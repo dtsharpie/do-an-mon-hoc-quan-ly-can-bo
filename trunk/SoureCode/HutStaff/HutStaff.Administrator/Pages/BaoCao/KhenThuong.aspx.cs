@@ -37,7 +37,20 @@ namespace HutStaff.Administrator.Pages.BaoCao
             //tbTo
             tbTo.Text = DateTime.Now.Year.ToString();
 
-            //Đơn vị cấp ... chưa làm
+            //dropdownlist Đơn vị cac cấp ... da làm
+            //ddlUnit123: dropdownList cua các đơn vị cấp 1,2,3
+            DataTable table_123_dm_dv = BaoCaoBO.ViewAll_123_dm_dv();
+            ddlUnit123.DataSource = table_123_dm_dv;
+            ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
+            ddlUnit123.DataTextField = table_123_dm_dv.Columns[1].ColumnName;
+            ddlUnit123.DataBind();
+
+            //ddlUnit4: dropdownList cua cac don vi cap 4
+            DataTable table_4_dm_dv = BaoCaoBO.ViewAll_4_dm_dv();
+            ddlUnit4.DataSource = table_4_dm_dv;
+            ddlUnit4.DataValueField = table_4_dm_dv.Columns[0].ColumnName;
+            ddlUnit4.DataTextField = table_4_dm_dv.Columns[1].ColumnName;
+            ddlUnit4.DataBind();
 
             //ddlDienCanBo: dropdownList dien can bo
             DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
@@ -52,6 +65,9 @@ namespace HutStaff.Administrator.Pages.BaoCao
             ddlKhoiCb.DataValueField = table_dm_kcb.Columns[0].ColumnName;
             ddlKhoiCb.DataTextField = table_dm_kcb.Columns[1].ColumnName;
             ddlKhoiCb.DataBind();
+
+            
+
 
         }
 
