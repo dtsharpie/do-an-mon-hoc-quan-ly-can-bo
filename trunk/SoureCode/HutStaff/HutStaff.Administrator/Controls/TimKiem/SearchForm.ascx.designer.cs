@@ -13,22 +13,22 @@ namespace HutStaff.Administrator.Controls.TimKiem {
     public partial class SearchForm {
         
         /// <summary>
-        /// ddlDonViCha control.
+        /// ddlUnit123 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDonViCha;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUnit123;
         
         /// <summary>
-        /// ddlDonViCap4 control.
+        /// ddlUnit4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDonViCap4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUnit4;
         
         /// <summary>
         /// macanbo control.
