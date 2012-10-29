@@ -8,7 +8,7 @@
     <div>
         <label>
             Loại hạn ngạch:</label>
-        <select style="width:85px;" id="ddlLoaiHanNgach">
+        <select style="width: 85px;" id="ddlLoaiHanNgach">
             <option value="2">2 năm</option>
             <option value="3">3 năm</option>
         </select>
@@ -17,11 +17,12 @@
         <select id="ddlLuaChonBang">
             <option value="1">Danh sách đến hạn nhận lương</option>
             <option value="2">Danh sách xét duyệt 5%</option>
-            <option value="2">Danh sách vượt khung</option>
+            <option value="3">Danh sách vượt khung</option>
         </select>
         <label style="margin-left: 15px">
             Tính đến:</label>
-        <input class="datepicker" value="<%= DateTime.Now.ToString("dd/MM/yyyy") %>" readonly="readonly" type="text" id="txtDate" />
+        <input style="text-align: center; width: 80px;" class="datepicker" value="<%= DateTime.Now.ToString("dd/MM/yyyy") %>"
+            readonly="readonly" type="text" id="txtDate" />
         <input style="margin-left: 15px; font-weight: normal; padding: 0;" type="button"
             id="btnOk" class="button" value="Hiện thông tin" />
     </div>
@@ -31,18 +32,20 @@
     <div class="footer-table2">
         <div class="fl">
             <a class="button-link" href="javascript:void(0);">Xác nhận tăng lương</a><a class="button-link"
-                href="javascript:void(0);">Xóa bỏ</a><a class="button-link" href="javascript:void(0);">Tải
+                href="javascript:void(0);">Xóa bỏ</a><a class="button-link export-excel" href="javascript:void(0);">Tải
                     về</a>
         </div>
         <div class="fr pagerLoad">
         </div>
     </div>
     <div class="main-table">
+        <div style="text-align: center;">
+            Vui lòng chọn các tùy chọn phía trên và ấn nút "Hiện thông tin"</div>
     </div>
     <div class="footer-table2">
         <div class="fl">
             <a class="button-link" href="javascript:void(0);">Xác nhận tăng lương</a><a class="button-link"
-                href="javascript:void(0);">Xóa bỏ</a><a class="button-link" href="javascript:void(0);">Tải
+                href="javascript:void(0);">Xóa bỏ</a><a class="button-link export-excel" href="javascript:void(0);">Tải
                     về</a>
         </div>
         <div class="fr pagerLoad">
@@ -75,6 +78,11 @@
                     loaiBang: $('#ddlLuaChonBang').val(),
                     thoiGian: $("#txtDate").val()
                 }, false);
+        });
+
+        $(".export-excel").click(function () {
+            var query = "?type=1&loaihanngach=" + $('#ddlLoaiHanNgach').val() + "&loaibang=" + $('#ddlLuaChonBang').val() + "&thoigian=" + $("#txtDate").val() + "&delete=";
+            window.open("/Services/ExportExcel.ashx" + query, "_blank");
         });
     });
 </script>

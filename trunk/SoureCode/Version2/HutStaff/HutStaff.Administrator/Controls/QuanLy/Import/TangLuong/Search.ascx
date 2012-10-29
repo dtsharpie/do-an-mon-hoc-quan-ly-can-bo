@@ -3,10 +3,11 @@
     Width="100%" CssClass="table-result">
     <AlternatingRowStyle CssClass="even" />
     <Columns>
-        <asp:TemplateField HeaderText="Số thứ tự">
+        <asp:TemplateField HeaderText="STT">
             <ItemTemplate>
                 <%# Container.DisplayIndex + 1 + PageSize * (PageIndex - 1) %>
             </ItemTemplate>
+            <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
         <asp:TemplateField>
             <HeaderTemplate>
@@ -30,10 +31,11 @@
                 <%# Eval("shcc") %></ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Diễn biến lương">
+        <asp:TemplateField HeaderText="Bậc lương">
             <ItemTemplate>
                 <%# Eval("bl_dbl") %>
             </ItemTemplate>
+            <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Hệ số lương">
             <ItemTemplate>
@@ -45,13 +47,13 @@
                 <%# Eval("ma_ngach")%></ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Thời gian bắt đầu diễn biến lương">
+        <asp:TemplateField HeaderText="Thời gian bắt đầu">
             <ItemTemplate>
                 <%# Convert.ToDateTime(Eval("tgbd_dbl")).ToString("dd/MM/yyyy")%>
             </ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField ControlStyle-CssClass="hspctn" HeaderText="Hệ số phụ cấp thâm niên">
+        <asp:TemplateField HeaderStyle-CssClass="hspctn"  ItemStyle-CssClass="hspctn" HeaderText="Hệ số phụ cấp thâm niên">
             <ItemTemplate>
                 <%# Eval("hspctn")%>
             </ItemTemplate>
@@ -66,6 +68,7 @@
             <ItemTemplate>
                 <a href="javascript:void(0)" class="delete-row" shcc="<%# Eval("shcc") %>">Xóa </a>
             </ItemTemplate>
+            <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
@@ -75,13 +78,10 @@
             selectAll($(this));
         });
 
-        if ($("#ddlLuaChonBang").val() == "3") {
-            $(".hspctn").css("display", "block");
+        if ($("#ddlLuaChonBang").val() != "3") {
+            $('.table-result .hspctn').hide();
         }
-        else {
-            $(".hspctn").css("display", "none");
-        }
-
+      
         $(".delete-row").click(function () {
             $(this).closest("tr").remove();
 

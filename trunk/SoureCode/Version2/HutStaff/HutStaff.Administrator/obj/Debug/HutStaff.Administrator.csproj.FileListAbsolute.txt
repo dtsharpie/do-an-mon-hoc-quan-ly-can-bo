@@ -31,3 +31,5 @@ D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\H
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.Design.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.dll
