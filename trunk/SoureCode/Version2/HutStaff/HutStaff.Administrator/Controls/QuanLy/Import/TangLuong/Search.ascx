@@ -9,16 +9,6 @@
             </ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField>
-            <HeaderTemplate>
-                <input id="chkAll" name="firstColumn" type="checkbox" />
-            </HeaderTemplate>
-            <ItemTemplate>
-                <input shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId" name="firstColumn"
-                    type="checkbox" value="<%# Eval("shcc") %>" />
-            </ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" Width="12px" />
-        </asp:TemplateField>
         <asp:TemplateField HeaderText="Họ tên">
             <ItemTemplate>
                 <a href="javascript:void(0)" shcc="<%# Eval("shcc") %>">
@@ -53,7 +43,7 @@
             </ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="hspctn"  ItemStyle-CssClass="hspctn" HeaderText="Hệ số phụ cấp thâm niên">
+        <asp:TemplateField HeaderStyle-CssClass="hspctn" ItemStyle-CssClass="hspctn" HeaderText="Hệ số phụ cấp thâm niên">
             <ItemTemplate>
                 <%# Eval("hspctn")%>
             </ItemTemplate>
@@ -63,6 +53,16 @@
             <ItemTemplate>
                 <%# Eval("ttk_qtdbl")%>
             </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField>
+            <HeaderTemplate>
+                <input id="chkAll" name="firstColumn" type="checkbox" />
+            </HeaderTemplate>
+            <ItemTemplate>
+                <input shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId" name="firstColumn"
+                    type="checkbox" value="<%# Eval("shcc") %>" />
+            </ItemTemplate>
+            <ItemStyle HorizontalAlign="Center" Width="12px" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Xóa">
             <ItemTemplate>
@@ -81,7 +81,7 @@
         if ($("#ddlLuaChonBang").val() != "3") {
             $('.table-result .hspctn').hide();
         }
-      
+
         $(".delete-row").click(function () {
             $(this).closest("tr").remove();
 
