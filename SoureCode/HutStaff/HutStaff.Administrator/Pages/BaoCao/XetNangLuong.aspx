@@ -36,7 +36,7 @@
                         <asp:DropDownList ID="ddlLuaChonBang" runat="server">
                             <asp:ListItem Value="1">Danh sách đến hạn nhận lương</asp:ListItem>
                             <asp:ListItem Value="2">Danh sách xét duyệt 5%</asp:ListItem>
-                            <asp:ListItem Value="2">Danh sách vượt khung</asp:ListItem>
+                            <asp:ListItem Value="3">Danh sách vượt khung</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>

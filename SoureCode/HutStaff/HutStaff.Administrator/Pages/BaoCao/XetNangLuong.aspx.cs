@@ -70,6 +70,10 @@ namespace HutStaff.Administrator.Pages.BaoCao
                 salaryIncrementListDataTable.Columns[6].ColumnName = "Hệ số lương";
                 salaryIncrementListDataTable.Columns[7].ColumnName = "Thời gian bắt đầu";
                 salaryIncrementListDataTable.Columns[8].ColumnName = "Thông tin khác";
+                if (loaiBang == 3)
+                {
+                    salaryIncrementListDataTable.Columns[9].ColumnName = "Hệ số phụ cấp thâm niên";
+                }
             }
 
             return salaryIncrementListDataTable;
