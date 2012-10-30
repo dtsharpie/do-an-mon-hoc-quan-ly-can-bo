@@ -25,8 +25,8 @@
             </tr>
             <tr>
                 <td height="30" align="center" class="Row2">Chọn đơn vị lập báo cáo</td>
-                <td height="30" align="center" class="Row1">
-		            <asp:DropDownList ID="ddlDonVi" size="1" runat="server" CssClass ="ddl"/>
+                <td height="30" align="left" class="Row1">
+		            <asp:TreeView ID="treeViewDonVi" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />
 		        </td>
             </tr>
 	         <tr>

@@ -54,3 +54,10 @@ C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
