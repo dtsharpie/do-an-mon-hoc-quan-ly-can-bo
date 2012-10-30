@@ -161,7 +161,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
         private void BuildTreeViewdm_dv()
         {
             DataTable table_dm_dv = BaoCaoBO.ViewAlldm_dv();
-            
+            treeViewDonVi.Nodes.Clear();
             foreach (DataRowView row0 in GetChildLevel0(table_dm_dv))
             {
                 TreeNode node0 = new TreeNode();
