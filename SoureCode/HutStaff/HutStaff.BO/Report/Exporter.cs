@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Web;
+using System.IO;
 
 namespace HutStaff.BO.Report
 {
@@ -16,40 +17,32 @@ namespace HutStaff.BO.Report
             HttpContext.Current.Response.ClearHeaders();
             HttpContext.Current.Response.Buffer = true;
             HttpContext.Current.Response.ContentType = "application/ms-excel";
-            //HttpContext.Current.Response.ContentType = "application/ms-word";
-            HttpContext.Current.Response.Write(@"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">");
+            //HttpContext.Current.Response.Write(@"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">");
             HttpContext.Current.Response.AddHeader("Content-Disposition", String.Format("attachment;filename={0}", fileName));
-            // HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment;filename=Reports.doc");
-            HttpContext.Current.Response.Charset = "utf-8";
-            HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("windows-1250");
-            HttpContext.Current.Response.Write("<font style='font-size:12.0pt; font-family:Calibri;'>");
-            HttpContext.Current.Response.Write("<BR><BR><BR>");
-            HttpContext.Current.Response.Write("<Table border='1' bgColor='#ffffff' borderColor='#000000' cellSpacing='0' cellPadding='0' style='font-size:10.0pt; font-family:Calibri; background:white;'> <TR>");
-            int columnsCount = dataTable.Columns.Count;
 
+            string path = HttpContext.Current.Server.MapPath(@"Template\XetNangLuong.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent += "\n<tr height=17 valign=bottom style='height:12.75pt'>";
+
+            int columnsCount = dataTable.Columns.Count;
             for (int j = 0; j < columnsCount; j++)
             {
-                HttpContext.Current.Response.Write("<Td>");
-                HttpContext.Current.Response.Write("<B>");
-                HttpContext.Current.Response.Write(dataTable.Columns[j].ColumnName);
-                HttpContext.Current.Response.Write("</B>");
-                HttpContext.Current.Response.Write("</Td>");
+                strHtmlContent += String.Format("\n<td width=24 style='width:24pt'><b>{0}</b></td>", dataTable.Columns[j].ColumnName);
             }
-            HttpContext.Current.Response.Write("</TR>");
+            strHtmlContent += "</tr>";
+
             foreach (DataRow row in dataTable.Rows)
             {
-                HttpContext.Current.Response.Write("<TR>");
+                strHtmlContent += "\n<tr height=17 valign=bottom style='height:12.75pt'>";
                 for (int i = 0; i < dataTable.Columns.Count; i++)
                 {
-                    HttpContext.Current.Response.Write("<Td>");
-                    HttpContext.Current.Response.Write(row[i].ToString());
-                    HttpContext.Current.Response.Write("</Td>");
+                    strHtmlContent += String.Format("\n<td>{0}</td>", row[i].ToString());
                 }
-
-                HttpContext.Current.Response.Write("</TR>");
+                strHtmlContent += "</tr>";
             }
-            HttpContext.Current.Response.Write("</Table>");
-            HttpContext.Current.Response.Write("</font>");
+            strHtmlContent += "\n</table>\n</body>\n</html>";
+
+            HttpContext.Current.Response.Write(strHtmlContent);
             HttpContext.Current.Response.Flush();
             HttpContext.Current.Response.End();
         }
