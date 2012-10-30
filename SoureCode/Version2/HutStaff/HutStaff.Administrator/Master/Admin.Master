@@ -67,7 +67,7 @@
             </div>
             <div id="divMainContent">
                 <div class="content">
-                    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" ClientIDMode="Static">
                     </asp:ContentPlaceHolder>
                 </div>
             </div>
@@ -77,15 +77,6 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            var lastAlias = "";
-
-            var alias = getAlias();
-            if (alias != "") {
-                $(".active").removeClass("active");
-                loadContent({ alias: alias }, false);
-                $(".subform a[alias='" + alias + "']").addClass("active");
-            }
-
             $('#divHeader .acc-tool > a').click(function () {
                 $('#divHeader .acc-tool .acc-info').toggle();
             });
@@ -123,33 +114,8 @@
 
             $('#divSideBar ul.subform > li > a').click(function () {
                 $('#divSideBar ul > li > a').removeClass('active');
-                if ($(this).attr("alias") != undefined) {
-                    if (location.hash == "#" + $(this).attr("alias")) {
-                        loadContent({ alias: $(this).attr("alias") }, false);
-                    }
-                    else {
-                        window.location = "#" + $(this).attr("alias");
-                    }
-                    lastAlias = $(this).attr("alias");
-                }
                 $(this).addClass('active');
             });
-
-            window.onhashchange = function () {
-                var alias = getAlias();
-                if (alias != "") {
-                    $(".active").removeClass("active");
-                    loadContent({ alias: alias }, false);
-                    $(".subform a[alias='" + alias + "']").addClass("active");
-                }
-                else {
-                    if (lastAlias != "") {
-                        $(".active").removeClass("active");
-                        loadContent({ alias: lastAlias }, false);
-                        $(".subform a[alias='" + lastAlias + "']").addClass("active");
-                    }
-                }
-            }
         });
     </script>
     </form>

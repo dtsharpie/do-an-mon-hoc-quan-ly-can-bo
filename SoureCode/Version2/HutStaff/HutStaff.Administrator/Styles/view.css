@@ -320,6 +320,8 @@ div.sub-title h2
 #divHeader a
 {
     color: #fff; 
+    display: block;
+    text-align: center;
 }
 
 #divHeader .nav
@@ -387,7 +389,7 @@ div.sub-title h2
     margin: 10px 45px;
 }
 
-#divHeader .acc-tool > a
+#divHeader .acc-tool a
 {
     display: block;
     width: 123px;
@@ -395,18 +397,18 @@ div.sub-title h2
     border-left: 1px solid #576A85; 
 }
 
-#divHeader .acc-tool > a:hover
+#divHeader .acc-tool a:hover
 {
     background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
        
 }
 
-#divHeader .acc-tool > a:active
+#divHeader .acc-tool a:active
 {
     border-left: 1px solid #394962;
 }
 
-#divHeader .acc-tool > a span
+#divHeader .acc-tool a span
 {
     display: block;
     width: 100%;

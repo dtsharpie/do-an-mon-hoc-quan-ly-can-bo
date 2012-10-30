@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
+namespace HutStaff.Administrator.Pages.QuanLy
 {
 
 
-    public partial class View
+    public partial class Duyethuyhoso
     {
     }
 }

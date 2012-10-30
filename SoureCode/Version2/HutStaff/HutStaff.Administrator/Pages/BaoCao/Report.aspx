@@ -11,7 +11,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
 </asp:Content>
-<form runat=server>
 <asp:Content runat="server" ContentPlaceHolderID="MainContentPlaceHolder" ID="content1">
     <div class="content" id="content">
         <br/>
@@ -48,4 +47,3 @@
     </table>
 </div>
 </asp:Content>
-</form>

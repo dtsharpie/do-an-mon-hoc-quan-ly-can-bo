@@ -25,3 +25,12 @@ D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\H
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.BO\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
+D:\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
+D:\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
+D:\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
+D:\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
+D:\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
+D:\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
+D:\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.csprojResolveAssemblyReference.cache
+D:\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
+D:\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb

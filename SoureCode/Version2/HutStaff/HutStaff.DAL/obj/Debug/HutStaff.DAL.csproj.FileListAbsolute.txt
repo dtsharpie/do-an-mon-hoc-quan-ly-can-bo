@@ -19,3 +19,10 @@ D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\H
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+D:\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
+D:\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+D:\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
