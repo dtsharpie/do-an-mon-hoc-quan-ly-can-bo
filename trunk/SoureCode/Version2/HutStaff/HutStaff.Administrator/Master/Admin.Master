@@ -15,6 +15,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form id="form1" runat="server">
     <div id="wrapper">
         <div id="divHeader">
             <div class="nav fl">
@@ -37,7 +38,6 @@
                 </a>
             </div>
             <div class="acc-tool fr">
-                <form id="form1" runat="server">
                 <a href="javascript:void(0);"><span>username<img src="/Images/indicator_down.png"
                     style="margin-left: 5px" width="8px" height="4px" alt="" /></span> </a>
                 <div class="acc-info box-shadow">
@@ -51,7 +51,6 @@
                     <div class="clear">
                     </div>
                 </div>
-                </form>
             </div>
             <div class="clear">
             </div>
@@ -109,7 +108,7 @@
                 var subform = $(this).parent().find('.subform');
                 $('#divSideBar ul > li > a').removeClass('active');
                 $(this).addClass('active');
-           
+
                 if (!subform.is(':hidden')) {
                     subform.hide(500, function () {
                         subform.removeClass('show');
@@ -153,5 +152,6 @@
             }
         });
     </script>
+    </form>
 </body>
 </html>
