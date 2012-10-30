@@ -320,6 +320,8 @@ div.sub-title h2
 #divHeader a
 {
     color: #fff; 
+    display: block;
+    text-align: center;
 }
 
 #divHeader .nav
@@ -396,18 +398,18 @@ div.sub-title h2
     border-left: 1px solid #576A85; 
 }
 
-#divHeader .acc-tool > a:hover
+#divHeader .acc-tool a:hover
 {
     background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
        
 }
 
-#divHeader .acc-tool > a:active
+#divHeader .acc-tool a:active
 {
     border-left: 1px solid #394962;
 }
 
-#divHeader .acc-tool > a span
+#divHeader .acc-tool a span
 {
     display: block;
     width: 100%;
@@ -700,22 +702,10 @@ div.form-container table td.short-spacing
     padding: 0;
 }
 
-.footer-table2 {
-    background: url("/Images/buttomTable-bg.png") repeat-x scroll left top transparent;
-    height: 32px;
-    width: 100%;
-}
-
 .button-link {
     color: #D56600 !important;
     font-size: 12px;
     font-weight: bold;
     line-height: 32px;
     padding-left: 10px;
-}
-
-
-#tblPager {
-    line-height: 30px;
-    padding-right: 20px;
 }

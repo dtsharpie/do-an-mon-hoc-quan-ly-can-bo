@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Pages.Quanly {
+namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet {
     
     
-    public partial class Import {
+    public partial class Khenthuong {
         
         /// <summary>
-        /// SlideBaocao1 control.
+        /// SlideQuanLy1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.SlideBaocao SlideBaocao1;
+        protected global::HutStaff.Administrator.Controls.Common.SlideQuanLy SlideQuanLy1;
     }
 }

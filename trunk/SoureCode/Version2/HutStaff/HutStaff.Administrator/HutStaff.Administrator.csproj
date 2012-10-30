@@ -67,7 +67,6 @@
     <Content Include="Controls\Common\ViewMenu.ascx" />
     <Content Include="Controls\QuanLy\Import\TangLuong\Pager.ascx" />
     <Content Include="Controls\QuanLy\Import\TangLuong\Search.ascx" />
-    <Content Include="Controls\QuanLy\Import\TangLuong\View.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Dll\SpreadsheetGear.Design.dll" />
     <Content Include="Dll\SpreadsheetGear.dll" />
@@ -108,10 +107,12 @@
     <Content Include="Pages\QuanLy\BangDanhMuc.aspx" />
     <Content Include="Pages\QuanLy\BoSungCanBo.aspx" />
     <Content Include="Pages\QuanLy\DoiDonVi.aspx" />
-    <Content Include="Pages\QuanLy\Import.aspx" />
+    <Content Include="Pages\QuanLy\Duyethuyhoso.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
     <Content Include="Pages\QuanLy\Quanly.aspx" />
     <Content Include="Pages\QuanLy\SuaNguoiDung.aspx" />
+    <Content Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx" />
+    <Content Include="Pages\QuanLy\Xetduyet\Tanngluong.aspx" />
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
     <Content Include="Scripts\chosen\chosen-sprite.png" />
     <Content Include="Scripts\chosen\chosen.css" />
@@ -214,13 +215,6 @@
     </Compile>
     <Compile Include="Controls\QuanLy\Import\TangLuong\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\QuanLy\Import\TangLuong\View.ascx.cs">
-      <DependentUpon>View.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controls\QuanLy\Import\TangLuong\View.ascx.designer.cs">
-      <DependentUpon>View.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -327,12 +321,12 @@
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.designer.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\QuanLy\Import.aspx.cs">
-      <DependentUpon>Import.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\Duyethuyhoso.aspx.cs">
+      <DependentUpon>Duyethuyhoso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\QuanLy\Import.aspx.designer.cs">
-      <DependentUpon>Import.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\Duyethuyhoso.aspx.designer.cs">
+      <DependentUpon>Duyethuyhoso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\NguoiDung.aspx.cs">
       <DependentUpon>NguoiDung.aspx</DependentUpon>
@@ -354,6 +348,20 @@
     </Compile>
     <Compile Include="Pages\QuanLy\SuaNguoiDung.aspx.designer.cs">
       <DependentUpon>SuaNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx.cs">
+      <DependentUpon>Khenthuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx.designer.cs">
+      <DependentUpon>Khenthuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Xetduyet\Tanngluong.aspx.cs">
+      <DependentUpon>Tanngluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Xetduyet\Tanngluong.aspx.designer.cs">
+      <DependentUpon>Tanngluong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TaiKhoan\ChangePass.aspx.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>

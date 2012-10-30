@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HutStaff.Administrator.Pages.Quanly
+namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet
 {
-    public partial class Import : System.Web.UI.Page
+    public partial class Khenthuong : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
