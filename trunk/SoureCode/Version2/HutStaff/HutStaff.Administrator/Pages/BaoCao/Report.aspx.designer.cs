@@ -31,13 +31,13 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// ddlDonVi control.
+        /// treeViewDonVi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDonVi;
+        protected global::System.Web.UI.WebControls.TreeView treeViewDonVi;
         
         /// <summary>
         /// chkboxDienCanBo control.

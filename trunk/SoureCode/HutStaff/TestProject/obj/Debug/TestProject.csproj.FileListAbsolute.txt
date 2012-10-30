@@ -1,0 +1,13 @@
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\TestProject.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\TestProject.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.BO.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.Common.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.DAL.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.BO.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.Common.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.DAL.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.BO_Accessor.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\bin\Debug\HutStaff.BO_Accessor.pdb
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\obj\Debug\TestProject.dll
+C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\TestProject\obj\Debug\TestProject.pdb

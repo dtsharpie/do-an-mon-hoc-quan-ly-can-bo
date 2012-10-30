@@ -34,7 +34,7 @@
 				<tr>
 					<td style="line-height:20px;" colspan="3" class="row1">
 						<b>Chọn đơn vị lập báo cáo</b> &nbsp;&nbsp;&nbsp;
-						<asp:DropDownList ID="ddlDonVi" size="1" runat="server" CssClass ="ddl"/>                            
+						<asp:TreeView ID="treeViewDonVi" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />                           
 					</td>
 				</tr>
 				<tr>
