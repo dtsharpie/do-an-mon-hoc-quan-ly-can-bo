@@ -23,11 +23,9 @@
 <div id="divSearch" class="main blue-bg">
     <table class="table-form">
         <tr>
-            <td>
-                Đơn vị cấp 1,2,3:
-            </td>
-            <td>
-                <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl">
+             <td height="30" align="center" class="Row2" class="tbLabel">Chọn đơn vị lập báo cáo</td>
+                <td height="30" align="left" class="Row1" width="100">
+            <%--    <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl">
                 <asp:ListItem Value ="1.00200000" Text ="Toàn trường"></asp:ListItem>
                 <asp:ListItem Value ="2.00203000-2.00209000" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa + Viện"></asp:ListItem>
                 <asp:ListItem Value ="3.00203140" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Khoa giáo dục quốc phòng"></asp:ListItem>
@@ -109,10 +107,11 @@
                 <asp:ListItem Value ="3.0020E030" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nhà Xuất bản Bách Khoa Hà Nội"></asp:ListItem>
                 <asp:ListItem Value ="3.0020E040" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trung tâm Phục vụ Bách Khoa"></asp:ListItem>
                 <asp:ListItem Value ="3.0020E050" Text ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bách Khoa Hà Nội-Holdings"></asp:ListItem>
-               </asp:DropDownList>
+               </asp:DropDownList>--%>
+                <asp:TreeView ID="treeViewDonVi" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />
             </td>
         </tr>
-        <tr class="row">
+      <%--  <tr class="row">
             <td>
                 Đơn vị cấp 4:
             </td>
@@ -279,17 +278,9 @@
                     <asp:ListItem Value ="4.0020B235" Text ="Trung tâm Phát triên ứng dụng và chuyển giao công nghệ"></asp:ListItem>
                 </asp:DropDownList>
             </td>
-        </tr>
+        </tr>--%>
         <tr class="row">
-            <td>
-                Mã cán bộ:
-            </td>
-            <td>
-                <asp:TextBox runat="server" ID="macanbo" />
-            </td>
-        </tr>
-        <tr class="row">
-            <td>
+            <td class="tbLabel">
                 Tên cán bộ:
             </td>
             <td>
@@ -297,7 +288,7 @@
             </td>
         </tr>
         <tr class="row">
-            <td>
+            <td class="tbLabel">
                 Giới tính:
             </td>
             <td>
@@ -307,7 +298,7 @@
             </td>
         </tr>
         <tr class="row">
-            <td>
+            <td class="tbLabel">
                 Tuổi:
             </td>
             <td>
@@ -318,7 +309,7 @@
             </td>
         </tr>
         <tr class="row">
-            <td>
+            <td class="tbLabel">
                 Diện cán bộ:
             </td>
             <td>
@@ -328,17 +319,7 @@
             </td>
         </tr>
         <tr class="row">
-            <td>
-                Hiện nay:
-            </td>
-            <td>
-                <asp:DropDownList runat="server" ID="hiennay" style="width: 200px;">
-                    <asp:ListItem Text="Đơn vị cấp 1" Value="111111"></asp:ListItem>
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr class="row">
-            <td>
+            <td class="tbLabel">
                 Khối cán bộ:
             </td>
             <td>
@@ -348,7 +329,7 @@
             </td>
         </tr>
         <tr class="row">
-            <td>
+            <td class="tbLabel">
                 Năm về trường:
             </td>
             <td>
@@ -367,10 +348,46 @@
             CssClass="link-button lnk-search btn-search" onclick="Button1_Click1" />
 
 </form>
+
+        
+        <asp:GridView Visible=False ID="GridView1" runat="server" 
+            CellPadding="4" ForeColor="#333333" GridLines="None" Height="139px" 
+            Width="758px" AutoGenerateColumns="False">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField HeaderText="STT" DataField="shcc">
+                <HeaderStyle Height="36px" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Họ và tên" DataField="hoten" >
+                <ItemStyle Width="200px" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Đơn vị công tác" DataField="dv" />
+                <asp:BoundField HeaderText="Điện thoại" DataField="tel" />
+                <asp:BoundField HeaderText="Email" DataField="email" />
+                <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                    </asp:TemplateField>
+            </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
+        </asp:GridView>
 <asp:Panel runat="server" ID="panelResult" Visible="false">
     <hr width="750px" />
     <div id="divResult" class="main">
     <div align="left">
+        
         >> Tìm thấy <font color="red" style="font-weight: bold">3075</font>cán bộ
     </div>
     <br />
