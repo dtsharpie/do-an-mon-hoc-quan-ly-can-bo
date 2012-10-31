@@ -616,6 +616,11 @@ div.form-container table td.short-spacing
     width: 10px;
 }
 
+div.form-container .treeView-Timkiem
+{
+    margin-left :200px;
+}
+
 .div-tool
 {
     margin: 10px 0;

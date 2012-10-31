@@ -18,7 +18,15 @@
         Thông tin tìm kiếm</h1>
     <div id="divSearchForm" class="form-container">
         <form id="formSearch">
-        <table class="table-form">
+            <div> 
+             <pan>
+                 Chọn đơn vị tìm kiếm
+             </pan>
+             <pan margin-left="200px">
+                <asp:TreeView ID="treeViewDonVi" class="treeView-Timkiem" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />
+               </pan>
+            </div>
+          <table class="table-form">
             <tr class="row">
                 <td>
                     Tên cán bộ
@@ -26,8 +34,9 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <input style="width: 300px" name="hoten" id="hoten" onkeypress="return submitenter(this,event);  "
-                        type="text" />
+                <asp:TextBox ID="txtName" runat="server" style="width: 300px"></asp:TextBox>
+<%--                    <input style="width: 300px" name="hoten" id="hoten" onkeypress="return submitenter(this,event);  "
+                        type="text" />--%>
                 </td>
                 <td class="spacing">
                 </td>
@@ -37,27 +46,9 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <select name="dcb" style="width: 300px;">
-                        <option value="-1" selected="selected">---Không chọn---</option>
-                        <option value="0">Tuyển dụng 2008</option>
-                        <option value="1">Biên chế</option>
-                        <option value="2">Hợp đồng dài hạn</option>
-                        <option value="3">Hợp đồng ngắn hạn</option>
-                        <option value="4">Nghiên cứu khoa học</option>
-                        <option value="5">Hợp đồng chờ biên chế</option>
-                        <option value="6">Đã rời biên chế</option>
-                        <option value="7">Tuyển dụng 2003</option>
-                        <option value="8">Gửi lương</option>
-                        <option value="9">Tuyển dụng 10/2004</option>
-                        <option value="10">Tuyển dụng 2005</option>
-                        <option value="11">Tuyển dụng 2006</option>
-                        <option value="12">Tuyển dụng 2007</option>
-                        <option value="13">Biệt phái</option>
-                        <option value="14">Tuyển dụng 2009</option>
-                        <option value="15">Tuyển dụng 2010</option>
-                        <option value="16">Tuyển dụng 2011</option>
-                        <option value="17">Tuyển dụng 2012</option>
-                    </select>
+                <asp:DropDownList runat="server" ID="dcb" style="width: 300px;">
+                    <asp:ListItem Text="Đơn vị cấp 1" Value="111111"></asp:ListItem>
+                </asp:DropDownList>
                 </td>
             </tr>
             <tr class="row">
@@ -67,26 +58,22 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <input name="gt_nam" value="1" type="checkbox" />&nbsp; Nam
-                    <input name="gt_nu" value="0" type="checkbox" />&nbsp;Nữ
+                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click" />&nbsp; Nam
+                    <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click" />&nbsp; Nữ
+<%--                    <input name="gt_nam" value="1" type="checkbox" />&nbsp; Nam
+                    <input name="gt_nu" value="0" type="checkbox" />&nbsp;Nữ--%>
                 </td>
                 <td class="spacing">
                 </td>
-                <td>
-                    Hiện nay
+               <td>
+                    Khối cán bộ
                 </td>
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <select name="hiennay" style="width: 300px;">
-                        <option value="-1" selected="selected">---Không chọn---</option>
-                        <option value="1">Hiện đang công tác</option>
-                        <option value="2">Đã nghỉ hưu</option>
-                        <option value="3">Đã mất</option>
-                        <option value="4">Đã chuyển cơ quan khác</option>
-                        <option value="5">Thôi việc</option>
-                        <option value="6">Hiện không hưởng lương</option>
-                    </select>
+                    <asp:DropDownList runat="server" ID="khoicanbo" style="width: 300px;">
+                        <asp:ListItem Text="Đơn vị cấp 1" Value="111111"></asp:ListItem>
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr class="row">
@@ -97,27 +84,15 @@
                 </td>
                 <td>
                     Từ&nbsp;
-                    <input style="width: 30px" name="tuoi_lonhon" type="text" />
+                    <asp:TextBox ID="txtTuTuoi" runat="server" style="width: 30px"></asp:TextBox>
+                    <%--<input style="width: 30px" name="tuoi_lonhon" type="text" />--%>
                     Đến&nbsp;
-                    <input style="width: 30px" name="tuoi_nhohon" type="text" />
+                    <asp:TextBox ID="txtDenTuoi" runat="server" style="width: 30px"></asp:TextBox>  
+                    <%--<input style="width: 30px" name="tuoi_nhohon" type="text" />--%>
                 </td>
                 <td class="spacing">
                 </td>
-                <td>
-                    Khối cán bộ
-                </td>
-                <td class="short-spacing">
-                </td>
-                <td>
-                    <select name="khoicanbo" style="width: 300px;">
-                        <option value="-1" selected="selected">---Không chọn---</option>
-                        <option value="1">Giảng dạy</option>
-                        <option value="2">Phục vụ</option>
-                        <option value="3">Hành chính</option>
-                        <option value="4">Nghiên cứu</option>
-                        <option value="5">Khác</option>
-                    </select>
-                </td>
+                
             </tr>
             <tr class="row">
                 <td>
@@ -126,7 +101,8 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <input style="width: 40px" name="namvetruong" type="text" />
+                    <asp:TextBox ID="txtNamVeTruong" runat="server" style="width: 40px"></asp:TextBox>
+                    <%--<input style="width: 40px" name="namvetruong" type="text" />--%>
                     <font size="1"><i>(Nhỏ nhất: 1956) </i></font>
                 </td>
                 <td class="spacing">
@@ -136,7 +112,8 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <input type="button" class="button fr" value="Tìm kiếm" />
+                    <asp:Button ID="btnSearch" runat="server" class="button fr" Text="Tìm kiếm" OnClick="Search_click" />
+                    <%--<input type="button" class="button fr" value="Tìm kiếm" />--%>
                     <div class="clear">
                     </div>
                 </td>
