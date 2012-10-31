@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Web.SessionState;
+using System.Text;
 
 namespace HutStaff.Administrator.Services
 {
@@ -12,7 +13,7 @@ namespace HutStaff.Administrator.Services
     /// </summary>
     public class ExportExcel : IHttpHandler, IRequiresSessionState
     {
-
+        string sExcelname = "";
         DataTable tblData;
         public void ProcessRequest(HttpContext context)
         {
@@ -27,84 +28,80 @@ namespace HutStaff.Administrator.Services
                 case 1:
                     int iLoaiHanNgach = Convert.ToInt32(context.Request.QueryString["loaihanngach"]);
                     int iLoaiBang = Convert.ToInt32(context.Request.QueryString["loaibang"]);
-                    string[] sTime = context.Request.QueryString["thoigian"].Split('/');
-                    DateTime dtTime = new DateTime(Convert.ToInt32(sTime[2]), Convert.ToInt32(sTime[1]), Convert.ToInt32(sTime[0]));
+                    string sTime = context.Request.QueryString["thoigian"];
+                    DateTime dtTime = GetDate(sTime);
                     string sDelete = context.Request.QueryString["delete"];
                     tblData = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuong(1, int.MaxValue, iLoaiHanNgach, iLoaiBang, dtTime, sDelete);
                     tblData.Columns.Add("Stt");
-                    tblData.Columns.Add("hoten");
                     for (int i = 0; i < tblData.Rows.Count; i++)
                     {
-                        tblData.Rows[i]["Stt"] = i +1;
-                        tblData.Rows[i]["hoten"] = tblData.Rows[i]["hodem"].ToString() + " " + tblData.Rows[i]["ten"].ToString();
+                        tblData.Rows[i]["Stt"] = i + 1;
                     }
                     if (iLoaiBang != 3)
                     {
-                        cells = FromDataTable(worksheet, new DataColumn[] { tblData.Columns["Stt"], tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["bl_dbl"], tblData.Columns["shcc"], tblData.Columns["hsl"] , tblData.Columns["ma_ngach"] , tblData.Columns["tgbd_dbl"] , tblData.Columns["ttk_qtdbl"] }, 2, 1);
+                        cells = FromDataTable(worksheet, new DataColumn[] { tblData.Columns["Stt"], tblData.Columns["hodem"], tblData.Columns["ten"], tblData.Columns["shcc"], tblData.Columns["bl_dbl"], tblData.Columns["hsl"], tblData.Columns["ma_ngach"], tblData.Columns["tgbd_dbl"], tblData.Columns["ttk_qtdbl"] }, 2, 1);
                     }
                     else
                     {
-                        cells = FromDataTable(worksheet, new DataColumn[] { tblData.Columns["Stt"], tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["bl_dbl"], tblData.Columns["shcc"], tblData.Columns["hsl"], tblData.Columns["ma_ngach"], tblData.Columns["tgbd_dbl"],tblData.Columns["hspctn"] ,tblData.Columns["ttk_qtdbl"] }, 2, 1);
+                        cells = FromDataTable(worksheet, new DataColumn[] { tblData.Columns["Stt"], tblData.Columns["hodem"], tblData.Columns["ten"], tblData.Columns["shcc"], tblData.Columns["bl_dbl"], tblData.Columns["hsl"], tblData.Columns["ma_ngach"], tblData.Columns["tgbd_dbl"], tblData.Columns["hspctn"], tblData.Columns["ttk_qtdbl"] }, 2, 1);
 
                     }
                     cells["A1"].Formula = "Số thứ tự";
 
-                    cells["B1"].Formula = "Họ tên";
+                    cells["B1"].Formula = "Họ đệm";
                     cells["B1"].ColumnWidth = 50;
-                    cells["B1:" + "B" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
 
-                    cells["C1"].Formula = "Số hiệu";
+                    cells["C1"].Formula = "Tên";
                     cells["C1"].ColumnWidth = 25;
-                    cells["C1:" + "C" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
 
-                    cells["D1"].Formula = "Bậc lương";
+                    cells["D1"].Formula = "Số hiệu";
                     cells["D1"].ColumnWidth = 25;
-                    cells["D1:" + "D" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
 
-                    cells["E1"].Formula = "Hệ số lương";
+                    cells["E1"].Formula = "Bậc lương";
                     cells["E1"].ColumnWidth = 25;
 
-                    cells["F1"].Formula = "Mã ngạch";
+                    cells["F1"].Formula = "Hệ số lương";
                     cells["F1"].ColumnWidth = 25;
-                    cells["F1:" + "F" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
 
-                    cells["G1"].Formula = "Thời gian bắt đầu";
+                    cells["G1"].Formula = "Mã ngạch";
                     cells["G1"].ColumnWidth = 25;
-                    cells["G1:" + "G" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+
+                    cells["H1"].Formula = "Thời gian bắt đầu";
+                    cells["H1"].ColumnWidth = 25;
 
                     if (iLoaiBang == 3)
                     {
-                        cells["H1"].Formula = "Hệ số phụ cấp thâm niên";
-                        cells["H1"].ColumnWidth = 25;
-                        cells["H1:" + "H" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
-
-                        cells["I1"].Formula = "Thông tin khác";
+                        cells["I1"].Formula = "Hệ số phụ cấp thâm niên";
                         cells["I1"].ColumnWidth = 25;
-                        cells["I1:" + "I" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
 
-                        cells["A1:I1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
-                        cells["A1:I1"].Font.Bold = true;
+                        cells["J1"].Formula = "Thông tin khác";
+                        cells["J1"].ColumnWidth = 25;
+
+                        cells["A1:J1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+                        cells["A1:J1"].Font.Bold = true;
                     }
                     else
                     {
-                        cells["H1"].Formula = "Thông tin khác";
-                        cells["H1"].ColumnWidth = 25;
-                        cells["H1:" + "I" + tblData.Rows.Count + 2].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+                        cells["I1"].Formula = "Thông tin khác";
+                        cells["I1"].ColumnWidth = 50;
 
-                        cells["A1:H1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
-                        cells["A1:H1"].Font.Bold = true;
+                        cells["A1:I1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+                        cells["A1:I1"].Font.Bold = true;
                     }
 
                     worksheet.Range.Rows.AutoFit();
                     worksheet.Range.Columns.AutoFit();
                     worksheet.Name = "Danh sách xét tăng lương";
 
+                    sExcelname = "danh_sach_tang_luong_";
+
+
                     break;
             }
 
             context.Response.Clear();
             context.Response.ContentType = "application/vnd.ms-excel";
-            context.Response.AddHeader("Content-Disposition", "attachment; filename=Report" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+            context.Response.AddHeader("Content-Disposition", "attachment; filename=" + sExcelname + DateTime.Now.ToString("yyyyMMdd") + ".xls");
             workbook.SaveToStream(context.Response.OutputStream, SpreadsheetGear.FileFormat.XLS97);
             context.Response.End();
         }
@@ -124,9 +121,8 @@ namespace HutStaff.Administrator.Services
             string sEndCell = HutStaff.Common.Utility.ExcelHelper.IndexToColumnName(indexColumn + columns.Length - 1) + (indexRow + columns[0].Table.Rows.Count - 1).ToString();
             foreach (SpreadsheetGear.IRange cell in cells[sStartCell + ":" + sEndCell])
             {
-                cell.Formula = columns[cell.Column - indexColumn + 1].Table.Rows[cell.Row - indexRow + 1][columns[cell.Column - indexColumn + 1].ColumnName].ToString();
-                  //  : Convert.ToDateTime(columns[cell.Column - indexColumn + 1].Table.Rows[cell.Row - indexRow + 1][columns[cell.Column - indexColumn + 1].ColumnName]).ToString("dd/MM/yyyy");
-
+                cell.Formula = columns[cell.Column - indexColumn + 1].DataType != typeof(DateTime) ? columns[cell.Column - indexColumn + 1].Table.Rows[cell.Row - indexRow + 1][columns[cell.Column - indexColumn + 1].ColumnName].ToString()
+                   : Convert.ToDateTime(columns[cell.Column - indexColumn + 1].Table.Rows[cell.Row - indexRow + 1][columns[cell.Column - indexColumn + 1].ColumnName]).ToString("dd/MM/yyyy");
             }
             return cells;
         }

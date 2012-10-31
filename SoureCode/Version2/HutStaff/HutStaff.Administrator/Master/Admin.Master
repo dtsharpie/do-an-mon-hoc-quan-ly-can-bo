@@ -19,23 +19,9 @@
     <div id="wrapper">
         <div id="divHeader">
             <div class="nav fl">
-                <a class="active" href="/">
-                    <label class="label">
-                        Tìm kiếm
-                    </label>
-                </a><a href="/Pages/QuanLy/BangDanhMuc.aspx">
-                    <label class="label">
-                        Quản lý
-                    </label>
-                </a><a href="/Pages/BaoCao/BaoCaoThongKe.aspx">
-                    <label class="label">
-                        In báo cáo
-                    </label>
-                </a><a href="/Pages/HuongDan/HuongDan.aspx">
-                    <label class="label">
-                        Hướng dẫn
-                    </label>
-                </a>
+                <a class="active" href="/">Tìm kiếm </a><a href="/Pages/QuanLy/BangDanhMuc.aspx">Quản
+                    lý </a><a href="/Pages/BaoCao/BaoCaoThongKe.aspx">In báo cáo </a><a href="/Pages/HuongDan/HuongDan.aspx">
+                        Hướng dẫn </a>
             </div>
             <div class="acc-tool fr">
                 <a href="javascript:void(0);"><span>username<img src="/Images/indicator_down.png"

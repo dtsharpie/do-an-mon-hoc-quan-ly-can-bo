@@ -327,6 +327,7 @@ div.sub-title h2
     color: #fff; 
     display: block;
     text-align: center;
+    line-height: 36px;
 }
 
 #divHeader .nav
@@ -713,4 +714,5 @@ div.form-container table td.short-spacing
     font-weight: bold;
     line-height: 32px;
     padding-left: 10px;
+    cursor: pointer;
 }
