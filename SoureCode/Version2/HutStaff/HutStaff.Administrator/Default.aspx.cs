@@ -21,8 +21,19 @@ namespace HutStaff.Administrator
         int dienCB = 0;
         int khoiCB = 0;
         public int totalResult = 0;
+
+
         int pageIndex =0;
-        int pageSize = 9;
+        int pageSize = 9000;
+
+        private int _pageNumber;
+
+        public int PageNumber
+        {
+            get { return _pageNumber; }
+            set { _pageNumber = value; }
+        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -103,9 +114,84 @@ namespace HutStaff.Administrator
             return child;
         }
 
-        protected void Search_click(object sender, EventArgs e)
+        public void Search_click(object sender, EventArgs e )
         {
-            if (txtName.Text != null)
+
+            DataTable gridView1DataTable = GetData();
+            GridView1.DataSource = gridView1DataTable;
+            GridView1.DataBind();
+            countTotalNumberResult(out totalResult);
+            
+            numberResultLabel.Text = string.Format("Đang hiện 1 đến 10 trên {0} kết quả tìm được", totalResult);
+        }
+
+
+        protected void checkBox_nam_Click(object sender, EventArgs e)
+        {
+            checkBox_nam.Checked = true;
+            checkBox_nu.Checked = false;
+        }
+
+        protected void checkBox_nu_Click(object sender, EventArgs e)
+        {
+            checkBox_nu.Checked = true;
+            checkBox_nam.Checked = false;
+        }
+
+        protected void numberResultChange(object sender, EventArgs e)
+        {
+            pageSize = Int32.Parse( numberResultDropDownList.SelectedValue);
+            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, 9000);
+            GridView1.DataSource = gridView1DataTable;
+            GridView1.PageSize = pageSize;
+            GridView1.DataBind();
+            countTotalNumberResult(out totalResult);
+
+            numberResultLabel.Text = string.Format("Đang hiện 1 đến {0} trên {1} kết quả tìm được",pageSize ,totalResult);
+
+        }
+
+
+
+
+
+
+
+        public void countTotalNumberResult(out int _totalResult)
+        {
+            DataTable total = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all_total("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
+            _totalResult = Int32.Parse(total.Rows[0][0].ToString());
+        }
+
+
+
+        protected void gvResultSearch_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            int newPage;
+            newPage = e.NewPageIndex;
+            if (newPage < 0 || newPage >= GridView1.PageCount)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                GridView1.PageIndex = newPage;
+                this.LoadDataToGridView();
+            }
+        }
+
+        private void LoadDataToGridView()
+        {
+            DataTable salaryIncrementListDataTable = this.GetData();
+            GridView1.DataSource = salaryIncrementListDataTable;
+            GridView1.DataBind();
+        }
+
+
+
+        public DataTable GetData()
+        {
+             if (txtName.Text != null)
             {
                 tenCanBo = txtName.Text;
             }
@@ -129,47 +215,16 @@ namespace HutStaff.Administrator
             if (txtNamVeTruong.Text != "")
             namVeTruong = Int32.Parse(txtNamVeTruong.Text);
 
-            dienCB = dcb.SelectedIndex;  
-            khoiCB = khoicanbo.SelectedIndex;
+            dienCB = Int32.Parse(dcb.SelectedValue);  
+            khoiCB = Int32.Parse(khoicanbo.SelectedValue);
 
             panelResult.Visible = true;
             GridView1.Visible = true;
             System.Data.SqlClient.SqlParameter code = new System.Data.SqlClient.SqlParameter("@Total", SqlDbType.Int);
             code.Direction = ParameterDirection.Output;
             DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, pageSize);
-            GridView1.DataSource = gridView1DataTable;
-            GridView1.DataBind();
-
-            DataTable total = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all_total("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
-            totalResult = Int32.Parse(total.Rows[0][0].ToString());
-            numberResultLabel.Text = string.Format("Đang hiện 1 đến 10 trên {0} kết quả tìm được", totalResult);
+            return gridView1DataTable;
         }
-
-        protected void checkBox_nam_Click(object sender, EventArgs e)
-        {
-            checkBox_nam.Checked = true;
-            checkBox_nu.Checked = false;
-        }
-
-        protected void checkBox_nu_Click(object sender, EventArgs e)
-        {
-            checkBox_nu.Checked = true;
-            checkBox_nam.Checked = false;
-        }
-
-        protected void numberResultChange(object sender, EventArgs e)
-        {
-            pageSize = Int32.Parse( numberResultDropDownList.SelectedValue);
-            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, pageSize);
-            GridView1.DataSource = gridView1DataTable;
-            GridView1.DataBind();
-            numberResultLabel.Text = string.Format("Đang hiện 1 đến {0} trên {1} kết quả tìm được",pageSize ,totalResult);
-        }
-
-
-
-
-
 
     }
 }
