@@ -58,8 +58,8 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click" />&nbsp; Nam
-                    <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click" />&nbsp; Nữ
+                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click" Checked="true" />&nbsp; Nam
+                    <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click" Checked="false" />&nbsp; Nữ
 <%--                    <input name="gt_nam" value="1" type="checkbox" />&nbsp; Nam
                     <input name="gt_nu" value="0" type="checkbox" />&nbsp;Nữ--%>
                 </td>
@@ -75,6 +75,10 @@
                         <asp:ListItem Text="Đơn vị cấp 1" Value="111111"></asp:ListItem>
                     </asp:DropDownList>
                 </td>
+                <td>
+               
+                        
+                </td>
             </tr>
             <tr class="row">
                 <td>
@@ -87,8 +91,13 @@
                     <asp:TextBox ID="txtTuTuoi" runat="server" style="width: 30px"></asp:TextBox>
                     <%--<input style="width: 30px" name="tuoi_lonhon" type="text" />--%>
                     Đến&nbsp;
-                    <asp:TextBox ID="txtDenTuoi" runat="server" style="width: 30px"></asp:TextBox>  
+                    <asp:TextBox ID="txtDenTuoi" runat="server" style="width: 30px"></asp:TextBox>
+                        
                     <%--<input style="width: 30px" name="tuoi_nhohon" type="text" />--%>
+                     <asp:RangeValidator ID="RangeValidator2" runat="server" 
+                        ControlToValidate="txtTuTuoi" 
+                        ErrorMessage="Tuổi tối thiểu là 20 tối đa 120" 
+                        MinimumValue="20" MaximumValue="120" Type="Integer"></asp:RangeValidator>
                 </td>
                 <td class="spacing">
                 </td>
@@ -102,8 +111,15 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtNamVeTruong" runat="server" style="width: 40px"></asp:TextBox>
-                    <%--<input style="width: 40px" name="namvetruong" type="text" />--%>
-                    <font size="1"><i>(Nhỏ nhất: 1956) </i></font>
+                     <font size="1"><i>(Nhỏ nhất: 1956) </i></font>
+                       <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                        ControlToValidate="txtNamVeTruong" 
+                        ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" 
+                        MinimumValue="1956" MaximumValue="2112" Type="Integer"></asp:RangeValidator>
+                    <%--<asp:CompareValidator ID="CompareValidator1" runat="server" 
+                        Operator="DataTypeCheck" Type="Integer" 
+                        ControlToValidate="txtNamVeTruong" 
+                        ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" />--%>
                 </td>
                 <td class="spacing">
                 </td>
@@ -121,6 +137,7 @@
         </table>
         </form>
     </div>
+    <asp:Panel runat="server" ID="panelResult" Visible="false">
     <div class="sub-title">
         <h2>
             Kết quả</h2>
@@ -152,7 +169,46 @@
             <div class="clear">
             </div>
         </div>
-        <table class="table-result">
+        <asp:GridView Visible=False class="table-result" ID="GridView1" runat="server" 
+            CellPadding="4" ForeColor="Black" GridLines="Vertical"  AutoGenerateColumns="False" BackColor="White" 
+            BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField HeaderText="STT" DataField="shcc">
+                <HeaderStyle Height="36px" />
+                <ItemStyle Width="20px" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Họ và tên" DataField="hoten" >
+                <ItemStyle Width="230px" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Đơn vị công tác" DataField="dv" >
+                <ItemStyle Width="230px" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Điện thoại" DataField="tel" >
+                <ItemStyle Width="100px" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Email" DataField="email" >
+                <ItemStyle Width="100px" />
+                </asp:BoundField>
+                <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                    </asp:TemplateField>
+            </Columns>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FBFBF2" />
+            <SortedAscendingHeaderStyle BackColor="#848384" />
+            <SortedDescendingCellStyle BackColor="#EAEAD3" />
+            <SortedDescendingHeaderStyle BackColor="#575357" />
+
+        </asp:GridView>
+     <%--   <table class="table-result">
             <tr class="header">
                 <td>
                     STT
@@ -439,7 +495,7 @@
                     <a href="huyhoso.php?sh=692">Xóa</a>
                 </td>
             </tr>
-        </table>
+        </table>--%>
         <div class="footer-table">
             <div>
                 Hiển thị &nbsp;
@@ -469,4 +525,5 @@
             class="lnk-button margin-left-10">In sổ cái</a><a href="javascript:void(0);" class="lnk-button margin-left-10">Gửi
                 email</a>
     </div>
+    </asp:Panel>
 </asp:Content>
