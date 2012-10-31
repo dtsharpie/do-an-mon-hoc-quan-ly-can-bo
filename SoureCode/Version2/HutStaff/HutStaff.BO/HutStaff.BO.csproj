@@ -44,6 +44,7 @@
     <Compile Include="PagesBO\BaoCaoBO\BaoCaoBO.cs" />
     <Compile Include="PagesBO\QuanLy\NguoiDungBO.cs" />
     <Compile Include="PagesBO\QuanLy\XetDuyet.cs" />
+    <Compile Include="PagesBO\TimKiem\SearchBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Security\CurrentUser.cs" />
