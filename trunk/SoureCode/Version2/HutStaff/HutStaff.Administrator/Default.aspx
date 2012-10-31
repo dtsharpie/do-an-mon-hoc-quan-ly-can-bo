@@ -159,18 +159,20 @@
                         <asp:ListItem Text ="100" Value="100"></asp:ListItem>
                     </asp:DropDownList>&nbsp; dòng&nbsp;&nbsp;-&nbsp;&nbsp;<asp:Label ID="numberResultLabel" runat="server" Text="Đang hiện 1 đến 10 trên 51 kết quả tìm được"></asp:Label>
             </div>
-            <div class="paging fr">
+           <%-- <div class="paging fr">
                 <span class="first paging_button">First</span> <span class="previous paging_button disable">
                     Previous</span> <span><span class="paging_button active">1</span> <span class="paging_button">
                         2</span> <span class="paging_button">3</span> <span class="paging_button">4</span>
                         <span class="paging_button">5</span> </span><span class="next paging_button">Next</span>
                 <span class="last paging_button">Last</span>
-            </div>
+            </div>--%>
             <div class="clear">
             </div>
         </div>
         <asp:GridView Visible=False class="table-result" ID="GridView1" runat="server" 
-            CellPadding="4" ForeColor="Black" GridLines="Vertical"  AutoGenerateColumns="False" BackColor="White" 
+            CellPadding="4" AllowPaging="True"  
+            onpageindexchanging="gvResultSearch_PageIndexChanging" ForeColor="Black" 
+            GridLines="Vertical"  AutoGenerateColumns="False" BackColor="White" 
             BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
@@ -195,6 +197,7 @@
                                 <asp:LinkButton ID="LinkButton1" runat="server" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
                                 </asp:LinkButton>
                             </ItemTemplate>
+                            <ItemStyle Width="30px" />
                     </asp:TemplateField>
             </Columns>
             <FooterStyle BackColor="#CCCC99" />
