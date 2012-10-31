@@ -12,6 +12,18 @@ namespace HutStaff.Administrator
 {
     public partial class Default : System.Web.UI.Page
     {
+        
+        string tenCanBo ="";
+        int gioiTinh = 1;
+        int tuTuoi = 0;
+        int denTuoi = 0;
+        int namVeTruong = 0;
+        int dienCB = 0;
+        int khoiCB = 0;
+        public int totalResult = 0;
+        int pageIndex =0;
+        int pageSize = 9;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BuildTreeViewdm_dv();
@@ -93,9 +105,11 @@ namespace HutStaff.Administrator
 
         protected void Search_click(object sender, EventArgs e)
         {
-
-            string tenCanBo = txtName.Text;
-            int gioiTinh = 1;
+            if (txtName.Text != null)
+            {
+                tenCanBo = txtName.Text;
+            }
+           
             if (checkBox_nam.Checked == true)
             {
                 gioiTinh = 1;
@@ -105,33 +119,30 @@ namespace HutStaff.Administrator
                 gioiTinh = 0;
             }
 
-
-            int tuTuoi = 0;
+           
             if(txtTuTuoi.Text != "")
             tuTuoi = Int32.Parse(txtTuTuoi.Text);
-
-            int denTuoi = 0;
+            
             if (txtDenTuoi.Text != "")
             denTuoi = Int32.Parse(txtDenTuoi.Text);
 
-            int namVeTruong = 0;
             if (txtNamVeTruong.Text != "")
             namVeTruong = Int32.Parse(txtNamVeTruong.Text);
 
-
-            int dienCB = 0;
-            dienCB = dcb.SelectedIndex;
-
-            int khoiCB = 0;
+            dienCB = dcb.SelectedIndex;  
             khoiCB = khoicanbo.SelectedIndex;
 
             panelResult.Visible = true;
             GridView1.Visible = true;
             System.Data.SqlClient.SqlParameter code = new System.Data.SqlClient.SqlParameter("@Total", SqlDbType.Int);
             code.Direction = ParameterDirection.Output;
-            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, 0, 1000);
+            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, pageSize);
             GridView1.DataSource = gridView1DataTable;
             GridView1.DataBind();
+
+            DataTable total = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all_total("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
+            totalResult = Int32.Parse(total.Rows[0][0].ToString());
+            numberResultLabel.Text = string.Format("Đang hiện 1 đến 10 trên {0} kết quả tìm được", totalResult);
         }
 
         protected void checkBox_nam_Click(object sender, EventArgs e)
@@ -144,6 +155,15 @@ namespace HutStaff.Administrator
         {
             checkBox_nu.Checked = true;
             checkBox_nam.Checked = false;
+        }
+
+        protected void numberResultChange(object sender, EventArgs e)
+        {
+            pageSize = Int32.Parse( numberResultDropDownList.SelectedValue);
+            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, pageSize);
+            GridView1.DataSource = gridView1DataTable;
+            GridView1.DataBind();
+            numberResultLabel.Text = string.Format("Đang hiện 1 đến {0} trên {1} kết quả tìm được",pageSize ,totalResult);
         }
 
 
