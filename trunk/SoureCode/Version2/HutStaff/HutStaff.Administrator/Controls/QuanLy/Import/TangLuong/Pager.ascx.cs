@@ -10,17 +10,20 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
 {
     public partial class Pager : ControlBase
     {
+        protected int iPageIndex;
+        protected int iPageSize;
+        protected int iCount;
         protected void Page_Load(object sender, EventArgs e)
         {
             int iLoaiHanNgach = GetInt("loaiHanNgach");
             int iloaiBang = GetInt("loaiBang");
             DateTime dtthoiGian = GetDate("thoiGian", DateTime.Now);
-            string sDelete = GetString("delete");
+            string sDelete = GetString("deletes");
 
-            int iCount = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuongCount(iLoaiHanNgach, iloaiBang, dtthoiGian, sDelete);
+            iCount = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuongCount(iLoaiHanNgach, iloaiBang, dtthoiGian, sDelete);
 
-            int iPageIndex = GetInt("pageindex",1);
-            int iPageSize = GetInt("pagesize",20);
+            iPageIndex = GetInt("pi", 1);
+            iPageSize = GetInt("ps", 50);
 
             if (iCount == 0)
             {

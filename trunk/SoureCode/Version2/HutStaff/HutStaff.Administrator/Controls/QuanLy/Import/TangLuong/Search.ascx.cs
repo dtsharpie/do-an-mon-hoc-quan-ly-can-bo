@@ -16,7 +16,7 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
             int  iLoaiHanNgach = GetInt("loaiHanNgach");
             int iloaiBang = GetInt("loaiBang");
             DateTime dtthoiGian = GetDate("thoiGian",DateTime.Now);
-            string sDelete = GetString("delete");
+            string sDelete = GetString("deletes");
 
             DataTable tblData = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuong(PageIndex,PageSize,iLoaiHanNgach, iloaiBang, dtthoiGian,sDelete);
             grdData.DataSource = tblData;
