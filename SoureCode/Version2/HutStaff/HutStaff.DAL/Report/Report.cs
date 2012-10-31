@@ -15,17 +15,22 @@ namespace HutStaff.DAL.Report
             string thoiGian;
             if (thang < 10)
             {
-                thoiGian = "00:00:00 0" + thang.ToString() + "/01/" + nam.ToString();
+                //thoiGian = "00:00:00 0" + thang.ToString() + "/01/" + nam.ToString();
+                thoiGian = "01/0" + thang.ToString() + "/" + nam.ToString();
             }
             else
             {
-                thoiGian = "00:00:00 " + thang.ToString() + "/01/" + nam.ToString();
+                //thoiGian = "00:00:00 " + thang.ToString() + "/01/" + nam.ToString();
+                thoiGian = "01/" + thang.ToString() + "/" + nam.ToString();
             }
+            DateTime dt = new DateTime();
+            dt = Convert.ToDateTime(thoiGian);
+            thoiGian = dt.ToString();
             using (MainDB db = new MainDB())
             {
                 return db.Execute("[sp_report_get_salary_increment_list]",
                     new string[] { "@loaiHanNgach", "@loaiBang", "@thoiGian" },
-                    new object[] { loaiHanNgach, loaiBang, thoiGian });
+                    new object[] { loaiHanNgach, loaiBang, dt });
             }
         }
 
