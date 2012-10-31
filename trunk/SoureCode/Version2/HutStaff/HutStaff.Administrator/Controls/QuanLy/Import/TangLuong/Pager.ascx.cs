@@ -10,8 +10,6 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
 {
     public partial class Pager : ControlBase
     {
-        int TotalItem = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             int iLoaiHanNgach = GetInt("loaiHanNgach");
@@ -19,26 +17,34 @@ namespace HutStaff.Administrator.Controls.QuanLy.Import.TangLuong
             DateTime dtthoiGian = GetDate("thoiGian", DateTime.Now);
             string sDelete = GetString("delete");
 
-            TotalItem = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuongCount( iLoaiHanNgach, iloaiBang, dtthoiGian,sDelete);
-            if (TotalItem > 0)
+            int iCount = BO.PagesBO.QuanLy.XetDuyet.ViewSetNangLuongCount(iLoaiHanNgach, iloaiBang, dtthoiGian, sDelete);
+
+            int iPageIndex = GetInt("pageindex",1);
+            int iPageSize = GetInt("pagesize",20);
+
+            if (iCount == 0)
             {
-                //Pager
-                Pager1.HtmlId = ".main-table";
-                Pager1.PageIndex = PageIndex;
-                Pager1.PageSize = PageSize;
-                Pager1.TotalItem = TotalItem;
-                Pager1.ControlParams = "{\"alias\":\"" + "danh-sach-tang-luong" + "\"" +
-                                   ",\"loaiHanNgach\":\"" + iLoaiHanNgach + "\"" +
-                                   ",\"loaiBang\":\"" + iloaiBang + "\"" +
-                                   ",\"thoiGian\":\"" + dtthoiGian.ToString("dd/MM/yyyy") + "\"" +
-                                   ",\"delete\":\"" + sDelete + "\"" +
-                                  "}";
-                Pager1.Visible = true;
+                Pager1.Dispose();
+                Pager1.Visible = false;
             }
             else
             {
-            Pager1.Visible = false;
+                if (iCount % iPageSize == 0)
+                {
+                    Pager1.TotalPage = iCount / iPageSize;
+                }
+                else
+                {
+                    Pager1.TotalPage = iCount / iPageSize + 1;
+                }
+
+                if (iPageIndex <= 0 || iPageIndex > Pager1.TotalPage)
+                {
+                    iPageIndex = 1;
+                }
+                Pager1.CurrentPage = iPageIndex;
             }
+
         }
     }
 }

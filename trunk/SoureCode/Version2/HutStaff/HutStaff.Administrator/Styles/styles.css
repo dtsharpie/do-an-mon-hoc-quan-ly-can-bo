@@ -283,6 +283,11 @@ div.sub-title h2
     cursor: pointer;
 }
 
+.paging .paging_button a
+{
+    color: #000;
+}
+
 .paging .paging_button.active
 {
     background-color: #F0882C;
