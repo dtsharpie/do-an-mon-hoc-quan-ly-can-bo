@@ -21,8 +21,8 @@ namespace HutStaff.Administrator.Services
             SpreadsheetGear.IWorksheet worksheet = workbook.Worksheets[0];
             SpreadsheetGear.IRange cells = null;
             int iType = Convert.ToInt32(context.Request.QueryString["type"]);
-            //if (iType == 0 || BO.Security.CurrentUser.GetCurrentUser() == null)
-            //    return;
+            if (iType == 0 || BO.Security.CurrentUser.GetCurrentUser() == null)
+                return;
             switch (iType)
             {
                 case 1:

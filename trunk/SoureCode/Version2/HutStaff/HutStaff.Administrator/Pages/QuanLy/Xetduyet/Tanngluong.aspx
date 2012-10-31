@@ -99,7 +99,7 @@
             });
 
             $(".btnExport").click(function () {
-                var query = "?type=1&loaihanngach=" + $('#ddlLoaiHanNgach').val() + "&loaibang=" + $('#ddlLuaChonBang').val() + "&thoigian=" + $("#txtDate").val() + "&delete=";
+                var query = "?type=1&loaihanngach=" + $('#ddlLoaiHanNgach').val() + "&loaibang=" + $('#ddlLuaChonBang').val() + "&thoigian=" + $("#txtDate").val() + "&delete=" + deletes.join(",");
                 window.open("/Services/ExportExcel.ashx" + query, "_blank");
             });
         });
