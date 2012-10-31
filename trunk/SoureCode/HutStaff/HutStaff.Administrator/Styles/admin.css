@@ -102,7 +102,12 @@ table.pager tr, td{vertical-align: middle; padding: 0 4px;}
 
 .table-form tr td:first-child
 {
-    width: 120px;
+    width: 20px;
+}
+
+.table-form tr td:first-child.tbLabel 
+{
+  width: 120px;
 }
 
 .table-form tr, td

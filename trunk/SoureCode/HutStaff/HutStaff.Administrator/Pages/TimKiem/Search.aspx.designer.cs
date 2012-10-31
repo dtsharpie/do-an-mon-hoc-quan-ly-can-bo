@@ -13,31 +13,13 @@ namespace HutStaff.Administrator.Pages.TimKiem {
     public partial class Search {
         
         /// <summary>
-        /// ddlUnit123 control.
+        /// treeViewDonVi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnit123;
-        
-        /// <summary>
-        /// ddlUnit4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnit4;
-        
-        /// <summary>
-        /// macanbo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox macanbo;
+        protected global::System.Web.UI.WebControls.TreeView treeViewDonVi;
         
         /// <summary>
         /// hoten control.
@@ -94,15 +76,6 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.DropDownList dcb;
         
         /// <summary>
-        /// hiennay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList hiennay;
-        
-        /// <summary>
         /// khoicanbo control.
         /// </summary>
         /// <remarks>
@@ -128,6 +101,15 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// panelResult control.
