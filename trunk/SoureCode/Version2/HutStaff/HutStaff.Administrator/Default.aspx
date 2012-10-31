@@ -58,8 +58,8 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click" Checked="true" />&nbsp; Nam
-                    <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click" Checked="false" />&nbsp; Nữ
+                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click" AutoPostBack="true" Checked="true" />&nbsp; Nam
+                    <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click" AutoPostBack="true" Checked="false" />&nbsp; Nữ
 <%--                    <input name="gt_nam" value="1" type="checkbox" />&nbsp; Nam
                     <input name="gt_nu" value="0" type="checkbox" />&nbsp;Nữ--%>
                 </td>
@@ -151,13 +151,13 @@
         <div class="header-table">
             <div>
                 Hiển thị &nbsp;
-                <select style="width: 60px;">
-                    <option selected="selected" value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;-&nbsp;&nbsp;Đang hiện 1 đến 10 trên 51 kết quả
-                tìm được
+                    <asp:DropDownList runat="server" ID="numberResultDropDownList" style="width: 60px;" 
+                    onselectedindexchanged="numberResultChange" AutoPostBack="true">
+                        <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                        <asp:ListItem Text ="25" Value="25"></asp:ListItem>
+                        <asp:ListItem Text ="50" Value="50"></asp:ListItem>
+                        <asp:ListItem Text ="100" Value="100"></asp:ListItem>
+                    </asp:DropDownList>&nbsp; dòng&nbsp;&nbsp;-&nbsp;&nbsp;<asp:Label ID="numberResultLabel" runat="server" Text="Đang hiện 1 đến 10 trên 51 kết quả tìm được"></asp:Label>
             </div>
             <div class="paging fr">
                 <span class="first paging_button">First</span> <span class="previous paging_button disable">
@@ -496,7 +496,7 @@
                 </td>
             </tr>
         </table>--%>
-        <div class="footer-table">
+      <%--  <div class="footer-table">
             <div>
                 Hiển thị &nbsp;
                 <select style="width: 60px;">
@@ -516,7 +516,7 @@
             </div>
             <div class="clear">
             </div>
-        </div>
+        </div>--%>
     </div>
     <div class="clear">
     </div>
