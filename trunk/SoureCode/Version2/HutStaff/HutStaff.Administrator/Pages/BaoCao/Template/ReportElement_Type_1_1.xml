@@ -1,0 +1,50 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td>
+    <p class='CellText' style='text-align:center;'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left;'> $ngach </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam30 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu30 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam31_40 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu31_40 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam41_45 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu41_45 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam46_50 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu46_50 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam51_55 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu51_55 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam56_60 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu56_60 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nam60 </p>
+  </td>
+  <td>
+    <p class='CellText' > $nu60 </p>
+  </td>
+</tr>

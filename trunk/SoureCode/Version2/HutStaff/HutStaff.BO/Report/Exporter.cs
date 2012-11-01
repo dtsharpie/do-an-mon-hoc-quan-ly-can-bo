@@ -10,7 +10,7 @@ namespace HutStaff.BO.Report
 {
     public class Exporter
     {
-        public static void ExporttoExcel(DataTable dataTable, string fileName)
+        public static void ExportToExcel(DataTable dataTable, string fileName)
         {
             HttpContext.Current.Response.Clear();
             HttpContext.Current.Response.ClearContent();
@@ -42,6 +42,20 @@ namespace HutStaff.BO.Report
             }
             strHtmlContent += "\n</table>\n</body>\n</html>";
 
+            HttpContext.Current.Response.Write(strHtmlContent);
+            HttpContext.Current.Response.Flush();
+            HttpContext.Current.Response.End();
+        }
+
+        public static void ExportToDoc(string strHtmlContent, string fileName)
+        {
+            HttpContext.Current.Response.Clear();
+            HttpContext.Current.Response.ClearContent();
+            HttpContext.Current.Response.ClearHeaders();
+            HttpContext.Current.Response.Buffer = true;
+            HttpContext.Current.Response.ContentType = "application/ms-word";
+            //HttpContext.Current.Response.Write(@"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">");
+            HttpContext.Current.Response.AddHeader("Content-Disposition", String.Format("attachment;filename={0}", fileName));
             HttpContext.Current.Response.Write(strHtmlContent);
             HttpContext.Current.Response.Flush();
             HttpContext.Current.Response.End();

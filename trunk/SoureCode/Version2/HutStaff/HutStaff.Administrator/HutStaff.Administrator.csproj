@@ -102,6 +102,9 @@
     <Content Include="Pages\BaoCao\InBaoCao.aspx" />
     <Content Include="Pages\BaoCao\KhenThuong.aspx" />
     <Content Include="Pages\BaoCao\Report.aspx" />
+    <Content Include="Pages\BaoCao\Template\ReportElement_Type_1_1.xml" />
+    <Content Include="Pages\BaoCao\Template\ReportFooter.xml" />
+    <Content Include="Pages\BaoCao\Template\ReportHeader.xml" />
     <Content Include="Pages\BaoCao\Template\XetNangLuong.xml" />
     <Content Include="Pages\BaoCao\ThongKeCanBoCaoCap.aspx" />
     <Content Include="Pages\BaoCao\ThongKeKhenthuong.aspx" />

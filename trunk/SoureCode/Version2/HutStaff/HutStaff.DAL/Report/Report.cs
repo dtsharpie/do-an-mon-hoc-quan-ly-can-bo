@@ -44,5 +44,16 @@ namespace HutStaff.DAL.Report
                     new object[] { hinhThuc, tuNam, denNam, donVi, dienCanBo, khoiCanBo });
             }
         }
+
+        // Lay du lieu de lam bao cao loai 1.1: Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính.
+        public static DataTable GetDataTableToReport_Type_1_1(string ma_dv, int diencb)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_1_1]",
+                    new string[] { "@ma_dv", "@diencb" },
+                    new object[] { ma_dv, diencb });
+            }
+        }
     }
 }
