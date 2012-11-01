@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Settings.xml" />
+    <Content Include="Controls\Common\DatePicker.ascx" />
+    <Content Include="Controls\Common\DropDownChosen.ascx" />
+    <Content Include="Controls\Common\HintTextBox.ascx" />
     <Content Include="Controls\Common\Pager.ascx" />
     <Content Include="Controls\Common\SlideBaocao.ascx" />
     <Content Include="Controls\Common\SlideQuanLy.ascx" />
@@ -169,6 +172,27 @@
     <Content Include="Xemthongtin\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Common\DatePicker.ascx.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\DatePicker.ascx.designer.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\DropDownChosen.ascx.cs">
+      <DependentUpon>DropDownChosen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\DropDownChosen.ascx.designer.cs">
+      <DependentUpon>DropDownChosen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\HintTextBox.ascx.cs">
+      <DependentUpon>HintTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\HintTextBox.ascx.designer.cs">
+      <DependentUpon>HintTextBox.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Common\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

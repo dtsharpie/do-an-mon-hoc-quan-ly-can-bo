@@ -8,9 +8,11 @@
     <script src="/Scripts/jquery-ui-1.9.0/js/jquery.ui.datepicker-vi.js" type="text/javascript"></script>
     <script src="/Scripts/jquery-ui-1.9.0/js/jquery-ui-1.9.0.custom.min.js" type="text/javascript"></script>
     <script src="/Scripts/common.js" type="text/javascript"></script>
+    <script src="/Scripts/chosen/chosen.jquery.min.js" type="text/javascript"></script>
     <link href="/Scripts/jquery-ui-1.9.0/css/smoothness/jquery-ui-1.9.0.custom.min.css"
         rel="stylesheet" />
     <link href="/Styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/chosen/chosen.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
