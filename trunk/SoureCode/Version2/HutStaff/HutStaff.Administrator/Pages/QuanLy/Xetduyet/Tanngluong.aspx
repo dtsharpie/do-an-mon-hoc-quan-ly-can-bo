@@ -95,6 +95,29 @@
             });
 
             $(".pagerLoad .paging a").live("click", function () {
+                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
+                loadControl(".pagerLoad",
+                {
+                    alias: 'pager-tang-luong',
+                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
+                    loaiBang: $('#ddlLuaChonBang').val(),
+                    thoiGian: $("#txtDate").val(),
+                    deletes: deletes.join(","),
+                    ps: $(".ddlPageSize").val(),
+                    pi: $(this).attr("href").replace("page", "")
+                }, true);
+
+
+                loadControl(".main-table",
+                {
+                    alias: 'danh-sach-tang-luong',
+                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
+                    loaiBang: $('#ddlLuaChonBang').val(),
+                    thoiGian: $("#txtDate").val(),
+                    deletes: deletes.join(","),
+                    ps: $(".ddlPageSize").val(),
+                    pi: $(this).attr("href").replace("page", "")
+                }, false);
                 return false;
             });
 
