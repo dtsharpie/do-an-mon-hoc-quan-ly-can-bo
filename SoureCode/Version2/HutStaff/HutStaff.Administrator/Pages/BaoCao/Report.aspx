@@ -45,5 +45,10 @@
             </tr>
         </tbody>
     </table>
+    <div>
+     <asp:GridView ID="resultGridView" runat="server">
+        </asp:GridView>
+    </div>
+       
 </div>
 </asp:Content>
