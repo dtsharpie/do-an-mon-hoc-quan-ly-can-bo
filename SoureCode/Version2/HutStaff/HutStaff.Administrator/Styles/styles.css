@@ -514,10 +514,6 @@ div.sub-title h2
     background-color: #F7F7F7;
 }
 
-#divSideBar > ul > li
-{
-}
-
 #divSideBar > ul > li > a
 {
     
@@ -532,6 +528,13 @@ div.sub-title h2
     height: 4px;
     top: 18px;
     right: 10px;
+}
+
+#divSideBar ul > li > .cb-tree
+{
+    position: absolute;
+    top: 9px;
+    left: 5px;
 }
 
 #divSideBar ul.subform
