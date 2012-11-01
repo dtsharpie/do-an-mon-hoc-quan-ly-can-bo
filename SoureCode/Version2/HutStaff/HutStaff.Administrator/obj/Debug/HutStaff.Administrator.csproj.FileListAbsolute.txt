@@ -9,17 +9,6 @@ C:\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
 C:\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
 C:\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 C:\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.dll
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.dll
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.pdb
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.pdb
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
@@ -31,8 +20,6 @@ D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\H
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.Design.dll
-C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.dll
 D:\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
 D:\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
 D:\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
@@ -46,3 +33,16 @@ D:\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
 D:\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
 D:\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 D:\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.Design.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.Common.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pdb
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
+C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
