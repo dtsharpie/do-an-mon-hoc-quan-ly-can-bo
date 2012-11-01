@@ -83,10 +83,11 @@
                 $(this).toggleClass('collapse');
             });
 
-            $('#divSideBar > ul > li > a').click(function () {
-                var subform = $(this).parent().find('.subform');
-                $('#divSideBar ul > li > a').removeClass('active');
-                $(this).addClass('active');
+            $('#divSideBar ul > li > a').click(function () {
+                var subform = $(this).parent().children('.subform');
+
+                //$('#divSideBar ul > li > a').removeClass('active');
+                //$(this).addClass('active');
 
                 if (!subform.is(':hidden')) {
                     subform.hide(500, function () {
@@ -96,13 +97,15 @@
                     return;
                 }
 
-                $('#divSideBar ul.subform').hide();
                 subform.show(500);
+
             });
 
-            $('#divSideBar ul.subform > li > a').click(function () {
-                $('#divSideBar ul > li > a').removeClass('active');
-                $(this).addClass('active');
+            $('#divSideBar ul > li > .cb-tree').change(function () {
+                $('#divSideBar ul > li > .cb-tree').not(this).removeAttr('checked');
+                if ($('#txtDepartmentCode') != undefined) {
+                    $('#txtDepartmentCode').val($(this).attr('code'));
+                }
             });
         });
     </script>
