@@ -205,7 +205,7 @@ div.sub-title h2
     border: 1px solid #DDD;
 }
 
-.table-result tr.even td
+.table-result tr:nth-child(2n) td
 {
     background-color: #FFF6DA;
 }
@@ -232,7 +232,7 @@ div.sub-title h2
     border: 1px solid #DDD;
 }
 
-.table-container tr.even td
+.table-container tr:nth-child(2n) td
 {
     background-color: #FFF6DA;
 }
