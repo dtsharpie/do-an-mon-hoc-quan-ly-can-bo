@@ -195,6 +195,16 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnXuat_Click(object sender, EventArgs e)
         {
+            BO.Report.Exporter.ExportToDoc(this.GetHtmlContent(), String.Format("b01_{0}.doc", DateTime.Now.ToString()));       
+        }
+
+        protected void btnXem_Click(object sender, EventArgs e)
+        {
+            lblResult.Text = Server.HtmlDecode(this.GetHtmlContent());
+        }
+
+        private string GetHtmlContent()
+        {
             string strTempElement;
             string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_1_1.xml");
             string strElementHtmlContent = File.ReadAllText(elementPath);
@@ -210,17 +220,15 @@ namespace HutStaff.Administrator.Pages.BaoCao
             string tenNgachHienTai = "";
             DateTime dateTime;
             int tuoi;
-            int nam30 = 0, nu30 = 0, nam31_40= 0, nu31_40= 0, nam41_45= 0, nu41_45= 0, nam46_50= 0, nu46_50= 0, nam51_55= 0, nu51_55= 0, nam56_60= 0, nu56_60= 0, nam60= 0, nu60 = 0;
+            int nam30 = 0, nu30 = 0, nam31_40 = 0, nu31_40 = 0, nam41_45 = 0, nu41_45 = 0, nam46_50 = 0, nu46_50 = 0, nam51_55 = 0, nu51_55 = 0, nam56_60 = 0, nu56_60 = 0, nam60 = 0, nu60 = 0;
 
             if (this.typeOfPage == 1)
             {
                 DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_1_1("0206", 1);
-                resultGridView.DataSource = dataTable;
-                resultGridView.DataBind();
 
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    
+
                     if (stt == 0)
                     {
                         stt = 1;
@@ -445,13 +453,9 @@ namespace HutStaff.Administrator.Pages.BaoCao
                 footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
                 strHtmlContent += footerHtmlContent;
 
-                BO.Report.Exporter.ExportToDoc(strHtmlContent, String.Format("b01_{0}.doc", DateTime.Now.ToString()));
+                return strHtmlContent;
             }
-        }
-
-        protected void btnXem_Click(object sender, EventArgs e)
-        {
-
+            return "";
         }
     }
 }
