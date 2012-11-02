@@ -7,6 +7,13 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(0).addClass('active');
+
+            $('#divSearchForm').scrollToFixed({
+                mảginTop: 40
+//                unfixed: function () {
+//                    $(this).css('left', '');
+//                }
+            });
         });
     </script>
 </asp:Content>
@@ -14,18 +21,16 @@
     <uc1:SlideSearch ID="SlideSearch1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1 class="title">
-        Thông tin tìm kiếm</h1>
     <div id="divSearchForm" class="form-container">
         <form id="formSearch">
-        <div>
+        <%--<div>
             <pan>
                  Chọn đơn vị tìm kiếm
              </pan>
             <pan margin-left="200px">
                 <asp:TreeView ID="treeViewDonVi" class="treeView-Timkiem" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />
                </pan>
-        </div>
+        </div>--%>
         <table class="table-form">
             <tr class="row">
                 <td>
@@ -100,17 +105,6 @@
                 <td class="spacing">
                 </td>
                 <td>
-                </td>
-                <td class="short-spacing">
-                </td>
-                <td>
-                    <input type="text" id="txtDepartmentCode" runat="server" hidden="hidden" />
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
                     Năm về trường
                 </td>
                 <td class="short-spacing">
@@ -126,6 +120,16 @@
                         ControlToValidate="txtNamVeTruong" 
                         ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" />--%>
                 </td>
+                <td>
+                    <input type="text" id="txtDepartmentCode" runat="server" hidden="hidden" />
+                </td>
+            </tr>
+            <tr class="row">
+                <td colspan="3">
+                    <a href="javascript:void(0);" class="lnk-button">Xuất dữ liệu</a><a href="javascript:void(0);"
+                        class="lnk-button margin-left-10">In sổ cái</a><a href="javascript:void(0);" class="lnk-button margin-left-10">Gửi
+                            email</a>
+                </td>
                 <td class="spacing">
                 </td>
                 <td>
@@ -133,7 +137,7 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <asp:Button ID="btnSearch" runat="server" class="button fr" Text="Tìm kiếm" OnClick="Search_click" />
+                    <asp:Button ID="btnSearch" runat="server" class="button" Text="Tìm kiếm" OnClick="Search_click" />
                     <%--<input type="button" class="button fr" value="Tìm kiếm" />--%>
                     <div class="clear">
                     </div>
@@ -148,9 +152,6 @@
                 Kết quả</h2>
         </div>
         <div class="div-tool">
-            <a href="javascript:void(0);" class="lnk-button">Xuất dữ liệu</a><a href="javascript:void(0);"
-                class="lnk-button margin-left-10">In sổ cái</a><a href="javascript:void(0);" class="lnk-button margin-left-10">Gửi
-                    email</a>
         </div>
         <div id="divSearchResult" class="table-container">
             <div class="header-table">

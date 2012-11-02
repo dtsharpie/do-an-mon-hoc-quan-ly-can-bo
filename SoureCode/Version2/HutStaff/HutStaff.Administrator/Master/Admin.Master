@@ -13,6 +13,7 @@
         rel="stylesheet" />
     <link href="/Styles/styles.css" rel="stylesheet" type="text/css" />
     <link href="/Scripts/chosen/chosen.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/scrollToFixed.js" type="text/javascript"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

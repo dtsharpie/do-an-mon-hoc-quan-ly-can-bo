@@ -22,15 +22,6 @@ namespace HutStaff.Administrator {
         protected global::HutStaff.Administrator.Controls.Common.SlideSearch SlideSearch1;
         
         /// <summary>
-        /// treeViewDonVi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView treeViewDonVi;
-        
-        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -103,15 +94,6 @@ namespace HutStaff.Administrator {
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
         
         /// <summary>
-        /// txtDepartmentCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDepartmentCode;
-        
-        /// <summary>
         /// txtNamVeTruong control.
         /// </summary>
         /// <remarks>
@@ -128,6 +110,15 @@ namespace HutStaff.Administrator {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        
+        /// <summary>
+        /// txtDepartmentCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDepartmentCode;
         
         /// <summary>
         /// btnSearch control.
