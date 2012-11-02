@@ -46,8 +46,7 @@
         </tbody>
     </table>
     <div>
-     <asp:GridView ID="resultGridView" runat="server">
-        </asp:GridView>
+     <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     </div>
        
 </div>
