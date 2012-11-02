@@ -484,8 +484,8 @@ div.sub-title h2
 {
     text-transform: uppercase;
     display: block;
-    height: 30px;
-    line-height: 30px;
+    height: 20px;
+    line-height: 20px;
     font-weight: bold;
     color: #333;
 }
@@ -533,7 +533,7 @@ div.sub-title h2
 #divSideBar ul > li > .cb-tree
 {
     position: absolute;
-    top: 9px;
+    top: 3px;
     left: 5px;
 }
 
@@ -562,6 +562,7 @@ div.sub-title h2
 #divSideBar ul.subform > li > a
 {
     padding-left: 20px;
+    overflow: hidden;
 }
 
 #divSideBar .toggle
