@@ -63,12 +63,12 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click"
+                    <%--<asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click"
                         AutoPostBack="true" Checked="true" />&nbsp; Nam
                     <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click"
-                        AutoPostBack="true" Checked="false" />&nbsp; Nữ
-                    <%--                    <input name="gt_nam" value="1" type="checkbox" />&nbsp; Nam
-                    <input name="gt_nu" value="0" type="checkbox" />&nbsp;Nữ--%>
+                        AutoPostBack="true" Checked="false" />&nbsp; Nữ--%>
+                    <input id="gt_nam" name="gioitinh" value="1" type="radio" runat="server" checked />&nbsp; Nam
+                    <input id="gt_nu" name ="gioitinh" value="0" type="radio" runat="server" />&nbsp;Nữ
                 </td>
                 <td class="spacing">
                 </td>
@@ -183,13 +183,14 @@
                 BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField HeaderText="STT" DataField="shcc">
+                    <asp:BoundField HeaderText="STT" DataField="STT">
                         <HeaderStyle Height="36px" />
                         <ItemStyle Width="20px" />
                     </asp:BoundField>
-                    <asp:BoundField HeaderText="Họ và tên" DataField="hoten">
-                        <ItemStyle Width="230px" />
-                    </asp:BoundField>
+                    <asp:HyperLinkField DataTextField="hoten" HeaderText="Họ và tên" 
+                        NavigateUrl="~/Pages/TimKiem/ThongTinChiTiet.aspx?id={0}">
+                    <ItemStyle Width="230px" />
+                    </asp:HyperLinkField>
                     <asp:BoundField HeaderText="Đơn vị công tác" DataField="dv">
                         <ItemStyle Width="230px" />
                     </asp:BoundField>

@@ -22,9 +22,8 @@ namespace HutStaff.Administrator
         int khoiCB = 0;
         public int totalResult = 0;
 
-
-        int pageIndex =0;
-        int pageSize = 9000;
+        int pageSize = 10;
+        string ma_dv = "";
 
         private int _pageNumber;
 
@@ -51,69 +50,6 @@ namespace HutStaff.Administrator
             khoicanbo.DataBind();
         }
 
-        //private void BuildTreeViewdm_dv()
-        //{
-        //    DataTable table_dm_dv = BaoCaoBO.ViewAlldm_dv();
-        //   treeViewDonVi.Nodes.Clear();
-        //    foreach (DataRowView row0 in GetChildLevel0(table_dm_dv))
-        //    {
-        //        TreeNode node0 = new TreeNode();
-        //        node0.Text = row0["dv"].ToString();
-        //        node0.Value = row0["ma_dv"].ToString();
-        //        foreach (DataRowView row1 in GetChildLevel1(table_dm_dv, node0.Value))
-        //        {
-        //            TreeNode node1 = new TreeNode();
-        //            node1.Text = row1["dv"].ToString();
-        //            node1.Value = row1["ma_dv"].ToString();
-        //            foreach (DataRowView row2 in GetChildLevel2(table_dm_dv, node1.Value))
-        //            {
-        //                TreeNode node2 = new TreeNode();
-        //                node2.Text = row2["dv"].ToString();
-        //                node2.Value = row2["ma_dv"].ToString();
-        //                foreach (DataRowView row3 in GetChildLevel3(table_dm_dv, node2.Value))
-        //                {
-        //                    TreeNode node3 = new TreeNode();
-        //                    node3.Text = row3["dv"].ToString();
-        //                    node3.Value = row3["ma_dv"].ToString();
-        //                    node2.ChildNodes.Add(node3);
-        //                }
-        //                node1.ChildNodes.Add(node2);
-        //            }
-        //            node0.ChildNodes.Add(node1);
-        //        }
-        //        treeViewDonVi.Nodes.Add(node0);
-        //    }
-        //}
-
-
-        public DataView GetChildLevel0(DataTable inputDataTable)
-        {
-            DataView child = new DataView(inputDataTable);
-            child.RowFilter = "Len(ma_dv) = 1";
-            return child;
-        }
-
-        public DataView GetChildLevel1(DataTable inputDataTable, string parentId)
-        {
-            DataView child = new DataView(inputDataTable);
-            child.RowFilter = "Len(ma_dv) = 2 And Substring(ma_dv,1,1) = '" + parentId + "'";
-            return child;
-        }
-
-        public DataView GetChildLevel2(DataTable inputDataTable, string parentId)
-        {
-            DataView child = new DataView(inputDataTable);
-            child.RowFilter = "Len(ma_dv) = 4 And Substring(ma_dv,1,2) = " + parentId;
-            return child;
-        }
-
-        public DataView GetChildLevel3(DataTable inputDataTable, string parentId)
-        {
-            DataView child = new DataView(inputDataTable);
-            child.RowFilter = "Len(ma_dv) = 6 And Substring(ma_dv,1,4) = " + parentId;
-            return child;
-        }
-
         public void Search_click(object sender, EventArgs e )
         {
 
@@ -126,22 +62,31 @@ namespace HutStaff.Administrator
         }
 
 
-        protected void checkBox_nam_Click(object sender, EventArgs e)
-        {
-            checkBox_nam.Checked = true;
-            checkBox_nu.Checked = false;
-        }
+        //protected void checkBox_nam_Click(object sender, EventArgs e)
+        //{
+        //    checkBox_nam.Checked = true;
+        //    checkBox_nu.Checked = false;
+        //}
 
-        protected void checkBox_nu_Click(object sender, EventArgs e)
-        {
-            checkBox_nu.Checked = true;
-            checkBox_nam.Checked = false;
-        }
+        //protected void checkBox_nu_Click(object sender, EventArgs e)
+        //{
+        //    checkBox_nu.Checked = true;
+        //    checkBox_nam.Checked = false;
+        //}
 
         protected void numberResultChange(object sender, EventArgs e)
         {
+            ma_dv = txtDepartmentCode.Value;
             pageSize = Int32.Parse( numberResultDropDownList.SelectedValue);
-            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, 9000);
+            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(ma_dv, tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
+            DataColumn orderColumn = gridView1DataTable.Columns.Add("STT");
+            orderColumn.SetOrdinal(0);
+            int order = 0;
+            foreach (DataRow row in gridView1DataTable.Rows)
+            {
+                order++;
+                row["STT"] = order.ToString();
+            }
             GridView1.DataSource = gridView1DataTable;
             GridView1.PageSize = pageSize;
             GridView1.DataBind();
@@ -159,7 +104,8 @@ namespace HutStaff.Administrator
 
         public void countTotalNumberResult(out int _totalResult)
         {
-            DataTable total = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all_total("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
+            ma_dv = txtDepartmentCode.Value;
+            DataTable total = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all_total(ma_dv, tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
             _totalResult = Int32.Parse(total.Rows[0][0].ToString());
         }
 
@@ -195,15 +141,17 @@ namespace HutStaff.Administrator
             {
                 tenCanBo = txtName.Text;
             }
-           
-            if (checkBox_nam.Checked == true)
-            {
-                gioiTinh = 1;
-            }
-            if (checkBox_nu.Checked == true)
-            {
-                gioiTinh = 0;
-            }
+
+             ma_dv = txtDepartmentCode.Value;
+
+             if (gt_nam.Checked == true)
+             {
+                 gioiTinh = 1;
+             }
+             else
+             {
+                 gioiTinh = 0;
+             }
 
            
             if(txtTuTuoi.Text != "")
@@ -222,8 +170,19 @@ namespace HutStaff.Administrator
             GridView1.Visible = true;
             System.Data.SqlClient.SqlParameter code = new System.Data.SqlClient.SqlParameter("@Total", SqlDbType.Int);
             code.Direction = ParameterDirection.Output;
-            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, pageSize);
+            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(ma_dv, tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong);
+
+            DataColumn orderColumn = gridView1DataTable.Columns.Add("STT");
+            orderColumn.SetOrdinal(0);
+            int order = 0;
+            foreach (DataRow row in gridView1DataTable.Rows)
+            {
+                order++;
+                row["STT"] = order.ToString();
+            }
+
             return gridView1DataTable;
+
         }
 
     }

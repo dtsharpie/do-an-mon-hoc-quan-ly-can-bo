@@ -40,22 +40,22 @@ namespace HutStaff.Administrator {
         protected global::System.Web.UI.WebControls.DropDownList dcb;
         
         /// <summary>
-        /// checkBox_nam control.
+        /// gt_nam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkBox_nam;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton gt_nam;
         
         /// <summary>
-        /// checkBox_nu control.
+        /// gt_nu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkBox_nu;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton gt_nu;
         
         /// <summary>
         /// khoicanbo control.
