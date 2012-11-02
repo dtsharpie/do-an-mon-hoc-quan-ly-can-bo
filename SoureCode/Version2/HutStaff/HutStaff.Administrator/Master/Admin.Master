@@ -85,6 +85,8 @@
 
             $('#divSideBar ul > li > a').click(function () {
                 var subform = $(this).parent().children('.subform');
+                var parent = subform.parent().parent();
+                var grandparent = parent.parent().parent();
 
                 //$('#divSideBar ul > li > a').removeClass('active');
                 //$(this).addClass('active');
@@ -96,13 +98,21 @@
                     });
                     return;
                 }
-
+                if (subform.hasClass('subform2')) {
+                    $('#divSideBar ul.subform').not(parent).not(grandparent).hide();
+                } else if (subform.hasClass('subform1')) {
+                    $('#divSideBar ul.subform').not(parent).hide();
+                } else {
+                    $('#divSideBar ul.subform').hide();
+                }
                 subform.show(500);
 
             });
 
             $('#divSideBar ul > li > .cb-tree').change(function () {
                 $('#divSideBar ul > li > .cb-tree').not(this).removeAttr('checked');
+                $('#divSideBar ul > li > a').removeClass('active');
+                $(this).siblings('a').addClass('active');
                 if ($('#txtDepartmentCode') != undefined) {
                     $('#txtDepartmentCode').val($(this).attr('code'));
                 }
