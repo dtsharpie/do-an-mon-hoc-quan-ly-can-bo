@@ -7,6 +7,6 @@
         var pageIndex = parseInt("<%= iPageIndex %>");
         var pageSize = parseInt("<%= iPageSize %>");
         var info = "-  Hiển thị " + (totalItem > 0 ? ((pageIndex -1) * pageSize + 1) : 0).toString() + " đến " + ((pageSize *pageIndex < totalItem) ? pageSize*pageIndex : totalItem).toString() + " trên " + totalItem.toString() + " kết quả tìm được";
-        $(".header-table .info").html(info);
+        $(".table-container .info").html(info);
     });
 </script>

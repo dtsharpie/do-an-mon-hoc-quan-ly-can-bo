@@ -3,6 +3,12 @@
 
 <%@ Register Src="/Controls/Common/SlideSearch.ascx" TagName="SlideSearch" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .header-table,.footer-table
+        {
+            padding: 5px 0;
+        }
+    </style>
     <script type="text/javascript">
         var deletes = [];
         $(document).ready(function () {
@@ -11,7 +17,7 @@
             $("#txtName").focus();
 
             $('#divSearchForm').scrollToFixed({
-                marginTop: 40
+                marginTop: 0
             });
 
             $(".form-container #btnOk").click(function () {
@@ -34,11 +40,11 @@
                 }
 
                 $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-              
-                var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
-                var tutuoi = $("#minage").val() != "" ?  $("#minage").val() : "-1"; 
-                var dentuoi = $("#maxage").val() != "" ?  $("#maxage").val() : "-1"; 
-                var nvtruong = $("#txtNamVeTruong").val() != "" ?  $("#txtNamVeTruong").val() : "-1"; 
+
+                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
+                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
+                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
+                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
                 loadControl(".pagerLoad",
                 {
                     alias: 'pager-tim-kiem',
@@ -98,7 +104,7 @@
 
                 $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
 
-                var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
+                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
                 var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
                 var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
                 var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
@@ -134,28 +140,14 @@
                 }, false);
             });
 
-            $(".pagerLoad .paging span").live("click", function () {
-                if ($("#minage").val() != "" && parseInt($("#minage").val()) < 20) {
-                    alert("Tuổi nhỏ nhất cho phép là 20!");
-                    $("#minage").focus();
-                    return;
-                }
-
-                if ($("#maxage").val() != "" && parseInt($("#maxage").val()) > 120) {
-                    alert("Tuổi lớn nhất cho phép là 120!");
-                    $("#maxage").focus();
-                    return;
-                }
-
-                if ($("#txtNamVeTruong").val() != "" && parseInt($("#txtNamVeTruong").val()) < 1956) {
-                    alert("Năm về trường phải từ 1956");
-                    $("#txtNamVeTruong").focus();
-                    return;
-                }
+            $('.header-table .btnXoa,.footer-table .btnXoa').click(function () {
+                $("input:checkbox.chkId:checked").each(function (i) {
+                    deletes.push($(this).val());
+                });
 
                 $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
 
-                var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
+                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
                 var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
                 var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
                 var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
@@ -172,7 +164,7 @@
                     nvtruong: nvtruong,
                     ps: $(".ddlPageSize").val(),
                     deletes: deletes.join(","),
-                    pi: getPager($(this).find("a").attr("href"))
+                    pi: getPager($(".paging .active").find("a").attr("href"))
                 }, true);
 
 
@@ -189,66 +181,7 @@
                     nvtruong: nvtruong,
                     ps: $(".ddlPageSize").val(),
                     deletes: deletes.join(","),
-                    pi: getPager($(this).find("a").attr("href"))
-                }, false);
-            });
-
-            $(".pagerLoad .paging a").live("click", function () {
-                if ($("#minage").val() != "" && parseInt($("#minage").val()) < 20) {
-                    alert("Tuổi nhỏ nhất cho phép là 20!");
-                    $("#minage").focus();
-                    return;
-                }
-
-                if ($("#maxage").val() != "" && parseInt($("#maxage").val()) > 120) {
-                    alert("Tuổi lớn nhất cho phép là 120!");
-                    $("#maxage").focus();
-                    return;
-                }
-
-                if ($("#txtNamVeTruong").val() != "" && parseInt($("#txtNamVeTruong").val()) < 1956) {
-                    alert("Năm về trường phải từ 1956");
-                    $("#txtNamVeTruong").focus();
-                    return;
-                }
-
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-
-                var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
-                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
-                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
-                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(","),
-                    pi: getPager($(this).attr("href"))
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(","),
-                    pi: getPager($(this).attr("href"))
+                    pi: getPager($(".paging .active").find("a").attr("href"))
                 }, false);
             });
 
@@ -266,7 +199,7 @@
     <div id="divSearchForm" class="form-container">
         <label>
             Tên cán bộ</label>
-        <input style="width:125px;" type="text" id="txtName" />
+        <input style="width: 125px;" type="text" id="txtName" />
         <label style="margin-left: 5px;">
             Giới tính</label>
         <select id="ddlGender" style="width: 80px;">
@@ -300,6 +233,7 @@
             <input style="margin-left: 15px; font-weight: normal; padding: 0;" type="button"
                 id="btnRefresh" class="button" value="Làm mới" />
             <span>(Hiện lại những người đã xóa)</span>
+            <span class="info"></span>
         </div>
     </div>
     <div class="table-container">
@@ -317,7 +251,7 @@
                     <option value="25" selected="selected">25</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
+                </select>&nbsp; dòng&nbsp;&nbsp;
             </div>
             <div class="pagerLoad fr">
             </div>
@@ -340,9 +274,9 @@
                 <select class="ddlPageSize" style="width: 60px;">
                     <option value="10">10</option>
                     <option value="25" selected="selected">25</option>
-                    <option value="50" >50</option>
+                    <option value="50">50</option>
                     <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
+                </select>&nbsp; dòng&nbsp;&nbsp;
             </div>
             <div class="pagerLoad fr">
             </div>

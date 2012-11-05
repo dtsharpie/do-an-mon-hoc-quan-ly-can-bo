@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0.16" Timestamp="d5b9c43c-5d53-420c-9216-76fdde7af90c">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportHeader.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>10</Column>
+          <Text>Expected &lt;/meta&gt;</Text>
+          <Line>87</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>13</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>176</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>13</Column>
+          <Text>Expected &lt;/div&gt;</Text>
+          <Line>176</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>13</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>176</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>13</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>176</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportFooter.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/table&gt;</Text>
+          <Line>1</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/div&gt;</Text>
+          <Line>28</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/body&gt;</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/html&gt;</Text>
+          <Line>32</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\XetNangLuong.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>6</Column>
+          <Text>Expected &lt;/meta&gt;</Text>
+          <Line>97</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>43</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>100</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>43</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>100</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>43</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>100</Line>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>
