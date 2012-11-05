@@ -12,9 +12,12 @@ namespace HutStaff.Administrator.Controls.Common
     {
         public int CurrentPage { get; set; }
         public int TotalPage { get; set; }
+        protected string sTypeRequest = "?";
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(Request.Url.Query))
+                sTypeRequest = Request.Url.Query + "&";
 
         }
 
@@ -30,9 +33,9 @@ namespace HutStaff.Administrator.Controls.Common
                     for (int i = 1; i <= CurrentPage + range; i++)
                     {
                         if (i == CurrentPage)
-                            html += "<span class='paging_button active'><a title='Current page' href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button active'><a title='Current page' href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                         else
-                            html += "<span class='paging_button'><a title='Page " + i + "' href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button'><a title='Page " + i + "' href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                     }
                     if (TotalPage > 3)
                     {
@@ -44,9 +47,9 @@ namespace HutStaff.Administrator.Controls.Common
                     for (int i = 1; i <= CurrentPage; i++)
                     {
                         if (i == CurrentPage)
-                            html += "<span class='paging_button active'><a title='Currnet page'  href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button active'><a title='Currnet page'  href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                         else
-                            html += "<span class='paging_button'><a title='Page " + i + "' href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button'><a title='Page " + i + "' href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                     }
                 }
             }
@@ -58,9 +61,9 @@ namespace HutStaff.Administrator.Controls.Common
                     if (i != 0)
                     {
                         if (i == CurrentPage)
-                            html += "<span class='paging_button active'><a title='Currnet page' href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button active'><a title='Currnet page' href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                         else
-                            html += "<span class='paging_button'><a title='Page " + i + "' href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button'><a title='Page " + i + "' href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                     }
                 }
             }
@@ -72,9 +75,9 @@ namespace HutStaff.Administrator.Controls.Common
                     if (i != 0)
                     {
                         if (i == CurrentPage)
-                            html += "<span class='paging_button active'><a title='Currnet page'  href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button active'><a title='Currnet page'  href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                         else
-                            html += "<span class='paging_button'><a title='Page " + i + "'' href='page" + i + "'>" + i + "</a></span>";
+                            html += "<span class='paging_button'><a title='Page " + i + "'' href='" + sTypeRequest + "page=" + i + "'>" + i + "</a></span>";
                     }
                 }
                 html += "<span class='paging_dot'>...</span>";

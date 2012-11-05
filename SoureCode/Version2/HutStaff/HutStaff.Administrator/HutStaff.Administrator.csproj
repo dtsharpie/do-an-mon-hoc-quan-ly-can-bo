@@ -70,6 +70,8 @@
     <Content Include="Controls\Common\ViewMenu.ascx" />
     <Content Include="Controls\QuanLy\Import\TangLuong\Pager.ascx" />
     <Content Include="Controls\QuanLy\Import\TangLuong\Search.ascx" />
+    <Content Include="Controls\Timkiem\Pager.ascx" />
+    <Content Include="Controls\Timkiem\Search.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Dll\SpreadsheetGear.Design.dll" />
     <Content Include="Dll\SpreadsheetGear.dll" />
@@ -243,6 +245,18 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\QuanLy\Import\TangLuong\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Timkiem\Pager.ascx.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Timkiem\Pager.ascx.designer.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Timkiem\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Timkiem\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">

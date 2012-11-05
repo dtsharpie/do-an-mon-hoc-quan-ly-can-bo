@@ -22,9 +22,6 @@ function execution(params, isSync) {
     });
 }
 
-function getAlias() {
-    return location.hash.replace("#", "");
-}
 
 function loadContentView(params, isSysnc) {
     $('#divBody').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 600px;"><img src="/images/processing.gif" /></td></tr></table>');
@@ -48,6 +45,19 @@ function selectAll(ele) {
             $('#chkAll').removeAttr("checked");
         }
     });
+}
+
+function getPager(href)
+{
+    return href.split("page=")[1];
+}
+
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
 }
 
 //---------- Toan's scripts begin -----------//

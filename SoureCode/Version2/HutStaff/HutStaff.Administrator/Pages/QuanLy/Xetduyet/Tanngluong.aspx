@@ -7,6 +7,18 @@
     <script type="text/javascript">
         var deletes = [];
         $(document).ready(function () {
+            $("#divSideBar li:eq(2) ul").css("display", "block");
+
+            $("a[alias='view-tang-luong']").attr("style", "background-color: rgb(247, 247, 247);");
+
+            $('.form-container').scrollToFixed({
+                marginTop: 0
+            });
+
+            $('.header-table').scrollToFixed({
+                marginTop: 35
+            });
+
             $(".datepicker").datepicker({
                 showButtonPanel: true,
                 dateFormat: 'dd/mm/yy',
@@ -52,7 +64,7 @@
                     thoiGian: $("#txtDate").val(),
                     deletes: deletes.join(","),
                     ps: $(".ddlPageSize").val(),
-                    pi: $(".paging .active").find("a").attr("href").replace("page", "")
+                    pi: getPager($(".paging .active").find("a").attr("href"))
                 }, true);
 
 
@@ -64,7 +76,7 @@
                     thoiGian: $("#txtDate").val(),
                     deletes: deletes.join(","),
                     ps: $(".ddlPageSize").val(),
-                    pi: $(".paging .active").find("a").attr("href").replace("page", "")
+                    pi: getPager($(".paging .active").find("a").attr("href"))
                 }, false);
             });
 
@@ -78,7 +90,7 @@
                     thoiGian: $("#txtDate").val(),
                     deletes: deletes.join(","),
                     ps: $(".ddlPageSize").val(),
-                    pi: $(this).find("a").attr("href").replace("page", "")
+                    pi: getPager($(this).find("a").attr("href"))
                 }, true);
 
 
@@ -90,7 +102,7 @@
                     thoiGian: $("#txtDate").val(),
                     deletes: deletes.join(","),
                     ps: $(".ddlPageSize").val(),
-                    pi: $(this).find("a").attr("href").replace("page", "")
+                    pi: getPager($(this).find("a").attr("href"))
                 }, false);
             });
 
@@ -104,7 +116,7 @@
                     thoiGian: $("#txtDate").val(),
                     deletes: deletes.join(","),
                     ps: $(".ddlPageSize").val(),
-                    pi: $(this).attr("href").replace("page", "")
+                    pi: getPager($(this).attr("href"))
                 }, true);
 
 
@@ -116,7 +128,7 @@
                     thoiGian: $("#txtDate").val(),
                     deletes: deletes.join(","),
                     ps: $(".ddlPageSize").val(),
-                    pi: $(this).attr("href").replace("page", "")
+                    pi: getPager($(this).attr("href"))
                 }, false);
                 return false;
             });
@@ -127,15 +139,14 @@
             });
         });
     </script>
+    <style type="text/css">
+    
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc1:SlideQuanLy ID="SlideQuanLy1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1 class="title">
-        Xét nâng lương</h1>
-    <hr class="fw" />
-    <br />
     <div class="form-container">
         <div>
             <label>
@@ -173,8 +184,8 @@
                 Hiển thị &nbsp;
                 <select class="ddlPageSize" style="width: 60px;">
                     <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50" selected="selected">50</option>
+                    <option value="25" selected="selected">25</option>
+                    <option value="50" >50</option>
                     <option value="100">100</option>
                 </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
             </div>
@@ -184,7 +195,7 @@
             </div>
         </div>
         <div class="main-table">
-            <div style="text-align: center;">
+            <div class="nodata" style="text-align: center;">
                 Vui lòng chọn các tùy chọn phía trên và ấn nút "Hiện thông tin"</div>
         </div>
         <div class="footer-table">
