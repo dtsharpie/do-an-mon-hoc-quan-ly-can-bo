@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="HutStaff.Administrator.Controls.QuanLy.Import.TangLuong.Search" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="HutStaff.Administrator.Controls.Timkiem.Search" %>
 <asp:GridView ID="grdData" runat="server" AutoGenerateColumns="False" Height="20px"
     Width="100%" CssClass="table-result">
     <AlternatingRowStyle CssClass="even" />
@@ -12,7 +12,7 @@
         <asp:TemplateField HeaderText="Họ tên">
             <ItemTemplate>
                 <a href="javascript:void(0)" shcc="<%# Eval("shcc") %>">
-                    <%# Eval("hodem").ToString() + " " + Eval("ten") %></a>
+                    <%# Eval("hoten") %></a>
             </ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
@@ -21,37 +21,20 @@
                 <%# Eval("shcc") %></ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Bậc lương">
+        <asp:TemplateField HeaderText="Đơn vị">
             <ItemTemplate>
-                <%# Eval("bl_dbl") %>
+                <%# Eval("dv") %>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Điện thoại">
+            <ItemTemplate>
+                <%# Eval("tel") %>
             </ItemTemplate>
             <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Hệ số lương">
+        <asp:TemplateField HeaderText="Email">
             <ItemTemplate>
-                <%# Eval("hsl") %></ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" />
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Mã ngạch">
-            <ItemTemplate>
-                <%# Eval("ma_ngach")%></ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" />
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Thời gian bắt đầu">
-            <ItemTemplate>
-                <%# Convert.ToDateTime(Eval("tgbd_dbl")).ToString("dd/MM/yyyy")%>
-            </ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" />
-        </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="hspctn" ItemStyle-CssClass="hspctn" HeaderText="Hệ số phụ cấp thâm niên">
-            <ItemTemplate>
-                <%# Eval("hspctn")%>
-            </ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" />
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Thông tin khác">
-            <ItemTemplate>
-                <%# Eval("ttk_qtdbl")%>
+                <%# Eval("email") %>
             </ItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField>
@@ -78,36 +61,47 @@
             selectAll($(this));
         });
 
-        if ($("#ddlLuaChonBang").val() != "3") {
-            $('.table-result .hspctn').hide();
-        }
-
         $('.header-table .btnXoa,.footer-table .btnXoa').click(function () {
             $("input:checkbox.chkId:checked").each(function (i) {
                 deletes.push($(this).val());
             });
 
             $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
+
+            var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
+            var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
+            var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
+            var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
             loadControl(".pagerLoad",
                 {
-                    alias: 'pager-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
+                    alias: 'pager-tim-kiem',
+                    ma_dv: ma_dv,
+                    ten: $("#txtName").val(),
+                    gioitinh: $("#ddlGender").val(),
+                    tuTuoi: tutuoi,
+                    denTuoi: dentuoi,
+                    diencb: $("#ddlDcb").val(),
+                    khoicb: $("#khoicanbo").val(),
+                    nvtruong: nvtruong,
                     ps: $(".ddlPageSize").val(),
+                    deletes: deletes.join(","),
                     pi: getPager($(".paging .active").find("a").attr("href"))
                 }, true);
 
 
             loadControl(".main-table",
                 {
-                    alias: 'danh-sach-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
+                    alias: 'danh-sach-tim-kiem',
+                    ma_dv: ma_dv,
+                    ten: $("#txtName").val(),
+                    gioitinh: $("#ddlGender").val(),
+                    tuTuoi: tutuoi,
+                    denTuoi: dentuoi,
+                    diencb: $("#ddlDcb").val(),
+                    khoicb: $("#khoicanbo").val(),
+                    nvtruong: nvtruong,
                     ps: $(".ddlPageSize").val(),
+                    deletes: deletes.join(","),
                     pi: getPager($(".paging .active").find("a").attr("href"))
                 }, false);
         });
@@ -117,26 +111,41 @@
             deletes.push($(this).attr("shcc"));
 
             $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
+
+            var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
+            var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
+            var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
+            var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
             loadControl(".pagerLoad",
                 {
-                    alias: 'pager-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
+                    alias: 'pager-tim-kiem',
+                    ma_dv: ma_dv,
+                    ten: $("#txtName").val(),
+                    gioitinh: $("#ddlGender").val(),
+                    tuTuoi: tutuoi,
+                    denTuoi: dentuoi,
+                    diencb: $("#ddlDcb").val(),
+                    khoicb: $("#khoicanbo").val(),
+                    nvtruong: nvtruong,
                     ps: $(".ddlPageSize").val(),
+                    deletes: deletes.join(","),
                     pi: getPager($(".paging .active").find("a").attr("href"))
                 }, true);
 
 
             loadControl(".main-table",
                 {
-                    alias: 'danh-sach-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
+                    alias: 'danh-sach-tim-kiem',
+                    ma_dv: ma_dv,
+                    ten: $("#txtName").val(),
+                    gioitinh: $("#ddlGender").val(),
+                    tuTuoi: tutuoi,
+                    denTuoi: dentuoi,
+                    diencb: $("#ddlDcb").val(),
+                    khoicb: $("#khoicanbo").val(),
+                    nvtruong: nvtruong,
                     ps: $(".ddlPageSize").val(),
+                    deletes: deletes.join(","),
                     pi: getPager($(".paging .active").find("a").attr("href"))
                 }, false);
         });

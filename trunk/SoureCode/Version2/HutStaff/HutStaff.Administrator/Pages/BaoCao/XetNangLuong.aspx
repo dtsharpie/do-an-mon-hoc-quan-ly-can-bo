@@ -7,6 +7,13 @@
     <script type="text/javascript">
         var deletes = [];
         $(document).ready(function () {
+            $('.form-container').scrollToFixed({
+                marginTop: 0
+            });
+
+            $('.header-table').scrollToFixed({
+                marginTop: 35
+            });
             $(".datepicker").datepicker({
                 showButtonPanel: true,
                 dateFormat: 'dd/mm/yy',
@@ -187,7 +194,7 @@
             <div style="text-align: center;">
                 Vui lòng chọn các tùy chọn phía trên và ấn nút "Hiện thông tin"</div>
         </div>
-        <div class="footer-table">
+        <div class="nodata" class="footer-table">
             <div>
                 <input class="button-link btnTangluong" type="button" value="Tăng lương" />
                 <input class="button-link btnXoa" type="button" value="Xóa" />

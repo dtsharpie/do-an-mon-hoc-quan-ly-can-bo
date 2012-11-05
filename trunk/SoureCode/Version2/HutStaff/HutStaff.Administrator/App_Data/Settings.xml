@@ -26,6 +26,8 @@
     <control>
       <control alias="pager-tang-luong" permission="0" path="/Controls/Quanly/Import/TangLuong/Pager.ascx"></control>
       <control alias="danh-sach-tang-luong" permission="0" path="/Controls/Quanly/Import/TangLuong/Search.ascx"></control>
+      <control alias="pager-tim-kiem" permission="0" path="/Controls/Timkiem/Pager.ascx"></control>
+      <control alias="danh-sach-tim-kiem" permission="0" path="/Controls/Timkiem/Search.ascx"></control>
     </control>
   </controls>
 </settings>
