@@ -208,8 +208,8 @@
                 Hiển thị &nbsp;
                 <select class="ddlPageSize" style="width: 60px;">
                     <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50" selected="selected">50</option>
+                    <option value="25"  selected="selected">25</option>
+                    <option value="50">50</option>
                     <option value="100">100</option>
                 </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
             </div>
