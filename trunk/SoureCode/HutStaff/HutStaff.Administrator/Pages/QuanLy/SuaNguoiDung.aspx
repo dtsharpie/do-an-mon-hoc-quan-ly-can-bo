@@ -9,19 +9,27 @@
         function ValidateForm() {
             if (document.forms["frmUserInfo"]["txtUsername"].value == ""){
                 alert("Giá trị username không hợp lệ");
+                document.getElementById("lblUsername").style.color = "Red";
                 document.getElementById("txtUsername").focus();
 
                 return false;
             }
-            //alert(document.forms["frmUserInfo"]["txtPassword"].value);
+            else
+                document.getElementById("lblUsername").style.color = "Black";
+
             if (document.forms["frmUserInfo"]["txtPassword"].value == "" || document.forms["frmUserInfo"]["txtRePassword"].value == "") {
                 alert("Không thể bỏ trống trường mật khẩu");
                 document.getElementById("lblPassword").style.color = "Red";
-                document.getElementById("lblPassword").style.color = "Red";
+                document.getElementById("lblRePassword").style.color = "Red";
                 document.getElementById("txtPassword").focus();
 
                 return false;
             }
+            else {
+                document.getElementById("lblPassword").style.color = "Black";
+                document.getElementById("lblRePassword").style.color = "Black";
+            }
+
             if (document.forms["frmUserInfo"]["txtPassword"].value != document.forms["frmUserInfo"]["txtRePassword"].value) {
                 alert("Mật khẩu không khớp");
                 document.forms["frmUserInfo"]["txtPassword"].value = "";
@@ -30,55 +38,64 @@
 
                 return false;
             }
-            else
-                return true;
+
+            return true;
+        }
+        function Cancel() {
+            if (document.forms["frmUserInfo"]["hfAddEdit"].value == "add")
+                return window.close();
+            else //if (document.forms["frmUserInfo"]["hfAddEdit"].value == "edit")
+                return window.history.go(-1);
         }
     </script>
 </head>
 <body>
-    <div class="content">
+    <div class="content" style="height:100%; width:100%;">
     <h1 id="title"></h1>
-    <form id="frmUserInfo" runat="server" defaultbutton="cmdSubmit" action="SuaNguoiDung.aspx" method="post" onsubmit="return ValidateForm();">
+    <div align = "center" style="height:100%; width:100%;">
+    <form id="frmUserInfo" runat="server" defaultbutton="cmdSubmit" align="center"
+        action="SuaNguoiDung.aspx" method="post" onsubmit="return ValidateForm();" 
+        style="background-color: #f2f2f2; height:100%; width:100%;">
         <asp:Label runat="server" ID="lblMessage"></asp:Label>
         <asp:HiddenField runat="server" ID="hfAddEdit" />
-        <table border="1">
+        <asp:HiddenField runat="server" ID="hfUserID" />
+        <div>
+        <table class="table-form" border="0"  align ="center">
             <tr>
-                <td><asp:Label runat="server" Text="Tên truy cập:"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="txtUsername"></asp:TextBox></td>
-                <td><asp:HiddenField runat="server" ID="hfUserID" /></td>
+                <td><asp:Label runat="server" Text="Tên truy cập" ID="lblUsername" ></asp:Label></td>
+                <td><asp:TextBox runat="server" ID="txtUsername" Width="200" align="center"></asp:TextBox></td>
             </tr>
             <tr>
                 <td><asp:Label runat="server" Text="Mật khẩu" ID="lblPassword"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="txtPassword" ClientIDMode="Static" 
-                        TextMode="Password"></asp:TextBox></td>
+                        TextMode="Password"  Width="200"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Gõ lại mật khẩu" ID="lblRePassword"></asp:Label></td>
-                <td class="style1"><asp:TextBox runat="server" ID="txtRePassword" TextMode="Password"></asp:TextBox></td>
+                <td class="style1"><asp:Label runat="server" Text="Gõ lại mật khẩu" ID="lblRePassword"></asp:Label></td>
+                <td class="style1"><asp:TextBox runat="server" ID="txtRePassword" TextMode="Password" Width="200"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Đơn vị"></asp:Label></td>
-                <td><asp:DropDownList runat="server" ID="ddlDonVi" DataSourceID="SqlDataSource_ListDV" 
-                        DataTextField="dv" DataValueField="ma_dv"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource_ListDV" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:QLCB %>" 
-                        SelectCommand="SELECT [dv], [ma_dv] FROM [dm_dv]"></asp:SqlDataSource>
+                <td><asp:Label runat="server" Text="Đơn vị" ID="lblDonVi"></asp:Label></td>
+                <td><asp:DropDownList class="ddl" runat="server" ID="ddlDonVi" ></asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Có quyền sửa"></asp:Label></td>
+                <td><asp:Label runat="server" Text="Có quyền sửa" ID="lblQuyen"></asp:Label></td>
                 <td><asp:CheckBox runat="server" ID="chkQuyen" /></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Khóa"></asp:Label></td>
+                <td><asp:Label runat="server" Text="Khóa" ID="lblIsLock"></asp:Label></td>
                 <td><asp:CheckBox runat="server" ID="chkIsLock" /></td>
             </tr>
             <tr>
-                <td><asp:Button runat="server" ID="cmdSubmit" Text="Tạo người dùng" /></td>
-                <td><asp:Button runat="server" Text="Cancel" OnClientClick="window.close();"/></td>
+                <td><asp:Button runat="server" ID="cmdSubmit" Text="Tạo người dùng" UseSubmitBehavior="true"/></td>
+                <td><asp:Button runat="server" Text="Cancel" OnClientClick="return Cancel();" ID="cmdCancel" UseSubmitBehavior="false"/></td>
             </tr>
         </table>
+        <a id="lnkChangePass" runat="server">Đổi mật khẩu</a>
+        </div>
     </form>
+    </div>
     </div>
 </body>
 </html>
