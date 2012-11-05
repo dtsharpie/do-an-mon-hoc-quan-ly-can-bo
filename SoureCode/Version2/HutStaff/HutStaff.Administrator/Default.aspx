@@ -4,7 +4,7 @@
 <%@ Register Src="/Controls/Common/SlideSearch.ascx" TagName="SlideSearch" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .header-table,.footer-table
+        .header-table, .footer-table
         {
             padding: 5px 0;
         }
@@ -186,7 +186,12 @@
             });
 
             $(".btnExport").click(function () {
-                var query = "?type=1&loaihanngach=" + $('#ddlLoaiHanNgach').val() + "&loaibang=" + $('#ddlLuaChonBang').val() + "&thoigian=" + $("#txtDate").val() + "&delete=" + deletes.join(",");
+                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
+                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
+                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
+                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
+                var query = "?type=2&ma_dv=" + ma_dv + "&ten=" + $("#txtName").val() + "&gioitinh=" + $("#ddlGender").val() + "&tutuoi=" + tutuoi + "&dentuoi=" + dentuoi
+                         + "&diencb=" + $("#ddlDcb").val() + "&khoicb=" + $("#khoicanbo").val() + "&nvtruong=" + nvtruong + "&delete=" + deletes.join(",");
                 window.open("/Services/ExportExcel.ashx" + query, "_blank");
             });
         });
@@ -232,8 +237,7 @@
                 value="Tìm kiếm" />
             <input style="margin-left: 15px; font-weight: normal; padding: 0;" type="button"
                 id="btnRefresh" class="button" value="Làm mới" />
-            <span>(Hiện lại những người đã xóa)</span>
-            <span class="info"></span>
+            <span>(Hiện lại những người đã xóa)</span> <span class="info"></span>
         </div>
     </div>
     <div class="table-container">
