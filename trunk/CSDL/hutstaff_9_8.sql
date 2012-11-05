@@ -600,4 +600,18 @@ GO
 	) 
 	GO
 	
+	CREATE TABLE qtcd_tbl(
+	  id INT NOT NULL IDENTITY(1,1),
+	  shcc INT REFERENCES soyeu(shcc),
+	  ma_dh INT REFERENCES dm_dhdp(ma_dhdp),
+	  npdh INT,
+	  lcd BIT DEFAULT 0,
+	  cdcn BIT DEFAULT 0,
+	  ttk_qtcd NVARCHAR(255) DEFAULT NULL,
+	  ntnpdh DATETIME DEFAULT NULL,
+	  PRIMARY KEY (id)
+	)
+	GO
+
+	
 	
