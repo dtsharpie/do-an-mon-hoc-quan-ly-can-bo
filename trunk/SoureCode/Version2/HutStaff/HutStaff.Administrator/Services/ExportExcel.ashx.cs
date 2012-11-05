@@ -94,8 +94,50 @@ namespace HutStaff.Administrator.Services
                     worksheet.Name = "Danh sách xét tăng lương";
 
                     sExcelname = "danh_sach_tang_luong_";
+                    break;
+                case 2:
+                    string sMadv = context.Request.QueryString["ma_dv"];
+                    string sTen = context.Request.QueryString["ten"];
+                    int iGioitinh = Convert.ToInt32(context.Request.QueryString["gioitinh"]);
+                    int iTutuoi = Convert.ToInt32(context.Request.QueryString["tutuoi"]);
+                    int iDentuoi = Convert.ToInt32(context.Request.QueryString["dentuoi"]);
+                    int iDiencb = Convert.ToInt32(context.Request.QueryString["diencb"]);
+                    int iKhoicb = Convert.ToInt32(context.Request.QueryString["khoicb"]);
+                    int iNvtruong = Convert.ToInt32(context.Request.QueryString["nvtruong"]);
+                    string sDeletes = context.Request.QueryString["delete"];
+                    tblData = BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(sMadv, sTen, iGioitinh, iTutuoi, iDentuoi, iDiencb, iKhoicb, iNvtruong, sDeletes, 1, int.MaxValue);
+                    tblData.Columns.Add("Stt");
+                    for (int i = 0; i < tblData.Rows.Count; i++)
+                    {
+                        tblData.Rows[i]["Stt"] = i + 1;
+                    }
 
+                    cells = FromDataTable(worksheet, new DataColumn[] { tblData.Columns["Stt"], tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
+                    cells["A1"].Formula = "Số thứ tự";
 
+                    cells["B1"].Formula = "Họ tên";
+                    cells["B1"].ColumnWidth = 50;
+
+                    cells["C1"].Formula = "Số hiệu";
+                    cells["C1"].ColumnWidth = 25;
+
+                    cells["D1"].Formula = "Đơn vị";
+                    cells["D1"].ColumnWidth = 50;
+
+                    cells["E1"].Formula = "Điện thoại";
+                    cells["E1"].ColumnWidth = 50;
+
+                    cells["F1"].Formula = "Email";
+                    cells["F1"].ColumnWidth = 50;
+
+                    cells["A1:F1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+                    cells["A1:F1"].Font.Bold = true;
+
+                    worksheet.Range.Rows.AutoFit();
+                    worksheet.Range.Columns.AutoFit();
+                    worksheet.Name = "Danh sách xét tìm kiếm";
+
+                    sExcelname = "danh_sach_tim_kiem_";
                     break;
             }
 

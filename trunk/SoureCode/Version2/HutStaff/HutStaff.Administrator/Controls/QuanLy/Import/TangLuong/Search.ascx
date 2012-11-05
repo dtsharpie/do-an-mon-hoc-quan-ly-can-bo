@@ -14,7 +14,6 @@
                 <a href="javascript:void(0)" shcc="<%# Eval("shcc") %>">
                     <%# Eval("hodem").ToString() + " " + Eval("ten") %></a>
             </ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Số hiệu">
             <ItemTemplate>

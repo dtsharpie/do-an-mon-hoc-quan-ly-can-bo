@@ -14,7 +14,6 @@
                 <a href="javascript:void(0)" shcc="<%# Eval("shcc") %>">
                     <%# Eval("hoten") %></a>
             </ItemTemplate>
-            <ItemStyle HorizontalAlign="Center" />
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Số hiệu">
             <ItemTemplate>
