@@ -61,50 +61,7 @@
             selectAll($(this));
         });
 
-        $('.header-table .btnXoa,.footer-table .btnXoa').click(function () {
-            $("input:checkbox.chkId:checked").each(function (i) {
-                deletes.push($(this).val());
-            });
-
-            $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-
-            var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
-            var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
-            var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
-            var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
-            loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(","),
-                    pi: getPager($(".paging .active").find("a").attr("href"))
-                }, true);
-
-
-            loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(","),
-                    pi: getPager($(".paging .active").find("a").attr("href"))
-                }, false);
-        });
+       
 
         $(".delete-row").click(function () {
             $(this).closest("tr").remove();
@@ -112,7 +69,7 @@
 
             $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
 
-            var ma_dv = $("#divSideBar .cb-tree input:checked").length > 0 ? $("#divSideBar .cb-tree input:checked").attr("code") : "0";
+            var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
             var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
             var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
             var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";

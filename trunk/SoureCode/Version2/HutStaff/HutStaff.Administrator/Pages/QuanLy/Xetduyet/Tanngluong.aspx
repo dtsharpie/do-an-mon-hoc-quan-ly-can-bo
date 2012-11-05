@@ -80,7 +80,7 @@
                 }, false);
             });
 
-            $(".pagerLoad .paging span").live("click", function () {
+            $(".pagerLoad .paging span").click(function () {
                 $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
                 loadControl(".pagerLoad",
                 {
@@ -106,7 +106,7 @@
                 }, false);
             });
 
-            $(".pagerLoad .paging a").live("click", function () {
+            $(".pagerLoad .paging a").click(function () {
                 $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
                 loadControl(".pagerLoad",
                 {
@@ -140,7 +140,7 @@
         });
     </script>
     <style type="text/css">
-    
+        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
@@ -185,7 +185,7 @@
                 <select class="ddlPageSize" style="width: 60px;">
                     <option value="10">10</option>
                     <option value="25" selected="selected">25</option>
-                    <option value="50" >50</option>
+                    <option value="50">50</option>
                     <option value="100">100</option>
                 </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
             </div>
@@ -208,7 +208,7 @@
                 Hiển thị &nbsp;
                 <select class="ddlPageSize" style="width: 60px;">
                     <option value="10">10</option>
-                    <option value="25"  selected="selected">25</option>
+                    <option value="25" selected="selected">25</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
                 </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
