@@ -158,7 +158,7 @@ input.button:active
 
 .lnk-button:hover
 {
-    opacity: 1;
+    opacity: 1;  
 }
 
 .icon img
@@ -279,13 +279,14 @@ div.sub-title h2
     font-size: 11px;
     font-weight: bold;
     margin-left: 5px;
-    padding: 3px 7px;
     cursor: pointer;
 }
 
 .paging .paging_button a
 {
     color: #000;
+    display: block;
+    padding: 3px 7px;    
 }
 
 .paging .paging_button.active
@@ -299,11 +300,12 @@ div.sub-title h2
 .paging .paging_button.active:hover
 {
     background-color: #F0882C !important;
+    
 }
 
 .paging .paging_button:hover
 {
-    background-color: #DDD;
+    background-color: #DDD;    
 }
 
 /* STYLES */
@@ -323,7 +325,7 @@ div.sub-title h2
 
 #divHeader a
 {
-    color: #fff;
+    color: #fff; 
     display: block;
     text-align: center;
     line-height: 36px;
@@ -354,6 +356,7 @@ div.sub-title h2
 #divHeader .nav a:hover
 {
     background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
+
 }
 
 #divHeader .nav a:active
@@ -399,12 +402,13 @@ div.sub-title h2
     display: block;
     width: 123px;
     height: 100%;
-    border-left: 1px solid #576A85;
+    border-left: 1px solid #576A85; 
 }
 
 #divHeader .acc-tool a:hover
 {
     background: url('/Images/bghover.png') no-repeat scroll center bottom transparent;
+       
 }
 
 #divHeader .acc-tool a:active
@@ -490,18 +494,19 @@ div.sub-title h2
 #divSideBar ul > li
 {
     position: relative;
-    display: block;
+    display: block; 
     overflow: hidden;
 }
 
 #divSideBar ul > li > a
 {
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;    
+    
 }
 
 #divSideBar ul > li > a:hover
 {
-    background-color: #F7F7F7;
+    background-color: #F7F7F7;    
 }
 
 #divSideBar ul > li > a.active
@@ -512,7 +517,9 @@ div.sub-title h2
 
 #divSideBar > ul > li > a
 {
+    
     padding-left: 20px;
+    
 }
 
 #divSideBar > ul > li > span
@@ -540,7 +547,7 @@ div.sub-title h2
 
 #divSideBar ul.subform a
 {
-    text-transform: capitalize !important;
+    text-transform: capitalize !important; 
 }
 
 #divSideBar ul.subform.show
@@ -561,7 +568,7 @@ div.sub-title h2
 
 #divSideBar .toggle
 {
-    background: url("/Images/menu_toggle.png") no-repeat scroll center -21px transparent;
+    background: url("/Images/menu_toggle.png") no-repeat scroll center -21px transparent;    
     border-left: 1px solid #DDDDDD;
     border-right: 1px solid #DDDDDD;
     cursor: pointer;
@@ -573,6 +580,7 @@ div.sub-title h2
 #divSideBar .toggle.collapse
 {
     background: url("/Images/menu_toggle.png") no-repeat scroll center 0 transparent;
+    
 }
 
 #divMainContent
@@ -632,7 +640,7 @@ div.form-container table td.short-spacing
 {
     margin-left: 10px;
     width: 80px;
-    height: 100px;
+    height: 100px; 
 }
 
 .avatar-info .avatar img
@@ -665,10 +673,10 @@ div.form-container table td.short-spacing
     margin: 20px 0;
     width: 750px;
     background-color: #FFF;
+    
 }
 
-#divQuanLy .row:hover
-{
+#divQuanLy .row:hover {
     background-color: #FFF6DA;
 }
 
@@ -705,19 +713,11 @@ div.form-container table td.short-spacing
     padding: 0;
 }
 
-.button-link
-{
+.button-link {
     color: #D56600 !important;
     font-size: 12px;
     font-weight: bold;
     line-height: 32px;
+    padding-left: 10px;
     cursor: pointer;
-}
-
-.nodata
-{
-    border-color: -moz-use-text-color #DDDDDD #DDDDDD;
-    border-image: none;
-    border-style: none solid solid;
-    border-width: medium 1px 1px;
 }
