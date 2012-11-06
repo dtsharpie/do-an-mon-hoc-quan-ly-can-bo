@@ -2,209 +2,18 @@
     CodeBehind="Default.aspx.cs" Inherits="HutStaff.Administrator.Default" %>
 
 <%@ Register Src="/Controls/Common/SlideSearch.ascx" TagName="SlideSearch" TagPrefix="uc1" %>
+<%@ Register Src="Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .header-table, .footer-table
-        {
-            padding: 5px 0;
-        }
-    </style>
     <script type="text/javascript">
-        var deletes = [];
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(0).addClass('active');
-            $("#txtName").focus();
 
             $('#divSearchForm').scrollToFixed({
-                marginTop: 0
-            });
-
-            $(".form-container #btnOk").click(function () {
-                if ($("#minage").val() != "" && parseInt($("#minage").val()) < 20) {
-                    alert("Tuổi nhỏ nhất cho phép là 20!");
-                    $("#minage").focus();
-                    return;
-                }
-
-                if ($("#maxage").val() != "" && parseInt($("#maxage").val()) < 20) {
-                    alert("Tuổi nhỏ nhất cho phép là 20!");
-                    $("#maxage").focus();
-                    return;
-                }
-
-                if ($("#maxage").val() != "" && parseInt($("#maxage").val()) > 120) {
-                    alert("Tuổi lớn nhất cho phép là 120!");
-                    $("#maxage").focus();
-                    return;
-                }
-
-                if ($("#txtNamVeTruong").val() != "" && parseInt($("#txtNamVeTruong").val()) < 1956) {
-                    alert("Năm về trường phải từ 1956");
-                    $("#txtNamVeTruong").focus();
-                    return;
-                }
-
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-
-                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
-                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
-                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
-                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(",")
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(",")
-                }, false);
-            });
-
-            $(".ddlPageSize").change(function () {
-                $(".ddlPageSize").val($(this).val());
-            });
-
-            $(".form-container #btnRefresh").click(function () {
-                if ($("#minage").val() != "" && parseInt($("#minage").val()) < 20) {
-                    alert("Tuổi nhỏ nhất cho phép là 20!");
-                    $("#minage").focus();
-                    return;
-                }
-
-                if ($("#maxage").val() != "" && parseInt($("#maxage").val()) < 20) {
-                    alert("Tuổi nhỏ nhất cho phép là 20!");
-                    $("#maxage").focus();
-                    return;
-                }
-
-                if ($("#maxage").val() != "" && parseInt($("#maxage").val()) > 120) {
-                    alert("Tuổi lớn nhất cho phép là 120!");
-                    $("#maxage").focus();
-                    return;
-                }
-
-                if ($("#txtNamVeTruong").val() != "" && parseInt($("#txtNamVeTruong").val()) < 1956) {
-                    alert("Năm về trường phải từ 1956");
-                    $("#txtNamVeTruong").focus();
-                    return;
-                }
-
-                deletes = [];
-
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-
-                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
-                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
-                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
-                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(",")
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(",")
-                }, false);
-            });
-
-            $('.header-table .btnXoa,.footer-table .btnXoa').click(function () {
-                $("input:checkbox.chkId:checked").each(function (i) {
-                    deletes.push($(this).val());
-                });
-
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-
-                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
-                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
-                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
-                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(","),
-                    pi: getPager($(".paging .active").find("a").attr("href"))
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tim-kiem',
-                    ma_dv: ma_dv,
-                    ten: $("#txtName").val(),
-                    gioitinh: $("#ddlGender").val(),
-                    tuTuoi: tutuoi,
-                    denTuoi: dentuoi,
-                    diencb: $("#ddlDcb").val(),
-                    khoicb: $("#khoicanbo").val(),
-                    nvtruong: nvtruong,
-                    ps: $(".ddlPageSize").val(),
-                    deletes: deletes.join(","),
-                    pi: getPager($(".paging .active").find("a").attr("href"))
-                }, false);
-            });
-
-            $(".btnExport").click(function () {
-                var ma_dv = $(".cb-tree:checked").length > 0 ? $(".cb-tree:checked").attr("code") : "0";
-                var tutuoi = $("#minage").val() != "" ? $("#minage").val() : "-1";
-                var dentuoi = $("#maxage").val() != "" ? $("#maxage").val() : "-1";
-                var nvtruong = $("#txtNamVeTruong").val() != "" ? $("#txtNamVeTruong").val() : "-1";
-                var query = "?type=2&ma_dv=" + ma_dv + "&ten=" + $("#txtName").val() + "&gioitinh=" + $("#ddlGender").val() + "&tutuoi=" + tutuoi + "&dentuoi=" + dentuoi
-                         + "&diencb=" + $("#ddlDcb").val() + "&khoicb=" + $("#khoicanbo").val() + "&nvtruong=" + nvtruong + "&delete=" + deletes.join(",");
-                window.open("/Services/ExportExcel.ashx" + query, "_blank");
+                mảginTop: 40
+                //                unfixed: function () {
+                //                    $(this).css('left', '');
+                //                }
             });
         });
     </script>
@@ -214,90 +23,215 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div id="divSearchForm" class="form-container">
-        <label>
-            Tên cán bộ</label>
-        <input style="width: 125px;" type="text" id="txtName" />
-        <label style="margin-left: 5px;">
-            Giới tính</label>
-        <select id="ddlGender" style="width: 80px;">
-            <option value="-1">Tất cả</option>
-            <option value="1">Nam</option>
-            <option value="0">Nữ</option>
-        </select>
-        <label style="margin-left: 5px;">
-            Diện cán bộ</label>
-        <asp:DropDownList runat="server" ID="ddlDcb" Width="130px">
-        </asp:DropDownList>
-        <label style="margin-left: 5px;">
-            Khối cán bộ</label>
-        <asp:DropDownList runat="server" ID="khoicanbo" Width="100px">
-        </asp:DropDownList>
-        <label style="margin-left: 5px;">
-            Tuổi Từ</label>
-        <input id="minage" onkeypress="return isNumberKey(event)" style="width: 15px;" name="tuoi_lonhon"
-            type="text" title="Tuổi thấp nhất là 20" />
-        <label style="margin-left: 5px;">
-            Đến</label>
-        <input id="maxage" onkeypress="return isNumberKey(event)" style="width: 15px;" name="tuoi_nhohon"
-            type="text" title="Tuổi lớn nhấn là 120" />
-        <label style="margin-left: 5px;">
-            Năm về trường</label>
-        <input onkeypress="return isNumberKey(event)" id="txtNamVeTruong" runat="server"
-            style="width: 35px" title="Nhỏ nhất là 1956" />
-        <div style="margin-top: 5px;">
-            <input style="font-weight: normal; padding: 0;" type="button" id="btnOk" class="button"
-                value="Tìm kiếm" />
-            <input style="margin-left: 15px; font-weight: normal; padding: 0;" type="button"
-                id="btnRefresh" class="button" value="Làm mới" />
-            <span>(Hiện lại những người đã xóa)</span> <span class="info"></span>
-        </div>
+        <form id="formSearch">
+        <%--<div>
+            <pan>
+                 Chọn đơn vị tìm kiếm
+             </pan>
+            <pan margin-left="200px">
+                <asp:TreeView ID="treeViewDonVi" class="treeView-Timkiem" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />
+               </pan>
+        </div>--%>
+        <table class="table-form">
+            <tr class="row">
+                <td>
+                    Tên cán bộ
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    <asp:TextBox ID="txtName" runat="server" Style="width: 300px"></asp:TextBox>
+                    <%--                    <input style="width: 300px" name="hoten" id="hoten" onkeypress="return submitenter(this,event);  "
+                        type="text" />--%>
+                </td>
+                <td class="spacing">
+                </td>
+                <td>
+                    Diện cán bộ
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    <asp:DropDownList runat="server" ID="dcb" Style="width: 300px;">
+                        <asp:ListItem Text="Đơn vị cấp 1" Value="111111"></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    Giới tính
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    <asp:CheckBox ID="checkBox_nam" runat="server" OnCheckedChanged="checkBox_nam_Click"
+                        AutoPostBack="true" Checked="true" />&nbsp; Nam
+                    <asp:CheckBox ID="checkBox_nu" runat="server" OnCheckedChanged="checkBox_nu_Click"
+                        AutoPostBack="true" Checked="false" />&nbsp; Nữ
+                    <%--                    <input name="gt_nam" value="1" type="checkbox" />&nbsp; Nam
+                    <input name="gt_nu" value="0" type="checkbox" />&nbsp;Nữ--%>
+                </td>
+                <td class="spacing">
+                </td>
+                <td>
+                    Khối cán bộ
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    <asp:DropDownList runat="server" ID="khoicanbo" Style="width: 300px;">
+                        <asp:ListItem Text="Đơn vị cấp 1" Value="111111"></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    Tuổi
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    Từ&nbsp;
+                    <asp:TextBox ID="txtTuTuoi" runat="server" Style="width: 30px"></asp:TextBox>
+                    <%--<input style="width: 30px" name="tuoi_lonhon" type="text" />--%>
+                    Đến&nbsp;
+                    <asp:TextBox ID="txtDenTuoi" runat="server" Style="width: 30px"></asp:TextBox>
+                    <%--<input style="width: 30px" name="tuoi_nhohon" type="text" />--%>
+                    <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtTuTuoi"
+                        ErrorMessage="Tuổi tối thiểu là 20 tối đa 120" MinimumValue="20" MaximumValue="120"
+                        Type="Integer"></asp:RangeValidator>
+                </td>
+                <td class="spacing">
+                </td>
+                <td>
+                    Năm về trường
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNamVeTruong" runat="server" Style="width: 40px"></asp:TextBox>
+                    <font size="1"><i>(Nhỏ nhất: 1956) </i></font>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtNamVeTruong"
+                        ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" MinimumValue="1956" MaximumValue="2112"
+                        Type="Integer"></asp:RangeValidator>
+                    <%--<asp:CompareValidator ID="CompareValidator1" runat="server" 
+                        Operator="DataTypeCheck" Type="Integer" 
+                        ControlToValidate="txtNamVeTruong" 
+                        ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" />--%>
+                </td>
+                <td>
+                    <input type="text" id="txtDepartmentCode" runat="server" hidden="hidden" />
+                </td>
+            </tr>
+            <tr class="row">
+                <td colspan="3">
+                    <a href="javascript:void(0);" class="lnk-button">Xuất dữ liệu</a><a href="javascript:void(0);"
+                        class="lnk-button margin-left-10">In sổ cái</a><a id="lnkEmail" href="javascript:void(0);"
+                            class="lnk-button margin-left-10">Gửi email</a>
+                </td>
+                <td class="spacing">
+                </td>
+                <td>
+                </td>
+                <td class="short-spacing">
+                </td>
+                <td>
+                    <asp:Button ID="btnSearch" runat="server" class="button" Text="Tìm kiếm" OnClick="Search_click" />
+                    <%--<input type="button" class="button fr" value="Tìm kiếm" />--%>
+                    <div class="clear">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </form>
     </div>
-    <div class="table-container">
-        <div class="header-table">
-            <div>
-                <input class="button-link btnTangluong" type="button" value="Gửi email" />
-                <input class="button-link btnInsocai" type="button" value="In sổ cái" />
-                <input class="button-link btnXoa" type="button" value="Xóa" />
-                <input class="button-link btnExport" type="button" value="Tải về" />
+    <asp:Panel runat="server" ID="panelResult" Visible="false">
+        <div class="sub-title">
+            <h2>
+                Kết quả</h2>
+        </div>
+        <div class="div-tool">
+        </div>
+        <div id="divSearchResult" class="table-container">
+            <div class="header-table">
+                <div>
+                    Hiển thị &nbsp;
+                    <asp:DropDownList runat="server" ID="numberResultDropDownList" Style="width: 60px;"
+                        OnSelectedIndexChanged="numberResultChange" AutoPostBack="true">
+                        <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                        <asp:ListItem Text="25" Value="25"></asp:ListItem>
+                        <asp:ListItem Text="50" Value="50"></asp:ListItem>
+                        <asp:ListItem Text="100" Value="100"></asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp; dòng&nbsp;&nbsp;-&nbsp;&nbsp;<asp:Label ID="numberResultLabel" runat="server"
+                        Text="Đang hiện 1 đến 10 trên 51 kết quả tìm được"></asp:Label>
+                </div>
+                <uc2:Pager ID="Pager1" runat="server" />
+                <div class="clear">
+                </div>
             </div>
-            <div>
-                Hiển thị &nbsp;
-                <select class="ddlPageSize" style="width: 60px;">
-                    <option value="10">10</option>
-                    <option value="25" selected="selected">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;
-            </div>
-            <div class="pagerLoad fr">
-            </div>
-            <div class="clear">
+            <asp:GridView Visible="False" class="table-result" ID="GridView1" runat="server"
+                ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" BackColor="White"
+                BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px">
+                <AlternatingRowStyle BackColor="White" CssClass="row hide" />
+                <RowStyle CssClass="row hide" />
+                <Columns>
+                    <asp:BoundField HeaderText="STT" DataField="shcc">
+                        <HeaderStyle Height="36px" />
+                        <ItemStyle Width="20px" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderText="Họ và tên" DataField="hoten">
+                        <ItemStyle Width="230px" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderText="Đơn vị công tác" DataField="dv">
+                        <ItemStyle Width="230px" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderText="Điện thoại" DataField="tel">
+                        <ItemStyle Width="100px" />
+                    </asp:BoundField>
+                    <asp:BoundField HeaderText="Email" DataField="email">
+                        <ItemStyle Width="100px" />
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                        <ItemStyle Width="30px" />
+                    </asp:TemplateField>
+                </Columns>
+                <%--                <FooterStyle BackColor="#CCCC99" />
+                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#FFF6DA" ForeColor="Black" HorizontalAlign="Right" />
+                <RowStyle BackColor="#FFF6DA" />
+                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                <SortedAscendingHeaderStyle BackColor="#848384" />
+                <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                <SortedDescendingHeaderStyle BackColor="#575357" />--%>
+            </asp:GridView>
+            <div class="footer-table">
+                <div>
+                    Hiển thị &nbsp;
+                    <select style="width: 60px;">
+                        <option selected="selected" value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>&nbsp; dòng&nbsp;&nbsp;-&nbsp;&nbsp;Đang hiện 1 đến 10 trên 51 kết quả
+                    tìm được
+                </div>
+                <uc2:Pager ID="Pager2" runat="server" />
+                <div class="clear">
+                </div>
             </div>
         </div>
-        <div class="main-table">
-            <div style="text-align: center;">
-                Vui lòng chọn các tùy chọn phía trên và ấn nút "Tìm kiếm</div>
+        <div class="div-tool">
+            <a href="javascript:void(0);" class="lnk-button">Xuất dữ liệu</a><a href="javascript:void(0);"
+                class="lnk-button margin-left-10">In sổ cái</a><a href="javascript:void(0);" class="lnk-button margin-left-10">Gửi
+                    email</a>
         </div>
-        <div class="footer-table">
-            <div>
-                <input class="button-link btnTangluong" type="button" value="Gửi email" />
-                <input class="button-link btnInsocai" type="button" value="In sổ cái" />
-                <input class="button-link btnXoa" type="button" value="Xóa" />
-                <input class="button-link btnExport" type="button" value="Tải về" />
-            </div>
-            <div>
-                Hiển thị &nbsp;
-                <select class="ddlPageSize" style="width: 60px;">
-                    <option value="10">10</option>
-                    <option value="25" selected="selected">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;
-            </div>
-            <div class="pagerLoad fr">
-            </div>
-            <div class="clear">
-            </div>
-        </div>
-    </div>
+    </asp:Panel>
 </asp:Content>
