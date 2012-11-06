@@ -80,59 +80,6 @@
                 }, false);
             });
 
-            $(".pagerLoad .paging span").click(function () {
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val(),
-                    pi: getPager($(this).find("a").attr("href"))
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val(),
-                    pi: getPager($(this).find("a").attr("href"))
-                }, false);
-            });
-
-            $(".pagerLoad .paging a").click(function () {
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val(),
-                    pi: getPager($(this).attr("href"))
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val(),
-                    pi: getPager($(this).attr("href"))
-                }, false);
-                return false;
-            });
-
             $(".btnExport").click(function () {
                 var query = "?type=1&loaihanngach=" + $('#ddlLoaiHanNgach').val() + "&loaibang=" + $('#ddlLuaChonBang').val() + "&thoigian=" + $("#txtDate").val() + "&delete=" + deletes.join(",");
                 window.open("/Services/ExportExcel.ashx" + query, "_blank");
