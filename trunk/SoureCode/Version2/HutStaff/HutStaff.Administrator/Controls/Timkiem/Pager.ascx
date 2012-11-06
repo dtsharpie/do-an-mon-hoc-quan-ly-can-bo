@@ -16,6 +16,12 @@
                 return;
             }
 
+            if ($("#maxage").val() != "" && parseInt($("#maxage").val()) < 20) {
+                alert("Tuổi nhỏ nhất cho phép là 20!");
+                $("#maxage").focus();
+                return;
+            }
+
             if ($("#maxage").val() != "" && parseInt($("#maxage").val()) > 120) {
                 alert("Tuổi lớn nhất cho phép là 120!");
                 $("#maxage").focus();
@@ -73,6 +79,12 @@
                 alert("Tuổi nhỏ nhất cho phép là 20!");
                 $("#minage").focus();
                 return false;
+            }
+
+            if ($("#maxage").val() != "" && parseInt($("#maxage").val()) < 20) {
+                alert("Tuổi nhỏ nhất cho phép là 20!");
+                $("#maxage").focus();
+                return;
             }
 
             if ($("#maxage").val() != "" && parseInt($("#maxage").val()) > 120) {
