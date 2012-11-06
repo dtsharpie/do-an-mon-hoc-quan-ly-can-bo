@@ -13,7 +13,9 @@ namespace HutStaff.Administrator.Controls.Timkiem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string sMa_dv = GetInt("ma_dv", 0).ToString();
+            string sMa_dv = GetString("ma_dv");
+            if (String.IsNullOrEmpty(sMa_dv))
+                sMa_dv = "0";
             string sTen = GetString("ten");
             int iGioitinh = GetInt("gioitinh", -1);
             int iTuTuoi = GetInt("tutuoi", -1);
