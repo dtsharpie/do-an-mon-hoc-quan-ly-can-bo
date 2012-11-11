@@ -5,13 +5,6 @@ C:\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
 C:\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
 C:\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 C:\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
-D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
 D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
 D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
 D:\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
