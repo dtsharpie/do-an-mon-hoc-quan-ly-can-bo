@@ -111,7 +111,7 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                    <asp:TextBox ID="txtNamVeTruong" runat="server" Style="width: 40px"></asp:TextBox>
+                  <asp:TextBox ID="txtNamVeTruong" runat="server" Style="width: 40px"></asp:TextBox>
                     <font size="1"><i>(Nhỏ nhất: 1956) </i></font>
                     <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtNamVeTruong"
                         ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" MinimumValue="1956" MaximumValue="2112"

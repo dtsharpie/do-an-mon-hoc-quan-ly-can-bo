@@ -46,3 +46,5 @@ C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.pd
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.Design.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\Version2\HutStaff\HutStaff.Administrator\bin\SpreadsheetGear.dll

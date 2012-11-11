@@ -13,6 +13,15 @@ namespace HutStaff.Administrator.Pages.BaoCao
 {
     public partial class KhenThuong : System.Web.UI.Page
     {
+        private int hinhThuc;
+        private int tuNam;
+        private int denNam;
+        private string donVi;
+        private int dienCanBo;
+        private int khoiCanBo;
+
+        DataTable rewardListDataTable;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //ddlHinhThucKhenThuong: dropdownList Hinh thuc khen thuong
@@ -28,7 +37,20 @@ namespace HutStaff.Administrator.Pages.BaoCao
             //tbTo
             tbTo.Text = DateTime.Now.Year.ToString();
 
-            //Đơn vị cấp ... chưa làm
+            //dropdownlist Đơn vị cac cấp ... da làm
+            //ddlUnit123: dropdownList cua các đơn vị cấp 1,2,3
+            DataTable table_123_dm_dv = BaoCaoBO.ViewAll_123_dm_dv();
+            ddlUnit123.DataSource = table_123_dm_dv;
+            ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
+            ddlUnit123.DataTextField = table_123_dm_dv.Columns[1].ColumnName;
+            ddlUnit123.DataBind();
+
+            //ddlUnit4: dropdownList cua cac don vi cap 4
+            DataTable table_4_dm_dv = BaoCaoBO.ViewAll_4_dm_dv();
+            ddlUnit4.DataSource = table_4_dm_dv;
+            ddlUnit4.DataValueField = table_4_dm_dv.Columns[0].ColumnName;
+            ddlUnit4.DataTextField = table_4_dm_dv.Columns[1].ColumnName;
+            ddlUnit4.DataBind();
 
             //ddlDienCanBo: dropdownList dien can bo
             DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
@@ -44,19 +66,55 @@ namespace HutStaff.Administrator.Pages.BaoCao
             ddlKhoiCb.DataTextField = table_dm_kcb.Columns[1].ColumnName;
             ddlKhoiCb.DataBind();
 
+
+
+
         }
 
         protected void btnSearch_Click(object sender, ImageClickEventArgs e)
         {
-            //BaoCaoktDataContext dbKt = new BaoCaoktDataContext();
-            //gvResultSearch.DataSource = dbKt.qtkt_tbls.ToList();
+            //rewardListDataTable = this.GetRewardList();
+            //btnExport.Visible = true;
+        }
 
-            //int count = (from tt in dbKt.qtkt_tbls
-            //             select tt).Count();
-            //Response.Write("<h1>" +count+"</h1>");
-            //lbllblResultSearch.Text ="<u>"+ count.ToString() +" ket qua tim thay </u>";
-            //gvResultSearch.DataBind();
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+            //rewardListDataTable = this.GetRewardList();
+            //BO.Report.Exporter.ExporttoExcel(rewardListDataTable, String.Format("KhenThuong_{0}.xls", DateTime.Now.ToString()));
+        }
 
+        private DataTable GetRewardList()
+        {
+            // Get Input
+            hinhThuc = int.Parse(ddlHinhThucKhenThuong.SelectedValue);
+            tuNam = int.Parse(tbFrom.Text);
+            denNam = int.Parse(tbTo.Text);
+            donVi = ddlUnit123.SelectedValue;
+            dienCanBo = int.Parse(ddlDienCanBo.SelectedValue);
+            khoiCanBo = int.Parse(ddlKhoiCb.SelectedValue);
+
+            // Get reward list
+            DataTable tempRewardListDataTable = BO.Report.Report.GetRewardList(hinhThuc, tuNam, denNam, donVi, dienCanBo, khoiCanBo);
+
+            // Add order column
+            DataColumn orderColumn = tempRewardListDataTable.Columns.Add("STT");
+            orderColumn.SetOrdinal(0);
+            int order = 0;
+            foreach (DataRow row in tempRewardListDataTable.Rows)
+            {
+                order++;
+                row["STT"] = order.ToString();
+            }
+
+            // Change column name of reward list table
+            tempRewardListDataTable.Columns[1].ColumnName = "So hieu cong chuc";
+            tempRewardListDataTable.Columns[2].ColumnName = "Ho dem";
+            tempRewardListDataTable.Columns[3].ColumnName = "Ten";
+            tempRewardListDataTable.Columns[4].ColumnName = "Don vi";
+            tempRewardListDataTable.Columns[5].ColumnName = "Hinh thuc khen thuong";
+            tempRewardListDataTable.Columns[6].ColumnName = "Ngay khen thuong";
+
+            return tempRewardListDataTable;
         }
     }
 }
