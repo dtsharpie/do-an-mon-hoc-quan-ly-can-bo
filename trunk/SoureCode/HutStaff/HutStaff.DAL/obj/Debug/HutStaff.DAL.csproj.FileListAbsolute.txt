@@ -54,6 +54,15 @@ C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+<<<<<<< .mine
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+=======
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
@@ -61,3 +70,4 @@ C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\H
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+>>>>>>> .r196

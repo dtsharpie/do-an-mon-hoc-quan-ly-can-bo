@@ -139,14 +139,14 @@ namespace HutStaff.Administrator
 
         protected void numberResultChange(object sender, EventArgs e)
         {
-            pageSize = Int32.Parse( numberResultDropDownList.SelectedValue);
+            pageSize = Int32.Parse(numberResultDropDownList.SelectedValue);
             DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all("0", tenCanBo, gioiTinh, tuTuoi, denTuoi, dienCB, khoiCB, namVeTruong, pageIndex, 9000);
             GridView1.DataSource = gridView1DataTable;
             GridView1.PageSize = pageSize;
             GridView1.DataBind();
             countTotalNumberResult(out totalResult);
 
-            numberResultLabel.Text = string.Format("Đang hiện 1 đến {0} trên {1} kết quả tìm được",pageSize ,totalResult);
+            numberResultLabel.Text = string.Format("Đang hiện 1 đến {0} trên {1} kết quả tìm được", pageSize, totalResult);
 
         }
 
