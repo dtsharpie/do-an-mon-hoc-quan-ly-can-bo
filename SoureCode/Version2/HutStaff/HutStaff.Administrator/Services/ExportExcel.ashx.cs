@@ -105,7 +105,7 @@ namespace HutStaff.Administrator.Services
                     int iKhoicb = Convert.ToInt32(context.Request.QueryString["khoicb"]);
                     int iNvtruong = Convert.ToInt32(context.Request.QueryString["nvtruong"]);
                     string sDeletes = context.Request.QueryString["delete"];
-                    tblData = BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(sMadv, sTen, iGioitinh, iTutuoi, iDentuoi, iDiencb, iKhoicb, iNvtruong, sDeletes, 1, int.MaxValue);
+                    tblData = null;
                     tblData.Columns.Add("Stt");
                     for (int i = 0; i < tblData.Rows.Count; i++)
                     {
