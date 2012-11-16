@@ -85,6 +85,12 @@ GO
 	  PRIMARY KEY (ma_dcb)
 	);
 	
+	CREATE TABLE dm_tt (
+	  ma_tt INT IDENTITY(1,1),
+	  tt nvarchar(50) DEFAULT NULL,
+	  PRIMARY KEY (ma_tt)
+	);
+	
 	
 	CREATE TABLE dm_ttp
 	(
@@ -391,6 +397,7 @@ GO
 		ddlsbt			NVARCHAR(255),
 		ttk				NVARCHAR(255),
 		dcb				INT REFERENCES dm_dcb(ma_dcb),
+		tt				INT REFERENCES dm_tt(ma_tt),
 		sbh				VARCHAR(20),
 		ndbh			DATETIME,
 		tthn			INT REFERENCES dm_tthn(ma_tthn),
@@ -405,7 +412,7 @@ GO
 		thanggd			INT,
 		ngaybhct		DATETIME,
 		mochuongtn		DATETIME,
-		xoahs			BIT DEFAULT 0,		
+		xoahs			BIT DEFAULT 0,	
 		CONSTRAINT PK_soyeu PRIMARY KEY (shcc)
 	) 
 	GO
@@ -540,6 +547,7 @@ GO
 		hspctn			DECIMAL(4,2),
 		hspckv			DECIMAL(4,2),
 		ts				Decimal(1,0),
+		hnay			BIT default 0,
 		CONSTRAINT PK_qtdbl_tbl PRIMARY KEY (id)
 	) 
 	GO
