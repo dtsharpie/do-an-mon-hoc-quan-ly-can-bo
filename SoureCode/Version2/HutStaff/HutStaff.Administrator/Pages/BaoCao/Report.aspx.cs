@@ -29,6 +29,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
 #region Set Up View
         protected void Page_Load(object sender, EventArgs e)
         {
+            isNotGottenHtmlContent = true;
             try
             {
                 typeOfPage = Convert.ToInt32(Request.QueryString["type"]);
@@ -215,7 +216,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
         protected void btnXuat_Click(object sender, EventArgs e)
         {
             this.GetHtmlContent();
-            BO.Report.Exporter.ExportToDoc(strHtmlContent, String.Format("b01_{0}.doc", DateTime.Now.ToString()));       
+            BO.Report.Exporter.ExportToDoc(strHtmlContent, String.Format("b0{0}_{1}.doc", typeOfPage, DateTime.Now.ToString()));       
         }
 
         protected void btnXem_Click(object sender, EventArgs e)
@@ -226,11 +227,24 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         private void GetHtmlContent()
         {
-            if (isNotGottenHtmlContent)
+            switch (typeOfPage)
             {
-                strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_1("0", "1,2", "1,2,3");
-                isNotGottenHtmlContent = false;
-            }          
+                case 1:
+                    if (isNotGottenHtmlContent)
+                    {
+                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_1("0", "1,2", "1,2,3");
+                        isNotGottenHtmlContent = false;
+                    }  
+                    break;
+                case 2:
+                    if (isNotGottenHtmlContent)
+                    {
+                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_2("0", "1,2", "1,2,3");
+                        isNotGottenHtmlContent = false;
+                    }
+                    break;
+            }
+                    
         }
 
     }

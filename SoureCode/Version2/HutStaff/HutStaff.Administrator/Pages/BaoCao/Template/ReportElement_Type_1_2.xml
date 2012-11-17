@@ -1,0 +1,62 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td>
+    <p class='CellText' style='text-align:center'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left'> $tendonvi1 </p>
+  </td>
+  <td>
+    <p class='CellText'> $tongso </p>
+  </td>
+  <td>
+    <p class='CellText'> $qlnn </p>
+  </td>
+  <td>
+    <p class='CellText'> $gd </p>
+  </td>
+  <td>
+    <p class='CellText'> $k_k </p>
+  </td>
+  <td>
+    <p class='CellText'> $cvcc </p>
+  </td>
+  <td>
+    <p class='CellText'> $cvch </p>
+  </td>
+  <td>
+    <p class='CellText'> $cv_cv </p>
+  </td>
+  <td>
+    <p class='CellText'> $gvcc </p>
+  </td>
+  <td>
+    <p class='CellText'> $gvch </p>
+  </td>
+  <td>
+    <p class='CellText'> $gv_gv </p>
+  </td>
+  <td>
+    <p class='CellText'> $csu </p>
+  </td>
+  <td>
+    <p class='CellText'> $kscc </p>
+  </td>
+  <td>
+    <p class='CellText'> $ksch </p>
+  </td>
+  <td>
+    <p class='CellText'> $ks_ks </p>
+  </td>
+  <td>
+    <p class='CellText'> $conlai </p>
+  </td>
+  <td>
+    <p class='CellText'> $td30 </p>
+  </td>
+  <td>
+    <p class='CellText'> $t30_50 </p>
+  </td>
+  <td>
+    <p class='CellText'> $tt50 </p>
+  </td>
+</tr>
