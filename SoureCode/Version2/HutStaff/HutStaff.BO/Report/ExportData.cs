@@ -8,7 +8,7 @@ using System.Data;
 
 namespace HutStaff.BO.Report
 {
-    public class ExportData: IExportData
+    public class ExportData : IExportData
     {
         #region Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính
         public string GetHtmlContent_Report_Type_1_1(string madv, string dcb, string tt)
@@ -22,6 +22,8 @@ namespace HutStaff.BO.Report
             strHtmlContent = strHtmlContent.Replace("$TenDonVi", "Đại Học Bách Khoa Hà Nội");
             strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "BIỂU PHÂN LOẠI CÁN BỘ CÔNG CHỨC THEO NGẠCH, ĐỘ TUỔI VÀ GIỚI TÍNH");
             strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_1_1.xml");
+            strHtmlContent += File.ReadAllText(path);
 
             int stt = 0;
             string maNgachHienTai = "";
@@ -134,21 +136,30 @@ namespace HutStaff.BO.Report
                     strTempElement = strElementHtmlContent;
                     strTempElement = strTempElement.Replace("$stt", stt.ToString());
                     strTempElement = strTempElement.Replace("$ngach", tenNgachHienTai);
-                    strTempElement = strTempElement.Replace("$nam30", nam30.ToString());
-                    strTempElement = strTempElement.Replace("$nu30", nu30.ToString());
-                    strTempElement = strTempElement.Replace("$nam31_40", nam31_40.ToString());
-                    strTempElement = strTempElement.Replace("$nu31_40", nu31_40.ToString());
-                    strTempElement = strTempElement.Replace("$nam41_45", nam41_45.ToString());
-                    strTempElement = strTempElement.Replace("$nu41_45", nu41_45.ToString());
-                    strTempElement = strTempElement.Replace("$nam46_50", nam46_50.ToString());
-                    strTempElement = strTempElement.Replace("$nu46_50", nu46_50.ToString());
-                    strTempElement = strTempElement.Replace("$nam51_55", nam51_55.ToString());
-                    strTempElement = strTempElement.Replace("$nu51_55", nu51_55.ToString());
-                    strTempElement = strTempElement.Replace("$nam56_60", nam56_60.ToString());
-                    strTempElement = strTempElement.Replace("$nu56_60", nu56_60.ToString());
-                    strTempElement = strTempElement.Replace("$nam60", nam60.ToString());
-                    strTempElement = strTempElement.Replace("$nu60", nu60.ToString());
+                    strTempElement = strTempElement.Replace("$nam30", nam30 > 0 ? nam30.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu30", nu30 > 0 ? nu30.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nam31_40", nam31_40 > 0 ? nam31_40.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu31_40", nu31_40 > 0 ? nu31_40.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nam41_45", nam41_45 > 0 ? nam41_45.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu41_45", nu41_45 > 0 ? nu41_45.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nam46_50", nam46_50 > 0 ? nam46_50.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu46_50", nu46_50 > 0 ? nu46_50.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nam51_55", nam51_55 > 0 ? nam51_55.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu51_55", nu51_55 > 0 ? nu51_55.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nam56_60", nam56_60 > 0 ? nam56_60.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu56_60", nu56_60 > 0 ? nu56_60.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nam60", nam60 > 0 ? nam60.ToString() : "");
+                    strTempElement = strTempElement.Replace("$nu60", nu60 > 0 ? nu60.ToString() : "");
                     strHtmlContent += strTempElement;
+
+                    // Neu co du 15 dong thi sang trang moi
+                    if (stt%15 == 0)
+                    {
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_1_1.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                    }
 
                     // Tinh toan tiep
                     stt++;
@@ -239,20 +250,20 @@ namespace HutStaff.BO.Report
             strTempElement = strElementHtmlContent;
             strTempElement = strTempElement.Replace("$stt", stt.ToString());
             strTempElement = strTempElement.Replace("$ngach", tenNgachHienTai);
-            strTempElement = strTempElement.Replace("$nam30", nam30.ToString());
-            strTempElement = strTempElement.Replace("$nu30", nu30.ToString());
-            strTempElement = strTempElement.Replace("$nam31_40", nam31_40.ToString());
-            strTempElement = strTempElement.Replace("$nu31_40", nu31_40.ToString());
-            strTempElement = strTempElement.Replace("$nam41_45", nam41_45.ToString());
-            strTempElement = strTempElement.Replace("$nu41_45", nu41_45.ToString());
-            strTempElement = strTempElement.Replace("$nam46_50", nam46_50.ToString());
-            strTempElement = strTempElement.Replace("$nu46_50", nu46_50.ToString());
-            strTempElement = strTempElement.Replace("$nam51_55", nam51_55.ToString());
-            strTempElement = strTempElement.Replace("$nu51_55", nu51_55.ToString());
-            strTempElement = strTempElement.Replace("$nam56_60", nam56_60.ToString());
-            strTempElement = strTempElement.Replace("$nu56_60", nu56_60.ToString());
-            strTempElement = strTempElement.Replace("$nam60", nam60.ToString());
-            strTempElement = strTempElement.Replace("$nu60", nu60.ToString());
+            strTempElement = strTempElement.Replace("$nam30", nam30 > 0 ? nam30.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu30", nu30 > 0 ? nu30.ToString() : "");
+            strTempElement = strTempElement.Replace("$nam31_40", nam31_40 > 0 ? nam31_40.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu31_40", nu31_40 > 0 ? nu31_40.ToString() : "");
+            strTempElement = strTempElement.Replace("$nam41_45", nam41_45 > 0 ? nam41_45.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu41_45", nu41_45 > 0 ? nu41_45.ToString() : "");
+            strTempElement = strTempElement.Replace("$nam46_50", nam46_50 > 0 ? nam46_50.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu46_50", nu46_50 > 0 ? nu46_50.ToString() : "");
+            strTempElement = strTempElement.Replace("$nam51_55", nam51_55 > 0 ? nam51_55.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu51_55", nu51_55 > 0 ? nu51_55.ToString() : "");
+            strTempElement = strTempElement.Replace("$nam56_60", nam56_60 > 0 ? nam56_60.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu56_60", nu56_60 > 0 ? nu56_60.ToString() : "");
+            strTempElement = strTempElement.Replace("$nam60", nam60 > 0 ? nam60.ToString() : "");
+            strTempElement = strTempElement.Replace("$nu60", nu60 > 0 ? nu60.ToString() : "");
             strHtmlContent += strTempElement;
 
             string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
