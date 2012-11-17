@@ -62,7 +62,9 @@
     <Compile Include="QuanLy\DanhMuc\TrinhDoLyLuan.cs" />
     <Compile Include="QuanLy\DanhMuc\TrinhDoQuanLy.cs" />
     <Compile Include="QuanLy\DanhMuc\TrinhDoTinHoc.cs" />
+    <Compile Include="Report\ExportData.cs" />
     <Compile Include="Report\Exporter.cs" />
+    <Compile Include="Report\IExportData.cs" />
     <Compile Include="Report\Report.cs" />
     <Compile Include="Security\CurrentUser.cs" />
     <Compile Include="Security\User.cs" />
