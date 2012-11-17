@@ -49,6 +49,15 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.CheckBoxList chkboxDienCanBo;
         
         /// <summary>
+        /// chkboxTinhTrangHienTai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chkboxTinhTrangHienTai;
+        
+        /// <summary>
         /// btnXuat control.
         /// </summary>
         /// <remarks>
