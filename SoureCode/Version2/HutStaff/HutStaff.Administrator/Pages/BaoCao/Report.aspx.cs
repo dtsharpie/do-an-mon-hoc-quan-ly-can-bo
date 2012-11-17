@@ -228,7 +228,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
         {
             if (isNotGottenHtmlContent)
             {
-                strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_1("0206", "1", "1");
+                strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_1("0206", "1,2", "1,2,3");
                 isNotGottenHtmlContent = false;
             }          
         }
