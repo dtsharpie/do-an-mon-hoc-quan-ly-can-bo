@@ -46,6 +46,12 @@ namespace HutStaff.Administrator.Pages.BaoCao
             chkboxDienCanBo.DataTextField = table_dm_dcb.Columns[1].ColumnName;
             chkboxDienCanBo.DataBind();
 
+            DataTable table_dm_tt = BaoCaoBO.ViewAlldm_tt();
+            chkboxTinhTrangHienTai.DataSource = table_dm_tt;
+            chkboxTinhTrangHienTai.DataValueField = table_dm_tt.Columns[0].ColumnName;
+            chkboxTinhTrangHienTai.DataTextField = table_dm_tt.Columns[1].ColumnName;
+            chkboxTinhTrangHienTai.DataBind();
+
             //title
             String titleMenu = "";
             switch (typeOfPage)

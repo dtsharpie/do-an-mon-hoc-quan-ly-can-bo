@@ -35,6 +35,12 @@
                     <asp:CheckBoxList ID="chkboxDienCanBo" runat="server" />
                 </td>
             </tr>
+             <tr>
+	 	        <td valign="top" height="30" class="Row2">Chọn theo tình trạng hiện tại</td>
+		        <td height="30" class="Row1">                                    		            
+                    <asp:CheckBoxList ID="chkboxTinhTrangHienTai" runat="server" />
+                </td>
+            </tr>
 	        <tr>
                 <td height="30" align="center" colspan="2" class="Row3">
                    <asp:Button Text="Xuất báo cáo để tải về máy" runat="server" ID="btnXuat" 

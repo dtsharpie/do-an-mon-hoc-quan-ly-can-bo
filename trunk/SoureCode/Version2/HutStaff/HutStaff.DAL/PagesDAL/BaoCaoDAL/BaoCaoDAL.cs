@@ -57,5 +57,13 @@ namespace HutStaff.DAL.PagesDAL.BaoCaoDAL
             }
         }
 
+        public static DataTable ViewAlldm_tt()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_view_all_dm_tt", new string[] { }, new object[] { });
+            }
+        }
+
     }
 }
