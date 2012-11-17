@@ -18,9 +18,9 @@ namespace HutStaff.BO.Report
             return DAL.Report.Report.GetRewardList(hinhThuc, tuNam, denNam, donVi, dienCanBo, khoiCanBo);
         }
 
-        public static DataTable GetDataTableToReport_Type_1_1(string ma_dv, int diencb)
+        public static DataTable GetDataTableToReport_Type_1_1(string ma_dv, int diencb, int tt)
         {
-            return DAL.Report.Report.GetDataTableToReport_Type_1_1(ma_dv, diencb);
+            return DAL.Report.Report.GetDataTableToReport_Type_1_1(ma_dv, diencb, tt);
         }
     }
 }
