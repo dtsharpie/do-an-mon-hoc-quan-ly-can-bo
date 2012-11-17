@@ -1,0 +1,137 @@
+﻿<table width="1057" border="1" cellspacing="0" cellpadding="0" style='border-collapse:collapse;
+border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0pt 5.4pt 0pt 5.4pt'>
+  <tr height='27' style='height:20.0pt'>
+    <td width='43' rowspan='2' style='width:32.4pt'>
+      <p class='ColumnHeader'>STT</p>
+    </td>
+    <td width='204' rowspan='2' style='width:153.0pt'>
+      <p class='ColumnHeader' >&#272;&#416;N V&#7882;</p>
+    </td>
+    <td width='45' rowspan='2' style='width:33.7pt'>
+      <p class='ColumnHeader' >T&#7893;ng s&#7889;</p>
+    </td>
+    <td width='135' colspan='3' height='27' style='width:101.25pt'>
+      <p class='ColumnHeader'>PH&#194;N THEO NG&#192;NH</p>
+    </td>
+    <td width='495' colspan='11' height='27' style='width:371.15pt'>
+      <p class='ColumnHeader'>PH&#194;N THEO NG&#7840;CH C&#212;NG CH&#7912;C,VI&#202;N CH&#7912;C</p>
+    </td>
+    <td width='135' colspan='3' height='27' style='width:101.25pt'>
+      <p class='ColumnHeader'>THEO TU&#7892;I &#272;&#7900;I</p>
+    </td>
+  </tr>
+  <tr height='27' style='height:20.0pt'>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >QLNN</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >Gi&#7843;ng d&#7841;y</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >Kh&#225;c</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >CVCC</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >CVCh</p>
+    </td>
+    <td width='45' height='27' style='width:33.7pt'>
+      <p class='ColumnHeader' >CV</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >GVCC</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >GVCh</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >GV</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >Cs&#7921;</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >KSCC</p>
+    </td>
+    <td width='45' height='27' style='width:33.7pt'>
+      <p class='ColumnHeader' >KSCh</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >KS</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >C&#242;n l&#7841;i</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >30 &lt;</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >30-50</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >&gt; 50</p>
+    </td>
+  </tr>
+  <tr height='27' style='height:20.0pt'>
+    <td width='43' height='27' style='width:32.4pt'>
+      <p class='ColumnHeader' >(1)</p>
+    </td>
+    <td width='204' height='27' style='width:153.0pt'>
+      <p class='ColumnHeader' >(2)</p>
+    </td>
+    <td width='45' height='27' style='width:33.7pt'>
+      <p class='ColumnHeader' >(3)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(4)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(5)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(6)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(7)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(8)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(9)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(10)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(11)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(12)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(13)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(14)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(15)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(16)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(17)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(18)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(19)</p>
+    </td>
+    <td width='45' height='27' style='width:33.75pt'>
+      <p class='ColumnHeader' >(20)</p>
+    </td>
+  </tr>
