@@ -31,7 +31,7 @@ namespace HutStaff.BO.Report
             int nam30 = 0, nu30 = 0, nam31_40 = 0, nu31_40 = 0, nam41_45 = 0, nu41_45 = 0, nam46_50 = 0, nu46_50 = 0, nam51_55 = 0, nu51_55 = 0, nam56_60 = 0, nu56_60 = 0, nam60 = 0, nu60 = 0;
 
 
-            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_1_1(madv, int.Parse(dcb), int.Parse(tt));
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_1_1(madv, dcb, tt);
 
             foreach (DataRow row in dataTable.Rows)
             {
