@@ -69,6 +69,7 @@ namespace HutStaff.Common
             {
                 throw (new Exception(myException.Message));
             }
+            return null;
         }
 
         public IDbConnection Connection
