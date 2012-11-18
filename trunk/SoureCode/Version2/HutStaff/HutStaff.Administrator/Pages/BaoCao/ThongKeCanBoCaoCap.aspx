@@ -39,7 +39,7 @@
                 <tr>
                     <td class="row1" colspan="3" style="line-height: 20px;">
                         <span class="p-title">Chọn đơn vị lập báo cáo</span> &nbsp;&nbsp;&nbsp;
-                        <asp:TreeView ID="treeViewDonVi" runat="server" ShowLines="True" ShowCheckBoxes="All" ExpandDepth="1" BorderWidth="0" />
+                        <asp:DropDownList ID="ddlDonViLapBaoCao" runat="server" />
                     </td>
                 </tr>
                 <tr>
