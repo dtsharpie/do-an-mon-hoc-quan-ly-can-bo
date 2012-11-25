@@ -17,5 +17,11 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             return DAL.PagesDAL.QuanLy.XetDuyet.ViewSetNangLuongCount(loaiHanNgach, loaiBang, thoiGian, delete);
         }
+
+
+        public static void UpdateKhenthuong(int shcc, string htkt, DateTime nkt, string soqd, string ttk)
+        {
+            DAL.PagesDAL.QuanLy.XetDuyet.UpdateKhenthuong(shcc, htkt, nkt, soqd, ttk);
+        }
     }
 }
