@@ -19,36 +19,45 @@
                     Công việc đảm nhận
                 </td>
                 <td>
-                    Diện cán bộ/<br />
-                    Tình trạng công tác
+                    Diện cán bộ
                 </td>
             </tr>
-            <asp:Repeater runat="server" ID="grdData">
+            <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>
                     <tr>
                         <td>
+                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_qtct")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
+                            <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>
                         </td>
                         <td>
+                            <%# Eval("cv")%>
                         </td>
                         <td>
+                            <%# Eval("dcb")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
+                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_ qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_ qtct")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
+                            <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>
                         </td>
                         <td>
+                            <%# Eval("cv")%>
                         </td>
                         <td>
+                            <%# Eval("dcb")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
         </table>
+        <div class="nodata" id="divNodata" runat="server">
+        </div>
     </div>
 </div>

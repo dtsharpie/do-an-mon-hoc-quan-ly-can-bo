@@ -24,7 +24,7 @@ namespace HutStaff.Administrator.Services
         {
             string sAlias = GetString("alias");
             string sResponse = string.Empty;
-            if (!String.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
+            if (BO.Security.ViewCurrentUser.GetViewCurrentUser() != null || BO.Security.CurrentUser.GetCurrentUser() != null)
             {
                 if (HutStaff.Common.Control.Contain(sAlias))
                 {
@@ -40,7 +40,7 @@ namespace HutStaff.Administrator.Services
             }
             else
             {
-                sResponse = "<script type=\"text/javascript\">alert('Bạn cần xác thực lại thông tin');window.location='/Login.aspx?action=logout';</script>";
+                sResponse = "<script type=\"text/javascript\">alert('Bạn cần xác thực lại thông tin');window.location=( window.location.href.indexOf('Xemthongtin') > -1 ? '/Xemthongtin' : '' ) + '/Login.aspx?action=logout';</script>";
             }
             context.Response.Write(sResponse);
         }

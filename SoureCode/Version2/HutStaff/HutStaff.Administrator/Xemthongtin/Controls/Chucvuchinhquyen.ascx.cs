@@ -13,7 +13,7 @@ namespace HutStaff.Administrator.Xemthongtin.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable tblData = BO.Thongtinchung.Thongtinchung.GetById(BO.Security.ViewCurrentUser.GetViewCurrentUser().Shcc);
+            DataTable tblData = BO.Thongtinchung.Thongtinchung.Getchucvuchinhquyen(BO.Security.ViewCurrentUser.GetViewCurrentUser().Shcc);
             if (tblData.Rows.Count > 0)
             {
                 rptData.DataSource = tblData;

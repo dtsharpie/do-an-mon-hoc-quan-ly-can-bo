@@ -119,5 +119,45 @@ namespace HutStaff.DAL.Thongtinchung
                     new object[] { shcc });
             }
         }
+
+        public static DataTable Getchucvuchinhquyen(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_cvcq_GetById]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
+
+        public static DataTable GetQuatrinhdaotao(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_qtdt_GetById]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
+
+        public static DataTable GetQuatrinhboiduong(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_qtbd_GetById]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
+
+        public static DataTable GetQuatrinhcongtac(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_qtct_GetById]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
     }
 }
