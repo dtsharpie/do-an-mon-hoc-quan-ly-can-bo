@@ -62,5 +62,25 @@ namespace HutStaff.BO.Thongtinchung
         {
             return DAL.Thongtinchung.Thongtinchung.GetChucdanh(shcc);
         }
+
+        public static DataTable Getchucvuchinhquyen(int shcc)
+        {
+            return DAL.Thongtinchung.Thongtinchung.Getchucvuchinhquyen(shcc);
+        }
+
+        public static DataTable GetQuatrinhdaotao(int shcc)
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetQuatrinhdaotao(shcc);
+        }
+
+        public static DataTable GetQuatrinhboiduong(int shcc)
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetQuatrinhboiduong(shcc);
+        }
+
+        public static DataTable GetQuatrinhcongtac(int shcc)
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetQuatrinhcongtac(shcc);
+        }
     }
 }

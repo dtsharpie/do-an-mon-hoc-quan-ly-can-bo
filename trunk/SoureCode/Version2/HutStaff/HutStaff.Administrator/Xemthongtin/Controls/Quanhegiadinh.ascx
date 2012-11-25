@@ -31,7 +31,7 @@
                             <%# Eval("quanhegd")%>
                         </td>
                         <td>
-                            <%# Eval("ns_qhgd")!= DBNull.Value ? Eval("ns_qhgd") : "" %>
+                            <%# Eval("ns_qhgd")!= DBNull.Value ? Convert.ToDateTime( Eval("ns_qhgd")).ToString("dd/MM/yyyy") : "" %>
                         </td>
                         <td>
                             <%# Eval("ttk_qhgd")%>
@@ -47,7 +47,7 @@
                             <%# Eval("quanhegd")%>
                         </td>
                         <td>
-                            <%# Eval("ns_qhgd")!= DBNull.Value ? Eval("ns_qhgd") : "" %>
+                            <%# Eval("ns_qhgd")!= DBNull.Value ? Convert.ToDateTime( Eval("ns_qhgd")).ToString("dd/MM/yyyy") : "" %>
                         </td>
                         <td>
                             <%# Eval("ttk_qhgd")%>
