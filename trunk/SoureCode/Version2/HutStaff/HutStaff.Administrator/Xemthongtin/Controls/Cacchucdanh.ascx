@@ -18,28 +18,36 @@
                     Thông tin khác
                 </td>
             </tr>
-            <asp:Repeater runat="server" ID="grdData">
+            <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>
                     <tr>
                         <td>
+                            <%# Eval("dhdp")%>
                         </td>
                         <td>
+                            <%# Convert.ToDateTime(Eval("ntnpdh")).ToString("dd/MM/yyyy")%>
                         </td>
                         <td>
+                            <%# Eval("ttk_qtcd")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
+                            <%# Eval("dhdp")%>
                         </td>
                         <td>
+                            <%# Convert.ToDateTime(Eval("ntnpdh")).ToString("dd/MM/yyyy")%>
                         </td>
                         <td>
+                            <%# Eval("ttk_qtcd")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
         </table>
+        <div class="nodata" id="divNodata" runat="server">
+        </div>
     </div>
 </div>

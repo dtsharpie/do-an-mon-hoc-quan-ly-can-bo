@@ -57,5 +57,10 @@ namespace HutStaff.BO.Thongtinchung
         {
             return DAL.Thongtinchung.Thongtinchung.GetNnddById(shcc);
         }
+
+        public static DataTable GetChucdanh(int shcc)
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetChucdanh(shcc);
+        }
     }
 }
