@@ -109,5 +109,15 @@ namespace HutStaff.DAL.Thongtinchung
                     new object[] { shcc });
             }
         }
+
+        public static DataTable GetChucdanh(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_dhdp_GetById]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
     }
 }

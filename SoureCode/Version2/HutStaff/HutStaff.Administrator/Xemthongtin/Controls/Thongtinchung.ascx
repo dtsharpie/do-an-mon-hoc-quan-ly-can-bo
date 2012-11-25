@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Thongtinchung.ascx.cs"
     Inherits="HutStaff.Administrator.Xemthongtin.Controls.Thongtinchung" %>
-
-<h1 class="title">Thông tin chung
+<h1 class="title">
+    Thông tin chung
 </h1>
 <hr />
 <div class="divInfo">
@@ -17,12 +17,13 @@
                 <tr class="even">
                     <td colspan="3">
                         <label>
-                            Diện cán bộ:<span><%# Eval("dcb") %></span>
+                            Diện cán bộ:<span><%# Eval("diencanbo") %></span>
                         </label>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">Đơn vị:<span><%# Eval("dv") %></span>
+                    <td colspan="3">
+                        Đơn vị:<span><%# Eval("dv") %></span>
                     </td>
                 </tr>
                 <tr class="even">
@@ -43,7 +44,7 @@
                     </td>
                     <td>
                         <label>
-                            Học hàm học vị:<span></span></label>
+                            Học hàm học vị:<span><%# Eval("hocham") %></span></label>
                     </td>
                 </tr>
                 <tr class="even">
@@ -83,7 +84,8 @@
                     </td>
                     <td colspan="3">
                         <label>
-                            Chi tiết:<input id="chitiet" value="<%# Eval("cthktt") %>" style="font-weight: bold; width: 440px;" />
+                            Chi tiết:<input id="chitiet" value="<%# Eval("cthktt") %>" style="font-weight: bold;
+                                width: 440px;" />
                         </label>
                     </td>
                 </tr>
@@ -151,7 +153,7 @@
                     </td>
                     <td>
                         <label>
-                            Diện ưu tiên:<span></span>
+                            Diện ưu tiên:<span><%# Eval("tb") %></span>
                         </label>
                     </td>
                 </tr>
@@ -279,7 +281,7 @@
                 <tr>
                     <td>
                         <label>
-                            Ngày bắt đầu thâm niên:<span><%# Eval("ngaybh") == DBNull.Value ? "" : Convert.ToInt32(Eval("ngaybh")).ToString("dd/MM/yyyy")%></span>
+                            Ngày bắt đầu thâm niên:<span><%# Eval("ngaybh") == DBNull.Value ? "" : Convert.ToDateTime(Eval("ngaybh")).ToString("dd/MM/yyyy")%></span>
                         </label>
                     </td>
                     <td colspan="2">
@@ -326,6 +328,12 @@
         });
 
         $("#btnUpdate").click(function () {
+            var ngaycap = $("#ngay_cap").val().split('/');
+            if (ngaycap.length != 3) {
+                ngaycap[0] = '1';
+                ngay_cap[1] = '1';
+                ngaycap[2] = '2000';
+            }
             execution({
                 _fn: "HutStaff.BO.Thongtinchung.Thongtinchung.Update",
                 shcc: "<%= iShcc %>",
@@ -336,7 +344,7 @@
                 email: $("#email").val(),
                 scmnd: $("#scmnd").val(),
                 nc: $("#ddlNoicap").val(),
-                ngay_cap: $("#ngay_cap").val()
+                ngay_cap: ngaycap[1] + '/' + ngaycap[0] + '/' + ngaycap[2]
             }, true);
         });
 

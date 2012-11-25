@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<JustCodeSettings Version="0.0.16" Timestamp="d5b9c43c-5d53-420c-9216-76fdde7af90c">
+<JustCodeSettings Version="0.0.22" Timestamp="118b5c29-dc44-4919-a9ee-e59d53d9c492">
   <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <IgnoredErrorsAndWarnings>
       <FilePath>
@@ -29,6 +29,21 @@
           <Column>13</Column>
           <Text>Expected &lt;/html&gt;</Text>
           <Line>176</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>6</Column>
+          <Text>Expected &lt;/div&gt;</Text>
+          <Line>103</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>33</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>102</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>33</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>102</Line>
         </IgnoredElement>
       </FilePath>
       <FilePath>
@@ -77,6 +92,29 @@
           <Column>43</Column>
           <Text>Expected &lt;/html&gt;</Text>
           <Line>100</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageBreak.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>0</Column>
+          <Text>Expected &lt;/br&gt;</Text>
+          <Line>6</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/table&gt;</Text>
+          <Line>1</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_1.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>74</Line>
         </IgnoredElement>
       </FilePath>
     </IgnoredErrorsAndWarnings>
