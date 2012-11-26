@@ -13,13 +13,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
     public partial class SuaNguoiDung {
         
         /// <summary>
-        /// frmUserInfo control.
+        /// SlideQuanLy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frmUserInfo;
+        protected global::HutStaff.Administrator.Controls.Common.SlideQuanLy SlideQuanLy;
         
         /// <summary>
         /// lblMessage control.
@@ -40,15 +40,6 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.HiddenField hfAddEdit;
         
         /// <summary>
-        /// txtUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
-        
-        /// <summary>
         /// hfUserID control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,24 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfUserID;
+        
+        /// <summary>
+        /// lblUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsername;
+        
+        /// <summary>
+        /// txtUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUsername;
         
         /// <summary>
         /// lblPassword control.
@@ -94,6 +103,15 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.TextBox txtRePassword;
         
         /// <summary>
+        /// lblDonVi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDonVi;
+        
+        /// <summary>
         /// ddlDonVi control.
         /// </summary>
         /// <remarks>
@@ -103,13 +121,13 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.DropDownList ddlDonVi;
         
         /// <summary>
-        /// SqlDataSource_ListDV control.
+        /// lblQuyen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource_ListDV;
+        protected global::System.Web.UI.WebControls.Label lblQuyen;
         
         /// <summary>
         /// chkQuyen control.
@@ -119,6 +137,15 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkQuyen;
+        
+        /// <summary>
+        /// lblIsLock control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIsLock;
         
         /// <summary>
         /// chkIsLock control.
@@ -137,5 +164,23 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cmdSubmit;
+        
+        /// <summary>
+        /// cmdCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdCancel;
+        
+        /// <summary>
+        /// lnkChangePass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkChangePass;
     }
 }
