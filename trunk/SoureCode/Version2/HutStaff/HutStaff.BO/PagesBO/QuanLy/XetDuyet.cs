@@ -23,5 +23,10 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             DAL.PagesDAL.QuanLy.XetDuyet.UpdateKhenthuong(shcc, htkt, nkt, soqd, ttk);
         }
+
+        public static void UpdateBhxh(int shcc, string shb, DateTime ndbh)
+        {
+            DAL.PagesDAL.QuanLy.XetDuyet.UpdateBhxh(shcc, shb, ndbh);
+        }
     }
 }
