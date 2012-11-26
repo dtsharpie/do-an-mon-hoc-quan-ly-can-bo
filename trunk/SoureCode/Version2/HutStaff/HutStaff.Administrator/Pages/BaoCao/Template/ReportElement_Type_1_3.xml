@@ -1,0 +1,53 @@
+﻿<tr style='height:20.0pt'>
+  <td>
+    <p class='CellText2'>$stt</p>
+  </td>
+  <td>
+    <p class='CellText1'>$tendonvi1</p>
+  </td>
+  <td>
+    <p class='CellText'>$dv</p>
+  </td>
+  <td>
+    <p class='CellText'>$pn</p>
+  </td>
+  <td>
+    <p class='CellText'>$dt</p>
+  </td>
+  <td>
+    <p class='CellText'>$hh_gs</p>
+  </td>
+  <td>
+    <p class='CellText'>$hh_pgs</p>
+  </td>
+  <td>
+    <p class='CellText'>$cmnv_tskh</p>
+  </td>
+  <td>
+    <p class='CellText'>$cmnv_ts</p>
+  </td>
+  <td>
+    <p class='CellText'>$cmnv_ths</p>
+  </td>
+  <td>
+    <p class='CellText'>$cmnv_dhcd</p>
+  </td>
+  <td>
+    <p class='CellText'>$ct_cc</p>
+  </td>
+  <td>
+    <p class='CellText'>$ct_tc</p>
+  </td>
+  <td>
+    <p class='CellText'>$nn_av_cn </p>
+  </td>
+  <td>
+    <p class='CellText'>$nn_av_cs</p>
+  </td>
+  <td>
+    <p class='CellText'>$nn_nnk_cn</p>
+  </td>
+  <td>
+    <p class='CellText'>$nn_nnk_cs</p>
+  </td>
+</tr>

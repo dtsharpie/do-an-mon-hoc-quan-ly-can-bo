@@ -19,6 +19,11 @@ namespace HutStaff.Administrator.Pages.BaoCao
         private static string strHtmlContent = "";
         private static bool isNotGottenHtmlContent = true;
 
+        private static string donvi = "";
+        private static string tendonvi = "";
+        private static string dcb = "";
+        private static string tt = "";
+
         public Report() : this(new ExportData()) { }
 
         public Report(IExportData exporter)
@@ -30,14 +35,8 @@ namespace HutStaff.Administrator.Pages.BaoCao
         protected void Page_Load(object sender, EventArgs e)
         {
             isNotGottenHtmlContent = true;
-            try
-            {
-                typeOfPage = Convert.ToInt32(Request.QueryString["type"]);
-            }
-            catch (FormatException ex)
-            {
-                typeOfPage = 1;
-            }
+            if (IsPostBack)
+                return;
 
             DataTable table_dm_dv = BaoCaoBO.ViewAlldm_dv();
             ddlDonViLapBaoCao.DataSource = table_dm_dv;
@@ -170,19 +169,60 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         private void GetHtmlContent()
         {
+            donvi = ddlDonViLapBaoCao.SelectedItem.Value;
+            tendonvi = ddlDonViLapBaoCao.SelectedItem.Text;
+
+            dcb = "";
+            foreach (ListItem li in chkboxDienCanBo.Items)
+            {
+                if (li.Selected == true)
+                {
+                    dcb += li.Value + ",";
+                }
+            }
+            if (dcb.Length > 0)
+                dcb = dcb.Substring(0, dcb.Length - 1);
+
+            tt = "";
+            foreach (ListItem li in chkboxTinhTrangHienTai.Items)
+            {
+                if (li.Selected == true)
+                {
+                    tt += li.Value + ",";
+                }
+            }
+            if (tt.Length > 0)
+                tt = tt.Substring(0, tt.Length - 1);
+
+            try
+            {
+                typeOfPage = Convert.ToInt32(Request.QueryString["type"]);
+            }
+            catch (FormatException ex)
+            {
+                typeOfPage = 1;
+            }
+
             switch (typeOfPage)
             {
                 case 1:
                     if (isNotGottenHtmlContent)
                     {
-                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_1("0", "1,2", "1,2,3");
+                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_1(donvi, tendonvi, dcb, tt);
                         isNotGottenHtmlContent = false;
                     }  
                     break;
                 case 2:
                     if (isNotGottenHtmlContent)
                     {
-                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_2("0", "1,2", "1,2,3");
+                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_2(donvi, tendonvi, dcb, tt);
+                        isNotGottenHtmlContent = false;
+                    }
+                    break;
+                case 3:
+                    if (isNotGottenHtmlContent)
+                    {
+                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_1_3(donvi, tendonvi, dcb, tt);
                         isNotGottenHtmlContent = false;
                     }
                     break;
