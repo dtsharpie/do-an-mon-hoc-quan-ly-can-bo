@@ -38,5 +38,15 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     new object[] { shcc, htkt, nkt, soqd, ttk });
             }
         }
+
+        public static void UpdateBhxh(int shcc, string shb, DateTime ndbh)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_Update_Bhxh]",
+                    new string[] { "@shcc", "@shb", "@ndbh" },
+                    new object[] { shcc, shb,ndbh });
+            }
+        }
     }
 }

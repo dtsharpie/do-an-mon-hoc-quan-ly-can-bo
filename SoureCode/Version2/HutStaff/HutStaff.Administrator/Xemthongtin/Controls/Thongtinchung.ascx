@@ -332,7 +332,7 @@
             if (ngaycap.length != 3) {
                 ngaycap[0] = '1';
                 ngay_cap[1] = '1';
-                ngaycap[2] = '2000';
+                ngaycap[2] = '<%= DateTime.MinValue.Year %>';
             }
             execution({
                 _fn: "HutStaff.BO.Thongtinchung.Thongtinchung.Update",

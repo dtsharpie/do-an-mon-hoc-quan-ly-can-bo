@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
-    CodeBehind="Khenthuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.Xetduyet.Khenthuong" %>
+    CodeBehind="Baohiem.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.Xetduyet.Baohiem" %>
 
 <%@ Register Src="/Controls/Common/SlideQuanLy.ascx" TagName="SlideQuanLy" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -7,7 +7,7 @@
         $(document).ready(function () {
             $("#divSideBar li:eq(2) ul").css("display", "block");
 
-            $("a.view_reward]").attr("style", "background-color: rgb(247, 247, 247);");
+            $("a.view_baohiem]").attr("style", "background-color: rgb(247, 247, 247);");
         });
     </script>
 </asp:Content>
@@ -34,24 +34,14 @@
                             <%# Eval("fullname") %></ItemTemplate>
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Hình thức khen thưởng">
+                    <asp:TemplateField HeaderText="Số bhxh">
                         <ItemTemplate>
                             <%# Eval("htkt") %></ItemTemplate>
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Năm khen thưởng">
+                    <asp:TemplateField HeaderText="Ngày bắt đầu đóng bhxh">
                         <ItemTemplate>
                             <%# Eval("nam") %></ItemTemplate>
-                        <ItemStyle HorizontalAlign="Right" />
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Quyết định khen thưởng số">
-                        <ItemTemplate>
-                            <%# Eval("nam") %></ItemTemplate>
-                        <ItemStyle HorizontalAlign="Right" />
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Lý do">
-                        <ItemTemplate>
-                            <%# Eval("lydo") %></ItemTemplate>
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
                 </Columns>

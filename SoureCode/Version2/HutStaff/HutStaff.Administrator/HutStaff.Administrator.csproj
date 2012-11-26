@@ -613,6 +613,7 @@
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
     <Content Include="Pages\QuanLy\Quanly.aspx" />
     <Content Include="Pages\QuanLy\SuaNguoiDung.aspx" />
+    <Content Include="Pages\QuanLy\Xetduyet\Baohiem.aspx" />
     <Content Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx" />
     <Content Include="Pages\QuanLy\Xetduyet\Tanngluong.aspx" />
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
@@ -873,6 +874,13 @@
     </Compile>
     <Compile Include="Pages\QuanLy\SuaNguoiDung.aspx.designer.cs">
       <DependentUpon>SuaNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Xetduyet\Baohiem.aspx.cs">
+      <DependentUpon>Baohiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\Xetduyet\Baohiem.aspx.designer.cs">
+      <DependentUpon>Baohiem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx.cs">
       <DependentUpon>Khenthuong.aspx</DependentUpon>
