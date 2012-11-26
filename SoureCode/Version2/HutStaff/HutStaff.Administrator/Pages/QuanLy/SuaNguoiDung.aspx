@@ -1,84 +1,111 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuaNguoiDung.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.SuaNguoiDung" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Master/Admin.Master" CodeBehind="SuaNguoiDung.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.SuaNguoiDung" %>
+<%@ Register Src="/Controls/Common/SlideQuanLy.ascx" TagPrefix="uc1" TagName="SlideQuanLy" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#divHeader .nav a').removeClass("active");
+            $('#divHeader .nav a').eq(1).addClass('active');
+        });
+    </script>
     <script type="text/javascript">
         function ValidateForm() {
-            if (document.forms["frmUserInfo"]["txtUsername"].value == ""){
+            if (document.forms["form1"]["txtUsername"].value == "") {
                 alert("Giá trị username không hợp lệ");
+                document.getElementById("lblUsername").style.color = "Red";
                 document.getElementById("txtUsername").focus();
 
                 return false;
             }
-            //alert(document.forms["frmUserInfo"]["txtPassword"].value);
-            if (document.forms["frmUserInfo"]["txtPassword"].value == "" || document.forms["frmUserInfo"]["txtRePassword"].value == "") {
+            else
+                document.getElementById("lblUsername").style.color = "Black";
+
+            if (document.forms["form1"]["txtPassword"].value == "" || document.forms["form1"]["txtRePassword"].value == "") {
                 alert("Không thể bỏ trống trường mật khẩu");
                 document.getElementById("lblPassword").style.color = "Red";
-                document.getElementById("lblPassword").style.color = "Red";
+                document.getElementById("lblRePassword").style.color = "Red";
                 document.getElementById("txtPassword").focus();
 
                 return false;
             }
-            if (document.forms["frmUserInfo"]["txtPassword"].value != document.forms["frmUserInfo"]["txtRePassword"].value) {
+            else {
+                document.getElementById("lblPassword").style.color = "Black";
+                document.getElementById("lblRePassword").style.color = "Black";
+            }
+
+            if (document.forms["form1"]["txtPassword"].value != document.forms["form1"]["txtRePassword"].value) {
                 alert("Mật khẩu không khớp");
-                document.forms["frmUserInfo"]["txtPassword"].value = "";
-                document.forms["frmUserInfo"]["txtRePassword"].value = "";
+                document.forms["form1"]["txtPassword"].value = "";
+                document.forms["form1"]["txtRePassword"].value = "";
                 document.getElementById("txtPassword").focus();
 
                 return false;
             }
-            else
-                return true;
+
+            return true;
+        }
+        function Cancel() {
+//            alert(document.forms["form1"]["hfAddEdit"].value);
+//            if (document.forms["form1"]["hfAddEdit"].value == "add")
+//                return window.close();
+//            else //if (document.forms["form1"]["hfAddEdit"].value == "edit")
+            //                return window.history.go(-1);
+            return window.location.href = "NguoiDung.aspx";
         }
     </script>
-</head>
-<body>
-    <div class="content">
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
+        <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+    <div class="content" style="height:100%; width:100%;">
     <h1 id="title"></h1>
-    <form id="frmUserInfo" runat="server" defaultbutton="cmdSubmit" action="SuaNguoiDung.aspx" method="post" onsubmit="return ValidateForm();">
-        <asp:Label runat="server" ID="lblMessage"></asp:Label>
+    <div style="height:100%; width:100%;">
+<%--    <form id="form1" runat="server" defaultbutton="cmdSubmit" align="center"
+        action="SuaNguoiDung.aspx" method="post" onsubmit="return ValidateForm();" 
+        style="background-color: #f2f2f2; height:100%; width:100%;">
+--%>        <asp:Label runat="server" ID="lblMessage"></asp:Label>
         <asp:HiddenField runat="server" ID="hfAddEdit" />
-        <table border="1">
+        <asp:HiddenField runat="server" ID="hfUserID" />
+        <div>
+        <table class="table-form" border="0">
             <tr>
-                <td><asp:Label runat="server" Text="Tên truy cập:"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="txtUsername"></asp:TextBox></td>
-                <td><asp:HiddenField runat="server" ID="hfUserID" /></td>
+                <td><asp:Label runat="server" Text="Tên truy cập" ID="lblUsername" ></asp:Label></td>
+                <td><asp:TextBox runat="server" ID="txtUsername" Width="200" align="center"></asp:TextBox></td>
             </tr>
             <tr>
                 <td><asp:Label runat="server" Text="Mật khẩu" ID="lblPassword"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="txtPassword" ClientIDMode="Static" 
-                        TextMode="Password"></asp:TextBox></td>
+                        TextMode="Password"  Width="200"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Gõ lại mật khẩu" ID="lblRePassword"></asp:Label></td>
-                <td class="style1"><asp:TextBox runat="server" ID="txtRePassword" TextMode="Password"></asp:TextBox></td>
+                <td class="style1"><asp:Label runat="server" Text="Gõ lại mật khẩu" ID="lblRePassword"></asp:Label></td>
+                <td class="style1"><asp:TextBox runat="server" ID="txtRePassword" TextMode="Password" Width="200"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Đơn vị"></asp:Label></td>
-                <td><asp:DropDownList runat="server" ID="ddlDonVi" DataSourceID="SqlDataSource_ListDV" 
-                        DataTextField="dv" DataValueField="ma_dv"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource_ListDV" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:QLCB %>" 
-                        SelectCommand="SELECT [dv], [ma_dv] FROM [dm_dv]"></asp:SqlDataSource>
+                <td><asp:Label runat="server" Text="Đơn vị" ID="lblDonVi"></asp:Label></td>
+                <td><asp:DropDownList class="ddl" runat="server" ID="ddlDonVi" ></asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Có quyền sửa"></asp:Label></td>
+                <td><asp:Label runat="server" Text="Có quyền sửa" ID="lblQuyen"></asp:Label></td>
                 <td><asp:CheckBox runat="server" ID="chkQuyen" /></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" Text="Khóa"></asp:Label></td>
+                <td><asp:Label runat="server" Text="Khóa" ID="lblIsLock"></asp:Label></td>
                 <td><asp:CheckBox runat="server" ID="chkIsLock" /></td>
             </tr>
             <tr>
-                <td><asp:Button runat="server" ID="cmdSubmit" Text="Tạo người dùng" /></td>
-                <td><asp:Button runat="server" Text="Cancel" OnClientClick="window.close();"/></td>
+                <td><asp:Button CssClass="lnk-button" runat="server" ID="cmdSubmit" Text="Tạo người dùng" UseSubmitBehavior="true" OnClientClick="return ValidateForm()" /></td>
+                <td><asp:Button CssClass="lnk-button" runat="server" Text="Cancel" OnClientClick="return Cancel();" ID="cmdCancel" UseSubmitBehavior="false"/><a id="lnkChangePass" runat="server">Đổi mật khẩu</a></td>
             </tr>
         </table>
-    </form>
+        
+        </div>
+    <%--</form>--%>
     </div>
-</body>
-</html>
+    </div>
+
+</asp:Content>

@@ -13,6 +13,7 @@
         <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="content">
         <asp:SqlDataSource id="SqlDataSource_User" runat="server"
             ConnectionString="<%$ ConnectionStrings:QLCB %>" 
             SelectCommand="SELECT [user], [quyen], [isLock], dv FROM [Users], [dm_dv] WHERE [Users].ma_dv = [dm_dv].ma_dv"
@@ -21,11 +22,10 @@
 
         <h1>Danh sách người dùng</h1>
         <div>
-            <div style="float:left; margin-right:10px;"><a href="SuaNguoiDung.aspx?task=add" target="_blank">Thêm mới người dùng</a></div>
             <div style="float:left">
                 <asp:GridView id="GridView_User" DataSourceID="SqlDataSource_User" 
                 runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4"
-                ForeColor="#333333" GridLines="Vertical" AutoGenerateColumns="False" DataKeyNames="user"
+                ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="user"
                 EmptyDataText="Không có người dùng nào!" PageSize="2" >
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
@@ -36,10 +36,10 @@
                         <HeaderStyle HorizontalAlign="Left" Width="5em"></HeaderStyle>
                     </asp:TemplateField>
 
-                    <asp:HyperLinkField HeaderText="Tên truy cập" DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' 
-                    DataTextField="user" HeaderStyle-Width="15em" Target="_blank"> <HeaderStyle Width="15em"></HeaderStyle>
+                    <asp:HyperLinkField SortExpression="user" HeaderText="Tên truy cập" DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' 
+                    DataTextField="user" HeaderStyle-Width="15em"> <HeaderStyle Width="15em"></HeaderStyle>
                     </asp:HyperLinkField>
-                    <asp:BoundField HeaderText="Đơn vị" DataField="dv" />
+                    <asp:BoundField SortExpression="dv" HeaderText="Đơn vị" DataField="dv" />
                     <asp:CheckBoxField DataField="quyen" HeaderText="Có quyền sửa" 
                         HeaderStyle-Width="15em" ItemStyle-HorizontalAlign="Center"
                         SortExpression="quyen" >
@@ -57,11 +57,11 @@
                         </asp:TemplateField>
                     <asp:TemplateField HeaderText="">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
+                                <asp:LinkButton runat="server" CssClass="button-link" Text="Xóa" CommandName="Delete" OnClientClick='return confirm("Bạn thực sự muốn xóa?");'>
                                 </asp:LinkButton>
                             </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:HyperLinkField DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' Target="_blank" Text="Sửa">
+                    <asp:HyperLinkField ControlStyle-Width="3em" ControlStyle-CssClass="button-link" DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' Text="Sửa">
 
                     </asp:HyperLinkField>
                 </Columns>
@@ -79,5 +79,7 @@
             </div>
             <div style="clear:both"></div>
         </div>
+        <div style="float:left; margin-right:10px;"><a href="SuaNguoiDung.aspx?task=add" class="lnk-button">Thêm người dùng mới</a></div>
+  </div>
     
 </asp:Content>
