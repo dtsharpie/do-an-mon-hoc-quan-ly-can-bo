@@ -1,0 +1,59 @@
+﻿<tr style='height:20.0pt'>
+  <td>
+    <p class='CellText' style='text-align:center'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left'> $ngach </p>
+  </td>
+  <td>
+    <p class='CellText'> $tongso </p>
+  </td>
+  <td>
+    <p class='CellText'> $b1 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b2</p>
+  </td>
+  <td>
+    <p class='CellText'> $b3 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b4 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b5 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b6 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b7 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b8 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b9 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b10 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b11 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b12 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b13 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b14 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b15 </p>
+  </td>
+  <td>
+    <p class='CellText'> $b16 </p>
+  </td>
+</tr>

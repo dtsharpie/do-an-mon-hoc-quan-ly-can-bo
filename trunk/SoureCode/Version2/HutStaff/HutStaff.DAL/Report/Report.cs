@@ -110,5 +110,16 @@ namespace HutStaff.DAL.Report
                     new object[] { ma_dv, diencb, tt });
             }
         }
+
+        // Lay du lieu de lam bao cao loai 2.2: Báo cáo ngạch, bậc công chức, viên chức
+        public static DataTable GetDataTableToReport_Type_2_2(string ma_dv, string diencb, string tt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_2_2]",
+                    new string[] { "@ma_dv", "@dcb", "@tt" },
+                    new object[] { ma_dv, diencb, tt });
+            }
+        }
     }
 }
