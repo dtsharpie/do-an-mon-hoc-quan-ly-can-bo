@@ -165,5 +165,16 @@ namespace HutStaff.DAL.Report
                     new object[] { ma_dv, diencb, tt });
             }
         }
+
+        // Lay du lieu de lam bao cao loai 3.4: Danh sách cán bộ có hệ lương tột khung
+        public static DataTable GetDataTableToReport_Type_3_4(string ma_dv, string diencb, string tt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_3_4]",
+                    new string[] { "@ma_dv", "@dcb", "@tt" },
+                    new object[] { ma_dv, diencb, tt });
+            }
+        }
     }
 }

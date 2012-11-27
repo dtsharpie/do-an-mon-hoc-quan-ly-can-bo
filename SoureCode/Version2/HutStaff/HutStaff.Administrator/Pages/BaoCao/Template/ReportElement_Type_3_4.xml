@@ -1,0 +1,29 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td>
+    <p class='CellText' align='center'>$stt</p>
+  </td>
+  <td>
+    <p class='CellText'>$hoten</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$ntnsNam</p>
+  </td>
+  <td>
+    <p class='CellText'> $ntnsNu </p>
+  </td>
+  <td>
+    <p class='CellText'> $cdhvhh </p>
+  </td>
+  <td>
+    <p class='CellText'> $dv </p>
+  </td>
+  <td>
+    <p class='CellText' align='center'> $bl  </p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$hsl </p>
+  </td>
+  <td>
+    <p class='CellText' align='center'> $lht </p>
+  </td>
+</tr>
