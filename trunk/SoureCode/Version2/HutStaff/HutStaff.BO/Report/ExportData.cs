@@ -1717,6 +1717,153 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        #region Báo cáo kỷ luật
+        public string GetHtmlContent_Report_Type_2_3(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_2_3.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Bao cao ki luat");
+            strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "BÁO CÁO KỈ LUẬT");
+            strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_2_3.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_2_3(madv, dcb, tt);
+
+            int stt = 0;
+            int i = 0;
+            int pagenum = 1;
+            string shcc = "";
+            string chucdanh = "";
+            string chucvu = "";
+
+            string hoten = "";
+            string dv = "";
+            string nkl = "";
+            string nxkl = "";
+            string kl = "";
+            string ma_htkl = "";
+            string cvcd = "";
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (shcc.Length == 0)
+                {
+                    shcc = row["shcc"].ToString();
+                    hoten = row["hoten"].ToString();
+                    dv = row["dv"].ToString();
+                    nkl = row["nkl"].ToString();
+                    nxkl = row["nxkl"].ToString();
+                    kl = row["kl"].ToString();
+                    ma_htkl = row["ma_htkl"].ToString();
+                }
+
+                if ((row["shcc"].ToString().CompareTo(shcc) == 0) && (row["ma_htkl"].ToString().CompareTo(ma_htkl) == 0))
+                {
+                    string dhdpStr = row["dhdp"].ToString();
+                    if (!chucdanh.Contains(dhdpStr) && dhdpStr.Length > 0)
+                        if (chucdanh.Length > 0)
+                            chucdanh += " - " + dhdpStr;
+                        else
+                            chucdanh = dhdpStr;
+                    string cvStr = row["cv"].ToString();
+                    if (!chucvu.Contains(cvStr) && cvStr.Length > 0)
+                        if (chucvu.Length > 0)
+                            chucvu += " - " + row["cv"];
+                        else
+                            chucvu = cvStr;
+                }
+                else
+                {
+
+                    stt++;
+                    i++;
+                    cvcd = "";
+                    if (chucdanh.Length > 0)
+                        cvcd = chucdanh;
+                    if (cvcd.Length > 0)
+                        cvcd += " - " + chucvu;
+
+                    if (cvcd.Length == 0)
+                        cvcd = "";
+
+                    // In dong
+                    strTempElement = strElementHtmlContent;
+                    strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                    strTempElement = strTempElement.Replace("$hoten", hoten);
+                    strTempElement = strTempElement.Replace("$dv", dv);
+                    strTempElement = strTempElement.Replace("$cvcd", cvcd);
+                    strTempElement = strTempElement.Replace("$nkl", ConvertFullDateTimeStringToShortDateTimeString(nkl));
+                    strTempElement = strTempElement.Replace("$kl", kl);
+                    strTempElement = strTempElement.Replace("$nxkl", ConvertFullDateTimeStringToShortDateTimeString(nxkl));
+                    strHtmlContent += strTempElement;
+
+                    //Gan du lieu moi
+                    shcc = row["shcc"].ToString();
+                    hoten = row["hoten"].ToString();
+                    dv = row["dv"].ToString();
+                    nkl = row["nkl"].ToString();
+                    nxkl = row["nxkl"].ToString();
+                    kl = row["kl"].ToString();
+                    ma_htkl = row["ma_htkl"].ToString();
+                    if (row["dhdp"].ToString().Length > 0)
+                        chucdanh = row["dhdp"].ToString();
+                    else
+                        chucdanh = "";
+
+                    if (row["cv"].ToString().Length > 0)
+                        chucvu = row["cv"].ToString();
+                    else
+                        chucvu = "";
+
+                    //Xu li sang trang
+                    if (i == 16)
+                    {
+                        i = 0;
+                        pagenum++;
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_2_2.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                    }
+                }
+            }
+
+            stt++; i++;
+            cvcd = "";
+            if (chucdanh.Length > 0)
+                cvcd = chucdanh;
+            if (cvcd.Length > 0)
+                cvcd += " - " + chucvu;
+            if (cvcd.Length == 0)
+                cvcd = "";
+
+            // In dong
+            strTempElement = strElementHtmlContent;
+            strTempElement = strTempElement.Replace("$stt", stt.ToString());
+            strTempElement = strTempElement.Replace("$hoten", hoten);
+            strTempElement = strTempElement.Replace("$dv", dv);
+            strTempElement = strTempElement.Replace("$cvcd", cvcd);
+            strTempElement = strTempElement.Replace("$nkl", ConvertFullDateTimeStringToShortDateTimeString(nkl));
+            strTempElement = strTempElement.Replace("$kl", kl);
+            strTempElement = strTempElement.Replace("$nxkl", ConvertFullDateTimeStringToShortDateTimeString(nxkl));
+            strHtmlContent += strTempElement;
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
+
+        // ------------------------------------------------------------------
+
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
         {

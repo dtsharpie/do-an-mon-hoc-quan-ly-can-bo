@@ -1,0 +1,23 @@
+﻿<tr height="24" style='height:18.0pt'>
+  <td>
+    <p class='CellText' align='center'>$stt</p>
+  </td>
+  <td>
+    <p class='CellText'>$hoten</p>
+  </td>
+  <td>
+    <p class='CellText'>$dv</p>
+  </td>
+  <td>
+    <p class='CellText'>$cvcd</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$nkl</p>
+  </td>
+  <td>
+    <p class='CellText'>$kl</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$nxkl</p>
+  </td>
+</tr>
