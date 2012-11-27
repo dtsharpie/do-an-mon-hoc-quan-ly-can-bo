@@ -132,5 +132,16 @@ namespace HutStaff.DAL.Report
                     new object[] { ma_dv, diencb, tt });
             }
         }
+
+        // Lay du lieu de lam bao cao loai 3.1: Danh sách cán bộ thuộc ngạch cao cấp đề nghị nâng lương
+        public static DataTable GetDataTableToReport_Type_3_1(string ma_dv, string diencb, string tt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_3_1]",
+                    new string[] { "@ma_dv", "@dcb", "@tt" },
+                    new object[] { ma_dv, diencb, tt });
+            }
+        }
     }
 }

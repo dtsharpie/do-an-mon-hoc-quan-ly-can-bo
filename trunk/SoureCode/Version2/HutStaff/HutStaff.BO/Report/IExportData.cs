@@ -24,5 +24,8 @@ namespace HutStaff.BO.Report
         string GetHtmlContent_Report_Type_2_2(string madv, string tendonvi, string dcb, string tt);
         // Báo cáo kỷ luật
         string GetHtmlContent_Report_Type_2_3(string madv, string tendonvi, string dcb, string tt);
+
+        // Danh sách cán bộ thuộc ngạch cao cấp đề nghị nâng lương
+        string GetHtmlContent_Report_Type_3_1(string madv, string tendonvi, string dcb, string tt);
     }
 }
