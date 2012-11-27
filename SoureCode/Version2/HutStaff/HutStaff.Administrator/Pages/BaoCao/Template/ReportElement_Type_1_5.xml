@@ -1,0 +1,56 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td>
+    <p class='CellText' style='text-align:left;'> $tdhv </p>
+  </td>
+  <td>
+    <p class='CellText'> $tong </p>
+  </td>
+  <td>
+    <p class='CellText'> $ctl_dv </p>
+  </td>
+  <td>
+    <p class='CellText'> $ctl_n </p>
+  </td>
+  <td>
+    <p class='CellText'> $ctl_dt </p>
+  </td>
+  <td>
+    <p class='CellText'> $tndt_tn </p>
+  </td>
+  <td>
+    <p class='CellText'> $tndt_xhcn </p>
+  </td>
+  <td>
+    <p class='CellText'> $tndt_nk </p>
+  </td>
+  <td>
+    <p class='CellText'> $td_d30 </p>
+  </td>
+  <td>
+    <p class='CellText'> $td_t30 </p>
+  </td>
+  <td>
+    <p class='CellText'> $ncc_gvcc </p>
+  </td>
+  <td>
+    <p class='CellText'> $ncc_gvc </p>
+  </td>
+  <td>
+    <p class='CellText'> $ncc_gv </p>
+  </td>
+  <td>
+    <p class='CellText'> $ncc_cl </p>
+  </td>
+  <td>
+    <p class='CellText'> $nn_av </p>
+  </td>
+  <td>
+    <p class='CellText'> $nn_nnk </p>
+  </td>
+  <td>
+    <p class='CellText'> $ct_cc </p>
+  </td>
+  <td>
+    <p class='CellText'> $ct_tc </p>
+  </td>
+</tr>
