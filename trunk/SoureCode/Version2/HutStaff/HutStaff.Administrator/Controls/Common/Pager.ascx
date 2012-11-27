@@ -93,8 +93,8 @@
                 GenPaging();
             } else if ($(this).parent().hasClass('next')){
                 searchCurrenPage++;
-                if (searchCurrenPage > parseInt($('.paging_button.last').attr('index')))
-                    searchCurrenPage = parseInt($('.paging_button.last').attr('index'));
+                if (searchCurrenPage > parseInt($('.paging_button.last a').eq(0).attr('index')))
+                    searchCurrenPage = parseInt($('.paging_button.last a').eq(0).attr('index'));
                 loadPage(searchCurrenPage);   
                 GenPaging();
             } else {
