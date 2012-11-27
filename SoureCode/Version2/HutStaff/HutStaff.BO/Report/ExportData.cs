@@ -10,6 +10,7 @@ namespace HutStaff.BO.Report
 {
     public class ExportData : IExportData
     {
+        // ------------------------------------------------------------------
         #region Phân loại cán bộ công chức theo ngạch độ tuổi,giới tính
         public string GetHtmlContent_Report_Type_1_1(string madv, string tendonvi, string dcb, string tt)
         {
@@ -1080,7 +1081,7 @@ namespace HutStaff.BO.Report
             int length = 0;
 
             string tdnn = "";
-            
+
             foreach (DataRow row in dataTable.Rows)
             {
                 string shccStr = ";" + row["shcc"] + ";";
@@ -1272,6 +1273,215 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        // ------------------------------------------------------------------
+        #region Danh sách cán bộ đến tuổi nghỉ hưu
+        public string GetHtmlContent_Report_Type_2_1(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_2_1.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Danh sach can bo den tuoi nghi huu");
+            strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "DANH SÁCH CÁN BỘ ĐẾN TUỔI NGHỈ HƯU");
+            strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_2_1.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_2_1(madv, dcb, tt);
+
+            int stt = 0;
+            int i = 0;
+            int pagenum = 1;
+            int currentyear = DateTime.Now.Year;
+            string shcc = "";
+            string ngach = "";
+            string chucdanh = "";
+            string hocvi = "";
+
+            int birthyear = 0;
+            int tuoi = 0;
+            string hoten = "";
+            string donvi = "";
+            string ma_ngach = "";
+            double hsl = 0;
+            string ntns = "";
+            string lht = "";
+            int gt = 0;
+            string cdhvhh = "";
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (shcc.Length == 0)
+                {
+                    DateTime dt = (DateTime)row["ntns"];
+                    birthyear = dt.Year;
+                    tuoi = currentyear - birthyear;
+                    shcc = row["shcc"].ToString();
+                    hoten = row["hoten"].ToString();
+                    donvi = row["dv"].ToString();
+                    ma_ngach = row["ma_ngach"].ToString();
+                    hsl = double.Parse(row["hsl"].ToString());
+                    ntns = dt.ToString("dd/MM/yyyy");
+                    lht = ((DateTime)row["lht"]).ToString("dd/MM/yyyy");
+                    gt = ConvertStringToInt(row["gt"].ToString());
+                }
+
+                if (row["shcc"].ToString().CompareTo(shcc) == 0)
+                {
+                    string ngachStr = row["ngach"].ToString();
+                    if (!ngach.Contains(ngachStr) && ngachStr.Length > 0)
+                        if (ngach.Length > 0)
+                            ngach += " - " + ngachStr;
+                        else
+                            ngach = ngachStr;
+
+                    string dhdpStr = row["dhdp"].ToString();
+                    if (!chucdanh.Contains(dhdpStr) && dhdpStr.Length > 0)
+                        chucdanh += " - " + dhdpStr;
+
+                    string vbdtStr = row["vbdt"].ToString();
+                    if (!hocvi.Contains(vbdtStr) && vbdtStr.Length > 0)
+                        hocvi += " - " + vbdtStr;
+                }
+                else
+                {
+                    cdhvhh = ngach;
+                    if (chucdanh.Length > 0)
+                        cdhvhh += chucdanh;
+                    if (hocvi.Length > 0)
+                        cdhvhh += hocvi;
+                    if (cdhvhh.Trim().Length == 0)
+                        cdhvhh = "&nbsp;";
+
+                    if (gt == 1 && tuoi >= 60)
+                    {
+                        i++;
+                        stt++;
+                        // In dong cho Nam
+                        strTempElement = strElementHtmlContent;
+                        strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                        strTempElement = strTempElement.Replace("$hoten", hoten);
+                        strTempElement = strTempElement.Replace("$ntnsNam", ntns);
+                        strTempElement = strTempElement.Replace("$ntnsNu", "&nbsp;");
+                        strTempElement = strTempElement.Replace("$cdhvhh", cdhvhh);
+                        strTempElement = strTempElement.Replace("$donvi", donvi);
+                        strTempElement = strTempElement.Replace("$ma_ngach", ma_ngach);
+                        strTempElement = strTempElement.Replace("$hsl", hsl.ToString());
+                        strTempElement = strTempElement.Replace("$lht", lht);
+                        strHtmlContent += strTempElement;
+                    }
+
+                    if (gt == 0 && tuoi >= 55)
+                    {
+                        i++;
+                        stt++;
+                        // In dong cho nu
+                        strTempElement = strElementHtmlContent;
+                        strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                        strTempElement = strTempElement.Replace("$hoten", hoten);
+                        strTempElement = strTempElement.Replace("$ntnsNam", "&nbsp;");
+                        strTempElement = strTempElement.Replace("$ntnsNu", ntns);
+                        strTempElement = strTempElement.Replace("$cdhvhh", cdhvhh);
+                        strTempElement = strTempElement.Replace("$donvi", donvi);
+                        strTempElement = strTempElement.Replace("$ma_ngach", ma_ngach);
+                        strTempElement = strTempElement.Replace("$hsl", hsl.ToString());
+                        strTempElement = strTempElement.Replace("$lht", lht);
+                        strHtmlContent += strTempElement;
+                    }
+
+                    //Lay gia tri moi 
+                    DateTime dt2 = (DateTime)row["ntns"];
+                    birthyear = dt2.Year;
+                    tuoi = currentyear - birthyear;
+                    shcc = row["shcc"].ToString();
+                    hoten = row["hoten"].ToString();
+                    donvi = row["dv"].ToString();
+                    ma_ngach = row["ma_ngach"].ToString();
+                    hsl = ConvertStringToDouble(row["hsl"].ToString());
+                    ntns = dt2.ToString("dd/MM/yyyy");
+                    lht = ConvertFullDateTimeStringToShortDateTimeString(row["lht"].ToString());
+                    gt = ConvertStringToInt(row["gt"].ToString());
+                    cdhvhh = "";
+                    if (row["ngach"].ToString().Length > 0)
+                        ngach = row["ngach"].ToString();
+                    else
+                        ngach = "";
+                    if (row["dhdp"].ToString().Length > 0)
+                        chucdanh = " - " + row["dhdp"].ToString();
+                    else
+                        chucdanh = "";
+                    if (row["vbdt"].ToString().Length > 0)
+                        hocvi = " - " + row["vbdt"].ToString();
+                    else
+                        hocvi = "";
+
+                    if (i == 15)
+                    {
+                        i = 0;
+                        pagenum++;
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_2_1.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                    }
+                }
+            }
+
+            cdhvhh = ngach;
+            if (chucdanh.Length > 0)
+                cdhvhh += chucdanh;
+            if (hocvi.Length > 0)
+                cdhvhh += hocvi;
+            if (cdhvhh.Trim().Length == 0)
+                cdhvhh = "&nbsp;";
+
+            if (gt == 1 && tuoi >= 60)
+            {
+                i++;
+                stt++;
+                // In dong cho Nam
+                strTempElement = strElementHtmlContent;
+                strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                strTempElement = strTempElement.Replace("$hoten", hoten);
+                strTempElement = strTempElement.Replace("$ntnsNam", ntns);
+                strTempElement = strTempElement.Replace("$ntnsNu", "&nbsp;");
+                strTempElement = strTempElement.Replace("$cdhvhh", cdhvhh);
+                strTempElement = strTempElement.Replace("$donvi", donvi);
+                strTempElement = strTempElement.Replace("$ma_ngach", ma_ngach);
+                strTempElement = strTempElement.Replace("$hsl", hsl.ToString());
+                strTempElement = strTempElement.Replace("$lht", lht);
+                strHtmlContent += strTempElement;
+            }
+
+            if (gt == 0 && tuoi >= 55)
+            {
+                i++;
+                stt++;
+                // In dong cho nu
+                strTempElement = strElementHtmlContent;
+                strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                strTempElement = strTempElement.Replace("$hoten", hoten);
+                strTempElement = strTempElement.Replace("$ntnsNam", "&nbsp;");
+                strTempElement = strTempElement.Replace("$ntnsNu", ntns);
+                strTempElement = strTempElement.Replace("$cdhvhh", cdhvhh);
+                strTempElement = strTempElement.Replace("$donvi", donvi);
+                strTempElement = strTempElement.Replace("$ma_ngach", ma_ngach);
+                strTempElement = strTempElement.Replace("$hsl", hsl.ToString());
+                strTempElement = strTempElement.Replace("$lht", lht);
+                strHtmlContent += strTempElement;
+            }
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
+
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
         {
@@ -1281,6 +1491,29 @@ namespace HutStaff.BO.Report
                 return i;
             else
                 return 0;
+        }
+
+        private double ConvertStringToDouble(string str)
+        {
+            double d;
+            bool isValid = double.TryParse(str, out d);
+            if (isValid)
+                return d;
+            else
+                return 0;
+        }
+
+        private string ConvertFullDateTimeStringToShortDateTimeString(string str)
+        {
+            try
+            {
+                DateTime dt = DateTime.Parse(str);
+                return dt.ToString("dd/MM/yyyy");
+            }
+            catch (System.Exception ex)
+            {
+                return "Khong xac dinh";
+            }
         }
         #endregion
 
