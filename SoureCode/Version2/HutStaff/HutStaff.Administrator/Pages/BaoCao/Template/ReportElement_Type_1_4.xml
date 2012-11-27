@@ -1,0 +1,38 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td width='31'>
+    <p class='CellText'>$stt</p>
+  </td>
+  <td width='168'>
+    <p class='CellText'>$hoten</p>
+  </td>
+  <td width='72'>
+    <p class='CellText'>$ntns</p>
+  </td>
+  <td width='42'>
+    <p class='CellText'>$gt</p>
+  </td>
+  <td width='42'>
+    <p class='CellText'>$dt</p>
+  </td>
+  <td width='156'>
+    <p class='CellText'>$cv</p>
+  </td>
+  <td width='156'>
+    <p class='CellText'>$cu</p>
+  </td>
+  <td width='84'>
+    <p class='CellText'>$tdcm</p>
+  </td>
+  <td width='96'>
+    <p class='CellText'>$hh</p>
+  </td>
+  <td width='60'>
+    <p class='CellText'>$tdll</p>
+  </td>
+  <td width='72'>
+    <p class='CellText'>$tdnn</p>
+  </td>
+  <td width='72'>
+    <p class='CellText'>$nbncvkn</p>
+  </td>  
+</tr>
