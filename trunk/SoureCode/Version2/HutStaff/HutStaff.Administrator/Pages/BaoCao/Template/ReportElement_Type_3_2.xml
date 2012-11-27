@@ -1,0 +1,32 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td>
+    <p class='CellText' align='center'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText'>$hoten</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'> $ntns </p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$gt</p>
+  </td>
+  <td>
+    <p class='CellText'>$dv</p>
+  </td>
+  <td>
+    <p class='CellText'>$ngach</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$ma_ngach</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$blcu</p>
+  </td>
+  <td>
+    <p class='CellText' align='center'> $lht </p>
+  </td>
+  <td>
+    <p class='CellText' align='center'>$blmoi</p>
+  </td>
+</tr>
