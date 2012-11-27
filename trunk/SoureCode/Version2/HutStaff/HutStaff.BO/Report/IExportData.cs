@@ -15,5 +15,7 @@ namespace HutStaff.BO.Report
         string GetHtmlContent_Report_Type_1_3(string madv, string tendonvi, string dcb, string tt);
         // Danh sách cán bộ hưởng lương chức vụ
         string GetHtmlContent_Report_Type_1_4(string madv, string tendonvi, string dcb, string tt);
+        // Thống kê đội ngũ cán bộ khoa học nghiệp vụ
+        string GetHtmlContent_Report_Type_1_5(string madv, string tendonvi, string dcb, string tt);
     }
 }

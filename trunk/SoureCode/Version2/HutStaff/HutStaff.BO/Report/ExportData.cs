@@ -971,32 +971,35 @@ namespace HutStaff.BO.Report
                     flag = 1;
                 }
                 string ma_hhStr = ";" + row["ma_hh"].ToString() + ";";
-                if( !hh1.Contains(ma_hhStr)) {
+                if (!hh1.Contains(ma_hhStr))
+                {
                     hh1 += ";" + row["ma_hh"] + ";";
                     if (hh.Length == 0)
                         hh = row["hh"].ToString();
                     else
                         hh += ", " + row["hh"].ToString();
-                    flag=1;
+                    flag = 1;
                 }
-                string ma_tdnnStr = ";" + row["ma_td"].ToString() + ";";
-                if(!tdnn1.Contains(ma_tdnnStr)) {
+                string ma_nnStr = ";" + row["ma_td"].ToString() + ";";
+                if (!tdnn1.Contains(ma_nnStr))
+                {
                     tdnn1 += ";" + row["ma_td"].ToString() + ";";
-                    if (tdnn=="")
+                    if (tdnn == "")
                         tdnn = row["tdnn"].ToString();
                     else
                         tdnn += ", " + row["tdnn"];
-                    flag=1;
+                    flag = 1;
                 }
-                string nbncvknStr = ";" +row["nbncvkn"] + ";";
-                if( !nbncvkn1.Contains(nbncvknStr) && row["nbncvkn"].ToString().Length>0) {
-                    nbncvkn1 += ";" +row["nbncvkn"] + ";";
+                string nbncvknStr = ";" + row["nbncvkn"] + ";";
+                if (!nbncvkn1.Contains(nbncvknStr) && row["nbncvkn"].ToString().Length > 0)
+                {
+                    nbncvkn1 += ";" + row["nbncvkn"] + ";";
                     DateTime nbncvknDt = (DateTime)row["nbncvkn"];
-                    if (nbncvkn=="")
+                    if (nbncvkn == "")
                         nbncvkn = nbncvknDt.ToString("dd/MM/yyyy");
                     else
                         nbncvkn += ", " + nbncvknDt.ToString("dd/MM/yyyy");
-                    flag=1;
+                    flag = 1;
                 }
                 if (flag == 1) i++;
                 shcc = row["shcc"].ToString();
@@ -1026,6 +1029,238 @@ namespace HutStaff.BO.Report
             strTempElement = strTempElement.Replace("$tdll", tdll);
             strTempElement = strTempElement.Replace("$tdnn", tdnn);
             strTempElement = strTempElement.Replace("$nbncvkn", nbncvkn);
+            strHtmlContent += strTempElement;
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
+
+        #region Thống kê đội ngũ cán bộ khoa học nghiệp vụ
+        public string GetHtmlContent_Report_Type_1_5(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_1_5.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Thong ke doi ngu can bo khoa hoc nghiep vu");
+            strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "THỐNG KÊ ĐỘI NGŨ CÁN BỘ KHOA HỌC NGHIỆP VỤ");
+            strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_1_5.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_1_5(madv, dcb, tt);
+
+            string tdhv = "";
+            string shcc = "";
+            string listofshcc = " ;";
+            int tong = 0;
+            int ctl_dv = 0;
+            int ctl_n = 0;
+            int ctl_dt = 0;
+            int tndt_tn = 0;
+            int tndt_xhcn = 0;
+            int tndt_nk = 0;
+            int td_d30 = 0;
+            int td_t30 = 0;
+            int ncc_gvcc = 0;
+            int ncc_gvc = 0;
+            int ncc_gv = 0;
+            int ncc_cl = 0;
+            int nn_av = 0;
+            int nn_nnk = 0;
+            int ct_cc = 0;
+            int ct_tc = 0;
+            int length = 0;
+
+            string tdnn = "";
+            
+            foreach (DataRow row in dataTable.Rows)
+            {
+                string shccStr = ";" + row["shcc"] + ";";
+                if (listofshcc.Contains(shccStr))
+                {
+                    if (listofshcc.IndexOf(shccStr) > length)
+                        if (tdnn != row["ma_nn"].ToString())
+                            if (row["ma_nn"].ToString().CompareTo("01") == 0)
+                                nn_av += 1;
+                            else if (ConvertStringToInt(row["ma_nn"].ToString()) > 1)
+                                nn_nnk += 1;
+                    tdnn = row["ma_nn"].ToString();
+                    continue;
+                }
+                if (tdhv.Length < 1)
+                {
+                    tdhv = row["vbdtcm"].ToString();
+                }
+                if (row["vbdtcm"].ToString().CompareTo(tdhv) == 0)
+                {
+                    /*Tiep tuc tinh toan*/
+                    tdnn = row["ma_nn"].ToString();
+                    listofshcc += row["shcc"] + ";";
+                    tdhv = row["vbdtcm"].ToString();
+                    shcc = row["shcc"].ToString();
+                    tong += 1;
+                    //print row["shcc"];
+                    if (row["nct"] != null) /*Da vao Dang*/
+                        ctl_dv += 1;
+                    if (row["gt"].ToString().CompareTo("0") == 0) /*La nu gioi*/
+                        ctl_n += 1;
+                    if (row["ma_dt"].ToString().CompareTo("01") != 0)
+                        ctl_dt += 1;
+
+                    if (row["ndtcm"].ToString().CompareTo("001") == 0)
+                        tndt_tn += 1;
+                    else
+                        tndt_nk += 1;
+
+                    DateTime dt = (DateTime)row["ntns"];
+                    int tuoiInt = DateTime.Now.Year - dt.Year;
+                    if (tuoiInt < 30)
+                        td_d30 += 1;
+                    else
+                        td_t30 += 1;
+
+                    switch (row["ma_ngach"].ToString())
+                    {
+                        case "15109": /*Giang vien cao cap*/
+                            ncc_gvcc += 1;
+                            break;
+                        case "15110": /*Giang vien chinh*/
+                            ncc_gvc += 1;
+                            break;
+                        case "15111": /*Giang vien*/
+                            ncc_gv += 1;
+                            break;
+                        default: /*Con lai*/
+                            ncc_cl += 1;
+                            break;
+                    }
+                    if (ConvertStringToInt(row["ma_nn"].ToString()) >= 1 && ConvertStringToInt(row["ma_nn"].ToString()) <= 8)
+                        nn_av += 1;
+                    else if (ConvertStringToInt(row["ma_nn"].ToString()) > 8)
+                        nn_nnk += 1;
+                    if (row["ma_tdll"].ToString().CompareTo("01") == 0)
+                        ct_cc += 1;
+                    else if (row["ma_tdll"].ToString().CompareTo("02") == 0)
+                        ct_tc += 1;
+                }
+                else
+                {
+                    length = listofshcc.Length;
+                    /*In dong, tinh cho dong moi*/
+                    strTempElement = strElementHtmlContent;
+                    strTempElement = strTempElement.Replace("$tdhv", tdhv.ToString());
+                    strTempElement = strTempElement.Replace("$tong", tong.ToString());
+                    strTempElement = strTempElement.Replace("$ctl_dv", ctl_dv.ToString());
+                    strTempElement = strTempElement.Replace("$ctl_n", ctl_n.ToString());
+                    strTempElement = strTempElement.Replace("$ctl_dt", ctl_dt.ToString());
+                    strTempElement = strTempElement.Replace("$tndt_tn", tndt_tn.ToString());
+                    strTempElement = strTempElement.Replace("$tndt_xhcn", tndt_xhcn.ToString());
+                    strTempElement = strTempElement.Replace("$tndt_nk", tndt_nk.ToString());
+                    strTempElement = strTempElement.Replace("$td_d30", td_d30.ToString());
+                    strTempElement = strTempElement.Replace("$td_t30", td_t30.ToString());
+                    strTempElement = strTempElement.Replace("$ncc_gvcc", ncc_gvcc.ToString());
+                    strTempElement = strTempElement.Replace("$ncc_gvc", ncc_gvc.ToString());
+                    strTempElement = strTempElement.Replace("$ncc_gv", ncc_gv.ToString());
+                    strTempElement = strTempElement.Replace("$ncc_cl", ncc_cl.ToString());
+                    strTempElement = strTempElement.Replace("$nn_av", nn_av.ToString());
+                    strTempElement = strTempElement.Replace("$nn_nnk", nn_nnk.ToString());
+                    strTempElement = strTempElement.Replace("$ct_cc", ct_cc.ToString());
+                    strTempElement = strTempElement.Replace("$ct_tc", ct_tc.ToString());
+                    strHtmlContent += strTempElement;
+
+                    tdhv = row["vbdtcm"].ToString();
+                    shcc = row["shcc"].ToString();
+                    tong = ctl_dv = ctl_n = ctl_dt = 0;
+                    tndt_tn = tndt_xhcn = tndt_nk = 0;
+                    td_d30 = td_t30 = 0;
+                    ncc_gvcc = ncc_gvc = ncc_gv = ncc_cl = 0;
+                    nn_av = nn_nnk = 0;
+                    ct_cc = ct_tc = 0;
+
+                    string shccStr2 = ";" + row["shcc"] + ";";
+                    if (listofshcc.Contains(shccStr2))
+                        continue;
+
+                    listofshcc += row["shcc"].ToString() + ";";
+
+                    tong = 1;
+                    tdnn = row["ma_nn"].ToString();
+                    //print row["shcc"];
+                    if (row["nct"] != null) /*Da vao Dang*/
+                        ctl_dv += 1;
+                    if (row["gt"].ToString().CompareTo("0") == 0) /*La nu gioi*/
+                        ctl_n += 1;
+                    if (row["ma_dt"].ToString().CompareTo("01") != 0)
+                        ctl_dt += 1;
+
+                    if (row["ndtcm"].ToString().CompareTo("001") == 0)
+                        tndt_tn += 1;
+                    else
+                        tndt_nk += 1;
+
+                    DateTime dt2 = (DateTime)row["ntns"];
+                    int tuoiInt2 = DateTime.Now.Year - dt2.Year;
+                    if (tuoiInt2 < 30)
+                        td_d30 += 1;
+                    else
+                        td_t30 += 1;
+
+                    switch (row["ma_ngach"].ToString())
+                    {
+                        case "15109": /*Giang vien cao cap*/
+                            ncc_gvcc += 1;
+                            break;
+                        case "15110": /*Giang vien chinh*/
+                            ncc_gvc += 1;
+                            break;
+                        case "15111": /*Giang vien*/
+                            ncc_gv += 1;
+                            break;
+                        default: /*Con lai*/
+                            ncc_cl += 1;
+                            break;
+                    }
+
+                    if (ConvertStringToInt(row["ma_nn"].ToString()) >= 1 && ConvertStringToInt(row["ma_nn"].ToString()) <= 8)
+                        nn_av += 1;
+                    else if (ConvertStringToInt(row["ma_nn"].ToString()) > 8)
+                        nn_nnk += 1;
+
+                    if (row["ma_tdll"].ToString().CompareTo("01") == 0)
+                        ct_cc += 1;
+                    else if (row["ma_tdll"].ToString().CompareTo("02") == 0)
+                        ct_tc += 1;
+                }
+            }
+
+            // In dong cuoi
+            strTempElement = strElementHtmlContent;
+            strTempElement = strTempElement.Replace("$tdhv", tdhv.ToString());
+            strTempElement = strTempElement.Replace("$tong", tong.ToString());
+            strTempElement = strTempElement.Replace("$ctl_dv", ctl_dv.ToString());
+            strTempElement = strTempElement.Replace("$ctl_n", ctl_n.ToString());
+            strTempElement = strTempElement.Replace("$ctl_dt", ctl_dt.ToString());
+            strTempElement = strTempElement.Replace("$tndt_tn", tndt_tn.ToString());
+            strTempElement = strTempElement.Replace("$tndt_xhcn", tndt_xhcn.ToString());
+            strTempElement = strTempElement.Replace("$tndt_nk", tndt_nk.ToString());
+            strTempElement = strTempElement.Replace("$td_d30", td_d30.ToString());
+            strTempElement = strTempElement.Replace("$td_t30", td_t30.ToString());
+            strTempElement = strTempElement.Replace("$ncc_gvcc", ncc_gvcc.ToString());
+            strTempElement = strTempElement.Replace("$ncc_gvc", ncc_gvc.ToString());
+            strTempElement = strTempElement.Replace("$ncc_gv", ncc_gv.ToString());
+            strTempElement = strTempElement.Replace("$ncc_cl", ncc_cl.ToString());
+            strTempElement = strTempElement.Replace("$nn_av", nn_av.ToString());
+            strTempElement = strTempElement.Replace("$nn_nnk", nn_nnk.ToString());
+            strTempElement = strTempElement.Replace("$ct_cc", ct_cc.ToString());
+            strTempElement = strTempElement.Replace("$ct_tc", ct_tc.ToString());
             strHtmlContent += strTempElement;
 
             string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
