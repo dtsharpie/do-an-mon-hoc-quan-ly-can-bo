@@ -1482,6 +1482,241 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        #region Báo cáo ngạch, bậc công chức, viên chức
+        public string GetHtmlContent_Report_Type_2_2(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_2_2.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Bao cao nganh bac cong chuc vien chuc");
+            strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "BÁO CÁO NGẠCH, BẬC CÔNG CHỨC, VIÊN CHỨC");
+            strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_2_2.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_2_2(madv, dcb, tt);
+
+            int stt = 0;
+            int i = 1;
+            int pagenum = 1;
+            string ngach = "";
+            int tongso = 0;
+            int b1 = 0;
+            int b2 = 0;
+            int b3 = 0;
+            int b4 = 0;
+            int b5 = 0;
+            int b6 = 0;
+            int b7 = 0;
+            int b8 = 0;
+            int b9 = 0;
+            int b10 = 0;
+            int b11 = 0;
+            int b12 = 0;
+            int b13 = 0;
+            int b14 = 0;
+            int b15 = 0;
+            int b16 = 0;
+
+            string ma_ngach = "";
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (stt == 0)
+                {
+                    stt = 1;
+                    ma_ngach = row["ma_ngach"].ToString();
+                    ngach = row["ngach"].ToString();
+                    tongso = 0;
+                }
+                //Xu li sang trang
+                if (i == 15)
+                {
+                    i = 0;
+                    pagenum++;
+                    path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                    strHtmlContent += File.ReadAllText(path);
+                    path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_2_2.xml");
+                    strHtmlContent += File.ReadAllText(path);
+                }
+
+                if (row["ma_ngach"].ToString().CompareTo(ma_ngach) == 0)
+                {
+                    tongso++;
+                    switch (ConvertStringToInt(row["bl_dbl"].ToString()))
+                    {
+                        case 1:
+                            b1 += 1;
+                            break;
+                        case 2:
+                            b2 += 1;
+                            break;
+                        case 3:
+                            b3 += 1;
+                            break;
+                        case 4:
+                            b4 += 1;
+                            break;
+                        case 5:
+                            b5 += 1;
+                            break;
+                        case 6:
+                            b6 += 1;
+                            break;
+                        case 7:
+                            b7 += 1;
+                            break;
+                        case 8:
+                            b8 += 1;
+                            break;
+                        case 9:
+                            b9 += 1;
+                            break;
+                        case 10:
+                            b10 += 1;
+                            break;
+                        case 11:
+                            b11 += 1;
+                            break;
+                        case 12:
+                            b12 += 1;
+                            break;
+                        case 13:
+                            b13 += 1;
+                            break;
+                        case 14:
+                            b14 += 1;
+                            break;
+                        case 15:
+                            b15 += 1;
+                            break;
+                        case 16:
+                            b16 += 1;
+                            break;
+                    }
+                }
+                else
+                {
+                    tongso = b1 + b2 + b3 + b4 + b5 + b6 + b7 + b8 + b9 + b10 + b11 + b12 + b13 + b14 + b15 + b16;
+                    // In dong
+                    strTempElement = strElementHtmlContent;
+                    strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                    strTempElement = strTempElement.Replace("$ngach", ngach);
+                    strTempElement = strTempElement.Replace("$tongso", tongso.ToString());
+                    strTempElement = strTempElement.Replace("$b1", b1.ToString());
+                    strTempElement = strTempElement.Replace("$b2", b2.ToString());
+                    strTempElement = strTempElement.Replace("$b3", b3.ToString());
+                    strTempElement = strTempElement.Replace("$b4", b4.ToString());
+                    strTempElement = strTempElement.Replace("$b5", b5.ToString());
+                    strTempElement = strTempElement.Replace("$b6", b6.ToString());
+                    strTempElement = strTempElement.Replace("$b7", b7.ToString());
+                    strTempElement = strTempElement.Replace("$b8", b8.ToString());
+                    strTempElement = strTempElement.Replace("$b9", b9.ToString());
+                    strTempElement = strTempElement.Replace("$b10", b10.ToString());
+                    strTempElement = strTempElement.Replace("$b11", b11.ToString());
+                    strTempElement = strTempElement.Replace("$b12", b12.ToString());
+                    strTempElement = strTempElement.Replace("$b13", b13.ToString());
+                    strTempElement = strTempElement.Replace("$b14", b14.ToString());
+                    strTempElement = strTempElement.Replace("$b15", b15.ToString());
+                    strTempElement = strTempElement.Replace("$b16", b16.ToString());
+                    strHtmlContent += strTempElement;
+
+                    tongso = 1;
+                    b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = b10 = b11 = b12 = b13 = b14 = b15 = b16 = 0;
+                    stt++;
+                    i++;
+                    ma_ngach = row["ma_ngach"].ToString();
+                    ngach = row["ngach"].ToString();
+
+                    switch (ConvertStringToInt(row["bl_dbl"].ToString()))
+                    {
+                        case 1:
+                            b1 += 1;
+                            break;
+                        case 2:
+                            b2 += 1;
+                            break;
+                        case 3:
+                            b3 += 1;
+                            break;
+                        case 4:
+                            b4 += 1;
+                            break;
+                        case 5:
+                            b5 += 1;
+                            break;
+                        case 6:
+                            b6 += 1;
+                            break;
+                        case 7:
+                            b7 += 1;
+                            break;
+                        case 8:
+                            b8 += 1;
+                            break;
+                        case 9:
+                            b9 += 1;
+                            break;
+                        case 10:
+                            b10 += 1;
+                            break;
+                        case 11:
+                            b11 += 1;
+                            break;
+                        case 12:
+                            b12 += 1;
+                            break;
+                        case 13:
+                            b13 += 1;
+                            break;
+                        case 14:
+                            b14 += 1;
+                            break;
+                        case 15:
+                            b15 += 1;
+                            break;
+                        case 16:
+                            b16 += 1;
+                            break;
+                    }
+                }
+            }
+
+            // In dong cuoi
+            strTempElement = strElementHtmlContent;
+            strTempElement = strTempElement.Replace("$stt", stt.ToString());
+            strTempElement = strTempElement.Replace("$ngach", ngach);
+            strTempElement = strTempElement.Replace("$tongso", tongso.ToString());
+            strTempElement = strTempElement.Replace("$b1", b1.ToString());
+            strTempElement = strTempElement.Replace("$b2", b2.ToString());
+            strTempElement = strTempElement.Replace("$b3", b3.ToString());
+            strTempElement = strTempElement.Replace("$b4", b4.ToString());
+            strTempElement = strTempElement.Replace("$b5", b5.ToString());
+            strTempElement = strTempElement.Replace("$b6", b6.ToString());
+            strTempElement = strTempElement.Replace("$b7", b7.ToString());
+            strTempElement = strTempElement.Replace("$b8", b8.ToString());
+            strTempElement = strTempElement.Replace("$b9", b9.ToString());
+            strTempElement = strTempElement.Replace("$b10", b10.ToString());
+            strTempElement = strTempElement.Replace("$b11", b11.ToString());
+            strTempElement = strTempElement.Replace("$b12", b12.ToString());
+            strTempElement = strTempElement.Replace("$b13", b13.ToString());
+            strTempElement = strTempElement.Replace("$b14", b14.ToString());
+            strTempElement = strTempElement.Replace("$b15", b15.ToString());
+            strTempElement = strTempElement.Replace("$b16", b16.ToString());
+            strHtmlContent += strTempElement;
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
+
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
         {

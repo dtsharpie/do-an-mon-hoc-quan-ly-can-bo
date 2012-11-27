@@ -20,5 +20,7 @@ namespace HutStaff.BO.Report
 
         // Danh sách cán bộ đến tuổi nghỉ hưu
         string GetHtmlContent_Report_Type_2_1(string madv, string tendonvi, string dcb, string tt);
+        // Báo cáo ngạch, bậc công chức, viên chức
+        string GetHtmlContent_Report_Type_2_2(string madv, string tendonvi, string dcb, string tt);
     }
 }
