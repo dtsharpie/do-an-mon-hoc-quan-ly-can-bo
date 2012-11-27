@@ -72,5 +72,10 @@ namespace HutStaff.BO.Report
         {
             return DAL.Report.Report.GetDataTableToReport_Type_3_3(ma_dv, diencb, tt);
         }
+
+        public static DataTable GetDataTableToReport_Type_3_4(string ma_dv, string diencb, string tt)
+        {
+            return DAL.Report.Report.GetDataTableToReport_Type_3_4(ma_dv, diencb, tt);
+        }
     }
 }

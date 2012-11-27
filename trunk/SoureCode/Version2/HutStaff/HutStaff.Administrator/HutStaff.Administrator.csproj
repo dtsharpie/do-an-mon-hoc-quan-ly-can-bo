@@ -606,6 +606,7 @@
     <Content Include="Pages\BaoCao\Template\ReportElement_Type_3_1.xml" />
     <Content Include="Pages\BaoCao\Template\ReportElement_Type_3_2.xml" />
     <Content Include="Pages\BaoCao\Template\ReportElement_Type_3_3.xml" />
+    <Content Include="Pages\BaoCao\Template\ReportElement_Type_3_4.xml" />
     <Content Include="Pages\BaoCao\Template\ReportFooter.xml" />
     <Content Include="Pages\BaoCao\Template\ReportHeader.xml" />
     <Content Include="Pages\BaoCao\Template\ReportPageBreak.xml" />
@@ -620,6 +621,7 @@
     <Content Include="Pages\BaoCao\Template\ReportPageHeader_Type_3_1.xml" />
     <Content Include="Pages\BaoCao\Template\ReportPageHeader_Type_3_2.xml" />
     <Content Include="Pages\BaoCao\Template\ReportPageHeader_Type_3_3.xml" />
+    <Content Include="Pages\BaoCao\Template\ReportPageHeader_Type_3_4.xml" />
     <Content Include="Pages\BaoCao\Template\XetNangLuong.xml" />
     <Content Include="Pages\BaoCao\ThongKeCanBoCaoCap.aspx" />
     <Content Include="Pages\BaoCao\ThongKeKhenthuong.aspx" />
