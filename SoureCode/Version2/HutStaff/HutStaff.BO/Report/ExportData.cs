@@ -2009,6 +2009,79 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        #region Danh sách cán bộ không thuộc ngạch cao cấp và chính đề nghị nâng lương
+        public string GetHtmlContent_Report_Type_3_3(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_3_3.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Danh sach de nghi nang luong");
+            strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "DANH SÁCH CÁN BỘ KHÔNG THUỘC NGẠCH CAO CẤP VÀ CHÍNH ĐỀ NGHỊ NÂNG LƯƠNG");
+            strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_3_3.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_3_2(madv, dcb, tt);
+
+            int stt = 0;
+            int i = 0;
+            int pagenum = 1;
+
+            string ntns = "";
+            string lht = "";
+            int blcu = 0;
+            int blmoi = 0;
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (ConvertStringToInt(row["blcu"].ToString()) >= ConvertStringToInt(row["totkhung"].ToString()))
+                    continue;
+
+                //Xu li sang trang
+                if (i == 15)
+                {
+                    i = 0;
+                    pagenum++;
+                    path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                    strHtmlContent += File.ReadAllText(path);
+                    path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_3_2.xml");
+                    strHtmlContent += File.ReadAllText(path);
+                }
+
+                ntns = ConvertFullDateTimeStringToShortDateTimeString(row["ntns"].ToString());
+                lht = ConvertFullDateTimeStringToShortDateTimeString(row["lht"].ToString());
+                blcu = ConvertStringToInt(row["blcu"].ToString());
+                blmoi = blcu + 1;
+                stt++;
+                i++;
+
+                // In dong
+                strTempElement = strElementHtmlContent;
+                strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                strTempElement = strTempElement.Replace("$hoten", row["hoten"].ToString());
+                strTempElement = strTempElement.Replace("$ntns", ntns);
+                strTempElement = strTempElement.Replace("$gt", (ConvertStringToInt(row["gt"].ToString()) == 1) ? "Nam" : "Nữ");
+                strTempElement = strTempElement.Replace("$dv", row["dv"].ToString());
+                strTempElement = strTempElement.Replace("$ngach", row["ngach"].ToString());
+                strTempElement = strTempElement.Replace("$ma_ngach", row["ma_ngach"].ToString());
+                strTempElement = strTempElement.Replace("$blcu", blcu.ToString());
+                strTempElement = strTempElement.Replace("$lht", lht);
+                strTempElement = strTempElement.Replace("$blmoi", blmoi.ToString());
+                strHtmlContent += strTempElement;
+            }
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
+
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
         {
