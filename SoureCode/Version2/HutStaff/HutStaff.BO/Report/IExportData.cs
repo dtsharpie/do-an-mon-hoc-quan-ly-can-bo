@@ -22,5 +22,7 @@ namespace HutStaff.BO.Report
         string GetHtmlContent_Report_Type_2_1(string madv, string tendonvi, string dcb, string tt);
         // Báo cáo ngạch, bậc công chức, viên chức
         string GetHtmlContent_Report_Type_2_2(string madv, string tendonvi, string dcb, string tt);
+        // Báo cáo kỷ luật
+        string GetHtmlContent_Report_Type_2_3(string madv, string tendonvi, string dcb, string tt);
     }
 }
