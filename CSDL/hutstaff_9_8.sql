@@ -620,6 +620,3 @@ GO
 	  PRIMARY KEY (id)
 	)
 	GO
-
-	
-	
