@@ -33,5 +33,8 @@ namespace HutStaff.BO.Report
         string GetHtmlContent_Report_Type_3_3(string madv, string tendonvi, string dcb, string tt);
         // Danh sách cán bộ có hệ lương tột khung
         string GetHtmlContent_Report_Type_3_4(string madv, string tendonvi, string dcb, string tt);
+
+        // Báo cáo chất lượng cán bộ công chức chia theo lĩnh vực
+        string GetHtmlContent_Report_Type_4_1(string madv, string tendonvi, string dcb, string tt);
     }
 }

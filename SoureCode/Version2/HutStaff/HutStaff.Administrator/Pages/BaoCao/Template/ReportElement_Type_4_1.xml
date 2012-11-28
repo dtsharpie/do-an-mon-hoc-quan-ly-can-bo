@@ -1,0 +1,110 @@
+﻿<tr height="20" style='height:15.0pt'>
+  <td>
+    <p class='CellText'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left;'> $tenlinhvuc </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $tongso </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $a1</p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $a2</p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $a3 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $a4 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $a5 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $a6 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b1 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b2 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b3 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b4 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b5 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b6 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b7 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b8 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $b9 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $c1 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $c2 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $d1 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $d2 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $e1 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $e2 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $e3 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $e4 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $f1 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $f2 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $g1 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $g2 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $g3 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $g4 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $g5 </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $dangvien </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $phunu </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right;'> $dantoc </p>
+  </td>
+</tr>
