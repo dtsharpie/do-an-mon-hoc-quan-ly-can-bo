@@ -296,6 +296,13 @@ namespace HutStaff.Administrator.Pages.BaoCao
                         isNotGottenHtmlContent = false;
                     }
                     break;
+                case 22:
+                    if (isNotGottenHtmlContent)
+                    {
+                        strHtmlContent = _exporter.GetHtmlContent_Report_Type_4_2(donvi, tendonvi, dcb, tt);
+                        isNotGottenHtmlContent = false;
+                    }
+                    break;
             }
                     
         }

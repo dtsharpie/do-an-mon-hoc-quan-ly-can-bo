@@ -36,5 +36,7 @@ namespace HutStaff.BO.Report
 
         // Báo cáo chất lượng cán bộ công chức chia theo lĩnh vực
         string GetHtmlContent_Report_Type_4_1(string madv, string tendonvi, string dcb, string tt);
+        // Báo cáo chất lượng cán bộ công chức chia theo đơn vị
+        string GetHtmlContent_Report_Type_4_2(string madv, string tendonvi, string dcb, string tt);
     }
 }
