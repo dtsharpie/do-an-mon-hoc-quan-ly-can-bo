@@ -13,51 +13,74 @@
             $('#divHeader .nav a').eq(1).addClass('active');
         });
     </script>
+    <script type="text/javascript" src="../../Scripts/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input").not($(":button")).keypress(function (evt) {
+                if (evt.keyCode == 13) {
+                    iname = $(this).val();
+                    if (iname !== 'Submit') {
+                        var fields = $(this).parents('form:eq(0),body').find('button,input,textarea,select');
+                        var index = fields.index(this);
+                        if (index > -1 && (index + 1) < fields.length) {
+                            fields.eq(index + 1).focus();
+                        }
+                        return false;
+                    }
+                }
+            });
+        });
+</script>
+    <style type="text/css">
+        .style1
+        {
+            width: 74px;
+        }
+        .style2
+        {
+            width: 144px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc:SlideQuanLy runat="server" ID="SlideQuanLy" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div id="container">
-        <table>
+    <div>
+        <table class="fw">
             <tr>
                 <td>
                     Họ tên:
                 </td>
-                <td>
-                    <uc3:HintTextBox ID="htbHoVaTenDem" runat="server" HintText="Họ và tên đệm" Width="175px" />
-                    &nbsp;<uc3:HintTextBox ID="htbTen" runat="server" HintText="Tên" Width="100px" />
+                <td class="style2">
+                    <uc3:HintTextBox ID="htbHoVaTenDem" runat="server" HintText="Họ và tên đệm" Width="100px" />
+                    &nbsp;<uc3:HintTextBox ID="htbTen" runat="server" HintText="Tên" Width="50px" />
                 </td>
                 <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Ngày sinh:
                 </td>
                 <td>
                     <uc1:DatePicker ID="dpkNgaySinh" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Giới tính:
                 </td>
                 <td>
                     <uc2:DropDownChosen ID="chzGioiTinh" runat="server" PlaceHolder="Chọn giới tính"
                         CssClass="droplist_medium" />
                 </td>
-                <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td class="style1">
                     Email:
                 </td>
                 <td>
                     <asp:TextBox ID="txbEmail" runat="server" CssClass="inputextbox_short" />
                 </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Số CMTND:
                 </td>
-                <td>
+                <td class="style2">
                     <asp:TextBox ID="txbSoCmtnd" runat="server" CssClass="inputextbox_short" />
                 </td>
                 <td>
@@ -73,20 +96,18 @@
                     <uc2:DropDownChosen ID="chzNoiCapCmtnd" runat="server" PlaceHolder="Chọn địa danh"
                         DataTextField="ttp" DataValueField="ma_ttp" CssClass="droplist_medium" />
                 </td>
-                <td>
+                <td class="style1">
                     Điện thoại:
                 </td>
                 <td>
                     <asp:TextBox ID="txbDienThoai" runat="server" CssClass="inputextbox_short" />
                 </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     TĐ học vấn:
                 </td>
-                <td>
+                <td class="style2">
                     <uc2:DropDownChosen ID="chzTrinhDoHocVan" runat="server" DataTextField="tdhv" DataValueField="ma_tdhv"
                         PlaceHolder="Chọn trình độ học vấn" CssClass="droplist_large" />
                 </td>
@@ -104,7 +125,7 @@
                     <uc2:DropDownChosen ID="chzTrinhDoLyLuan" runat="server" DataTextField="tdll" DataValueField="ma_tdll"
                         PlaceHolder="Chọn trình độ lý luận chính trị" CssClass="droplist_large" />
                 </td>
-                <td>
+                <td class="style1">
                     TĐ QLNN:
                 </td>
                 <td>
@@ -112,23 +133,37 @@
                         PlaceHolder="Chọn trình độ quản lý nhà nước" CssClass="droplist_large" />
                 </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Sở trường, năng khiếu:
                 </td>
-                <td>
+                <td class="style2">
                     <asp:TextBox ID="txbSoTruong" runat="server" CssClass="inputtextbox_long" />
                 </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td class="style1">
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Ngày về cơ quan:
                 </td>
-                <td>
+                <td class="style2">
                     <uc1:DatePicker ID="dpkNgayVeCoQuan" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
@@ -144,7 +179,7 @@
                     <uc2:DropDownChosen ID="chzKhoiCanBo" runat="server" DataTextField="kcb" DataValueField="ma_kcb"
                         PlaceHolder="Chọn khối cán bộ" CssClass="droplist_large" />
                 </td>
-                <td>
+                <td class="style1">
                     Diện cán bộ:
                 </td>
                 <td>
@@ -178,9 +213,11 @@
                 <td>
                     <asp:TextBox ID="txbCongViecDamNhan" runat="server" CssClass="inputextbox_short" />
                 </td>
+                <td>
+                </td>
+                <td>
+                </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Ngày bắt đầu tính thâm niên:
@@ -194,9 +231,11 @@
                 <td>
                     <uc1:DatePicker ID="dpkMocHuongThamNien" runat="server" CssClass="datepicker" />
                 </td>
+                <td>
+                </td>
+                <td>
+                </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Ngày kết thúc hợp đồng:
@@ -217,8 +256,6 @@
                     <asp:TextBox ID="txbThangGianDoan" runat="server" CssClass="inputtextbox_short" />
                 </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Ngày tham gia cách mạng:
@@ -239,24 +276,6 @@
                     <uc1:DatePicker ID="dpkNgayChinhThuc" runat="server" CssClass="datepicker" />
                 </td>
             </tr>
-        </table>
-        <table>
-            <tr>
-                <td>
-                    Ngày nhập ngũ:
-                </td>
-                <td>
-                    <uc1:DatePicker ID="dpkNgayNhapNgu" runat="server" CssClass="datepicker" />
-                </td>
-                <td>
-                    Ngày xuất ngũ:
-                </td>
-                <td>
-                    <uc1:DatePicker ID="dpkNgayXuatNgu" runat="server" CssClass="datepicker" />
-                </td>
-            </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Quân hàm:
@@ -271,9 +290,11 @@
                     <uc2:DropDownChosen ID="chzThuongBinh" runat="server" DataTextField="tb" DataValueField="ma_tb"
                         PlaceHolder="Chọn loại thương binh" CssClass="droplist_large" />
                 </td>
+                <td>
+                </td>
+                <td>
+                </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Gia đình chính sách:
@@ -289,9 +310,11 @@
                     <uc2:DropDownChosen ID="chzThanhPhanXuatThan" runat="server" DataTextField="tpxt"
                         DataValueField="ma_tpxt" PlaceHolder="Chọn thành phần xuất thân" CssClass="droplist_large" />
                 </td>
+                <td>
+                </td>
+                <td>
+                </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Tên thường dùng:
@@ -314,8 +337,6 @@
                         PlaceHolder="Chọn địa danh" CssClass="droplist_medium" />
                 </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Chi tiết quê quán:
@@ -337,8 +358,6 @@
                         DataValueField="ma_huyen" PlaceHolder="Chọn địa danh" />
                 </td>
             </tr>
-        </table>
-        <table>
             <tr>
                 <td>
                     Chi tiết hộ khẩu thường trú:
@@ -346,9 +365,33 @@
                 <td>
                     <asp:TextBox ID="txbChiTietHoKhauThuongTru" runat="server" CssClass="inputtextbox_long" />
                 </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
             </tr>
-        </table>
-        <table>
+            <tr>
+                <td>
+                    Ngày nhập ngũ:
+                </td>
+                <td>
+                    <uc1:DatePicker ID="dpkNgayNhapNgu" runat="server" CssClass="datepicker" />
+                </td>
+                <td>
+                    Ngày xuất ngũ:
+                </td>
+                <td>
+                    <uc1:DatePicker ID="dpkNgayXuatNgu" runat="server" CssClass="datepicker" />
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
             <tr>
                 <td>
                     Số bảo hiểm:
@@ -367,6 +410,28 @@
                 </td>
                 <td>
                     <uc1:DatePicker ID="dpkNgayNhanBaoHiemChinhThuc" runat="server" CssClass="datepicker" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dân tộc:
+                </td>
+                <td>
+                    <uc2:DropDownChosen ID="chzDanToc" runat="server" DataTextField="dt" DataValueField="ma_dt"
+                        PlaceHolder="Chọn dân tộc" CssClass="droplist_medium" />
+                </td>
+                <td>
+                    Tôn giáo:
+                </td>
+                <td>
+                    <uc2:DropDownChosen ID="chzTonGiao" runat="server" DataTextField="tg" DataValueField="ma_tg"
+                        PlaceHolder="Chọn tôn giáo" CssClass="droplist_medium" />
+                </td>
+                <td>
+                    Thông tin khác
+                </td>
+                <td>
+                    <asp:TextBox ID="txbThongTinKhac" runat="server" CssClass="inputtextbox_long" />
                 </td>
             </tr>
         </table>
@@ -400,33 +465,8 @@
                 </td>
             </tr>
         </table>
-        <table>
-            <tr>
-                <td>
-                    Dân tộc:
-                </td>
-                <td>
-                    <uc2:DropDownChosen ID="chzDanToc" runat="server" DataTextField="dt" DataValueField="ma_dt"
-                        PlaceHolder="Chọn dân tộc" CssClass="droplist_medium" />
-                </td>
-                <td>
-                    Tôn giáo:
-                </td>
-                <td>
-                    <uc2:DropDownChosen ID="chzTonGiao" runat="server" DataTextField="tg" DataValueField="ma_tg"
-                        PlaceHolder="Chọn tôn giáo" CssClass="droplist_medium" />
-                </td>
-                <td>
-                    Thông tin khác
-                </td>
-                <td>
-                    <asp:TextBox ID="txbThongTinKhac" runat="server" CssClass="inputtextbox_long" />
-                </td>
-            </tr>
-        </table>
     </div>
-    <br />
-    <div id="submit">
+    <div>
         <asp:Button ID="btnSubmit" runat="Server" OnClick="OnSubmitButtonClick" Text="Nhập xong" />
         &nbsp;hoặc
         <asp:LinkButton ID="lbnReset" runat="server" Text="Làm lại" OnClick="OnResetLinkButtonClick" />
