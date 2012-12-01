@@ -58,6 +58,15 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzGioiTinh;
         
         /// <summary>
+        /// txbEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbEmail;
+        
+        /// <summary>
         /// txbSoCmtnd control.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzNoiCapCmtnd;
-        
-        /// <summary>
-        /// txbEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbEmail;
         
         /// <summary>
         /// txbDienThoai control.
