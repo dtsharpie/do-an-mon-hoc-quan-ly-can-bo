@@ -467,7 +467,7 @@
         </table>
     </div>
     <div>
-        <asp:Button ID="btnSubmit" runat="Server" OnClick="OnSubmitButtonClick" Text="Nhập xong" />
+        <asp:Button ID="btnSubmit" runat="server" Text="Nhập xong" OnClick="OnSubmitButtonClick" />
         &nbsp;hoặc
         <asp:LinkButton ID="lbnReset" runat="server" Text="Làm lại" OnClick="OnResetLinkButtonClick" />
     </div>
