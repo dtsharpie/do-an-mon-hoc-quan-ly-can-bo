@@ -81,5 +81,14 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     return Int32.Parse(dt.Rows[0]["id"].ToString());
             }
         }
+        public static int ChuyenDonVi(string ma_dvqlNguon, string ma_dvqlDich)
+        {
+            using (MainDB db = new MainDB())
+            {
+                string sqlCmd = "UPDATE soyeu SET ma_dvql = '" + ma_dvqlDich + "' WHERE ma_dvql = '" + ma_dvqlNguon + "'";
+
+                return db.Execute(sqlCmd).Rows.Count;
+            }
+        }
     }
 }
