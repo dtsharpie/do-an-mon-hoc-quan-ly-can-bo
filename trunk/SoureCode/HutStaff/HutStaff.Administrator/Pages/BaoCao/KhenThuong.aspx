@@ -25,7 +25,11 @@
         <div class="hang">
             <h4>Hình thức khen thưởng:</h4>
             <span class="ddl" >
+<<<<<<< .mine
+                <asp:DropDownList ID="ddl_HinhThucKhenThuong" runat="server" CssClass="ddl"/>
+=======
                 <asp:DropDownList ID="ddlHinhThucKhenThuong" runat="server" CssClass="ddl"/>
+>>>>>>> .r105
             </span>
         </div>
 
@@ -298,7 +302,11 @@
         <div class="hang">
         	<h4>Diện cán bộ:</h4>
              <div class="row-right">
+<<<<<<< .mine
+                 <span class="ddl"><asp:DropDownList ID="ddl_DienCanBo" runat="server" CssClass ="ddl" /></span>
+=======
                  <span class="ddl"><asp:DropDownList ID="ddlDienCanBo" runat="server" CssClass ="ddl" /></span>
+>>>>>>> .r105
         	</div>
         </div>
 
@@ -362,7 +370,14 @@
             <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
             <SortedDescendingCellStyle BackColor="#D6DFDF" />
             <SortedDescendingHeaderStyle BackColor="#002876" />
-            
+                <Columns>
+                    <asp:TemplateField HeaderText="STT">
+                        <ItemTemplate>
+                            <%# Container.DataItemIndex + 1 %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                   
+                </Columns>
 
         </asp:GridView>
 

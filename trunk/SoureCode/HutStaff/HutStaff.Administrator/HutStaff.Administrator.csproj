@@ -293,12 +293,32 @@
     <Compile Include="Master\View.Master.designer.cs">
       <DependentUpon>View.Master</DependentUpon>
     </Compile>
+<<<<<<< .mine
+    <Compile Include="Pages\BaoCao\dataBase\BaoCaokt.cs">
+      <DependentUpon>BaoCaokt.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaoCao\dataBase\BaoCaokt.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaokt.dbml</DependentUpon>
+    </Compile>
+=======
+>>>>>>> .r99
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BaoCao\BaoCaoThongKe.aspx.designer.cs">
       <DependentUpon>BaoCaoThongKe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaoCao\dataBase\Class1.cs" />
+    <Compile Include="Pages\BaoCao\dataBase\viewKhenthuongdb.cs">
+      <DependentUpon>viewKhenthuongdb.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaoCao\dataBase\viewKhenthuongdb.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>viewKhenthuongdb.dbml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaoCao\InBaoCao.aspx.cs">
       <DependentUpon>InBaoCao.aspx</DependentUpon>
@@ -606,7 +626,35 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< .mine
+    <None Include="Pages\BaoCao\dataBase\BaoCaokt.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BaoCaokt.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Pages\BaoCao\dataBase\viewKhenthuongdb.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>viewKhenthuongdb.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+=======
+>>>>>>> .r99
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+<<<<<<< .mine
+  <ItemGroup>
+    <None Include="Pages\BaoCao\dataBase\BaoCaokt.dbml.layout">
+      <DependentUpon>BaoCaokt.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+=======
+>>>>>>> .r99
+  <ItemGroup>
+    <None Include="Pages\BaoCao\dataBase\viewKhenthuongdb.dbml.layout">
+      <DependentUpon>viewKhenthuongdb.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

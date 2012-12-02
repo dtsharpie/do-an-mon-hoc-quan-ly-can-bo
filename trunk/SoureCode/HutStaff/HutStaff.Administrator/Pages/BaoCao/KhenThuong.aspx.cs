@@ -6,13 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using HutStaff.BO.PagesBO.BaoCaoBO;
 using System.Data;
-
+using HutStaff.Administrator.Pages.BaoCao.dataBase;
 //  by Nguyen Vuong Quyen
 
 namespace HutStaff.Administrator.Pages.BaoCao
 {
+    
     public partial class KhenThuong : System.Web.UI.Page
     {
+<<<<<<< .mine
+        int htkt;
+
+=======
         private int hinhThuc;
         private int tuNam;
         private int denNam;
@@ -22,9 +27,18 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         DataTable rewardListDataTable;
         
+>>>>>>> .r132
         protected void Page_Load(object sender, EventArgs e)
         {
+<<<<<<< .mine
+            if (IsPostBack)
+            {
+                htkt = int.Parse(cmb_HinhThucKhenThuong.SelectedItem.Value);
+            }
+            //cmb_HinhThucKhenThuong
+=======
             //ddlHinhThucKhenThuong: dropdownList Hinh thuc khen thuong
+>>>>>>> .r132
             DataTable table_dm_kt = BaoCaoBO.ViewAlldm_kt();
             ddlHinhThucKhenThuong.DataSource = table_dm_kt;
             ddlHinhThucKhenThuong.DataValueField = table_dm_kt.Columns[0].ColumnName;
@@ -77,12 +91,34 @@ namespace HutStaff.Administrator.Pages.BaoCao
             btnExport.Visible = true;
         }
 
+<<<<<<< .mine
+<<<<<<< .mine
+            //int count = (from tt in dbKt.qtkt_tbls
+            //             select tt).Count();
+            //Response.Write("<h1>" +count+"</h1>");
+            //lbllblResultSearch.Text ="<u>"+ count.ToString() +" ket qua tim thay </u>";
+            //gvResultSearch.DataBind();
+=======
         protected void btnExport_Click(object sender, EventArgs e)
         {
             rewardListDataTable = this.GetRewardList();
             BO.Report.Exporter.ExporttoExcel(rewardListDataTable, String.Format("KhenThuong_{0}.xls", DateTime.Now.ToString()));
         }
+>>>>>>> .r132
 
+<<<<<<< .mine
+           
+            Class1 c1 = new Class1();
+            gvResultSearch.DataSource = c1.searchKt(htkt);
+            gvResultSearch.DataBind();
+=======
+            //int count = (from tt in dbKt.qtkt_tbls
+            //             select tt).Count();
+            //Response.Write("<h1>" +count+"</h1>");
+            //lbllblResultSearch.Text ="<u>"+ count.ToString() +" ket qua tim thay </u>";
+            //gvResultSearch.DataBind();
+>>>>>>> .r99
+=======
         private DataTable GetRewardList()
         {
             // Get Input
@@ -115,6 +151,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
             tempRewardListDataTable.Columns[6].ColumnName = "Ngay khen thuong";
 
             return tempRewardListDataTable;
+>>>>>>> .r132
         }
     }
 }

@@ -26,6 +26,8 @@ D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Commo
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
+<<<<<<< .mine
+=======
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\ResolveAssemblyReference.cache
@@ -36,15 +38,25 @@ C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Com
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
 <<<<<<< .mine
+<<<<<<< .mine
+>>>>>>> .r105
+=======
+=======
+<<<<<<< .mine
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
 =======
+>>>>>>> .r204
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Common\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
+<<<<<<< .mine
+>>>>>>> .r202
+=======
 >>>>>>> .r196
+>>>>>>> .r204

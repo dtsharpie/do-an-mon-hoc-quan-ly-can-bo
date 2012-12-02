@@ -64,6 +64,8 @@ D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.DAL.
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\ResolveAssemblyReference.cache
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 D:\do an mon hoc\SVN\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+<<<<<<< .mine
+=======
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
 D:\do an mon hoc\ASP.Net\SoureCode\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
@@ -87,6 +89,11 @@ C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Adm
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 C:\Users\Ha\Desktop\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
 <<<<<<< .mine
+<<<<<<< .mine
+>>>>>>> .r105
+=======
+=======
+<<<<<<< .mine
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
@@ -99,6 +106,7 @@ D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.A
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 D:\do an mon hoc\Code\do-an-mon-hoc-quan-ly-can-bo\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
 =======
+>>>>>>> .r204
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.dll
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.Administrator.pdb
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Administrator\bin\HutStaff.BO.dll
@@ -110,4 +118,8 @@ C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\H
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.dll
 C:\Users\Eck Up\Desktop\PJ Ky 9\Phat trien PM chuyen nghiep\SoureCode\HutStaff\HutStaff.Administrator\obj\Debug\HutStaff.Administrator.pdb
+<<<<<<< .mine
+>>>>>>> .r202
+=======
 >>>>>>> .r196
+>>>>>>> .r204

@@ -65,5 +65,24 @@ namespace HutStaff.DAL.PagesDAL.BaoCaoDAL
             }
         }
 
+        public static DataTable View_DonVi_Cap4(String MadvCha)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("View_DonVi_Cap4", new string[] { "@MadvCha" }, new object[] { MadvCha });
+            }
+        }
+
+        public static DataTable getReward(int hinhthuc, int tunam, int dennam, string donvi, int dcb, int kcb)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_search_rewards", 
+                    new string[] { "@hinhthuc", "@tuNam", "@denNam", "@donvi", "@dcb", "@kcb" }, 
+                    new object[] { hinhthuc, tunam, dennam, donvi, dcb, kcb });
+            }
+        }
+
+
     }
 }
