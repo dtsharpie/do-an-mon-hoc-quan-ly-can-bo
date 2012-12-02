@@ -29,5 +29,9 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             return DAL.PagesDAL.QuanLy.NguoiDung.GetUserID(user);
         }
+        public static int ChuyenDonVi(string ma_dvqlNguon, string ma_dvqlDich)
+        {
+            return DAL.PagesDAL.QuanLy.NguoiDung.ChuyenDonVi(ma_dvqlNguon, ma_dvqlDich);
+        }
     }
 }
