@@ -43,14 +43,15 @@ namespace HutStaff.BO.PagesBO.BaoCaoBO
             return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.ViewAlldm_tt();
         }
 
-        //public static DataTable search_Kt(string ma_dv, int shcc, string name,
-        //    int tunam, int dennam, int diencb, int khoicb,
-        //    int pageIndex, int pageSize)
+        public static DataTable View_DonVi_Cap4(String MadvCha)
+        {
+            return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.View_DonVi_Cap4(MadvCha);
+        }
 
-        //{
-        //    return DAL.PagesDAL.BaoCaoDAL.KhenThuongDAL.searchKhenthuong(ma_dv,shcc,name,tunam,dennam,diencb,khoicb,pageIndex,pageSize);
-        //}
-
+        public static DataTable getReward(int hinhthuc, int tunam, int dennam, string donvi, int dcb, int kcb)
+        {
+            return DAL.PagesDAL.BaoCaoDAL.BaoCaoDAL.getReward(hinhthuc, tunam, dennam, donvi, dcb, kcb);
+        }
 
     }
 }

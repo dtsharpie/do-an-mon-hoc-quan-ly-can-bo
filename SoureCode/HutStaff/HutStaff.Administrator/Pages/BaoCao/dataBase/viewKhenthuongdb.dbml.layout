@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="viewKhenthuongdb">
+  <DataContextMoniker Name="/viewKhenthuongdbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f22f7379-342d-4ac0-80fe-a94aec4dbcd3" absoluteBounds="1.5, 3.625, 2, 3.0683211263020831">
+      <DataClassMoniker Name="/viewKhenthuongdbDataContext/View_Khenthuong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="784bc9dc-5b2a-4e64-815e-26df4c8a06e5" absoluteBounds="1.5150000000000001, 4.085, 1.9700000000000002, 2.508321126302083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

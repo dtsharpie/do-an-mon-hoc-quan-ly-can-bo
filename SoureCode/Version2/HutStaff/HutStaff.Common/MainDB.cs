@@ -22,6 +22,7 @@ namespace HutStaff.Common
         {
             dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
             
+           
             dbConnection.Open();
         }
 

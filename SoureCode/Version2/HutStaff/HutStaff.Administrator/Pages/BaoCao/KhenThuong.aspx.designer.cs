@@ -49,6 +49,15 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.TextBox tbTo;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// ddlUnit123 control.
         /// </summary>
         /// <remarks>
@@ -128,5 +137,14 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvResultSearch;
+        
+        /// <summary>
+        /// LabelError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelError;
     }
 }

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hutstaff_9_8" Class="BaoCaoktDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=QNV96-PC\SQL2008;Initial Catalog=hutstaff_9_8;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hutstaff_9_8ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.soyeu" Member="soyeus">
+    <Type Name="soyeu">
+      <Column Name="shcc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ma_dvql" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="[user]" Member="user" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nvcqhn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="scmnd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="nc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngay_cap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hodem" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="gt" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ttd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ntns" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ma_ns" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_qq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ctqq" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dctt" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ma_dt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_tg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_gdtdcs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_tpxt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ntgcm" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="vdpc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nvbc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cvdn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nvd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nnn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nxn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="qh" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ma_tb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_tdhv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_tdth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="kn_tht" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ma_tdllct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_tdqlnn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nlstnk" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ma_ttsk" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ma_nm" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ddlsbt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ttk" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dcb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sbh" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ndbh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tthn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cthktt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="kcb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_hktt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngay_kthd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ld_kthd" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ngaybh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thanggd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngaybhct" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="mochuongtn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="xoahs" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="soyeu_qtkt_tbl" Member="qtkt_tbls" ThisKey="shcc" OtherKey="shcc" Type="qtkt_tbl" />
+      <Association Name="dm_dv_soyeu" Member="dm_dv" ThisKey="ma_dvql" OtherKey="ma_dv" Type="dm_dv" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.qtkt_tbl" Member="qtkt_tbls">
+    <Type Name="qtkt_tbl">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="shcc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ma_htkt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nkt_qtkt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="soqd_qtkt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ttk_qtkt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="soyeu_qtkt_tbl" Member="soyeu" ThisKey="shcc" OtherKey="shcc" Type="soyeu" IsForeignKey="true" />
+      <Association Name="dm_kt_qtkt_tbl" Member="dm_kt" ThisKey="ma_htkt" OtherKey="ma_kt" Type="dm_kt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dm_dv" Member="dm_dvs">
+    <Type Name="dm_dv">
+      <Column Name="ma_dv" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dv" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="dm_dv_soyeu" Member="soyeus" ThisKey="ma_dv" OtherKey="ma_dvql" Type="soyeu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dm_kt" Member="dm_kts">
+    <Type Name="dm_kt">
+      <Column Name="ma_kt" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="kt" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="dm_kt_qtkt_tbl" Member="qtkt_tbls" ThisKey="ma_kt" OtherKey="ma_htkt" Type="qtkt_tbl" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_search_kt" Method="sp_search_kt">
+    <Parameter Name="ma_dv" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="shcc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tunam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dennam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="diencb" Type="System.Int32" DbType="Int" />
+    <Parameter Name="khoicanbo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Total" Parameter="total" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_search_ktResult">
+      <Column Name="shcc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hoten" Type="System.String" DbType="NVarChar(51)" CanBeNull="true" />
+      <Column Name="dv" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

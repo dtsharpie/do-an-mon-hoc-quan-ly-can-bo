@@ -20,9 +20,28 @@ namespace HutStaff.Common
 
         public MainDB()
         {
+<<<<<<< .mine
+<<<<<<< .mine
+<<<<<<< .mine
+            //dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
+<<<<<<< .mine
+            dbConnection = new SqlConnection("Data Source=QNV96-PC\\SQL2008;Initial Catalog=hutstaff_9_8;Integrated Security=True");
+=======
+            dbConnection = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=hutstaff_9_8;Integrated Security=True");
+=======
             dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
            // dbConnection = new SqlConnection("Data Source=.;Initial Catalog=hutstaff_9_8;Integrated Security=True");
+=======
+            //dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
+            dbConnection = new SqlConnection("Data Source=.;Initial Catalog=hutstaff_9_8;Integrated Security=True");
+=======
+            dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
+           // dbConnection = new SqlConnection("Data Source=.;Initial Catalog=hutstaff_9_8;Integrated Security=True");
+>>>>>>> .r202
            
+>>>>>>> .r143
+>>>>>>> .r99
+>>>>>>> .r93
             dbConnection.Open();
         }
 
