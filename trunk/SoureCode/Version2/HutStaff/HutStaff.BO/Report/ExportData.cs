@@ -3111,6 +3111,183 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        #region Báo cáo danh sách và tiền lương cán bộ công chức
+        public string GetHtmlContent_Report_Type_4_4(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_4_4.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader_Type_2.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Bao cao danh sach tien luong can bo cong chuc");
+            //strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "BÁO CÁO DANH SÁCH TIỀN LƯƠNG CÁN BỘ, CÔNG CHỨC");
+            //strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_4_4.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_4_4(madv, dcb, tt);
+
+            int stt = 0;
+            int i = 0;
+            int pagenum = 1;
+            string shcc = "";
+            string cv = "";
+
+            string hoten = "";
+            string ns_nam = "";
+            string ns_nu = "";
+            string ma_ngach = "";
+            string hsl = "";
+            double tong_hsl = 0;
+            string tgx = "";
+            string hspccv = "";
+            double tong_hspccv = 0;
+            double tlcb = 0;
+            double mlcb = 0;
+            double tong_tlcb = 0;
+            double tpc = 0;
+            double tong_tpc = 0;
+            double tongcong = 0;
+            double tong_tongcong = 0;
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (shcc.Length == 0)
+                {
+                    shcc = row["shcc"].ToString();
+                    hoten = row["hoten"].ToString();
+                    ns_nam = (ConvertStringToInt(row["gt"].ToString()) == 1) ? ((DateTime)row["ntns"]).Year.ToString() : "&nbsp";
+                    ns_nu = (ConvertStringToInt(row["gt"].ToString()) == 0) ? ((DateTime)row["ntns"]).Year.ToString() : "&nbsp";
+
+                    ma_ngach = row["ma_ngach"].ToString();
+
+                    hsl = row["hsl"].ToString();
+                    tong_hsl += ConvertStringToDouble(hsl);
+
+                    tgx = ((DateTime)row["ntns"]).ToString("dd/MM/yyyy");
+                    hspccv = row["hspccv"].ToString();
+                    tong_hspccv += ConvertStringToDouble(hspccv);
+
+                    tlcb = ConvertStringToDouble(row["hsl"].ToString()) * mlcb;
+                    tong_tlcb += ConvertStringToDouble(row["hsl"].ToString()) * mlcb;
+
+                    tpc = (ConvertStringToDouble(hspccv) > 0) ? ConvertStringToDouble(row["hspccv"].ToString()) * mlcb : 0;
+                    tong_tpc += ConvertStringToDouble(row["hspccv"].ToString()) * mlcb;
+
+                    tongcong = mlcb * (ConvertStringToDouble(row["hspccv"].ToString()) + ConvertStringToDouble(row["hsl"].ToString()));
+                    tong_tongcong += mlcb * (ConvertStringToDouble(row["hspccv"].ToString()) + ConvertStringToDouble(row["hsl"].ToString()));
+                }
+
+                if (row["shcc"].ToString().CompareTo(shcc) != 0)
+                {
+                    //In ra dong shcc truoc do
+                    stt++;
+                    i++;
+                    strTempElement = strElementHtmlContent;
+                    strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                    strTempElement = strTempElement.Replace("$hoten", hoten);
+                    strTempElement = strTempElement.Replace("$ns_nam", ns_nam);
+                    strTempElement = strTempElement.Replace("$ns_nu", ns_nu);
+                    strTempElement = strTempElement.Replace("$cv", cv);
+                    strTempElement = strTempElement.Replace("$ma_ngach", ma_ngach);
+                    strTempElement = strTempElement.Replace("$hsl", hsl);
+                    strTempElement = strTempElement.Replace("$tgx", tgx);
+                    strTempElement = strTempElement.Replace("$hspccv", hspccv);
+                    strTempElement = strTempElement.Replace("$tlcb", tlcb.ToString());
+                    strTempElement = strTempElement.Replace("$tpc", tpc.ToString());
+                    strTempElement = strTempElement.Replace("$tongcong", tongcong.ToString());
+                    strHtmlContent += strTempElement;
+
+
+                    if ((i >= 17 && pagenum == 1) || (i >= 20 && pagenum > 1))
+                    {
+                        /*sang trang*/
+                        i = 1;
+                        pagenum++;
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_4_4.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                    }
+
+                    //Lay du lieu moi
+                    hoten = row["hoten"].ToString();
+                    ns_nam = (ConvertStringToInt(row["gt"].ToString()) == 1) ? ((DateTime)row["ntns"]).Year.ToString() : "&nbsp";
+                    ns_nu = (ConvertStringToInt(row["gt"].ToString()) == 0) ? ((DateTime)row["ntns"]).Year.ToString() : "&nbsp";
+
+                    ma_ngach = row["ma_ngach"].ToString();
+
+                    hsl = row["hsl"].ToString();
+                    tong_hsl += ConvertStringToDouble(hsl);
+
+                    tgx = ((DateTime)row["ntns"]).ToString("dd/MM/yyyy");
+                    hspccv = row["hspccv"].ToString();
+                    tong_hspccv += ConvertStringToDouble(hspccv);
+
+                    tlcb = ConvertStringToDouble(row["hsl"].ToString()) * mlcb;
+                    tong_tlcb += ConvertStringToDouble(row["hsl"].ToString()) * mlcb;
+
+                    tpc = (ConvertStringToDouble(hspccv) > 0) ? ConvertStringToDouble(row["hspccv"].ToString()) * mlcb : 0;
+                    tong_tpc += ConvertStringToDouble(row["hspccv"].ToString()) * mlcb;
+
+                    tongcong = mlcb * (ConvertStringToDouble(row["hspccv"].ToString()) + ConvertStringToDouble(row["hsl"].ToString()));
+                    tong_tongcong += mlcb * (ConvertStringToDouble(row["hspccv"].ToString()) + ConvertStringToDouble(row["hsl"].ToString()));
+                    shcc = row["shcc"].ToString();
+                    cv = "";
+                }
+
+                if (row["shcc"].ToString().CompareTo(shcc) == 0)
+                {
+                    if (cv.Length > 0)
+                        cv += "<br>" + row["cv"].ToString();
+                    else
+                        cv = row["cv"].ToString();
+                }
+            }
+
+            // In dong cuoi
+            stt++;
+            i++;
+            strTempElement = strElementHtmlContent;
+            strTempElement = strTempElement.Replace("$stt", stt.ToString());
+            strTempElement = strTempElement.Replace("$hoten", hoten);
+            strTempElement = strTempElement.Replace("$ns_nam", ns_nam);
+            strTempElement = strTempElement.Replace("$ns_nu", ns_nu);
+            strTempElement = strTempElement.Replace("$cv", cv);
+            strTempElement = strTempElement.Replace("$ma_ngach", ma_ngach);
+            strTempElement = strTempElement.Replace("$hsl", hsl);
+            strTempElement = strTempElement.Replace("$tgx", tgx);
+            strTempElement = strTempElement.Replace("$hspccv", hspccv);
+            strTempElement = strTempElement.Replace("$tlcb", tlcb.ToString());
+            strTempElement = strTempElement.Replace("$tpc", tpc.ToString());
+            strTempElement = strTempElement.Replace("$tongcong", tongcong.ToString());
+            strHtmlContent += strTempElement;
+
+            // In dong tong cong
+            tong_hsl = Math.Truncate(tong_hsl * 100) / 100;
+            tong_hspccv = Math.Truncate(tong_hspccv * 100) / 100;
+            tong_tlcb = Math.Truncate(tong_tlcb * 100) / 100;
+            tong_tpc = Math.Truncate(tong_tpc * 100) / 100;
+            tong_tongcong = Math.Truncate(tong_tongcong * 100) / 100;
+
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_4_4_Sum.xml");
+            strTempElement = File.ReadAllText(path);
+            strTempElement = strTempElement.Replace("$tong_hsl", tong_hsl.ToString());
+            strTempElement = strTempElement.Replace("$tong_hspccv", tong_hspccv.ToString());
+            strTempElement = strTempElement.Replace("$tong_tlcb", tong_tlcb.ToString());
+            strTempElement = strTempElement.Replace("$tong_tpc", tong_tpc.ToString());
+            strTempElement = strTempElement.Replace("$tong_tongcong", tong_tongcong.ToString());
+            strHtmlContent += strTempElement;
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter_Type_2.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
 
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
