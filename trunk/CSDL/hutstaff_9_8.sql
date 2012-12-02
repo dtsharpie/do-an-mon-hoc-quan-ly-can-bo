@@ -525,6 +525,7 @@ GO
 		ma_cv			INT REFERENCES dm_cv(ma_cv),
 		nbncvkn			DATETIME,
 		nktcvkn			DATETIME,
+		dn				BIT, -- hien nay
 		ttk_qtct		NVARCHAR(255),
 		donvi			NVARCHAR(255),
 		CONSTRAINT PK_qtcvkn_tbl PRIMARY KEY (id)
