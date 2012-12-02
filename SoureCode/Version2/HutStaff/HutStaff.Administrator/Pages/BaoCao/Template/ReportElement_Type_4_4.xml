@@ -1,0 +1,59 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td>
+    <p class='CellText'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left'> $hoten </p>
+  </td>
+  <td>
+    <p class='CellText'> $ns_nam </p>
+  </td>
+  <td>
+    <p class='CellText'> $ns_nu </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left'> $cv </p>
+  </td>
+  <td>
+    <p class='CellText'> $ma_ngach</p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $hsl </p>
+  </td>
+  <td>
+    <p class='CellText'> $tgx </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $hspccv </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tlcb </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tpc</p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tongcong </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+</tr>

@@ -1,0 +1,49 @@
+﻿<tr height="27" style='height:20.0pt'>
+  <td colspan='5'>
+    <p class='CellText'>
+      <b>T&#7893;ng c&#7897;ng</b>
+    </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tong_hsl </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tong_hspccv </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tong_tlcb </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tong_tpc</p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:right'> $tong_tongcong </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+</tr>
