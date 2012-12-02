@@ -3289,6 +3289,362 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        #region Báo cáo tổng hợp ngạch, bậc và phụ cấp công chức
+        public string GetHtmlContent_Report_Type_4_5(string madv, string tendonvi, string dcb, string tt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_4_5.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportHeader_Type_2.xml");
+            string strHtmlContent = File.ReadAllText(path);
+            strHtmlContent = strHtmlContent.Replace("$TieuDe", "Bao cao tong hop ngach bac va phu cap can bo cong chuc");
+            //strHtmlContent = strHtmlContent.Replace("$TenDonVi", tendonvi);
+            strHtmlContent = strHtmlContent.Replace("$TenBaoCao", "BÁO CÁO TỔNG HỢP NGẠCH, BẬC VÀ PHỤ CẤP CÁN BỘ CÔNG CHỨC");
+            //strHtmlContent = strHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_4_5.xml");
+            strHtmlContent += File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_4_5(madv, dcb, tt);
+
+            int stt = 0;
+            string ma_ngach = "";
+            string tenngach = "";
+
+            //Khoi tao gia tri tinh toan
+            int tongso = 0;
+            int bac1, bac2, bac3, bac4, bac5, bac6, bac7, bac8, bac9, bac10, bac11, bac12, bac13, bac14, bac15, bac16;
+            bac1 = bac2 = bac3 = bac4 = bac5 = bac6 = bac7 = bac8 = bac9 = bac10 = bac11 = bac12 = bac13 = bac14 = bac15 = bac16 = 0;
+            int tong_tongso, tong_bac1, tong_bac2, tong_bac3, tong_bac4, tong_bac5, tong_bac6, tong_bac7, tong_bac8, tong_bac9, tong_bac10,
+                tong_bac11, tong_bac12, tong_bac13, tong_bac14, tong_bac15, tong_bac16, tong_pc_nh,
+                 tong_pc_cv_sn, tong_pc_kv_sn, tong_pc_kv_hs, tong_pc_pck_sn, pc_pckv_sn, tong_pc_pck_hs;
+            tong_tongso = tong_bac1 = tong_bac2 = tong_bac3 = tong_bac4 = tong_bac5 = tong_bac6 = tong_bac7 = tong_bac8
+                = tong_bac9 = tong_bac10 = tong_bac11 = tong_bac12 = tong_bac13 = tong_bac14 = tong_bac15 = tong_bac16
+                 = tong_pc_nh = tong_pc_cv_sn =
+                tong_pc_kv_sn = tong_pc_kv_hs = tong_pc_pck_sn = pc_pckv_sn = tong_pc_pck_hs = 0;
+            double tong_hsbq, mlcb, tong_tl1t, tong_pc_hspc, tong_tlpc1t, tong_pc_stpc, tong_pc_cv_hs;
+            tong_hsbq = 0;
+            mlcb = 0;
+            tong_tl1t = 0;
+            tong_pc_hspc = 0;
+            tong_tlpc1t = 0;
+            tong_pc_stpc = 0;
+            tong_pc_cv_hs = 0;
+            double hsbq = 0;
+            double tl1t = 0;
+
+            int pc_nh = 0;
+            double pc_hspc = 0; double pc_stpc = 0;
+            int pc_cv_sn = 0; double pc_cv_hs = 0;
+            int pc_kv_sn = 0; int pc_kv_hs = 0;
+            int pc_pck_sn = 0; int pc_pck_hs = 0;
+            double tlpc1t = 0;
+
+            int i = 0;
+            int pagenum = 1;
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                //Lay gia tri cho dong dau tien
+                if (stt == 0)
+                {
+                    ma_ngach = row["ma_ngach"].ToString();
+                    tenngach = row["ngach"].ToString();
+                    stt = 1;
+                }
+
+                //Neu sang ngach moi thi in dong da tinh
+                if (row["ngach"].ToString().CompareTo(tenngach) != 0)
+                {
+                    //In dong
+                    tlpc1t = tl1t + pc_stpc;
+                    hsbq /= tongso;
+                    hsbq = (int)(hsbq * 100);
+                    hsbq = hsbq / 100;
+
+                    //Tinh toan cho dong tong
+                    tong_tongso += tongso;
+                    tong_bac1 += bac1;
+                    tong_bac2 += bac2;
+                    tong_bac3 += bac3;
+                    tong_bac4 += bac4;
+                    tong_bac5 += bac5;
+                    tong_bac6 += bac6;
+                    tong_bac7 += bac7;
+                    tong_bac8 += bac8;
+                    tong_bac9 += bac9;
+                    tong_bac10 += bac10;
+                    tong_bac11 += bac11;
+                    tong_bac12 += bac12;
+                    tong_bac13 += bac13;
+                    tong_bac14 += bac14;
+                    tong_bac15 += bac15;
+                    tong_bac16 += bac16;
+                    tong_hsbq += hsbq;
+                    tong_tl1t += tl1t;
+                    tong_pc_nh += pc_nh;
+                    tong_pc_hspc += pc_hspc;
+                    tong_pc_stpc += pc_stpc;
+                    tong_pc_cv_sn += pc_cv_sn;
+                    tong_pc_cv_hs += pc_cv_hs;
+                    tong_pc_kv_sn += pc_kv_sn;
+                    tong_pc_kv_hs += pc_kv_hs;
+                    tong_pc_pck_sn += pc_pckv_sn;
+                    tong_pc_pck_hs += pc_pck_hs;
+                    tong_tlpc1t += tlpc1t;
+
+                    // In dong
+                    pc_hspc = Math.Truncate(pc_hspc * 100) / 100;
+                    pc_cv_hs = Math.Truncate(pc_cv_hs * 100) / 100;
+                    strTempElement = strElementHtmlContent;
+                    strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                    strTempElement = strTempElement.Replace("$tenngach", tenngach);
+                    strTempElement = strTempElement.Replace("$tongso", tongso.ToString());
+                    strTempElement = strTempElement.Replace("$bac1", bac1.ToString());
+                    strTempElement = strTempElement.Replace("$bac2", bac2.ToString());
+                    strTempElement = strTempElement.Replace("$bac3", bac3.ToString());
+                    strTempElement = strTempElement.Replace("$bac4", bac4.ToString());
+                    strTempElement = strTempElement.Replace("$bac5", bac5.ToString());
+                    strTempElement = strTempElement.Replace("$bac6", bac6.ToString());
+                    strTempElement = strTempElement.Replace("$bac7", bac7.ToString());
+                    strTempElement = strTempElement.Replace("$bac8", bac8.ToString());
+                    strTempElement = strTempElement.Replace("$bac9", bac9.ToString());
+                    strTempElement = strTempElement.Replace("$bac10", bac10.ToString());
+                    strTempElement = strTempElement.Replace("$bac11", bac11.ToString());
+                    strTempElement = strTempElement.Replace("$bac12", bac12.ToString());
+                    strTempElement = strTempElement.Replace("$bac13", bac13.ToString());
+                    strTempElement = strTempElement.Replace("$bac14", bac14.ToString());
+                    strTempElement = strTempElement.Replace("$bac15", bac15.ToString());
+                    strTempElement = strTempElement.Replace("$bac16", bac16.ToString());
+                    strTempElement = strTempElement.Replace("$hsbq", hsbq.ToString());
+                    strTempElement = strTempElement.Replace("$tl1t", tl1t.ToString());
+                    strTempElement = strTempElement.Replace("$pc_nh", pc_nh.ToString());
+                    strTempElement = strTempElement.Replace("$pc_hspc", pc_hspc.ToString());
+                    strTempElement = strTempElement.Replace("$pc_stpc", pc_stpc.ToString());
+                    strTempElement = strTempElement.Replace("$pc_cv_sn", pc_cv_sn.ToString());
+                    strTempElement = strTempElement.Replace("$pc_cv_hs", pc_cv_hs.ToString());
+                    strTempElement = strTempElement.Replace("$pc_kv_sn", pc_kv_sn.ToString());
+                    strTempElement = strTempElement.Replace("$pc_kv_hs", pc_kv_hs.ToString());
+                    strTempElement = strTempElement.Replace("$pc_pck_sn", pc_pck_sn.ToString());
+                    strTempElement = strTempElement.Replace("$pc_pck_hs", pc_pck_hs.ToString());
+                    strTempElement = strTempElement.Replace("$tlpc1t", tlpc1t.ToString());
+                    strHtmlContent += strTempElement;
+
+
+                    //Nhap lai gia tri kiem tra
+                    ma_ngach = row["ma_ngach"].ToString();
+                    tenngach = row["ngach"].ToString();
+                    stt++; i++;
+
+                    //Khoi tao lai gia tri tinh toan
+                    tongso = 0;
+                    bac1 = bac2 = bac3 = bac4 = bac5 = bac6 = bac7 = bac8 = bac9 = bac10 = bac11 = bac12 = bac13 = bac14 = bac15 = bac16 = 0;
+                    hsbq = 0;
+                    tl1t = 0;
+
+                    pc_nh = 0; pc_hspc = 0; pc_stpc = 0;
+                    pc_cv_sn = 0; pc_cv_hs = 0;
+                    pc_kv_sn = 0; pc_kv_hs = 0;
+                    pc_pck_sn = 0; pc_pck_hs = 0;
+                    tlpc1t = 0;
+
+                    if ((i >= 17 && pagenum == 1) || (i >= 20 && pagenum > 1))
+                    {/*sang trang*/
+                        i = 1;
+                        pagenum++;
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageBreak.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                        path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_4_5.xml");
+                        strHtmlContent += File.ReadAllText(path);
+                    }
+                }
+
+                //Tinh toan
+                tongso += 1;
+
+                switch (ConvertStringToInt(row["bl"].ToString()))
+                {
+                    case 1:
+                        bac1 += 1;
+                        break;
+                    case 2:
+                        bac2 += 1;
+                        break;
+                    case 3:
+                        bac3 += 1;
+                        break;
+                    case 4:
+                        bac4 += 1;
+                        break;
+                    case 5:
+                        bac5 += 1;
+                        break;
+                    case 6:
+                        bac6 += 1;
+                        break;
+                    case 7:
+                        bac7 += 1;
+                        break;
+                    case 8:
+                        bac8 += 1;
+                        break;
+                    case 9:
+                        bac9 += 1;
+                        break;
+                    case 10:
+                        bac10 += 1;
+                        break;
+                    case 11:
+                        bac11 += 1;
+                        break;
+                    case 12:
+                        bac12 += 1;
+                        break;
+                    case 13:
+                        bac13 += 1;
+                        break;
+                    case 14:
+                        bac14 += 1;
+                        break;
+                    case 15:
+                        bac15 += 1;
+                        break;
+                    case 16:
+                        bac16 += 1;
+                        break;
+                }
+
+                hsbq += ConvertStringToDouble(row["hsl"].ToString());
+                tl1t += ConvertStringToDouble(row["hsl"].ToString()) * mlcb;
+
+                if (ConvertStringToDouble(row["hspccv"].ToString()) > 0)
+                {
+                    pc_nh += 1;
+                    pc_hspc += ConvertStringToDouble(row["hspccv"].ToString());
+                    pc_stpc += ConvertStringToDouble(row["hspccv"].ToString()) * mlcb;
+                    pc_cv_sn += 1;
+                    pc_cv_hs += ConvertStringToDouble(row["hspccv"].ToString());
+                }
+            }
+
+            //In dong cuoi cung
+            tlpc1t = tl1t + pc_stpc;
+            hsbq /= tongso;
+            hsbq = (int)(hsbq * 100);
+            hsbq = (float)hsbq / 100;
+
+            pc_hspc = Math.Truncate(pc_hspc * 100) / 100;
+            pc_cv_hs = Math.Truncate(pc_cv_hs * 100) / 100;
+            strTempElement = strElementHtmlContent;
+            strTempElement = strTempElement.Replace("$stt", stt.ToString());
+            strTempElement = strTempElement.Replace("$tenngach", tenngach);
+            strTempElement = strTempElement.Replace("$tongso", tongso.ToString());
+            strTempElement = strTempElement.Replace("$bac1", bac1.ToString());
+            strTempElement = strTempElement.Replace("$bac2", bac2.ToString());
+            strTempElement = strTempElement.Replace("$bac3", bac3.ToString());
+            strTempElement = strTempElement.Replace("$bac4", bac4.ToString());
+            strTempElement = strTempElement.Replace("$bac5", bac5.ToString());
+            strTempElement = strTempElement.Replace("$bac6", bac6.ToString());
+            strTempElement = strTempElement.Replace("$bac7", bac7.ToString());
+            strTempElement = strTempElement.Replace("$bac8", bac8.ToString());
+            strTempElement = strTempElement.Replace("$bac9", bac9.ToString());
+            strTempElement = strTempElement.Replace("$bac10", bac10.ToString());
+            strTempElement = strTempElement.Replace("$bac11", bac11.ToString());
+            strTempElement = strTempElement.Replace("$bac12", bac12.ToString());
+            strTempElement = strTempElement.Replace("$bac13", bac13.ToString());
+            strTempElement = strTempElement.Replace("$bac14", bac14.ToString());
+            strTempElement = strTempElement.Replace("$bac15", bac15.ToString());
+            strTempElement = strTempElement.Replace("$bac16", bac16.ToString());
+            strTempElement = strTempElement.Replace("$hsbq", hsbq.ToString());
+            strTempElement = strTempElement.Replace("$tl1t", tl1t.ToString());
+            strTempElement = strTempElement.Replace("$pc_nh", pc_nh.ToString());
+            strTempElement = strTempElement.Replace("$pc_hspc", pc_hspc.ToString());
+            strTempElement = strTempElement.Replace("$pc_stpc", pc_stpc.ToString());
+            strTempElement = strTempElement.Replace("$pc_cv_sn", pc_cv_sn.ToString());
+            strTempElement = strTempElement.Replace("$pc_cv_hs", pc_cv_hs.ToString());
+            strTempElement = strTempElement.Replace("$pc_kv_sn", pc_kv_sn.ToString());
+            strTempElement = strTempElement.Replace("$pc_kv_hs", pc_kv_hs.ToString());
+            strTempElement = strTempElement.Replace("$pc_pck_sn", pc_pck_sn.ToString());
+            strTempElement = strTempElement.Replace("$pc_pck_hs", pc_pck_hs.ToString());
+            strTempElement = strTempElement.Replace("$tlpc1t", tlpc1t.ToString());
+            strHtmlContent += strTempElement;
+
+            //In dong tong
+            tong_tongso += tongso;
+            tong_bac1 += bac1;
+            tong_bac2 += bac2;
+            tong_bac3 += bac3;
+            tong_bac4 += bac4;
+            tong_bac5 += bac5;
+            tong_bac6 += bac6;
+            tong_bac7 += bac7;
+            tong_bac8 += bac8;
+            tong_bac9 += bac9;
+            tong_bac10 += bac10;
+            tong_bac11 += bac11;
+            tong_bac12 += bac12;
+            tong_bac13 += bac13;
+            tong_bac14 += bac14;
+            tong_bac15 += bac15;
+            tong_bac16 += bac16;
+            tong_hsbq += hsbq;
+            tong_tl1t += tl1t;
+            tong_pc_nh += pc_nh;
+            tong_pc_hspc += pc_hspc;
+            tong_pc_stpc += pc_stpc;
+            tong_pc_cv_sn += pc_cv_sn;
+            tong_pc_cv_hs += pc_cv_hs;
+            tong_pc_kv_sn += pc_kv_sn;
+            tong_pc_kv_hs += pc_kv_hs;
+            tong_pc_pck_sn += pc_pckv_sn;
+            tong_pc_pck_hs += pc_pck_hs;
+            tong_tlpc1t += tlpc1t;
+
+            stt++;
+            tong_pc_hspc = Math.Truncate(tong_pc_hspc * 100) / 100;
+            tong_pc_cv_hs = Math.Truncate(tong_pc_cv_hs * 100) / 100;
+            strTempElement = strElementHtmlContent;
+            strTempElement = strTempElement.Replace("$stt", stt.ToString());
+            strTempElement = strTempElement.Replace("$tenngach", "Tổng số");
+            strTempElement = strTempElement.Replace("$tongso", tong_tongso.ToString());
+            strTempElement = strTempElement.Replace("$bac1", tong_bac1.ToString());
+            strTempElement = strTempElement.Replace("$bac2", tong_bac2.ToString());
+            strTempElement = strTempElement.Replace("$bac3", tong_bac3.ToString());
+            strTempElement = strTempElement.Replace("$bac4", tong_bac4.ToString());
+            strTempElement = strTempElement.Replace("$bac5", tong_bac5.ToString());
+            strTempElement = strTempElement.Replace("$bac6", tong_bac6.ToString());
+            strTempElement = strTempElement.Replace("$bac7", tong_bac7.ToString());
+            strTempElement = strTempElement.Replace("$bac8", tong_bac8.ToString());
+            strTempElement = strTempElement.Replace("$bac9", tong_bac9.ToString());
+            strTempElement = strTempElement.Replace("$bac10", tong_bac10.ToString());
+            strTempElement = strTempElement.Replace("$bac11", tong_bac11.ToString());
+            strTempElement = strTempElement.Replace("$bac12", tong_bac12.ToString());
+            strTempElement = strTempElement.Replace("$bac13", tong_bac13.ToString());
+            strTempElement = strTempElement.Replace("$bac14", tong_bac14.ToString());
+            strTempElement = strTempElement.Replace("$bac15", tong_bac15.ToString());
+            strTempElement = strTempElement.Replace("$bac16", tong_bac16.ToString());
+            strTempElement = strTempElement.Replace("$hsbq", tong_hsbq.ToString());
+            strTempElement = strTempElement.Replace("$tl1t", tong_tl1t.ToString());
+            strTempElement = strTempElement.Replace("$pc_nh", tong_pc_nh.ToString());
+            strTempElement = strTempElement.Replace("$pc_hspc", tong_pc_hspc.ToString());
+            strTempElement = strTempElement.Replace("$pc_stpc", tong_pc_stpc.ToString());
+            strTempElement = strTempElement.Replace("$pc_cv_sn", tong_pc_cv_sn.ToString());
+            strTempElement = strTempElement.Replace("$pc_cv_hs", tong_pc_cv_hs.ToString());
+            strTempElement = strTempElement.Replace("$pc_kv_sn", tong_pc_kv_sn.ToString());
+            strTempElement = strTempElement.Replace("$pc_kv_hs", tong_pc_kv_hs.ToString());
+            strTempElement = strTempElement.Replace("$pc_pck_sn", tong_pc_pck_sn.ToString());
+            strTempElement = strTempElement.Replace("$pc_pck_hs", tong_pc_pck_hs.ToString());
+            strTempElement = strTempElement.Replace("$tlpc1t", tong_tlpc1t.ToString());
+            strHtmlContent += strTempElement;
+
+            string footerPath = HttpContext.Current.Server.MapPath(@"Template\ReportFooter_Type_2.xml");
+            string footerHtmlContent = File.ReadAllText(footerPath);
+            footerHtmlContent = footerHtmlContent.Replace("$ThoiGianXet", DateTime.Now.ToString("dd/MM/yyyy"));
+            strHtmlContent += footerHtmlContent;
+
+            return strHtmlContent;
+        }
+        #endregion
+
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
         {
