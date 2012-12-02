@@ -1,0 +1,98 @@
+﻿<tr height="24" style='height:18.0pt'>
+  <td>
+    <p class='CellText'> $stt </p>
+  </td>
+  <td>
+    <p class='CellText' style='text-align:left'> $tenngach </p>
+  </td>
+  <td>
+    <p class='CellText1'> $tongso </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac1 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac2 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac3 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac4 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac5 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac6 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac7 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac8 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac9 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac10 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac11 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac12 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac13 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac14 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac15 </p>
+  </td>
+  <td>
+    <p class='CellText1'> $bac16 </p>
+  </td>
+  <td>
+    <p class='CellText1'>$hsbq</p>
+  </td>
+  <td>
+    <p class='CellText1'>$tl1t</p>
+  </td>
+  <td>
+    <p class='CellText1'> $pc_nh </p>
+  </td>
+  <td>
+    <p class='CellText1'>$pc_hspc</p>
+  </td>
+  <td>
+    <p class='CellText1'>$pc_stpc</p>
+  </td>
+  <td>
+    <p class='CellText1'> $pc_cv_sn </p>
+  </td>
+  <td>
+    <p class='CellText1'>$pc_cv_hs</p>
+  </td>
+  <td>
+    <p class='CellText1'> $pc_kv_sn </p>
+  </td>
+  <td>
+    <p class='CellText1'> $pc_kv_hs </p>
+  </td>
+  <td>
+    <p class='CellText1'> $pc_pck_sn </p>
+  </td>
+  <td>
+    <p class='CellText1'> $pc_pck_hs </p>
+  </td>
+  <td>
+    <p class='CellText1'> $tlpc1t </p>
+  </td>
+  <td>
+    <p class='CellText'> &nbsp; </p>
+  </td>
+</tr>
