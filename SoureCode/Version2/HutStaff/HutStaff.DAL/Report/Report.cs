@@ -198,5 +198,38 @@ namespace HutStaff.DAL.Report
                     new object[] { ma_dv, diencb, tt });
             }
         }
+
+        // Lay du lieu de lam bao cao loai 4.3: Báo cáo số lượng công chức giữ các chức vụ lãnh đạo do bổ nhiệm
+        public static DataTable GetDataTableToReport_Type_4_3(string ma_dv, string diencb, string tt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_4_3]",
+                    new string[] { "@ma_dv", "@dcb", "@tt" },
+                    new object[] { ma_dv, diencb, tt });
+            }
+        }
+
+        // Lay du lieu de lam bao cao loai 4.4: Báo cáo danh sách và tiền lương cán bộ công chức
+        public static DataTable GetDataTableToReport_Type_4_4(string ma_dv, string diencb, string tt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_4_4]",
+                    new string[] { "@ma_dv", "@dcb", "@tt" },
+                    new object[] { ma_dv, diencb, tt });
+            }
+        }
+
+        // Lay du lieu de lam bao cao loai 4.5: Báo cáo tổng hợp ngạch, bậc và phụ cấp công chức
+        public static DataTable GetDataTableToReport_Type_4_5(string ma_dv, string diencb, string tt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_4_5]",
+                    new string[] { "@ma_dv", "@dcb", "@tt" },
+                    new object[] { ma_dv, diencb, tt });
+            }
+        }
     }
 }
