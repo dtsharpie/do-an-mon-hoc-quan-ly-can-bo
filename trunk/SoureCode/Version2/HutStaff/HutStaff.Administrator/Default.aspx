@@ -178,7 +178,7 @@
                 <AlternatingRowStyle BackColor="White" CssClass="row hide" />
                 <RowStyle CssClass="row hide" />
                 <Columns>
-                    <asp:BoundField HeaderText="STT" DataField="shcc">
+                    <asp:BoundField HeaderText="STT" DataField="STT">
                         <HeaderStyle Height="36px" />
                         <ItemStyle Width="20px" />
                     </asp:BoundField>

@@ -655,6 +655,7 @@
     <Content Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx" />
     <Content Include="Pages\QuanLy\Xetduyet\Tanngluong.aspx" />
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
+    <Content Include="Pages\TimKiem\ThongTinChiTiet.aspx" />
     <Content Include="Scripts\chosen\chosen-sprite.png" />
     <Content Include="Scripts\chosen\chosen.css" />
     <Content Include="Scripts\chosen\chosen.jquery.min.js" />
@@ -941,6 +942,13 @@
     <Compile Include="Pages\TaiKhoan\ChangePass.aspx.designer.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TimKiem\ThongTinChiTiet.aspx.cs">
+      <DependentUpon>ThongTinChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ThongTinChiTiet.aspx.designer.cs">
+      <DependentUpon>ThongTinChiTiet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExportExcel.ashx.cs">
       <DependentUpon>ExportExcel.ashx</DependentUpon>
@@ -1103,7 +1111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\HoSo\" />
-    <Folder Include="Pages\TimKiem\" />
     <Folder Include="Upload\" />
     <Folder Include="Xemthongtin\Pages\" />
   </ItemGroup>
@@ -1118,7 +1125,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>7636</DevelopmentServerPort>
+          <DevelopmentServerPort>1623</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

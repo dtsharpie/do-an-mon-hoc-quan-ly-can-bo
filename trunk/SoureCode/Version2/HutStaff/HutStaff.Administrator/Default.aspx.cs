@@ -25,6 +25,7 @@ namespace HutStaff.Administrator
         int pageIndex = 0;
         int pageSize = 30;
 
+
         private int _pageNumber;
 
         public int PageNumber
@@ -117,6 +118,14 @@ namespace HutStaff.Administrator
         {
 
             DataTable gridView1DataTable = GetData();
+            DataColumn orderColumn = gridView1DataTable.Columns.Add("STT");
+            orderColumn.SetOrdinal(0);
+            int order = 0;
+            foreach (DataRow row in gridView1DataTable.Rows)
+            {
+                order++;
+                row["STT"] = order.ToString();
+            }
             GridView1.DataSource = gridView1DataTable;
             GridView1.DataBind();
             countTotalNumberResult(out totalResult);
@@ -182,6 +191,14 @@ namespace HutStaff.Administrator
         private void LoadDataToGridView()
         {
             DataTable salaryIncrementListDataTable = this.GetData();
+            DataColumn orderColumn = salaryIncrementListDataTable.Columns.Add("STT");
+            orderColumn.SetOrdinal(0);
+            int order = 0;
+            foreach (DataRow row in salaryIncrementListDataTable.Rows)
+            {
+                order++;
+                row["STT"] = order.ToString();
+            }
             GridView1.DataSource = salaryIncrementListDataTable;
             GridView1.DataBind();
         }
@@ -207,12 +224,15 @@ namespace HutStaff.Administrator
            
             if(txtTuTuoi.Text != "")
             tuTuoi = Int32.Parse(txtTuTuoi.Text);
+
             
             if (txtDenTuoi.Text != "")
             denTuoi = Int32.Parse(txtDenTuoi.Text);
 
+
             if (txtNamVeTruong.Text != "")
             namVeTruong = Int32.Parse(txtNamVeTruong.Text);
+
 
             dienCB = Int32.Parse(dcb.SelectedValue);  
             khoiCB = Int32.Parse(khoicanbo.SelectedValue);
@@ -225,7 +245,7 @@ namespace HutStaff.Administrator
 
             System.Data.SqlClient.SqlParameter code = new System.Data.SqlClient.SqlParameter("@Total", SqlDbType.Int);
             code.Direction = ParameterDirection.Output;
-            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(ma_dv, tenCanBo, gioiTinh, tuTuoi == 0 ? -1 : tuTuoi, denTuoi == 0 ? -1 : denTuoi, dienCB, khoiCB, namVeTruong == 0 ? -1 : namVeTruong, 0, int.MaxValue);
+            DataTable gridView1DataTable = HutStaff.BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(ma_dv, tenCanBo, gioiTinh, tuTuoi == 0? -1 : tuTuoi, denTuoi == 0 ? -1: denTuoi, dienCB, khoiCB, namVeTruong == 0 ? -1 : namVeTruong, 0, int.MaxValue);
 
             Pager1.CurrentPage = 1;
             Pager1.TotalPage = (int)Math.Ceiling(((float)gridView1DataTable.Rows.Count / pageSize));
