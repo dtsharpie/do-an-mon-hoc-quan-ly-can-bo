@@ -10,7 +10,7 @@
             $('#divHeader .nav a').eq(0).addClass('active');
 
             $('#divSearchForm').scrollToFixed({
-                mảginTop: 40
+                marginTop: 40
                 //                unfixed: function () {
                 //                    $(this).css('left', '');
                 //                }
@@ -111,7 +111,7 @@
                 <td class="short-spacing">
                 </td>
                 <td>
-                  <asp:TextBox ID="txtNamVeTruong" runat="server" Style="width: 40px"></asp:TextBox>
+                    <asp:TextBox ID="txtNamVeTruong" runat="server" Style="width: 40px"></asp:TextBox>
                     <font size="1"><i>(Nhỏ nhất: 1956) </i></font>
                     <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtNamVeTruong"
                         ErrorMessage="Bạn phải nhập số nguyên nhỏ nhất là 1956" MinimumValue="1956" MaximumValue="2112"
@@ -182,9 +182,12 @@
                         <HeaderStyle Height="36px" />
                         <ItemStyle Width="20px" />
                     </asp:BoundField>
-                    <asp:BoundField HeaderText="Họ và tên" DataField="hoten">
-                        <ItemStyle Width="230px" />
-                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="Họ và tên">
+                        <ItemTemplate>
+                            <a href="javascript:void(0)" onclick="showUrl('/Pages/Timkiem/ThongTinChiTiet.aspx?id=<%# Eval("shcc") %>','<%# Eval("hoten") %>')">
+                                <%# Eval("hoten") %></a>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:BoundField HeaderText="Đơn vị công tác" DataField="dv">
                         <ItemStyle Width="230px" />
                     </asp:BoundField>
@@ -235,8 +238,8 @@
         </div>
     </asp:Panel>
     <asp:Panel ID="pnDeital" runat="server">
-            ID cán bộ  <asp:TextBox ID="tbID" runat="server"></asp:TextBox>
+        ID cán bộ
+        <asp:TextBox ID="tbID" runat="server"></asp:TextBox>
     </asp:Panel>
-    <asp:Button ID="btTimKiem" runat="server" Text="Thông tin chi tiết" 
-        onclick="btTimKiem_Click"/>
+    <asp:Button ID="btTimKiem" runat="server" Text="Thông tin chi tiết" OnClick="btTimKiem_Click" />
 </asp:Content>

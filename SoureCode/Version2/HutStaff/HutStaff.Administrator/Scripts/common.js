@@ -80,3 +80,15 @@ function hintTextBox_onBlur(control, hintMessage) {
 }
 
 //---------- Toan's scripts end -------------//
+
+function showUrl(url,nameUrl) {
+    params = 'width=' + screen.width;
+    params += ', height=' + screen.height;
+    params += ', top=0, left=0'
+    params += ', fullscreen=yes';
+
+    newwin = window.open(url, nameUrl, params);
+    if (window.focus) { newwin.focus() }
+    return false;
+}      
+                
