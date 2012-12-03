@@ -481,21 +481,21 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.TextBox txbThongTinKhac;
         
         /// <summary>
-        /// btnSubmit control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
         
         /// <summary>
-        /// lbnReset control.
+        /// btDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbnReset;
+        protected global::System.Web.UI.WebControls.Button btDelete;
     }
 }
