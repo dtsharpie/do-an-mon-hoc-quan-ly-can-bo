@@ -10,7 +10,7 @@
 namespace HutStaff.Administrator.Pages.TimKiem {
     
     
-    public partial class TrinhDoNgoaiNgu {
+    public partial class KyLuat {
         
         /// <summary>
         /// FaceImage control.

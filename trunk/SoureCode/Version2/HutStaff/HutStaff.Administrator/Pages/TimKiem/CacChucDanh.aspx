@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="TrinhDoNgoaiNgu.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.TrinhDoNgoaiNgu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="CacChucDanh.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.CacChucDanh" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
@@ -12,8 +12,8 @@
     </div>
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
-    <li><a href="">Trình độ ngoại ngữ</a></li>
-    <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
+    <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
+    <li><a href="">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDoanThe.aspx?id=<%= iShcc %>">Chức vụ đoàn thể</a></li>
@@ -36,17 +36,17 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="content">
     <h1 class="title">
-        Trình độ ngoại ngữ
+        Các chức danh
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
                 <td>
-                    Ngoại ngữ
+                    Chức danh
                 </td>
                 <td>
-                    Trình độ
+                    Ngày tháng năm phong
                 </td>
                 <td>
                     Thông tin khác
@@ -56,26 +56,26 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <%# Eval("tnn") %>
+                            <%# Eval("dhdp")%>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
+                            <%# Convert.ToDateTime(Eval("ntnpdh")).ToString("dd/MM/yyyy")%>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
+                            <%# Eval("ttk_qtcd")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
-                            <%# Eval("tnn") %>
+                            <%# Eval("dhdp")%>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
+                            <%# Convert.ToDateTime(Eval("ntnpdh")).ToString("dd/MM/yyyy")%>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
+                            <%# Eval("ttk_qtcd")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
@@ -85,4 +85,5 @@
         </div>
     </div>
 </div>
+
 </asp:Content>

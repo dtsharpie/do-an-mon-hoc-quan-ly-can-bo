@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="TrinhDoNgoaiNgu.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.TrinhDoNgoaiNgu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="ChucVuChinhQuyen.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.ChucVuChinhQuyen" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
@@ -12,9 +12,9 @@
     </div>
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
-    <li><a href="">Trình độ ngoại ngữ</a></li>
+    <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
-    <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
+    <li><a href="">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDoanThe.aspx?id=<%= iShcc %>">Chức vụ đoàn thể</a></li>
     <li><a href="/Pages/TimKiem/KhenThuong.aspx?id=<%= iShcc %>">Khen thưởng</a></li>
@@ -36,17 +36,20 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="content">
     <h1 class="title">
-        Trình độ ngoại ngữ
+        Chức vụ chính quyền
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
                 <td>
-                    Ngoại ngữ
+                    Thời gian
                 </td>
                 <td>
-                    Trình độ
+                    Chức vụ kiêm nhiệm
+                </td>
+                <td>
+                    Đơn vị quản lý
                 </td>
                 <td>
                     Thông tin khác
@@ -56,26 +59,32 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <%# Eval("tnn") %>
+                            <%# ((Eval("nbncvkn") != DBNull.Value) ? Convert.ToDateTime(Eval("nbncvkn")).ToString("MM/yyyy") : "") + ">" + ((Eval("nktcvkn") != DBNull.Value) ? Convert.ToDateTime(Eval("nktcvkn")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
+                            <%# Eval("cv")%>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
+                            <%# Eval("donvi")%>
+                        </td>
+                        <td>
+                            <%# Eval("ttk_qtct")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
-                            <%# Eval("tnn") %>
+                            <%# ((Eval("nbncvkn") != DBNull.Value) ? Convert.ToDateTime(Eval("nbncvkn")).ToString("MM/yyyy") : "") + ">" + ((Eval("nktcvkn") != DBNull.Value) ? Convert.ToDateTime(Eval("nktcvkn")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
+                            <%# Eval("cv")%>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
+                            <%# Eval("donvi")%>
+                        </td>
+                        <td>
+                            <%# Eval("ttk_qtct")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
@@ -85,4 +94,5 @@
         </div>
     </div>
 </div>
+
 </asp:Content>

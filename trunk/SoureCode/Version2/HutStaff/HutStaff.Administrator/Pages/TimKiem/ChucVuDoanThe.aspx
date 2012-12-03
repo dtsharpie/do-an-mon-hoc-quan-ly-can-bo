@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="TrinhDoNgoaiNgu.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.TrinhDoNgoaiNgu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="ChucVuDoanThe.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.ChucVuDoanThe" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
@@ -12,11 +12,11 @@
     </div>
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
-    <li><a href="">Trình độ ngoại ngữ</a></li>
+    <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
-    <li><a href="/Pages/TimKiem/ChucVuDoanThe.aspx?id=<%= iShcc %>">Chức vụ đoàn thể</a></li>
+    <li><a href="">Chức vụ đoàn thể</a></li>
     <li><a href="/Pages/TimKiem/KhenThuong.aspx?id=<%= iShcc %>">Khen thưởng</a></li>
     <li><a href="/Pages/TimKiem/KyLuat.aspx?id=<%= iShcc %>">Kỷ luật</a></li>
     <li><a href="/Pages/TimKiem/DienBienLuong.aspx?id=<%= iShcc %>">Diễn biến lương</a></li>
@@ -36,53 +36,45 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="content">
     <h1 class="title">
-        Trình độ ngoại ngữ
+        Chức vụ đoàn thể
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
                 <td>
-                    Ngoại ngữ
+                    Thời gian
                 </td>
                 <td>
-                    Trình độ
-                </td>
+                    Chức vụ
                 <td>
                     Thông tin khác
                 </td>
             </tr>
-            <asp:Repeater runat="server" ID="rptData">
+            <asp:Repeater runat="server" ID="grdData">
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <%# Eval("tnn") %>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
-                            <%# Eval("tnn") %>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
         </table>
-        <div class="nodata" id="divNodata" runat="server">
-        </div>
     </div>
 </div>
+
 </asp:Content>

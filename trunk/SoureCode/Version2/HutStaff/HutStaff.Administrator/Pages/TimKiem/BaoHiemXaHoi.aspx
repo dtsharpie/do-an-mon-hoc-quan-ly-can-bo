@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="TrinhDoNgoaiNgu.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.TrinhDoNgoaiNgu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="BaoHiemXaHoi.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.BaoHiemXaHoi" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
@@ -12,7 +12,7 @@
     </div>
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
-    <li><a href="">Trình độ ngoại ngữ</a></li>
+    <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
@@ -27,7 +27,7 @@
     <li><a href="/Pages/TimKiem/QuaTrinhCongTac.aspx?id=<%= iShcc %>">Quá trình công tác</a></li>
     <li><a href="/Pages/TimKiem/DanhGiaCongChuc.aspx?id=<%= iShcc %>">Đánh giá công chức</a></li>
     <br/>
-    <li><a href="/Pages/TimKiem/BaoHiemXaHoi.aspx?id=<%= iShcc %>">Thông tin BHXH</a></li>
+    <li><a href="">Thông tin BHXH</a></li>
     <li><a href="/Pages/TimKiem/DuLieuTruoc1993.aspx?id=<%= iShcc %>">Dữ Liệu Trước 4/1993</a></li>
     <li><a href="">In tờ khai BHXH</a></li>
     <li><a href="">In sổ BHXH</a></li>
@@ -36,53 +36,101 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="content">
     <h1 class="title">
-        Trình độ ngoại ngữ
+        Thông tin BHXH
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
-                    Ngoại ngữ
+                <td rowspan="2">
+                    Thời gian
                 </td>
-                <td>
-                    Trình độ
+                <td rowspan="2">
+                    Chức danh, chức vụ, ngạch lương và đơn vị công tác
                 </td>
-                <td>
-                    Thông tin khác
+                <td rowspan="2">
+                    HSL cơ bản
+                </td>
+                <td rowspan="2">
+                    Các khoản phụ cấp
+                </td>
+                <td rowspan="2">
+                    Số tháng đóng bảo hiểm
+                </td>
+                <td rowspan="2">
+                    Phụ cấp thâm niên vượt khung
+                </td>
+                <td colspan="5">
+                    Số tiền đóng BHXH 1 tháng<br />
+                    (Lương cơ bản)
                 </td>
             </tr>
-            <asp:Repeater runat="server" ID="rptData">
+            <tr class="title">
+                <td style="border-top: 2px solid #FFFFFF;">
+                    BHXH
+                </td>
+                <td style="border-top: 2px solid #FFFFFF;">
+                    BHYT
+                </td>
+                <td style="border-top: 2px solid #FFFFFF;">
+                    BHTN
+                </td>
+                <td style="border-top: 2px solid #FFFFFF;">
+                    Tổng tiền
+                </td>
+            </tr>
+            <asp:Repeater runat="server" ID="grdData">
                 <ItemTemplate>
                     <tr>
-                        <td>
-                            <%# Eval("tnn") %>
+                        <td align="center">
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
                         </td>
-                        <td>
-                            <%# Eval("ttk_tdnn")%>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
-                        <td>
-                            <%# Eval("tnn") %>
+                        <td align="center">
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
                         </td>
-                        <td>
-                            <%# Eval("ttk_tdnn")%>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
+                        </td>
+                        <td align="center">
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
         </table>
-        <div class="nodata" id="divNodata" runat="server">
-        </div>
     </div>
 </div>
+
 </asp:Content>
