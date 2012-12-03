@@ -74,7 +74,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
                     //Ngày cấp
                     txbSoCmtnd.Text = thongtinchitiet.Rows[0]["scmnd"].ToString();
-                    dpkNgayCapCmtnd.Text = thongtinchitiet.Rows[0]["ngay_cap"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngay_cap"]).ToString("dd/MM/yyyy") : "";
+                    dpkNgayCapCmtnd.Text =  !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ngay_cap"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngay_cap"]).ToString("dd/MM/yyyy") : "";
                     //Nơi cấp
                     chzNoiCapCmtnd.DataSource = tinhthanhpho;
                     chzNoiCapCmtnd.DataBind();
@@ -135,9 +135,9 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     txbSoTruong.Text = thongtinchitiet.Rows[0]["nlstnk"].ToString();
                     //Ngày về cơ quan
                    
-                    dpkNgayVeCoQuan.Text = thongtinchitiet.Rows[0]["nvcqhn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvcqhn"]).ToString("dd/MM/yyyy") : "";
+                    dpkNgayVeCoQuan.Text =  !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nvcqhn"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvcqhn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày vào biên chế
-                    dpkNgayVaoBienChe.Text = thongtinchitiet.Rows[0]["nvbc"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvbc"]).ToString("dd/MM/yyyy") : "";
+                    dpkNgayVaoBienChe.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nvbc"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvbc"]).ToString("dd/MM/yyyy") : "";
                     //Khối cán bộ
                     chzKhoiCanBo.DataSource = khoicanbo;
                     chzKhoiCanBo.DataBind();
@@ -160,7 +160,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Ngày bắt đầu thâm niên
                     //dpkNgayBatDauTinhThamNien.Date = thongtinchitiet.Rows[0]["cvdn"].ToString();
                     //Mốc hưởng thâm niên
-                    dpkMocHuongThamNien.Text = thongtinchitiet.Rows[0]["mochuongtn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["mochuongtn"]).ToString("dd/MM/yyyy") : "";
+                    dpkMocHuongThamNien.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["mochuongtn"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["mochuongtn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày kết thúc hợp đồng
                     object ngay_kthd = thongtinchitiet.Rows[0]["ngay_kthd"];
                     if (!DBNull.Value.Equals(ngay_kthd))
