@@ -45,7 +45,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
   <ul>
     <li><a href="">Thông tin chung</a></li>
-    <li><a href="TrinhDoNgoaiNgu.aspx">Trình độ ngoại ngữ</a></li>
+    <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="#xtt-cac-chuc-danh">Các chức danh</a></li>
     <li><a href="#xtt-chuc-vu-chinh-quyen">Chức vụ chính quyền</a></li>
     <li><a href="#xtt-chuc-vu-dang">Chức vụ Đảng</a></li>

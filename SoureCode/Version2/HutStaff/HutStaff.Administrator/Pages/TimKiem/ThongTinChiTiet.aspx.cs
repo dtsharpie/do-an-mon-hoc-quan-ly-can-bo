@@ -11,7 +11,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
 {
     public partial class ThongTinChiTiet : System.Web.UI.Page
     {
-        private int iShcc;
+        protected int iShcc;
         protected void Page_Load(object sender, EventArgs e)
         {
             //int iShcc = Convert.ToInt32(Request.QueryString["shcc"]);
