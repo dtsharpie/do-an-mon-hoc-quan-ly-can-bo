@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<JustCodeSettings Version="0.0.22" Timestamp="118b5c29-dc44-4919-a9ee-e59d53d9c492">
+<JustCodeSettings Version="0.0.26" Timestamp="f0947367-cdaa-4d3d-ab58-56f0559f0e9d">
   <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <IgnoredErrorsAndWarnings>
       <FilePath>
@@ -115,6 +115,293 @@
           <Column>7</Column>
           <Text>Expected &lt;/table&gt;</Text>
           <Line>74</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\XetNangLuong.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>6</Column>
+          <Text>Expected &lt;/meta&gt;</Text>
+          <Line>97</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>43</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>100</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>43</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>100</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>43</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>100</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportFooter.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/table&gt;</Text>
+          <Line>1</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/div&gt;</Text>
+          <Line>28</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/body&gt;</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/html&gt;</Text>
+          <Line>32</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportFooter_Type_2.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/table&gt;</Text>
+          <Line>1</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/div&gt;</Text>
+          <Line>26</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/body&gt;</Text>
+          <Line>28</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/html&gt;</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportHeader.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>10</Column>
+          <Text>Expected &lt;/meta&gt;</Text>
+          <Line>87</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>6</Column>
+          <Text>Expected &lt;/div&gt;</Text>
+          <Line>103</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>33</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>102</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>33</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>102</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportHeader_Type_2.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>10</Column>
+          <Text>Expected &lt;/meta&gt;</Text>
+          <Line>83</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>37</Column>
+          <Text>Expected &lt;/div&gt;</Text>
+          <Line>114</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>37</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>114</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>37</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>114</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageBreak.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>0</Column>
+          <Text>Expected &lt;/br&gt;</Text>
+          <Line>6</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/table&gt;</Text>
+          <Line>1</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_1.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>74</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_2.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>137</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_3.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>139</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_4.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>46</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_5.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>78</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_2_1.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>37</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_2_2.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>67</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_2_3.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>31</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_1.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>35</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_2.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>35</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_3.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>0</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>36</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_4.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>37</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_1.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>176</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_2.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>163</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_3.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>75</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_4.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>86</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>D:\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_5.xml</Path>
+        <ProjectFullName>D:\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>0</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>136</Line>
         </IgnoredElement>
       </FilePath>
     </IgnoredErrorsAndWarnings>

@@ -13,25 +13,19 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
         {
             using (MainDB db = new MainDB())
             {
-
-                //System.Data.SqlClient.SqlParameter code = new System.Data.SqlClient.SqlParameter("@Total", SqlDbType.Int);
-                //code.Direction = ParameterDirection.Output;
-                return db.Execute("[sp_search_soyeu]",
+                return db.Execute("[HutStaff_search_soyeu]",
                     new string[] { "@ma_dv", "@ten", "@gioitinh", "@tutuoi", "@dentuoi", "@diencb", "@khoicanbo", "@nvtruong", "@PageIndex", "@PageSize" },
                     new object[] { ma_dv, ten, gioitinh, tuTuoi, denTuoi, diencb, khoicb, nvtruong, PageIndex, PageSize });
             }
         }
 
-        public static DataTable Search_soyeu_total(string ma_dv, string ten, decimal gioitinh, int tuTuoi, int denTuoi, int diencb, int khoicb, int nvtruong)
+        public static int Search_soyeu_total(string ma_dv, string ten, decimal gioitinh, int tuTuoi, int denTuoi, int diencb, int khoicb, int nvtruong)
         {
             using (MainDB db = new MainDB())
             {
-
-                //System.Data.SqlClient.SqlParameter code = new System.Data.SqlClient.SqlParameter("@Total", SqlDbType.Int);
-                //code.Direction = ParameterDirection.Output;
-                return db.Execute("[sp_search_soyeu_total]",
+                return Convert.ToInt32(db.Execute("[HutStaff_search_soyeu_count]",
                     new string[] { "@ma_dv", "@ten", "@gioitinh", "@tutuoi", "@dentuoi", "@diencb", "@khoicanbo", "@nvtruong" },
-                    new object[] { ma_dv, ten, gioitinh, tuTuoi, denTuoi, diencb, khoicb, nvtruong });
+                    new object[] { ma_dv, ten, gioitinh, tuTuoi, denTuoi, diencb, khoicb, nvtruong }).Rows[0][0]);
             }
         }
     }
