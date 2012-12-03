@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="TrinhDoNgoaiNgu.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.TrinhDoNgoaiNgu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="QuaTrinhBoiDuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.QuaTrinhBoiDuong" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
@@ -12,7 +12,7 @@
     </div>
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
-    <li><a href="">Trình độ ngoại ngữ</a></li>
+    <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
@@ -23,7 +23,7 @@
     <li><a href="/Pages/TimKiem/QuanHeGiaDinh.aspx?id=<%= iShcc %>">Quan hệ gia đình</a></li>
     <li><a href="/Pages/TimKiem/NuocNgoaiDaDen.aspx?id=<%= iShcc %>">Nước ngoài đã đến</a></li>
     <li><a href="/Pages/TimKiem/QuaTrinhDaoTao.aspx?id=<%= iShcc %>">Quá trình đào tạo</a></li>
-    <li><a href="/Pages/TimKiem/QuaTrinhBoiDuong.aspx?id=<%= iShcc %>">Quá trình bồi dưỡng</a></li>
+    <li><a href="">Quá trình bồi dưỡng</a></li>
     <li><a href="/Pages/TimKiem/QuaTrinhCongTac.aspx?id=<%= iShcc %>">Quá trình công tác</a></li>
     <li><a href="/Pages/TimKiem/DanhGiaCongChuc.aspx?id=<%= iShcc %>">Đánh giá công chức</a></li>
     <br/>
@@ -36,46 +36,55 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="content">
     <h1 class="title">
-        Trình độ ngoại ngữ
+        Quá trình bồi dưỡng
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
                 <td>
-                    Ngoại ngữ
+                    Thời gian
                 </td>
                 <td>
-                    Trình độ
+                    Văn bằng
                 </td>
                 <td>
-                    Thông tin khác
+                    Nội dung
+                </td>
+                <td>
+                    Thông tin bổ sung
                 </td>
             </tr>
             <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <%# Eval("tnn") %>
+                            <%# (Eval("tgbd_bd") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_bd")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_bd") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_bd")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
+                            <%# Eval("vbbd")%>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
+                            <%# Eval("ndbd")%>
+                        </td>
+                        <td>
+                            <%# Eval("ttk_qtbd")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
-                            <%# Eval("tnn") %>
+                            <%# (Eval("tgbd_bd") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_bd")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_bd") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_bd")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
-                            <%# Eval("tdnn") %>
+                            <%# Eval("vbbd")%>
                         </td>
                         <td>
-                            <%# Eval("ttk_tdnn")%>
+                            <%# Eval("ndbd")%>
+                        </td>
+                        <td>
+                            <%# Eval("ttk_qtbd")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>
@@ -85,4 +94,5 @@
         </div>
     </div>
 </div>
+
 </asp:Content>

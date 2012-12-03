@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
 using System.Data;
+using System.IO;
 
 namespace HutStaff.Administrator.Pages.TimKiem
 {
-    public partial class TrinhDoNgoaiNgu : System.Web.UI.Page
+    public partial class ChucVuChinhQuyen : System.Web.UI.Page
     {
         protected int iShcc;
         protected void Page_Load(object sender, EventArgs e)
@@ -51,7 +51,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
         protected void Bind()
         {
-            DataTable tblData = BO.Thongtinchung.Thongtinchung.GetTrinhdoNgoaiNguById(iShcc);
+
+              DataTable tblData = BO.Thongtinchung.Thongtinchung.Getchucvuchinhquyen(iShcc);
             if (tblData.Rows.Count > 0)
             {
                 rptData.DataSource = tblData;
@@ -62,5 +63,5 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 divNodata.InnerText = "Không có dữ liệu";
             }
         }
+        }
     }
-}

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using HutStaff.BO.PagesBO.TimKiem;
+using System.IO;
 
 namespace HutStaff.Administrator.Pages.TimKiem
 {
@@ -30,6 +31,24 @@ namespace HutStaff.Administrator.Pages.TimKiem
             {
                 Bind();
             }
+
+            string sDirectory = HttpContext.Current.Server.MapPath("/Anhcanbo");
+            sDirectory = sDirectory.EndsWith("\\") ? sDirectory : sDirectory + "\\";
+            string sImage = "";
+            if (File.Exists(sDirectory + iShcc.ToString() + ".jpg"))
+            {
+                sImage = "/Anhcanbo/" + iShcc.ToString() + ".jpg";
+            }
+            else if (File.Exists(sDirectory + iShcc.ToString() + ".png"))
+            {
+                sImage = "/Anhcanbo/" + iShcc.ToString() + ".png";
+            }
+            else
+            {
+                sImage = "/Images/" + "no_avatar.jpg";
+            }
+
+            FaceImage.ImageUrl = sImage;
         }
 
         protected void Bind()
@@ -78,7 +97,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Nơi cấp
                     chzNoiCapCmtnd.DataSource = tinhthanhpho;
                     chzNoiCapCmtnd.DataBind();
-                    int ma_nc = int.Parse(thongtinchitiet.Rows[0]["nc"].ToString());
+                    int ma_nc = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nc"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["nc"]) : 0;
                     chzNoiCapCmtnd.SelectedIndex = chzNoiCapCmtnd.Items.IndexOf(chzNoiCapCmtnd.Items.FindByValue(ma_nc.ToString()));
                     //Email
                     txbEmail.Text = thongtinchitiet.Rows[0]["email"].ToString();
@@ -87,7 +106,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Trình độ học vấn
                     chzTrinhDoHocVan.DataSource = trinhdohocvan;
                     chzTrinhDoHocVan.DataBind();
-                    int ma_tdhv = int.Parse(thongtinchitiet.Rows[0]["ma_tdhv"].ToString());
+                    int ma_tdhv = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ma_tdhv"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["ma_tdhv"].ToString()) : 0;
                     chzTrinhDoHocVan.SelectedIndex = chzTrinhDoHocVan.Items.IndexOf(chzTrinhDoHocVan.Items.FindByValue(ma_nc.ToString()));
                     //Trình độ tin học
                     chzTrinhDoTinHoc.DataSource = trinhdotinhoc;
@@ -295,7 +314,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Tình trạng hôn nhân
                     chzTinhTrangHonNhan.DataSource = tinhtranghonnhan;
                     chzTinhTrangHonNhan.DataBind();
-                    int tthn = int.Parse(thongtinchitiet.Rows[0]["tthn"].ToString());
+                    int tthn = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["tthn"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["tthn"]) : 0;
                     chzTinhTrangHonNhan.SelectedIndex = chzTinhTrangHonNhan.Items.IndexOf(chzTinhTrangHonNhan.Items.FindByValue(tthn.ToString()));
                     //Lịch sử bản thân
                     txbLichSuBanThan.Text = thongtinchitiet.Rows[0]["ddlsbt"].ToString();
@@ -315,6 +334,18 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     txbThongTinKhac.Text = thongtinchitiet.Rows[0]["ttk"].ToString();
                 //}
                 //catch (Exception e) { }
+
+
+
+
+
+
+                //thông tin bên cạnh cái ảnh
+                   // hoten_canbo.Text = String.Format("H/t: {0} {1}", htbHoVaTenDem.Text, htbTen.Text);
+                   //// sohieu_canbo.Text = string.Format("S/h: {0}",);
+                   // gioitinh_canbo.Text = String.Format("G/t: {0}",chzGioiTinh.Text);
+                   // ngaysinh_canbo.Text = String.Format("N/s: {0}", dpkNgaySinh.Text);
+
             }
         }
 

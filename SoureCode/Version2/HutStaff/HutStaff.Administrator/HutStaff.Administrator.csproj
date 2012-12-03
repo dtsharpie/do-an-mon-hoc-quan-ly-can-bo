@@ -655,6 +655,21 @@
     <Content Include="Pages\QuanLy\Xetduyet\Khenthuong.aspx" />
     <Content Include="Pages\QuanLy\Xetduyet\Tanngluong.aspx" />
     <Content Include="Pages\TaiKhoan\ChangePass.aspx" />
+    <Content Include="Pages\TimKiem\BaoHiemXaHoi.aspx" />
+    <Content Include="Pages\TimKiem\CacChucDanh.aspx" />
+    <Content Include="Pages\TimKiem\ChucVuChinhQuyen.aspx" />
+    <Content Include="Pages\TimKiem\ChucVuDang.aspx" />
+    <Content Include="Pages\TimKiem\ChucVuDoanThe.aspx" />
+    <Content Include="Pages\TimKiem\DanhGiaCongChuc.aspx" />
+    <Content Include="Pages\TimKiem\DienBienLuong.aspx" />
+    <Content Include="Pages\TimKiem\DuLieuTruoc1993.aspx" />
+    <Content Include="Pages\TimKiem\KhenThuong.aspx" />
+    <Content Include="Pages\TimKiem\KyLuat.aspx" />
+    <Content Include="Pages\TimKiem\NuocNgoaiDaDen.aspx" />
+    <Content Include="Pages\TimKiem\QuanHeGiaDinh.aspx" />
+    <Content Include="Pages\TimKiem\QuaTrinhBoiDuong.aspx" />
+    <Content Include="Pages\TimKiem\QuaTrinhCongTac.aspx" />
+    <Content Include="Pages\TimKiem\QuaTrinhDaoTao.aspx" />
     <Content Include="Pages\TimKiem\ThongTinChiTiet.aspx" />
     <Content Include="Pages\TimKiem\TrinhDoNgoaiNgu.aspx" />
     <Content Include="Scripts\chosen\chosen-sprite.png" />
@@ -943,6 +958,111 @@
     <Compile Include="Pages\TaiKhoan\ChangePass.aspx.designer.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TimKiem\BaoHiemXaHoi.aspx.cs">
+      <DependentUpon>BaoHiemXaHoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\BaoHiemXaHoi.aspx.designer.cs">
+      <DependentUpon>BaoHiemXaHoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\CacChucDanh.aspx.cs">
+      <DependentUpon>CacChucDanh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\CacChucDanh.aspx.designer.cs">
+      <DependentUpon>CacChucDanh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ChucVuChinhQuyen.aspx.cs">
+      <DependentUpon>ChucVuChinhQuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ChucVuChinhQuyen.aspx.designer.cs">
+      <DependentUpon>ChucVuChinhQuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ChucVuDang.aspx.cs">
+      <DependentUpon>ChucVuDang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ChucVuDang.aspx.designer.cs">
+      <DependentUpon>ChucVuDang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ChucVuDoanThe.aspx.cs">
+      <DependentUpon>ChucVuDoanThe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\ChucVuDoanThe.aspx.designer.cs">
+      <DependentUpon>ChucVuDoanThe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\DanhGiaCongChuc.aspx.cs">
+      <DependentUpon>DanhGiaCongChuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\DanhGiaCongChuc.aspx.designer.cs">
+      <DependentUpon>DanhGiaCongChuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\DienBienLuong.aspx.cs">
+      <DependentUpon>DienBienLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\DienBienLuong.aspx.designer.cs">
+      <DependentUpon>DienBienLuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\DuLieuTruoc1993.aspx.cs">
+      <DependentUpon>DuLieuTruoc1993.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\DuLieuTruoc1993.aspx.designer.cs">
+      <DependentUpon>DuLieuTruoc1993.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\KhenThuong.aspx.cs">
+      <DependentUpon>KhenThuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\KhenThuong.aspx.designer.cs">
+      <DependentUpon>KhenThuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\KyLuat.aspx.cs">
+      <DependentUpon>KyLuat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\KyLuat.aspx.designer.cs">
+      <DependentUpon>KyLuat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\NuocNgoaiDaDen.aspx.cs">
+      <DependentUpon>NuocNgoaiDaDen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\NuocNgoaiDaDen.aspx.designer.cs">
+      <DependentUpon>NuocNgoaiDaDen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuanHeGiaDinh.aspx.cs">
+      <DependentUpon>QuanHeGiaDinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuanHeGiaDinh.aspx.designer.cs">
+      <DependentUpon>QuanHeGiaDinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuaTrinhBoiDuong.aspx.cs">
+      <DependentUpon>QuaTrinhBoiDuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuaTrinhBoiDuong.aspx.designer.cs">
+      <DependentUpon>QuaTrinhBoiDuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuaTrinhCongTac.aspx.cs">
+      <DependentUpon>QuaTrinhCongTac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuaTrinhCongTac.aspx.designer.cs">
+      <DependentUpon>QuaTrinhCongTac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuaTrinhDaoTao.aspx.cs">
+      <DependentUpon>QuaTrinhDaoTao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimKiem\QuaTrinhDaoTao.aspx.designer.cs">
+      <DependentUpon>QuaTrinhDaoTao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TimKiem\ThongTinChiTiet.aspx.cs">
       <DependentUpon>ThongTinChiTiet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1133,7 +1253,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>8317</DevelopmentServerPort>
+          <DevelopmentServerPort>10639</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
