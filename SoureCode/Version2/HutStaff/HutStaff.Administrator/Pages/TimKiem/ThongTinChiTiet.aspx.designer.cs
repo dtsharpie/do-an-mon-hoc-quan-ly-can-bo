@@ -49,6 +49,15 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzGioiTinh;
         
         /// <summary>
+        /// txbEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbEmail;
+        
+        /// <summary>
         /// txbSoCmtnd control.
         /// </summary>
         /// <remarks>
@@ -74,15 +83,6 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzNoiCapCmtnd;
-        
-        /// <summary>
-        /// txbEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbEmail;
         
         /// <summary>
         /// txbDienThoai control.
@@ -274,24 +274,6 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayChinhThuc;
         
         /// <summary>
-        /// dpkNgayNhapNgu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayNhapNgu;
-        
-        /// <summary>
-        /// dpkNgayXuatNgu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayXuatNgu;
-        
-        /// <summary>
         /// txbQuanHam control.
         /// </summary>
         /// <remarks>
@@ -391,6 +373,24 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.TextBox txbChiTietHoKhauThuongTru;
         
         /// <summary>
+        /// dpkNgayNhapNgu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayNhapNgu;
+        
+        /// <summary>
+        /// dpkNgayXuatNgu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayXuatNgu;
+        
+        /// <summary>
         /// txbSoBaoHiem control.
         /// </summary>
         /// <remarks>
@@ -416,6 +416,33 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HutStaff.Administrator.Controls.Common.DatePicker dpkNgayNhanBaoHiemChinhThuc;
+        
+        /// <summary>
+        /// chzDanToc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzDanToc;
+        
+        /// <summary>
+        /// chzTonGiao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTonGiao;
+        
+        /// <summary>
+        /// txbThongTinKhac control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbThongTinKhac;
         
         /// <summary>
         /// chzTinhTrangSucKhoe control.
@@ -452,33 +479,6 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbLichSuBanThan;
-        
-        /// <summary>
-        /// chzDanToc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzDanToc;
-        
-        /// <summary>
-        /// chzTonGiao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.DropDownChosen chzTonGiao;
-        
-        /// <summary>
-        /// txbThongTinKhac control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbThongTinKhac;
         
         /// <summary>
         /// btnEdit control.
