@@ -338,7 +338,7 @@
                         Thương binh:
                     </td>
                     <td>
-                        <uc2:dropdownchosen id="chzThuongBinh" runat="server" datatextfield="tb" datavaluefield="ma_tb"
+                        <uc2:dropdownchosen id="chzThuongBinh" runat="server" DataTextField="tb" datavaluefield="ma_tb"
                             placeholder="Chọn loại thương binh" cssclass="droplist_large" />
                     </td>
                 </tr>
@@ -394,7 +394,7 @@
                         Quê quán:
                     </td>
                     <td>
-                        <uc2:dropdownchosen id="chzQueQuan" runat="server" datatextfield="ten_huyen" datavaluefield="ma_huyen"
+                        <uc2:dropdownchosen id="chzQueQuan" runat="server" datatextfield="ttp" datavaluefield="ma_ttp"
                             placeholder="Chọn địa danh" cssclass="droplist_medium" />
                     </td>
                 </tr>
@@ -532,8 +532,10 @@
         </div>
     </div>
     <div id="submit">
-        <asp:Button ID="btnSubmit" runat="Server" OnClick="OnSubmitButtonClick" Text="Nhập xong" />
-        &nbsp;hoặc
-        <asp:LinkButton ID="lbnReset" runat="server" Text="Làm lại" OnClick="OnResetLinkButtonClick" />
+        <asp:Button ID="btnEdit" runat="Server" Width="80px" Text="Sửa" 
+            onclick="btnEdit_Click" />
+        <%--&nbsp;hoặc
+        <asp:LinkButton ID="lbnReset" runat="server" Text="Làm lại" OnClick="OnResetLinkButtonClick" />--%>
+        <asp:Button ID="btDelete" runat="Server" Width="80px" Text="Hủy" onclick="btDelete_Click" />
     </div>
 </asp:Content>
