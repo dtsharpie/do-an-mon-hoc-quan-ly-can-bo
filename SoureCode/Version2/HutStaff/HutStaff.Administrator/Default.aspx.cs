@@ -237,5 +237,13 @@ namespace HutStaff.Administrator
             return gridView1DataTable;
         }
 
+        protected void btTimKiem_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            //Int32.TryParse(tbID.Text.ToString(), out id);
+            id = int.Parse(tbID.Text);
+            Response.Redirect("~/Pages/TimKiem/ThongTinChiTiet.aspx?id=" + id + "");
+        }
+
     }
 }

@@ -234,4 +234,9 @@
                     email</a>
         </div>
     </asp:Panel>
+    <asp:Panel ID="pnDeital" runat="server">
+            ID cán bộ  <asp:TextBox ID="tbID" runat="server"></asp:TextBox>
+    </asp:Panel>
+    <asp:Button ID="btTimKiem" runat="server" Text="Thông tin chi tiết" 
+        onclick="btTimKiem_Click"/>
 </asp:Content>
