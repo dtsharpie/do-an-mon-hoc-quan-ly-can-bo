@@ -22,40 +22,40 @@ namespace HutStaff.Administrator {
         protected global::HutStaff.Administrator.Controls.Common.SlideSearch SlideSearch1;
         
         /// <summary>
+        /// hdMadv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdMadv;
+        
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
         
         /// <summary>
-        /// dcb control.
+        /// ddlGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dcb;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddlGender;
         
         /// <summary>
-        /// checkBox_nam control.
+        /// ddlDcb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkBox_nam;
-        
-        /// <summary>
-        /// checkBox_nu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkBox_nu;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDcb;
         
         /// <summary>
         /// khoicanbo control.
@@ -67,31 +67,22 @@ namespace HutStaff.Administrator {
         protected global::System.Web.UI.WebControls.DropDownList khoicanbo;
         
         /// <summary>
-        /// txtTuTuoi control.
+        /// minage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTuTuoi;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText minage;
         
         /// <summary>
-        /// txtDenTuoi control.
+        /// maxage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDenTuoi;
-        
-        /// <summary>
-        /// RangeValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText maxage;
         
         /// <summary>
         /// txtNamVeTruong control.
@@ -100,61 +91,43 @@ namespace HutStaff.Administrator {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNamVeTruong;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNamVeTruong;
         
         /// <summary>
-        /// RangeValidator1 control.
+        /// btnOk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        protected global::System.Web.UI.WebControls.Button btnOk;
         
         /// <summary>
-        /// txtDepartmentCode control.
+        /// ddPs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDepartmentCode;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddPs;
         
         /// <summary>
-        /// btnSearch control.
+        /// spInfo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spInfo1;
         
         /// <summary>
-        /// panelResult control.
+        /// divPager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelResult;
-        
-        /// <summary>
-        /// numberResultDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList numberResultDropDownList;
-        
-        /// <summary>
-        /// numberResultLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label numberResultLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPager;
         
         /// <summary>
         /// Pager1 control.
@@ -166,13 +139,31 @@ namespace HutStaff.Administrator {
         protected global::HutStaff.Administrator.Controls.Common.Pager Pager1;
         
         /// <summary>
-        /// GridView1 control.
+        /// divEmpty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEmpty;
+        
+        /// <summary>
+        /// grdData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdData;
+        
+        /// <summary>
+        /// spInfo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spInfo2;
         
         /// <summary>
         /// Pager2 control.
@@ -182,32 +173,5 @@ namespace HutStaff.Administrator {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HutStaff.Administrator.Controls.Common.Pager Pager2;
-        
-        /// <summary>
-        /// pnDeital control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnDeital;
-        
-        /// <summary>
-        /// tbID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbID;
-        
-        /// <summary>
-        /// btTimKiem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btTimKiem;
     }
 }

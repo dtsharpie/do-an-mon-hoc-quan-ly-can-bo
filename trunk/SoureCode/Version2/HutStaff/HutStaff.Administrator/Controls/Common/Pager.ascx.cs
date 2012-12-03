@@ -8,7 +8,7 @@ using HutStaff.Common;
 
 namespace HutStaff.Administrator.Controls.Common
 {
-    public partial class Pager : ControlBase
+    public partial class Pager : System.Web.UI.UserControl
     {
         public int CurrentPage { get; set; }
         public int TotalPage { get; set; }
