@@ -53,20 +53,21 @@
                     Họ tên:
                 </td>
                 <td class="style2">
-                    <uc3:HintTextBox id="htbHoVaTenDem" runat="server" hinttext="Họ và tên đệm" width="100px" />
-                    &nbsp;<uc3:HintTextBox id="htbTen" runat="server" hinttext="Tên" width="50px" />
+                    <asp:TextBox ID="htbHoVaTenDem" Text="Họ và tên đệm" runat="server" Width="100px" />
+                   <%-- <asp:TextBox id="htbHoVaTenDem" runat="server" hinttext="Họ và tên đệm" width="100px" />--%>
+                    &nbsp;<asp:TextBox ID="htbTen" runat="server" Text ="Tên" width="50px" />
                 </td>
                 <td>
                     Ngày sinh:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgaySinh" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgaySinh" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Giới tính:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzGioiTinh" runat="server" placeholder="Chọn giới tính"
+                    <asp:DropDownList id="chzGioiTinh" runat="server" placeholder="Chọn giới tính"
                         cssclass="droplist_medium" />
                 </td>
                 <td class="style1">
@@ -87,13 +88,13 @@
                     Ngày cấp:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayCapCmtnd" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayCapCmtnd" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Nơi cấp:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzNoiCapCmtnd" runat="server" placeholder="Chọn địa danh"
+                    <asp:DropDownList ID="chzNoiCapCmtnd" runat="server" placeholder="Chọn địa danh"
                         datatextfield="ttp" datavaluefield="ma_ttp" cssclass="droplist_medium" />
                 </td>
                 <td class="style1">
@@ -108,28 +109,28 @@
                     TĐ học vấn:
                 </td>
                 <td class="style2">
-                    <uc2:dropdownchosen id="chzTrinhDoHocVan" runat="server" datatextfield="tdhv" datavaluefield="ma_tdhv"
+                    <asp:DropDownList id="chzTrinhDoHocVan" runat="server" datatextfield="tdhv" datavaluefield="ma_tdhv"
                         placeholder="Chọn trình độ học vấn" cssclass="droplist_large" />
                 </td>
                 <td>
                     TĐ tin học:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzTrinhDoTinHoc" runat="server" datatextfield="tdth" datavaluefield="ma_tdth"
+                    <asp:DropDownList id="chzTrinhDoTinHoc" runat="server" datatextfield="tdth" datavaluefield="ma_tdth"
                         placeholder="Chọn trình độ tin học" cssclass="droplist_large" />
                 </td>
                 <td>
                     TĐ LLCT:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzTrinhDoLyLuan" runat="server" datatextfield="tdll" datavaluefield="ma_tdll"
+                    <asp:DropDownList id="chzTrinhDoLyLuan" runat="server" datatextfield="tdll" datavaluefield="ma_tdll"
                         placeholder="Chọn trình độ lý luận chính trị" cssclass="droplist_large" />
                 </td>
                 <td class="style1">
                     TĐ QLNN:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzTrinhDoQuanLy" runat="server" datatextfield="tdql" datavaluefield="ma_tdql"
+                    <asp:DropDownList id="chzTrinhDoQuanLy" runat="server" datatextfield="tdql" datavaluefield="ma_tdql"
                         placeholder="Chọn trình độ quản lý nhà nước" cssclass="droplist_large" />
                 </td>
             </tr>
@@ -164,26 +165,26 @@
                     Ngày về cơ quan:
                 </td>
                 <td class="style2">
-                    <uc1:DatePicker ID="dpkNgayVeCoQuan" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayVeCoQuan" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Ngày vào biên chế:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayVaoBienChe" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayVaoBienChe" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Khối cán bộ:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzKhoiCanBo" runat="server" datatextfield="kcb" datavaluefield="ma_kcb"
+                    <asp:DropDownList id="chzKhoiCanBo" runat="server" datatextfield="kcb" datavaluefield="ma_kcb"
                         placeholder="Chọn khối cán bộ" cssclass="droplist_large" />
                 </td>
                 <td class="style1">
                     Diện cán bộ:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzDienCanBo" runat="server" datatextfield="dcb" datavaluefield="ma_dcb"
+                    <asp:DropDownList id="chzDienCanBo" runat="server" datatextfield="dcb" datavaluefield="ma_dcb"
                         placeholder="Chọn diện cán bộ" cssclass="droplist_large" />
                 </td>
             </tr>
@@ -194,7 +195,7 @@
                     Đơn vị quản lý:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzDonViQuanLy" runat="server" datatextfield="dv" datavaluefield="ma_dv"
+                    <asp:DropDownList id="chzDonViQuanLy" runat="server" datatextfield="dv" datavaluefield="ma_dv"
                         placeholder="Chọn đơn vị quản lý" cssclass="droplist_large" />
                 </td>
             </tr>
@@ -223,13 +224,13 @@
                     Ngày bắt đầu tính thâm niên:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayBatDauTinhThamNien" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayBatDauTinhThamNien" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Mốc hưởng thâm niên:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkMocHuongThamNien" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkMocHuongThamNien" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                 </td>
@@ -241,7 +242,7 @@
                     Ngày kết thúc hợp đồng:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayKetThucHopDong" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayKetThucHopDong" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Lý do kết thúc hợp đồng:
@@ -261,19 +262,19 @@
                     Ngày tham gia cách mạng:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayThamGiaCachMang" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayThamGiaCachMang" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Ngày vào đảng:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayVaoDang" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayVaoDang" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Ngày chính thức:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayChinhThuc" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayChinhThuc" runat="server" CssClass="datepicker" />
                 </td>
             </tr>
             <tr>
@@ -287,7 +288,7 @@
                     Thương binh:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzThuongBinh" runat="server" DataTextField="tb" datavaluefield="ma_tb"
+                    <asp:DropDownList id="chzThuongBinh" runat="server" DataTextField="tb" datavaluefield="ma_tb"
                         placeholder="Chọn loại thương binh" cssclass="droplist_large" />
                 </td>
                 <td>
@@ -300,14 +301,14 @@
                     Gia đình chính sách:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzGiaDinhChinhSach" runat="server" datatextfield="gdcs"
+                    <asp:DropDownList id="chzGiaDinhChinhSach" runat="server" datatextfield="gdcs"
                         datavaluefield="ma_gdcs" placeholder="Chọn gia đình chính sách" cssclass="droplist_large" />
                 </td>
                 <td>
                     Thành phần xuất thân:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzThanhPhanXuatThan" runat="server" datatextfield="tpxt"
+                    <asp:DropDownList id="chzThanhPhanXuatThan" runat="server" datatextfield="tpxt"
                         datavaluefield="ma_tpxt" placeholder="Chọn thành phần xuất thân" cssclass="droplist_large" />
                 </td>
                 <td>
@@ -326,14 +327,14 @@
                     Nơi sinh:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzNoiSinh" runat="server" datatextfield="ten_huyen" datavaluefield="ma_huyen"
+                    <asp:DropDownList id="chzNoiSinh" runat="server" datatextfield="ten_huyen" datavaluefield="ma_huyen"
                         placeholder="Chọn địa danh" cssclass="droplist_medium" />
                 </td>
                 <td>
                     Quê quán:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzQueQuan" runat="server" datatextfield="ttp" datavaluefield="ma_ttp"
+                    <asp:DropDownList id="chzQueQuan" runat="server" datatextfield="ttp" datavaluefield="ma_ttp"
                         placeholder="Chọn địa danh" cssclass="droplist_medium" />
                 </td>
             </tr>
@@ -354,7 +355,7 @@
                     Hộ khẩu thường trú:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzHoKhauThuongTru" runat="server" datatextfield="ten_huyen"
+                    <asp:DropDownList id="chzHoKhauThuongTru" runat="server" datatextfield="ten_huyen"
                         datavaluefield="ma_huyen" placeholder="Chọn địa danh" />
                 </td>
             </tr>
@@ -379,13 +380,13 @@
                     Ngày nhập ngũ:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayNhapNgu" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayNhapNgu" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Ngày xuất ngũ:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayXuatNgu" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayXuatNgu" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                 </td>
@@ -403,13 +404,13 @@
                     Ngày bắt đầu đóng bảo hiểm:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayBatDauDongBaoHiem" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayBatDauDongBaoHiem" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
                     Ngày nhận bảo hiểm chính thức:
                 </td>
                 <td>
-                    <uc1:DatePicker ID="dpkNgayNhanBaoHiemChinhThuc" runat="server" CssClass="datepicker" />
+                    <asp:TextBox ID="dpkNgayNhanBaoHiemChinhThuc" runat="server" CssClass="datepicker" />
                 </td>
             </tr>
             <tr>
@@ -417,14 +418,14 @@
                     Dân tộc:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzDanToc" runat="server" datatextfield="dt" datavaluefield="ma_dt"
+                    <asp:DropDownList id="chzDanToc" runat="server" datatextfield="dt" datavaluefield="ma_dt"
                         placeholder="Chọn dân tộc" cssclass="droplist_medium" />
                 </td>
                 <td>
                     Tôn giáo:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzTonGiao" runat="server" datatextfield="tg" datavaluefield="ma_tg"
+                    <asp:DropDownList id="chzTonGiao" runat="server" datatextfield="tg" datavaluefield="ma_tg"
                         placeholder="Chọn tôn giáo" cssclass="droplist_medium" />
                 </td>
                 <td>
@@ -441,20 +442,20 @@
                     Tình trạng sức khỏe:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzTinhTrangSucKhoe" runat="server" placeholder="Chọn tình trạng sức khỏe"
+                    <asp:DropDownList id="chzTinhTrangSucKhoe" runat="server" placeholder="Chọn tình trạng sức khỏe"
                         cssclass="droplist_large" />
                 </td>
                 <td>
                     Nhóm máu:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzNhomMau" runat="server" placeholder="Chọn nhóm máu" cssclass="droplist_large" />
+                    <asp:DropDownList id="chzNhomMau" runat="server" placeholder="Chọn nhóm máu" cssclass="droplist_large" />
                 </td>
                 <td>
                     Tình trạng hôn nhân:
                 </td>
                 <td>
-                    <uc2:dropdownchosen id="chzTinhTrangHonNhan" runat="server" datatextfield="tthn"
+                    <asp:DropDownList id="chzTinhTrangHonNhan" runat="server" datatextfield="tthn"
                         datavaluefield="ma_tthn" placeholder="Chọn tình trạng hôn nhân" cssclass="droplist_large" />
                 </td>
                 <td>

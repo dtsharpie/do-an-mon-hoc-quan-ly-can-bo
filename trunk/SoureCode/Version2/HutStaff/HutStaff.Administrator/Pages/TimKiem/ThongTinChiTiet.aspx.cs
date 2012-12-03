@@ -59,8 +59,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
                     htbHoVaTenDem.Text = thongtinchitiet.Rows[0]["hodem"].ToString();
                     htbTen.Text = thongtinchitiet.Rows[0]["ten"].ToString();
-                    dpkNgaySinh.Date = (DateTime)thongtinchitiet.Rows[0]["ntns"];
-                    
+                    dpkNgaySinh.Text = thongtinchitiet.Rows[0]["ntns"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ntns"]).ToString("dd/MM/yyyy") : ""; 
                     chzGioiTinh.Items.Add("Nữ");
                     chzGioiTinh.Items.Add("Nam");
                     decimal gt = decimal.Parse(thongtinchitiet.Rows[0]["gt"].ToString());
@@ -75,7 +74,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
                     //Ngày cấp
                     txbSoCmtnd.Text = thongtinchitiet.Rows[0]["scmnd"].ToString();
-                    dpkNgayCapCmtnd.Date = (DateTime)thongtinchitiet.Rows[0]["ngay_cap"];
+                    dpkNgayCapCmtnd.Text = thongtinchitiet.Rows[0]["ngay_cap"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngay_cap"]).ToString("dd/MM/yyyy") : "";
                     //Nơi cấp
                     chzNoiCapCmtnd.DataSource = tinhthanhpho;
                     chzNoiCapCmtnd.DataBind();
@@ -135,9 +134,10 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Sở trường năng khiếu
                     txbSoTruong.Text = thongtinchitiet.Rows[0]["nlstnk"].ToString();
                     //Ngày về cơ quan
-                    dpkNgayVeCoQuan.Date = (DateTime)thongtinchitiet.Rows[0]["nvcqhn"];
+                   
+                    dpkNgayVeCoQuan.Text = thongtinchitiet.Rows[0]["nvcqhn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvcqhn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày vào biên chế
-                    dpkNgayVaoBienChe.Date = (DateTime)thongtinchitiet.Rows[0]["nvbc"];
+                    dpkNgayVaoBienChe.Text = thongtinchitiet.Rows[0]["nvbc"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvbc"]).ToString("dd/MM/yyyy") : "";
                     //Khối cán bộ
                     chzKhoiCanBo.DataSource = khoicanbo;
                     chzKhoiCanBo.DataBind();
@@ -160,12 +160,12 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Ngày bắt đầu thâm niên
                     //dpkNgayBatDauTinhThamNien.Date = thongtinchitiet.Rows[0]["cvdn"].ToString();
                     //Mốc hưởng thâm niên
-                    dpkMocHuongThamNien.Date = (DateTime)thongtinchitiet.Rows[0]["mochuongtn"];
+                    dpkMocHuongThamNien.Text = thongtinchitiet.Rows[0]["mochuongtn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["mochuongtn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày kết thúc hợp đồng
                     object ngay_kthd = thongtinchitiet.Rows[0]["ngay_kthd"];
                     if (!DBNull.Value.Equals(ngay_kthd))
                     {
-                        dpkNgayKetThucHopDong.Date = (DateTime)ngay_kthd;
+                        dpkNgayKetThucHopDong.Text = ngay_kthd != null ? Convert.ToDateTime(ngay_kthd).ToString("dd/MM/yyyy") : "";
                     }
                     //Lí do kết thúc hợp đồng
                     txbLyDoKetThucHopDong.Text = thongtinchitiet.Rows[0]["ld_kthd"].ToString();
@@ -175,31 +175,31 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     object ntgcm = thongtinchitiet.Rows[0]["ntgcm"];
                     if (!DBNull.Value.Equals(ntgcm))
                     {
-                        dpkNgayThamGiaCachMang.Date = (DateTime)ntgcm;
+                        dpkNgayThamGiaCachMang.Text = ntgcm != null ? Convert.ToDateTime(ntgcm).ToString("dd/MM/yyyy") : "";
                     }
                     //Ngày vào Đảng
                     object nvd = thongtinchitiet.Rows[0]["nvd"];
                     if (!DBNull.Value.Equals(nvd))
                     {
-                        dpkNgayVaoDang.Date = (DateTime)thongtinchitiet.Rows[0]["nvd"];
+                        dpkNgayVaoDang.Text = thongtinchitiet.Rows[0]["nvd"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvd"]).ToString("dd/MM/yyyy") : "";
                     }
                     //Ngày chính thức vào Đảng
                     object nct = thongtinchitiet.Rows[0]["nct"];
                     if (!DBNull.Value.Equals(nct))
                     {
-                        dpkNgayChinhThuc.Date = (DateTime)thongtinchitiet.Rows[0]["nct"];
+                        dpkNgayChinhThuc.Text = thongtinchitiet.Rows[0]["nct"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nct"]).ToString("dd/MM/yyyy") : "";
                     }
                     //Ngày nhập ngũ
                     object nnn = thongtinchitiet.Rows[0]["nnn"];
                     if (!DBNull.Value.Equals(nnn))
                     {
-                        dpkNgayNhapNgu.Date = (DateTime)thongtinchitiet.Rows[0]["nnn"];
+                        dpkNgayNhapNgu.Text = thongtinchitiet.Rows[0]["nnn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nnn"]).ToString("dd/MM/yyyy") : "";
                     }
                     //Ngày xuất ngũ
                     object nxn = thongtinchitiet.Rows[0]["nxn"];
                     if (!DBNull.Value.Equals(nxn))
                     {
-                        dpkNgayXuatNgu.Date = (DateTime)thongtinchitiet.Rows[0]["nxn"];
+                        dpkNgayXuatNgu.Text = thongtinchitiet.Rows[0]["nxn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nxn"]).ToString("dd/MM/yyyy") : "";
                     }
                     //Quân hàm
                     txbQuanHam.Text = thongtinchitiet.Rows[0]["qh"].ToString();
@@ -276,13 +276,13 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     object ndbh = thongtinchitiet.Rows[0]["ndbh"];
                     if (!DBNull.Value.Equals(ndbh))
                     {
-                        dpkNgayBatDauDongBaoHiem.Date = (DateTime)thongtinchitiet.Rows[0]["ndbh"];
+                        dpkNgayBatDauDongBaoHiem.Text = thongtinchitiet.Rows[0]["ndbh"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ndbh"]).ToString("dd/MM/yyyy") : "";
                     }
                     //Ngày nhận bảo hiểm chính thức
                     object ngaybh = thongtinchitiet.Rows[0]["ngaybh"];
                     if (!DBNull.Value.Equals(ngaybh))
                     {
-                        dpkNgayNhanBaoHiemChinhThuc.Date = (DateTime)thongtinchitiet.Rows[0]["ngaybh"];
+                        dpkNgayNhanBaoHiemChinhThuc.Text = thongtinchitiet.Rows[0]["ngaybh"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngaybh"]).ToString("dd/MM/yyyy") : "";
                     }
                     //Tình trạng sức khỏe
                     chzTinhTrangSucKhoe.DataSource = tinhtrangsuckhoe;
@@ -327,10 +327,10 @@ namespace HutStaff.Administrator.Pages.TimKiem
         {
             string hovatendem = htbHoVaTenDem.Text;
             string ten = htbTen.Text;
-            DateTime ngaysinh = dpkNgaySinh.Date;
+            DateTime ngaysinh = Convert.ToDateTime(dpkNgaySinh);
             int gioitinh = int.Parse(chzGioiTinh.SelectedValue);
             string scmnd = txbSoCmtnd.Text;
-            DateTime ngaycap = dpkNgayCapCmtnd.Date;
+            DateTime ngaycap = Convert.ToDateTime(dpkNgayCapCmtnd);
             int noicap = int.Parse(chzNoiCapCmtnd.SelectedValue);
             string email = txbEmail.Text;
             string dienthoai = txbDienThoai.Text;
@@ -339,23 +339,23 @@ namespace HutStaff.Administrator.Pages.TimKiem
             int tdll = int.Parse(chzTrinhDoLyLuan.SelectedValue);
             int tdql = int.Parse(chzTrinhDoQuanLy.SelectedValue);
             string sotruong = txbSoTruong.Text;
-            DateTime ngayvecq = dpkNgayVeCoQuan.Date;
-            DateTime ngayvaobienche = dpkNgayVaoBienChe.Date;
+            DateTime ngayvecq =Convert.ToDateTime( dpkNgayVeCoQuan);
+            DateTime ngayvaobienche =Convert.ToDateTime( dpkNgayVaoBienChe);
             int khoicanbo = int.Parse(chzKhoiCanBo.SelectedValue);
             int diencanbo = int.Parse(chzDienCanBo.SelectedValue);
             int dvql = int.Parse(chzDonViQuanLy.SelectedValue);
             string viecphancong = txbViecDuocPhanCong.Text;
             string viecdamnhan = txbCongViecDamNhan.Text;
-            DateTime ngaybatdau = dpkNgayBatDauTinhThamNien.Date;
-            DateTime mocthamnien = dpkMocHuongThamNien.Date;
-            DateTime ngaykthd = dpkNgayKetThucHopDong.Date;
+            DateTime ngaybatdau = Convert.ToDateTime( dpkNgayBatDauTinhThamNien);
+            DateTime mocthamnien = Convert.ToDateTime( dpkMocHuongThamNien);
+            DateTime ngaykthd = Convert.ToDateTime( dpkNgayKetThucHopDong);
             string lidokthd = txbLyDoKetThucHopDong.Text;
             int thanggd = int.Parse(txbThangGianDoan.Text);
-            DateTime ngaythamgiacm = dpkNgayThamGiaCachMang.Date;
-            DateTime ngayvaodang = dpkNgayVaoDang.Date;
-            DateTime ngaychinhthuc = dpkNgayChinhThuc.Date;
-            DateTime ngaynhapngu = dpkNgayNhapNgu.Date;
-            DateTime ngayxuatngu = dpkNgayXuatNgu.Date;
+            DateTime ngaythamgiacm = Convert.ToDateTime( dpkNgayThamGiaCachMang);
+            DateTime ngayvaodang = Convert.ToDateTime( dpkNgayVaoDang);
+            DateTime ngaychinhthuc = Convert.ToDateTime(dpkNgayChinhThuc);
+            DateTime ngaynhapngu = Convert.ToDateTime(dpkNgayNhapNgu);
+            DateTime ngayxuatngu = Convert.ToDateTime(dpkNgayXuatNgu);
             string quanham = txbQuanHam.Text;
             int thuongbinh = int.Parse(chzThuongBinh.SelectedValue);
             int giadinhchinhsach = int.Parse(chzGiaDinhChinhSach.SelectedValue);
@@ -368,8 +368,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
             int hokhauthuontru = int.Parse(chzHoKhauThuongTru.SelectedValue);
             string chitiethktt = txbChiTietHoKhauThuongTru.Text;
             string sobaohiem = txbSoBaoHiem.Text;
-            DateTime ngaydongbh = dpkNgayBatDauDongBaoHiem.Date;
-            DateTime ngaybhchinhthuc = dpkNgayNhanBaoHiemChinhThuc.Date;
+            DateTime ngaydongbh = Convert.ToDateTime( dpkNgayBatDauDongBaoHiem);
+            DateTime ngaybhchinhthuc = Convert.ToDateTime(dpkNgayNhanBaoHiemChinhThuc);
             int ttsk = int.Parse(chzTinhTrangSucKhoe.SelectedValue);
             int nm = int.Parse(chzNhomMau.SelectedValue);
             int tthn = int.Parse(chzTinhTrangHonNhan.SelectedValue);
