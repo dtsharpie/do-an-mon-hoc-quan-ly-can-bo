@@ -12,7 +12,7 @@
     </div>
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChiTiet.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
-    <li><a href="">Trình độ ngoại ngữ</a></li>
+    <li><a>Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
@@ -57,8 +57,10 @@
 </asp:GridView>
 
 
- <div class="nodata" id="divNodata" runat="server">
-
+ <div class="nodata" id="divNodata" runat="server"></div>
+ 
+ 
+ <div>
 
  <br/><br/>
 
@@ -103,6 +105,6 @@
 
         </div>
     </div>
-</div>
+
     
 </asp:Content>

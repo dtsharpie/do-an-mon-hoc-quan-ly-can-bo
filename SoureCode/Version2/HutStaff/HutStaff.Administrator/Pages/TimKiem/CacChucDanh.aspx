@@ -13,7 +13,7 @@
   <ul>
     <li><a href="/Pages/TimKiem/ThongTinChiTiet.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
     <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
-    <li><a href="">Các chức danh</a></li>
+    <li><a>Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDoanThe.aspx?id=<%= iShcc %>">Chức vụ đoàn thể</a></li>
@@ -38,9 +38,14 @@
     <h1 class="title">
         Các chức danh
     </h1>
+        <br />
+        
+    <h3>
+        <asp:Label ID="nameLabel" runat="server" Text=""></asp:Label>
+    </h3>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
+        <%--<table class="table-result">
             <tr class="title">
                 <td>
                     Chức danh
@@ -80,10 +85,69 @@
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
-        </table>
-        <div class="nodata" id="divNodata" runat="server">
+        </table>--%>
+                <div>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" class="table-result">
+                <Columns>
+                    <asp:BoundField HeaderText="Chức danh" DataField="dhdp" />
+                    <asp:BoundField HeaderText="Ngày tháng phong" DataField="ntnpdh" 
+                        DataFormatString="{0:d}" />
+                    <asp:ButtonField Text="Sửa" />
+                    <asp:ButtonField Text="Xóa" />
+                </Columns>
+            </asp:GridView>
         </div>
-    </div>
+        <div class="nodata" id="divNodata" runat="server" ></div>
+
+        <div>
+            <table class="table-result">
+            <tr class="title">
+                <td>
+                Bổ sung dữ liệu
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Chức danh
+                </td>
+                <td>
+                     <asp:DropDownList ID="ngoainguDropdownList" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Ngày tháng năm phong
+                </td>
+                <td>
+                    <asp:TextBox ID="ngaythangPhongTextBox" runat ="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Chức danh cao nhất
+                </td>
+                <td>
+                    <input id="Checkbox1" type="checkbox" name ="chucdanhcaonhat"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Thông tin khác
+                </td>
+                <td>
+                    <asp:TextBox ID="thongtinkhacTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID ="saveButton" OnClick="saveButtonClick" runat="server" Text ="Ghi nhận"/>
+                    <asp:Button ID ="resetButton" OnClick="resetButtonClick" runat = "server" Text ="Làm lại"/>
+                </td>
+            </tr>
+
+        </table>      
+        </div>
+</div>
 </div>
 
 </asp:Content>
