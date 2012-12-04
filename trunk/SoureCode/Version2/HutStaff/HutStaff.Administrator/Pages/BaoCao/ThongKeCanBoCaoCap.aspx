@@ -48,6 +48,11 @@
                         <br />
                         <asp:CheckBoxList ID="chkboxDienCanBo" runat="server" />
                     </td>
+                    <td class="row2" align="left" valign="top">
+                        <span class="p-title">Tình trạng hiện tại</span>
+                        <br />
+                        <asp:CheckBoxList ID="chkboxTinhTrangHienTai" runat="server" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="row1">
