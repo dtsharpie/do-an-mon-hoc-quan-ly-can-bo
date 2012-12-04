@@ -228,5 +228,15 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
             }
             return dt;
         }
+
+        public static void updateTrinhDoNgoaiNgu(int id, int ma_tnn, int ma_tdnn, string p)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("sp_update_tdnn",
+                    new string[] { "@id", "@ma_nn", "@ma_td", "@ttk_tdnn" },
+                    new object[] { id, ma_tnn, ma_tdnn, p});
+            }
+        }
     }
 }
