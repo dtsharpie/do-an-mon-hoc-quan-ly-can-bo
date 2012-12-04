@@ -1,0 +1,30 @@
+﻿<TABLE border="0" cellPadding="4" cellSpacing="1" width="100%" height="100%" style="border-collapse: collapse" bordercolor="#111111">
+  <TR>
+    <TD class="bodyline"  valign="top" align="center">
+      <? include ("inc/topmenu.inc"); ?>
+	  
+      <br>
+        <h2>B&#193;O C&#193;O TH&#7888;NG K&#202;</h2>
+        <h5>Danh s&#225;ch c&#225;n b&#7897; &#273;&#7871;n k&#7923; n&#226;ng l&#432;&#417;ng</h5>
+        <br>
+          <br>
+            <input type="button" value='X&#7917; l&#253;' onClick='myformsubmit();'>
+              <input type='button' value='Ch&#7885;n t&#7845;t c&#7843;' onClick='CheckAll(true);' >
+                <input type='button' value='Hu&#7927; ch&#7885;n t&#7845;t c&#7843;' onClick='CheckAll(false);' >
+                  <input type='button' value='&#272;&#243;ng c&#7917;a s&#7893;' onClick='self.close()'>
+                    <br>
+                      <br>
+                        <table class='forumline' cellPadding='4' cellSpacing='1' border='0'>
+                          <tr>
+                            <th>S&#7889; TT</th>
+                            <th>H&#7885; v&#224; t&#234;n</th>
+                            <th>&#272;&#417;n v&#7883;</th>
+                            <th>M&#227; ng&#7841;ch</th>
+                            <th>B&#7853;c l&#432;&#417;ng</th>
+                            <th>L&#432;&#417;ng h&#432;&#7903;ng t&#7915;  </th>
+                            <th>N&#226;ng</th>
+                          </tr>
+                        </table>
+                        </td>
+                        </tr>
+                        </TABLE>

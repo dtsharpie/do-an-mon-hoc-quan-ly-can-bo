@@ -38,7 +38,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnBuildList_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("./DanhSachNangLuong.aspx");
         }
     }
 }
