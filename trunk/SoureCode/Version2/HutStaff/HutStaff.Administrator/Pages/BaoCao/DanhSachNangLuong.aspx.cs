@@ -12,9 +12,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string path = HttpContext.Current.Server.MapPath(@"Template\DanhSachNangLuongHeader.xml");
-            string strHtmlContent = File.ReadAllText(path);
-            lblHtmlContent.Text = strHtmlContent;
+            
         }
     }
 }
