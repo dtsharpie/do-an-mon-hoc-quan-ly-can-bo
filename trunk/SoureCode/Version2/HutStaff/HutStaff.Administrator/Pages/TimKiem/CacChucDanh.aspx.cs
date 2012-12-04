@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
+using System.Data;
+using HutStaff.BO.PagesBO.TimKiem;
+using HutStaff.BO.Thongtinchung;
 
 namespace HutStaff.Administrator.Pages.TimKiem
 {
@@ -53,16 +56,48 @@ namespace HutStaff.Administrator.Pages.TimKiem
         protected void Bind()
         {
 
+            //add name
+            DataTable thongtinchitiet = SearchDetailBO.ThongTinChiTiet(iShcc);
+            string htbHoVaTenDem = thongtinchitiet.Rows[0]["hodem"].ToString();
+            string htbTen = thongtinchitiet.Rows[0]["ten"].ToString();
+            string dpkNgaySinh = thongtinchitiet.Rows[0]["ntns"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ntns"]).ToString("dd/MM/yyyy") : "";
+
+            int ma_dvql = int.Parse(thongtinchitiet.Rows[0]["ma_dvql"].ToString());
+            DataTable donviquanli = SearchDetailBO.getAllDonViQuanLi();
+            donviquanli.PrimaryKey = new DataColumn[1] { donviquanli.Columns[0] };
+            DataRow dataRow = donviquanli.Rows.Find(ma_dvql.ToString());
+            if (dataRow != null)
+            {
+                object tableRow = dataRow.ItemArray[1];
+                string nameDonVi = tableRow.ToString();
+                nameLabel.Text = string.Format("{0} {1}({2}) - {3}", htbHoVaTenDem, htbTen, dpkNgaySinh, nameDonVi);
+            }
+
+            nameLabel.Text = string.Format("{0} {1}({2})", htbHoVaTenDem, htbTen, dpkNgaySinh);
+
+
             DataTable tblData = BO.Thongtinchung.Thongtinchung.GetChucdanh(iShcc);
             if (tblData.Rows.Count > 0)
             {
-                rptData.DataSource = tblData;
-                rptData.DataBind();
+                GridView1.DataSource = tblData;
+                GridView1.DataBind();
             }
             else
             {
                 divNodata.InnerText = "Không có dữ liệu";
             }
+
+
+
+
+
+
+
+
+
+
+
+            
         }
     }
 }
