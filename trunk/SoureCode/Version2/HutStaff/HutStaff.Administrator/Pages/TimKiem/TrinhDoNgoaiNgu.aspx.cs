@@ -16,8 +16,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
         public int iShcc;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-                return;
+            //if (IsPostBack)
+            //    return;
             try
             {
                 string id = Request.QueryString["id"];
@@ -125,5 +125,22 @@ namespace HutStaff.Administrator.Pages.TimKiem
             thongtinchungTextBox.Text = "";
         }
 
+        protected void GridView1_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        {
+            if ("edit".Equals(e.CommandName))
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView1.Rows[index];
+                string tnn = row.Cells[0].Text;
+                string tdnn = row.Cells[1].Text;
+                ngoainguDropdownList.SelectedIndex = ngoainguDropdownList.Items.IndexOf(ngoainguDropdownList.Items.FindByValue(tnn));
+                trinhdoDropdownList.SelectedIndex = trinhdoDropdownList.Items.IndexOf(trinhdoDropdownList.Items.FindByValue(tdnn));
+                lbResult.Text = "Sửaaaaaaa";
+            }
+            else if ("delete".Equals(e.CommandName))
+            {
+                lbResult.Text = "Xóaaaa";
+            }
+        }
     }
 }

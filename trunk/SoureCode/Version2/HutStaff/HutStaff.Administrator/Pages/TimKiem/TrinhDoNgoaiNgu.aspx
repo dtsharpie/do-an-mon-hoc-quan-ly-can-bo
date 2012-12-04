@@ -46,16 +46,18 @@
     </h3>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" class="table-result">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+            class="table-result"
+            Dat onrowcommand="GridView1_RowCommand">
         <Columns>
             <asp:BoundField HeaderText="Ngoại ngữ" DataField="tnn" />
             <asp:BoundField HeaderText="Trình độ" DataField="tdnn" />
             <asp:BoundField HeaderText="Thông tin khác" DataField="ttk_tdnn" />
-            <asp:ButtonField Text="Sửa" />
-            <asp:ButtonField Text="Xóa" />
+            <asp:ButtonField ButtonType="Link" CommandName="edit" Text="Sửa" /> 
+            <asp:ButtonField ButtonType="Link" CommandName="delete" Text="Xóa" /> 
         </Columns>
 </asp:GridView>
-
+<asp:Label ID="lbResult" runat="server"></asp:Label>
 
  <div class="nodata" id="divNodata" runat="server"></div>
  
