@@ -112,6 +112,15 @@ namespace HutStaff.Administrator {
         protected global::System.Web.UI.WebControls.Button btnOk;
         
         /// <summary>
+        /// btnDownload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDownload1;
+        
+        /// <summary>
         /// ddPs control.
         /// </summary>
         /// <remarks>
@@ -166,6 +175,15 @@ namespace HutStaff.Administrator {
         protected global::System.Web.UI.WebControls.GridView grdData;
         
         /// <summary>
+        /// btnDownload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDownload2;
+        
+        /// <summary>
         /// spInfo2 control.
         /// </summary>
         /// <remarks>
@@ -184,13 +202,22 @@ namespace HutStaff.Administrator {
         protected global::HutStaff.Administrator.Controls.Common.Pager Pager2;
         
         /// <summary>
-        /// txtListUser control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtListUser;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTitle;
+        
+        /// <summary>
+        /// txtReceiver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtReceiver;
         
         /// <summary>
         /// txtContent control.
@@ -200,5 +227,14 @@ namespace HutStaff.Administrator {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtContent;
+        
+        /// <summary>
+        /// btnSend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSend;
     }
 }
