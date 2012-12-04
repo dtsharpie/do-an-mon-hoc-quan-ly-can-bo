@@ -5,6 +5,7 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(2).addClass('active');
+            $(".ddl").chosen({ no_results_text: "Không có kết quả phù hợp" });
         });
     </script>
     <style type="text/css">
@@ -22,7 +23,7 @@
     <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
 </asp:Content>
 <asp:Content runat="server" ID="content1" ContentPlaceHolderID="MainContentPlaceHolder">
-    <div class="content" id="content">
+    <div class="form-container" id="content">
         <br/>
         <h1>Thống kê khen thưởng</h1>
         <hr width="750px"/>
@@ -34,7 +35,7 @@
 				<tr>
 					<td style="line-height:20px;" colspan="4" class="row1">
 						<b>Chọn đơn vị lập báo cáo</b> &nbsp;&nbsp;&nbsp;
-						<asp:DropDownList ID="ddlDonViLapBaoCao" runat="server" />                         
+						<asp:DropDownList ID="ddlDonViLapBaoCao" runat="server" CssClass="ddl" />                         
 					</td>
 				</tr>
 				<tr>

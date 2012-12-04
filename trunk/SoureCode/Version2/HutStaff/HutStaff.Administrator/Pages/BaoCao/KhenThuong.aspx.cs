@@ -37,27 +37,23 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
                 //dropdownlist Đơn vị cac cấp ... da làm
                 //ddlUnit123: dropdownList cua các đơn vị cấp 1,2,3
-                DataTable table_123_dm_dv = BaoCaoBO.ViewAll_123_dm_dv();
+                DataTable table_123_dm_dv = BaoCaoBO.ViewAlldm_dv();
+                ddlUnit123.DataSource = table_123_dm_dv;
+                ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
+                ddlUnit123.DataTextField = table_123_dm_dv.Columns[1].ColumnName;
+                foreach (DataRow row in table_123_dm_dv.Rows)
+                {
+                    int x = row.ItemArray[0].ToString().Length / 2;
+                    for (int i = 0; i < x; i++)
+                    {
+                        row.SetField(table_123_dm_dv.Columns[1], "| - - - " + row.ItemArray[1].ToString());
+                    }
+                }
                 DataRow dr2 = table_123_dm_dv.NewRow();
                 dr2[0] = -1;
                 dr2[1] = "Tất cả";
                 table_123_dm_dv.Rows.InsertAt(dr2, 0);
-                ddlUnit123.DataSource = table_123_dm_dv;
-                ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
-                ddlUnit123.DataTextField = table_123_dm_dv.Columns[1].ColumnName;
                 ddlUnit123.DataBind();
-
-                //ddlUnit4: dropdownList cua cac don vi cap 4
-                DataTable table_4_dm_dv = BaoCaoBO.ViewAll_4_dm_dv();
-                DataRow dr3 = table_4_dm_dv.NewRow();
-                dr3[0] = -1;
-                dr3[1] = "Tất cả";
-                table_4_dm_dv.Rows.InsertAt(dr3, 0);
-                ddlUnit4.DataSource = table_4_dm_dv;
-                ddlUnit4.DataValueField = table_4_dm_dv.Columns[0].ColumnName;
-                ddlUnit4.DataTextField = table_4_dm_dv.Columns[1].ColumnName;
-                ddlUnit4.DataBind();
-
 
                 //ddlDienCanBo: dropdownList dien can bo
                 DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
