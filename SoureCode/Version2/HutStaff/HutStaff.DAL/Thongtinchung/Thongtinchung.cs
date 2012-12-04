@@ -159,5 +159,40 @@ namespace HutStaff.DAL.Thongtinchung
                     new object[] { shcc });
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // bổ sung cơ sở dữ liệu
+
+
+
+
+        public static void InsertTrinhDoNgoaiNgu (int shcc, int ma_nn, int ma_td, string ttk_tdnn )
+        {
+            try
+            {
+                using (MainDB db = new MainDB())
+                {
+                    db.Execute("[sp_insert_tdnn_tbl]",
+                    new string[] { "@shcc", "@ma_nn", "@ma_td", "@ttk_tdnn" },
+                    new object[] { shcc, ma_nn, ma_td, ttk_tdnn });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

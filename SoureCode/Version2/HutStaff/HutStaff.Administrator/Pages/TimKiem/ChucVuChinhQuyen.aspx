@@ -11,7 +11,7 @@
 
     </div>
   <ul>
-    <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
+    <li><a href="/Pages/TimKiem/ThongTinChiTiet.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
     <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="">Chức vụ chính quyền</a></li>
