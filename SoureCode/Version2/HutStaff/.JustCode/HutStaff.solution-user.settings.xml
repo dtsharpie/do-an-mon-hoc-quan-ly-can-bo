@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<JustCodeSettings Version="0.0.26" Timestamp="f0947367-cdaa-4d3d-ab58-56f0559f0e9d">
+<JustCodeSettings Version="0.0.29" Timestamp="c58cb611-9f27-44bb-b41b-8345b68d77c3">
   <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <IgnoredErrorsAndWarnings>
       <FilePath>
@@ -402,6 +402,432 @@
           <Column>0</Column>
           <Text>Expected &lt;/table&gt;</Text>
           <Line>136</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportFooter_Type_2.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/div&gt;</Text>
+          <Line>26</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/table&gt;</Text>
+          <Line>1</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/body&gt;</Text>
+          <Line>28</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1</Column>
+          <Text>Unexpected closing tag &lt;/html&gt;</Text>
+          <Line>30</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportHeader_Type_2.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>10</Column>
+          <Text>Expected &lt;/meta&gt;</Text>
+          <Line>83</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>37</Column>
+          <Text>Expected &lt;/div&gt;</Text>
+          <Line>114</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>37</Column>
+          <Text>Expected &lt;/body&gt;</Text>
+          <Line>114</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>37</Column>
+          <Text>Expected &lt;/html&gt;</Text>
+          <Line>114</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_2.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>137</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_3.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>139</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_4.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>46</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_1_5.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>78</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_2_1.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>37</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_2_2.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>67</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_2_3.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>31</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_1.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>35</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_2.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>35</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_3.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>0</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>36</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_3_4.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>37</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_1.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>176</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_2.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>163</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_3.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>75</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_4.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>7</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>86</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\ReportPageHeader_Type_4_5.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>0</Column>
+          <Text>Expected &lt;/table&gt;</Text>
+          <Line>136</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>134</Column>
+          <Text>Unexpected closing tag &lt;/frame&gt;</Text>
+          <Line>47</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>133</Column>
+          <Text>Unexpected closing tag &lt;/frame&gt;</Text>
+          <Line>48</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>131</Column>
+          <Text>Unexpected closing tag &lt;/frame&gt;</Text>
+          <Line>49</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>143</Column>
+          <Text>Unexpected closing tag &lt;/frame&gt;</Text>
+          <Line>50</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Scripts\ckeditor\skins\kama\dialog.css</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>1280</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1105</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>10</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1109</Column>
+          <Text>Missing &lt;/C&gt;:&lt;//C&gt;</Text>
+          <Line>10</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1109</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>10</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Scripts\ckeditor\skins\office2003\dialog.css</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>3826</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>9</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3830</Column>
+          <Text>Missing &lt;/C&gt;:&lt;//C&gt;</Text>
+          <Line>9</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3830</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>9</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Scripts\ckeditor\skins\office2003\editor.css</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>3690</Column>
+          <Text>Unexpected !</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3703</Column>
+          <Text>Unexpected !</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3910</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3922</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>4058</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>52</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>64</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>200</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>611</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>623</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>800</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1108</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1120</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1293</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>537</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>11</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Scripts\ckeditor\skins\v2\dialog.css</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>2141</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>9</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>2145</Column>
+          <Text>Missing &lt;/C&gt;:&lt;//C&gt;</Text>
+          <Line>9</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>2145</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>9</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Scripts\ckeditor\skins\v2\editor.css</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>3163</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3175</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3295</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3467</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3479</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3599</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3925</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>3937</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>4065</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>7</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>46</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>58</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>182</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>8</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>1641</Column>
+          <Text>Unexpected end of declaration</Text>
+          <Line>10</Line>
         </IgnoredElement>
       </FilePath>
     </IgnoredErrorsAndWarnings>

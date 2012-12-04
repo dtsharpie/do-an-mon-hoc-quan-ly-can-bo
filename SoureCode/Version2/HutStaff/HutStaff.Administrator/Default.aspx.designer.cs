@@ -31,6 +31,15 @@ namespace HutStaff.Administrator {
         protected global::System.Web.UI.WebControls.HiddenField hdMadv;
         
         /// <summary>
+        /// hdDeletes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdDeletes;
+        
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -173,5 +182,23 @@ namespace HutStaff.Administrator {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HutStaff.Administrator.Controls.Common.Pager Pager2;
+        
+        /// <summary>
+        /// txtListUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtListUser;
+        
+        /// <summary>
+        /// txtContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtContent;
     }
 }

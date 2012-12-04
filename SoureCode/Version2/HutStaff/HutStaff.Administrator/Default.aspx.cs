@@ -12,9 +12,17 @@ namespace HutStaff.Administrator
 {
     public partial class Default : System.Web.UI.Page
     {
+        protected DataTable tblData;
+        SpreadsheetGear.IWorkbook workbook = SpreadsheetGear.Factory.GetWorkbook();
+        SpreadsheetGear.IRange cells = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (!IsPostBack)
+            //{
+            //    ViewState["tabledata"] = tblData;
+            //}
+
             DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
             DataRow dr = table_dm_dcb.NewRow();
             dr[0] = -1;
@@ -38,7 +46,7 @@ namespace HutStaff.Administrator
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            DataTable tblData = BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(hdMadv.Value, txtName.Value, Convert.ToDecimal(ddlGender.Value), String.IsNullOrEmpty(minage.Value) ? -1 : Convert.ToInt32(minage.Value), String.IsNullOrEmpty(maxage.Value) ? -1 : Convert.ToInt32(maxage.Value), Convert.ToInt32(ddlDcb.SelectedValue), Convert.ToInt32(khoicanbo.SelectedValue), String.IsNullOrEmpty(txtNamVeTruong.Value) ? -1 : Convert.ToInt32(txtNamVeTruong.Value), 1, int.MaxValue);
+            tblData = BO.PagesBO.TimKiem.SearchBO.Search_soyeu_all(hdMadv.Value, txtName.Value, Convert.ToDecimal(ddlGender.Value), String.IsNullOrEmpty(minage.Value) ? -1 : Convert.ToInt32(minage.Value), String.IsNullOrEmpty(maxage.Value) ? -1 : Convert.ToInt32(maxage.Value), Convert.ToInt32(ddlDcb.SelectedValue), Convert.ToInt32(khoicanbo.SelectedValue), String.IsNullOrEmpty(txtNamVeTruong.Value) ? -1 : Convert.ToInt32(txtNamVeTruong.Value), 1, int.MaxValue);
             int iCount = tblData.Rows.Count;
             if (iCount == 0)
             {
@@ -68,7 +76,7 @@ namespace HutStaff.Administrator
                     Pager1.TotalPage = iCount / Pager1.PageSize + 1;
                 }
                 Pager1.CurrentPage = 1;
-                
+
                 grdData.DataSource = tblData;
                 grdData.DataBind();
 
