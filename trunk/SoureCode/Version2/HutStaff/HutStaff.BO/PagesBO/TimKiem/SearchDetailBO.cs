@@ -139,14 +139,16 @@ namespace HutStaff.BO.PagesBO.TimKiem
             return dt;
         }
 
+        //delete database
         public static void Delete(int iShcc)
         {
             throw new NotImplementedException();
         }
 
-
-
-        // insert database
-
+        //update database
+        public static void updateTrinhDoNgoaiNgu(int id, int ma_tnn, int ma_tdnn, string p)
+        {
+            SearchDetailDAL.updateTrinhDoNgoaiNgu(id,ma_tnn, ma_tdnn, p);
+        }
     }
 }
