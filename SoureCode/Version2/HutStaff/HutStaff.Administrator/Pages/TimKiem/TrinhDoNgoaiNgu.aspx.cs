@@ -74,31 +74,68 @@ namespace HutStaff.Administrator.Pages.TimKiem
             }
 
             nameLabel.Text = string.Format("{0} {1}({2})", htbHoVaTenDem, htbTen, dpkNgaySinh);
-
-
-
-
+            /*
             DataTable ngoaingu = SearchDetailBO.getAllNgoaiNgu();
             ngoainguDropdownList.DataTextField = "tnn";
             ngoainguDropdownList.DataValueField = "ma_tnn";
             ngoainguDropdownList.DataSource = ngoaingu;
             ngoainguDropdownList.DataBind();
 
-
             DataTable trinhdoNgoaingu = SearchDetailBO.getAllTrinhDoNgoaiNgu();
             trinhdoDropdownList.DataTextField = "tdnn";
             trinhdoDropdownList.DataValueField = "ma_tdnn";
             trinhdoDropdownList.DataSource = trinhdoNgoaingu;
             trinhdoDropdownList.DataBind();
-
-
-
+            */
 
             DataTable tblData = BO.Thongtinchung.Thongtinchung.GetTrinhdoNgoaiNguById(iShcc);
             if (tblData.Rows.Count > 0)
             {
                 GridView1.DataSource = tblData;
                 GridView1.DataBind();
+                for (int i = 0; i < tblData.Rows.Count; i++)
+                {
+                    DataRow r = tblData.Rows[i];
+                    string tnn = r["tnn"].ToString();
+                    string tdnn = r["tdnn"].ToString();
+                    //
+                    Control ctr1 = GridView1.Rows[i].FindControl("ddlNgoaiNgu");
+                    if (ctr1 != null)
+                    {
+                        DropDownList ddlNgoaiNgu = ctr1 as DropDownList;
+                        if (ddlNgoaiNgu.Items.Count > 0)
+                        {
+                            if (!"".Equals(tnn))
+                            {
+                                ddlNgoaiNgu.SelectedIndex = ddlNgoaiNgu.Items.IndexOf(ddlNgoaiNgu.Items.FindByText(tnn));                                
+                            }
+                            else
+                            {
+                                ddlNgoaiNgu.SelectedIndex = ddlNgoaiNgu.Items.Count-1;
+                            }
+                            ddlNgoaiNgu.Enabled = false;
+                        }
+                    }
+                    //
+                    Control ctr2 = GridView1.Rows[i].FindControl("ddlTrinhDo");
+                    if (ctr2 != null)
+                    {
+                        DropDownList ddlTrinhDo = ctr2 as DropDownList;
+                        if (ddlTrinhDo.Items.Count > 0)
+                        {
+                            if (!"".Equals(tdnn))
+                            {
+                                ddlTrinhDo.SelectedIndex = ddlTrinhDo.Items.IndexOf(ddlTrinhDo.Items.FindByText(tdnn));
+                            }
+                            else
+                            {
+                                ddlTrinhDo.SelectedIndex = ddlTrinhDo.Items.Count - 1;
+                            }
+                            ddlTrinhDo.Enabled = false;
+                        }
+                    }
+                    //lbResult.Text = tnn + ", " + tdnn + ", ";
+                }
             }
             else
             {
@@ -113,9 +150,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
             {
                 iShcc = Convert.ToInt32(id);
             }
-
             Thongtinchung.InsertNgoaiNgu (iShcc,Int32.Parse(ngoainguDropdownList.SelectedValue),Int32.Parse(trinhdoDropdownList.SelectedValue), thongtinchungTextBox.Text);
-
             Bind();
         }
 
@@ -125,22 +160,102 @@ namespace HutStaff.Administrator.Pages.TimKiem
             thongtinchungTextBox.Text = "";
         }
 
-        protected void GridView1_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            if ("edit".Equals(e.CommandName))
+            int index = e.NewEditIndex;
+            GridViewRow row = GridView1.Rows[index];
+            Control ctrl1 = row.FindControl("ddlNgoaiNgu");
+            if (ctrl1 != null)
             {
-                int index = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = GridView1.Rows[index];
-                string tnn = row.Cells[0].Text;
-                string tdnn = row.Cells[1].Text;
-                ngoainguDropdownList.SelectedIndex = ngoainguDropdownList.Items.IndexOf(ngoainguDropdownList.Items.FindByValue(tnn));
-                trinhdoDropdownList.SelectedIndex = trinhdoDropdownList.Items.IndexOf(trinhdoDropdownList.Items.FindByValue(tdnn));
-                lbResult.Text = "Sửaaaaaaa";
+                DropDownList ddlNgoaiNgu = ctrl1 as DropDownList;
+                ddlNgoaiNgu.Enabled = true;
             }
-            else if ("delete".Equals(e.CommandName))
+            Control ctrl2 = row.FindControl("ddlTrinhDo");
+            if (ctrl2 != null)
             {
-                lbResult.Text = "Xóaaaa";
+                DropDownList ddlTrinhDo = ctrl2 as DropDownList;
+                ddlTrinhDo.Enabled = true;
+            }
+            //lbResult.Text = "Sửaaaaaaa" + tnn + ", " + tdnn + ", " + index + ", " + trinhdoDropdownList.SelectedIndex;
+        }
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            int ma_tnn = -1;
+            int ma_tdnn = -1;
+            int index = e.RowIndex;
+            GridViewRow row = GridView1.Rows[index];            
+            Control ctrl1 = row.FindControl("ddlNgoaiNgu");
+            if (ctrl1 != null)
+            {
+                DropDownList ddlNgoaiNgu = ctrl1 as DropDownList;
+                //Kiểm tra nếu ddl đang là 'Chưa cập nhật'
+                if (ddlNgoaiNgu.SelectedIndex != (ddlNgoaiNgu.Items.Count-1))
+                {
+                    int.TryParse(ddlNgoaiNgu.SelectedItem.Value, out ma_tnn);
+                }
+            }
+            Control ctrl2 = row.FindControl("ddlTrinhDo");
+            if (ctrl2 != null)
+            {
+                DropDownList ddlTrinhDo = ctrl2 as DropDownList;
+                //Kiểm tra nếu ddl đang là 'Chưa cập nhật'
+                if (ddlTrinhDo.SelectedIndex != (ddlTrinhDo.Items.Count - 1))
+                {
+                    int.TryParse(ddlTrinhDo.SelectedItem.Value, out ma_tdnn);
+                }
+            }
+            int id = -1;
+            int.TryParse(row.Cells[0].ToString(),out id);
+            if (id>-1 && ma_tnn>-1 && ma_tdnn>-1)
+            {
+                SearchDetailBO.updateTrinhDoNgoaiNgu(id, ma_tnn, ma_tdnn, row.Cells[3].ToString());
+            }
+            GridView1.EditIndex = -1;
+
+            lbResult.Text = "id=" + id; 
+        }
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            Bind();
+        }   
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            //Checking whether the Row is Data Row
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                //Finding the Dropdown control.
+                Control ctrl1 = e.Row.FindControl("ddlNgoaiNgu");
+                if (ctrl1 != null)
+                {
+                    DropDownList ddlNgoaiNgu = ctrl1 as DropDownList;
+                    DataTable ngoaingu = SearchDetailBO.getAllNgoaiNgu();
+                    ddlNgoaiNgu.DataTextField = "tnn";
+                    ddlNgoaiNgu.DataValueField = "ma_tnn";
+                    ddlNgoaiNgu.DataSource = ngoaingu;
+                    ddlNgoaiNgu.DataBind();
+                    ddlNgoaiNgu.Items.Add("Chưa cập nhật");
+                }
+
+                //Finding the Dropdown control.
+                Control ctrl2 = e.Row.FindControl("ddlTrinhDo");
+                if (ctrl2 != null)
+                {
+                    DropDownList ddlNgoaiNgu = ctrl2 as DropDownList;
+                    DataTable ngoaingu = SearchDetailBO.getAllTrinhDoNgoaiNgu();
+                    ddlNgoaiNgu.DataTextField = "tdnn";
+                    ddlNgoaiNgu.DataValueField = "ma_tdnn";
+                    ddlNgoaiNgu.DataSource = ngoaingu;
+                    ddlNgoaiNgu.DataBind();
+                    ddlNgoaiNgu.Items.Add("Chưa cập nhật");
+                }
             }
         }
+
+        
     }
 }

@@ -46,15 +46,29 @@
     </h3>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-            class="table-result"
-            Dat onrowcommand="GridView1_RowCommand">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" 
+            class="table-result" onrowediting="GridView1_RowEditing" OnRowDataBound="GridView1_RowDataBound" 
+            OnRowDeleting="GridView1_RowDeleting" 
+            onrowupdating="GridView1_RowUpdating" 
+            onrowcancelingedit="GridView1_RowCancelingEdit">        
         <Columns>
-            <asp:BoundField HeaderText="Ngoại ngữ" DataField="tnn" />
-            <asp:BoundField HeaderText="Trình độ" DataField="tdnn" />
+            <asp:BoundField DataField="id" Visible="true"/>
+            <asp:TemplateField HeaderText="Ngoại ngữ">
+                <ItemTemplate>
+                    <asp:DropDownList ID="ddlNgoaiNgu" runat="server" AutoPostBack="false" Width="100%"></asp:DropDownList>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Trình độ">
+                <ItemTemplate>
+                    <asp:DropDownList ID="ddlTrinhDo" runat="server" AutoPostBack="false" Width="100%"></asp:DropDownList>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField HeaderText="Thông tin khác" DataField="ttk_tdnn" />
-            <asp:ButtonField ButtonType="Link" CommandName="edit" Text="Sửa" /> 
-            <asp:ButtonField ButtonType="Link" CommandName="delete" Text="Xóa" /> 
+            <asp:CommandField ShowEditButton="true" EditText="Sửa" UpdateText="Sửa" CancelText="Quay lại"/>
+            <asp:CommandField ShowEditButton="true" EditText="Xóa" />
+
+            <%--<asp:BoundField HeaderText="Ngoại ngữ" DataField="tnn" />
+            <asp:BoundField HeaderText="Trình độ" DataField="tdnn" />--%>
         </Columns>
 </asp:GridView>
 <asp:Label ID="lbResult" runat="server"></asp:Label>
