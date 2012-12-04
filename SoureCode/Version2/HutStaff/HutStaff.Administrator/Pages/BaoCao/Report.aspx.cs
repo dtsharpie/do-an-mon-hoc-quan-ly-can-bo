@@ -42,6 +42,14 @@ namespace HutStaff.Administrator.Pages.BaoCao
             ddlDonViLapBaoCao.DataSource = table_dm_dv;
             ddlDonViLapBaoCao.DataValueField = table_dm_dv.Columns[0].ColumnName;
             ddlDonViLapBaoCao.DataTextField = table_dm_dv.Columns[1].ColumnName;
+            foreach (DataRow row in table_dm_dv.Rows)
+            {
+                int x = row.ItemArray[0].ToString().Length / 2;
+                for (int i = 0; i < x; i++)
+                {
+                    row.SetField(table_dm_dv.Columns[1], "| - - - " + row.ItemArray[1].ToString());
+                }
+            }
             ddlDonViLapBaoCao.DataBind();
 
 
