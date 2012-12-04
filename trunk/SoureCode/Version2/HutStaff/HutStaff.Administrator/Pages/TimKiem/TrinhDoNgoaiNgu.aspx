@@ -11,7 +11,7 @@
 
     </div>
   <ul>
-    <li><a href="/Pages/TimKiem/ThongTinChung.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
+    <li><a href="/Pages/TimKiem/ThongTinChiTiet.aspx?id=<%= iShcc %>">Thông tin chung</a></li>
     <li><a href="">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
@@ -38,51 +38,71 @@
     <h1 class="title">
         Trình độ ngoại ngữ
     </h1>
+   
+    <br />
+        
+    <h3>
+        <asp:Label ID="nameLabel" runat="server" Text=""></asp:Label>
+    </h3>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" class="table-result">
+        <Columns>
+            <asp:BoundField HeaderText="Ngoại ngữ" DataField="tnn" />
+            <asp:BoundField HeaderText="Trình độ" DataField="tdnn" />
+            <asp:BoundField HeaderText="Thông tin khác" DataField="ttk_tdnn" />
+            <asp:ButtonField Text="Sửa" />
+            <asp:ButtonField Text="Xóa" />
+        </Columns>
+</asp:GridView>
+
+
+ <div class="nodata" id="divNodata" runat="server">
+
+
+ <br/><br/>
+
+      <table class="table-result">
             <tr class="title">
                 <td>
+                Bổ sung dữ liệu
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
                     Ngoại ngữ
                 </td>
                 <td>
+                     <asp:DropDownList ID="ngoainguDropdownList" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
                     Trình độ
                 </td>
                 <td>
-                    Thông tin khác
+                    <asp:DropDownList ID="trinhdoDropdownList" runat="server"></asp:DropDownList>
                 </td>
             </tr>
-            <asp:Repeater runat="server" ID="rptData">
-                <ItemTemplate>
-                    <tr>
-                        <td>
-                            <%# Eval("tnn") %>
-                        </td>
-                        <td>
-                            <%# Eval("tdnn") %>
-                        </td>
-                        <td>
-                            <%# Eval("ttk_tdnn")%>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <AlternatingItemTemplate>
-                    <tr class="even">
-                        <td>
-                            <%# Eval("tnn") %>
-                        </td>
-                        <td>
-                            <%# Eval("tdnn") %>
-                        </td>
-                        <td>
-                            <%# Eval("ttk_tdnn")%>
-                        </td>
-                    </tr>
-                </AlternatingItemTemplate>
-            </asp:Repeater>
-        </table>
-        <div class="nodata" id="divNodata" runat="server">
+            <tr>
+                <td>
+                    Thông tin chung
+                </td>
+                <td>
+                    <asp:TextBox ID = "thongtinchungTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID ="saveButton" OnClick="saveButtonClick" runat="server" Text ="Ghi nhận"/>
+                    <asp:Button ID ="resetButton" OnClick="resetButtonClick" runat = "server" Text ="Làm lại"/>
+                </td>
+            </tr>
+
+        </table>        
+
         </div>
     </div>
 </div>
+    
 </asp:Content>

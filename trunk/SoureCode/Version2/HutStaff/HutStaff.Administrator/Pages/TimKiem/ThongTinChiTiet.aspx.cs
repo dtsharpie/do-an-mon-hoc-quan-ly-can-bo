@@ -160,7 +160,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Khối cán bộ
                     chzKhoiCanBo.DataSource = khoicanbo;
                     chzKhoiCanBo.DataBind();
-                    int kcb = int.Parse(thongtinchitiet.Rows[0]["kcb"].ToString());
+
+                    int kcb = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["kcb"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["kcb"]) : 0;
                     chzKhoiCanBo.SelectedIndex = chzKhoiCanBo.Items.IndexOf(chzKhoiCanBo.Items.FindByValue(kcb.ToString()));
                     //Diện cán bộ
                     chzDienCanBo.DataSource = diencanbo;

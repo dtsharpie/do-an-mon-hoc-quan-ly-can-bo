@@ -70,6 +70,30 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
             return dt;
         }
 
+        public static DataTable getAllTrinhDoNgoaiNgu()
+        {
+            DataTable dt = new DataTable();
+            using (MainDB db = new MainDB())
+            {
+                dt =db.Execute("sp_view_all_dm_tdnn",
+                new string[]{},
+                new object[] {});
+            }
+            return dt;
+        }
+
+        public static DataTable getAllNgoaiNgu()
+        {
+            DataTable dt = new DataTable();
+            using (MainDB db = new MainDB())
+            {
+                dt = db.Execute("sp_view_all_dm_tnn",
+                new string[] { },
+                new object[] { });
+            }
+            return dt;
+        }
+
         public static DataTable getAllKhoiCanBo()
         {
             DataTable dt = new DataTable();

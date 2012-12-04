@@ -82,5 +82,16 @@ namespace HutStaff.BO.Thongtinchung
         {
             return DAL.Thongtinchung.Thongtinchung.GetQuatrinhcongtac(shcc);
         }
+
+
+
+
+
+        //insert database
+        public static void InsertNgoaiNgu(int shcc, int ma_nn, int ma_td, string ttk)
+        {
+            HutStaff.DAL.Thongtinchung.Thongtinchung.InsertTrinhDoNgoaiNgu(shcc, ma_nn, ma_td, ttk);
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using HutStaff.DAL.PagesDAL.TimKiem;
 using HutStaff.DAL.Tinhthanhpho;
+using HutStaff.DAL.Thongtinchung;
 
 namespace HutStaff.BO.PagesBO.TimKiem
 {
@@ -51,6 +52,22 @@ namespace HutStaff.BO.PagesBO.TimKiem
             dt = SearchDetailDAL.getAllTrinhDoQuanLiNhaNuoc();
             return dt;
         }
+
+
+        public static DataTable getAllNgoaiNgu()
+        {
+            DataTable dt = new DataTable();
+            dt = SearchDetailDAL.getAllNgoaiNgu();
+            return dt;
+        }
+
+        public static DataTable getAllTrinhDoNgoaiNgu()
+        {
+            DataTable dt = new DataTable();
+            dt = SearchDetailDAL.getAllTrinhDoNgoaiNgu();
+            return dt;
+        }
+
 
         public static DataTable getAllDienCanBo()
         {
@@ -126,5 +143,10 @@ namespace HutStaff.BO.PagesBO.TimKiem
         {
             throw new NotImplementedException();
         }
+
+
+
+        // insert database
+
     }
 }
