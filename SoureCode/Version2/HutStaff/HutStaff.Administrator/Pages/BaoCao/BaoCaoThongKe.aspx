@@ -119,7 +119,7 @@
                     </tr>
                     <tr>
                         <td class="row1">
-                            <a href="Report.aspx?type=7">In quyết định đề nghị nâng lương</a>
+                            <a href="Report2.aspx">In quyết định đề nghị nâng lương</a>
                         </td>
                         <td align="right" class="row1">
                             <a href="Report.aspx?type=25">Báo cáo tổng hợp ngạch, bậc và phụ cấp công chức</a>

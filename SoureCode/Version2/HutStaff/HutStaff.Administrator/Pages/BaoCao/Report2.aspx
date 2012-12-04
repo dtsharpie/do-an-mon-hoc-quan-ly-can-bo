@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Report.aspx.cs" Inherits="HutStaff.Administrator.Pages.BaoCao.Report" MasterPageFile="~/Master/Admin.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Report2.aspx.cs" Inherits="HutStaff.Administrator.Pages.BaoCao.Report2" MasterPageFile="~/Master/Admin.Master" %>
 <%@ Register Src="/Controls/Common/SlideBaocao.ascx" TagName="SlideBaocao" TagPrefix="uc1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
@@ -43,11 +43,8 @@
             </tr>
 	        <tr>
                 <td height="30" align="center" colspan="2" class="Row3">
-                   
-                 <asp:Button Text="Xuất báo cáo để tải về máy" runat="server" ID="btnXuat" 
-                        onclick="btnXuat_Click" />
-                   <asp:Button Text="Xem trước báo cáo" runat="server" ID="btnXem" 
-                        onclick="btnXem_Click" />
+                   <asp:Button Text="Tạo danh sách nâng lương" runat="server" ID="btnBuildList" 
+                        onclick="btnBuildList_Click" />
                 </td>
             </tr>
         </tbody>
