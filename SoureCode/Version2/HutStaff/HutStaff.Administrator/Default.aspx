@@ -176,11 +176,36 @@
         filebrowserUploadUrl: '/Services/Upload.ashx'
     });
 
-    $(".btnSendEmail,#btnCancel").click(function () {
-//                $(".table-result tr td:eq(5)").each
-                
+            $(".btnSendEmail").click(function () {
+                var lstEmail = [];
+                $(".table-result .chkId:checked").each(function () {
+                    var shcc = $(this).val();
+                    var email = $(".table-result .email[shcc='" + shcc + "']").text().trim();
+                    if (email != '' && validateEmail(email)) {
+                        lstEmail.push(email);
+                    }
+                });
+
+                $("#<%= txtReceiver.ClientID %>").val(lstEmail.join(","));
+                $("#divSendEmail").fadeToggle("slow", "linear");
+                $("#divSearchInfo").fadeToggle("slow", "linear");
+                return false;
+            });
+
+            $("#btnCancel").click(function () {
                 $("#divSearchInfo").fadeToggle("slow", "linear");
                 $("#divSendEmail").fadeToggle("slow", "linear");
+                return false;
+            });
+
+            $("#<%= btnSend.ClientID %>").click(function () {
+                $("#spSending").show(0);
+                execution({ _fn: "HutStaff.BO.PagesBO.TimKiem.SearchBO.SendEmail",
+                    Receiver: $("#<%= txtReceiver.ClientID %>").val(),
+                    Title: $("#<%= txtTitle.ClientID %>").val(),
+                    Content: encodeURIComponent($("#<%= txtContent.ClientID %>").val())
+                }, false);
+
                 return false;
             });
         });
@@ -239,7 +264,8 @@
                     <input class="button-link btnSendEmail" type="button" value="Gửi email" />
                     <input class="button-link btnInsocai" type="button" value="In sổ cái" />
                     <input class="button-link btnXoa" type="button" value="Xóa" />
-                    <input class="button-link btnExport" type="button" value="Tải về" />
+                    <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload1" 
+                        Text="Tải về" onclick="btnDownload1_Click" />
                 </div>
                 <div>
                     Hiển thị &nbsp;
@@ -299,7 +325,9 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Email">
                             <ItemTemplate>
-                                <%# Eval("email") %>
+                                <a class="email" shcc="<%# Eval("shcc") %>" href="mailto:<%# Eval("email") %>">
+                                    <%# Eval("email") %>
+                                </a>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>
@@ -325,7 +353,8 @@
                     <input class="button-link btnSendEmail" type="button" value="Gửi email" />
                     <input class="button-link btnInsocai" type="button" value="In sổ cái" />
                     <input class="button-link btnXoa" type="button" value="Xóa" />
-                    <input class="button-link btnExport" type="button" value="Tải về" />
+                    <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload2" 
+                        Text="Tải về" onclick="btnDownload2_Click" />
                 </div>
                 <div>
                     Hiển thị &nbsp;
@@ -351,25 +380,27 @@
             <div class="subdivEdit">
                 <label class="label">
                     Tiêu đề</label>
-                <input type="text" id="txtTitle" style="width: 98%;" />
+                <input runat="server" type="text" id="txtTitle" style="width: 98%;" />
             </div>
             <div class="subdivEdit">
                 <label class="label">
                     Danh sách người nhận</label>
-                <asp:TextBox ID="txtListUser" runat="server" Width="1038px" Height="180px" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox ID="txtReceiver" runat="server" Width="1038px" Height="180px" TextMode="MultiLine"></asp:TextBox>
             </div>
             <hr style="margin-top: 5px; margin-bottom: 5px; margin-left: 20px;" />
             <div class="subdivEdit" style="margin-top: 15px;">
                 <label class="label" style="width: 55px;">
                     Nội dung:</label><span class="inputtip">(Ấn Shift + Enter để xuống dòng, enter để bắt
                         đầu 1 đoạn mới)</span>
-                <textarea id="txtContent" cols="127" runat="server" rows="50" class="areaContent editor"></textarea>
+                <textarea runat="server" id="txtContent" cols="127" runat="server" rows="50" class="areaContent editor"></textarea>
             </div>
         </div>
         <div style="padding-top: 10px; padding-left: 10px;">
-            <input id="btnSend" type="button" class="button update-user" value="Gửi" />
+            <asp:Button ID="btnSend" CssClass="button update-user" runat="server" Text="Gửi" />
             &nbsp;
             <input id="btnCancel" type="button" class="button cancel" value="Quay lại" />
+            <span id="spSending" style="display: none;">
+                <img src="/Images/processing.gif" style="vertical-align: middle;" />Đang gửi</span>
         </div>
     </div>
 </asp:Content>
