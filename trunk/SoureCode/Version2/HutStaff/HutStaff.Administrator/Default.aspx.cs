@@ -90,7 +90,34 @@ namespace HutStaff.Administrator
 
         protected void btnDownload2_Click(object sender, EventArgs e)
         {
+            tblData = (DataTable)(ViewState["tabledata"]);
+            cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
+
+            cells["A1"].Formula = "Họ tên";
+            cells["A1"].ColumnWidth = 50;
+
+            cells["B1"].Formula = "Số hiệu công chức";
+            cells["B1"].ColumnWidth = 25;
+
+            cells["C1"].Formula = "Đơn vị";
+            cells["C1"].ColumnWidth = 50;
+
+            cells["D1"].Formula = "Điện thoại";
+            cells["D1"].ColumnWidth = 25;
+
+            cells["E1"].Formula = "Email";
+            cells["E1"].ColumnWidth = 25;
+
+            cells["A1:E1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            cells["A1:E1"].Font.Bold = true;
+            workbook.Worksheets[0].Name = "Tìm kiếm";
+
+            Response.Clear();
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + "tim_kiem_" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+            workbook.SaveToStream(Response.OutputStream, SpreadsheetGear.FileFormat.XLS97);
+            Response.End();
         }
 
         protected void btnDownload1_Click(object sender, EventArgs e)

@@ -264,8 +264,8 @@
                     <input class="button-link btnSendEmail" type="button" value="Gửi email" />
                     <input class="button-link btnInsocai" type="button" value="In sổ cái" />
                     <input class="button-link btnXoa" type="button" value="Xóa" />
-                    <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload1" 
-                        Text="Tải về" onclick="btnDownload1_Click" />
+                    <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload1" Text="Tải về"
+                        OnClick="btnDownload1_Click" />
                 </div>
                 <div>
                     Hiển thị &nbsp;
@@ -353,8 +353,8 @@
                     <input class="button-link btnSendEmail" type="button" value="Gửi email" />
                     <input class="button-link btnInsocai" type="button" value="In sổ cái" />
                     <input class="button-link btnXoa" type="button" value="Xóa" />
-                    <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload2" 
-                        Text="Tải về" onclick="btnDownload2_Click" />
+                    <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload2" Text="Tải về"
+                        OnClick="btnDownload2_Click" />
                 </div>
                 <div>
                     Hiển thị &nbsp;

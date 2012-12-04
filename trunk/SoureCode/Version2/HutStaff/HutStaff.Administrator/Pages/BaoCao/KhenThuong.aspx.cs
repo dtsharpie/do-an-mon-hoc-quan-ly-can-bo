@@ -97,7 +97,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            tblData = BO.Report.Report.GetRewardList(Convert.ToInt32(ddlHinhThucKhenThuong.SelectedValue), !String.IsNullOrEmpty(tbFrom.Text) ? Convert.ToInt32(tbFrom.Text) : DateTime.MinValue.Year, !String.IsNullOrEmpty(tbTo.Text) ? Convert.ToInt32(tbTo.Text) : DateTime.MaxValue.Year, "", Convert.ToInt32(ddlDienCanBo.SelectedValue), Convert.ToInt32(ddlKhoiCb.SelectedValue));
+            tblData = BO.Report.Report.GetRewardList(Convert.ToInt32(ddlHinhThucKhenThuong.SelectedValue), !String.IsNullOrEmpty(tbFrom.Text) ? Convert.ToInt32(tbFrom.Text) : DateTime.MinValue.Year, !String.IsNullOrEmpty(tbTo.Text) ? Convert.ToInt32(tbTo.Text) : DateTime.MaxValue.Year, "0", Convert.ToInt32(ddlDienCanBo.SelectedValue), Convert.ToInt32(ddlKhoiCb.SelectedValue));
             ViewState["tabledata"] = tblData;
             int iCount = tblData.Rows.Count;
             if (iCount == 0)
@@ -139,13 +139,57 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnDownload2_Click(object sender, EventArgs e)
         {
+            tblData = (DataTable)(ViewState["tabledata"]);
+            cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["kt"], tblData.Columns["nkt_qtkt"] }, 2, 1);
 
+
+            cells["A1"].Formula = "Họ tên";
+            cells["A1"].ColumnWidth = 50;
+
+            cells["B1"].Formula = "Số hiệu công chức";
+            cells["B1"].ColumnWidth = 25;
+
+            cells["C1"].Formula = "Đơn vị";
+            cells["C1"].ColumnWidth = 50;
+
+            cells["D1"].Formula = "Khen thưởng";
+            cells["D1"].ColumnWidth = 75;
+
+            cells["E1"].Formula = "Năm khen thưởng";
+            cells["E1"].ColumnWidth = 25;
+
+            cells["A1:E1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            cells["A1:E1"].Font.Bold = true;
+            workbook.Worksheets[0].Name = "Khen thưởng";
+
+            Response.Clear();
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + "khen_thuong_" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+            workbook.SaveToStream(Response.OutputStream, SpreadsheetGear.FileFormat.XLS97);
+            Response.End();
         }
 
         protected void btnDownload1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private SpreadsheetGear.IRange FromDataTable(SpreadsheetGear.IWorksheet worksheet, DataColumn[] columns, int indexRow, int indexColumn)
+        {
+            SpreadsheetGear.IRange cells = worksheet.Cells;
+            if (columns[0].Table.Rows.Count != 0)
+            {
+                string sStartCell = HutStaff.Common.Utility.ExcelHelper.IndexToColumnName(indexColumn) + indexRow.ToString();
+                string sEndCell = HutStaff.Common.Utility.ExcelHelper.IndexToColumnName(indexColumn + columns.Length - 1) + (indexRow + columns[0].Table.Rows.Count - 1).ToString();
+                foreach (SpreadsheetGear.IRange cell in cells[sStartCell + ":" + sEndCell])
+                {
+                    cell.Formula = columns[cell.Column - indexColumn + 1].DataType != typeof(DateTime) ? columns[cell.Column - indexColumn + 1].Table.Rows[cell.Row - indexRow + 1][columns[cell.Column - indexColumn + 1].ColumnName].ToString()
+                       : Convert.ToDateTime(columns[cell.Column - indexColumn + 1].Table.Rows[cell.Row - indexRow + 1][columns[cell.Column - indexColumn + 1].ColumnName]).ToString("yyyy");
+                }
+            }
+            return cells;
+        }
+
 
 
     }
