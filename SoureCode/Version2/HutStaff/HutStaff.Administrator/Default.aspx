@@ -2,7 +2,7 @@
     CodeBehind="Default.aspx.cs" Inherits="HutStaff.Administrator.Default" %>
 
 <%@ Register Src="/Controls/Common/SlideSearch.ascx" TagName="SlideSearch" TagPrefix="uc1" %>
-<%@ Register Src="Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
+<%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         var CKEDITOR_BASEPATH = '/Scripts/ckeditor/';

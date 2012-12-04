@@ -2,147 +2,160 @@
     CodeBehind="KhenThuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.BaoCao.KhenThuong" %>
 
 <%@ Register Src="~/Controls/Common/SlideBaocao.ascx" TagName="SlideBaocao" TagPrefix="uc1" %>
+<%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(2).addClass('active');
+            $(".ddl").chosen({ no_results_text: "Không có kết quả phù hợp" });
         });
     </script>
-    <style type="text/css">
-        .button
-        {
-            margin-top: 5px;
-            margin-left: 600px;
-            width: 102px;
-            height: 35px;
-            padding: initial;
-            background-color: initial;
-            border: initial;
-        }
-        .timkiem
-        {
-            background-color: Green;
-            width: 762px;
-            height: 240px;
-        }
-        .error
-        {
-            color: Red;
-            
-        }
-        hr
-        {
-            margin: 1px;
-            margin-top: 3px;
-            display: block;
-            border-width: 1px;
-            border-style: inherit;
-            width: 750px;
-        }
-        
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div id="content">
-        <!-- InstanceBeginEditable name="content" -->
+    <h1>
+        Tìm kiếm thông tin khen thưởng</h1>
+    <div id="divSearchForm" class="form-container">
+        <label>
+            Hình thức khen thưởng:</label>
+        <asp:DropDownList ID="ddlHinhThucKhenThuong" runat="server" CssClass="ddl" />
+        <label style="margin-left: 40px;">
+            Từ năm</label><asp:TextBox ID="tbFrom" runat="server" Width="50px" /><label>
+                đến năm</label>
+        <asp:TextBox ID="tbTo" runat="server" Width="50px" />
         <br />
-        <h1>
-            Tìm kiếm thông tin khen thưởng</h1>
-        <hr width="800px" />
-        <form name="myform" action="" method="post" onsubmit="return false">
-        <div id="timkiem" class="timkiem" style="background-color: Aqua; color: Black; border-color: Blue;">
-            <div class="hang">
-                <h4>
-                    Hình thức khen thưởng:</h4>
-                <span class="ddl">
-                    <asp:DropDownList ID="ddlHinhThucKhenThuong" runat="server" CssClass="ddl" />
+        <label>
+            Đơn vị cấp 1,2,3:</label>
+        <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl">
+        </asp:DropDownList>
+        <br />
+        <label>
+            Đơn vị cấp 4:
+        </label>
+        <asp:DropDownList ID="ddlUnit4" runat="server" CssClass="ddl">
+        </asp:DropDownList>
+        <br />
+        <label>
+            Diện cán bộ:</label>
+        <asp:DropDownList ID="ddlDienCanBo" runat="server" CssClass="ddl" />
+        <label>
+            Khối cán bộ:</label>
+        <asp:DropDownList ID="ddlKhoiCb" runat="server" CssClass="ddl">
+        </asp:DropDownList>
+        <asp:Button runat="server" Style="font-weight: normal; padding: 0;" ID="btnOk" CssClass="button"
+            Text="Tìm kiếm" OnClick="btnOk_Click" />
+    </div>
+    <div class="table-container">
+        <div class="header-table">
+            <div>
+                <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload1" Text="Tải về"
+                    OnClick="btnDownload1_Click" />
+            </div>
+            <div>
+                Hiển thị &nbsp;
+                <select id="ddPs" runat="server" class="ddlPageSize" style="width: 60px;">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50" selected="selected">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                </select>&nbsp; dòng&nbsp;&nbsp; <span runat="server" id="spInfo1" class="info">
                 </span>
             </div>
-            <div class="hang">
-                Năm khen thưởng: Từ năm <span class="textbox">
-                    <asp:TextBox ID="tbFrom" runat="server" Width="50px" /></span> đến năm <span class="textbox">
-                        <asp:TextBox ID="tbTo" runat="server" Width="50px" /></span>
+            <div runat="server" id="divPager" class="pagerLoad fr">
+                <uc2:Pager Visible="false" ID="Pager1" runat="server" />
             </div>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                  <div class="hang">
-                    <h4>
-                        Đơn vị cấp 1,2,3:</h4>
-                        <div class="f_input row-right">
-                            <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl" 
-                                AutoPostBack="True" onselectedindexchanged="ddlUnit123_SelectedIndexChanged" >
-                        
-
-                            </asp:DropDownList>
-                        </div>
-                    </div>
-                    <div class="hang">
-                        <h4>
-                            Đơn vị cấp 4:</h4>
-                        <div class="row-right">
-                            <asp:DropDownList ID="ddlUnit4" runat="server" CssClass="ddl">
-
-                        
-                            </asp:DropDownList>
-                        </div>
-                    </div>
-                </ContentTemplate>
-
-            </asp:UpdatePanel>
-           
-            <div class="hang">
-                <h4>
-                    Diện cán bộ:</h4>
-                <div class="row-right">
-                    <span class="ddl">
-                        <asp:DropDownList ID="ddlDienCanBo" runat="server" CssClass="ddl" />
-                    </span>
-                </div>
-            </div>
-            
-            <div class="hang">
-                <h4>
-                    Khối cán bộ:</h4>
-                <div class="row-right">
-                    <asp:DropDownList ID="ddlKhoiCb" runat="server" CssClass="ddl">
-                       
-                    </asp:DropDownList>
-                </div>
+            <div class="clear">
             </div>
         </div>
-        <asp:ImageButton ID="btnSearch" runat="server" Text="Tìm kiếm" ImageUrl="~/Images/timkiem.png"
-            CssClass="button" OnClick="btnSearch_Click" />
-        <%--<input type="image" src="../../Images/timkiem.png" style=" margin-left:650px;"  onclick="this.form.submit();"/>  --%>
-        <br />
-        <hr  />
-        </form>
-        
-        <!-- InstanceEndEditable -->
-        <div id="ResultSearch" class="kqtk_kt">
-            <asp:Label ID="x" runat="server" Text="Ket qua: co "></asp:Label><asp:Label ID="lbllblResultSearch"
-                runat="server"></asp:Label><br />
-            <h1>
-                <asp:HyperLink ID="xuatdata" Text="Xuat du lieu" CssClass="hpl" runat="server" NavigateUrl="~/Pages/BaoCao/KhenThuong.aspx"></asp:HyperLink></h1>
-            <asp:GridView ID="gvResultSearch" runat="server" CssClass="gvResultSearch" Width="100%"
-                PageSize="40" BackColor="White" BorderColor="#3366CC" BorderStyle="Groove" BorderWidth="2px"
-                CellPadding="4">
-                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                <RowStyle BackColor="White" ForeColor="#003399" />
-                <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                <SortedDescendingHeaderStyle BackColor="#002876" />
+        <div class="main-table">
+            <div runat="server" id="divEmpty" style="text-align: center;">
+                Vui lòng chọn các tùy chọn phía trên và ấn nút "Tìm kiếm</div>
+            <asp:GridView ShowHeaderWhenEmpty="false" ID="grdData" runat="server" AutoGenerateColumns="False"
+                Height="20px" Width="100%" CssClass="table-result">
+                <AlternatingRowStyle CssClass="row even hide" />
+                <RowStyle CssClass="row hide" />
+                <Columns>
+                    <asp:TemplateField HeaderText="STT">
+                        <ItemTemplate>
+                            <%# Container.DataItemIndex + 1 %>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Họ tên" ControlStyle-Width="400px">
+                        <ItemTemplate>
+                            <a href="javascript:void(0)" onclick="showUrl('/Pages/Timkiem/ThongTinChiTiet.aspx?id=<%# Eval("shcc") %>','<%# Eval("hoten") %>')"
+                                shcc="<%# Eval("shcc") %>">
+                                <%# Eval("hoten") %></a>
+                        </ItemTemplate>
+                        <ItemStyle Width="300px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Số hiệu">
+                        <ItemTemplate>
+                            <%# Eval("shcc") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Đơn vị">
+                        <ItemTemplate>
+                            <%# Eval("dv") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Điện thoại">
+                        <ItemTemplate>
+                            <%# Eval("tel") %>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Email">
+                        <ItemTemplate>
+                            <a class="email" shcc="<%# Eval("shcc") %>" href="mailto:<%# Eval("email") %>">
+                                <%# Eval("email") %>
+                            </a>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <HeaderTemplate>
+                            <input id="chkAll" name="firstColumn" type="checkbox" />
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <input shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId" name="firstColumn"
+                                type="checkbox" value="<%# Eval("shcc") %>" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Xóa">
+                        <ItemTemplate>
+                            <a href="javascript:void(0)" class="delete-row" shcc="<%# Eval("shcc") %>">Xóa </a>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                </Columns>
             </asp:GridView>
         </div>
+        <div class="footer-table">
+            <div>
+                <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload2" Text="Tải về"
+                    OnClick="btnDownload2_Click" />
+            </div>
+            <div>
+                Hiển thị &nbsp;
+                <select class="ddlPageSize" style="width: 60px;">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50" selected="selected">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                </select>&nbsp; dòng&nbsp;&nbsp;<span runat="server" id="spInfo2" class="info"></span>
+            </div>
+            <div class="pagerLoad fr">
+                <uc2:Pager Visible="false" ID="Pager2" runat="server" />
+            </div>
+            <div class="clear">
+            </div>
+        </div>
     </div>
-    <!--id=content -->
-    <asp:Label ID="LabelError" runat="server" Text="" CssClass="error"></asp:Label>
-
 </asp:Content>

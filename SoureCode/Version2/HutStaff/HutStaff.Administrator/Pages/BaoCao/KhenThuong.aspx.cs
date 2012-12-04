@@ -13,35 +13,35 @@ namespace HutStaff.Administrator.Pages.BaoCao
 {
     public partial class KhenThuong : System.Web.UI.Page
     {
-        private int hinhThuc;
-        private int tuNam;
-        private int denNam;
-        private string donVi;
-        private int dienCanBo;
-        private int khoiCanBo;
-
-       
+        protected DataTable tblData;
+        SpreadsheetGear.IWorkbook workbook = SpreadsheetGear.Factory.GetWorkbook();
+        SpreadsheetGear.IRange cells = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //ddlHinhThucKhenThuong: dropdownList Hinh thuc khen thuong
                 DataTable table_dm_kt = BaoCaoBO.ViewAlldm_kt();
+                DataRow dr = table_dm_kt.NewRow();
+                dr["ma_kt"] = -1;
+                dr["kt"] = "Tất cả";
+                table_dm_kt.Rows.InsertAt(dr, 0);
                 ddlHinhThucKhenThuong.DataSource = table_dm_kt;
                 ddlHinhThucKhenThuong.DataValueField = table_dm_kt.Columns[0].ColumnName;
                 ddlHinhThucKhenThuong.DataTextField = table_dm_kt.Columns[1].ColumnName;
                 ddlHinhThucKhenThuong.DataBind();
 
-                //tbFrom
                 tbFrom.Text = "2007";
 
-                //tbTo
                 tbTo.Text = DateTime.Now.Year.ToString();
 
                 //dropdownlist Đơn vị cac cấp ... da làm
                 //ddlUnit123: dropdownList cua các đơn vị cấp 1,2,3
                 DataTable table_123_dm_dv = BaoCaoBO.ViewAll_123_dm_dv();
+                DataRow dr2 = table_123_dm_dv.NewRow();
+                dr2[0] = -1;
+                dr2[1] = "Tất cả";
+                table_123_dm_dv.Rows.InsertAt(dr2, 0);
                 ddlUnit123.DataSource = table_123_dm_dv;
                 ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
                 ddlUnit123.DataTextField = table_123_dm_dv.Columns[1].ColumnName;
@@ -49,18 +49,22 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
                 //ddlUnit4: dropdownList cua cac don vi cap 4
                 DataTable table_4_dm_dv = BaoCaoBO.ViewAll_4_dm_dv();
+                DataRow dr3 = table_4_dm_dv.NewRow();
+                dr3[0] = -1;
+                dr3[1] = "Tất cả";
+                table_4_dm_dv.Rows.InsertAt(dr3, 0);
                 ddlUnit4.DataSource = table_4_dm_dv;
                 ddlUnit4.DataValueField = table_4_dm_dv.Columns[0].ColumnName;
                 ddlUnit4.DataTextField = table_4_dm_dv.Columns[1].ColumnName;
                 ddlUnit4.DataBind();
 
-                
-
-
-
 
                 //ddlDienCanBo: dropdownList dien can bo
                 DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
+                DataRow dr4 = table_dm_dcb.NewRow();
+                dr4[0] = -1;
+                dr4[1] = "Tất cả";
+                table_dm_dcb.Rows.InsertAt(dr4, 0);
                 ddlDienCanBo.DataSource = table_dm_dcb;
                 ddlDienCanBo.DataValueField = table_dm_dcb.Columns[0].ColumnName;
                 ddlDienCanBo.DataTextField = table_dm_dcb.Columns[1].ColumnName;
@@ -68,97 +72,81 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
                 //ddlKhoiCanBo: dropdownList Khoi can bo
                 DataTable table_dm_kcb = BaoCaoBO.ViewAlldm_kcb();
+                DataRow dr5 = table_dm_kcb.NewRow();
+                dr5[0] = -1;
+                dr5[1] = "Tất cả";
+                table_dm_kcb.Rows.InsertAt(dr5, 0);
                 ddlKhoiCb.DataSource = table_dm_kcb;
                 ddlKhoiCb.DataValueField = table_dm_kcb.Columns[0].ColumnName;
                 ddlKhoiCb.DataTextField = table_dm_kcb.Columns[1].ColumnName;
                 ddlKhoiCb.DataBind();
+
+                ViewState["tabledata"] = tblData;
             }
-            
 
 
 
 
-        }
 
-        protected void btnSearch_Click(object sender, ImageClickEventArgs e)
-        {
-            //rewardListDataTable = this.GetRewardList();
-
-            //btnExport.Visible = true;
-          
-            //try
-            //{
-             
-
-            //    int htkt = int.Parse(ddlHinhThucKhenThuong.SelectedItem.Value);
-            //    int tunam = int.Parse(tbFrom.Text);
-            //    int dennam = int.Parse(tbTo.Text);
-            //    string donvi = ddlUnit4.SelectedItem.Text;
-            //    int dcb = int.Parse(ddlDienCanBo.SelectedItem.Value);
-            //    int kcb = int.Parse(ddlKhoiCb.SelectedItem.Value);
-            //    gvResultSearch.DataSource = BaoCaoBO.getReward(htkt, tunam, dennam, donvi, dcb, kcb);
-            //}
-            //catch (Exception ex)
-            //{
-               
-            //    LabelError.Text =ex.ToString();
-            //    throw ex;
-            //}
-            
-            
         }
 
         protected void btnExport_Click(object sender, EventArgs e)
         {
-            //rewardListDataTable = this.GetRewardList();
-            //BO.Report.Exporter.ExporttoExcel(rewardListDataTable, String.Format("KhenThuong_{0}.xls", DateTime.Now.ToString()));
+
         }
 
-        private DataTable GetRewardList()
+        protected void btnOk_Click(object sender, EventArgs e)
         {
-            // Get Input
-            hinhThuc = int.Parse(ddlHinhThucKhenThuong.SelectedValue);
-            tuNam = int.Parse(tbFrom.Text);
-            denNam = int.Parse(tbTo.Text);
-            donVi = ddlUnit123.SelectedValue;
-            dienCanBo = int.Parse(ddlDienCanBo.SelectedValue);
-            khoiCanBo = int.Parse(ddlKhoiCb.SelectedValue);
-
-            // Get reward list
-            DataTable tempRewardListDataTable = BO.Report.Report.GetRewardList(hinhThuc, tuNam, denNam, donVi, dienCanBo, khoiCanBo);
-
-            // Add order column
-            DataColumn orderColumn = tempRewardListDataTable.Columns.Add("STT");
-            orderColumn.SetOrdinal(0);
-            int order = 0;
-            foreach (DataRow row in tempRewardListDataTable.Rows)
+            tblData = BO.Report.Report.GetRewardList(Convert.ToInt32(ddlHinhThucKhenThuong.SelectedValue), !String.IsNullOrEmpty(tbFrom.Text) ? Convert.ToInt32(tbFrom.Text) : DateTime.MinValue.Year, !String.IsNullOrEmpty(tbTo.Text) ? Convert.ToInt32(tbTo.Text) : DateTime.MaxValue.Year, "", Convert.ToInt32(ddlDienCanBo.SelectedValue), Convert.ToInt32(ddlKhoiCb.SelectedValue));
+            ViewState["tabledata"] = tblData;
+            int iCount = tblData.Rows.Count;
+            if (iCount == 0)
             {
-                order++;
-                row["STT"] = order.ToString();
+                Pager1.Visible = false;
+                Pager2.Visible = false;
+                spInfo1.Visible = false;
+                spInfo2.Visible = false;
+                grdData.Visible = false;
+                divEmpty.Visible = true;
             }
+            else
+            {
+                Pager1.Visible = true;
+                Pager2.Visible = true;
+                spInfo1.Visible = true;
+                spInfo2.Visible = true;
+                grdData.Visible = true;
+                divEmpty.Visible = false;
 
-            // Change column name of reward list table
-            tempRewardListDataTable.Columns[1].ColumnName = "So hieu cong chuc";
-            tempRewardListDataTable.Columns[2].ColumnName = "Ho dem";
-            tempRewardListDataTable.Columns[3].ColumnName = "Ten";
-            tempRewardListDataTable.Columns[4].ColumnName = "Don vi";
-            tempRewardListDataTable.Columns[5].ColumnName = "Hinh thuc khen thuong";
-            tempRewardListDataTable.Columns[6].ColumnName = "Ngay khen thuong";
+                Pager1.PageSize = Convert.ToInt32(ddPs.Value);
+                if (iCount % Pager1.PageSize == 0)
+                {
+                    Pager1.TotalPage = iCount / Pager1.PageSize;
+                }
+                else
+                {
+                    Pager1.TotalPage = iCount / Pager1.PageSize + 1;
+                }
+                Pager1.CurrentPage = 1;
 
-            return tempRewardListDataTable;
+                grdData.DataSource = tblData;
+                grdData.DataBind();
+
+                spInfo1.InnerText = ". Trang " + ((Pager1.CurrentPage - 1) * Pager1.PageSize + 1).ToString() + "-" + ((Pager1.PageSize * Pager1.CurrentPage < iCount) ? Pager1.PageSize * Pager1.CurrentPage : iCount).ToString() + "/" + iCount.ToString();
+                spInfo2.InnerText = ". Trang " + ((Pager1.CurrentPage - 1) * Pager1.PageSize + 1).ToString() + "-" + ((Pager1.PageSize * Pager1.CurrentPage < iCount) ? Pager1.PageSize * Pager1.CurrentPage : iCount).ToString() + "/" + iCount.ToString();
+            }
         }
 
-        protected void ddlUnit123_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnDownload2_Click(object sender, EventArgs e)
         {
 
-            DataTable dm_dv_cap4 = BaoCaoBO.View_DonVi_Cap4(ddlUnit123.SelectedItem.Value);
-            ddlUnit4.DataSource = dm_dv_cap4;
-            ddlUnit4.DataValueField = dm_dv_cap4.Columns[0].ColumnName;
-            ddlUnit4.DataTextField = dm_dv_cap4.Columns[1].ColumnName;
-            ddlUnit4.DataBind();
+        }
+
+        protected void btnDownload1_Click(object sender, EventArgs e)
+        {
 
         }
 
-       
+
     }
 }

@@ -49,15 +49,6 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.TextBox tbTo;
         
         /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
         /// ddlUnit123 control.
         /// </summary>
         /// <remarks>
@@ -94,57 +85,102 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.DropDownList ddlKhoiCb;
         
         /// <summary>
-        /// btnSearch control.
+        /// btnOk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnSearch;
+        protected global::System.Web.UI.WebControls.Button btnOk;
         
         /// <summary>
-        /// x control.
+        /// btnDownload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label x;
+        protected global::System.Web.UI.WebControls.Button btnDownload1;
         
         /// <summary>
-        /// lbllblResultSearch control.
+        /// ddPs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbllblResultSearch;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddPs;
         
         /// <summary>
-        /// xuatdata control.
+        /// spInfo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink xuatdata;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spInfo1;
         
         /// <summary>
-        /// gvResultSearch control.
+        /// divPager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvResultSearch;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPager;
         
         /// <summary>
-        /// LabelError control.
+        /// Pager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelError;
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager1;
+        
+        /// <summary>
+        /// divEmpty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEmpty;
+        
+        /// <summary>
+        /// grdData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdData;
+        
+        /// <summary>
+        /// btnDownload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDownload2;
+        
+        /// <summary>
+        /// spInfo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spInfo2;
+        
+        /// <summary>
+        /// Pager2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HutStaff.Administrator.Controls.Common.Pager Pager2;
     }
 }
