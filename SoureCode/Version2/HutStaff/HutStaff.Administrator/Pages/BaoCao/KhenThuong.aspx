@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
     CodeBehind="KhenThuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.BaoCao.KhenThuong" %>
-
 <%@ Register Src="~/Controls/Common/SlideBaocao.ascx" TagName="SlideBaocao" TagPrefix="uc1" %>
 <%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -137,14 +136,8 @@
         <asp:TextBox ID="tbTo" runat="server" Width="50px" />
         <br />
         <label>
-            Đơn vị cấp 1,2,3:</label>
+            Đơn vị:</label>
         <asp:DropDownList ID="ddlUnit123" runat="server" CssClass="ddl">
-        </asp:DropDownList>
-        <br />
-        <label>
-            Đơn vị cấp 4:
-        </label>
-        <asp:DropDownList ID="ddlUnit4" runat="server" CssClass="ddl">
         </asp:DropDownList>
         <br />
         <label>

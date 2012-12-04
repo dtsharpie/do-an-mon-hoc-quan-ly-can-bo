@@ -5,6 +5,7 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(2).addClass('active');
+            $(".ddl").chosen({ no_results_text: "Không có kết quả phù hợp" });
         });
     </script>
 </asp:Content>
@@ -12,7 +13,7 @@
     <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="MainContentPlaceHolder" ID="content1">
-    <div class="content" id="content">
+    <div id="content" class="form-container">
         <br/>
         <h1>Báo cáo thống kê</h1>
         <hr width="750px"/>
@@ -26,7 +27,7 @@
             <tr>
                 <td height="30" align="left" class="Row2">Chọn đơn vị lập báo cáo</td>
                 <td height="30" align="left" class="Row1">
-                    <asp:DropDownList ID="ddlDonViLapBaoCao" runat="server" />
+                    <asp:DropDownList CssClass="ddl" ID="ddlDonViLapBaoCao" runat="server" />
 		        </td>
             </tr>
 	         <tr>
@@ -45,9 +46,9 @@
                 <td height="30" align="center" colspan="2" class="Row3">
                    
                  <asp:Button Text="Xuất báo cáo để tải về máy" runat="server" ID="btnXuat" 
-                        onclick="btnXuat_Click" />
+                        onclick="btnXuat_Click" CssClass="button"/>
                    <asp:Button Text="Xem trước báo cáo" runat="server" ID="btnXem" 
-                        onclick="btnXem_Click" />
+                        onclick="btnXem_Click" CssClass="button" />
                 </td>
             </tr>
         </tbody>

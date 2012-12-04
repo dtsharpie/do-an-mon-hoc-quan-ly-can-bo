@@ -58,15 +58,6 @@ namespace HutStaff.Administrator.Pages.BaoCao {
         protected global::System.Web.UI.WebControls.DropDownList ddlUnit123;
         
         /// <summary>
-        /// ddlUnit4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnit4;
-        
-        /// <summary>
         /// ddlDienCanBo control.
         /// </summary>
         /// <remarks>
