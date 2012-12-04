@@ -721,3 +721,19 @@ div.form-container table td.short-spacing
     padding-left: 10px;
     cursor: pointer;
 }
+td.Row3 {
+    background-color: #D1D7DC;
+}
+TD.Row1 {
+    background-color: #EFEFEF;
+    height:27px;
+}
+p.Text {
+    font-family: Times New Roman;
+    font-size: 13px;
+    text-align: left;
+}
+TD.Row2 {
+    background-color: #DEE3E7;
+    height:27px;
+}
