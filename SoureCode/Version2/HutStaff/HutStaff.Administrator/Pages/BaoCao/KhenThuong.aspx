@@ -9,6 +9,115 @@
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(2).addClass('active');
             $(".ddl").chosen({ no_results_text: "Không có kết quả phù hợp" });
+            var searchCurrenPage = 1;
+            var searchTotalPage = parseInt("<%= Pager1.TotalPage %>");
+
+            function loadPage(pageIndex) {
+                var pageSize = parseInt(" <%= Pager1.PageSize %>");
+                $('.table-result tr.row').not('.hide').addClass('hide');
+                for (var i = ((pageIndex - 1) * pageSize); i < (pageIndex * pageSize); i++) {
+                    $('.table-result tr.row').eq(i).removeClass('hide');
+                }
+            }
+
+            $(".ddlPageSize").change(function () {
+                $(".ddlPageSize").val($(this).val());
+            });
+
+            function GenPaging() {
+                var html = '';
+                html += '<span class="first paging_button"><a href="javascript:void(0);" index="1">First</a></span><span class="previous paging_button"><a href="javascript:void(0);">Previous</a></span>';
+                if (searchCurrenPage < 4) {
+                    if (searchTotalPage > searchCurrenPage) {
+                        var range = searchTotalPage - searchCurrenPage;
+                        if (range > 2) range = 2;
+                        for (var i = 1; i <= searchCurrenPage + range; i++) {
+                            if (i == searchCurrenPage)
+                                html += '<span class="paging_button active"><a href="javascript:void(0);" title="Current page" index="' + i + '">' + i + '</a></span>';
+                            else
+                                html += '<span class="paging_button"><a href="javascript:void(0);" title="Page ' + i + '" index="' + i + '">' + i + '</a></span>';
+                        }
+                        if (searchTotalPage > 3) {
+                            html += '<span class="paging_dot">...</span>';
+                        }
+                    }
+                    else {
+                        for (var i = 1; i <= searchCurrenPage; i++) {
+                            if (i == searchCurrenPage)
+                                html += '<span class="paging_button active"><a href="javascript:void(0);" title="Currnet page"  index="' + i + '">' + i + '</a></span>';
+                            else
+                                html += '<span class="paging_button"><a href="javascript:void(0);" title="Page ' + i + '" index="' + i + '">' + i + '</a></span>';
+                        }
+                    }
+                }
+                else if (searchCurrenPage > searchTotalPage - 3) {
+                    html += '<span class="paging_dot">...</span>';
+                    for (var i = searchTotalPage - 4; i <= searchTotalPage; i++) {
+                        if (i != 0) {
+                            if (i == searchCurrenPage)
+                                html += '<span class="paging_button active"><a href="javascript:void(0);" title="Currnet page" index="' + i + '">' + i + '</a></span>';
+                            else
+                                html += '<span class="paging_button"><a href="javascript:void(0);" title="Page ' + i + '" index="' + i + '">' + i + '</a></span>';
+                        }
+                    }
+                }
+                else {
+                    html += '<span class="paging_dot">...</span>';
+                    for (var i = searchCurrenPage - 2; i <= searchCurrenPage + 2; i++) {
+                        if (i != 0) {
+                            if (i == searchCurrenPage)
+                                html += '<span class="paging_button active"><a href="javascript:void(0);" title="Currnet page"  index="' + i + '">' + i + '</a></span>';
+                            else
+                                html += '<span class="paging_button"><a href="javascript:void(0);" title="Page ' + i + '" index="' + i + '">' + i + '</a></span>';
+                        }
+                    }
+                    html += '<span class="paging_dot">...</span>';
+                }
+                html += '<span class="next paging_button"><a href="javascript:void(0);">Next</a></span> <span class="last paging_button"><a href="javascript:void(0);" index="<%= Pager1.TotalPage %>">Last</a></span>';
+
+                $('.paging').html(html);
+
+                $('.paging_button a').click(function () {
+                    if ($(this).parent().hasClass('previous')) {
+                        searchCurrenPage--;
+                        if (searchCurrenPage < 1)
+                            searchCurrenPage = 1;
+                        loadPage(searchCurrenPage);
+                        GenPaging();
+                    } else if ($(this).parent().hasClass('next')) {
+                        searchCurrenPage++;
+                        if (searchCurrenPage > parseInt($('.paging_button.last a').eq(0).attr('index')))
+                            searchCurrenPage = parseInt($('.paging_button.last a').eq(0).attr('index'));
+                        loadPage(searchCurrenPage);
+                        GenPaging();
+                    } else {
+                        searchCurrenPage = parseInt($(this).attr('index'));
+                        loadPage(searchCurrenPage);
+                        GenPaging();
+                    }
+                });
+            }
+          
+
+            $('.paging_button a').click(function () {
+                if ($(this).parent().hasClass('previous')) {
+                    searchCurrenPage--;
+                    if (searchCurrenPage < 1)
+                        searchCurrenPage = 1;
+                    loadPage(searchCurrenPage);
+                } else if ($(this).parent().hasClass('next')) {
+                    searchCurrenPage++;
+                    if (searchCurrenPage > parseInt($('.paging_button.last').attr('index')))
+                        searchCurrenPage = parseInt($('.paging_button.last').attr('index'));
+                    loadPage(searchCurrenPage);
+                } else {
+                    searchCurrenPage = parseInt($(this).attr('index'));
+                    loadPage(searchCurrenPage);
+                    GenPaging();
+                }
+            });
+
+            $('.paging_button.first a').click();
         });
     </script>
 </asp:Content>
@@ -90,13 +199,14 @@
                         <ItemTemplate>
                             <a href="javascript:void(0)" onclick="showUrl('/Pages/Timkiem/ThongTinChiTiet.aspx?id=<%# Eval("shcc") %>','<%# Eval("hoten") %>')"
                                 shcc="<%# Eval("shcc") %>">
-                                <%# Eval("hoten") %></a>
+                                <%# Eval("hodem").ToString() + " " + Eval("ten")%></a>
                         </ItemTemplate>
                         <ItemStyle Width="300px" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Số hiệu">
                         <ItemTemplate>
-                            <%# Eval("shcc") %></ItemTemplate>
+                            <%# Eval("shcc") %>
+                        </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Đơn vị">
@@ -104,33 +214,16 @@
                             <%# Eval("dv") %>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Điện thoại">
+                    <asp:TemplateField HeaderText="Hình thức khen thưởng">
                         <ItemTemplate>
-                            <%# Eval("tel") %>
+                            <%# Eval("kt") %>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Email">
+                    <asp:TemplateField HeaderText="Năm khen thưởng">
                         <ItemTemplate>
-                            <a class="email" shcc="<%# Eval("shcc") %>" href="mailto:<%# Eval("email") %>">
-                                <%# Eval("email") %>
-                            </a>
+                            <%# Eval("nkt_qtkt") == DBNull.Value ? "" : Convert.ToDateTime(Eval("nkt_qtkt")).Year.ToString()%>
                         </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField>
-                        <HeaderTemplate>
-                            <input id="chkAll" name="firstColumn" type="checkbox" />
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <input shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId" name="firstColumn"
-                                type="checkbox" value="<%# Eval("shcc") %>" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Xóa">
-                        <ItemTemplate>
-                            <a href="javascript:void(0)" class="delete-row" shcc="<%# Eval("shcc") %>">Xóa </a>
-                        </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
