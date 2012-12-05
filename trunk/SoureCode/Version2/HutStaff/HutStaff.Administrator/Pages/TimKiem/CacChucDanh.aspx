@@ -99,6 +99,7 @@
         </div>
         <div class="nodata" id="divNodata" runat="server" ></div>
 
+        <br/><br/>
         <div>
             <table class="table-result">
             <tr class="title">

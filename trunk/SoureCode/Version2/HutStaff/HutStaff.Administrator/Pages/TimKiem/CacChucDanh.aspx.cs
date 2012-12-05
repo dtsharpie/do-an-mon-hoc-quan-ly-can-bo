@@ -86,18 +86,17 @@ namespace HutStaff.Administrator.Pages.TimKiem
             {
                 divNodata.InnerText = "Không có dữ liệu";
             }
-
-
-
-
-
-
-
-
-
-
-
             
+        }
+
+        protected void saveButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void resetButtonClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
