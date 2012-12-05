@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td><asp:DropDownList runat="server" class="ddl" id="ddlDonViNguon" AutoPostBack="true" OnSelectedIndexChanged="ddlDonViNguon_SelectedIndexChanged"></asp:DropDownList></td>
-                <td><asp:Button runat="server" ID="btnChuyen" Text="Chuyển" 
+                <td><asp:Button runat="server" ID="btnChuyen" Text="Chuyển" OnClientClick="return confirm('Bạn có thực sự muốn chuyển đơn vị những cán bộ này không?');"
                         onclick="btnChuyen_Click" /></td>
                 <td><asp:DropDownList runat="server" class="ddl" id="ddlDonViDich"></asp:DropDownList></td>
             </tr>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PagesBO\BaoCaoBO\BaoCaoBO.cs" />
+    <Compile Include="PagesBO\QuanLy\DanhMucBO.cs" />
     <Compile Include="PagesBO\QuanLy\NguoiDungBO.cs" />
     <Compile Include="PagesBO\QuanLy\XetDuyet.cs" />
     <Compile Include="PagesBO\TimKiem\SearchBO.cs" />
