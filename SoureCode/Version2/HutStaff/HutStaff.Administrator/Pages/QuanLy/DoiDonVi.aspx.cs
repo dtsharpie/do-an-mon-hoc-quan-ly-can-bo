@@ -43,7 +43,10 @@ namespace HutStaff.Administrator.Pages.QuanLy
             SqlDataSource_CanBoChuyen.SelectCommand = "SELECT [shcc], [hodem], [ten] FROM [soyeu] WHERE ma_dvql = '" + ddlDonViNguon.SelectedValue + "'";
             gvCanBoChuyen.DataBind();
 
-            lblMessage.Text = "Danh sách cán bộ sẽ chuyển";
+            if (gvCanBoChuyen.Rows.Count == 0)
+                lblMessage.Text = "Đơn vị này hiện không có cán bộ nào!";
+            else
+                lblMessage.Text = "Danh sách cán bộ sẽ chuyển";
             gvCanBoChuyen.Visible = true;
         }
     }

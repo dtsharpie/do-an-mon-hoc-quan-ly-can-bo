@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PagesDAL\BaoCaoDAL\BaoCaoDAL.cs" />
+    <Compile Include="PagesDAL\QuanLy\DanhMuc.cs" />
     <Compile Include="PagesDAL\QuanLy\NguoiDung.cs" />
     <Compile Include="PagesDAL\QuanLy\XetDuyet.cs" />
     <Compile Include="PagesDAL\TimKiem\SearchDAL.cs" />

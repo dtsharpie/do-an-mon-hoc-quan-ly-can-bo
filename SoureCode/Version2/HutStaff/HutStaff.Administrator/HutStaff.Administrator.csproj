@@ -649,6 +649,8 @@
     <Content Include="Pages\HuongDan\HuongDan.aspx" />
     <Content Include="Pages\QuanLy\BangDanhMuc.aspx" />
     <Content Include="Pages\QuanLy\BoSungCanBo.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\dm_hh.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\dm_kt.aspx" />
     <Content Include="Pages\QuanLy\DoiDonVi.aspx" />
     <Content Include="Pages\QuanLy\Duyethuyhoso.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
@@ -1259,6 +1261,20 @@
     </Compile>
     <Compile Include="Pages\QuanLy\BoSungCanBo.aspx.designer.cs">
       <DependentUpon>BoSungCanBo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\dm_hh.aspx.cs">
+      <DependentUpon>dm_hh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\dm_hh.aspx.designer.cs">
+      <DependentUpon>dm_hh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\dm_kt.aspx.cs">
+      <DependentUpon>dm_kt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\dm_kt.aspx.designer.cs">
+      <DependentUpon>dm_kt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
