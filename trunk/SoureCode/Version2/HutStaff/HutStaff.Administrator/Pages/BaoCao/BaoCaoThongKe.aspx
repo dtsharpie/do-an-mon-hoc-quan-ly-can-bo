@@ -156,7 +156,7 @@
                                 cấp</a>
                         </td>
                         <td class="row1">
-                            <a href="#">Bảng thanh toán lương hàng tháng</a>
+                            <a href="ThanhToanLuong.aspx">Bảng thanh toán lương hàng tháng</a>
                         </td>
                     </tr>
                 </tbody>
