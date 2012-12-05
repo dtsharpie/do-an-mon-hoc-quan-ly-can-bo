@@ -238,5 +238,31 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
                     new object[] { id, ma_tnn, ma_tdnn, p});
             }
         }
+
+        public static void Delete(int iShcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("");
+            }
+        }
+
+        public static void Update(int iShcc, string hovatendem, string ten, DateTime? ngaysinh, int gioitinh, string scmnd, DateTime? ngaycap, int? noicap, string email, string dienthoai, int? tdhv, int? tdll, int? tdql, int? tdth, string sotruong, DateTime? ngayvecq, DateTime? ngayvaobienche, int? khoicanbo, int? diencanbo, int? dvql, string viecphancong, string viecdamnhan, DateTime? ngaybatdau, DateTime? mocthamnien, DateTime? ngaykthd, string lidokthd, int thanggd, DateTime? ngaythamgiacm, DateTime? ngayvaodang, DateTime? ngaychinhthuc, DateTime? ngaynhapngu, DateTime? ngayxuatngu, string quanham, int? thuongbinh, int? giadinhchinhsach, int? thanhphanxuatthan, string tenthuongdung, int? noisinh, int? quequan, string chitietquequan, string diachithuongtru, int? hokhauthuongtru, string chitiethktt, string sobaohiem, DateTime? ngaydongbh, DateTime? ngaybhchinhthuc, string ttsk, string nm, int? tthn, string lsbt, int? dt, int? tg, string thongtinkhac)
+        {
+            using (MainDB db = new MainDB())
+            {
+                // Không hiểu @kn_tht là gì, nhập vào là ""
+                // Trong thiết kế giao diện không có trường Tình trạng, nên không có dữ liệu cho @tt
+                db.Execute("sp_update_soyeu",
+                    new string[] { "@shcc", "@nvcqhn", "@scmnd", "@nc", "@ngay_cap", "@ma_dvql", "@hodem", "@ten", "@gt", "@ttd", "@ntns", "@ma_ns", "@ma_qq", "@ctqq", 
+                        "@dctt", "@ma_dt", "@ma_tg", "@ma_gdtdcs", "@ma_tpxt", "@ntgcm", "@vdpc", "@nvbc", "@cvdn", "@nvd", "@nct", "@nnn", "@nxn", "@qh", "@ma_tb", 
+                        "@ma_tdhv", "@ma_tdth", "@kn_tht", "@ma_tdllct", "@ma_tdqlnn", "@nlstnk", "@ma_ttsk", "@ma_nm", "@ddlsbt", "@ttk", "@dcb", "@tt", "@sbh", "@ndbh",
+                        "@tthn", "@email", "@tel", "@cthktt", "@kcb", "@ma_hktt", "@ngay_kthd", "@ld_kthd", "@ngaybh", "@thanggd", "@ngaybhct", "@mochuongtn"},
+                    new object[] {iShcc, ngayvecq, scmnd, noicap, ngaycap, dvql, hovatendem, ten, gioitinh, tenthuongdung, ngaysinh, noisinh, quequan, chitietquequan, 
+                        diachithuongtru, dt, tg, giadinhchinhsach, thanhphanxuatthan, ngaythamgiacm, viecphancong, ngayvaobienche, viecdamnhan, ngayvaodang, ngaychinhthuc, ngaynhapngu, ngayxuatngu, quanham, thuongbinh,
+                        tdhv, tdth, "", tdll, tdql, sotruong, ttsk, nm, lsbt, thongtinkhac, diencanbo, 0, sobaohiem, ngaydongbh,
+                        tthn, email, dienthoai, chitiethktt, khoicanbo, hokhauthuongtru, ngaykthd, lidokthd, ngaydongbh, thanggd, ngaybhchinhthuc, mocthamnien});
+            }
+        }
     }
 }
