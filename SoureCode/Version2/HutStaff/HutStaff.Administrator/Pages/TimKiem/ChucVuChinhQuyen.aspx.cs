@@ -15,6 +15,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
         protected int iShcc;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
             try
             {
                 string id = Request.QueryString["id"];
@@ -73,15 +75,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
             //
             DataTable tblData = BO.Thongtinchung.Thongtinchung.Getchucvuchinhquyen(iShcc);
-            if (tblData.Rows.Count > 0)
-            {
-                rptData.DataSource = tblData;
-                rptData.DataBind();
-            }
-            else
-            {
-                divNodata.InnerText = "Không có dữ liệu";
-            }
-        }
+            GridViewChucVuChinhQuyen.DataSource = tblData;
+            GridViewChucVuChinhQuyen.DataBind();
         }
     }
+}
