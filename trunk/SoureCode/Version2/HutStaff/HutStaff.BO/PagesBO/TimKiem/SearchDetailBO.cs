@@ -142,13 +142,22 @@ namespace HutStaff.BO.PagesBO.TimKiem
         //delete database
         public static void Delete(int iShcc)
         {
-            throw new NotImplementedException();
+            SearchDetailDAL.Delete(iShcc);
         }
 
         //update database
         public static void updateTrinhDoNgoaiNgu(int id, int ma_tnn, int ma_tdnn, string p)
         {
             SearchDetailDAL.updateTrinhDoNgoaiNgu(id,ma_tnn, ma_tdnn, p);
+        }
+
+        public static void Update(int iShcc, string hovatendem, string ten, DateTime? ngaysinh, int gioitinh, string scmnd, DateTime? ngaycap, int? noicap, string email, string dienthoai, int? tdhv, int? tdll, int? tdql, int? tdth, string sotruong, DateTime? ngayvecq, DateTime? ngayvaobienche, int? khoicanbo, int? diencanbo, int? dvql, string viecphancong, string viecdamnhan, DateTime? ngaybatdau, DateTime? mocthamnien, DateTime? ngaykthd, string lidokthd, int thanggd, DateTime? ngaythamgiacm, DateTime? ngayvaodang, DateTime? ngaychinhthuc, DateTime? ngaynhapngu, DateTime? ngayxuatngu, string quanham, int? thuongbinh, int? giadinhchinhsach, int? thanhphanxuatthan, string tenthuongdung, int? noisinh, int? quequan, string chitietquequan, string diachithuongtru, int? hokhauthuongtru, string chitiethktt, string sobaohiem, DateTime? ngaydongbh, DateTime? ngaybhchinhthuc, string ttsk, string nm, int? tthn, string lsbt, int? dt, int? tg, string thongtinkhac)
+        {
+            SearchDetailDAL.Update(iShcc, hovatendem, ten, ngaysinh, gioitinh, scmnd, ngaycap, noicap, email, dienthoai, tdhv, tdll, tdql,
+                tdth, sotruong, ngayvecq, ngayvaobienche, khoicanbo, diencanbo, dvql, viecphancong, viecdamnhan, ngaybatdau, mocthamnien,
+                ngaykthd, lidokthd, thanggd, ngaythamgiacm, ngayvaodang, ngaychinhthuc, ngaynhapngu, ngayxuatngu, quanham, thuongbinh,
+                giadinhchinhsach, thanhphanxuatthan, tenthuongdung, noisinh, quequan, chitietquequan, diachithuongtru, hokhauthuongtru,
+                chitiethktt, sobaohiem, ngaydongbh, ngaybhchinhthuc, ttsk, nm, tthn, lsbt, dt, tg, thongtinkhac);
         }
     }
 }
