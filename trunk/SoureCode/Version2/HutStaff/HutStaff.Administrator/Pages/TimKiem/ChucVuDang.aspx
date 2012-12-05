@@ -15,7 +15,7 @@
     <li><a href="/Pages/TimKiem/TrinhDoNgoaiNgu.aspx?id=<%= iShcc %>">Trình độ ngoại ngữ</a></li>
     <li><a href="/Pages/TimKiem/CacChucDanh.aspx?id=<%= iShcc %>">Các chức danh</a></li>
     <li><a href="/Pages/TimKiem/ChucVuChinhQuyen.aspx?id=<%= iShcc %>">Chức vụ chính quyền</a></li>
-    <li><a href="">Chức vụ Đảng</a></li>
+    <li><a>Chức vụ Đảng</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDoanThe.aspx?id=<%= iShcc %>">Chức vụ đoàn thể</a></li>
     <li><a href="/Pages/TimKiem/KhenThuong.aspx?id=<%= iShcc %>">Khen thưởng</a></li>
     <li><a href="/Pages/TimKiem/KyLuat.aspx?id=<%= iShcc %>">Kỷ luật</a></li>
@@ -36,11 +36,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="content">
     <h1 class="title">
-        Chức vụ Đảng
+        Quá trình tham gia công tác Đảng
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
+        <%--<table class="table-result">
             <tr class="title">
                 <td>
                     Thời gian
@@ -73,7 +73,10 @@
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
-        </table>
+        </table>--%>
+        <asp:GridView ID="GridView1" runat="server" class="table-result">
+    </asp:GridView>
     </div>
 </div>
+    
 </asp:Content>

@@ -107,5 +107,84 @@ namespace HutStaff.BO.Thongtinchung
         {
             HutStaff.DAL.Thongtinchung.Thongtinchung.DeleteTrinhDoNgoaiNgu(id);
         }
+
+
+      // cac chuc danh
+        public static void InsertCacChucDanh(int shcc, int ma_hp, int npdp, int lcd, int cdcn, string ttk_qtcd, DateTime ntnphd)
+      {
+          HutStaff.DAL.Thongtinchung.Thongtinchung.InsertCacChuDanh(shcc, ma_hp, npdp, lcd, cdcn, ttk_qtcd, ntnphd);
+      }
+
+        public static void DeleteCacChucDanh(int id)
+        {
+            HutStaff.DAL.Thongtinchung.Thongtinchung.DeleteCacChucDanh(id);
+        }
+
+        public static DataTable GetAllDanhHieuDuocPhong()
+        {
+            return HutStaff.DAL.Thongtinchung.Thongtinchung.GetAllDanhHieuDuocPhong();
+        }
+
+        public static DataTable FindCacDanhHieuByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindCacDanhHieuByID(id);
+        }
+
+        public static void UpdateCacChucDanh(int id, int shcc, int ma_hp, int npdp, int lcd, int cdcn, string ttk_qtcd, DateTime ntnphd)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateCacChucDanh(id, shcc, ma_hp, npdp, lcd, cdcn, ttk_qtcd, ntnphd);
+        }
+
+
+      //trang khen thuong
+        public static DataTable GetAllDanhMucKhenThuong()
+        {
+           return DAL.Thongtinchung.Thongtinchung.GetAllDanhMucKhenThuong();
+        }
+        public static void InsertKhenThuong(int shcc, int ma_htkt, DateTime nkt_qtkt, string soqd_qtkt, string ttk_qtkt)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertKhenThuong(shcc, ma_htkt, nkt_qtkt, soqd_qtkt, ttk_qtkt);
+        }
+
+        public static void UpdateKhenThuong(int id, int ma_htkt, DateTime nkt_qtkt, string soqd_qtkt, string ttk_qtkt)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateKhenThuong(id, ma_htkt, nkt_qtkt, soqd_qtkt, ttk_qtkt);
+        }
+
+
+        public static void DeleteKhenThuong(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteKhenThuong(id);
+        }
+
+        public static DataTable FinByIDKhenThuong(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindByIDKhenThuong(id);
+        }
+
+
+      // trang ky luat
+        public static void InsertKyLuat(int shcc, int  ma_htkl, DateTime nkl,DateTime nxkl,string  ldkl, string ttk_qtkl)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertKyLuat(shcc, ma_htkl, nkl, nxkl, ldkl, ttk_qtkl);
+        }
+
+        public static void UpdateKyLuat(int id, int ma_htkl, DateTime nkl, DateTime nxkl, string ldkl, string ttk_qtkl)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateKyLuat(id, ma_htkl, nkl, nxkl, ldkl, ttk_qtkl);
+        }
+        public static void DeleteKyLuat(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteKyLuat(id);
+        }
+
+        public static DataTable GetAllKyLuat()
+        {
+           return DAL.Thongtinchung.Thongtinchung.GetAllKyLuat();
+        }
+        public static DataTable FindByIDKyLuat(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindByIDKyLuat(id);
+        }
     }
 }

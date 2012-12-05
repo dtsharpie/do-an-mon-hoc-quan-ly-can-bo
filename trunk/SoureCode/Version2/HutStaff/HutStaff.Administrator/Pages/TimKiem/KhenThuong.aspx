@@ -39,8 +39,12 @@
         Khen thưởng
     </h1>
     <hr />
+        <h3>
+        <asp:Label ID="nameLabel" runat="server" Text=""></asp:Label>
+    </h3>
+
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
+        <%--<table class="table-result">
             <tr class="title">
                 <td>
                     Hình thức khen thưởng
@@ -89,8 +93,73 @@
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
-        </table>
+        </table>--%>
+        
+        <asp:GridView ID="GridView1" runat="server" class="table-result" 
+            AutoGenerateColumns="False" onrowdeleting="GridViewDeleting" 
+            onselectedindexchanged="GridViewChanged">
+            <Columns>
+                <asp:BoundField DataField="id" />
+                <asp:BoundField HeaderText="Hình thức khen thưởng" DataField="kt" />
+                <asp:BoundField HeaderText="Năm khen" DataField="nkt_qtkt" 
+                        DataFormatString="{0:yyyy}" />
+                <asp:BoundField HeaderText="Lý do " DataField="soqd_qtkt" />
+                <asp:BoundField HeaderText="Thông tin khác " DataField="ttk_qtkt" />
+                    <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                    <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+            </Columns>
+        </asp:GridView>
         <div class="nodata" id="divNodata" runat="server">
+        </div>
+
+        <br/><br/>
+          <div>
+            <table class="table-result">
+            <tr class="title">
+                <td>
+                Bổ sung dữ liệu
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Hình thức khen thưởng
+                </td>
+                <td>
+                     <asp:DropDownList ID="DropDownlistHinhThucKhenThuong" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Năm khen thưởng
+                </td>
+                <td>
+                <asp:TextBox ID="txtNamKhenThuong" runat="server"></asp:TextBox>  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lý do khen
+                </td>
+                <td>
+                    <asp:TextBox ID="txtLyDo" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Thông tin khác
+                </td>
+                <td>
+                    <asp:TextBox ID="txtThongTinKhac" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID ="saveButton" OnClick="saveButtonClick" runat="server" Text ="Ghi nhận"/>
+                    <asp:Button ID ="resetButton" OnClick="resetButtonClick" runat = "server" Text ="Làm lại"/>
+                </td>
+            </tr>
+
+        </table>      
         </div>
     </div>
 </div>

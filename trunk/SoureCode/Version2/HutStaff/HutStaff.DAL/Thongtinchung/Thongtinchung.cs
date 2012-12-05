@@ -176,7 +176,7 @@ namespace HutStaff.DAL.Thongtinchung
         // bổ sung cơ sở dữ liệu
 
 
-
+        // trang ngoai ngu
 
         public static void InsertTrinhDoNgoaiNgu(int shcc, int ma_nn, int ma_td, string ttk_tdnn)
         {
@@ -225,6 +225,166 @@ namespace HutStaff.DAL.Thongtinchung
                     new string[] {@"id"},
                     new object[] {id}
                     );
+            }
+        }
+
+
+
+        // trang cac chuc danh
+        public static void InsertCacChuDanh (int shcc, int ma_hp, int npdp, int lcd, int cdcn, string ttk_qtcd, DateTime ntnphd)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_insert_qtcd_tbl]",
+                new string[] { "@shcc", "@ma_hp", "@npdp", "@lcd", "@cdcn", "@ttk_qtcd","@ntnphd" },
+                new object[] { shcc, ma_hp, npdp, lcd,cdcn,ttk_qtcd,ntnphd  });
+            }
+        }
+
+        public static void DeleteCacChucDanh(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_delete_qtcd]",
+                new string[] { "@id" },
+                new object[] { id });
+
+            }
+        }
+
+        public static void UpdateCacChucDanh(int id, int shcc, int ma_hp, int npdp, int lcd, int cdcn, string ttk_qtcd, DateTime ntnphd)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_qtcd_tbl]",
+                new string[] { "@id", "@shcc", "@ma_hp", "@npdp", "@lcd", "@cdcn", "@ttk_qtcd", "@ntnphd" },
+                new object[] {id, shcc, ma_hp, npdp, lcd, cdcn, ttk_qtcd, ntnphd });
+            }
+        }
+
+        public static DataTable GetAllDanhHieuDuocPhong()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_dhdp]");
+            }
+        }
+
+        public static DataTable FindCacDanhHieuByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qtcd_tbl]",
+                new string[] { "@id" },
+                new object[] { id });
+            }
+        }
+
+
+        // trang khen thuong
+        public static DataTable GetAllDanhMucKhenThuong()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_kt]");
+            }
+        }
+
+
+        public static void InsertKhenThuong(int shcc, int ma_htkt, DateTime nkt_qtkt, string soqd_qtkt, string ttk_qtkt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_insert_qtkt]",
+                    new string[] { "@shcc", "@ma_htkt", "@nkt_qtkt", "@soqd_qtkt", "@ttk_qtkt" },
+                    new object[] {shcc,ma_htkt,nkt_qtkt,soqd_qtkt,ttk_qtkt}
+                );
+            }
+        }
+
+        public static void UpdateKhenThuong(int id, int ma_htkt, DateTime nkt_qtkt, string soqd_qtkt, string ttk_qtkt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_qtkt]",
+                    new string[] { "@id", "@ma_htkt", "@nkt_qtkt", "@soqd_qtkt", "@ttk_qtkt" },
+                    new object[] { id, ma_htkt, nkt_qtkt, soqd_qtkt, ttk_qtkt }
+                );
+            }
+        }
+
+
+        public static void DeleteKhenThuong(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_delete_qtkt]",
+                                  new string[] { "@id" },
+                                  new object[] { id }
+                              );
+            }
+        }
+
+        public static DataTable FindByIDKhenThuong(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qtkt]",
+                                  new string[] { "@id" },
+                                  new object[] { id }
+                              );
+            }
+        }
+
+
+        // trang ky luat
+        public static void InsertKyLuat (int shcc, int  ma_htkl, DateTime nkl,DateTime nxkl,string  ldkl, string ttk_qtkl)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_insert_qtkl]",
+                    new string[] { "@shcc", "@ma_htkl", "@nkl", "@nxkl", "@ldkl", "@ttk_qtkl" },
+                    new object[] { shcc, ma_htkl, nkl, nxkl, ldkl, ttk_qtkl });
+            }
+        }
+
+        public static void UpdateKyLuat(int id, int ma_htkl, DateTime nkl, DateTime nxkl, string ldkl, string ttk_qtkl)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_qtkl]",
+                    new string[] { "@id", "@ma_htkl", "@nkl", "@nxkl", "@ldkl", "@ttk_qtkl" },
+                    new object[] { id, ma_htkl, nkl, nxkl, ldkl, ttk_qtkl });
+            }
+        }
+
+        public static void DeleteKyLuat(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                 db.Execute("[sp_delete_qtkl]",
+                                  new string[] { "@id" },
+                                  new object[] { id }
+                              );
+            }
+        }
+
+        public static DataTable GetAllKyLuat()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_kl]");
+            }
+        }
+
+        public static DataTable FindByIDKyLuat(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qtkl]",
+                    new string[] { @"id" },
+                new object[] { id });
+
             }
         }
     }
