@@ -96,13 +96,13 @@
         <div class="nodata" id="divNodata" runat="server">
         </div>
     </div>--%>
-    <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="GridViewChucVuChinhQuyen" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField HeaderText="Khoảng thời gian" />
             <asp:BoundField HeaderText="Chức vụ chính quyền" />
             <asp:BoundField HeaderText="Đơn vị quản lý" />
-            <asp:ButtonField Text="Sửa" />
-            <asp:ButtonField Text="Xóa" />
+            <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+            <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
     <asp:Button ID="Button1" runat="server" Text="Nhập mới" CssClass="button"/>
