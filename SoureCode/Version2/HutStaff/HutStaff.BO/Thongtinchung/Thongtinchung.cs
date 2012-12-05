@@ -93,5 +93,19 @@ namespace HutStaff.BO.Thongtinchung
             HutStaff.DAL.Thongtinchung.Thongtinchung.InsertTrinhDoNgoaiNgu(shcc, ma_nn, ma_td, ttk);
         }
 
+        public static DataTable FindByIDTrinhDoNgoaiNgu_TBL(int id)
+        {
+            return HutStaff.DAL.Thongtinchung.Thongtinchung.FindByIDTrinhDoNgoaiNgu_TBL(id);
+        }
+
+        public static void UpdateTrinhdoNgoaiNgu(int id, int ma_nn, int ma_td, string ttk_tdnn)
+        {
+            HutStaff.DAL.Thongtinchung.Thongtinchung.UpdateTrinhdoNgoaiNgu(id, ma_nn, ma_td, ttk_tdnn);
+        }
+
+        public static void DeleteTrinhDoNgoaiNgu(int id)
+        {
+            HutStaff.DAL.Thongtinchung.Thongtinchung.DeleteTrinhDoNgoaiNgu(id);
+        }
     }
 }

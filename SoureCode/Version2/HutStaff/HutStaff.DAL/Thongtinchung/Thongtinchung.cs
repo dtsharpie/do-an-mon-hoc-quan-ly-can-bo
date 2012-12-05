@@ -178,7 +178,7 @@ namespace HutStaff.DAL.Thongtinchung
 
 
 
-        public static void InsertTrinhDoNgoaiNgu (int shcc, int ma_nn, int ma_td, string ttk_tdnn )
+        public static void InsertTrinhDoNgoaiNgu(int shcc, int ma_nn, int ma_td, string ttk_tdnn)
         {
             try
             {
@@ -192,6 +192,39 @@ namespace HutStaff.DAL.Thongtinchung
             catch (Exception ex)
             {
                 throw;
+            }
+        }
+
+
+        public static DataTable FindByIDTrinhDoNgoaiNgu_TBL(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_tdnn_tbl]",
+                    new string[] { "@id" },
+                    new object[] { id });
+            }
+        }
+
+        public static void UpdateTrinhdoNgoaiNgu(int id, int ma_nn, int ma_td, string ttk_tdnn)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_tdnn]",
+                    new string[] { "@id", "@ma_nn", "@ma_td", "@ttk_tdnn" },
+                    new object[] { id, ma_nn, ma_td, ttk_tdnn });
+            }
+        }
+
+
+        public static void DeleteTrinhDoNgoaiNgu(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_delete_dm_tdnn]",
+                    new string[] {@"id"},
+                    new object[] {id}
+                    );
             }
         }
     }
