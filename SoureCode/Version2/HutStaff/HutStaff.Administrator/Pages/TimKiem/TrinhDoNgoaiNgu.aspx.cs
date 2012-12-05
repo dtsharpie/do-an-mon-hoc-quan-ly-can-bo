@@ -123,7 +123,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
         protected void resetButtonClick(object sender, EventArgs e)
         {
-            thongtinchungTextBox.Text = "";                                      
+            thongtinchungTextBox.Text = "";
+            saveButton.Text = "Ghi nhận";                    
         }
 
         protected void gridViewChanged(object sender, EventArgs e)

@@ -49,22 +49,49 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNodata;
         
         /// <summary>
-        /// ngoainguDropdownList control.
+        /// cacchudanhdownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ngoainguDropdownList;
+        protected global::System.Web.UI.WebControls.DropDownList cacchudanhdownList;
         
         /// <summary>
-        /// ngaythangPhongTextBox control.
+        /// DropDownListNgayBoNhiem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ngaythangPhongTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNgayBoNhiem;
+        
+        /// <summary>
+        /// DropDownListThangBoNhiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListThangBoNhiem;
+        
+        /// <summary>
+        /// txtNamBoNhiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNamBoNhiem;
+        
+        /// <summary>
+        /// Checkbox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Checkbox1;
         
         /// <summary>
         /// thongtinkhacTextBox control.

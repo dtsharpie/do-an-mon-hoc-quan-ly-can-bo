@@ -18,7 +18,7 @@
     <li><a href="/Pages/TimKiem/ChucVuDang.aspx?id=<%= iShcc %>">Chức vụ Đảng</a></li>
     <li><a href="/Pages/TimKiem/ChucVuDoanThe.aspx?id=<%= iShcc %>">Chức vụ đoàn thể</a></li>
     <li><a href="/Pages/TimKiem/KhenThuong.aspx?id=<%= iShcc %>">Khen thưởng</a></li>
-    <li><a href="">Kỷ luật</a></li>
+    <li><a>Kỷ luật</a></li>
     <li><a href="/Pages/TimKiem/DienBienLuong.aspx?id=<%= iShcc %>">Diễn biến lương</a></li>
     <li><a href="/Pages/TimKiem/QuanHeGiaDinh.aspx?id=<%= iShcc %>">Quan hệ gia đình</a></li>
     <li><a href="/Pages/TimKiem/NuocNgoaiDaDen.aspx?id=<%= iShcc %>">Nước ngoài đã đến</a></li>
@@ -39,8 +39,12 @@
         Kỷ luật
     </h1>
     <hr />
+            <h3>
+        <asp:Label ID="nameLabel" runat="server" Text=""></asp:Label>
+    </h3>
+
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
+        <%--<table class="table-result">
             <tr class="title">
                 <td>
                     Hình thức kỷ luật
@@ -98,10 +102,82 @@
                     </tr>
                 </AlternatingItemTemplate>
             </asp:Repeater>
-        </table>
+        </table>--%>
+        <asp:GridView ID="GridView1" runat="server"  class="table-result" 
+            AutoGenerateColumns="False" onrowdeleting="GridViewDeleting" 
+            onselectedindexchanged="GridViewChanged">
+            <Columns>
+                <asp:BoundField DataField="id" />
+                <asp:BoundField DataField="kl" HeaderText="Hình thức kỷ luật" />
+                <asp:BoundField DataField="nkl" HeaderText="Năm kỷ luật"  DataFormatString="{0:yyyy}" />
+                <asp:BoundField DataField="nxkl" HeaderText="Năm xóa kỷ luật"  DataFormatString="{0:yyyy}" />
+                <asp:BoundField DataField="ldkl" HeaderText="Lý do kỷ luật" />
+                <asp:BoundField DataField="ttk_qtkl" HeaderText="Thông tin khác" />
+                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+            </Columns>
+    </asp:GridView>
         <div class="nodata" id="divNodata" runat="server">
         </div>
+        <br/><br/>
+        <div>
+               <table class="table-result">
+            <tr class="title">
+                <td>
+                Bổ sung dữ liệu
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Hình thức kỷ luật
+                </td>
+                <td>
+                     <asp:DropDownList ID="DropDownlistHinhThucKyLuat" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Năm kỷ luật
+                </td>
+                <td>
+                <asp:TextBox ID="txtNamKyLuat" runat="server"></asp:TextBox>  
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Năm xóa kỷ luật
+                </td>
+                <td>
+                <asp:TextBox ID="txtNamXoaKyLuat" runat="server"></asp:TextBox>  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lý do kỷ luật
+                </td>
+                <td>
+                    <asp:TextBox ID="txtLyDo" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Thông tin khác
+                </td>
+                <td>
+                    <asp:TextBox ID="txtThongTinKhac" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID ="saveButton" OnClick="saveButtonClick" runat="server" Text ="Ghi nhận"/>
+                    <asp:Button ID ="resetButton" OnClick="resetButtonClick" runat = "server" Text ="Làm lại"/>
+                </td>
+            </tr>
+
+        </table>      
+        </div>
     </div>
+    
 </div>
 
 </asp:Content>
