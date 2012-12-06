@@ -1,6 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8025E410-4F7A-4161-942D-BED66F637478}"
+	ProjectSection(SolutionItems) = preProject
+		HutStaff.vsmdi = HutStaff.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HutStaff.Administrator", "HutStaff.Administrator\HutStaff.Administrator.csproj", "{34C3626E-0703-4CF5-ADCE-F50CD3242641}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HutStaff.BO", "HutStaff.BO\HutStaff.BO.csproj", "{749C1CA9-E1E8-4100-A72E-4DBCC8552775}"
@@ -10,13 +17,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HutStaff.Common", "HutStaff.Common\HutStaff.Common.csproj", "{E7BEA317-2AED-49FB-9687-0ACB0EB70864}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{966581EF-ADF0-411D-A810-3C6E4F30BD5F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8025E410-4F7A-4161-942D-BED66F637478}"
-	ProjectSection(SolutionItems) = preProject
-		HutStaff.vsmdi = HutStaff.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
