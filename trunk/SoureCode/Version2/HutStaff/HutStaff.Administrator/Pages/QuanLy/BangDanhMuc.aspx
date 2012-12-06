@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/TinhTrangCongTac.aspx">05 - Bảng danh mục tình trạng công tác </a>
+                    <a href="DanhMuc/TinhTrangCongTacPage.aspx">05 - Bảng danh mục tình trạng công tác </a>
                 </td>
                 <td class="row1">
                     <a href="DanhMuc/ dm_kl.php ">06 - Bảng danh mục hình thức kỷ luật </a>

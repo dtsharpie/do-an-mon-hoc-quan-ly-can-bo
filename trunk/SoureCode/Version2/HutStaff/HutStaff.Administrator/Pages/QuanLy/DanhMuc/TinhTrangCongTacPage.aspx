@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/QuanLy/DanhMuc/DanhMucMaster.master"
-    AutoEventWireup="true" CodeBehind="TinhTrangCongTac.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.DanhMuc.TinhTrangCongTac" %>
+    AutoEventWireup="true" CodeBehind="TinhTrangCongTacPage.aspx.cs" Inherits="HutStaff.Administrator.Pages.QuanLy.DanhMuc.TinhTrangCongTacPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Table runat="server" ID="tblMain"> 

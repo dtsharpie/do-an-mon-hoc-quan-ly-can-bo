@@ -43,11 +43,11 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// <summary>
         /// Lấy nút làm nhiệm vụ chỉnh sửa 1 bản ghi trong csdl.
         /// </summary>
-        public Button EditButton
+        public Button SaveButton
         {
         	get
         	{
-                return editButton;
+                return saveButton;
         	}
         }
         

@@ -653,7 +653,7 @@
     <Content Include="Pages\QuanLy\DanhMuc\dm_hh.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\dm_kt.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\DonVi.aspx" />
-    <Content Include="Pages\QuanLy\DanhMuc\TinhTrangCongTac.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TinhTrangCongTacPage.aspx" />
     <Content Include="Pages\QuanLy\DoiDonVi.aspx" />
     <Content Include="Pages\QuanLy\Duyethuyhoso.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
@@ -1265,7 +1265,7 @@
     <Compile Include="Pages\QuanLy\BoSungCanBo.aspx.designer.cs">
       <DependentUpon>BoSungCanBo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\DanhMucBase.cs">
+    <Compile Include="Pages\QuanLy\DanhMuc\DanhMucPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\DanhMucMaster.master.cs">
@@ -1303,12 +1303,13 @@
     <Compile Include="Pages\QuanLy\DanhMuc\DonVi.aspx.designer.cs">
       <DependentUpon>DonVi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTac.aspx.cs">
-      <DependentUpon>TinhTrangCongTac.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\DanhMuc\EditState.cs" />
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTacPage.aspx.cs">
+      <DependentUpon>TinhTrangCongTacPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTac.aspx.designer.cs">
-      <DependentUpon>TinhTrangCongTac.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTacPage.aspx.designer.cs">
+      <DependentUpon>TinhTrangCongTacPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
