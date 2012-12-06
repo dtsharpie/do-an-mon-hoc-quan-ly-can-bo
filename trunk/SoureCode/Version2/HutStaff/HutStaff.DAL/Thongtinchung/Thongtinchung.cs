@@ -387,5 +387,59 @@ namespace HutStaff.DAL.Thongtinchung
 
             }
         }
+
+
+        //dien bien luong
+        public static void InsertDienBienLuong(int shcc, DateTime tgbd_dbl, DateTime tgkt_dbl, string ma_ngach, decimal bl_dbl, decimal hsl, decimal hspccv, string ttk_qtdbl, decimal hspctn, decimal hspckv,decimal ts,int hnay)
+        {
+            using (MainDB db = new MainDB())
+            {
+                 db.Execute("[sp_insert_qtdbl]",
+                    new string[] { "@shcc", "@tgbd_dbl", "@tgkt_dbl", "@ma_ngach", "@bl_dbl", "@hsl", "@hspccv", "@ttk_qtdbl", "@hspctn", "@hspckv", "@ts", "@hnay" },
+                new object[] { shcc, tgbd_dbl, tgkt_dbl, ma_ngach, bl_dbl, hsl, hspccv, ttk_qtdbl, hspctn, hspckv, ts, hnay });
+
+            }
+        }
+
+        public static void UpdateDienBienLuong(int id, DateTime tgbd_dbl, DateTime tgkt_dbl, string ma_ngach, decimal bl_dbl, decimal hsl, decimal hspccv, string ttk_qtdbl, decimal hspctn, decimal hspckv, decimal ts, int hnay)
+        {
+            using (MainDB db = new MainDB())
+            {
+                
+                    db.Execute("[sp_update_qtdbl]",
+                       new string[] { "@id", "@tgbd_dbl", "@tgkt_dbl", "@ma_ngach", "@bl_dbl", "@hsl", "@hspccv", "@ttk_qtdbl", "@hspctn", "@hspckv", "@ts", "@hnay" },
+                   new object[] { id, tgbd_dbl, tgkt_dbl, ma_ngach, bl_dbl, hsl, hspccv, ttk_qtdbl, hspctn, hspckv, ts, hnay });
+                
+            }
+        }
+
+        public static void DeletedDienBienLuong (int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_delete_qtdbl]",
+                    new string[] {"@id"},
+                    new object[] {id});
+            }
+        }
+
+        public static DataTable GetAllNgach()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_ngach]");
+            }
+        }
+
+        public static DataTable FindDienBienLuongByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qtdbl]",
+                    new string[] { "@id" },
+                new object[] { id });
+            }
+        }
+
     }
 }
