@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="View.master.cs" Inherits="HutStaff.Administrator.Master.View" %>
+
+<%@ Register Src="/Controls/Common/ViewMenu.ascx" TagName="ViewMenu" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Thông tin chung - QLCB</title>
+    <script src="/Script/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="/Script/common.js" type="text/javascript"></script>
+    <script src="/Script/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+    <script src="/Script/datepicker/jquery.datepick.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/Styles/reset.css" />
+    <link href="/Styles/view.css" rel="stylesheet" type="text/css" />
+    <link href="/Script/chosen/chosen.css" rel="stylesheet" type="text/css" />
+    <link href="/Script/datepicker/jquery.datepick.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="divMenu">
+        <div id="userInfo">
+            Chào, <span id="username">bachquockhanh</span><br />
+            <ul id="lstAccount">
+                <li><a href="javascript:void(0);" id="lnkEmail"></a></li>
+                <li>
+                    <asp:LinkButton runat="server" OnClick="lnkLogout_Click" ID="lnkLogout" Text="Thoát"></asp:LinkButton></li>
+            </ul>
+        </div>
+        <hr />
+        <div id="menu_content">
+            <div id="anh">
+                <img title="anh-can-cong-chuc" alt="anh-can-bo" style="box-shadow: 0 0 8px #222222;
+                    display: block;" width="112px" height="150px" src="" /></div>
+            <div id="thongtin">
+                <table>
+                    <tr>
+                        <td style="width: 70px;">
+                            Số hiệu:
+                        </td>
+                        <td>
+                            <span class="mau">002.003.00068 </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Họ và tên:
+                        </td>
+                        <td>
+                            <span class="mau">Bạch Quốc Khánh</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Giới tính:
+                        </td>
+                        <td>
+                            <span class="mau">Nam</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ngày sinh:
+                        </td>
+                        <td>
+                            <span class="mau">31-8-1972 </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <uc1:ViewMenu ID="ViewMenu1" runat="server" />
+    </div>
+    <div id="divContentView">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

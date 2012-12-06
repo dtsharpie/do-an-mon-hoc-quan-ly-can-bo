@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <menus>
+    <!--Xem thông tin-->
+    <menu name="Thông tin chung" permission="0" alias="xtt-thong-tin-chung" path="/Xemthongtin/Controls/Thongtinchung.ascx"></menu>
+    <menu name="Trình độ ngoại ngữ" permission="0" alias="xtt-trinh-do-ngoai-ngu" path="/Xemthongtin/Controls/TrinhdoNgoaingu.ascx"></menu>
+    <menu name="Các chức danh" permission="0" alias="xtt-cac-chuc-danh" path="/Xemthongtin/Controls/Cacchucdanh.ascx"></menu>
+    <menu name="Chức vụ chính quyền" permission="0" alias="xtt-chuc-vu-chinh-quyen" path="/Xemthongtin/Controls/Chucvuchinhquyen.ascx"></menu>
+    <menu name="Chức vụ Đảng" permission="0" alias="xtt-chuc-vu-dang" path="/Xemthongtin/Controls/Chucvudang.ascx"></menu>
+    <menu name="Chức vụ đoàn thể" permission="0" alias="xtt-chuc-vu-doan-the" path="/Xemthongtin/Controls/Chucvudoanthe.ascx"></menu>
+    <menu name="Khen thưởng" permission="0" alias="xtt-khen-thuong" path="/Xemthongtin/Controls/Khenthuong.ascx"></menu>
+    <menu name="Kỷ luật" permission="0" alias="xtt-ky-luat" path="/Xemthongtin/Controls/Kyluat.ascx"></menu>
+    <menu name="Diễn biến lương" permission="0" alias="xtt-dien-bien-luong" path="/Xemthongtin/Controls/Dienbienluong.ascx"></menu>
+    <menu name="Quan hệ gia đình" permission="0" alias="xtt-quan-he-gia-dinh" path="/Xemthongtin/Controls/Quanhegiadinh.ascx"></menu>
+    <menu name="Nước ngoài đã đến" permission="0" alias="xtt-nuoc-ngoai-da-den" path="/Xemthongtin/Controls/Nuocngoaidaden.ascx"></menu>
+    <menu name="Quá trình đào tạo" permission="0" alias="xtt-qua-trinh-dao-tao" path="/Xemthongtin/Controls/Quatrinhdaotao.ascx"></menu>
+    <menu name="Quá trình bồi dưỡng" permission="0" alias="xtt-qua-trinh-boi-duong" path="/Xemthongtin/Controls/Quatrinhboiduong.ascx"></menu>
+    <menu name="Quá trình công tác" permission="0" alias="xtt-qua-trinh-cong-tac" path="/Xemthongtin/Controls/Quatrinhcongtac.ascx"></menu>
+    <menu name="Đánh giá công chức" permission="0" alias="xtt-danh-gia-cong-chuc" path="/Xemthongtin/Controls/Danhgiacongchuc.ascx"></menu>
+    <menu name="Thông tin BHXH" permission="0" alias="xtt-thong-tin-bhxh" path="/Xemthongtin/Controls/BHXH.ascx"></menu>
+  </menus>
+  <controls>
+    <control>
+      <control alias="danh-sach-can-bo" permission="0" path="/Controls/Quanly/Import/Search.ascx"></control>
+      <control alias="pager-danh-sach-can-bo" permission="0" path="/Controls/Quanly/Import/Pager.ascx"></control>
+    </control>
+  </controls>
+</settings>

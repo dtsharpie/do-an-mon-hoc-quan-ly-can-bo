@@ -14,6 +14,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         /// <returns></returns>
         public static DataTable GetAll()
         {
+            //
             return HutStaff.DAL.Quanly.Repository.GetAll("sp_view_all_dm_dv");
         }
 

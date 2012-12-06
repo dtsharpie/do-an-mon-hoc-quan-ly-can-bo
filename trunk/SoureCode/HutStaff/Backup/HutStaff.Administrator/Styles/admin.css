@@ -1,0 +1,525 @@
+﻿.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.blue-bg
+{
+    background: url("/images/nen.png") repeat scroll 0 0 transparent;
+    border: 1px solid #999999;
+    padding: 10px;
+    width: 730px !important;
+}
+
+.title-bar {
+	width:100%;height:30px;line-height:30px;
+	background: url("/images/topcontent-bg.png") repeat-x scroll left top transparent;
+	border-radius:6px 6px 0px 0px;
+	-moz-border-radius:6px 6px 0px 0px;
+	box-shadow:0px 5px 5px #5f878a;
+	-moz-box-shadow:0px 5px 5px #5f878a;
+	-webkit-box-shadow:0px 5px 5px #5f878a;
+}
+.title-bar p
+{
+	color:#FFF;
+	font-size:15px;
+	font-weight:bold;
+	margin-left:15px;
+	padding-left:20px;
+	background: url("/images/topcontent-icon.png") no-repeat scroll left center transparent;
+}
+.main-table {width:100%; margin-top:3px;}
+
+.table-1{width:100%; height:100%; border-collapse:collapse}
+.table-1 th, .table-1 td{padding:5px; border:#f0f0f0 1px solid; margin:0} 
+.table-1 th{font:600 12px/15px tahoma; text-align:center;  background:#e5e5e5}
+.table-1 tr{text-align:left; background:#fff}
+.table-1 tr.even{background:#f8f8f8}
+.table-1 tr.odd{background:#eae8e8; height:20px}
+.table-1 input.page{width:50px; border:#b1c0cf 1px solid}
+.table-1 select.line{width:50px; border:#b1c0cf 1px solid}
+.table-1 td{vertical-align: middle; height: 30px;padding: 3px 10px;}
+.table-1 td a
+{
+    color: #0066CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table.pager tr, td{vertical-align: middle; padding: 0 4px;}
+
+.footer-table {width:100%;height:32px;background: url("/images/bottomTable-bg.png") repeat-x scroll left top transparent;}
+.link-tool{ line-height:32px; padding-left: 10px; color:#D56600; font-size:12px; font-weight:bold; text-decoration:none;}
+.footer-table .right{margin-right: 10px;}
+
+.blue-bg a
+{
+    color: #0066CC;
+    text-decoration: none;
+}
+
+.blue-bg a:hover
+{
+    color: #990033;
+    
+}
+
+.row1
+{
+    border: 1px solid #999999;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.row1 a
+{
+    color: #333333;
+    text-decoration: none;
+}
+
+.row1 a:hover
+{
+    color: #0066FF;
+    
+}
+
+.main
+{
+    margin: 10px 0;
+    width: 750px;
+}
+
+.table-form tr td:first-child
+{
+    width: 120px;
+}
+
+.table-form tr, td
+{
+    height: 30px;
+}
+
+.table-result td
+{
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+    vertical-align: middle;
+    padding: 3px 10px;
+}
+
+.table-result td a
+{
+    color: #0066CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table-result tr.even td
+{
+    background: none repeat scroll 0 0 #D9ECFF;
+}
+
+.table-result th,tr.title
+{
+    background: none repeat scroll 0 0 #448CCB;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.table-result th,tr.title td
+{
+    text-align: center;
+}
+
+.link-button
+{
+    display: block;
+    width: 150px;
+    height: 50px;
+}
+
+.button-blue
+{
+    background: none repeat scroll 0 0 Gray;
+    border: medium none;
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    height: 27px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 100px;
+}
+
+.button-blue.active, .button-blue:hover
+{
+    background: none repeat scroll 0 0 #448CCB;   
+}
+
+html
+{
+    min-height: 100%;
+    width: 100%;
+}
+
+body
+{
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    min-height: 100%;
+    width: 100%;
+}
+
+#form1
+{
+    min-height: 100%;
+    width: 100%;
+}
+
+#divMenu
+{
+    background: url("/Images/menu_bg.png") repeat-y;
+    color: white;
+    text-align: left;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 230px;
+    min-height: 100%;
+    z-index: 10000;
+}
+
+#divMenu hr
+{
+    width: 220px;
+    color: white;
+}
+
+#divMenu a
+{
+    color: #fff;
+    display: block;
+}
+
+#divMenu #userInfo
+{
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 20px;
+    height: 55px;
+}
+
+#divMenu #userInfo #username
+{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#divMenu #lstAccount
+{
+    margin: 5px 0 0 120px;
+}
+
+#divMenu #lstAccount li
+{
+    border-left: 1px solid White;
+    height: 14px;
+    padding: 0 5px;
+    float: left;
+    vertical-align: middle;
+    line-height: 14px;
+}
+
+#divMenu #lstAccount #lnkEmail
+{
+    background: url("/Images/mail.png") no-repeat;
+    width: 20px;
+    height: 12px;
+    margin-top: 1px;
+}
+
+#divMenu #divMenuLogo
+{
+    height: 120px;
+    padding: 10px 0;
+}
+
+#divMenu #divNav a
+{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#divMenu #divNav a:hover
+{
+    text-decoration: underline;
+}
+
+#divMenu .mainNav
+{
+    font-size: 15px;
+}
+
+#divMenu .mainNav > li
+{
+    width: 90%;
+    padding-left: 10%;
+    min-height: 40px;
+    line-height: 40px;
+}
+
+#divMenu .mainNav > li.active
+{
+    background: url("/Images/menu_tag.png") repeat-y;
+    background-color: #fff;
+    color: #006699;
+}
+
+#divMenu .mainNav > li.active a
+{
+    color: #006699 !important;
+}
+
+#divMenu .subNav
+{
+    font-size: 12px;
+}
+
+#divMenu .subNav > li.active a
+{
+    font-weight: bold !important;
+    text-decoration: underline !important;
+}
+
+#divMenu .subNav > li
+{
+    width: 85%;
+    padding-left: 15%;
+    min-height: 30px;
+    line-height: 30px;
+}
+
+#divContent
+{
+    width: 80%;
+    padding-left: 250px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+}
+
+#divContent .content
+{
+    width: 100%;
+    padding: 45px 0;
+    min-height: 500px;
+}
+
+#divContent .content.quan-ly
+{
+    background: url("/images/quanly.png") no-repeat scroll 25% 10% transparent;
+}
+
+#divContent .content.bao-cao
+{
+    background: url("/images/baocao.png") no-repeat scroll 25% 10% transparent;
+}
+
+#divContent .content.tim-kiem
+{
+    background: url("/images/search.png") no-repeat scroll 25% 10% transparent;
+}
+
+#divContent .content h1.title
+{
+    color: #0054A6;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#divContent .content hr
+{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+#divQuanLy .row
+{
+    border: 1px solid #0066FF;
+    float: left;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 750px;
+}
+
+#divQuanLy .row:hover {
+    background: url("/images/nen.png") repeat scroll 0 0 transparent;
+}
+
+#divQuanLy .row_logo
+{
+    border-right: 1px solid #0066FF;
+    float: left;
+    height: 50px;
+    margin-right: 5px;
+    width: 50px;
+}
+
+#divQuanLy .row_text
+{
+    float: left;
+}
+
+#divQuanLy .row_text a
+{
+    color: #000000;
+    font-size: 14pt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#divQuanLy .row_text a:hover
+{
+    color: #0054A6;
+}
+
+#divQuanLy .row_text p
+{
+    color: #333333;
+    padding: 0;
+}
+
+#divSearch .row
+{
+    margin: 1px;
+}
+
+#divSearch .row h4
+{
+    float: left;
+    font-weight: normal;
+    margin: 1px;
+    padding: 0;
+    width: 120px;
+}
+
+.lnk-search {
+    
+    background: url("/Images/timkiem.png") no-repeat;
+}
+
+/*
+Toan ' css
+*/
+
+#container .header
+{
+    padding: 3px 3px 5px 3px;
+    border-width: 1px;
+    background-color: #E0E0E0;
+    height: auto;
+    width: 80%;
+    font-size: medium;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+}
+
+#container .body 
+{
+    padding: 10px 10px 20px 30px;
+    background-color: #F5F5F5;
+    border: 1px solid;
+    height: auto;
+    width: 80%;
+}
+
+#container .body tr td:first-child
+{
+    text-align: right;
+    width: 25%;
+}
+
+#container table 
+{
+    width: 100%;
+}
+
+#container table .inputextbox_short
+{
+    width: 200px;
+}
+
+#container table .inputtextbox_long
+{
+    width: 400px;
+}
+
+#container table .droplist_medium
+{
+    width: 120px;
+}
+
+#container table .droplist_large
+{
+    width: 200px;
+}
+
+#container table .datepicker
+{
+    width: 120px;
+}
+
+/* end toan 'css */
+
+/********   HungPV Style *************/
+#content {left: 235px;margin-left: 10px;margin-top: 30px;position: absolute;top: 0;width: 750px;}
+#content {background: url("/Images/search.png") no-repeat scroll 30% 0 transparent;}
+h1 {color: #0054A6;font-style: normal;font-weight: normal;margin: 0;padding: 0;}
+hr {margin: 3px 1px 1px;}
+#timkiem {background: url("/Images/nen.png") repeat scroll 0 0 transparent;border: 1px solid #999999;height: auto;margin: 10px 0 10px 10px;padding: 10px;width: 755px;}
+.hang {float: none;margin: 1px;padding-bottom:5px;}
+h4 {float: left;font-weight: normal;margin: 1px;padding: 0;width: 120px;}
+a {color: #0066CC;text-decoration: none;}
+.row-right{padding-left:120px;}
+#noidung {margin-top: 10px;}
+table {font-size: 9pt;}
+.tieude {background: none repeat scroll 0 0 #448CCB;color: #FFFFFF;font-weight: bold;height: 30px;}
+
+/*Báo cáo*/
+.thHead {background: url("/Images/nen.png") repeat scroll 0 0 transparent;border: 1px solid #999999;font-weight: bold;}
+.forumline .row3 {border: 1px solid #999999;color: #0066FF;font-weight: bold;padding:5px;width:50%;}
+.row1 {border: 1px solid #999999;font-weight: bold;padding:5px;}
+.row1 a {color: #333333;}
+.forumline{border-spacing:1px; font-size:13px;}
+.report-table{background-color: #FFFFFF;border-color: #006699;border-style: solid;border-width: 2px;margin-top:10px;}
+.report-table th{background-color: #006699;background-image: url("/Images/cellpic3.gif");color: white;font-family: Times New Roman,Verdana,Arial;font-size: 15px;font-weight: bold;height: 25px;}
+.report-table td.Row2{background-color: #DEE3E7;}
+.report-table td.Row1{background-color: #EFEFEF;}
+.report-table td.Row3{background-color: #D1D7DC;}
+.report-table td.row2{background-color: #DEE3E7;vertical-align:top;}
+.report-table td.row1{background-color: #EFEFEF;font-weight:normal;}
+.report-table .p-title{font-weight:bold;}
+/******** End of HungPV Style *************/

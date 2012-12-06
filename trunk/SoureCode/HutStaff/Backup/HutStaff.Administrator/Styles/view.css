@@ -1,0 +1,461 @@
+﻿.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+}
+
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    height: 100%;
+    width: 100%;
+}
+
+#form1
+{
+    height: 100%;
+    width: 100%;
+}
+
+#divMenu
+{
+    background: url("/Images/menu_bg.png") repeat-y;
+    color: white;
+    text-align: left;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 230px;
+    min-height: 100%;
+    z-index: 10000;
+}
+
+#divMenu hr
+{
+    width: 220px;
+    color: white;
+}
+
+#divMenu a
+{
+    color: #fff;
+    display: block;
+}
+
+#divMenu #userInfo
+{
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 20px;
+    height: 55px;
+}
+
+#divMenu #userInfo #username
+{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#divMenu #lstAccount
+{
+    margin: 5px 0 0 120px;
+}
+
+#divMenu #lstAccount li
+{
+    border-left: 1px solid White;
+    height: 14px;
+    padding: 0 5px;
+    float: left;
+    vertical-align: middle;
+    line-height: 14px;
+}
+
+#divMenu #lstAccount #lnkEmail
+{
+    background: url("/Images/mail.png") no-repeat;
+    width: 20px;
+    height: 12px;
+    margin-top: 1px;
+}
+
+#divMenu #divMenuLogo
+{
+    height: 120px;
+    padding: 10px 0;
+}
+
+#divMenu #divNav a
+{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#divMenu #divNav a:hover
+{
+    text-decoration: underline;
+}
+
+#divMenu .mainNav
+{
+    font-size: 15px;
+}
+
+#divMenu .mainNav > li
+{
+    width: 90%;
+    padding-left: 10%;
+    min-height: 40px;
+    line-height: 40px;
+}
+
+#divMenu .mainNav > li.ml
+{
+    background: url("/Images/menu_tag.png") repeat-y;
+    background-color: #fff;
+    color: #006699;
+}
+
+#divMenu .mainNav > li.ml a
+{
+    color: #006699 !important;
+}
+
+#divMenu .subNav
+{
+    font-size: 12px;
+}
+
+#divMenu .subNav > li.active a
+{
+    font-weight: bold !important;
+    text-decoration: underline !important;
+}
+
+#divMenu .subNav > li
+{
+    width: 85%;
+    padding-left: 15%;
+    min-height: 30px;
+    line-height: 30px;
+}
+
+#divContentView
+{
+    width: 80%;
+    padding-left: 250px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+}
+
+#divContentView .content
+{
+    width: 100%;
+    padding: 45px 0;
+    min-height: 500px;
+}
+
+#divContentView .content h1.title
+{
+    color: #0054A6;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#divContentView .content hr
+{
+    padding: 0;
+    margin: 0;
+}
+
+.row
+{
+    border: 1px solid #0066FF;
+    float: left;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 750px;
+}
+
+.row:hover
+{
+    background: url("/images/nen.png") repeat scroll 0 0 transparent;
+}
+
+.row_logo
+{
+    border-right: 1px solid #0066FF;
+    float: left;
+    height: 50px;
+    margin-right: 5px;
+    width: 50px;
+}
+
+.row_text
+{
+    float: left;
+}
+
+.row_text a
+{
+    color: #000000;
+    font-size: 14pt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.row_text a:hover
+{
+    color: #0054A6;
+}
+
+.row_text p
+{
+    color: #333333;
+    padding: 0;
+}
+
+/********   HungPV Style *************/
+#content
+{
+    left: 235px;
+    margin-left: 10px;
+    margin-top: 30px;
+    position: absolute;
+    top: 0;
+    width: 750px;
+}
+#content
+{
+    background: url("css/images/search.png") no-repeat scroll 30% 0 transparent;
+}
+h1
+{
+    color: #0054A6;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+hr
+{
+    margin: 3px 1px 1px;
+}
+#timkiem
+{
+    background: url("images/nen.png") repeat scroll 0 0 transparent;
+    border: 1px solid #999999;
+    height: auto;
+    margin: 10px 0 10px 10px;
+    padding: 10px;
+    width: 755px;
+}
+.hang
+{
+    float: none;
+    margin: 1px;
+    padding-bottom: 5px;
+}
+h4
+{
+    float: left;
+    font-weight: normal;
+    margin: 1px;
+    padding: 0;
+    width: 120px;
+}
+a
+{
+    color: #0066CC;
+    text-decoration: none;
+}
+.row-right
+{
+    padding-left: 120px;
+}
+#noidung
+{
+    margin-top: 10px;
+}
+table
+{
+    font-size: 9pt;
+}
+.tieude
+{
+    background: none repeat scroll 0 0 #448CCB;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+}
+/******** End of HungPV Style *************/
+#thongtin
+{
+}
+.mau
+{
+    color: #FF8C00;
+}
+
+#anh
+{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+
+#menu1
+{
+    font-size: 13pt;
+    height: auto;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+#divMenu ul
+{
+    display: block;
+    width: 250px;
+}
+
+#menu1 ul a
+{
+    border: 1px solid #DEE1DA;
+    color: #0054A6;
+    display: block;
+    height: 25px;
+    padding-left: 90px;
+    padding-right: 20px;
+    padding-top: 5px;
+    text-align: left;
+    text-decoration: none;
+    width: 140px;
+}
+
+#menu1 li
+{
+    display: block;
+    height: 15px;
+    margin: 0 0 5px;
+    padding: 0;
+}
+
+
+#menu1 #menuthongtin li a
+{
+    padding: 0 0 0 100px;
+    width: 150px;
+}
+#menu1 li a
+{
+    background: url("images/hover4.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #0066CC;
+    display: block;
+    font-size: 8pt;
+    height: 15px;
+    padding-left: 100px;
+    padding-right: 0;
+    text-align: left;
+    width: 140px;
+}
+
+#menu1 li a:hover
+{
+    background: url("images/nen.png") repeat scroll 0 0 transparent;
+    color: #990033;
+}
+
+.table-result
+{
+    width: 100%;
+}
+
+.table-result td a
+{
+    color: #0066CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table-result tr.even td
+{
+    background: none repeat scroll 0 0 #D9ECFF;
+}
+
+.table-result th, tr.title
+{
+    background: none repeat scroll 0 0 #448CCB;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.table-result th, tr.title td
+{
+    text-align: center;
+}
+
+.table-result td
+{
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+    padding: 3px 0px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.table-result td label
+{
+    vertical-align: middle;
+}
+.button
+{
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
+    border-color: #CCCCCC #CCCCCC #BBBBBB;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 5px 14px;
+}
+
+.divInfo .table-result tr td label span 
+{
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#ddlHktt_chzn , #ddlNoicap_chzn
+{
+    vertical-align: middle;
+}
