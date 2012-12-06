@@ -649,11 +649,34 @@
     <Content Include="Pages\HuongDan\HuongDan.aspx" />
     <Content Include="Pages\QuanLy\BangDanhMuc.aspx" />
     <Content Include="Pages\QuanLy\BoSungCanBo.aspx" />
-    <Content Include="Pages\QuanLy\DanhMuc\DienCanBo.aspx" />
-    <Content Include="Pages\QuanLy\DanhMuc\dm_hh.aspx" />
-    <Content Include="Pages\QuanLy\DanhMuc\dm_kt.aspx" />
-    <Content Include="Pages\QuanLy\DanhMuc\DonVi.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\ChucVuChinhQuyenPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\ChucVuDangPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\ChucVuDoanThePage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\ChuyenNganhDaoTaoPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\DanhHieuPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\DienCanBoPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\DonViPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\HinhThucDaoTaoPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\HinhThucKhenThuongPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\HinhThucKyLuatPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\HocHamPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\KinhPhiDiNuocNgoaiPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\NgachLuongPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\QuanHeGiaDinhPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\QuanHuyenPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\QuocGiaPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TenNgoaiNguPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TinhThanhPhoPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\TinhTrangCongTacPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TinhTrangHonNhanPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TrinhDoHocVanPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TrinhDoLyLuanPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TrinhDoNgoaiNguPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TrinhDoQuanLyPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TrinhDoTinHocPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\VanBangDaoTaoPage.aspx" />
     <Content Include="Pages\QuanLy\DoiDonVi.aspx" />
     <Content Include="Pages\QuanLy\Duyethuyhoso.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
@@ -1265,6 +1288,48 @@
     <Compile Include="Pages\QuanLy\BoSungCanBo.aspx.designer.cs">
       <DependentUpon>BoSungCanBo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChucVuChinhQuyenPage.aspx.cs">
+      <DependentUpon>ChucVuChinhQuyenPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChucVuChinhQuyenPage.aspx.designer.cs">
+      <DependentUpon>ChucVuChinhQuyenPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChucVuDangPage.aspx.cs">
+      <DependentUpon>ChucVuDangPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChucVuDangPage.aspx.designer.cs">
+      <DependentUpon>ChucVuDangPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChucVuDoanThePage.aspx.cs">
+      <DependentUpon>ChucVuDoanThePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChucVuDoanThePage.aspx.designer.cs">
+      <DependentUpon>ChucVuDoanThePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChuyenNganhDaoTaoPage.aspx.cs">
+      <DependentUpon>ChuyenNganhDaoTaoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\ChuyenNganhDaoTaoPage.aspx.designer.cs">
+      <DependentUpon>ChuyenNganhDaoTaoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx.cs">
+      <DependentUpon>CoSoDaoTaoChuyenMonPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx.designer.cs">
+      <DependentUpon>CoSoDaoTaoChuyenMonPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DanhHieuPage.aspx.cs">
+      <DependentUpon>DanhHieuPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DanhHieuPage.aspx.designer.cs">
+      <DependentUpon>DanhHieuPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\DanhMucPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1275,41 +1340,160 @@
     <Compile Include="Pages\QuanLy\DanhMuc\DanhMucMaster.master.designer.cs">
       <DependentUpon>DanhMucMaster.master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\DienCanBo.aspx.cs">
-      <DependentUpon>DienCanBo.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\DanhMuc\DienCanBoPage.aspx.cs">
+      <DependentUpon>DienCanBoPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\DienCanBo.aspx.designer.cs">
-      <DependentUpon>DienCanBo.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\DanhMuc\DienCanBoPage.aspx.designer.cs">
+      <DependentUpon>DienCanBoPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\dm_hh.aspx.cs">
-      <DependentUpon>dm_hh.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\DanhMuc\DonViPage.aspx.cs">
+      <DependentUpon>DonViPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\dm_hh.aspx.designer.cs">
-      <DependentUpon>dm_hh.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\dm_kt.aspx.cs">
-      <DependentUpon>dm_kt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\dm_kt.aspx.designer.cs">
-      <DependentUpon>dm_kt.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\DonVi.aspx.cs">
-      <DependentUpon>DonVi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\QuanLy\DanhMuc\DonVi.aspx.designer.cs">
-      <DependentUpon>DonVi.aspx</DependentUpon>
+    <Compile Include="Pages\QuanLy\DanhMuc\DonViPage.aspx.designer.cs">
+      <DependentUpon>DonViPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\EditState.cs" />
+    <Compile Include="Pages\QuanLy\DanhMuc\HinhThucDaoTaoPage.aspx.cs">
+      <DependentUpon>HinhThucDaoTaoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HinhThucDaoTaoPage.aspx.designer.cs">
+      <DependentUpon>HinhThucDaoTaoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HinhThucKhenThuongPage.aspx.cs">
+      <DependentUpon>HinhThucKhenThuongPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HinhThucKhenThuongPage.aspx.designer.cs">
+      <DependentUpon>HinhThucKhenThuongPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HinhThucKyLuatPage.aspx.cs">
+      <DependentUpon>HinhThucKyLuatPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HinhThucKyLuatPage.aspx.designer.cs">
+      <DependentUpon>HinhThucKyLuatPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HocHamPage.aspx.cs">
+      <DependentUpon>HocHamPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\HocHamPage.aspx.designer.cs">
+      <DependentUpon>HocHamPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\KinhPhiDiNuocNgoaiPage.aspx.cs">
+      <DependentUpon>KinhPhiDiNuocNgoaiPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\KinhPhiDiNuocNgoaiPage.aspx.designer.cs">
+      <DependentUpon>KinhPhiDiNuocNgoaiPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx.cs">
+      <DependentUpon>MatBangLuongPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx.designer.cs">
+      <DependentUpon>MatBangLuongPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\NgachLuongPage.aspx.cs">
+      <DependentUpon>NgachLuongPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\NgachLuongPage.aspx.designer.cs">
+      <DependentUpon>NgachLuongPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\QuanHeGiaDinhPage.aspx.cs">
+      <DependentUpon>QuanHeGiaDinhPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\QuanHeGiaDinhPage.aspx.designer.cs">
+      <DependentUpon>QuanHeGiaDinhPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\QuanHuyenPage.aspx.cs">
+      <DependentUpon>QuanHuyenPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\QuanHuyenPage.aspx.designer.cs">
+      <DependentUpon>QuanHuyenPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\QuocGiaPage.aspx.cs">
+      <DependentUpon>QuocGiaPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\QuocGiaPage.aspx.designer.cs">
+      <DependentUpon>QuocGiaPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TenNgoaiNguPage.aspx.cs">
+      <DependentUpon>TenNgoaiNguPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TenNgoaiNguPage.aspx.designer.cs">
+      <DependentUpon>TenNgoaiNguPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhThanhPhoPage.aspx.cs">
+      <DependentUpon>TinhThanhPhoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhThanhPhoPage.aspx.designer.cs">
+      <DependentUpon>TinhThanhPhoPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTacPage.aspx.cs">
       <DependentUpon>TinhTrangCongTacPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTacPage.aspx.designer.cs">
       <DependentUpon>TinhTrangCongTacPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangHonNhanPage.aspx.cs">
+      <DependentUpon>TinhTrangHonNhanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangHonNhanPage.aspx.designer.cs">
+      <DependentUpon>TinhTrangHonNhanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoHocVanPage.aspx.cs">
+      <DependentUpon>TrinhDoHocVanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoHocVanPage.aspx.designer.cs">
+      <DependentUpon>TrinhDoHocVanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoLyLuanPage.aspx.cs">
+      <DependentUpon>TrinhDoLyLuanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoLyLuanPage.aspx.designer.cs">
+      <DependentUpon>TrinhDoLyLuanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoNgoaiNguPage.aspx.cs">
+      <DependentUpon>TrinhDoNgoaiNguPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoNgoaiNguPage.aspx.designer.cs">
+      <DependentUpon>TrinhDoNgoaiNguPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoQuanLyPage.aspx.cs">
+      <DependentUpon>TrinhDoQuanLyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoQuanLyPage.aspx.designer.cs">
+      <DependentUpon>TrinhDoQuanLyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoTinHocPage.aspx.cs">
+      <DependentUpon>TrinhDoTinHocPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TrinhDoTinHocPage.aspx.designer.cs">
+      <DependentUpon>TrinhDoTinHocPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\VanBangDaoTaoPage.aspx.cs">
+      <DependentUpon>VanBangDaoTaoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\VanBangDaoTaoPage.aspx.designer.cs">
+      <DependentUpon>VanBangDaoTaoPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>

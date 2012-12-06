@@ -16,18 +16,18 @@
             border-collapse: separate;">
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/DonVi.aspx">01 - Bảng danh mục đơn vị</a>
+                    <a href="DanhMuc/DonViPage.aspx">01 - Bảng danh mục đơn vị</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_hh.aspx">02 - Bảng danh mục học hàm </a>
+                    <a href="DanhMuc/HocHamPage.aspx">02 - Bảng danh mục học hàm </a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/DienCanBo.aspx">03 - Bảng danh mục diện cán bộ</a>
+                    <a href="DanhMuc/DienCanBoPage.aspx">03 - Bảng danh mục diện cán bộ</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_kt.aspx">04 - Bảng danh mục hình thức khen thưởng </a>
+                    <a href="DanhMuc/HinhThucKhenThuongPage.aspx">04 - Bảng danh mục hình thức khen thưởng </a>
                 </td>
             </tr>
             <tr>
@@ -35,7 +35,7 @@
                     <a href="DanhMuc/TinhTrangCongTacPage.aspx">05 - Bảng danh mục tình trạng công tác </a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_kl.php ">06 - Bảng danh mục hình thức kỷ luật </a>
+                    <a href="DanhMuc/HinhThucKyLuatPage.aspx ">06 - Bảng danh mục hình thức kỷ luật </a>
                 </td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
                     <a href="DanhMuc/dm_cqtd.php">07 - Bảng danh mục cơ quan tuyển dụng</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_tdnn.php ">08 - Bảng danh mục trình độ ngoại ngữ</a>
+                    <a href="DanhMuc/TrinhDoNgoaiNguPage.aspx">08 - Bảng danh mục trình độ ngoại ngữ</a>
                 </td>
             </tr>
             <tr>
@@ -51,39 +51,39 @@
                     <a href="DanhMuc/dm_cvdn.php">09 - Bảng danh mục công việc đảm nhận</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_tnn.php ">10 - Bảng danh mục tên ngoại ngữ </a>
+                    <a href="DanhMuc/TenNgoaiNguPage.aspx">10 - Bảng danh mục tên ngoại ngữ </a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_qhgd.php">11 - Bảng danh mục quan hệ gia đình</a>
+                    <a href="DanhMuc/QuanHeGiaDinhPage.aspx">11 - Bảng danh mục quan hệ gia đình</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_tdhv.php ">12 - Bảng danh mục trình độ học vấn </a>
-                </td>
-            </tr>
-            <tr>
-                <td class="row1">
-                    <a href="DanhMuc/dm_cn.php">13 - Bảng danh mục chuyên ngành đào tạo</a>
-                </td>
-                <td class="row1">
-                    <a href="DanhMuc/ dm_tdql.php ">14 - Bảng danh mục trình độ quản lý</a>
+                    <a href="DanhMuc/TrinhDoHocVanPage.aspx">12 - Bảng danh mục trình độ học vấn </a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_htdt.php">15 - Bảng danh mục hình thức đào tạo</a>
+                    <a href="DanhMuc/ChuyenNganhDaoTaoPage.aspx">13 - Bảng danh mục chuyên ngành đào tạo</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_tdll.php ">16 - Bảng danh mục trình độ lý luận </a>
+                    <a href="DanhMuc/TrinhDoQuanLyPage.aspx">14 - Bảng danh mục trình độ quản lý</a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_vbdt.php ">17 - Bảng danh mục văn bằng đào tạo</a>
+                    <a href="DanhMuc/HinhThucDaoTaoPage.aspx">15 - Bảng danh mục hình thức đào tạo</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_tdth.php ">18 - Bảng danh mục trình độ tin học </a>
+                    <a href="DanhMuc/TrinhDoLyLuanPage.aspx">16 - Bảng danh mục trình độ lý luận </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="row1">
+                    <a href="DanhMuc/VanBangDaoTaoPage.aspx">17 - Bảng danh mục văn bằng đào tạo</a>
+                </td>
+                <td class="row1">
+                    <a href="DanhMuc/TrinhDoTinHocPage.aspx">18 - Bảng danh mục trình độ tin học </a>
                 </td>
             </tr>
             <tr>
@@ -91,39 +91,39 @@
                     <a href="DanhMuc/dm_csbd.php">19 - Bảng danh mục cơ sở bồi dưỡng</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_qg.php ">20 - Bảng danh mục quốc gia </a>
+                    <a href="DanhMuc/QuocGiaPage.aspx">20 - Bảng danh mục quốc gia </a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/ dm_cvcq.php ">21 - Bảng danh mục chức vụ chính quyền </a>
+                    <a href="DanhMuc/ChucVuChinhQuyenPage.aspx">21 - Bảng danh mục chức vụ chính quyền </a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_dp.php">22 - Bảng danh mục tỉnh, thành phố Việt Nam</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="row1">
-                    <a href="DanhMuc/dm_cvcu.php">23 - Bảng danh mục chức vụ Đảng</a>
-                </td>
-                <td class="row1">
-                    <a href="DanhMuc/ dm_ngach.php ">24 - Bảng danh mục ngạch lương</a>
+                    <a href="DanhMuc/TinhThanhPhoPage.aspx">22 - Bảng danh mục tỉnh, thành phố Việt Nam</a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_cvdt.php">25 - Bảng danh mục chức vụ đoàn thể</a>
+                    <a href="DanhMuc/ChucVuDangPage.aspx">23 - Bảng danh mục chức vụ Đảng</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_mlcb.php">26 - Bảng danh mục mặt bằng lương</a>
+                    <a href="DanhMuc/NgachLuongPage.aspx">24 - Bảng danh mục ngạch lương</a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_dhdp.php">27 - Bảng danh mục danh hiệu</a>
+                    <a href="DanhMuc/ChucVuDoanThePage.aspx">25 - Bảng danh mục chức vụ đoàn thể</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_nkpnndd.php">28 - Bảng danh mục nguồn kinh phí đi nước ngoài</a>
+                    <a href="DanhMuc/MatBangLuongPage.aspx">26 - Bảng danh mục mặt bằng lương</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="row1">
+                    <a href="DanhMuc/DanhHieuPage.aspx">27 - Bảng danh mục danh hiệu</a>
+                </td>
+                <td class="row1">
+                    <a href="DanhMuc/KinhPhiDiNuocNgoaiPage.aspx">28 - Bảng danh mục nguồn kinh phí đi nước ngoài</a>
                 </td>
             </tr>
             <tr>
@@ -139,15 +139,15 @@
                     <a href="DanhMuc/dm_ptldh.php">31 - Bảng danh mục % lương được hưởng</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_tthn.php">32 - Bảng danh mục tình trạng hôn nhân</a>
+                    <a href="DanhMuc/TinhTrangHonNhanPage.aspx">32 - Bảng danh mục tình trạng hôn nhân</a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_dp1.php">33 - Bảng danh mục quận, huyện Việt Nam</a>
+                    <a href="DanhMuc/QuanHuyenPage.aspx">33 - Bảng danh mục quận, huyện Việt Nam</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_csdtcm.php">34 - Bảng danh mục cơ sở đào tạo chuyên môn</a>
+                    <a href="DanhMuc/CoSoDaoTaoChuyenMonPage.aspx">34 - Bảng danh mục cơ sở đào tạo chuyên môn</a>
                 </td>
             </tr>
             <tr>
