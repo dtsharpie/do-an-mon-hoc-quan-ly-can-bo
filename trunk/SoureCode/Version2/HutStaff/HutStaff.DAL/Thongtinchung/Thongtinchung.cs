@@ -222,8 +222,8 @@ namespace HutStaff.DAL.Thongtinchung
             using (MainDB db = new MainDB())
             {
                 db.Execute("[sp_delete_dm_tdnn]",
-                    new string[] {@"id"},
-                    new object[] {id}
+                    new string[] { @"id" },
+                    new object[] { id }
                     );
             }
         }
@@ -231,13 +231,13 @@ namespace HutStaff.DAL.Thongtinchung
 
 
         // trang cac chuc danh
-        public static void InsertCacChuDanh (int shcc, int ma_hp, int npdp, int lcd, int cdcn, string ttk_qtcd, DateTime ntnphd)
+        public static void InsertCacChuDanh(int shcc, int ma_hp, int npdp, int lcd, int cdcn, string ttk_qtcd, DateTime ntnphd)
         {
             using (MainDB db = new MainDB())
             {
                 db.Execute("[sp_insert_qtcd_tbl]",
-                new string[] { "@shcc", "@ma_hp", "@npdp", "@lcd", "@cdcn", "@ttk_qtcd","@ntnphd" },
-                new object[] { shcc, ma_hp, npdp, lcd,cdcn,ttk_qtcd,ntnphd  });
+                new string[] { "@shcc", "@ma_hp", "@npdp", "@lcd", "@cdcn", "@ttk_qtcd", "@ntnphd" },
+                new object[] { shcc, ma_hp, npdp, lcd, cdcn, ttk_qtcd, ntnphd });
             }
         }
 
@@ -258,7 +258,7 @@ namespace HutStaff.DAL.Thongtinchung
             {
                 db.Execute("[sp_update_qtcd_tbl]",
                 new string[] { "@id", "@shcc", "@ma_hp", "@npdp", "@lcd", "@cdcn", "@ttk_qtcd", "@ntnphd" },
-                new object[] {id, shcc, ma_hp, npdp, lcd, cdcn, ttk_qtcd, ntnphd });
+                new object[] { id, shcc, ma_hp, npdp, lcd, cdcn, ttk_qtcd, ntnphd });
             }
         }
 
@@ -297,7 +297,7 @@ namespace HutStaff.DAL.Thongtinchung
             {
                 db.Execute("[sp_insert_qtkt]",
                     new string[] { "@shcc", "@ma_htkt", "@nkt_qtkt", "@soqd_qtkt", "@ttk_qtkt" },
-                    new object[] {shcc,ma_htkt,nkt_qtkt,soqd_qtkt,ttk_qtkt}
+                    new object[] { shcc, ma_htkt, nkt_qtkt, soqd_qtkt, ttk_qtkt }
                 );
             }
         }
@@ -338,7 +338,7 @@ namespace HutStaff.DAL.Thongtinchung
 
 
         // trang ky luat
-        public static void InsertKyLuat (int shcc, int  ma_htkl, DateTime nkl,DateTime nxkl,string  ldkl, string ttk_qtkl)
+        public static void InsertKyLuat(int shcc, int ma_htkl, DateTime nkl, DateTime nxkl, string ldkl, string ttk_qtkl)
         {
             using (MainDB db = new MainDB())
             {
@@ -362,10 +362,9 @@ namespace HutStaff.DAL.Thongtinchung
         {
             using (MainDB db = new MainDB())
             {
-                 db.Execute("[sp_delete_qtkl]",
-                                  new string[] { "@id" },
-                                  new object[] { id }
-                              );
+                db.Execute("[sp_delete_qtkl]",
+                                 new string[] { "@id" },
+                                 new object[] { id });
             }
         }
 
@@ -441,5 +440,104 @@ namespace HutStaff.DAL.Thongtinchung
             }
         }
 
+    }
+}
+
+
+        // Quan He Gia Dinh
+        public static void InsertQuanHeGiaDinh(string qhgd)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_insert_dm_qhgd]",
+                    new string[] { "@qhgd" },
+                    new object[] { qhgd });
+            }
+        }
+
+        public static void UpdateQuanHeGiaDinh(int id, string qhgd)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_dm_qhgd]",
+                    new string[] { "@id", "@qhgd" },
+                    new object[] { id, qhgd });
+            }
+        }
+
+        public static void DeleteQuanHeGiaDinh(int id)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_delete_dm_qhgd]", new string[] { "@id" }, new object[] { id });
+        }
+
+        // Nuoc Ngoai Da Di
+        public static void InsertNuocNgoaiDaDi(int shcc, DateTime nd_nndd, DateTime nv_nndd, int ndd, string dc_nndd, int md_nndd, string dg_nndd, string ttk_nndd, int nkp_nndd, string tt_nndd)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_insert_nndd]",
+                    new string[] { "@shcc", "@nd_nndd", "@nv_nndd", "@ndd", "@dc_nndd", "@md_nndd", "@dg_nndd", "@ttk_nndd", "@nkp_nndd", "@tt_nndd" },
+                    new object[] { shcc, nd_nndd, nv_nndd, ndd, dc_nndd, md_nndd, dg_nndd, ttk_nndd, nkp_nndd, tt_nndd });
+        }
+
+        public static void UpdateNuocNgoaiDaDi(int id, DateTime nd_nndd, DateTime nv_nndd, int ndd, string dc_nndd, int md_nndd, string dg_nndd, string ttk_nndd, int nkp_nndd, string tt_nndd)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_update_nndd]",
+                    new string[] { "@id", "@nd_nndd", "@nv_nndd", "@ndd", "@dc_nndd", "@md_nndd", "@dg_nndd", "@ttk_nndd", "@nkp_nndd", "@tt_nndd" },
+                    new object[] { id, nd_nndd, nv_nndd, ndd, dc_nndd, md_nndd, dg_nndd, ttk_nndd, nkp_nndd, tt_nndd });
+        }
+
+        public static void DeleteNuocNgoaiDaDi(int id)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_delete_nndd]", new string[] { "@id" }, new object[] { id });
+        }
+
+        // Qua Trinh Dao Tao
+        public static void InsertQuaTrinhDaoTao(int shcc, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_insert_qtdtcm]",
+                    new string[] { "@shcc", "@tgbd_dtcm", "@tgkt_dtcm", "@csdtcm", "@ndtcm", "@ma_cndt", "@htdtcm", "@vbdtcm", "@xl_dtcm", "@cmpcp_cndt", "@hvcn_cndt", "@ttk_qtdt" },
+                    new object[] { shcc, tgbd_dtcm, tgkt_dtcm, csdtcm, ndtcm, ma_cndt, htdtcm, vbdtcm, xl_dtcm, cmpcp_cndt, hvcn_cndt, ttk_qtdt });
+        }
+
+        public static void UpdateQuaTrinhDaoTao(int id, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_update_qtdtcm]",
+                    new string[] { "@id", "@tgbd_dtcm", "@tgkt_dtcm", "@csdtcm", "@ndtcm", "@ma_cndt", "@htdtcm", "@vbdtcm", "@xl_dtcm", "@cmpcp_cndt", "@hvcn_cndt", "@ttk_qtdt" },
+                    new object[] { id, tgbd_dtcm, tgkt_dtcm, csdtcm, ndtcm, ma_cndt, htdtcm, vbdtcm, xl_dtcm, cmpcp_cndt, hvcn_cndt, ttk_qtdt });
+        }
+
+        public static void DeleteQuaTrinhDaoTao(int id)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_delete_qtdtcm]", new string[] { "@id" }, new object[] { id });
+        }
+
+        //Quy Trinh Boi Duong
+        public static void InsertQuyTrinhBoiDuong(int shcc, DateTime tgbd_bd, DateTime tgkt_bd, string ndbd, int htbd, string nbd_qtbd, string vbbd, string dg_qtbd, string ttk_qtbd)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_insert_qtbd]",
+                    new string[] { "@shcc", "@tgbd_bd", "@tgkt_bd", "@ndbd", "@htbd", "@nbd_qtbd", "@vbbd", "@dg_qtbd", "@ttk_qtbd" },
+                    new object[] { shcc, tgbd_bd, tgkt_bd, ndbd, htbd, nbd_qtbd, vbbd, dg_qtbd, ttk_qtbd });
+        }
+
+        public static void UpdateQuyTrinhBoiDuong(int id, DateTime tgbd_bd, DateTime tgkt_bd, string ndbd, int htbd, string nbd_qtbd, string vbbd, string dg_qtbd, string ttk_qtbd)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_update_qtbd]",
+                    new string[] { "@id", "@tgbd_bd", "@tgkt_bd", "@ndbd", "@htbd", "@nbd_qtbd", "@vbbd", "@dg_qtbd", "@ttk_qtbd" },
+                    new object[] { id, tgbd_bd, tgkt_bd, ndbd, htbd, nbd_qtbd, vbbd, dg_qtbd, ttk_qtbd });
+        }
+
+        public static void DeleteQuyTrinhBoiDuong(int id)
+        {
+            using (MainDB db = new MainDB())
+                db.Execute("[sp_update_qtbd]", new string[] { "@id" }, new object[] { id });
+        }
     }
 }
