@@ -212,7 +212,7 @@ namespace HutStaff.BO.Thongtinchung
             return DAL.Thongtinchung.Thongtinchung.FindDienBienLuongByID(id);
         }
 
-    }
+    
 
         //Quan he gia dinh
         public static void InsertQuanHeGiaDinh(string qhgd)
