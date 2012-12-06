@@ -209,6 +209,14 @@
                 return false;
             });
         });
+        function ddPs_onclick() {
+
+        }
+
+        function ddPs_onclick() {
+
+        }
+
     </script>
     <style type="text/css">
         div.form-container
@@ -269,7 +277,7 @@
                 </div>
                 <div>
                     Hiển thị &nbsp;
-                    <select id="ddPs" runat="server" class="ddlPageSize" style="width: 60px;">
+                    <select id="ddPs" runat="server" class="ddlPageSize" style="width: 60px;" onclick="return ddPs_onclick()" onclick="return ddPs_onclick()">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50" selected="selected">50</option>

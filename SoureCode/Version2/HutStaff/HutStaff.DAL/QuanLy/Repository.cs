@@ -12,7 +12,7 @@ namespace HutStaff.DAL.Quanly
         /// </summary>
         /// <param name="spName">Tên procedure dùng để lấy dữ liệu.</param>
         /// <returns></returns>
-        public static DataTable GetAll(string spName) 
+        public static DataTable GetAll(string spName)
         {
             using (MainDB db = new MainDB())
             {
@@ -32,6 +32,30 @@ namespace HutStaff.DAL.Quanly
             using (MainDB db = new MainDB())
             {
                 return db.Execute(spName, paramNames, paramValues);
+            }
+        }
+
+        /// <summary>
+        /// Tìm trong bảng tương ứng với store procedure 'spName' giá trị 'value'
+        /// và tham số trong hàm tìm kiếm là 'key'.
+        /// </summary>
+        /// <param name="spName">Tên sp được gọi.</param>
+        /// <param name="key">Tên tham số trong sp.</param>
+        /// <param name="value">Giá trị dùng để tìm kiếm.</param>
+        /// <returns></returns>
+        public static bool Find(string spName, string key, string value)
+        {
+            string[] paramNames = new string[] { key };
+            string[] paramValues = new string[] { value };
+
+            DataTable result = Repository.Execute(spName, paramNames, paramValues);
+            if (result.Rows.Count >0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

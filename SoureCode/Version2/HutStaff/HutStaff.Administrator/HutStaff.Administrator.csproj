@@ -649,8 +649,11 @@
     <Content Include="Pages\HuongDan\HuongDan.aspx" />
     <Content Include="Pages\QuanLy\BangDanhMuc.aspx" />
     <Content Include="Pages\QuanLy\BoSungCanBo.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\DienCanBo.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\dm_hh.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\dm_kt.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\DonVi.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\TinhTrangCongTac.aspx" />
     <Content Include="Pages\QuanLy\DoiDonVi.aspx" />
     <Content Include="Pages\QuanLy\Duyethuyhoso.aspx" />
     <Content Include="Pages\QuanLy\NguoiDung.aspx" />
@@ -1262,6 +1265,23 @@
     <Compile Include="Pages\QuanLy\BoSungCanBo.aspx.designer.cs">
       <DependentUpon>BoSungCanBo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DanhMucBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DanhMucMaster.master.cs">
+      <DependentUpon>DanhMucMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DanhMucMaster.master.designer.cs">
+      <DependentUpon>DanhMucMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DienCanBo.aspx.cs">
+      <DependentUpon>DienCanBo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DienCanBo.aspx.designer.cs">
+      <DependentUpon>DienCanBo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\dm_hh.aspx.cs">
       <DependentUpon>dm_hh.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1275,6 +1295,20 @@
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\dm_kt.aspx.designer.cs">
       <DependentUpon>dm_kt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DonVi.aspx.cs">
+      <DependentUpon>DonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\DonVi.aspx.designer.cs">
+      <DependentUpon>DonVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTac.aspx.cs">
+      <DependentUpon>TinhTrangCongTac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\TinhTrangCongTac.aspx.designer.cs">
+      <DependentUpon>TinhTrangCongTac.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DoiDonVi.aspx.cs">
       <DependentUpon>DoiDonVi.aspx</DependentUpon>
@@ -1622,6 +1656,7 @@
     <Content Include="Services\text.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\QuanLy\DanhMuc\" />
     <Folder Include="Pages\HoSo\" />
     <Folder Include="Uploaded\" />
     <Folder Include="Xemthongtin\Pages\" />
@@ -1631,6 +1666,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Services\Upload.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\QuanLy\DanhMuc\DanhMucMaster.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
