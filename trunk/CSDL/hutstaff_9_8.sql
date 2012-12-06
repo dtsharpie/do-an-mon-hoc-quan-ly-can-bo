@@ -509,7 +509,7 @@ GO
 	(
 		id				INT IDENTITY(1,1),
 		shcc			INT REFERENCES soyeu(shcc),
-		ma_cv			INT REFERENCES dm_cv(ma_cv),
+		ma_cv			INT REFERENCES dm_cud(ma_cud),
 		nbncvdt			DATETIME,
 		nktcvdt			DATETIME,
 		ttk_qtct		NVARCHAR(255),
