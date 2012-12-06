@@ -40,13 +40,13 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc {
         protected global::System.Web.UI.WebControls.Button insertButton;
         
         /// <summary>
-        /// editButton control.
+        /// saveButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button editButton;
+        protected global::System.Web.UI.WebControls.Button saveButton;
         
         /// <summary>
         /// dataGridView control.

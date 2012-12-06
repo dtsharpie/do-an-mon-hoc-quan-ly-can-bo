@@ -10,7 +10,7 @@
 namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc {
     
     
-    public partial class TinhTrangCongTac {
+    public partial class TinhTrangCongTacPage {
         
         /// <summary>
         /// tblMain control.

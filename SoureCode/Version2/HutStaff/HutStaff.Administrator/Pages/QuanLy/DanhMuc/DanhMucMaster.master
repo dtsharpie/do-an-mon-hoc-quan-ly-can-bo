@@ -19,7 +19,7 @@
         <br />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
         <asp:Button ID="insertButton" runat="server" Text="Thêm" CssClass="button" />
-        <asp:Button ID="editButton" runat="server" Text="Sửa" CssClass="button" />
+        <asp:Button ID="saveButton" runat="server" Text="Lưu lại" CssClass="button" />
         <br />
         <br />
         <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="false">

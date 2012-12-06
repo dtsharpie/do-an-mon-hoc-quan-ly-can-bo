@@ -25,12 +25,3 @@ C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.dll
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.BO.pdb
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.dll
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.dll
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.Common.pdb
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\bin\Debug\HutStaff.DAL.pdb
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.csprojResolveAssemblyReference.cache
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.dll
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.BO\obj\Debug\HutStaff.BO.pdb
