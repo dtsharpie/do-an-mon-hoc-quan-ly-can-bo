@@ -186,5 +186,31 @@ namespace HutStaff.BO.Thongtinchung
         {
             return DAL.Thongtinchung.Thongtinchung.FindByIDKyLuat(id);
         }
+
+
+      // dien bien luong
+        public static void InsertDienBienLuong(int shcc, DateTime tgbd_dbl, DateTime tgkt_dbl, string ma_ngach, decimal bl_dbl, decimal hsl, decimal hspccv, string ttk_qtdbl, decimal hspctn, decimal hspckv, decimal ts, int hnay)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertDienBienLuong(shcc, tgbd_dbl, tgkt_dbl, ma_ngach, bl_dbl, hsl, hspccv, ttk_qtdbl, hspctn, hspckv, ts, hnay);
+        }
+
+        public static void UpdateDienBienLuong(int id, DateTime tgbd_dbl, DateTime tgkt_dbl, string ma_ngach, decimal bl_dbl, decimal hsl, decimal hspccv, string ttk_qtdbl, decimal hspctn, decimal hspckv, decimal ts, int hnay)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateDienBienLuong(id, tgbd_dbl, tgkt_dbl, ma_ngach, bl_dbl, hsl, hspccv, ttk_qtdbl, hspctn, hspckv, ts, hnay);
+        }
+        public static DataTable GetAllNgach()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllNgach();
+        }
+        public static void DeleteDienBienLuong(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeletedDienBienLuong(id);
+        }
+
+        public static DataTable FindDienBienLuongByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindDienBienLuongByID(id);
+        }
+
     }
 }
