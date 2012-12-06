@@ -11,8 +11,3 @@ C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
 D:\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.csprojResolveAssemblyReference.cache
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.csprojResolveAssemblyReference.cache
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
-D:\ToanBK\Documents\Visual Studio 2010\Projects\Google Code Projects\bkhn-staff-management\SoureCode\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
