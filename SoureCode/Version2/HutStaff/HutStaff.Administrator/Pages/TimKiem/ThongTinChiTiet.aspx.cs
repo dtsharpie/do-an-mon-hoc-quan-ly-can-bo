@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using HutStaff.BO.PagesBO.TimKiem;
 using System.IO;
+using System.Globalization;
 
 namespace HutStaff.Administrator.Pages.TimKiem
 {
@@ -91,8 +92,9 @@ namespace HutStaff.Administrator.Pages.TimKiem
                         chzGioiTinh.SelectedIndex = 0;
                     }
 
-                    //Ngày cấp
+                    //Socmtnd
                     txbSoCmtnd.Text = thongtinchitiet.Rows[0]["scmnd"].ToString();
+                    //Ngày cấp
                     dpkNgayCapCmtnd.Text =  !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ngay_cap"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngay_cap"]).ToString("dd/MM/yyyy") : "";
                     //Nơi cấp
                     chzNoiCapCmtnd.DataSource = tinhthanhpho;
@@ -106,71 +108,51 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Trình độ học vấn
                     chzTrinhDoHocVan.DataSource = trinhdohocvan;
                     chzTrinhDoHocVan.DataBind();
+                    chzTrinhDoHocVan.Items.Insert(0,"");
                     int ma_tdhv = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ma_tdhv"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["ma_tdhv"].ToString()) : 0;
-                    chzTrinhDoHocVan.SelectedIndex = chzTrinhDoHocVan.Items.IndexOf(chzTrinhDoHocVan.Items.FindByValue(ma_nc.ToString()));
+                    chzTrinhDoHocVan.SelectedIndex = chzTrinhDoHocVan.Items.IndexOf(chzTrinhDoHocVan.Items.FindByValue(ma_tdhv.ToString()));
                     //Trình độ tin học
                     chzTrinhDoTinHoc.DataSource = trinhdotinhoc;
                     chzTrinhDoTinHoc.DataBind();
-                    object tdth = thongtinchitiet.Rows[0]["ma_tdth"];
-                    if (!DBNull.Value.Equals(tdth))
-                    {
-                        int ma_tdth = int.Parse(thongtinchitiet.Rows[0]["ma_tdth"].ToString());
-                        chzTrinhDoTinHoc.SelectedIndex = chzTrinhDoTinHoc.Items.IndexOf(chzTrinhDoTinHoc.Items.FindByValue(ma_tdth.ToString()));
-                    }
-                    else
-                    {
-                        chzTrinhDoTinHoc.Items.Add("");
-                        chzTrinhDoTinHoc.SelectedIndex = chzTrinhDoTinHoc.Items.Count-1;
-                    }
+                    chzTrinhDoTinHoc.Items.Insert(0,"");
+                    int ma_tdth = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ma_tdth"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["ma_tdth"].ToString()) : 0;
+                    chzTrinhDoTinHoc.SelectedIndex = chzTrinhDoTinHoc.Items.IndexOf(chzTrinhDoTinHoc.Items.FindByValue(ma_tdth.ToString()));
                     //Trình độ lí luận chính trị
                     chzTrinhDoLyLuan.DataSource = trinhdoliluanchinhtri;
                     chzTrinhDoLyLuan.DataBind();
-                    object tdllct = thongtinchitiet.Rows[0]["ma_tdllct"];
-                    if (!DBNull.Value.Equals(tdllct))
-                    {                                                
-                        int ma_tdllct = int.Parse(thongtinchitiet.Rows[0]["ma_tdllct"].ToString());
-                        chzTrinhDoLyLuan.SelectedIndex = chzTrinhDoLyLuan.Items.IndexOf(chzTrinhDoLyLuan.Items.FindByValue(ma_tdllct.ToString()));
-                    }
-                    else
-                    {
-                        chzTrinhDoLyLuan.Items.Add("");
-                        chzTrinhDoLyLuan.SelectedIndex = chzTrinhDoLyLuan.Items.Count - 1;
-                    }
+                    chzTrinhDoLyLuan.Items.Insert(0, "");
+                    int ma_tdllct = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ma_tdllct"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["ma_tdllct"].ToString()) : 0;
+                    chzTrinhDoLyLuan.SelectedIndex = chzTrinhDoLyLuan.Items.IndexOf(chzTrinhDoLyLuan.Items.FindByValue(ma_tdllct.ToString()));
+                   
                     //Trình độ quản lí nhà nước
                     chzTrinhDoQuanLy.DataSource = trinhdoquanlinhanuoc;
                     chzTrinhDoQuanLy.DataBind();
-                    object tdqlnn = thongtinchitiet.Rows[0]["ma_tdqlnn"];
-                    if (!DBNull.Value.Equals(tdqlnn))
-                    {                                                
-                        int ma_tdqlnn = int.Parse(thongtinchitiet.Rows[0]["ma_tdqlnn"].ToString());
-                        chzTrinhDoQuanLy.SelectedIndex = chzTrinhDoQuanLy.Items.IndexOf(chzTrinhDoQuanLy.Items.FindByValue(ma_tdqlnn.ToString()));
-                    }
-                    else
-                    {
-                        chzTrinhDoQuanLy.Items.Add("");
-                        chzTrinhDoQuanLy.SelectedIndex = chzTrinhDoQuanLy.Items.Count - 1;
-                    }
+                    chzTrinhDoQuanLy.Items.Insert(0, "");
+                    int ma_tdqlnn = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ma_tdqlnn"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["ma_tdqlnn"].ToString()) : 0;
+                    chzTrinhDoQuanLy.SelectedIndex = chzTrinhDoQuanLy.Items.IndexOf(chzTrinhDoQuanLy.Items.FindByValue(ma_tdqlnn.ToString()));
+                    
                     //Sở trường năng khiếu
                     txbSoTruong.Text = thongtinchitiet.Rows[0]["nlstnk"].ToString();
-                    //Ngày về cơ quan
-                   
+                    //Ngày về cơ quan                   
                     dpkNgayVeCoQuan.Text =  !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nvcqhn"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvcqhn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày vào biên chế
                     dpkNgayVaoBienChe.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nvbc"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvbc"]).ToString("dd/MM/yyyy") : "";
                     //Khối cán bộ
                     chzKhoiCanBo.DataSource = khoicanbo;
                     chzKhoiCanBo.DataBind();
-
+                    chzKhoiCanBo.Items.Insert(0,"");    
                     int kcb = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["kcb"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["kcb"]) : 0;
                     chzKhoiCanBo.SelectedIndex = chzKhoiCanBo.Items.IndexOf(chzKhoiCanBo.Items.FindByValue(kcb.ToString()));
                     //Diện cán bộ
                     chzDienCanBo.DataSource = diencanbo;
                     chzDienCanBo.DataBind();
+                    chzDienCanBo.Items.Insert(0,"");
                     int dcb = int.Parse(thongtinchitiet.Rows[0]["dcb"].ToString());
                     chzDienCanBo.SelectedIndex = chzDienCanBo.Items.IndexOf(chzDienCanBo.Items.FindByValue(dcb.ToString()));
                     //Đơn vị quản lí
                     chzDonViQuanLy.DataSource = donviquanli;
                     chzDonViQuanLy.DataBind();
+                    chzDonViQuanLy.Items.Insert(0, "");
                     int ma_dvql = int.Parse(thongtinchitiet.Rows[0]["ma_dvql"].ToString());
                     chzDonViQuanLy.SelectedIndex = chzDonViQuanLy.Items.IndexOf(chzDonViQuanLy.Items.FindByValue(ma_dvql.ToString()));
                     //Công việc được phân công
@@ -182,45 +164,37 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Mốc hưởng thâm niên
                     dpkMocHuongThamNien.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["mochuongtn"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["mochuongtn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày kết thúc hợp đồng
-                    object ngay_kthd = thongtinchitiet.Rows[0]["ngay_kthd"];
-                    if (!DBNull.Value.Equals(ngay_kthd))
-                    {
-                        dpkNgayKetThucHopDong.Text = ngay_kthd != null ? Convert.ToDateTime(ngay_kthd).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayKetThucHopDong.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ngay_kthd"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngay_kthd"]).ToString("dd/MM/yyyy") : "";
                     //Lí do kết thúc hợp đồng
                     txbLyDoKetThucHopDong.Text = thongtinchitiet.Rows[0]["ld_kthd"].ToString();
                     //Tháng gián đoạn
                     txbThangGianDoan.Text = thongtinchitiet.Rows[0]["thanggd"].ToString();
                     //Ngày tham gia Cách Mạng
-                    object ntgcm = thongtinchitiet.Rows[0]["ntgcm"];
-                    if (!DBNull.Value.Equals(ntgcm))
-                    {
-                        dpkNgayThamGiaCachMang.Text = ntgcm != null ? Convert.ToDateTime(ntgcm).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayThamGiaCachMang.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ntgcm"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ntgcm"]).ToString("dd/MM/yyyy") : "";
+                    
                     //Ngày vào Đảng
-                    object nvd = thongtinchitiet.Rows[0]["nvd"];
-                    if (!DBNull.Value.Equals(nvd))
-                    {
-                        dpkNgayVaoDang.Text = thongtinchitiet.Rows[0]["nvd"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvd"]).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayVaoDang.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nvd"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvd"]).ToString("dd/MM/yyyy") : "";
+                    //object nvd = thongtinchitiet.Rows[0]["nvd"];
+                    //if (!DBNull.Value.Equals(nvd))
+                    //{
+                    //    dpkNgayVaoDang.Text = thongtinchitiet.Rows[0]["nvd"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nvd"]).ToString("dd/MM/yyyy") : "";
+                    //}
                     //Ngày chính thức vào Đảng
-                    object nct = thongtinchitiet.Rows[0]["nct"];
-                    if (!DBNull.Value.Equals(nct))
-                    {
-                        dpkNgayChinhThuc.Text = thongtinchitiet.Rows[0]["nct"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nct"]).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayChinhThuc.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nct"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nct"]).ToString("dd/MM/yyyy") : "";
+                    //object nct = thongtinchitiet.Rows[0]["nct"];
+                    //if (!DBNull.Value.Equals(nct))
+                    //{
+                    //    dpkNgayChinhThuc.Text = thongtinchitiet.Rows[0]["nct"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nct"]).ToString("dd/MM/yyyy") : "";
+                    //}
                     //Ngày nhập ngũ
-                    object nnn = thongtinchitiet.Rows[0]["nnn"];
-                    if (!DBNull.Value.Equals(nnn))
-                    {
-                        dpkNgayNhapNgu.Text = thongtinchitiet.Rows[0]["nnn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nnn"]).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayNhapNgu.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nnn"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nnn"]).ToString("dd/MM/yyyy") : "";
                     //Ngày xuất ngũ
-                    object nxn = thongtinchitiet.Rows[0]["nxn"];
-                    if (!DBNull.Value.Equals(nxn))
-                    {
-                        dpkNgayXuatNgu.Text = thongtinchitiet.Rows[0]["nxn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nxn"]).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayXuatNgu.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["nxn"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nxn"]).ToString("dd/MM/yyyy") : "";
+                    //object nxn = thongtinchitiet.Rows[0]["nxn"];
+                    //if (!DBNull.Value.Equals(nxn))
+                    //{
+                    //    dpkNgayXuatNgu.Text = thongtinchitiet.Rows[0]["nxn"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["nxn"]).ToString("dd/MM/yyyy") : "";
+                    //}
                     //Quân hàm
                     txbQuanHam.Text = thongtinchitiet.Rows[0]["qh"].ToString();
                     //Thương binh
@@ -234,8 +208,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     }
                     else
                     {
-                        chzThuongBinh.Items.Add("");
-                        chzThuongBinh.SelectedIndex = chzThuongBinh.Items.Count - 1;
+                        chzThuongBinh.Items.Insert(0,"");
+                        chzThuongBinh.SelectedIndex = 0;
                     }
                     //Gia đình chính sách
                     chzGiaDinhChinhSach.DataSource = giadinhchinhsach;
@@ -248,8 +222,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     }
                     else
                     {
-                        chzGiaDinhChinhSach.Items.Add("");
-                        chzGiaDinhChinhSach.SelectedIndex = chzGiaDinhChinhSach.Items.Count - 1;
+                        chzGiaDinhChinhSach.Items.Insert(0, "");
+                        chzGiaDinhChinhSach.SelectedIndex = 0;
                     }
                     //Thành phần xuất thân
                     chzThanhPhanXuatThan.DataSource = thanhphanxuatthan;
@@ -262,19 +236,21 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     }
                     else
                     {
-                        chzThanhPhanXuatThan.Items.Add("");
-                        chzThanhPhanXuatThan.SelectedIndex = chzThanhPhanXuatThan.Items.Count - 1;
+                        chzThanhPhanXuatThan.Items.Insert(0, "");
+                        chzThanhPhanXuatThan.SelectedIndex = 0;
                     }
                     //Tên thường dùng
                     txbTenThuongDung.Text = thongtinchitiet.Rows[0]["ttd"].ToString();
                     //Nơi sinh                    
                     chzNoiSinh.DataSource = huyen;
                     chzNoiSinh.DataBind();
+                    chzNoiSinh.Items.Insert(0,"");
                     int ma_ns = int.Parse(thongtinchitiet.Rows[0]["ma_ns"].ToString());
                     chzNoiSinh.SelectedIndex = chzNoiSinh.Items.IndexOf(chzNoiSinh.Items.FindByValue(ma_ns.ToString()));
                     //Quê quán
                     chzQueQuan.DataSource = tinhthanhpho;
                     chzQueQuan.DataBind();
+                    chzQueQuan.Items.Insert(0, "");
                     int ma_qq = int.Parse(thongtinchitiet.Rows[0]["ma_qq"].ToString());
                     chzQueQuan.SelectedIndex = chzQueQuan.Items.IndexOf(chzQueQuan.Items.FindByValue(ma_qq.ToString()));
                     //Chi tiết quê quán
@@ -286,6 +262,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     chzHoKhauThuongTru.DataValueField = "ma_huyen";
                     chzHoKhauThuongTru.DataSource = huyen;
                     chzHoKhauThuongTru.DataBind();
+                    chzHoKhauThuongTru.Items.Insert(0,"");
                     int ma_hktt = int.Parse(thongtinchitiet.Rows[0]["ma_hktt"].ToString());
                     chzHoKhauThuongTru.SelectedIndex = chzHoKhauThuongTru.Items.IndexOf(chzHoKhauThuongTru.Items.FindByValue(ma_hktt.ToString()));
                     //Chi tiết hộ khẩu thường trú
@@ -293,32 +270,37 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Số bảo hiểm
                     txbSoBaoHiem.Text = thongtinchitiet.Rows[0]["sbh"].ToString();
                     //Ngày bắt đầu đóng bảo hiểm
-                    object ndbh = thongtinchitiet.Rows[0]["ndbh"];
-                    if (!DBNull.Value.Equals(ndbh))
-                    {
-                        dpkNgayBatDauDongBaoHiem.Text = thongtinchitiet.Rows[0]["ndbh"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ndbh"]).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayBatDauDongBaoHiem.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ndbh"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ndbh"]).ToString("dd/MM/yyyy") : "";
+                    //object ndbh = thongtinchitiet.Rows[0]["ndbh"];
+                    //if (!DBNull.Value.Equals(ndbh))
+                    //{
+                    //    dpkNgayBatDauDongBaoHiem.Text = thongtinchitiet.Rows[0]["ndbh"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ndbh"]).ToString("dd/MM/yyyy") : "";
+                    //}
                     //Ngày nhận bảo hiểm chính thức
-                    object ngaybh = thongtinchitiet.Rows[0]["ngaybh"];
-                    if (!DBNull.Value.Equals(ngaybh))
-                    {
-                        dpkNgayNhanBaoHiemChinhThuc.Text = thongtinchitiet.Rows[0]["ngaybh"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngaybh"]).ToString("dd/MM/yyyy") : "";
-                    }
+                    dpkNgayNhanBaoHiemChinhThuc.Text = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["ngaybh"].ToString()) ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngaybh"]).ToString("dd/MM/yyyy") : "";
+                    //object ngaybh = thongtinchitiet.Rows[0]["ngaybh"];
+                    //if (!DBNull.Value.Equals(ngaybh))
+                    //{
+                    //    dpkNgayNhanBaoHiemChinhThuc.Text = thongtinchitiet.Rows[0]["ngaybh"] != null ? Convert.ToDateTime(thongtinchitiet.Rows[0]["ngaybh"]).ToString("dd/MM/yyyy") : "";
+                    //}
                     //Tình trạng sức khỏe
                     chzTinhTrangSucKhoe.DataSource = tinhtrangsuckhoe;
                     chzTinhTrangSucKhoe.DataBind();
+                    chzTinhTrangSucKhoe.Items.Insert(0, "");
                     string ttsk = thongtinchitiet.Rows[0]["ma_ttsk"].ToString();
                     chzTinhTrangSucKhoe.SelectedIndex = chzTinhTrangSucKhoe.Items.IndexOf(chzTinhTrangSucKhoe.Items.FindByText(ttsk));
                     //chzTinhTrangSucKhoe.Items.Add(thongtinchitiet.Rows[0]["ma_ttsk"].ToString());
                     //Nhóm máu
                     chzNhomMau.DataSource = nhommau;
                     chzNhomMau.DataBind();
+                    chzNhomMau.Items.Insert(0, "");
                     string nm = thongtinchitiet.Rows[0]["ma_nm"].ToString();
                     chzNhomMau.SelectedIndex = chzNhomMau.Items.IndexOf(chzNhomMau.Items.FindByText(nm));
                     //chzNhomMau.Items.Add(thongtinchitiet.Rows[0]["ma_nm"].ToString());
                     //Tình trạng hôn nhân
                     chzTinhTrangHonNhan.DataSource = tinhtranghonnhan;
                     chzTinhTrangHonNhan.DataBind();
+                    chzTinhTrangHonNhan.Items.Insert(0, "");
                     int tthn = !String.IsNullOrEmpty(thongtinchitiet.Rows[0]["tthn"].ToString()) ? Convert.ToInt32(thongtinchitiet.Rows[0]["tthn"]) : 0;
                     chzTinhTrangHonNhan.SelectedIndex = chzTinhTrangHonNhan.Items.IndexOf(chzTinhTrangHonNhan.Items.FindByValue(tthn.ToString()));
                     //Lịch sử bản thân
@@ -326,12 +308,14 @@ namespace HutStaff.Administrator.Pages.TimKiem
                     //Dân tộc
                     chzDanToc.DataSource = dantoc;
                     chzDanToc.DataBind();
+                    chzDanToc.Items.Insert(0, "");
                     int ma_dt = int.Parse(thongtinchitiet.Rows[0]["ma_dt"].ToString());
                     chzDanToc.SelectedIndex = chzDanToc.Items.IndexOf(chzDanToc.Items.FindByValue(ma_dt.ToString()));
                     
                     //Tôn giáo
                     chzTonGiao.DataSource = tongiao;
                     chzTonGiao.DataBind();
+                    chzTonGiao.Items.Insert(0, "");
                     int ma_tg = int.Parse(thongtinchitiet.Rows[0]["ma_tg"].ToString());
                     chzTonGiao.SelectedIndex = chzTonGiao.Items.IndexOf(chzTonGiao.Items.FindByValue(ma_tg.ToString()));
                     
@@ -361,10 +345,18 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
+            string ngaythangnamKT = string.Format("01/01/1900");
+            DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+            dtfi.ShortDatePattern = "dd/MM/yyyy";
+            dtfi.DateSeparator = "/";
+            DateTime datetime = Convert.ToDateTime(ngaythangnamKT, dtfi);
+
             string hovatendem = htbHoVaTenDem.Text;
             string ten = htbTen.Text;
             DateTime ngaysinh;
-            DateTime.TryParse(dpkNgaySinh.Text, out ngaysinh);
+            if(!DateTime.TryParse(dpkNgaySinh.Text,out ngaysinh)){
+                ngaysinh = datetime;
+            }
             int gioitinh;
             if ("Nam".Equals(chzGioiTinh.SelectedValue))
             {
@@ -375,238 +367,182 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 gioitinh = 0;
             }
             string scmnd = txbSoCmtnd.Text;
-            DateTime? ngaycap = new Nullable<DateTime>();
-            if (!dpkNgayCapCmtnd.Text.Equals(""))
+            DateTime ngaycap;
+            if (!DateTime.TryParse(dpkNgayCapCmtnd.Text, out ngaycap))
             {
-                ngaycap = Convert.ToDateTime(dpkNgayCapCmtnd.Text);
+                ngaycap = datetime;
             }
-            if (ngaycap.Equals(DateTime.MinValue))
-            {
-                ngaycap = null;
-            }
-            //DateTime.TryParse(dpkNgayCapCmtnd.Text, out ngaycap);
 
-            int? noicap = new Nullable<int>();
-            if(!"".Equals(chzNoiCapCmtnd.SelectedItem.Text)){
-                noicap = int.Parse(chzNoiCapCmtnd.SelectedValue);
+            int noicap;
+            if (!int.TryParse(chzNoiCapCmtnd.SelectedValue, out noicap) || noicap==0)
+            {
+                noicap = -1;
             }
             string email = txbEmail.Text;
             string dienthoai = txbDienThoai.Text;
-            int? tdhv = new Nullable<int>();
-            if (!"".Equals(chzTrinhDoHocVan.SelectedItem.Text))
+            int tdhv;
+            if (!int.TryParse(chzTrinhDoHocVan.SelectedValue, out tdhv) || tdhv==0)
             {
-                tdhv = int.Parse(chzTrinhDoHocVan.SelectedValue);
+                tdhv = -1;
             }
-            int? tdth = new Nullable<int>();
-            if (!"".Equals(chzTrinhDoTinHoc.SelectedItem.Text))
+            int tdth;
+            if (!int.TryParse(chzTrinhDoTinHoc.SelectedValue, out tdth) || tdth == 0)
             {
-                tdth = int.Parse(chzTrinhDoTinHoc.SelectedValue);
+                tdth = -1;
             }
-            int? tdll = new Nullable<int>();
-            if (!"".Equals(chzTrinhDoLyLuan.SelectedItem.Text))
+            int tdll;
+            if (!int.TryParse(chzTrinhDoLyLuan.SelectedValue, out tdll) || tdll == 0)
             {
-                int.Parse(chzTrinhDoLyLuan.SelectedValue);
+                tdll = -1;
             }
-            int? tdql = new Nullable<int>();
-            if (!"".Equals(chzTrinhDoQuanLy.SelectedItem.Text))
+            int tdql;
+            if (!int.TryParse(chzTrinhDoQuanLy.SelectedValue, out tdql) || tdql == 0)
             {
-                int.Parse(chzTrinhDoQuanLy.SelectedValue);
+                tdql = -1;
             }
             string sotruong = txbSoTruong.Text;
-            DateTime? ngayvecq = new Nullable<DateTime>();
-            if (!dpkNgayVeCoQuan.Text.Equals(""))
+            DateTime ngayvecq;
+            if (!DateTime.TryParse(dpkNgayVeCoQuan.Text, out ngayvecq))
             {
-                ngayvecq = Convert.ToDateTime(dpkNgayVeCoQuan.Text);
+                ngayvecq = datetime;
             }
-            if (ngayvecq.Equals(DateTime.MinValue))
+            DateTime ngayvaobienche;
+            if (!DateTime.TryParse(dpkNgayVaoBienChe.Text, out ngayvaobienche))
             {
-                ngayvecq = null;
+                ngayvaobienche = datetime;
             }
-            
-            DateTime? ngayvaobienche = new Nullable<DateTime>();
-            if (!dpkNgayVaoBienChe.Text.Equals(""))
+            int khoicanbo;
+            if (!int.TryParse(chzKhoiCanBo.SelectedValue, out khoicanbo) || khoicanbo == 0)
             {
-                ngayvaobienche = Convert.ToDateTime(dpkNgayVaoBienChe.Text);
+                khoicanbo = -1;
             }
-            if (ngayvaobienche.Equals(DateTime.MinValue))
+            int diencanbo;
+            if (!int.TryParse(chzKhoiCanBo.SelectedValue, out diencanbo) || diencanbo == 0)
             {
-                ngayvaobienche = null;
+                diencanbo = -1;
             }
-            int? khoicanbo = new Nullable<int>();
-            if (!"".Equals(chzKhoiCanBo.SelectedItem.Text))
+            int dvql;
+            if (!int.TryParse(chzDonViQuanLy.SelectedValue, out dvql) || dvql == 0)
             {
-                int.Parse(chzKhoiCanBo.SelectedValue);
-            }
-            int? diencanbo = new Nullable<int>();
-            if (!"".Equals(chzKhoiCanBo.SelectedItem.Text))
-            {
-                int.Parse(chzDienCanBo.SelectedValue);
-            }
-            int? dvql = new Nullable<int>();
-            if (!"".Equals(chzDonViQuanLy.SelectedItem.Text))
-            {
-                int.Parse(chzDonViQuanLy.SelectedValue);
+                dvql = -1;
             }
             string viecphancong = txbViecDuocPhanCong.Text;
             string viecdamnhan = txbCongViecDamNhan.Text;
 
-            DateTime? ngaybatdau = new Nullable<DateTime>();
-            if (!dpkNgayBatDauTinhThamNien.Text.Equals(""))
+            DateTime ngaybatdau;
+            if (!DateTime.TryParse(dpkNgayBatDauTinhThamNien.Text, out ngaybatdau))
             {
-                ngaybatdau = Convert.ToDateTime(dpkNgayBatDauTinhThamNien.Text);
+                ngaybatdau = datetime;
             }
-            if (ngaybatdau.Equals(DateTime.MinValue))
+            DateTime mocthamnien;
+            if (!DateTime.TryParse(dpkMocHuongThamNien.Text, out mocthamnien))
             {
-                ngaybatdau = null;
+                mocthamnien = datetime;
             }
-
-            DateTime? mocthamnien = new Nullable<DateTime>();
-            if (!dpkMocHuongThamNien.Text.Equals(""))
+            DateTime ngaykthd;
+            if (!DateTime.TryParse(dpkNgayKetThucHopDong.Text, out ngaykthd))
             {
-                mocthamnien = Convert.ToDateTime(dpkMocHuongThamNien.Text);
-            }
-            if (mocthamnien.Equals(DateTime.MinValue))
-            {
-                mocthamnien = null;
-            }
-
-            DateTime? ngaykthd = new Nullable<DateTime>();
-            if (!dpkNgayKetThucHopDong.Text.Equals(""))
-            {
-                ngaykthd = Convert.ToDateTime(dpkNgayKetThucHopDong.Text);
-            }
-            if (ngaykthd.Equals(DateTime.MinValue))
-            {
-                ngaykthd = null;
+                ngaykthd = datetime;
             }
             string lidokthd = txbLyDoKetThucHopDong.Text;
-            int thanggd = int.Parse(txbThangGianDoan.Text);
-
-            DateTime? ngaythamgiacm = new Nullable<DateTime>();
-            if (!dpkNgayThamGiaCachMang.Text.Equals(""))
+            int thanggd;
+            if (!int.TryParse(txbThangGianDoan.Text, out thanggd))
             {
-                ngaythamgiacm = Convert.ToDateTime(dpkNgayThamGiaCachMang.Text);
-            }
-            if (ngaythamgiacm.Equals(DateTime.MinValue))
-            {
-                ngaythamgiacm = null;
+                thanggd = 0;
             }
 
-            DateTime? ngayvaodang = new Nullable<DateTime>();
-            if (!dpkNgayVaoDang.Text.Equals(""))
+            DateTime ngaythamgiacm;
+            if (!DateTime.TryParse(dpkNgayThamGiaCachMang.Text, out ngaythamgiacm))
             {
-                ngayvaodang = Convert.ToDateTime(dpkNgayVaoDang.Text);
+                ngaythamgiacm = datetime;
             }
-            if (ngayvaodang.Equals(DateTime.MinValue))
+            DateTime ngayvaodang;
+            if (!DateTime.TryParse(dpkNgayVaoDang.Text, out ngayvaodang))
             {
-                ngayvaodang = null;
+                ngayvaodang = datetime;
             }
-
-            DateTime? ngaychinhthuc = new Nullable<DateTime>();
-            if (!dpkNgayChinhThuc.Text.Equals(""))
+            DateTime ngaychinhthuc;
+            if (!DateTime.TryParse(dpkNgayChinhThuc.Text, out ngaychinhthuc))
             {
-                ngaychinhthuc = Convert.ToDateTime(dpkNgayChinhThuc.Text);
+                ngaychinhthuc = datetime;
             }
-            if (ngaychinhthuc.Equals(DateTime.MinValue))
+            DateTime ngaynhapngu;
+            if (!DateTime.TryParse(dpkNgayNhapNgu.Text, out ngaynhapngu))
             {
-                ngaychinhthuc = null;
+                ngaynhapngu = datetime;
             }
-
-            DateTime? ngaynhapngu = new Nullable<DateTime>();
-            if (!dpkNgayNhapNgu.Text.Equals(""))
+            DateTime ngayxuatngu;
+            if (!DateTime.TryParse(dpkNgayXuatNgu.Text, out ngayxuatngu))
             {
-                ngaynhapngu = Convert.ToDateTime(dpkNgayNhapNgu.Text);
-            }
-            if (ngaynhapngu.Equals(DateTime.MinValue))
-            {
-                ngaynhapngu = null;
-            }
-
-            DateTime? ngayxuatngu = new Nullable<DateTime>();
-            if (!dpkNgayXuatNgu.Text.Equals(""))
-            {
-                ngayxuatngu = Convert.ToDateTime(dpkNgayXuatNgu.Text);
-            }
-            if (ngayxuatngu.Equals(DateTime.MinValue))
-            {
-                ngayxuatngu = null;
+                ngayxuatngu = datetime;
             }
             string quanham = txbQuanHam.Text;
-
-            int? thuongbinh = new Nullable<int>();
-            if (!"".Equals(chzThuongBinh.SelectedItem.Text))
+            int thuongbinh;
+            if (!int.TryParse(chzThuongBinh.SelectedValue, out thuongbinh) || thuongbinh == 0)
             {
-                int.Parse(chzThuongBinh.SelectedValue);
+                thuongbinh = -1;
             }
-            int? giadinhchinhsach = new Nullable<int>();
-            if (!"".Equals(chzGiaDinhChinhSach.SelectedItem.Text))
+            int giadinhchinhsach;
+            if (!int.TryParse(chzGiaDinhChinhSach.SelectedValue, out giadinhchinhsach) || giadinhchinhsach == 0)
             {
-                int.Parse(chzGiaDinhChinhSach.SelectedValue);
+                giadinhchinhsach = -1;
             }
-            int? thanhphanxuatthan = new Nullable<int>();
-            if (!"".Equals(chzGiaDinhChinhSach.SelectedItem.Text))
+            int thanhphanxuatthan;
+            if (!int.TryParse(chzThanhPhanXuatThan.SelectedValue, out thanhphanxuatthan) || thanhphanxuatthan == 0)
             {
-                int.Parse(chzThanhPhanXuatThan.SelectedValue);
+                thanhphanxuatthan = -1;
             }
             string tenthuongdung = txbTenThuongDung.Text;
-            int? noisinh = new Nullable<int>();
-            if (!"".Equals(chzNoiSinh.SelectedItem.Text))
+            int noisinh;
+            if (!int.TryParse(chzNoiSinh.SelectedValue, out noisinh) || noisinh == 0)
             {
-                int.Parse(chzNoiSinh.SelectedValue);
+                noisinh = -1;
             }
-            int? quequan = new Nullable<int>();
-            if (!"".Equals(chzQueQuan.SelectedItem.Text))
+            int quequan;
+            if (!int.TryParse(chzQueQuan.SelectedValue, out quequan) || quequan == 0)
             {
-                int.Parse(chzQueQuan.SelectedValue);
+                quequan = -1;
             }
             string chitietquequan = txbChiTietQueQuan.Text;
             string diachithuongtru = txbDiaChiThuongTru.Text;
 
-            int? hokhauthuongtru = new Nullable<int>();
-            if (!"".Equals(chzHoKhauThuongTru.SelectedItem.Text))
+            int hokhauthuongtru;
+            if (!int.TryParse(chzHoKhauThuongTru.SelectedValue, out hokhauthuongtru) || hokhauthuongtru == 0)
             {
-                int.Parse(chzHoKhauThuongTru.SelectedValue);
+                hokhauthuongtru = -1;
             }
             string chitiethktt = txbChiTietHoKhauThuongTru.Text;
             string sobaohiem = txbSoBaoHiem.Text;
 
-            DateTime? ngaydongbh = new Nullable<DateTime>();
-            if (!dpkNgayBatDauDongBaoHiem.Text.Equals(""))
+            DateTime ngaydongbh;
+            if (!DateTime.TryParse(dpkNgayBatDauDongBaoHiem.Text, out ngaydongbh))
             {
-                ngaydongbh = Convert.ToDateTime(dpkNgayBatDauDongBaoHiem.Text);
-            }
-            if (ngaydongbh.Equals(DateTime.MinValue))
-            {
-                ngaydongbh = null;
+                ngaydongbh = datetime;
             }
 
-            DateTime? ngaybhchinhthuc = new Nullable<DateTime>();
-            if (!dpkNgayNhanBaoHiemChinhThuc.Text.Equals(""))
+            DateTime ngaybhchinhthuc;
+            if (!DateTime.TryParse(dpkNgayNhanBaoHiemChinhThuc.Text, out ngaybhchinhthuc))
             {
-                ngaybhchinhthuc = Convert.ToDateTime(dpkNgayNhanBaoHiemChinhThuc.Text);
-            }
-            if (ngaybhchinhthuc.Equals(DateTime.MinValue))
-            {
-                ngaybhchinhthuc = null;
+                ngaybhchinhthuc = datetime;
             }
 
             string ttsk = chzTinhTrangSucKhoe.SelectedItem.Text;
             string nm = chzNhomMau.SelectedItem.Text;
-            int? tthn = new Nullable<int>();
-            if (!"".Equals(chzNhomMau.SelectedItem.Text))
+            int tthn;
+            if (!int.TryParse(chzTinhTrangHonNhan.SelectedValue, out tthn) || tthn == 0)
             {
-                int.Parse(chzTinhTrangHonNhan.SelectedValue);
+                tthn = -1;
             }
             string lsbt = txbLichSuBanThan.Text;
-            int? dt = new Nullable<int>();
-            if (!"".Equals(chzDanToc.SelectedItem.Text))
+            int dt;
+            if (!int.TryParse(chzDanToc.SelectedValue, out dt) || dt == 0)
             {
-                int.Parse(chzDanToc.SelectedValue);
+                dt = -1;
             }
-            int? tg = new Nullable<int>();
-            if (!"".Equals(chzTonGiao.SelectedItem.Text))
+            int tg;
+            if (!int.TryParse(chzTonGiao.SelectedValue, out tg) || tg == 0)
             {
-                int.Parse(chzTonGiao.SelectedValue);
+                tg = -1;
             }
             string thongtinkhac = txbThongTinKhac.Text;
             SearchDetailBO.Update(iShcc, hovatendem, ten, ngaysinh, gioitinh, scmnd, ngaycap, noicap, email, dienthoai, tdhv, tdll, tdql,
