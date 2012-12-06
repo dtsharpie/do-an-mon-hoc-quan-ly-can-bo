@@ -440,8 +440,6 @@ namespace HutStaff.DAL.Thongtinchung
             }
         }
 
-    }
-}
 
 
         // Quan He Gia Dinh
