@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.UI.WebControls;
 using HutStaff.Administrator.Controls.Common;
 using HutStaff.BO.QuanLy.Bang;
+using HutStaff.BO.QuanLy.DanhMuc;
 
 namespace HutStaff.Administrator.Pages.QuanLy
 {
@@ -177,7 +178,7 @@ namespace HutStaff.Administrator.Pages.QuanLy
             chzTrinhDoLyLuan.DataSource = HutStaff.BO.QuanLy.DanhMuc.TrinhDoLyLuan.GetAll();
             chzTrinhDoQuanLy.DataSource = HutStaff.BO.QuanLy.DanhMuc.TrinhDoQuanLy.GetAll();
             chzKhoiCanBo.DataSource = HutStaff.BO.QuanLy.DanhMuc.KhoiCanBo.GetAll();
-            chzDienCanBo.DataSource = HutStaff.BO.QuanLy.DanhMuc.DienCanBo.GetAll();
+            chzDienCanBo.DataSource = new DienCanBoTable().GetAll();
             chzDonViQuanLy.DataSource = HutStaff.BO.QuanLy.DanhMuc.DonViQuanLy.GetAll();
             chzThuongBinh.DataSource = HutStaff.BO.QuanLy.DanhMuc.ThuongBinh.GetAll();
             chzGiaDinhChinhSach.DataSource = HutStaff.BO.QuanLy.DanhMuc.GiaDinhChinhSach.GetAll();

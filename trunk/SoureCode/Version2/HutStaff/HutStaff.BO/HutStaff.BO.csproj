@@ -52,10 +52,11 @@
     <Compile Include="QuanLy\DanhMuc\DanhMucTableBase.cs" />
     <Compile Include="QuanLy\DanhMuc\DanToc.cs" />
     <Compile Include="QuanLy\DanhMuc\DiaDanh.cs" />
-    <Compile Include="QuanLy\DanhMuc\DienCanBo.cs" />
-    <Compile Include="QuanLy\DanhMuc\DonVi.cs" />
+    <Compile Include="QuanLy\DanhMuc\DienCanBoTable.cs" />
+    <Compile Include="QuanLy\DanhMuc\DonViTable.cs" />
     <Compile Include="QuanLy\DanhMuc\DonViQuanLy.cs" />
     <Compile Include="QuanLy\DanhMuc\GiaDinhChinhSach.cs" />
+    <Compile Include="QuanLy\DanhMuc\HocHamTable.cs" />
     <Compile Include="QuanLy\DanhMuc\KhoiCanBo.cs" />
     <Compile Include="QuanLy\DanhMuc\ThanhPhanXuatThan.cs" />
     <Compile Include="QuanLy\DanhMuc\ThuongBinh.cs" />
