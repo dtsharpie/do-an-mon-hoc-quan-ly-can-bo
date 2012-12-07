@@ -264,5 +264,39 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
                         tthn, email, dienthoai, chitiethktt, khoicanbo, hokhauthuongtru, ngaykthd, lidokthd, ngaydongbh, thanggd, ngaybhchinhthuc, mocthamnien});
             }
         }
+		
+		public static DataTable getDienBienLuong(int iShcc)
+        {
+            DataTable dt = new DataTable();
+            using (MainDB db = new MainDB())
+            {
+                dt = db.Execute("[sp_find_by_iShcc_qtdbl_tbl]",
+                    new string[] { "@iShcc" },
+                    new object[]{iShcc});
+                dt.Columns.Add("thoigian");
+                dt.Columns.Add("mota");
+                dt.Columns.Add("tonghsl");
+                dt.Columns.Add("sothangdongbh");
+                dt.Columns.Add("tongtienbhxh");                
+                foreach(DataRow row in dt.Rows)
+                {
+                    DateTime begin;
+                    DateTime end;
+                    if (DateTime.TryParse(row["tgbd_dbl"].ToString(), out begin) && DateTime.TryParse(row["tgkt_dbl"].ToString(), out end))
+                    {
+                        row["sothangdongbh"] = ((end - begin).TotalDays / 30).ToString() + " tháng";
+                        row["thoigian"] = begin.ToString() + " - " + end.ToString();
+                    }
+                    else
+                    {
+                        row["sothangdongbh"] = "0";
+                        row["thoigian"] = "";
+                    }                    
+                    row["mota"] = "";
+                    row["tongtienbhxh"] = "100"; // Chưa biết cách tính tổng tiền đóng bảo hiểm dựa trên các thông số đã cho
+                }
+            }            
+            return dt;
+        }
     }
 }
