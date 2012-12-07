@@ -8,19 +8,19 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Thời gian
-                </td>
-                <td>
+                </th>
+                <th>
                     Biên chế tại đơn vị/<br />
                     Nơi làm việc
-                </td>
-                <td>
+                </th>
+                <th>
                     Công việc đảm nhận
-                </td>
-                <td>
+                </th>
+                <th>
                     Diện cán bộ
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>
@@ -42,7 +42,7 @@
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
-                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_ qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_ qtct")).ToString("MM/yyyy") : "nay")%>
+                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_qtct")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
                             <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>

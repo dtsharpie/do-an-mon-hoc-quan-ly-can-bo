@@ -8,18 +8,18 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Thời gian
-                </td>
-                <td>
+                </th>
+                <th>
                     Văn bằng
-                </td>
-                <td>
+                </th>
+                <th>
                     Nội dung
-                </td>
-                <td>
+                </th>
+                <th>
                     Thông tin bổ sung
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>

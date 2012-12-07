@@ -1,5 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Thongtinchung.ascx.cs"
     Inherits="HutStaff.Administrator.Xemthongtin.Controls.Thongtinchung" %>
+ <style type="text/css">
+ .divInfo label
+ {
+     font-weight:bold;
+ }
+ 
+  .divInfo label span 
+  {
+      font-weight:normal;
+  }
+ </style>
 <h1 class="title">
     Thông tin chung
 </h1>
@@ -44,7 +55,7 @@
                     </td>
                     <td>
                         <label>
-                            Học hàm học vị:<span><%# Eval("hocham") %></span></label>
+                            Học vị:<span><%# Eval("hocham") %></span></label>
                     </td>
                 </tr>
                 <tr class="even">
