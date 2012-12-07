@@ -25,6 +25,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 if (!"".Equals(id))
                 {
                     iShcc = Convert.ToInt32(id);
+                    ViewState["ishcc"] = iShcc;
                 }
             }
             catch (Exception e1)
@@ -74,12 +75,81 @@ namespace HutStaff.Administrator.Pages.TimKiem
             }
             nameLabel.Text = string.Format("{0} {1}({2})", htbHoVaTenDem, htbTen, dpkNgaySinh);
 
-            
+
             DataTable tblData = BO.Thongtinchung.Thongtinchung.GetQuatrinhcongtac(iShcc);
             if (tblData.Rows.Count > 0)
             {
+                DataColumn themColumns = tblData.Columns.Add("thoigian");
+                foreach (DataRow Row in tblData.Rows)
+                {
+                    string namBatDau = !String.IsNullOrEmpty(Row["tgbd_qtct"].ToString()) ? Convert.ToDateTime(Row["tgbd_qtct"].ToString()).ToString("MM/yyyy") : "nay";
+                    string namKetThuc = !String.IsNullOrEmpty(Row["tgkt_qtct"].ToString()) ? Convert.ToDateTime(Row["tgkt_qtct"].ToString()).ToString("MM/yyyy") : "nay";
+                    Row["thoigian"] = string.Format("{0} > {1}", namBatDau, namKetThuc);
+                }
+
+                DataColumn themColums1 = tblData.Columns.Add("noilamviec");
+                foreach (DataRow Row in tblData.Rows)
+                {
+                    string donvi = !String.IsNullOrEmpty(Row["dvct"].ToString()) ? Row["dvct"].ToString() : "";
+                    string nlv = !String.IsNullOrEmpty(Row["nlv"].ToString()) ? Row["nlv"].ToString() : "";
+                    if (donvi != "")
+                    {
+                        if (nlv != "")
+                        {
+                            Row["noilamviec"] = string.Format("{0}/{1}", donvi, nlv);
+                        }
+                        else
+                        {
+                            Row["noilamviec"] = string.Format("{0}", donvi);
+                        }
+                    }
+                    else
+                    {
+                        if (nlv != "")
+                        {
+                            Row["noilamviec"] = string.Format("{0}", nlv);
+                        }
+                        else
+                        {
+                            Row["noilamviec"] = "";
+                        }
+                    }
+
+                }
+
                 GridView1.DataSource = tblData;
                 GridView1.DataBind();
+
+                DropDownListDonViTrongTruong.DataSource = donviquanli;
+                DropDownListDonViTrongTruong.DataTextField = "dv";
+                DropDownListDonViTrongTruong.DataValueField = "ma_dv";
+                DropDownListDonViTrongTruong.DataBind();
+
+                DropDownListDonViTrongTruong1.DataSource = donviquanli;
+                DropDownListDonViTrongTruong1.DataTextField = "dv";
+                DropDownListDonViTrongTruong1.DataValueField = "ma_dv";
+                DropDownListDonViTrongTruong1.DataBind();
+
+                DataTable diencanbo = SearchDetailBO.getAllDienCanBo();
+                DropDownListDienCanBo.DataSource = diencanbo;
+                DropDownListDienCanBo.DataTextField = "dcb";
+                DropDownListDienCanBo.DataValueField = "ma_dcb";
+                DropDownListDienCanBo.DataBind();
+
+                DataTable chucvu = BO.Thongtinchung.Thongtinchung.GetAllChuVuChinhQuyen();
+                DropDownListChucVuCongTac.DataSource = chucvu;
+                DropDownListChucVuCongTac.DataTextField = "cv";
+                DropDownListChucVuCongTac.DataValueField = "ma_cv";
+                DropDownListChucVuCongTac.DataBind();
+
+                DataTable congviecdamnhan = BO.Thongtinchung.Thongtinchung.GetAllCongViecDamNhan();
+                DropDownListCongViecDamNhan.DataSource = congviecdamnhan;
+                DropDownListCongViecDamNhan.DataTextField = "cvdn";
+                DropDownListCongViecDamNhan.DataValueField = "ma_cvdn";
+                DropDownListCongViecDamNhan.DataBind();
+
+
+
             }
             else
             {
@@ -89,92 +159,194 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
         public void saveButtonClick(object sender, EventArgs e)
         {
-            string ngaythangnamKT = string.Format("01/01/1900");
+            string ngayHT = DropDownListNgayBatDau.SelectedValue.ToString();
+            string thangHT = DropDownListThangBatDau.SelectedValue.ToString();
+            string namHT = txtNamBatDau.Text;
+            string ngaythangnamHT;
+            if (namHT == "")
+            {
+                ngaythangnamHT = "01/01/1900";
+            }
+            else
+            {
+                ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+            }
             DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
             dtfi.ShortDatePattern = "dd/MM/yyyy";
             dtfi.DateSeparator = "/";
-            DateTime datetimetemp = Convert.ToDateTime(ngaythangnamKT, dtfi);
+            DateTime ngaythangBD = Convert.ToDateTime(ngaythangnamHT, dtfi);
 
-            DateTime tgbd_qtct;
-            if (!DateTime.TryParse(tbTimeBegin.Text, out tgbd_qtct))
+            string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
+            string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
+            string namKT = txtNamKetThuc.Text;
+            string ngaythangnamKT;
+            if (namHT == "")
             {
-                tgbd_qtct = datetimetemp;
+                ngaythangnamKT = "01/01/1900";
             }
-            DateTime tgkt_qtct;
-            if (!DateTime.TryParse(tbTimeBegin.Text, out tgkt_qtct))
+            else
             {
-                tgkt_qtct = datetimetemp;
+                ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
             }
-            string dvct = "";// Đơn vị công tác
-            int cvct;// Chức vụ công tác
-            int.TryParse(ddlChucVu.SelectedValue, out cvct);
-            int cvdn;// Công việc đảm nhận
-            int.TryParse(ddlCongViecDamNhan.SelectedValue, out cvdn);
-            string dgqtct = tbDanhGia.Text;// Đánh giá
-            string ttk_qtct = tbThongTinKhac.Text;// Thông tin khác
-            string bctdv = tbDonViBienChe.Text;// Biên chế tại đơn vị
-            string nlv = tbNoiLamViec.Text; // Nơi làm việc
-            int ma_dcb; // Diện cán bộ
-            int.TryParse(ddlDienCanBo.SelectedValue, out ma_dcb);
+
+            DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
 
             if (saveButton.Text == "Ghi nhận")
             {
-                //string id = Request.QueryString["id"];
-                //iShcc = Int32.Parse( ViewState["ishcc"].ToString());
-
-                
-                //Thongtinchung.InsertQuaTrinhCongTac(iShcc, Int32.Parse(ngoainguDropdownList.SelectedValue), Int32.Parse(trinhdoDropdownList.SelectedValue), thongtinchungTextBox.Text);
-                //Bind();
+                BO.Thongtinchung.Thongtinchung.InsertQuaTRinhCongTac(Int32.Parse(ViewState["ishcc"].ToString()), ngaythangBD, ngaythangKT, txtDonViCongTac.Text, Int32.Parse(DropDownListChucVuCongTac.SelectedValue.ToString()), Int32.Parse(DropDownListCongViecDamNhan.SelectedValue.ToString()), txtDanhGia.Text, txtThongTinKhac.Text, txtBienChe.Text, txtNoiLamViec.Text, Int32.Parse(DropDownListDienCanBo.SelectedValue.ToString()));
+                Bind();
             }
             if (saveButton.Text == "Cập nhật")
             {
-                //Thongtinchung.UpdateQuaTrinhCongTac();
-                //Bind();
+                BO.Thongtinchung.Thongtinchung.UpdateQuaTRinhCongTac(Int32.Parse(ViewState["id"].ToString()), ngaythangBD, ngaythangKT, txtDonViCongTac.Text, Int32.Parse(DropDownListChucVuCongTac.SelectedValue.ToString()), Int32.Parse(DropDownListCongViecDamNhan.SelectedValue.ToString()), txtDanhGia.Text, txtThongTinKhac.Text, txtBienChe.Text, txtNoiLamViec.Text, Int32.Parse(DropDownListDienCanBo.SelectedValue.ToString()));
+                Bind();
             }
+
+            resetData();
         }
 
 
         protected void resetButtonClick(object sender, EventArgs e)
         {
-            //thongtinchungTextBox.Text = "";
-            saveButton.Text = "Ghi nhận";                    
+            resetData();
         }
-        protected void gridViewChanged(object sender, EventArgs e)
+
+
+
+        protected void GridViewChanged(object sender, EventArgs e)
         {
             saveButton.Text = "Cập nhật";
             int id = Int32.Parse(GridView1.SelectedRow.Cells[0].Text);
-            ViewState["damn"] = id.ToString();
+            ViewState["id"] = id.ToString();
 
-            DataTable dataTable = Thongtinchung.FindByIDTrinhDoNgoaiNgu_TBL(id);
+            DataTable quatrinhCongTac = BO.Thongtinchung.Thongtinchung.FindQuaTRinhCongTacByID(id);
 
-            int ma_ngoaingu = Int32.Parse(dataTable.Rows[0].ItemArray[2].ToString());
-            int ma_trinhdo = !String.IsNullOrEmpty(dataTable.Rows[0].ItemArray[3].ToString()) ? Convert.ToInt32(dataTable.Rows[0].ItemArray[3].ToString()) : 1;
+            string ngaythangDi = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["tgbd_qtct"].ToString()) ? Convert.ToDateTime(quatrinhCongTac.Rows[0]["tgbd_qtct"].ToString()).ToString("dd/MM/yyyy") : "";
+
+            if (ngaythangDi == "" || ngaythangDi == "01/01/1900")
+            {
+                DropDownListNgayBatDau.SelectedValue = "0";
+                DropDownListThangBatDau.SelectedValue = "0";
+                txtNamBatDau.Text = "";
+            }
+            else
+            {
+                string ngay = ngaythangDi.Substring(0, 2);
+                DropDownListNgayBatDau.SelectedValue = ngay;
+                string thang = ngaythangDi.Substring(3, 2);
+                DropDownListThangBatDau.SelectedValue = thang;
+                string nam = ngaythangDi.Substring(6, 4);
+                txtNamBatDau.Text = nam;
+
+            }
+
+            //ngay ket thuc 
+            string ngaythangph = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["tgkt_qtct"].ToString()) ? Convert.ToDateTime(quatrinhCongTac.Rows[0]["tgkt_qtct"].ToString()).ToString("dd/MM/yyyy") : "";
+            if (ngaythangph == "" || ngaythangph == "01/01/1900")
+            {
+                DropDownListNgayKetThuc.SelectedValue = "0";
+                DropDownListThangKetThuc.SelectedValue = "0";
+                txtNamKetThuc.Text = "";
+            }
+            else
+            {
+
+                string ngayKT = ngaythangph.Substring(0, 2);
+                DropDownListNgayKetThuc.SelectedValue = ngayKT;
+                string thangKT = ngaythangph.Substring(3, 2);
+                DropDownListThangKetThuc.SelectedValue = thangKT;
+                string namKT = ngaythangph.Substring(6, 4);
+                txtNamKetThuc.Text = namKT;
+
+            }
+
+            txtBienChe.Text = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["bctdv"].ToString()) ? quatrinhCongTac.Rows[0]["bctdv"].ToString() : "";
+            txtDanhGia.Text = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["dgqtct"].ToString()) ? quatrinhCongTac.Rows[0]["dgqtct"].ToString() : "";
+            txtDonViCongTac.Text = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["dvct"].ToString()) ? quatrinhCongTac.Rows[0]["dvct"].ToString() : "";
+            txtNoiLamViec.Text = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["nlv"].ToString()) ? quatrinhCongTac.Rows[0]["nlv"].ToString() : "";
+            txtThongTinKhac.Text = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["ttk_qtct"].ToString()) ? quatrinhCongTac.Rows[0]["ttk_qtct"].ToString() : "";
 
 
 
-            //DataTable ngoaingu = SearchDetailBO.getAllNgoaiNgu();
-            //ngoainguDropdownList.DataTextField = "tnn";
-            //ngoainguDropdownList.DataValueField = "ma_tnn";
-            //ngoainguDropdownList.DataSource = ngoaingu;
-            //ngoainguDropdownList.DataBind();
-            //ngoainguDropdownList.SelectedValue = ma_ngoaingu.ToString();
+            DataTable diencanbo = SearchDetailBO.getAllDienCanBo();
+            DropDownListDienCanBo.DataSource = diencanbo;
+            DropDownListDienCanBo.DataTextField = "dcb";
+            DropDownListDienCanBo.DataValueField = "ma_dcb";
+            DropDownListDienCanBo.DataBind();
+            DropDownListDienCanBo.SelectedValue = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["ma_dcb"].ToString()) ? quatrinhCongTac.Rows[0]["ma_dcb"].ToString() : "1";
 
+            DataTable chucvu = BO.Thongtinchung.Thongtinchung.GetAllChuVuChinhQuyen();
+            DropDownListChucVuCongTac.DataSource = chucvu;
+            DropDownListChucVuCongTac.DataTextField = "cv";
+            DropDownListChucVuCongTac.DataValueField = "ma_cv";
+            DropDownListChucVuCongTac.DataBind();
+            DropDownListChucVuCongTac.SelectedValue = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["cvct"].ToString()) ? quatrinhCongTac.Rows[0]["cvct"].ToString() : "1";
 
-            //DataTable trinhdoNgoaingu = SearchDetailBO.getAllTrinhDoNgoaiNgu();
-            //trinhdoDropdownList.DataTextField = "tdnn";
-            //trinhdoDropdownList.DataValueField = "ma_tdnn";
-            //trinhdoDropdownList.DataSource = trinhdoNgoaingu;
-            //trinhdoDropdownList.DataBind();
-            //trinhdoDropdownList.SelectedValue = ma_trinhdo.ToString();
-
+            DataTable congviecdamnhan = BO.Thongtinchung.Thongtinchung.GetAllCongViecDamNhan();
+            DropDownListCongViecDamNhan.DataSource = congviecdamnhan;
+            DropDownListCongViecDamNhan.DataTextField = "cvdn";
+            DropDownListCongViecDamNhan.DataValueField = "ma_cvdn";
+            DropDownListCongViecDamNhan.DataBind();
+            DropDownListCongViecDamNhan.SelectedValue = !String.IsNullOrEmpty(quatrinhCongTac.Rows[0]["cvdn"].ToString()) ? quatrinhCongTac.Rows[0]["cvdn"].ToString() : "1";
         }
-        
-        protected void gridViewDeleted(object sender, GridViewDeleteEventArgs e)
+
+        protected void GridViewDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int id = Int32.Parse(GridView1.Rows[e.RowIndex].Cells[0].Text);
-
-            Thongtinchung.DeleteTrinhDoNgoaiNgu(id);
+            BO.Thongtinchung.Thongtinchung.DeleteQuatrinhcongtac(id);
             Bind();
+
+        }
+
+        protected void DropDownListBienCheSeleted(object sender, EventArgs e)
+        {
+            txtBienChe.Text = DropDownListDonViTrongTruong.SelectedItem.Text;
+        }
+
+        protected void DropdownlistNoiLamViecSeleted(object sender, EventArgs e)
+        {
+            txtNoiLamViec.Text = DropDownListDonViTrongTruong1.SelectedItem.Text;
+        }
+
+        public void resetData()
+        {
+            saveButton.Text = "Ghi nhận";
+            txtBienChe.Text = "";
+            txtDanhGia.Text = "";
+            txtDonViCongTac.Text = "";
+            txtNamBatDau.Text = "";
+            txtNamKetThuc.Text = "";
+            txtNoiLamViec.Text = "";
+            txtThongTinKhac.Text = "";
+
+            DataTable donviquanli = SearchDetailBO.getAllDonViQuanLi();
+            DropDownListDonViTrongTruong.DataSource = donviquanli;
+            DropDownListDonViTrongTruong.DataTextField = "dv";
+            DropDownListDonViTrongTruong.DataValueField = "ma_dv";
+            DropDownListDonViTrongTruong.DataBind();
+
+            DropDownListDonViTrongTruong1.DataSource = donviquanli;
+            DropDownListDonViTrongTruong1.DataTextField = "dv";
+            DropDownListDonViTrongTruong1.DataValueField = "ma_dv";
+            DropDownListDonViTrongTruong1.DataBind();
+
+            DataTable diencanbo = SearchDetailBO.getAllDienCanBo();
+            DropDownListDienCanBo.DataSource = diencanbo;
+            DropDownListDienCanBo.DataTextField = "dcb";
+            DropDownListDienCanBo.DataValueField = "ma_dcb";
+            DropDownListDienCanBo.DataBind();
+
+            DataTable chucvu = BO.Thongtinchung.Thongtinchung.GetAllChuVuChinhQuyen();
+            DropDownListChucVuCongTac.DataSource = chucvu;
+            DropDownListChucVuCongTac.DataTextField = "cv";
+            DropDownListChucVuCongTac.DataValueField = "ma_cv";
+            DropDownListChucVuCongTac.DataBind();
+
+            DataTable congviecdamnhan = BO.Thongtinchung.Thongtinchung.GetAllCongViecDamNhan();
+            DropDownListCongViecDamNhan.DataSource = congviecdamnhan;
+            DropDownListCongViecDamNhan.DataTextField = "cvdn";
+            DropDownListCongViecDamNhan.DataValueField = "ma_cvdn";
+            DropDownListCongViecDamNhan.DataBind();
         }
     }
 }

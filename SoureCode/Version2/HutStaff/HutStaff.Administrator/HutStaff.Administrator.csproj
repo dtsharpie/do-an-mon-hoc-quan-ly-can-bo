@@ -693,7 +693,6 @@
     <Content Include="Pages\TimKiem\ChucVuChinhQuyen.aspx" />
     <Content Include="Pages\TimKiem\ChucVuDang.aspx" />
     <Content Include="Pages\TimKiem\ChucVuDoanThe.aspx" />
-    <Content Include="Pages\TimKiem\DanhGiaCongChuc.aspx" />
     <Content Include="Pages\TimKiem\DienBienLuong.aspx" />
     <Content Include="Pages\TimKiem\DuLieuTruoc1993.aspx" />
     <Content Include="Pages\TimKiem\KhenThuong.aspx" />
@@ -1608,13 +1607,6 @@
     </Compile>
     <Compile Include="Pages\TimKiem\ChucVuDoanThe.aspx.designer.cs">
       <DependentUpon>ChucVuDoanThe.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TimKiem\DanhGiaCongChuc.aspx.cs">
-      <DependentUpon>DanhGiaCongChuc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\TimKiem\DanhGiaCongChuc.aspx.designer.cs">
-      <DependentUpon>DanhGiaCongChuc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\TimKiem\DienBienLuong.aspx.cs">
       <DependentUpon>DienBienLuong.aspx</DependentUpon>

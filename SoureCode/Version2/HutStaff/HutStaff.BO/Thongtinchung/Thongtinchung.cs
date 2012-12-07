@@ -271,19 +271,6 @@ namespace HutStaff.BO.Thongtinchung
         }
 
 
-        //Qua Trinh Dao Tao
-        public static void InsertQuaTrinhDaoTao(int shcc, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
-        {
-            DAL.Thongtinchung.Thongtinchung.InsertQuaTrinhDaoTao(shcc, tgbd_dtcm, tgkt_dtcm, csdtcm, ndtcm, ma_cndt, htdtcm, vbdtcm, xl_dtcm, cmpcp_cndt, hvcn_cndt, ttk_qtdt);
-        }
-        public static void UpdateQuaTrinhDaoTao(int id, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
-        {
-            DAL.Thongtinchung.Thongtinchung.UpdateQuaTrinhDaoTao(id, tgbd_dtcm, tgkt_dtcm, csdtcm, ndtcm, ma_cndt, htdtcm, vbdtcm, xl_dtcm, cmpcp_cndt, hvcn_cndt, ttk_qtdt);
-        }
-        public static void DeleteQuaTrinhDaoTao(int id)
-        {
-            DAL.Thongtinchung.Thongtinchung.DeleteQuaTrinhDaoTao(id);
-        }
 
         //Quy Trinh Boi Duong
         public static void InsertQuyTrinhBoiDuong(int shcc, DateTime tgbd_bd, DateTime tgkt_bd, string ndbd, int htbd, string nbd_qtbd, string vbbd, string dg_qtbd, string ttk_qtbd)
@@ -340,5 +327,85 @@ namespace HutStaff.BO.Thongtinchung
         {
            return DAL.Thongtinchung.Thongtinchung.GetChucVuChinhQuyenByID(id);
         }
+
+
+        // qua trinh cong tac
+
+        public static void InsertQuaTRinhCongTac(int shcc, DateTime tgbd_qtct, DateTime tgkt_qtct, string dvct, int cvct, int cvdn, string dgqtct, string ttk_qtct, string bctdv, string nlv, int ma_dcb)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertQuaTrinhCongTac(shcc, tgbd_qtct, tgkt_qtct, dvct, cvct, cvdn, dgqtct, ttk_qtct, bctdv, nlv, ma_dcb);
+        }
+
+        public static void UpdateQuaTRinhCongTac(int id, DateTime tgbd_qtct, DateTime tgkt_qtct, string dvct, int cvct, int cvdn, string dgqtct, string ttk_qtct, string bctdv, string nlv, int ma_dcb)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateQuaTrinhCongTac(id, tgbd_qtct, tgkt_qtct, dvct, cvct, cvdn, dgqtct, ttk_qtct, bctdv, nlv, ma_dcb);
+        }
+        public static void DeleteQuatrinhcongtac(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteQuaTRinhCongTac(id);
+        }
+
+        public static DataTable FindQuaTRinhCongTacByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindQuaTrinhCongTacByID(id);
+        }
+
+        public static DataTable GetAllCongViecDamNhan()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllCongViecDamNhan();
+        }
+
+
+
+
+
+
+        //qua trinh dao tao
+        public static DataTable GetAllDanhMucChuyenNganh()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllDanhMucChuyenNganh();
+        }
+
+        public static void InsertQuaTrinhDaoTao(int shcc, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertQuaTrinhDaoTao(shcc, tgbd_dtcm, tgkt_dtcm, csdtcm, ndtcm, ma_cndt, htdtcm, vbdtcm, xl_dtcm, cmpcp_cndt, hvcn_cndt, ttk_qtdt);
+        }
+        public static void UpdateQuaTrinhDaoTao(int id, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateQuaTrinhDaoTao(id, tgbd_dtcm, tgkt_dtcm, csdtcm, ndtcm, ma_cndt, htdtcm, vbdtcm, xl_dtcm, cmpcp_cndt, hvcn_cndt, ttk_qtdt);
+        }
+        public static void DeleteQuaTrinhDaoTao(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteQuaTrinhDaoTao(id);
+        }
+
+        public static DataTable FindQuaTrinhDaoTaoById(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindQuaTrinhDaoTaoByID(id);
+        }
+
+
+
+        // chuc vu Dang Doan
+        public static void InsertChuVuDangDoan(int shcc, int ma_cv, DateTime nbncvdt, DateTime nktcvdt, string ttk_qtct, int lcd)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertChucVuDangDoan(shcc, ma_cv, nbncvdt, nktcvdt, ttk_qtct, lcd);
+        }
+
+        public static void UpdateChuVuDangDoan(int id, int ma_cv, DateTime nbncvdt, DateTime nktcvdt, string ttk_qtct, int lcd)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateChucVuDangDoan(id, ma_cv, nbncvdt, nktcvdt, ttk_qtct, lcd);
+        }
+
+        public static void DeleteChuVuDangDoang(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteChuVuDangDoan(id);
+        }
+
+        public static DataTable FindChuVuDangDoanByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindChuVuDangDoanByID(id);
+        }
+
     }
 }

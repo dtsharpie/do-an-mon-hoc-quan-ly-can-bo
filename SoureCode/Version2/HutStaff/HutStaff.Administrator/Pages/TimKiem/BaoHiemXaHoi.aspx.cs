@@ -14,6 +14,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
         protected int iShcc;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
 
             try
             {
@@ -21,6 +23,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 if (!"".Equals(id))
                 {
                     iShcc = Convert.ToInt32(id);
+                    ViewState["ishcc"] = iShcc;
                 }
             }
             catch (Exception e1)

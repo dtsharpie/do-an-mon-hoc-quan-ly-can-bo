@@ -49,112 +49,148 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNodata;
         
         /// <summary>
-        /// tbTimeBegin control.
+        /// DropDownListNgayBatDau control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTimeBegin;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNgayBatDau;
         
         /// <summary>
-        /// tbTimeEnd control.
+        /// DropDownListThangBatDau control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTimeEnd;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListThangBatDau;
         
         /// <summary>
-        /// tbDonViBienChe control.
+        /// txtNamBatDau control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDonViBienChe;
+        protected global::System.Web.UI.WebControls.TextBox txtNamBatDau;
         
         /// <summary>
-        /// ddlDonViBienChe control.
+        /// DropDownListNgayKetThuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDonViBienChe;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNgayKetThuc;
         
         /// <summary>
-        /// tbNoiLamViec control.
+        /// DropDownListThangKetThuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNoiLamViec;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListThangKetThuc;
         
         /// <summary>
-        /// ddlNoiLamViec control.
+        /// txtNamKetThuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlNoiLamViec;
+        protected global::System.Web.UI.WebControls.TextBox txtNamKetThuc;
         
         /// <summary>
-        /// ddlCongViecDamNhan control.
+        /// txtDonViCongTac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCongViecDamNhan;
+        protected global::System.Web.UI.WebControls.TextBox txtDonViCongTac;
         
         /// <summary>
-        /// ddlDienCanBo control.
+        /// DropDownListChucVuCongTac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDienCanBo;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListChucVuCongTac;
         
         /// <summary>
-        /// ddlTinhTrangCongTac control.
+        /// DropDownListCongViecDamNhan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTinhTrangCongTac;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCongViecDamNhan;
         
         /// <summary>
-        /// ddlChucVu control.
+        /// txtBienChe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlChucVu;
+        protected global::System.Web.UI.WebControls.TextBox txtBienChe;
         
         /// <summary>
-        /// tbDanhGia control.
+        /// DropDownListDonViTrongTruong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDanhGia;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDonViTrongTruong;
         
         /// <summary>
-        /// tbThongTinKhac control.
+        /// txtNoiLamViec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbThongTinKhac;
+        protected global::System.Web.UI.WebControls.TextBox txtNoiLamViec;
+        
+        /// <summary>
+        /// DropDownListDonViTrongTruong1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDonViTrongTruong1;
+        
+        /// <summary>
+        /// DropDownListDienCanBo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDienCanBo;
+        
+        /// <summary>
+        /// txtDanhGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDanhGia;
+        
+        /// <summary>
+        /// txtThongTinKhac control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtThongTinKhac;
         
         /// <summary>
         /// saveButton control.
