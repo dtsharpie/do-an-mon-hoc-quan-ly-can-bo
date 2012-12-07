@@ -653,6 +653,7 @@
     <Content Include="Pages\QuanLy\DanhMuc\ChucVuDangPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\ChucVuDoanThePage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\ChuyenNganhDaoTaoPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\CongViecDamNhiemPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\DanhHieuPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\DienCanBoPage.aspx" />
@@ -663,6 +664,7 @@
     <Content Include="Pages\QuanLy\DanhMuc\HocHamPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\KinhPhiDiNuocNgoaiPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\MucDichDiNuocNgoai.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\NgachLuongPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\QuanHeGiaDinhPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\QuanHuyenPage.aspx" />
@@ -1316,6 +1318,13 @@
     <Compile Include="Pages\QuanLy\DanhMuc\ChuyenNganhDaoTaoPage.aspx.designer.cs">
       <DependentUpon>ChuyenNganhDaoTaoPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\CongViecDamNhiemPage.aspx.cs">
+      <DependentUpon>CongViecDamNhiemPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\CongViecDamNhiemPage.aspx.designer.cs">
+      <DependentUpon>CongViecDamNhiemPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx.cs">
       <DependentUpon>CoSoDaoTaoChuyenMonPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1396,6 +1405,13 @@
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx.designer.cs">
       <DependentUpon>MatBangLuongPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\MucDichDiNuocNgoai.aspx.cs">
+      <DependentUpon>MucDichDiNuocNgoai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\MucDichDiNuocNgoai.aspx.designer.cs">
+      <DependentUpon>MucDichDiNuocNgoai.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\NgachLuongPage.aspx.cs">
       <DependentUpon>NgachLuongPage.aspx</DependentUpon>

@@ -9,6 +9,10 @@ namespace HutStaff.BO.PagesBO.QuanLy
 {
     public class NguoiDungBO
     {
+        public static DataTable ViewAllUserWithDM()
+        {
+            return DAL.PagesDAL.QuanLy.NguoiDung.ViewAllUserWithDM();
+        }
         public static DataTable InsertUser(string ma_dv, string user, string passwordMD5, bool quyen, bool isLock)
         {
             return DAL.PagesDAL.QuanLy.NguoiDung.InsertUser(ma_dv, user, passwordMD5, quyen, isLock);
@@ -16,6 +20,10 @@ namespace HutStaff.BO.PagesBO.QuanLy
         public static DataTable UpdateUser(string id, int ma_dv, string user, bool quyen, bool isLock)
         {
             return DAL.PagesDAL.QuanLy.NguoiDung.UpdateUser(id, ma_dv, user, quyen, isLock);
+        }
+        public static DataTable DeleteUser(string id)
+        {
+            return DAL.PagesDAL.QuanLy.NguoiDung.DeleteUser(id);
         }
         public static DataTable UpdatePassword(string id, string pass)
         {
@@ -29,9 +37,13 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             return DAL.PagesDAL.QuanLy.NguoiDung.GetUserID(user);
         }
-        public static int ChuyenDonVi(string ma_dvqlNguon, string ma_dvqlDich)
+        public static DataTable ChuyenDonVi(string ma_dvql_nguon, string ma_dvql_dich)
         {
-            return DAL.PagesDAL.QuanLy.NguoiDung.ChuyenDonVi(ma_dvqlNguon, ma_dvqlDich);
+            return DAL.PagesDAL.QuanLy.NguoiDung.ChuyenDonVi(ma_dvql_nguon, ma_dvql_dich);
+        }
+        public static DataTable ViewSoyeuByDVQL(string ma_dvql)
+        {
+            return DAL.PagesDAL.QuanLy.NguoiDung.ViewSoyeuByDVQL(ma_dvql);
         }
     }
 }

@@ -7,27 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HutStaff.Administrator.Pages.QuanLy {
+namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc {
     
     
-    public partial class NguoiDung {
+    public partial class MucDichDiNuocNgoai {
         
         /// <summary>
-        /// SlideQuanLy control.
+        /// tblMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.SlideQuanLy SlideQuanLy;
+        protected global::System.Web.UI.WebControls.Table tblMain;
         
         /// <summary>
-        /// GridView_User control.
+        /// txbMaTinhTrang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_User;
+        protected global::System.Web.UI.WebControls.TextBox txbMaTinhTrang;
+        
+        /// <summary>
+        /// txbTinhTrangCongTac control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbTinhTrangCongTac;
     }
 }

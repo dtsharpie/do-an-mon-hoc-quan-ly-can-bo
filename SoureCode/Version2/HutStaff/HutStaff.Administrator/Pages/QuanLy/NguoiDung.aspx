@@ -14,19 +14,14 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="content">
-        <asp:SqlDataSource id="SqlDataSource_User" runat="server"
-            ConnectionString="<%$ ConnectionStrings:QLCB %>" 
-            SelectCommand="SELECT [user], [quyen], [isLock], dv FROM [Users], [dm_dv] WHERE [Users].ma_dv = [dm_dv].ma_dv"
-            DeleteCommand="DELETE [Users] WHERE [user]=@User">
-        </asp:SqlDataSource>
-
         <h1>Danh sách người dùng</h1>
         <div>
             <div style="float:left">
-                <asp:GridView id="GridView_User" DataSourceID="SqlDataSource_User" 
-                runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4"
-                ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="user"
-                EmptyDataText="Không có người dùng nào!" PageSize="2" >
+                <asp:GridView id="GridView_User" 
+                OnRowDeleting="Delete_User"
+                runat="server" AllowSorting="True" CellPadding="4"
+                ForeColor="#333333" GridLines="None" AutoGenerateColumns="False"
+                EmptyDataText="Không có người dùng nào!" DataKeyNames="ID">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="STT" HeaderStyle-Width="5em" HeaderStyle-HorizontalAlign="Left">
@@ -35,6 +30,12 @@
                         </ItemTemplate>
                         <HeaderStyle HorizontalAlign="Left" Width="5em"></HeaderStyle>
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="ID" HeaderStyle-Width="5em" HeaderStyle-HorizontalAlign="Left"
+                        SortExpression="id" ControlStyle-BackColor="Transparent">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%# Eval("id")%>'></asp:Label>
+                        </ItemTemplate>
+                        </asp:TemplateField>
 
                     <asp:HyperLinkField SortExpression="user" HeaderText="Tên truy cập" DataNavigateUrlFields="user" DataNavigateUrlFormatString='SuaNguoiDung.aspx?task=edit&user={0}' 
                     DataTextField="user" HeaderStyle-Width="15em"> <HeaderStyle Width="15em"></HeaderStyle>
