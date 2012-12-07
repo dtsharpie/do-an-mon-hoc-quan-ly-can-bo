@@ -113,7 +113,6 @@ namespace HutStaff.Administrator.Pages.QuanLy
             tblData = (DataTable)(ViewState["tabledata"]);
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
-
             cells["A1"].Formula = "Họ tên";
             cells["A1"].ColumnWidth = 50;
 
@@ -135,7 +134,7 @@ namespace HutStaff.Administrator.Pages.QuanLy
 
             Response.Clear();
             Response.ContentType = "application/vnd.ms-excel";
-            Response.AddHeader("Content-Disposition", "attachment; filename=" + ( ddlTrangthai.SelectedValue == "0" ? "ho_so_doi_huy" : "ho_so_da_huy" ) + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + (ddlTrangthai.SelectedValue == "0" ? "ho_so_doi_huy" : "ho_so_da_huy") + DateTime.Now.ToString("yyyyMMdd") + ".xls");
             workbook.SaveToStream(Response.OutputStream, SpreadsheetGear.FileFormat.XLS97);
             Response.End();
         }
@@ -187,5 +186,12 @@ namespace HutStaff.Administrator.Pages.QuanLy
             return cells;
         }
 
+        protected string GenStyle()
+        {
+            if (ddlTrangthai.SelectedValue == "0")
+                return "hosodahuy";
+            else
+                return "hosodoihuy";
+        }
     }
 }

@@ -94,8 +94,20 @@
             }
 
             $(".delete-row").click(function () {
-                if (confirm("Gửi yêu cầu xóa ?")) {
-                    execution({ _fn: "HutStaff.BO.PagesBO.TimKiem.SearchBO.Huyhoso_Insert", shcc: $(this).attr("shcc") }, false);
+                if (confirm("Bạn có chắc chắn muốn xóa")) {
+                    execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoa", shcc: $(this).attr("shcc") }, false);
+                    $(this).closest("tr").remove();
+                    $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
+                    $(".table-result tr").not(':first').each(function (i) {
+                        $(this).find("td").first().text(i + 1);
+                    });
+                }
+            });
+
+
+            $(".undelete-row").click(function () {
+                if (confirm("Bạn có chắc chắn hủy yêu cầu xóa")) {
+                    execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.KhongXoa", shcc: $(this).attr("shcc") }, false);
                     $(this).closest("tr").remove();
                     $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                     $(".table-result tr").not(':first').each(function (i) {
@@ -133,6 +145,12 @@
             });
         });
     </script>
+    <style type="text/css">
+    .<%= GenStyle() %>
+    {
+        display: none;
+    }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
@@ -142,7 +160,7 @@
     <div id="divSearchForm" class="form-container">
         <label>
             Danh sánh</label>
-        <asp:DropDownList ID="ddlTrangthai" runat="server">
+        <asp:DropDownList Width="100px" ID="ddlTrangthai" runat="server">
             <asp:ListItem Value="0" Text="Đợi hủy"></asp:ListItem>
             <asp:ListItem Value="1" Text="Đã hủy"></asp:ListItem>
         </asp:DropDownList>

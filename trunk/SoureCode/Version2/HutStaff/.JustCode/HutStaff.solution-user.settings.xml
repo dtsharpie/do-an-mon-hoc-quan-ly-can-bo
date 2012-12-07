@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<JustCodeSettings Version="0.0.32" Timestamp="bdcdde62-2308-4664-a826-27584f8da259">
+<JustCodeSettings Version="0.0.33" Timestamp="4e1e9376-ae1d-407a-a617-80747167c278">
   <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <IgnoredErrorsAndWarnings>
       <FilePath>
@@ -1075,6 +1075,20 @@
         <IgnoredElement>
           <Column>24</Column>
           <Text>Expected &lt;/input&gt;</Text>
+          <Line>28</Line>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <Path>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\Pages\BaoCao\Template\DanhSachNangLuongHeader.xml</Path>
+        <ProjectFullName>C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Administrator\HutStaff.Administrator.csproj</ProjectFullName>
+        <IgnoredElement>
+          <Column>24</Column>
+          <Text>Expected &lt;/input&gt;</Text>
+          <Line>28</Line>
+        </IgnoredElement>
+        <IgnoredElement>
+          <Column>24</Column>
+          <Text>Expected &lt;/br&gt;</Text>
           <Line>28</Line>
         </IgnoredElement>
       </FilePath>
