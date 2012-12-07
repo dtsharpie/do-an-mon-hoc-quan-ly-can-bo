@@ -94,6 +94,10 @@
             }
 
             $(".delete-row").click(function () {
+                if ($(this).attr("userid") == "<%= iUserId %>") {
+                    alert("Bạn không được phép xóa người dùng do mình yêu cầu!")
+                    return;
+                }
                 if (confirm("Bạn có chắc chắn muốn xóa?")) {
                     execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoa", shcc: $(this).attr("shcc") }, false);
                     $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
@@ -107,6 +111,13 @@
             $(".btnXoa").click(function () {
                 if (confirm("Gửi yêu cầu xóa ?")) {
                     var results = [];
+                    $("input:checkbox.chkId:checked").each(function (i) {
+                        if ($(this).attr("userid") == "<%= iUserId %>") {
+                            alert("Bạn không được phép xóa người dùng do mình yêu cầu!");
+                            return;
+                        }
+                    });
+
                     $("input:checkbox.chkId:checked").each(function (i) {
                         $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                         results[i] = $(this).val();
@@ -288,17 +299,11 @@
                             <%# Eval("dv") %>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Điện thoại">
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy"
+                        HeaderText="Người yêu cầu">
                         <ItemTemplate>
-                            <%# Eval("tel") %>
-                        </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" />
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Email">
-                        <ItemTemplate>
-                            <a class="email" shcc="<%# Eval("shcc") %>" href="mailto:<%# Eval("email") %>">
-                                <%# Eval("email") %>
-                            </a>
+                            <label class="nguoiyeucau" id="<%# Eval("userId") %>">
+                                <%# Eval("userName" %></label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
@@ -306,25 +311,29 @@
                             <input id="chkAll" name="firstColumn" type="checkbox" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <input shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId" name="firstColumn"
-                                type="checkbox" value="<%# Eval("shcc") %>" />
+                            <input userid="<%# Eval("userId") %>" shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId"
+                                name="firstColumn" type="checkbox" value="<%# Eval("shcc") %>" />
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy" HeaderText="Xóa">
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy"
+                        HeaderText="Xóa">
                         <ItemTemplate>
-                            <a href="javascript:void(0)" class="delete-row" shcc="<%# Eval("shcc") %>">Xóa </a>
+                            <a href="javascript:void(0)" userid="<%# Eval("userId") %>" class="delete-row" shcc="<%# Eval("shcc") %>">
+                                Xóa </a>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy" HeaderText="Không xóa">
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy"
+                        HeaderText="Không xóa">
                         <ItemTemplate>
                             <a href="javascript:void(0)" class="undelete-row" shcc="<%# Eval("shcc") %>">Không xóa
                             </a>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="70px" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderStyle-CssClass="hosodahuy" ItemStyle-CssClass="hosodahuy" HeaderText="Khôi phục">
+                    <asp:TemplateField HeaderStyle-CssClass="hosodahuy" ItemStyle-CssClass="hosodahuy"
+                        HeaderText="Khôi phục">
                         <ItemTemplate>
                             <a href="javascript:void(0)" class="restore-row" shcc="<%# Eval("shcc") %>">Khôi phục</a>
                         </ItemTemplate>

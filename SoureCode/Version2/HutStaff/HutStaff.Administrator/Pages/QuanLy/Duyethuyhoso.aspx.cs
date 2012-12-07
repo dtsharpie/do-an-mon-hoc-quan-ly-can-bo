@@ -13,8 +13,19 @@ namespace HutStaff.Administrator.Pages.QuanLy
         protected DataTable tblData;
         SpreadsheetGear.IWorkbook workbook = SpreadsheetGear.Factory.GetWorkbook();
         SpreadsheetGear.IRange cells = null;
+        protected int iUserId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (BO.Security.CurrentUser.GetCurrentUser() != null && BO.Security.CurrentUser.GetCurrentUser().Quyen == 0)
+            {
+                Response.Redirect("/");
+            }
+
+            if (BO.Security.CurrentUser.GetCurrentUser() != null)
+            {
+                iUserId = BO.Security.CurrentUser.GetCurrentUser().UserId;
+            }
             if (!IsPostBack)
             {
                 tblData = BO.PagesBO.QuanLy.Huyhoso.Search(txtTen.Text, Convert.ToInt32(ddlTrangthai.SelectedValue), 1, Convert.ToInt32(ddPs.Value));
