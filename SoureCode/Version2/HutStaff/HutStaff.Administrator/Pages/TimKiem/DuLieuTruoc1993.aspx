@@ -7,6 +7,12 @@
             $('#divSideBar ul > li > a').eq(16).addClass('active');
         });
     </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 338px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <div>
@@ -33,7 +39,7 @@
 
         <br />
         <li><a href="/Pages/TimKiem/BaoHiemXaHoi.aspx?id=<%= iShcc %>">Thông tin BHXH</a></li>
-        <li><a href="">Dữ Liệu Trước 4/1993</a></li>
+        <li><a>Dữ Liệu Trước 4/1993</a></li>
         <li><a href="">In tờ khai BHXH</a></li>
         <li><a href="">In sổ BHXH</a></li>
     </ul>
@@ -44,9 +50,12 @@
             Dữ liệu trước 1993
         </h1>
         <hr />
+        <h3>
+            <asp:Label ID="nameLabel" runat="server" Text=""></asp:Label>
+        </h3>
         <div class="divInfo" style="margin-top: 10px;">
             <div class="table-container">
-                <table class="table-result">
+                <%--<table class="table-result">
                     <tr class="header">
                         <td>
                             Thời gian
@@ -101,6 +110,172 @@
                             </tr>
                         </AlternatingItemTemplate>
                     </asp:Repeater>
+                </table>--%>
+                <asp:GridView ID="GridView1" runat="server" class="table-result" AutoGenerateColumns="False"
+                    OnRowDeleting="GridViewDeleting" OnSelectedIndexChanged="GridViewChanged">
+                    <Columns>
+                        <asp:BoundField DataField="id" />
+                        <asp:BoundField DataField="thoigian" HeaderText="Thời gian" />
+                        <asp:BoundField DataField="mota" HeaderText=" Chức danh, chức vụ, ngạch lương, đơn vị công tác" />
+                        <asp:BoundField DataField="hsluong" HeaderText="HSL" />
+                        <asp:BoundField DataField="phucap" HeaderText="Phụ cấp" />
+                        <asp:BoundField DataField="sothang" HeaderText="Số tháng" />
+                        <asp:BoundField DataField="tongtien" HeaderText="Tổng tiền"/>
+                        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+                        <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <div class="nodata" id="divNodata" runat="server">
+                <br />
+                <br />
+            </div>
+            <div class="form-container">
+                <table>
+                    <tr>
+                        <td>
+                            Thời điểm bắt đầu
+                        </td>
+                        <td class="style1">
+                            <asp:DropDownList ID="DropDownListNgayBatDau" runat="server">
+                                <asp:ListItem>01</asp:ListItem>
+                                <asp:ListItem>02</asp:ListItem>
+                                <asp:ListItem>03</asp:ListItem>
+                                <asp:ListItem>04</asp:ListItem>
+                                <asp:ListItem>05</asp:ListItem>
+                                <asp:ListItem>06</asp:ListItem>
+                                <asp:ListItem>07</asp:ListItem>
+                                <asp:ListItem>08</asp:ListItem>
+                                <asp:ListItem>09</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                                <asp:ListItem>13</asp:ListItem>
+                                <asp:ListItem>14</asp:ListItem>
+                                <asp:ListItem>15</asp:ListItem>
+                                <asp:ListItem>16</asp:ListItem>
+                                <asp:ListItem>17</asp:ListItem>
+                                <asp:ListItem>18</asp:ListItem>
+                                <asp:ListItem>19</asp:ListItem>
+                                <asp:ListItem>20</asp:ListItem>
+                                <asp:ListItem>21</asp:ListItem>
+                                <asp:ListItem>22</asp:ListItem>
+                                <asp:ListItem>23</asp:ListItem>
+                                <asp:ListItem>24</asp:ListItem>
+                                <asp:ListItem>25</asp:ListItem>
+                                <asp:ListItem>26</asp:ListItem>
+                                <asp:ListItem>27</asp:ListItem>
+                                <asp:ListItem>28</asp:ListItem>
+                                <asp:ListItem>29</asp:ListItem>
+                                <asp:ListItem>30</asp:ListItem>
+                                <asp:ListItem>31</asp:ListItem>
+                            </asp:DropDownList>
+                            /
+                            <asp:DropDownList ID="DropDownListThangBatDau" runat="server">
+                                <asp:ListItem>01</asp:ListItem>
+                                <asp:ListItem>02</asp:ListItem>
+                                <asp:ListItem>03</asp:ListItem>
+                                <asp:ListItem>04</asp:ListItem>
+                                <asp:ListItem>05</asp:ListItem>
+                                <asp:ListItem>06</asp:ListItem>
+                                <asp:ListItem>07</asp:ListItem>
+                                <asp:ListItem>08</asp:ListItem>
+                                <asp:ListItem>09</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                            </asp:DropDownList>
+                            /
+                            <asp:TextBox ID="txtNamBatDau" runat="server" Width="50px"></asp:TextBox>
+                            (ngày/tháng/năm)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Thời điểm kết thúc
+                        </td>
+                        <td class="style1">
+                            <asp:DropDownList ID="DropDownListNgayKetThuc" runat="server">
+                                <asp:ListItem>01</asp:ListItem>
+                                <asp:ListItem>02</asp:ListItem>
+                                <asp:ListItem>03</asp:ListItem>
+                                <asp:ListItem>04</asp:ListItem>
+                                <asp:ListItem>05</asp:ListItem>
+                                <asp:ListItem>06</asp:ListItem>
+                                <asp:ListItem>07</asp:ListItem>
+                                <asp:ListItem>08</asp:ListItem>
+                                <asp:ListItem>09</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                                <asp:ListItem>13</asp:ListItem>
+                                <asp:ListItem>14</asp:ListItem>
+                                <asp:ListItem>15</asp:ListItem>
+                                <asp:ListItem>16</asp:ListItem>
+                                <asp:ListItem>17</asp:ListItem>
+                                <asp:ListItem>18</asp:ListItem>
+                                <asp:ListItem>19</asp:ListItem>
+                                <asp:ListItem>20</asp:ListItem>
+                                <asp:ListItem>21</asp:ListItem>
+                                <asp:ListItem>22</asp:ListItem>
+                                <asp:ListItem>23</asp:ListItem>
+                                <asp:ListItem>24</asp:ListItem>
+                                <asp:ListItem>25</asp:ListItem>
+                                <asp:ListItem>26</asp:ListItem>
+                                <asp:ListItem>27</asp:ListItem>
+                                <asp:ListItem>28</asp:ListItem>
+                                <asp:ListItem>29</asp:ListItem>
+                                <asp:ListItem>30</asp:ListItem>
+                                <asp:ListItem>31</asp:ListItem>
+                            </asp:DropDownList>
+                            /
+                            <asp:DropDownList ID="DropDownListThangKetThuc" runat="server">
+                                <asp:ListItem>01</asp:ListItem>
+                                <asp:ListItem>02</asp:ListItem>
+                                <asp:ListItem>03</asp:ListItem>
+                                <asp:ListItem>04</asp:ListItem>
+                                <asp:ListItem>05</asp:ListItem>
+                                <asp:ListItem>06</asp:ListItem>
+                                <asp:ListItem>07</asp:ListItem>
+                                <asp:ListItem>08</asp:ListItem>
+                                <asp:ListItem>09</asp:ListItem>
+                                <asp:ListItem>10</asp:ListItem>
+                                <asp:ListItem>11</asp:ListItem>
+                                <asp:ListItem>12</asp:ListItem>
+                            </asp:DropDownList>
+                            /
+                            <asp:TextBox ID="txtNamKetThuc" runat="server" Width="50px"></asp:TextBox>
+                            (ngày/tháng/năm)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Chức danh, chức vụ, ngạch lương, đơn vị công tác
+                        </td>
+                        <td class="style1">
+                            <asp:TextBox ID="txtChucDanh" runat="server" TextMode="MultiLine"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hệ số lương
+                        </td>
+                        <td class="style1">
+                            <asp:TextBox ID="txtHeSoLuong" runat="server" Width="75px"/>
+                            Phụ cấp
+                             <asp:TextBox ID="txtPhuCap" runat="server" Width="60px"/>
+                             Số tháng
+                              <asp:TextBox ID="txtSoThang" runat="server" Width="72px"/>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3" class="style1">
+                            <asp:Button ID="saveButton" OnClick="saveButtonClick" runat="server" Text="Ghi nhận" />
+                            <asp:Button ID="resetButton" OnClick="resetButtonClick" runat="server" Text="Làm lại" />
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

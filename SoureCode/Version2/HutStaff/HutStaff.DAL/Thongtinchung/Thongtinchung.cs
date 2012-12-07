@@ -817,5 +817,55 @@ namespace HutStaff.DAL.Thongtinchung
                 return db.Execute("[sp_view_all_dm_cu]");
             }
         }
+
+
+
+
+
+
+        // du lieu trc 1994
+        public static DataTable FindDuLieuBaoHiem93ByID(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_by_shcc_baohiem93]",
+                    new string[] {"@shcc"},
+                    new object[] {shcc});
+            }
+        }
+
+        public static void InsertDuLieuBaoHiem93(DateTime tgbd_bh93, DateTime tgkt_bh93, string mota, float hsluong, float phucap, int sothang, int tongtien, int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_insert_baohiem93]",
+                    new string[] { "@tgbd_bh93", "@tgkt_bh93", "@mota", "@hsluong", "@phucap", "@sothang", "@tongtien", "@shcc" },
+                    new object[] { tgbd_bh93, tgkt_bh93, mota, hsluong, phucap, sothang, tongtien, shcc });
+            }
+        }
+
+        public static void UpdateDuLieuBaoHiem93(DateTime tgbd_bh93, DateTime tgkt_bh93, string mota, float hsluong, float phucap, int sothang, int tongtien, int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_baohiem93]",
+                    new string[] { "@tgbd_bh93", "@tgkt_bh93", "@mota", "@hsluong", "@phucap", "@sothang", "@tongtien", "@id" },
+                    new object[] { tgbd_bh93, tgkt_bh93, mota, hsluong, phucap, sothang, tongtien, id });
+            }
+        }
+
+
+        public static void DeleteDuLieuBaoHiem93(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_delete_baohiem93]",
+                    new string[] { "@id" },
+                    new object[] { id });
+            }
+        }
+
+
+
     }
 }

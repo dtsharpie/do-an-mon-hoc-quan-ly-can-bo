@@ -425,5 +425,27 @@ namespace HutStaff.BO.Thongtinchung
         {
             return DAL.Thongtinchung.Thongtinchung.GetAllChucVuDoan();
         }
+
+
+
+        //du lieu truoc 1993
+        public static DataTable FindBaoHiem1993(int shcc)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindDuLieuBaoHiem93ByID(shcc);
+        }
+
+        public static void InsertBaoHiem93(DateTime tgbd_bh93, DateTime tgkt_bh93, string mota, float hsluong, float phucap, int sothang, int tongtien, int shcc)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertDuLieuBaoHiem93(tgbd_bh93, tgkt_bh93, mota, hsluong, phucap, sothang, tongtien, shcc);
+        }
+
+        public static void UpdateBaoHiem93(DateTime tgbd_bh93, DateTime tgkt_bh93, string mota, float hsluong, float phucap, int sothang, int tongtien, int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateDuLieuBaoHiem93(tgbd_bh93, tgkt_bh93, mota, hsluong, phucap, sothang, tongtien, id);
+        }
+        public static void DeleteBaoHiem93(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteDuLieuBaoHiem93(id);
+        }
     }
 }

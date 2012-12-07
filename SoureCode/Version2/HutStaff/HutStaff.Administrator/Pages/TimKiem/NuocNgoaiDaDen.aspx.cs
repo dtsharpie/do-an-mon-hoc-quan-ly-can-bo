@@ -201,53 +201,43 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
         protected void saveButtonClick(object sender, EventArgs e)
         {
+            string ngayHT = DropDownListNgayBatDau.SelectedValue.ToString();
+            string thangHT = DropDownListThangBatDau.SelectedValue.ToString();
+            string namHT = txtNamBatDau.Text;
+            string ngaythangnamHT;
+            if (namHT == "")
+            {
+                ngaythangnamHT = string.Format("01/01/1900");
+            }
+            else
+            {
+                ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+            }
+            DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+            dtfi.ShortDatePattern = "dd/MM/yyyy";
+            dtfi.DateSeparator = "/";
+            DateTime ngaythangHuongTu = Convert.ToDateTime(ngaythangnamHT, dtfi);
+
+            string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
+            string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
+            string namKT = txtNamKetThuc.Text;
+            string ngaythangnamKT;
+            if (namKT == "")
+            {
+                ngaythangnamKT = "01/01/1900";
+            }
+            else
+            {
+                ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
+            }
+            DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
             if (saveButton.Text == "Ghi nhận")
             {
-                string ngayHT = DropDownListNgayBatDau.SelectedValue.ToString();
-                string thangHT = DropDownListThangBatDau.SelectedValue.ToString();
-                string namHT = txtNamBatDau.Text;
-                if (namHT == "")
-                    return;
-
-                string ngaythangnamHT = string.Format("{0}/{1}/{2}",ngayHT,thangHT,namHT);
-                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
-                dtfi.ShortDatePattern = "dd/MM/yyyy";
-                dtfi.DateSeparator = "/";
-                DateTime ngaythangHuongTu = Convert.ToDateTime(ngaythangnamHT, dtfi);
-
-                string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
-                string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
-                string namKT = txtNamKetThuc.Text;
-                 if (namHT == "")
-                    return;
-                string ngaythangnamKT = string.Format("{0}/{1}/{2}",ngayKT,thangKT,namKT);
-                DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
-
                 BO.Thongtinchung.Thongtinchung.InsertNuocNgoaiDaDi(Int32.Parse(ViewState["ishcc"].ToString()), ngaythangHuongTu, ngaythangKT, Int32.Parse(DropDownListTenNuocDen.SelectedValue.ToString()), txtDiaChiDen.Text, Int32.Parse(DropDownListMucDich.SelectedValue.ToString()), txtDanhGia.Text, txtThongTinKhac.Text, Int32.Parse(DropDownListKinhPhi.SelectedValue.ToString()), DropDownListTrangThai.SelectedItem.Text);
                 Bind();
             }
             if (saveButton.Text == "Cập nhật")
             {
-                string ngayHT = DropDownListNgayBatDau.SelectedValue.ToString();
-                string thangHT = DropDownListThangBatDau.SelectedValue.ToString();
-                string namHT = txtNamBatDau.Text;
-                if (namHT == "")
-                    return;
-
-                string ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
-                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
-                dtfi.ShortDatePattern = "dd/MM/yyyy";
-                dtfi.DateSeparator = "/";
-                DateTime ngaythangHuongTu = Convert.ToDateTime(ngaythangnamHT, dtfi);
-
-                string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
-                string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
-                string namKT = txtNamKetThuc.Text;
-                if (namHT == "")
-                    return;
-                string ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
-                DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
-
                 BO.Thongtinchung.Thongtinchung.UpdateNuocNgoaiDaDi(Int32.Parse(ViewState["id"].ToString()), ngaythangHuongTu, ngaythangKT, Int32.Parse(DropDownListTenNuocDen.SelectedValue.ToString()), txtDiaChiDen.Text, Int32.Parse(DropDownListMucDich.SelectedValue.ToString()), txtDanhGia.Text, txtThongTinKhac.Text, Int32.Parse(DropDownListKinhPhi.SelectedValue.ToString()), DropDownListTrangThai.SelectedItem.Text);
                 Bind();          
              }
