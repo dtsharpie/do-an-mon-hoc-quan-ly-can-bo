@@ -231,5 +231,16 @@ namespace HutStaff.DAL.Report
                     new object[] { ma_dv, diencb, tt });
             }
         }
+
+        // Lay du lieu de lam bao cao loai 5.1: Thống kê Thành tích khen thưởng
+        public static DataTable GetDataTableToReport_Type_5_1(string ma_dv, string diencb, string tt, int dkt)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_report_type_5_1]",
+                    new string[] { "@ma_dv", "@dcb", "@tt", "@dkt" },
+                    new object[] { ma_dv, diencb, tt, dkt });
+            }
+        }
     }
 }
