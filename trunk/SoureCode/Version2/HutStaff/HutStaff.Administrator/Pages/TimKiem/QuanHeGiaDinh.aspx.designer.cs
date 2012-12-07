@@ -49,15 +49,6 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNodata;
         
         /// <summary>
-        /// DropDownlistQuanHe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownlistQuanHe;
-        
-        /// <summary>
         /// txtHoVaTen control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHoVaTen;
+        
+        /// <summary>
+        /// DropDownlistQuanHe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownlistQuanHe;
         
         /// <summary>
         /// DropDownListNgaySinh control.
