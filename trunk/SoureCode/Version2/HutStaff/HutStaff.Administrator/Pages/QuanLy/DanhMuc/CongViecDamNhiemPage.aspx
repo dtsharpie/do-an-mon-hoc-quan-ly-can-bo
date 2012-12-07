@@ -15,6 +15,7 @@
     </asp:Table>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <hr /><br />
     <h1>Danh sách công việc đảm nhiệm trong bảng Sơ yếu</h1>
     <asp:GridView runat="server" ID="gv" AutoGenerateColumns="false" >
         <Columns>
@@ -26,7 +27,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Công việc" SortExpression="cvdn" HeaderStyle-Width="10em" HeaderStyle-HorizontalAlign="Left">
                 <ItemTemplate>
-                    <asp:TextBox runat="server" Text='<%# Eval("cvdn")%> ' Width="20em"></asp:TextBox></ItemTemplate><HeaderStyle HorizontalAlign="Left" Width="5em"></HeaderStyle>
+                    <asp:TextBox runat="server" ReadOnly="true" Text='<%# Eval("cvdn")%> ' Width="20em"></asp:TextBox></ItemTemplate><HeaderStyle HorizontalAlign="Left" Width="5em"></HeaderStyle>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="" SortExpression="cvdn" HeaderStyle-Width="10em" HeaderStyle-HorizontalAlign="Left">
                 <ItemTemplate>

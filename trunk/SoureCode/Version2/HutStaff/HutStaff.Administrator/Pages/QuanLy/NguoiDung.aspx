@@ -19,7 +19,7 @@
             <div style="float:left">
                 <asp:GridView id="GridView_User" 
                 OnRowDeleting="Delete_User"
-                runat="server" AllowSorting="True" CellPadding="4"
+                runat="server" CellPadding="4"
                 ForeColor="#333333" GridLines="None" AutoGenerateColumns="False"
                 EmptyDataText="Không có người dùng nào!" DataKeyNames="ID">
                 <AlternatingRowStyle BackColor="White" />

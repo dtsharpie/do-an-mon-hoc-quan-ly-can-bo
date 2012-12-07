@@ -46,11 +46,6 @@
             return true;
         }
         function Cancel() {
-//            alert(document.forms["form1"]["hfAddEdit"].value);
-//            if (document.forms["form1"]["hfAddEdit"].value == "add")
-//                return window.close();
-//            else //if (document.forms["form1"]["hfAddEdit"].value == "edit")
-            //                return window.history.go(-1);
             return window.location.href = "NguoiDung.aspx";
         }
     </script>
