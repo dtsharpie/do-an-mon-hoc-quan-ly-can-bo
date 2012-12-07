@@ -510,7 +510,7 @@ GO
 	(
 		id				INT IDENTITY(1,1),
 		shcc			INT REFERENCES soyeu(shcc),
-		ma_cv			INT REFERENCES dm_cud(ma_cud),
+		ma_cv			INT,
 		nbncvdt			DATETIME,
 		nktcvdt			DATETIME,
 		ttk_qtct		NVARCHAR(255),
@@ -543,6 +543,7 @@ GO
 		tgkt_dbl		DATETIME,
 		ma_ngach		Varchar(20) REFERENCES dm_ngach(ma_ngach),
 		bl_dbl			DECIMAL(2,0),
+		ptldh			INT,
 		hsl				DECIMAL(4,2),
 		hspccv			DECIMAL(4,2),
 		ttk_qtdbl		NVARCHAR(255),
