@@ -83,6 +83,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
             {
                 string namBatDau = !String.IsNullOrEmpty( Row["nbncvkn"].ToString()) ? Convert.ToDateTime(Row["nbncvkn"].ToString()).ToString("MM/yyyy"):"nay";
                 string namKetThuc = !String.IsNullOrEmpty(Row["nktcvkn"].ToString()) ? Convert.ToDateTime(Row["nktcvkn"].ToString()).ToString("MM/yyyy") : "nay";
+                if (namKetThuc == "01/1900")
+                    namKetThuc = "nay";
                 Row["thoigian"] = string.Format("{0} > {1}", namBatDau, namKetThuc);
             }
 
@@ -108,70 +110,87 @@ namespace HutStaff.Administrator.Pages.TimKiem
         {
             if (saveButton.Text == "Ghi nhận")
             {
+                if (checkBoxDennay.Checked == true)
+                {
+                    txtNamKetThuc.Text = "";
+                }
                 string ngayHT = DropDownListNgayBoNhiem.SelectedValue.ToString();
                 string thangHT = DropDownListThangBoNhiem.SelectedValue.ToString();
                 string namHT = txtNamBoNhiem.Text;
+                string ngaythangnamHT;
                 if (namHT == "")
-                    return;
-
-                string ngaythangnamHT = string.Format("{0}/{1}/{2}",ngayHT,thangHT,namHT);
+                {
+                    ngaythangnamHT = "01/01/1900";
+                }
+                else
+                {
+                    ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+                }
                 DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
                 dtfi.ShortDatePattern = "dd/MM/yyyy";
                 dtfi.DateSeparator = "/";
-                DateTime ngaythangBoNhiem = Convert.ToDateTime(ngaythangnamHT, dtfi);
+                DateTime ngaythangBD = Convert.ToDateTime(ngaythangnamHT, dtfi);
 
                 string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
                 string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
                 string namKT = txtNamKetThuc.Text;
-                DateTime ngaythangKT;
-
-                if (namKT != "" && !checkBoxDennay.Checked)
+                string ngaythangnamKT;
+                if (namKT == "")
                 {
-                    string ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
-                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                    ngaythangnamKT = "01/01/1900";
                 }
                 else
                 {
-                    string ngaythangnamKT = string.Format("01/01/1900");
-                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                    ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
                 }
 
+                DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+
+
                 string donvi = DropDownListBoSungDuLieuDonViQuanLy.SelectedItem.Text;
-                BO.Thongtinchung.Thongtinchung.InsertChucVuChinhQuyen(Int32.Parse(ViewState["ishcc"].ToString()), Int32.Parse(DropDownListBoSungDuLieuChucVu.SelectedValue.ToString()), ngaythangBoNhiem, ngaythangKT, txtThongTinKhac.Text,donvi);
+                BO.Thongtinchung.Thongtinchung.InsertChucVuChinhQuyen(Int32.Parse(ViewState["ishcc"].ToString()), Int32.Parse(DropDownListBoSungDuLieuChucVu.SelectedValue.ToString()), ngaythangBD, ngaythangKT, txtThongTinKhac.Text,donvi);
                 Bind();
             }
             if (saveButton.Text == "Cập nhật")
             {
+                if (checkBoxDennay.Checked == true)
+                {
+                    txtNamKetThuc.Text = "";
+                }
                 string ngayHT = DropDownListNgayBoNhiem.SelectedValue.ToString();
-                string thangHT = DropDownListThangBoNhiem.SelectedValue.ToString();
+                string thangHT = DropDownListNgayBoNhiem.SelectedValue.ToString();
                 string namHT = txtNamBoNhiem.Text;
+                string ngaythangnamHT;
                 if (namHT == "")
-                    return;
-
-                string ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+                {
+                    ngaythangnamHT = "01/01/1900";
+                }
+                else
+                {
+                    ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+                }
                 DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
                 dtfi.ShortDatePattern = "dd/MM/yyyy";
                 dtfi.DateSeparator = "/";
-                DateTime ngaythangBoNhiem = Convert.ToDateTime(ngaythangnamHT, dtfi);
+                DateTime ngaythangBD = Convert.ToDateTime(ngaythangnamHT, dtfi);
 
                 string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
                 string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
                 string namKT = txtNamKetThuc.Text;
-                DateTime ngaythangKT;
-
-                if (namKT != "" && !checkBoxDennay.Checked)
+                string ngaythangnamKT;
+                if (namKT == "")
                 {
-                    string ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
-                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                    ngaythangnamKT = "01/01/1900";
                 }
                 else
                 {
-                    string ngaythangnamKT = string.Format("01/01/1900");
-                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                    ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
                 }
 
+                DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+
                 string donvi = DropDownListBoSungDuLieuDonViQuanLy.SelectedItem.Text;
-                BO.Thongtinchung.Thongtinchung.UpdateChucVuChinhQuyen(Int32.Parse(ViewState["id"].ToString()), Int32.Parse(DropDownListBoSungDuLieuChucVu.SelectedValue.ToString()), ngaythangBoNhiem, ngaythangKT, txtThongTinKhac.Text, donvi);
+                BO.Thongtinchung.Thongtinchung.UpdateChucVuChinhQuyen(Int32.Parse(ViewState["id"].ToString()), Int32.Parse(DropDownListBoSungDuLieuChucVu.SelectedValue.ToString()), ngaythangBD, ngaythangKT, txtThongTinKhac.Text, donvi);
                 Bind();
             }
             resetData();
@@ -208,17 +227,27 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
 
             string ngaythangBD = chucvuchinhquyenByID.Rows[0]["nbncvkn"] != null ? Convert.ToDateTime(chucvuchinhquyenByID.Rows[0]["nbncvkn"]).ToString("dd/MM/yyyy") : "";
-            string ngay = ngaythangBD.Substring(0, 2);
-            DropDownListNgayBoNhiem.SelectedValue = ngay;
-            string thang = ngaythangBD.Substring(3, 2);
-            DropDownListThangBoNhiem.SelectedValue = thang;
+            if (ngaythangBD == "" || ngaythangBD == "01/01/1900")
+            {
+                DropDownListNgayBoNhiem.SelectedValue = "0";
+                DropDownListThangBoNhiem.SelectedValue = "0";
+                txtNamBoNhiem.Text = "";
+            }
+            else
+            {
+                string ngay = ngaythangBD.Substring(0, 2);
+                DropDownListNgayBoNhiem.SelectedValue = ngay;
+                string thang = ngaythangBD.Substring(3, 2);
+                DropDownListThangBoNhiem.SelectedValue = thang;
+                string nam = ngaythangBD.Substring(6, 4);
+                txtNamBoNhiem.Text = nam;
 
-            string nam = ngaythangBD.Substring(6, 4);
-            txtNamBoNhiem.Text = nam;
+            }
+
 
             //ngay ket thuc 
             string ngaythangph = chucvuchinhquyenByID.Rows[0]["nktcvkn"] != null ? Convert.ToDateTime(chucvuchinhquyenByID.Rows[0]["nktcvkn"]).ToString("dd/MM/yyyy") : "";
-            if (ngaythangph == "")
+            if (ngaythangph == "" || ngaythangph == "01/01/1900")
             {
                 DropDownListNgayKetThuc.SelectedValue = "0";
                 DropDownListThangKetThuc.SelectedValue = "0";
@@ -226,29 +255,14 @@ namespace HutStaff.Administrator.Pages.TimKiem
             }
             else
             {
-                string ngaythangnamKT = string.Format("01/01/1900");
-                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
-                dtfi.ShortDatePattern = "dd/MM/yyyy";
-                dtfi.DateSeparator = "/";
-                DateTime checkDateTime = Convert.ToDateTime(ngaythangnamKT, dtfi);
 
-                if (Convert.ToDateTime(chucvuchinhquyenByID.Rows[0]["nktcvkn"]) != checkDateTime)
-                {
-                    string ngayKT = ngaythangph.Substring(0, 2);
-                    DropDownListNgayKetThuc.SelectedValue = ngay;
-                    string thangKT = ngaythangph.Substring(3, 2);
-                    DropDownListThangKetThuc.SelectedValue = thang;
+                string ngayKT = ngaythangph.Substring(0, 2);
+                DropDownListNgayKetThuc.SelectedValue = ngayKT;
+                string thangKT = ngaythangph.Substring(3, 2);
+                DropDownListThangKetThuc.SelectedValue = thangKT;
+                string namKT = ngaythangph.Substring(6, 4);
+                txtNamKetThuc.Text = namKT;
 
-                    string namKT = ngaythangph.Substring(6, 4);
-                    txtNamKetThuc.Text = nam;
-                }
-                else
-                {
-                    DropDownListNgayKetThuc.SelectedValue = "0";
-                    DropDownListThangKetThuc.SelectedValue = "0";
-                    txtNamKetThuc.Text = "";
-                    checkBoxDennay.Checked = true;
-                }
             }
         }
 
