@@ -58,9 +58,13 @@
     <Compile Include="QuanLy\DanhMuc\DonViTable.cs" />
     <Compile Include="QuanLy\DanhMuc\DonViQuanLy.cs" />
     <Compile Include="QuanLy\DanhMuc\GiaDinhChinhSach.cs" />
+    <Compile Include="QuanLy\DanhMuc\HinhThucKhenThuongTable.cs" />
+    <Compile Include="QuanLy\DanhMuc\HinhThucKyLuatTable.cs" />
     <Compile Include="QuanLy\DanhMuc\HocHamTable.cs" />
     <Compile Include="QuanLy\DanhMuc\KhoiCanBo.cs" />
     <Compile Include="QuanLy\DanhMuc\MucDichDiNuocNgoaiTable.cs" />
+    <Compile Include="QuanLy\DanhMuc\QuanHeGiaDinhTable.cs" />
+    <Compile Include="QuanLy\DanhMuc\TenNgoaiNguTable.cs" />
     <Compile Include="QuanLy\DanhMuc\ThanhPhanXuatThan.cs" />
     <Compile Include="QuanLy\DanhMuc\ThuongBinh.cs" />
     <Compile Include="QuanLy\DanhMuc\TinhThanhPho.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="QuanLy\DanhMuc\TonGiao.cs" />
     <Compile Include="QuanLy\DanhMuc\TrinhDoHocVan.cs" />
     <Compile Include="QuanLy\DanhMuc\TrinhDoLyLuan.cs" />
+    <Compile Include="QuanLy\DanhMuc\TrinhDoNgoaiNguTable.cs" />
     <Compile Include="QuanLy\DanhMuc\TrinhDoQuanLy.cs" />
     <Compile Include="QuanLy\DanhMuc\TrinhDoTinHoc.cs" />
     <Compile Include="Report\ExportData.cs" />

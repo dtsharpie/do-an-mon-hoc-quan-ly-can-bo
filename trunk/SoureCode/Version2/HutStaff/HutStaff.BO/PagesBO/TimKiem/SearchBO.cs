@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using HutStaff.DAL.PagesDAL.TimKiem;
+using System.Web;
 
 namespace HutStaff.BO.PagesBO.TimKiem
 {
