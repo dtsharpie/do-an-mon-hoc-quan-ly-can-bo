@@ -29,15 +29,15 @@
                         Hướng dẫn </a>
             </div>
             <div class="acc-tool fr">
-                <a href="javascript:void(0);"><span>username<img src="/Images/indicator_down.png"
+                <a href="javascript:void(0);"><span><%= HutStaff.BO.Security.CurrentUser.GetCurrentUser() != null ? HutStaff.BO.Security.CurrentUser.GetCurrentUser().UserName : "" %><img src="/Images/indicator_down.png"
                     style="margin-left: 5px" width="8px" height="4px" alt="" /></span> </a>
                 <div class="acc-info box-shadow">
                     <div class="avatar fl">
                         <img src="/Images/no_avatar.jpg" alt="avatar" />
                     </div>
                     <div class="tool fl">
-                        <a href="mailto:vuongvd@gmail.com">Gửi mail</a> <a href="javascript:void(0);">Xem thông
-                            tin</a><asp:LinkButton runat="server" ID="btnLogout" Text="Thoát" OnClick="btnLogout_Click"></asp:LinkButton>
+                        <%--<a href="mailto:vuongvd@gmail.com">Gửi mail</a> <a href="javascript:void(0);">Xem thông
+                            tin</a>--%><asp:LinkButton runat="server" ID="btnLogout" Text="Thoát" OnClick="btnLogout_Click"></asp:LinkButton>
                     </div>
                     <div class="clear">
                     </div>
