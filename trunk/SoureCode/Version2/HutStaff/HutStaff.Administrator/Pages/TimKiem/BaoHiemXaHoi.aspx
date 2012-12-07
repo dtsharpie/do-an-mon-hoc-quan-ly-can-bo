@@ -32,7 +32,7 @@
         <li><a href="/Pages/TimKiem/QuaTrinhBoiDuong.aspx?id=<%= iShcc %>">Quá trình bồi dưỡng</a></li>
         <li><a href="/Pages/TimKiem/QuaTrinhCongTac.aspx?id=<%= iShcc %>">Quá trình công tác</a></li>
         <br />
-        <li><a href="">Thông tin BHXH</a></li>
+        <li><a>Thông tin BHXH</a></li>
         <li><a href="/Pages/TimKiem/DuLieuTruoc1993.aspx?id=<%= iShcc %>">Dữ Liệu Trước 4/1993</a></li>
         <li><a href="">In tờ khai BHXH</a></li>
         <li><a href="">In sổ BHXH</a></li>
