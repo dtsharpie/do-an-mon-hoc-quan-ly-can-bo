@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Chucvudoanthe.ascx.cs" Inherits="HutStaff.Administrator.Xemthongtin.Controls.Chucvudoanthe" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Chucvudoanthe.ascx.cs"
+    Inherits="HutStaff.Administrator.Xemthongtin.Controls.Chucvudoanthe" %>
 <div class="content">
     <h1 class="title">
         Chức vụ đoàn thể
@@ -12,11 +13,12 @@
                 </th>
                 <th>
                     Chức vụ
+                </th>
                 <th>
                     Thông tin khác
                 </th>
             </tr>
-            <asp:Repeater runat="server" ID="grdData">
+            <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>
                     <tr>
                         <td>
@@ -39,5 +41,7 @@
                 </AlternatingItemTemplate>
             </asp:Repeater>
         </table>
+        <div class="nodata" id="divNodata" runat="server">
+        </div>
     </div>
 </div>
