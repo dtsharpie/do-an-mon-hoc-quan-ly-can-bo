@@ -35,5 +35,13 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             DAL.PagesDAL.QuanLy.DanhMuc.UpdateDSCSDT(oldCSDTCM, newCSDTCM);
         }
+        public static DataTable View_all_cvdn_from_soyeu()
+        {
+            return DAL.PagesDAL.QuanLy.DanhMuc.View_all_cvdn_from_soyeu();
+        }
+        public static DataTable Insert_dm_cvdn(string cvdn)
+        {
+            return DAL.PagesDAL.QuanLy.DanhMuc.Insert_dm_cvdn(cvdn);
+        }
     }
 }

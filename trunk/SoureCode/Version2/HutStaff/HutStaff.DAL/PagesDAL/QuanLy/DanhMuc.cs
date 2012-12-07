@@ -46,5 +46,23 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     new object[] { oldCSDTCM, newCSDTCM });
             }
         }
+        public static DataTable View_all_cvdn_from_soyeu()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_view_all_cvdn_from_soyeu",
+                    new string[] { },
+                    new object[] { });
+            }
+        }
+        public static DataTable Insert_dm_cvdn(string cvdn)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_insert_dm_cvdn",
+                    new string[] { "@cvdn" },
+                    new object[] { cvdn });
+            }
+        }
     }
 }

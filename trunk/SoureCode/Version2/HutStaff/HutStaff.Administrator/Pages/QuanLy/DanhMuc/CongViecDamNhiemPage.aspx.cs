@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using HutStaff.BO.QuanLy.DanhMuc;
+using HutStaff.BO.PagesBO.QuanLy;
+using System.Data;
 
 namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 {
@@ -23,6 +25,9 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
                 InsertColumn(1, "cvdn", "Công việc");
 
                 FillData();
+
+                gv.DataSource = DanhMucBO.View_all_cvdn_from_soyeu();
+                gv.DataBind();
             }
         }
 
@@ -110,5 +115,19 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         }
 
         #endregion
+
+        protected void ThemVaoDanhMuc(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            DanhMucBO.Insert_dm_cvdn(b.CommandName);
+            Response.Redirect("CongViecDamNhiemPage.aspx");
+        }
+        protected void GhiLai(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            string s = b.CommandName;
+        }
     }
 }
