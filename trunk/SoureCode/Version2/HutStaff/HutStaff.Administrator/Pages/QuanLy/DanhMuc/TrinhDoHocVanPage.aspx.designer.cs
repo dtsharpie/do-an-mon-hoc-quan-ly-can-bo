@@ -22,21 +22,21 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc {
         protected global::System.Web.UI.WebControls.Table tblMain;
         
         /// <summary>
-        /// txbMaTenNgoaiNgu control.
+        /// txbMaTrinhDoHocVan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbMaTenNgoaiNgu;
+        protected global::System.Web.UI.WebControls.TextBox txbMaTrinhDoHocVan;
         
         /// <summary>
-        /// txbTenNgoaiNgu control.
+        /// txbTrinhDoHocVan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbTenNgoaiNgu;
+        protected global::System.Web.UI.WebControls.TextBox txbTrinhDoHocVan;
     }
 }

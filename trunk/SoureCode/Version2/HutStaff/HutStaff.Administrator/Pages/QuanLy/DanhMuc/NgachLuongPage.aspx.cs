@@ -11,6 +11,12 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                InsertColumn(0, "ma_tnn", "Mã số");
+                InsertColumn(1, "tnn", "Tên ngoại ngữ");
+                FillData();
+            }
         }
 
         protected override BO.QuanLy.DanhMuc.DanhMucTableBase DanhMucTable

@@ -4,12 +4,12 @@
         <asp:TableRow>
             <asp:TableHeaderCell Text="Mã số" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbMaTenNgoaiNgu" />
+                <asp:TextBox runat="server" ID="txbMaTrinhDoHocVan" />
             </asp:TableCell></asp:TableRow>
         <asp:TableRow>
             <asp:TableHeaderCell Text="Trình độ học vấn" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbTenNgoaiNgu" />
+                <asp:TextBox runat="server" ID="txbTrinhDoHocVan" />
             </asp:TableCell></asp:TableRow>
     </asp:Table>
 </asp:Content>
