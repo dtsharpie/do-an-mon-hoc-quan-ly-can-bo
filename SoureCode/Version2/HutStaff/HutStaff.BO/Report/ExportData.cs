@@ -3645,6 +3645,96 @@ namespace HutStaff.BO.Report
         }
         #endregion
 
+        // CÁC BÁO CÁO THỐNG KÊ MỚI
+        #region Thống kê Thành tích khen thưởng
+        public string GetHtmlContent_Report_Type_5_1(string madv, string tendonvi, string dcb, string tt, int dkt)
+        {
+            string strTempElement;
+            string elementPath = HttpContext.Current.Server.MapPath(@"Template\ReportElement_Type_5_1.xml");
+            string strElementHtmlContent = File.ReadAllText(elementPath);
+            string path = HttpContext.Current.Server.MapPath(@"Template\ReportPageHeader_Type_5_1.xml");
+            string strHtmlContent = File.ReadAllText(path);
+
+            DataTable dataTable = BO.Report.Report.GetDataTableToReport_Type_5_1(madv, dcb, tt, dkt);
+
+            string shcc = "";
+            int stt = 0;
+            string sohieuchuan = "";
+            string hcld1, hcld2, hcld3, bktt, bkcb, cstdtq, cstdb, cstdt;
+            hcld1 = hcld2 = hcld3 = bktt = bkcb = cstdtq = cstdb = cstdt = "";
+            int cstdt_count = 0;
+            string hoten = "";
+            string donvi = "";
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (0 != row["shcc"].ToString().CompareTo(shcc))
+                {
+                    if (stt > 0)
+                    {
+                        // In dong
+                        strTempElement = strElementHtmlContent;
+                        strTempElement = strTempElement.Replace("$stt", stt.ToString());
+                        strTempElement = strTempElement.Replace("$sohieuchuan", sohieuchuan);
+                        strTempElement = strTempElement.Replace("$hoten", hoten);
+                        strTempElement = strTempElement.Replace("$donvi", donvi);
+                        strTempElement = strTempElement.Replace("$hcld1", hcld1);
+                        strTempElement = strTempElement.Replace("$hcld2", hcld2);
+                        strTempElement = strTempElement.Replace("$hcld3", hcld3);
+                        strTempElement = strTempElement.Replace("$bktt", bktt);
+                        strTempElement = strTempElement.Replace("$bkcb", bkcb);
+                        strTempElement = strTempElement.Replace("$cstdtq", cstdtq);
+                        strTempElement = strTempElement.Replace("$cstdb", cstdb);
+                        strTempElement = strTempElement.Replace("$cstdt_count", cstdt_count.ToString());
+                        strTempElement = strTempElement.Replace("$cstdt", cstdt);
+                        strHtmlContent += strTempElement;
+                    }
+                }
+
+                //New person
+                stt++;
+                hoten = row["hoten"].ToString();
+                donvi = row["dv"].ToString();
+                hcld1 = hcld2 = hcld3 = bktt = bkcb = cstdtq = cstdb = cstdt = "";
+                cstdt_count = 0;
+                shcc = row["shcc"].ToString();
+
+                switch (row["htkt"].ToString())
+                { //4
+                    case "48": //Huan chuong Lao Dong cap I
+                        hcld1 += row["nkt"].ToString() + ";";
+                        break;
+                    case "49": //Huan chuong Lao Dong cap II
+                        hcld2 += row["nkt"].ToString() + ";";
+                        break;
+                    case "50": //Huan chuong Lao Dong cap III
+                        hcld3 += row["nkt"].ToString() + ";";
+                        break;
+                    case "01": //Bang khen cap Bo
+                        bkcb += row["nkt"].ToString() + ";";
+                        break;
+                    case "03": //Bang khen cua Thu Tuong
+                        bktt += row["nkt"].ToString() + ";";
+                        break;
+                    case "07": //Chien sy thi dua cap Toan quoc
+                        cstdtq += row["nkt"].ToString() + ";";
+                        break;
+                    case "05": //Chien sy thi dua cap Bo
+                        cstdb += row["nkt"].ToString() + ";";
+                        break;
+                    case "09": //Chien sy thi dua cap Truong
+                        cstdt += row["nkt"].ToString() + ";";
+                        cstdt_count++;
+                        break;
+                }	//c4
+            }
+
+            strHtmlContent += "</table></body></html>";
+
+            return strHtmlContent;
+        }
+        #endregion
+
         #region Hàm hỗ trợ
         private int ConvertStringToInt(string str)
         {
@@ -3682,3 +3772,4 @@ namespace HutStaff.BO.Report
 
     }
 }
+

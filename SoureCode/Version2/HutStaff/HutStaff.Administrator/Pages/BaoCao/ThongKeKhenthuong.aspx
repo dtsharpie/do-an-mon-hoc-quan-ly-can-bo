@@ -63,4 +63,7 @@
 			</tbody>
         </table>
     </div>
+    <div>
+     <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+    </div>
 </asp:Content>

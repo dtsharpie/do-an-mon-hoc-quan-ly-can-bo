@@ -44,5 +44,8 @@ namespace HutStaff.BO.Report
         string GetHtmlContent_Report_Type_4_4(string madv, string tendonvi, string dcb, string tt);
         // Báo cáo tổng hợp ngạch, bậc và phụ cấp công chức
         string GetHtmlContent_Report_Type_4_5(string madv, string tendonvi, string dcb, string tt);
+
+        // Thống kê Thành tích khen thưởng
+        string GetHtmlContent_Report_Type_5_1(string madv, string tendonvi, string dcb, string tt, int dkt);
     }
 }
