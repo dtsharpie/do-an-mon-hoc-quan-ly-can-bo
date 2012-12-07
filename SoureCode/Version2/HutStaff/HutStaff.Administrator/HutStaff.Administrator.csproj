@@ -665,6 +665,7 @@
     <Content Include="Pages\QuanLy\DanhMuc\HinhThucKyLuatPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\HocHamPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\KinhPhiDiNuocNgoaiPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\MatBangBaoHiem.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\MucDichDiNuocNgoai.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\NgachLuongPage.aspx" />
@@ -1399,6 +1400,13 @@
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\KinhPhiDiNuocNgoaiPage.aspx.designer.cs">
       <DependentUpon>KinhPhiDiNuocNgoaiPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\MatBangBaoHiem.aspx.cs">
+      <DependentUpon>MatBangBaoHiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\MatBangBaoHiem.aspx.designer.cs">
+      <DependentUpon>MatBangBaoHiem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\MatBangLuongPage.aspx.cs">
       <DependentUpon>MatBangLuongPage.aspx</DependentUpon>
