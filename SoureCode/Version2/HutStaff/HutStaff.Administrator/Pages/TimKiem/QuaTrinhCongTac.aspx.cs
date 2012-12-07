@@ -119,17 +119,17 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
             if (saveButton.Text == "Ghi nhận")
             {
-                string id = Request.QueryString["id"];
-                iShcc = Int32.Parse( ViewState["ishcc"].ToString());
+                //string id = Request.QueryString["id"];
+                //iShcc = Int32.Parse( ViewState["ishcc"].ToString());
 
                 
-                Thongtinchung.InsertQuaTrinhCongTac(iShcc, Int32.Parse(ngoainguDropdownList.SelectedValue), Int32.Parse(trinhdoDropdownList.SelectedValue), thongtinchungTextBox.Text);
-                Bind();
+                //Thongtinchung.InsertQuaTrinhCongTac(iShcc, Int32.Parse(ngoainguDropdownList.SelectedValue), Int32.Parse(trinhdoDropdownList.SelectedValue), thongtinchungTextBox.Text);
+                //Bind();
             }
             if (saveButton.Text == "Cập nhật")
             {
-                Thongtinchung.UpdateQuaTrinhCongTac();
-                Bind();
+                //Thongtinchung.UpdateQuaTrinhCongTac();
+                //Bind();
             }
         }
 
@@ -152,20 +152,20 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
 
 
-            DataTable ngoaingu = SearchDetailBO.getAllNgoaiNgu();
-            ngoainguDropdownList.DataTextField = "tnn";
-            ngoainguDropdownList.DataValueField = "ma_tnn";
-            ngoainguDropdownList.DataSource = ngoaingu;
-            ngoainguDropdownList.DataBind();
-            ngoainguDropdownList.SelectedValue = ma_ngoaingu.ToString();
+            //DataTable ngoaingu = SearchDetailBO.getAllNgoaiNgu();
+            //ngoainguDropdownList.DataTextField = "tnn";
+            //ngoainguDropdownList.DataValueField = "ma_tnn";
+            //ngoainguDropdownList.DataSource = ngoaingu;
+            //ngoainguDropdownList.DataBind();
+            //ngoainguDropdownList.SelectedValue = ma_ngoaingu.ToString();
 
 
-            DataTable trinhdoNgoaingu = SearchDetailBO.getAllTrinhDoNgoaiNgu();
-            trinhdoDropdownList.DataTextField = "tdnn";
-            trinhdoDropdownList.DataValueField = "ma_tdnn";
-            trinhdoDropdownList.DataSource = trinhdoNgoaingu;
-            trinhdoDropdownList.DataBind();
-            trinhdoDropdownList.SelectedValue = ma_trinhdo.ToString();
+            //DataTable trinhdoNgoaingu = SearchDetailBO.getAllTrinhDoNgoaiNgu();
+            //trinhdoDropdownList.DataTextField = "tdnn";
+            //trinhdoDropdownList.DataValueField = "ma_tdnn";
+            //trinhdoDropdownList.DataSource = trinhdoNgoaingu;
+            //trinhdoDropdownList.DataBind();
+            //trinhdoDropdownList.SelectedValue = ma_trinhdo.ToString();
 
         }
         
