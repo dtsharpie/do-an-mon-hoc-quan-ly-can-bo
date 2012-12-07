@@ -159,5 +159,12 @@ namespace HutStaff.BO.PagesBO.TimKiem
                 giadinhchinhsach, thanhphanxuatthan, tenthuongdung, noisinh, quequan, chitietquequan, diachithuongtru, hokhauthuongtru,
                 chitiethktt, sobaohiem, ngaydongbh, ngaybhchinhthuc, ttsk, nm, tthn, lsbt, dt, tg, thongtinkhac);
         }
+		
+		public static DataTable getDienBienLuong(int iShcc)
+        {
+            DataTable dt;
+            dt = SearchDetailDAL.getDienBienLuong(iShcc);
+            return dt;
+        }
     }
 }
