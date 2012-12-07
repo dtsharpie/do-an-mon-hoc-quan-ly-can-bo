@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
+using HutStaff.BO.PagesBO.TimKiem;
 
 namespace HutStaff.Administrator.Pages.TimKiem
 {
@@ -16,7 +17,6 @@ namespace HutStaff.Administrator.Pages.TimKiem
         {
             if (IsPostBack)
                 return;
-
             try
             {
                 string id = Request.QueryString["id"];
@@ -55,6 +55,9 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
         protected void Bind()
         {
+            DataTable dt = SearchDetailBO.getDienBienLuong(iShcc);// Thông tin về quá trình đóng bảo hiểm được tính từ bảng diễn biến lương
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
         }
     }
 }

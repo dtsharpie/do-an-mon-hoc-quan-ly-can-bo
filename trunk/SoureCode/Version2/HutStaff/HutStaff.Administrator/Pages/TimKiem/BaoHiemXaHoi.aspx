@@ -41,12 +41,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="content">
         <h1 class="title">
-            Thông tin BHXH
+            Quá trình đóng bảo hiểm xã hội
         </h1>
         <hr />
         <div class="divInfo" style="margin-top: 10px;">
+            <asp:LinkButton ID="lbnInSoBaoHiem" runat="server" Text="In sổ bảo hiểm"></asp:LinkButton>
             <div class="table-container">
-                <table class="table-result">
+                <%--<table class="table-result">
                     <tr class="header">
                         <td rowspan="2">
                             Thời gian
@@ -135,7 +136,25 @@
                             </tr>
                         </AlternatingItemTemplate>
                     </asp:Repeater>
-                </table>
+                </table>--%>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                        <Columns>
+                            <asp:BoundField DataField="id" Visible="false"/>
+                            <asp:BoundField DataField="thoigian" HeaderText="Thời gian" />
+                            <%--<asp:BoundField DataField="tgbd_dbl" Visible="false" />
+                            <asp:BoundField DataField="tgkt_dbl" Visible="false" />--%>
+                            <asp:BoundField DataField="mota" HeaderText="Chức danh, chức vụ, ngạch lương và đơn vị công tác" />
+                            <asp:BoundField DataField="hsl" HeaderText="Hệ số lương cơ bản"/>
+                            <asp:BoundField DataField="hspccv" HeaderText="Phụ cấp chức vụ"/>
+                            <asp:BoundField DataField="hspckv" HeaderText="Phụ cấp vượt khung"/>
+                            <asp:BoundField DataField="hspctn" HeaderText="Phụ cấp thâm niên giáo dục"/>
+                            <asp:BoundField DataField="tonghsl" HeaderText="Tổng hệ số lương"/>
+                            <asp:BoundField DataField="sothangdongbh" HeaderText="Số tháng đóng bảo hiểm"/>
+                            <asp:BoundField DataField="tongtienbhxh" HeaderText = "Tổng số tiền đóng BHXH"/>
+                            <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+                            <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                        </Columns>
+                </asp:GridView>
             </div>
         </div>
     </div>
