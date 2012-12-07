@@ -50,9 +50,9 @@ namespace HutStaff.BO.PagesBO.TimKiem
 
         public static string Huyhoso_Inserts(int userId, string shccs)
         {
-            foreach(string shcc in shccs.Split(','))
+            foreach (string shcc in shccs.Split(','))
             {
-            DAL.PagesDAL.TimKiem.SearchDAL.Huyhoso_Insert(Security.CurrentUser.GetCurrentUser().UserId, Convert.ToInt32( shcc));
+                DAL.PagesDAL.TimKiem.SearchDAL.Huyhoso_Insert(Security.CurrentUser.GetCurrentUser().UserId, Convert.ToInt32(shcc));
             }
             return "alert('Đã gửi yêu cầu xóa của bạn.');";
 

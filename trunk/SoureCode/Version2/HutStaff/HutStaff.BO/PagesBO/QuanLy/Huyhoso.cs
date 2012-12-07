@@ -19,10 +19,22 @@ namespace HutStaff.BO.PagesBO.QuanLy
             return "alert('Đã xóa');";
         }
 
+        public static string Xoas(string shcc)
+        {
+            DAL.PagesDAL.QuanLy.Huyhoso.Xoas(shcc);
+            return "alert('Đã xóa');";
+        }
+
 
         public static string KhongXoa(int shcc)
         {
             DAL.PagesDAL.QuanLy.Huyhoso.KhongXoa(shcc);
+            return "alert('Đã hủy bỏ yêu cầu xóa');";
+        }
+
+        public static string KhongXoas(string shcc)
+        {
+            DAL.PagesDAL.QuanLy.Huyhoso.KhongXoas(shcc);
             return "alert('Đã hủy bỏ yêu cầu xóa');";
         }
 

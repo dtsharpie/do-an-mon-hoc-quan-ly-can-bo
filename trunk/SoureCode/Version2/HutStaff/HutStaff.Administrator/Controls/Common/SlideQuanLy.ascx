@@ -8,7 +8,7 @@
         <ul class="subform">
             <li ><a href="/Pages/QuanLy/Xetduyet/Tanngluong.aspx" alias="view-tang-luong">Xét nâng lương</a></li>
             <li><a href="/Pages/QuanLy/Xetduyet/Khenthuong.aspx" class="view_reward">Xét khen thưởng</a></li>
-            <li><a href="/Pages/QuanLy/Xetduyet/Baohiem.aspx" class="view_baohiem">Xét khen thưởng</a></li>
+            <li><a href="/Pages/QuanLy/Xetduyet/Baohiem.aspx" class="view_baohiem">Xét bảo hiểm xã hội</a></li>
         </ul>
     </li>
     <li><a href="/Pages/QuanLy/BangDanhMuc.aspx">Bảng danh mục</a> </li>
