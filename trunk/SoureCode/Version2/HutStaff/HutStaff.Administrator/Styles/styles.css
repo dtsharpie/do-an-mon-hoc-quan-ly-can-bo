@@ -118,7 +118,7 @@ input, select, textarea
 {
     border: 1px solid #CCCCCC;
     border-radius: 2px;
-    padding: 2px 5px;
+    padding: 2px 4px;
 }
 
 button, input.button
@@ -198,12 +198,6 @@ div.sub-title h2
     color: #fff;
 }
 
-.table-result td, .table-result th
-{
-    padding: 0 10px;
-    vertical-align: middle;
-    border: 1px solid #DDD;
-}
 
 .table-result tr:nth-child(2n) td
 {
@@ -603,6 +597,28 @@ div.sub-title h2
     color: #333;
     text-transform: uppercase;
 }
+
+div.detail-container table tr td:nth-child(odd)
+{
+    max-width: 90px;
+    padding: 0 5px;
+}
+
+div.detail-container td.label
+{
+    width: 100px;
+}
+
+div.detail-container td input[type=text]
+{
+    width: 165px;
+}
+
+div.detail-container td select
+{
+    width: 175px;
+}
+
 
 div.form-container
 {
