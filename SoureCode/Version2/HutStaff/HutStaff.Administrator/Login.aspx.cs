@@ -24,7 +24,10 @@ namespace HutStaff.Administrator
             {
                 BO.Security.CurrentUser crUser = new BO.Security.CurrentUser(sUsername, Convert.ToInt32(tblAuthenticate.Rows[0]["Id"]), Convert.ToInt32(tblAuthenticate.Rows[0]["quyen"]));
                 Session[Common.Constants.Session.AdminSessionName] = crUser;
-                Response.Redirect("/Default.aspx");
+                if (String.IsNullOrEmpty(Request.QueryString["returnUrl"]))
+                    Response.Redirect("/Default.aspx");
+                else
+                    Response.Redirect(Request.QueryString["returnUrl"]);
             }
             else
             {
