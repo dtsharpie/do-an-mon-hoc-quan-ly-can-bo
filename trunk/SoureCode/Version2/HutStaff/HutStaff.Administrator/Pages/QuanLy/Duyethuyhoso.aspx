@@ -94,7 +94,7 @@
             }
 
             $(".delete-row").click(function () {
-                if (confirm("Bạn có chắc chắn muốn xóa")) {
+                if (confirm("Bạn có chắc chắn muốn xóa?")) {
                     execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoa", shcc: $(this).attr("shcc") }, false);
                     $(this).closest("tr").remove();
                     $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
@@ -106,8 +106,19 @@
 
 
             $(".undelete-row").click(function () {
-                if (confirm("Bạn có chắc chắn hủy yêu cầu xóa")) {
+                if (confirm("Bạn có chắc chắn hủy yêu cầu xóa?")) {
                     execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.KhongXoa", shcc: $(this).attr("shcc") }, false);
+                    $(this).closest("tr").remove();
+                    $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
+                    $(".table-result tr").not(':first').each(function (i) {
+                        $(this).find("td").first().text(i + 1);
+                    });
+                }
+            });
+
+            $(".restore-row").click(function () {
+                if (confirm("Bạn có chắc chắn muốn khôi phục?")) {
+                    execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.KhoiPhuc", shcc: $(this).attr("shcc") }, false);
                     $(this).closest("tr").remove();
                     $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                     $(".table-result tr").not(':first').each(function (i) {
@@ -261,6 +272,13 @@
                     <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderText="Không xóa">
                         <ItemTemplate>
                             <a href="javascript:void(0)" class="undelete-row" shcc="<%# Eval("shcc") %>">Không xóa
+                            </a>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                    <asp:TemplateField ItemStyle-CssClass="hosodahuy" HeaderText="Khôi phục">
+                        <ItemTemplate>
+                            <a href="javascript:void(0)" class="restore-row" shcc="<%# Eval("shcc") %>">Khôi phục
                             </a>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
