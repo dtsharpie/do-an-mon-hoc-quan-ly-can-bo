@@ -11,6 +11,7 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(1).addClass('active');
+            $('#divSideBar ul > li > a').eq(0).addClass('active');
         });
     </script>
     <script type="text/javascript" src="../../Scripts/jquery-1.8.1.min.js"></script>
@@ -31,16 +32,6 @@
             });
         });
     </script>
-    <style type="text/css">
-        .style1
-        {
-            width: 74px;
-        }
-        .style2
-        {
-            width: 144px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <div>
@@ -75,14 +66,14 @@
 </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div>
-        <table class="fw">
+    <div class="detail-container">
+        <table>
             <tr>
                 <td>
                     Họ tên:
                 </td>
-                <td class="style2">
-                    <asp:TextBox ID="htbHoVaTenDem" Text="Họ và tên đệm" runat="server" Width="100px" />
+                <td>
+                    <asp:TextBox ID="htbHoVaTenDem" Text="Họ và tên đệm" runat="server" Width="98px" />
                    <%-- <asp:TextBox id="htbHoVaTenDem" runat="server" hinttext="Họ và tên đệm" width="100px" />--%>
                     &nbsp;<asp:TextBox ID="htbTen" runat="server" Text ="Tên" width="50px" />
                 </td>
@@ -99,7 +90,7 @@
                     <asp:DropDownList id="chzGioiTinh" runat="server" placeholder="Chọn giới tính"
                         cssclass="droplist_medium" />
                 </td>
-                <td class="style1">
+                <td>
                     Email:
                 </td>
                 <td>
@@ -110,7 +101,7 @@
                 <td>
                     Số CMTND:
                 </td>
-                <td class="style2">
+                <td>
                     <asp:TextBox ID="txbSoCmtnd" runat="server" CssClass="inputextbox_short" />
                 </td>
                 <td>
@@ -126,7 +117,7 @@
                     <asp:DropDownList ID="chzNoiCapCmtnd" runat="server" placeholder="Chọn địa danh"
                         datatextfield="ttp" datavaluefield="ma_ttp" cssclass="droplist_medium" />
                 </td>
-                <td class="style1">
+                <td>
                     Điện thoại:
                 </td>
                 <td>
@@ -137,7 +128,7 @@
                 <td>
                     TĐ học vấn:
                 </td>
-                <td class="style2">
+                <td>
                     <asp:DropDownList id="chzTrinhDoHocVan" runat="server" datatextfield="tdhv" datavaluefield="ma_tdhv"
                         placeholder="Chọn trình độ học vấn" cssclass="droplist_large" />
                 </td>
@@ -155,7 +146,7 @@
                     <asp:DropDownList id="chzTrinhDoLyLuan" runat="server" datatextfield="tdll" datavaluefield="ma_tdll"
                         placeholder="Chọn trình độ lý luận chính trị" cssclass="droplist_large" />
                 </td>
-                <td class="style1">
+                <td>
                     TĐ QLNN:
                 </td>
                 <td>
@@ -167,7 +158,7 @@
                 <td>
                     Sở trường, năng khiếu:
                 </td>
-                <td class="style2">
+                <td>
                     <asp:TextBox ID="txbSoTruong" runat="server" CssClass="inputtextbox_long" />
                 </td>
                 <td>
@@ -182,7 +173,7 @@
                 <td>
                     &nbsp;
                 </td>
-                <td class="style1">
+                <td>
                     &nbsp;
                 </td>
                 <td>
@@ -193,7 +184,7 @@
                 <td>
                     Ngày về cơ quan:
                 </td>
-                <td class="style2">
+                <td>
                     <asp:TextBox ID="dpkNgayVeCoQuan" runat="server" CssClass="datepicker" />
                 </td>
                 <td>
@@ -209,7 +200,7 @@
                     <asp:DropDownList id="chzKhoiCanBo" runat="server" datatextfield="kcb" datavaluefield="ma_kcb"
                         placeholder="Chọn khối cán bộ" cssclass="droplist_large" />
                 </td>
-                <td class="style1">
+                <td>
                     Diện cán bộ:
                 </td>
                 <td>
@@ -220,7 +211,7 @@
         </table>
         <table>
             <tr>
-                <td>
+                <td class="label">
                     Đơn vị quản lý:
                 </td>
                 <td>
@@ -372,7 +363,7 @@
                     Chi tiết quê quán:
                 </td>
                 <td>
-                    <asp:TextBox ID="txbChiTietQueQuan" runat="server" Width="100%" CssClass="inputtextbox_long" />
+                    <asp:TextBox ID="txbChiTietQueQuan" runat="server" CssClass="inputtextbox_long" />
                 </td>
                 <td>
                     Địa chỉ thường trú:

@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="KyLuat.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.KyLuat" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#divSideBar ul > li > a').eq(7).addClass('active');
+    });
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
 <div>
