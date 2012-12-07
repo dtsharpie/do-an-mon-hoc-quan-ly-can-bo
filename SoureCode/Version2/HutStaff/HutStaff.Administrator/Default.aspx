@@ -101,7 +101,13 @@
             $(".delete-row").click(function () {
                 if (confirm("Gửi yêu cầu xóa ?")) {
                     execution({ _fn: "HutStaff.BO.PagesBO.TimKiem.SearchBO.Huyhoso_Insert", shcc: $(this).attr("shcc") }, false);
-                    $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
+                    var sdeletes = $("#<%= hdDeletes.ClientID %>").val();
+                    if (sdeletes != '') {
+                        $("#<%= hdDeletes.ClientID %>").val(sdeletes + "," + $(this).attr("shcc"));
+                    }
+                    else {
+                        $("#<%= hdDeletes.ClientID %>").val($(this).attr("shcc"));
+                    }
                     $(this).closest("tr").remove();
                     $(".table-result tr").not(':first').each(function (i) {
                         $(this).find("td").first().text(i + 1);
@@ -112,13 +118,22 @@
             $(".btnXoa").click(function () {
                 if (confirm("Gửi yêu cầu xóa ?")) {
                     var results = [];
+
                     $("input:checkbox.chkId:checked").each(function (i) {
-                        $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                         results[i] = $(this).val();
                         $(this).closest("tr").remove();
                     });
 
+
                     if (results.length > 0) {
+                        var sdeletes = results.join(",");
+                        if ($("#<%= hdDeletes.ClientID %>").val() != '') {
+                            $("#<%= hdDeletes.ClientID %>").val(sdeletes + "," + $("#<%= hdDeletes.ClientID %>").val());
+                        }
+                        else {
+                            $("#<%= hdDeletes.ClientID %>").val(sdeletes);
+                        }
+
                         $(".table-result tr").not(':first').each(function (i) {
                             $(this).find("td").first().text(i + 1);
                         });
