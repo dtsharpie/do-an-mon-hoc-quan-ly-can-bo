@@ -168,3 +168,6 @@ TD.row3	{ background-color: #D1D7DC; }
 	FONT-WEIGHT: bold;
 	HEIGHT: 25px;
 }
+.btnGrid{text-align:center;font-size:13px !important;}
+.grvTextBox{padding-left:10px;}
+.grvTextBox input{ border: 1px solid #CCCCCC;}
