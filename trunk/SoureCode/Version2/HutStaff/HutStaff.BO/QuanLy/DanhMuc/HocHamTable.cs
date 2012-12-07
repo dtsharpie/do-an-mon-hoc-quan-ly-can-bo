@@ -11,7 +11,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return "dm_hh";
             }
         }
 

@@ -13,7 +13,7 @@ namespace HutStaff.Administrator.Master
         {
             if (BO.Security.CurrentUser.GetCurrentUser() == null)
             {
-                Response.Redirect("/Login.aspx?returnUrl=" + Request.RawUrl) ;
+                //Response.Redirect("/Login.aspx?returnUrl=" + Request.RawUrl) ;
             }
         }
 

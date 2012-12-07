@@ -20,7 +20,7 @@
     <p>
         <br />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
-        <asp:Button ID="insertButton" runat="server" Text="Thêm" CssClass="button" />
+        <asp:Button ID="insertButton" runat="server" Text="Thêm mới" CssClass="button" />
         <asp:Button ID="saveButton" runat="server" Text="Lưu lại" CssClass="button" />
         <br />
         <br />
