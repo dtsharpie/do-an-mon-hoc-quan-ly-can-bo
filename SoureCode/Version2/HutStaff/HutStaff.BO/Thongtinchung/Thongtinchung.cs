@@ -407,5 +407,23 @@ namespace HutStaff.BO.Thongtinchung
             return DAL.Thongtinchung.Thongtinchung.FindChuVuDangDoanByID(id);
         }
 
+        public static DataTable GetCongTacDangByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetCongTacDangByID(id);
+        }
+
+        public static DataTable GetCongTacDoanByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetCongTacDoanByID(id);
+        }
+
+        public static DataTable GetAllChucVuDang()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllChucVuDang();
+        }
+        public static DataTable GetAllChucVuDoan()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllChucVuDoan();
+        }
     }
 }

@@ -781,5 +781,41 @@ namespace HutStaff.DAL.Thongtinchung
                         new object[] { id });
             }
         }
+
+        public static DataTable GetCongTacDangByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_qtctdt_Dang_GetById]",
+                    new string[] {"@shcc"},
+                    new object[] {id});
+            }
+        }
+
+        public static DataTable GetCongTacDoanByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[HutStaff_ViewUser_qtctdt_Doan_GetById]",
+                    new string[] { "@shcc" },
+                    new object[] { id });
+            }
+        }
+
+
+        public static DataTable GetAllChucVuDang()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_cud]");
+            }
+        }
+        public static DataTable GetAllChucVuDoan()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_cu]");
+            }
+        }
     }
 }
