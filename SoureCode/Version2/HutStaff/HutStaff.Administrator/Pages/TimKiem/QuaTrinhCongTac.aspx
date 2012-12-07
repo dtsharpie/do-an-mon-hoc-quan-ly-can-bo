@@ -38,62 +38,130 @@
     <h1 class="title">
         Quá trình công tác
     </h1>
+    <br />        
+    <h3>
+        <asp:Label ID="nameLabel" runat="server" Text=""></asp:Label>
+    </h3>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
-            <tr class="title">
-                <td>
-                    Thời gian
-                </td>
-                <td>
-                    Biên chế tại đơn vị/<br />
-                    Nơi làm việc
-                </td>
-                <td>
-                    Công việc đảm nhận
-                </td>
-                <td>
-                    Diện cán bộ
-                </td>
-            </tr>
-            <asp:Repeater runat="server" ID="rptData">
-                <ItemTemplate>
-                    <tr>
-                        <td>
-                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_qtct")).ToString("MM/yyyy") : "nay")%>
-                        </td>
-                        <td>
-                            <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>
-                        </td>
-                        <td>
-                            <%# Eval("cv")%>
-                        </td>
-                        <td>
-                            <%# Eval("dcb")%>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <AlternatingItemTemplate>
-                    <tr class="even">
-                        <td>
-                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_ qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_ qtct")).ToString("MM/yyyy") : "nay")%>
-                        </td>
-                        <td>
-                            <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>
-                        </td>
-                        <td>
-                            <%# Eval("cv")%>
-                        </td>
-                        <td>
-                            <%# Eval("dcb")%>
-                        </td>
-                    </tr>
-                </AlternatingItemTemplate>
-            </asp:Repeater>
-        </table>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+        class="table-result" 
+        OnRowDeleting="gridViewDeleted" onselectedindexchanged="gridViewChanged">    
+            
+        <Columns>
+        <asp:BoundField DataField="id" />
+        <asp:BoundField DataField="tnn" Visible="true" HeaderText="Thời gian"/>
+        <asp:BoundField DataField="tdnn" HeaderText="Biên chế tại đơn vị/ Nơi làm việc" />
+        <asp:BoundField DataField="tnn" Visible="true" HeaderText="Công việc đảm nhận"/>
+        <asp:BoundField DataField="tdnn" HeaderText="Diện cán bộ/ Tình trạng công tác" />
+        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" EditText="" />
+        <asp:CommandField ShowDeleteButton="True" DeleteText="Xóa" />
+    </Columns>
+    </asp:GridView>
         <div class="nodata" id="divNodata" runat="server">
         </div>
     </div>
 </div>
-
+<div>
+    <div>
+    <br/><br/>
+      <table class="table-result">
+            <tr class="title">
+                <td>
+                Bổ sung dữ liệu
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Thời gian bắt đầu
+                </td>
+                <td>
+                    <asp:TextBox ID="tbTimeBegin" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Thời gian kết thúc
+                </td>
+                <td>
+                    <asp:TextBox ID="tbTimeEnd" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Biên chế tại đơn vị
+                </td>
+                <td>
+                    <asp:TextBox ID="tbDonViBienChe" runat="server"></asp:TextBox>
+                    (Nếu là đơn vị trong trường)
+                    <asp:DropDownList ID="ddlDonViBienChe" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nơi làm việc
+                </td>
+                <td>
+                    <asp:TextBox ID="tbNoiLamViec" runat="server"></asp:TextBox>
+                    (Nếu là đơn vị trong trường)
+                    <asp:DropDownList ID="ddlNoiLamViec" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Công việc đảm nhận
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlCongViecDamNhan" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Diện cán bộ
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlDienCanBo" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tình trạng công tác
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlTinhTrangCongTac" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Chức vụ(nếu có)
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlChucVu" runat="server"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Đánh giá
+                </td>
+                <td>
+                    <asp:TextBox ID="tbDanhGia" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    Thông tin khác
+                </td>
+                <td>
+                    <asp:TextBox ID="tbThongTinKhac" runat="server" TextMode="MultiLine" ></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID ="saveButton" OnClick="saveButtonClick" runat="server" Text ="Ghi nhận"/>
+                    <asp:Button ID ="resetButton" OnClick="resetButtonClick" runat = "server" Text ="Làm lại"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 </asp:Content>
