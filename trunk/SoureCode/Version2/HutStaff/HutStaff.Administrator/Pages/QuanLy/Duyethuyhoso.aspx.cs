@@ -13,5 +13,15 @@ namespace HutStaff.Administrator.Pages.QuanLy
         {
 
         }
+
+        protected void btnDownload1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDownload2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
