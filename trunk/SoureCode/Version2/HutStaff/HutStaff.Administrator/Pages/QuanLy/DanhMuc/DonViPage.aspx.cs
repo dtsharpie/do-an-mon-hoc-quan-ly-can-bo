@@ -41,9 +41,22 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 
         protected override void OnInsertButtonClick(object sender, EventArgs args)
         {
-            string ma_dv = txbMaDonVi.Text;
-            string dv = txbDonVi.Text;
-            DanhMucTable.Insert(new string[] { ma_dv, dv }); 
+            // Chuyển sang trạng thái Insert.
+            if (EditState != EditState.Insert)
+            {
+                txbMaDonVi.ReadOnly = false;
+                txbMaDonVi.Text = "";
+                txbDonVi.Text = "";
+            }
+            else if (EditState == EditState.Insert)
+            {
+                string ma_dv = txbMaDonVi.Text;
+                string dv = txbDonVi.Text;
+                if (!DanhMucTable.CheckExisted(ma_dv))
+                {
+                    DanhMucTable.Insert(new string[] { ma_dv, dv }); 
+                }
+            }
         }
 
         protected override void OnSaveButtonClick(object sender, EventArgs args)
@@ -59,7 +72,9 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// <param name="sender"></param>
         /// <param name="args"></param>
         protected override void OnDataGridViewSelectedIndexChanged(object sender, EventArgs args)
-        {
+        {   
+            txbMaDonVi.ReadOnly = true;
+
             txbMaDonVi.Text = GetCellContent(dataGridView.SelectedIndex, 0);
             txbDonVi.Text = GetCellContent(dataGridView.SelectedIndex, 1);
         }
