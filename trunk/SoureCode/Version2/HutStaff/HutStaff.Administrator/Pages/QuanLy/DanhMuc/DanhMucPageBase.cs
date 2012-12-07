@@ -196,9 +196,9 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// </summary>
         protected void OnInsertButtonClick_(object sender, EventArgs args)
         {
-            EditState = EditState.Insert;
             Master.SaveButton.Enabled = false;
             OnInsertButtonClick(sender, args);
+            FillData();
         }
         
         /// <summary>

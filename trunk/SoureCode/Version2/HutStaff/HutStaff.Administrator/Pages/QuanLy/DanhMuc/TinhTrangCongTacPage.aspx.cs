@@ -39,10 +39,22 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// </summary>
         protected override void OnInsertButtonClick(object sender, EventArgs args)
         {
-            txbMaTinhTrang.Enabled = false;
-            txbMaTinhTrang.Text = "Auto";
-        
-            txbTinhTrangCongTac.Text = "";
+            // Chưa ở trạng thái Insert thì chuyển sang Insert.
+            if (EditState != EditState.Insert)
+            {
+                EditState = EditState.Insert;
+                
+                txbMaTinhTrang.Enabled = false;
+                txbMaTinhTrang.Text = "Auto";
+            
+                txbTinhTrangCongTac.Text = "";
+            }
+            // Còn không thì add vào csdl.
+            else if (EditState == EditState.Insert)
+            {
+                DanhMucTable.Insert(new string[] { txbTinhTrangCongTac.Text });
+                txbTinhTrangCongTac.Text = "";
+            }
         }
         
         /// <summary>
@@ -50,22 +62,12 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// </summary>
         protected override void OnSaveButtonClick(object sender, EventArgs args)
         {
-            if (EditState == EditState.Insert)
+            // Không ở EditState.Update khi page vừa được load, đang ở trạng thái EditState.None
+            if (EditState == EditState.Update)
             {
-                if (!String.IsNullOrEmpty(txbTinhTrangCongTac.Text))
-                {
-                    DanhMucTable.Insert(new string[] { txbTinhTrangCongTac.Text });
-                }
-            }
-            else if (EditState == EditState.Update)
-            {
-                if (!String.IsNullOrEmpty(txbTinhTrangCongTac.Text))
-                {
-                    string ma_tt = txbMaTinhTrang.Text;
-                    string tt = txbTinhTrangCongTac.Text;
-                    
-                    DanhMucTable.Update(new string[] { ma_tt, tt });
-                }
+                string ma_tt = txbMaTinhTrang.Text;
+                string tt = txbTinhTrangCongTac.Text;
+                DanhMucTable.Update(new string[] { ma_tt, tt });
             }
         }
         
@@ -90,7 +92,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         {
             string ma_tt = GetCellContent(args.RowIndex, 0);
             DanhMucTable.Delete(ma_tt);
-
+            
             txbMaTinhTrang.Enabled = true;
             txbMaTinhTrang.ReadOnly = true;
             txbTinhTrangCongTac.Text = "";
