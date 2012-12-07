@@ -3,6 +3,12 @@
 
 <%@ Register Src="/Controls/Common/SlideQuanLy.ascx" TagPrefix="uc1" TagName="SlideQuanLy" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#divHeader .nav a').removeClass("active");
+            $('#divHeader .nav a').eq(1).addClass('active');
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
@@ -27,15 +33,18 @@
                     <a href="DanhMuc/DienCanBoPage.aspx">03 - Bảng danh mục diện cán bộ</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/HinhThucKhenThuongPage.aspx">04 - Bảng danh mục hình thức khen thưởng </a>
+                    <a href="DanhMuc/HinhThucKhenThuongPage.aspx">04 - Bảng danh mục hình thức khen thưởng
+                    </a>
                 </td>
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/TinhTrangCongTacPage.aspx">05 - Bảng danh mục tình trạng công tác </a>
+                    <a href="DanhMuc/TinhTrangCongTacPage.aspx">05 - Bảng danh mục tình trạng công tác
+                    </a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/HinhThucKyLuatPage.aspx ">06 - Bảng danh mục hình thức kỷ luật </a>
+                    <a href="DanhMuc/HinhThucKyLuatPage.aspx ">06 - Bảng danh mục hình thức kỷ luật
+                    </a>
                 </td>
             </tr>
             <tr>
@@ -96,7 +105,8 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/ChucVuChinhQuyenPage.aspx">21 - Bảng danh mục chức vụ chính quyền </a>
+                    <a href="DanhMuc/ChucVuChinhQuyenPage.aspx">21 - Bảng danh mục chức vụ chính quyền
+                    </a>
                 </td>
                 <td class="row1">
                     <a href="DanhMuc/TinhThanhPhoPage.aspx">22 - Bảng danh mục tỉnh, thành phố Việt Nam</a>
@@ -123,7 +133,8 @@
                     <a href="DanhMuc/DanhHieuPage.aspx">27 - Bảng danh mục danh hiệu</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/KinhPhiDiNuocNgoaiPage.aspx">28 - Bảng danh mục nguồn kinh phí đi nước ngoài</a>
+                    <a href="DanhMuc/KinhPhiDiNuocNgoaiPage.aspx">28 - Bảng danh mục nguồn kinh phí đi nước
+                        ngoài</a>
                 </td>
             </tr>
             <tr>
@@ -147,7 +158,8 @@
                     <a href="DanhMuc/QuanHuyenPage.aspx">33 - Bảng danh mục quận, huyện Việt Nam</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/CoSoDaoTaoChuyenMonPage.aspx">34 - Bảng danh mục cơ sở đào tạo chuyên môn</a>
+                    <a href="DanhMuc/CoSoDaoTaoChuyenMonPage.aspx">34 - Bảng danh mục cơ sở đào tạo chuyên
+                        môn</a>
                 </td>
             </tr>
             <tr>
