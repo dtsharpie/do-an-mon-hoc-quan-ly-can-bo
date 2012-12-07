@@ -15,7 +15,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
             if (!IsPostBack)
             {
                 InsertColumn(0, "ma_dcb", "Mã diện cán bộ");
-                InsertColumn(1, "dv", "Diện cán bộ");
+                InsertColumn(1, "dcb", "Diện cán bộ");
                 FillData();
             }
         }
@@ -34,27 +34,54 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 
         protected override void OnInsertButtonClick(object sender, EventArgs args)
         {
-            string ma_dcb = txbMaDienCanBo.Text;
-            string dcb = txbDienCanBo.Text;
-            DanhMucTable.Insert(new string[] { ma_dcb, dcb }); 
+            // Chưa ở trạng thái Insert thì chuyển sang Insert.
+            if (EditState != EditState.Insert)
+            {
+                EditState = EditState.Insert;
+
+                txbMaDienCanBo.Enabled = false;
+                txbMaDienCanBo.Text = "Auto";
+
+                txbDienCanBo.Text = "";
+            }
+            // Còn không thì add vào csdl.
+            else if (EditState == EditState.Insert)
+            {
+                DanhMucTable.Insert(new string[] { txbDienCanBo.Text });
+                txbDienCanBo.Text = "";
+            }
         }
 
         protected override void OnSaveButtonClick(object sender, EventArgs args)
         {
-            string ma_dcb = txbMaDienCanBo.Text;
-            string dcb = txbDienCanBo.Text;
-            DanhMucTable.Update(new string[] { ma_dcb, dcb });
+            // Không ở EditState.Update khi page vừa được load, đang ở trạng thái EditState.None
+            if (EditState == EditState.Update)
+            {
+                string ma_dcb = txbMaDienCanBo.Text;
+                string dcb = txbDienCanBo.Text;
+                DanhMucTable.Update(new string[] { ma_dcb, dcb });
+            }
         }
 
         protected override void OnDataGridViewSelectedIndexChanged(object sender, EventArgs args)
         {
-            txbMaDienCanBo.Text = GetCellContent(dataGridView.SelectedIndex, 0);
-            txbDienCanBo.Text = GetCellContent(dataGridView.SelectedIndex, 1);
+            int selectedIndex = dataGridView.SelectedIndex;
+
+            txbMaDienCanBo.ReadOnly = true;
+            txbMaDienCanBo.Enabled = true;
+            txbMaDienCanBo.Text = GetCellContent(selectedIndex, 0);
+
+            txbDienCanBo.Text = GetCellContent(selectedIndex, 1);
         }
 
         protected override void OnDataGridViewRowDeleting(object sender, GridViewDeleteEventArgs args)
         {
             DanhMucTable.Delete(GetCellContent(args.RowIndex, 0));
+
+            txbMaDienCanBo.Enabled = true;
+            txbMaDienCanBo.ReadOnly = true;
+            txbDienCanBo.Text = "";
+            txbMaDienCanBo.Text = "";
         }
     }
 }

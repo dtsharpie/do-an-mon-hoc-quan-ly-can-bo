@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Data;
 
 namespace HutStaff.BO.QuanLy.DanhMuc
 {
@@ -10,7 +9,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return "dm_dcb";
             }
         }
 
@@ -18,7 +17,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "dcb" };
             }
         }
 
@@ -26,7 +25,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id" };
             }
         }
 
@@ -34,7 +33,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "dcb" };
             }
         }
 
@@ -42,7 +41,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id" };
             }
         }
 
@@ -50,7 +49,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "dcb" };
             }
         }
 
@@ -58,7 +57,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id", "dcb" };
             }
         }
     }

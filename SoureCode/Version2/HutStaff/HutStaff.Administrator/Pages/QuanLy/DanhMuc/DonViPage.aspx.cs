@@ -83,6 +83,11 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         {
             string ma_dv = GetCellContent(args.RowIndex, 0);
             DanhMucTable.Delete(ma_dv);
+
+            txbMaDonVi.ReadOnly = false;
+            txbMaDonVi.Text = "";
+            txbDonVi.Text = "";
+            EditState = EditState.Insert;
         }
     }
 }
