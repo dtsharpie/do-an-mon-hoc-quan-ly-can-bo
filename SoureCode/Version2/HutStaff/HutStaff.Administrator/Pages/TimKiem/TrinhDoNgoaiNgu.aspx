@@ -67,30 +67,23 @@
             <asp:Label ID="lbResult" runat="server"></asp:Label>
             <div class="nodata" id="divNodata" runat="server">
             </div>
-            <div>
-                <br />
-                <br />
-                <table class="table-result">
-                    <tr class="title">
-                        <td>
-                            Bổ sung dữ liệu
-                        </td>
-                    </tr>
+            <br />
+            <br />
+            <div class="form-container">
+                <table>
                     <tr>
                         <td class="title">
                             Ngoại ngữ
                         </td>
                         <td>
-                            <asp:DropDownList ID="ngoainguDropdownList" runat="server">
+                            <asp:DropDownList ID="ngoainguDropdownList" Width="270px" runat="server">
                             </asp:DropDownList>
                         </td>
-                    </tr>
-                    <tr>
                         <td class="title">
                             Trình độ
                         </td>
                         <td>
-                            <asp:DropDownList ID="trinhdoDropdownList" runat="server">
+                            <asp:DropDownList ID="trinhdoDropdownList" Width="270px" runat="server">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -98,12 +91,14 @@
                         <td>
                             Thông tin chung
                         </td>
-                        <td>
-                            <asp:TextBox ID="thongtinchungTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <td colspan="3">
+                            <asp:TextBox ID="thongtinchungTextBox" runat="server" Width="600px" TextMode="MultiLine"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                        </td>
+                        <td colspan="3">
                             <asp:Button ID="saveButton" OnClick="saveButtonClick" runat="server" Text="Ghi nhận" />
                             <asp:Button ID="resetButton" OnClick="resetButtonClick" runat="server" Text="Làm lại" />
                         </td>

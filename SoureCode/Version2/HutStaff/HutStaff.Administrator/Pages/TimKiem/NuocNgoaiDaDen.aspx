@@ -117,13 +117,8 @@
                 <br />
                 <br />
             </div>
-            <div>
-                <table class="table-result">
-                    <tr class="title">
-                        <td>
-                            Bổ sung dữ liệu
-                        </td>
-                    </tr>
+            <div class="form-container">
+                <table>
                     <tr>
                         <td>
                             Thời điểm bắt đầu
@@ -245,23 +240,21 @@
                             Tên nước đến
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownListTenNuocDen" runat="server" />
+                            <asp:DropDownList ID="DropDownListTenNuocDen" Width="270px" runat="server" />
                         </td>
-                    </tr>
-                    <tr>
                         <td>
                             Địa chỉ nơi đến
                         </td>
                         <td>
-                            <asp:TextBox ID="txtDiaChiDen" runat="server" />
+                            <asp:TextBox ID="txtDiaChiDen" runat="server"  Width="190px" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Mục đích chuyến đi
                         </td>
-                        <td>
-                            <asp:DropDownList ID="DropDownListMucDich" runat="server" />
+                        <td colspan="3">
+                            <asp:DropDownList ID="DropDownListMucDich" Width="270px" runat="server" />
                         </td>
                     </tr>
                     <tr>
@@ -269,15 +262,13 @@
                             Nguồn kinh phí
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownListKinhPhi" runat="server" />
+                            <asp:DropDownList ID="DropDownListKinhPhi" Width="270px" runat="server" />
                         </td>
-                    </tr>
-                    <tr>
                         <td>
                             Trạng thái
                         </td>
                         <td>
-                            <asp:DropDownList ID="DropDownListTrangThai" runat="server">
+                            <asp:DropDownList ID="DropDownListTrangThai"  Width="200px" runat="server">
                                 <asp:ListItem>Còn hạn dưới 3 tháng</asp:ListItem>
                                 <asp:ListItem>Còn hạn trên 3 tháng</asp:ListItem>
                                 <asp:ListItem>Quá hạn dưới 3 tháng</asp:ListItem>
@@ -291,20 +282,21 @@
                         <td>
                             Đánh giá chuyến đi
                         </td>
-                        <td>
-                            <asp:TextBox ID="txtDanhGia" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <td colspan="3">
+                            <asp:TextBox ID="txtDanhGia" runat="server" Width="600px" TextMode="MultiLine"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Thông tin khác
                         </td>
-                        <td>
-                            <asp:TextBox ID="txtThongTinKhac" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <td colspan="3">
+                            <asp:TextBox ID="txtThongTinKhac" runat="server" Width="600px" TextMode="MultiLine"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td></td>
+                        <td colspan="3">
                             <asp:Button ID="saveButton" OnClick="saveButtonClick" runat="server" Text="Ghi nhận" />
                             <asp:Button ID="resetButton" OnClick="resetButtonClick" runat="server" Text="Làm lại" />
                         </td>
