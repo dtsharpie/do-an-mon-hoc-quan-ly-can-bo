@@ -47,5 +47,15 @@ namespace HutStaff.BO.PagesBO.TimKiem
             DAL.PagesDAL.TimKiem.SearchDAL.Huyhoso_Insert(Security.CurrentUser.GetCurrentUser().UserId, shcc);
             return "alert('Đã gửi yêu cầu xóa của bạn.');";
         }
+
+        public static string Huyhoso_Inserts(int userId, string shccs)
+        {
+            foreach(string shcc in shccs.Split(','))
+            {
+            DAL.PagesDAL.TimKiem.SearchDAL.Huyhoso_Insert(Security.CurrentUser.GetCurrentUser().UserId, Convert.ToInt32( shcc));
+            }
+            return "alert('Đã gửi yêu cầu xóa của bạn.');";
+
+        }
     }
 }
