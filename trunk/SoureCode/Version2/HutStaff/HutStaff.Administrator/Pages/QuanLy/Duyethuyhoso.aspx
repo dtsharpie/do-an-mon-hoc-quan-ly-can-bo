@@ -100,7 +100,13 @@
                 }
                 if (confirm("Bạn có chắc chắn muốn xóa?")) {
                     execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoa", shcc: $(this).attr("shcc") }, false);
-                    $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
+                    var sdeletes = $("#<%= hdDeletes.ClientID %>").val();
+                    if (sdeletes != '') {
+                        $("#<%= hdDeletes.ClientID %>").val(sdeletes + "," + $(this).attr("shcc"));
+                    }
+                    else {
+                        $("#<%= hdDeletes.ClientID %>").val($(this).attr("shcc"));
+                    }
                     $(this).closest("tr").remove();
                     $(".table-result tr").not(':first').each(function (i) {
                         $(this).find("td").first().text(i + 1);
@@ -119,12 +125,19 @@
                     });
 
                     $("input:checkbox.chkId:checked").each(function (i) {
-                        $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                         results[i] = $(this).val();
                         $(this).closest("tr").remove();
                     });
 
                     if (results.length > 0) {
+                        var sdeletes = results.join(",");
+                        if ($("#<%= hdDeletes.ClientID %>").val() != '') {
+                            $("#<%= hdDeletes.ClientID %>").val(sdeletes + "," + $("#<%= hdDeletes.ClientID %>").val());
+                        }
+                        else {
+                            $("#<%= hdDeletes.ClientID %>").val(sdeletes);
+                        }
+
                         $(".table-result tr").not(':first').each(function (i) {
                             $(this).find("td").first().text(i + 1);
                         });
@@ -303,7 +316,7 @@
                         HeaderText="Người yêu cầu">
                         <ItemTemplate>
                             <label class="nguoiyeucau" id="<%# Eval("userId") %>">
-                                <%# Eval("userName" %></label>
+                                <%# Eval("userName") %></label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>

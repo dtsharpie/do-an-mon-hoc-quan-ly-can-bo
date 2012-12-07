@@ -89,7 +89,7 @@ namespace HutStaff.Administrator
 
         protected void btnDownload2_Click(object sender, EventArgs e)
         {
-            tblData = (DataTable)(ViewState["tabledata"]);
+            tblData = ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).Length > 0 ? ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).CopyToDataTable() : null;
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
             cells["A1"].Formula = "Họ tên";
@@ -120,9 +120,9 @@ namespace HutStaff.Administrator
 
         protected void btnDownload1_Click(object sender, EventArgs e)
         {
-            tblData = (DataTable)(ViewState["tabledata"]);
-            cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"] ,tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
-           
+            tblData = ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).Length > 0 ? ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).CopyToDataTable() : null;
+            cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
+
 
             cells["A1"].Formula = "Họ tên";
             cells["A1"].ColumnWidth = 50;
@@ -163,6 +163,26 @@ namespace HutStaff.Administrator
                 }
             }
             return cells;
+        }
+
+        private string GenQuery()
+        {
+            if (!String.IsNullOrEmpty(hdDeletes.Value))
+            {
+                string sQuery = "";
+                for (int i = 0; i < hdDeletes.Value.Split(',').Length; i++)
+                {
+                    if (i == 0)
+                        sQuery += "shcc <> " + hdDeletes.Value.Split(',')[i];
+                    else
+                        sQuery += " AND " + "shcc <> " + hdDeletes.Value.Split(',')[i];
+                }
+                return sQuery;
+            }
+            else
+            {
+                return "";
+            }
         }
 
     }
