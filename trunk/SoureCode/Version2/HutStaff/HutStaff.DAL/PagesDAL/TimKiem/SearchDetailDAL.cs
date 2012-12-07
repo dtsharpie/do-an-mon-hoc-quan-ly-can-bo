@@ -284,8 +284,8 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
                     DateTime end;
                     if (DateTime.TryParse(row["tgbd_dbl"].ToString(), out begin) && DateTime.TryParse(row["tgkt_dbl"].ToString(), out end))
                     {
-                        row["sothangdongbh"] = ((end - begin).TotalDays / 30).ToString() + " tháng";
-                        row["thoigian"] = begin.ToString() + " - " + end.ToString();
+                        row["sothangdongbh"] = (Convert.ToInt16((end - begin).TotalDays / 30)).ToString() + " tháng";
+                        row["thoigian"] = begin.ToShortDateString() + " - " + end.ToShortDateString();
                     }
                     else
                     {
