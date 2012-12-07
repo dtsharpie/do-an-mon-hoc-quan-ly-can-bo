@@ -421,6 +421,7 @@ GO
 	CREATE TABLE huyhoso 
 	(
 		ma_huyhoso		INT IDENTITY(1,1),
+		shcc			INT,
 		user_id			INT REFERENCES Users(id),
 		hoten			NVARCHAR(50),
 		ngayyeucau		DATETIME,
