@@ -31,22 +31,13 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.Label nameLabel;
         
         /// <summary>
-        /// GridViewChucVuChinhQuyen control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewChucVuChinhQuyen;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// DropDownListNgayBoNhiem control.
@@ -103,13 +94,13 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.TextBox txtNamKetThuc;
         
         /// <summary>
-        /// checkBoxDenNayKetThuc control.
+        /// checkBoxDennay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkBoxDenNayKetThuc;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkBoxDennay;
         
         /// <summary>
         /// DropDownListBoSungDuLieuChucVu control.
@@ -121,15 +112,6 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListBoSungDuLieuChucVu;
         
         /// <summary>
-        /// txtBoSungDuLieuChucVuHSPhuCap control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoSungDuLieuChucVuHSPhuCap;
-        
-        /// <summary>
         /// DropDownListBoSungDuLieuDonViQuanLy control.
         /// </summary>
         /// <remarks>
@@ -139,30 +121,30 @@ namespace HutStaff.Administrator.Pages.TimKiem {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListBoSungDuLieuDonViQuanLy;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtThongTinKhac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtThongTinKhac;
         
         /// <summary>
-        /// btnGhiLai control.
+        /// saveButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGhiLai;
+        protected global::System.Web.UI.WebControls.Button saveButton;
         
         /// <summary>
-        /// btnLamLai control.
+        /// resetButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLamLai;
+        protected global::System.Web.UI.WebControls.Button resetButton;
     }
 }

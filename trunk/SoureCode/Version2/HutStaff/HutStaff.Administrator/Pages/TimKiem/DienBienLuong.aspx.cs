@@ -17,6 +17,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
         protected int iShcc;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
 
             try
             {
@@ -113,7 +115,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
             DataColumn themColumns = ngachDataTable.Columns.Add("stupidDataBase");
             foreach (DataRow Row in ngachDataTable.Rows)
             {
-                string ten_ngach = Row["ten_ngach"].ToString();
+                string ten_ngach = Row["nbncvkn"].ToString();
                 string ma_ngach = Row["ma_ngach"].ToString();
 
                 Row["stupidDataBase"] = string.Format("{0} ({1})", ten_ngach, ma_ngach);
@@ -162,10 +164,8 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
             //ngay bat dau
             string ngaythangBD = DienBienLuongByID.Rows[0]["tgbd_dbl"] != null ? Convert.ToDateTime(DienBienLuongByID.Rows[0]["tgbd_dbl"]).ToString("dd/MM/yyyy") : "";
-            // string ngay = DateTime.Parse(ngaythangph, new CultureInfo("en-US")).Day.ToString();
             string ngay = ngaythangBD.Substring(0, 2);
             DropDownListNgayHuongTu.SelectedValue = ngay;
-            //  string thang = DateTime.Parse(ngaythangph, new CultureInfo("en-US")).Month.ToString();
             string thang = ngaythangBD.Substring(3, 2);
             DropDownListThangHuongTu.SelectedValue = thang;
 
@@ -191,12 +191,12 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 if (Convert.ToDateTime(DienBienLuongByID.Rows[0]["tgkt_dbl"]) != checkDateTime)
                 {
                     string ngayKT = ngaythangph.Substring(0, 2);
-                    DropDownListNgayTinhLanSau.SelectedValue = ngay;
+                    DropDownListNgayTinhLanSau.SelectedValue = ngayKT;
                     string thangKT = ngaythangph.Substring(3, 2);
-                    DropDownListThangTinhLanSau.SelectedValue = thang;
+                    DropDownListThangTinhLanSau.SelectedValue = thangKT;
 
                     string namKT = ngaythangph.Substring(6, 4);
-                    txtNamHuongTu.Text = nam;
+                    txtNamHuongTu.Text = namKT;
                 }
                 else
                 {
