@@ -12,7 +12,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return "dm_dv";
             }
         }
 
@@ -20,7 +20,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "dv" };
             }
         }
 
@@ -28,7 +28,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id" };
             }
         }
 
@@ -36,7 +36,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id" };
             }
         }
 
@@ -44,7 +44,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "dv" };
             }
         }
 
@@ -52,7 +52,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "ma_dv", "dv" };
             }
         }
 
@@ -60,7 +60,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id", "dv" };
             }
         }
     }
