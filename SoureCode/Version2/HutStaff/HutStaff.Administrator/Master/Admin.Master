@@ -91,9 +91,6 @@
                 var parent = subform.parent().parent();
                 var grandparent = parent.parent().parent();
 
-                //$('#divSideBar ul > li > a').removeClass('active');
-                //$(this).addClass('active');
-
                 if (!subform.is(':hidden')) {
                     subform.hide(500, function () {
                         subform.removeClass('show');
@@ -115,7 +112,12 @@
             $('#divSideBar ul > li > .cb-tree').change(function () {
                 $('#divSideBar ul > li > .cb-tree').not(this).removeAttr('checked');
                 $('#divSideBar ul > li > a').removeClass('active');
-                $(this).siblings('a').addClass('active');
+
+                if ($(this).attr('checked') == "checked") {
+                    $(this).siblings('a').addClass('active');
+                } else {
+                    $(this).siblings('a').removeClass('active');
+                }
                 if ($('#txtDepartmentCode') != undefined) {
                     $('#txtDepartmentCode').val($(this).attr('code'));
                 }
