@@ -359,7 +359,7 @@ GO
 		[user]			VARCHAR(50) NOT NULL,
 		pass			VARCHAR(50) NOT NULL,
 		nvcqhn			DATETIME,
-		scmnd			VARCHAR(10),
+		scmnd			VARCHAR(12),
 		nc				INT REFERENCES dm_ttp(ma_ttp),
 		ngay_cap		DATETIME,
 		ma_dvql			VARCHAR(6) REFERENCES dm_dv(ma_dv),
