@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true" CodeBehind="KhenThuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.TimKiem.KhenThuong" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#divSideBar ul > li > a').eq(6).addClass('active');
+    });
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
 <div>
@@ -153,7 +158,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <asp:Button ID ="saveButton" OnClick="saveButtonClick" runat="server" Text ="Ghi nhận"/>
                     <asp:Button ID ="resetButton" OnClick="resetButtonClick" runat = "server" Text ="Làm lại"/>
                 </td>
