@@ -161,59 +161,60 @@
                 <tr>
                     <td class="title">
                         Thời gian kết thúc
-                        <td>
-                            <asp:DropDownList ID="DropDownListNgayKetThuc" runat="server">
-                                <asp:ListItem>01</asp:ListItem>
-                                <asp:ListItem>02</asp:ListItem>
-                                <asp:ListItem>03</asp:ListItem>
-                                <asp:ListItem>04</asp:ListItem>
-                                <asp:ListItem>05</asp:ListItem>
-                                <asp:ListItem>06</asp:ListItem>
-                                <asp:ListItem>07</asp:ListItem>
-                                <asp:ListItem>08</asp:ListItem>
-                                <asp:ListItem>09</asp:ListItem>
-                                <asp:ListItem>10</asp:ListItem>
-                                <asp:ListItem>11</asp:ListItem>
-                                <asp:ListItem>12</asp:ListItem>
-                                <asp:ListItem>13</asp:ListItem>
-                                <asp:ListItem>14</asp:ListItem>
-                                <asp:ListItem>15</asp:ListItem>
-                                <asp:ListItem>16</asp:ListItem>
-                                <asp:ListItem>17</asp:ListItem>
-                                <asp:ListItem>18</asp:ListItem>
-                                <asp:ListItem>19</asp:ListItem>
-                                <asp:ListItem>20</asp:ListItem>
-                                <asp:ListItem>21</asp:ListItem>
-                                <asp:ListItem>22</asp:ListItem>
-                                <asp:ListItem>23</asp:ListItem>
-                                <asp:ListItem>24</asp:ListItem>
-                                <asp:ListItem>25</asp:ListItem>
-                                <asp:ListItem>26</asp:ListItem>
-                                <asp:ListItem>27</asp:ListItem>
-                                <asp:ListItem>28</asp:ListItem>
-                                <asp:ListItem>29</asp:ListItem>
-                                <asp:ListItem>30</asp:ListItem>
-                                <asp:ListItem>31</asp:ListItem>
-                            </asp:DropDownList>
-                            /
-                            <asp:DropDownList ID="DropDownListThangKetThuc" runat="server">
-                                <asp:ListItem>01</asp:ListItem>
-                                <asp:ListItem>02</asp:ListItem>
-                                <asp:ListItem>03</asp:ListItem>
-                                <asp:ListItem>04</asp:ListItem>
-                                <asp:ListItem>05</asp:ListItem>
-                                <asp:ListItem>06</asp:ListItem>
-                                <asp:ListItem>07</asp:ListItem>
-                                <asp:ListItem>08</asp:ListItem>
-                                <asp:ListItem>09</asp:ListItem>
-                                <asp:ListItem>10</asp:ListItem>
-                                <asp:ListItem>11</asp:ListItem>
-                                <asp:ListItem>12</asp:ListItem>
-                            </asp:DropDownList>
-                            /
-                            <asp:TextBox ID="txtNamKetThuc" runat="server" Width="50px"></asp:TextBox>
-                            (ngày/tháng/năm)
-                        </td>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="DropDownListNgayKetThuc" runat="server">
+                            <asp:ListItem>01</asp:ListItem>
+                            <asp:ListItem>02</asp:ListItem>
+                            <asp:ListItem>03</asp:ListItem>
+                            <asp:ListItem>04</asp:ListItem>
+                            <asp:ListItem>05</asp:ListItem>
+                            <asp:ListItem>06</asp:ListItem>
+                            <asp:ListItem>07</asp:ListItem>
+                            <asp:ListItem>08</asp:ListItem>
+                            <asp:ListItem>09</asp:ListItem>
+                            <asp:ListItem>10</asp:ListItem>
+                            <asp:ListItem>11</asp:ListItem>
+                            <asp:ListItem>12</asp:ListItem>
+                            <asp:ListItem>13</asp:ListItem>
+                            <asp:ListItem>14</asp:ListItem>
+                            <asp:ListItem>15</asp:ListItem>
+                            <asp:ListItem>16</asp:ListItem>
+                            <asp:ListItem>17</asp:ListItem>
+                            <asp:ListItem>18</asp:ListItem>
+                            <asp:ListItem>19</asp:ListItem>
+                            <asp:ListItem>20</asp:ListItem>
+                            <asp:ListItem>21</asp:ListItem>
+                            <asp:ListItem>22</asp:ListItem>
+                            <asp:ListItem>23</asp:ListItem>
+                            <asp:ListItem>24</asp:ListItem>
+                            <asp:ListItem>25</asp:ListItem>
+                            <asp:ListItem>26</asp:ListItem>
+                            <asp:ListItem>27</asp:ListItem>
+                            <asp:ListItem>28</asp:ListItem>
+                            <asp:ListItem>29</asp:ListItem>
+                            <asp:ListItem>30</asp:ListItem>
+                            <asp:ListItem>31</asp:ListItem>
+                        </asp:DropDownList>
+                        /
+                        <asp:DropDownList ID="DropDownListThangKetThuc" runat="server">
+                            <asp:ListItem>01</asp:ListItem>
+                            <asp:ListItem>02</asp:ListItem>
+                            <asp:ListItem>03</asp:ListItem>
+                            <asp:ListItem>04</asp:ListItem>
+                            <asp:ListItem>05</asp:ListItem>
+                            <asp:ListItem>06</asp:ListItem>
+                            <asp:ListItem>07</asp:ListItem>
+                            <asp:ListItem>08</asp:ListItem>
+                            <asp:ListItem>09</asp:ListItem>
+                            <asp:ListItem>10</asp:ListItem>
+                            <asp:ListItem>11</asp:ListItem>
+                            <asp:ListItem>12</asp:ListItem>
+                        </asp:DropDownList>
+                        /
+                        <asp:TextBox ID="txtNamKetThuc" runat="server" Width="50px"></asp:TextBox>
+                        (ngày/tháng/năm)
+                    </td>
                 </tr>
                 <tr>
                     <td>

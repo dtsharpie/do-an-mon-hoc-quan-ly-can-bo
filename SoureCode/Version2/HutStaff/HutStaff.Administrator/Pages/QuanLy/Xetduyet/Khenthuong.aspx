@@ -7,7 +7,7 @@
         $(document).ready(function () {
             $("#divSideBar li:eq(2) ul").css("display", "block");
 
-            $("a.view_reward]").attr("style", "background-color: rgb(247, 247, 247);");
+            $("a.view_reward").attr("style", "background-color: rgb(247, 247, 247);");
         });
     </script>
 </asp:Content>
