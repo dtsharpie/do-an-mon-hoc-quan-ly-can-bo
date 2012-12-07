@@ -28,5 +28,15 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
                     new object[] { ma_dv, ten, gioitinh, tuTuoi, denTuoi, diencb, khoicb, nvtruong }).Rows[0][0]);
             }
         }
+
+        public static void Huyhoso_Insert(int userId, int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_huyhoso_insert]",
+                   new string[] { "@userId" , "@shcc" },
+                   new object[] { userId , shcc });
+            }
+        }
     }
 }

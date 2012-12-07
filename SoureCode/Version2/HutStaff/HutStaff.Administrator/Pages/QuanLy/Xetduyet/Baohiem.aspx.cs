@@ -57,7 +57,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet
                         string[] aNdbh = dr["ngay"].ToString().Split('/');
                         dtNdbh = new DateTime(Convert.ToInt32(aNdbh[2]), Convert.ToInt32(aNdbh[1]), Convert.ToInt32(aNdbh[0]));
                     }
-                    BO.PagesBO.QuanLy.XetDuyet.UpdateBhxh(Convert.ToInt32(dr["shcc"]), dr["sbh"].ToString(), dtNdbh);
+                    BO.PagesBO.QuanLy.XetDuyet.UpdateBhxh(Convert.ToInt32(dr["shcc"]), dr["sobh"].ToString(), dtNdbh);
                 }
                 tblData = tblData.Clone();
                 grdData.DataSource = tblData;
@@ -120,7 +120,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet
                 DataRow dr = tblData.NewRow();
                 for (int i = 0; i < totalColumn; i++)
                 {
-                    dr[i] = worksheet.Cells[indexRow, indexColumn + i].Value != null ? worksheet.Cells[indexRow, indexColumn + i].Value.ToString() : "";
+                    dr[i] = worksheet.Cells[indexRow, indexColumn + i].Text != null ? worksheet.Cells[indexRow, indexColumn + i].Text.ToString() : "";
                 }
                 tblData.Rows.Add(dr);
                 indexRow++;
@@ -131,7 +131,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet
         {
             foreach (SpreadsheetGear.IRange range in row)
             {
-                if (range.Value != null && !String.IsNullOrEmpty(range.Value.ToString()))
+                if (range.Text != null && !String.IsNullOrEmpty(range.Text.ToString()))
                 {
                     return false;
                 }
