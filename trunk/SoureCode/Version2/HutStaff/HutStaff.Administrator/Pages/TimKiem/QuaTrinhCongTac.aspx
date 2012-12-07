@@ -44,19 +44,71 @@
     </h3>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        class="table-result" 
-        OnRowDeleting="gridViewDeleted" onselectedindexchanged="gridViewChanged">    
-            
-        <Columns>
-        <asp:BoundField DataField="id" />
-        <asp:BoundField DataField="tnn" Visible="true" HeaderText="Thời gian"/>
-        <asp:BoundField DataField="tdnn" HeaderText="Biên chế tại đơn vị/ Nơi làm việc" />
-        <asp:BoundField DataField="tnn" Visible="true" HeaderText="Công việc đảm nhận"/>
-        <asp:BoundField DataField="tdnn" HeaderText="Diện cán bộ/ Tình trạng công tác" />
-        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" EditText="" />
-        <asp:CommandField ShowDeleteButton="True" DeleteText="Xóa" />
-    </Columns>
+
+     <%--<table class="table-result">
+            <tr class="title">
+                <td>
+                    Thời gian
+                </td>
+                <td>
+                    Biên chế tại đơn vị/<br />
+                    Nơi làm việc
+                </td>
+                <td>
+                    Công việc đảm nhận
+                </td>
+                <td>
+                    Diện cán bộ
+                </td>
+            </tr>
+            <asp:Repeater runat="server" ID="rptData">
+                <ItemTemplate>
+                    <tr>
+                        <td>
+                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_qtct")).ToString("MM/yyyy") : "nay")%>
+                        </td>
+                        <td>
+                            <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>
+                        </td>
+                        <td>
+                            <%# Eval("cv")%>
+                        </td>
+                        <td>
+                            <%# Eval("dcb")%>
+                        </td>
+                    </tr>
+                </ItemTemplate>
+                <AlternatingItemTemplate>
+                    <tr class="even">
+                        <td>
+                            <%# (Eval("tgbd_qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgbd_qtct")).ToString("MM/yyyy") : "") + " > " + (Eval("tgkt_ qtct") != DBNull.Value ? Convert.ToDateTime(Eval("tgkt_ qtct")).ToString("MM/yyyy") : "nay")%>
+                        </td>
+                        <td>
+                            <%# Eval("dvct").ToString() + "/<br />" + Eval("nlv")%>
+                        </td>
+                        <td>
+                            <%# Eval("cv")%>
+                        </td>
+                        <td>
+                            <%# Eval("dcb")%>
+                        </td>
+                    </tr>
+                </AlternatingItemTemplate>
+            </asp:Repeater>
+        </table>--%>
+        <asp:GridView ID="GridView1" runat="server"  class="table-result" 
+            AutoGenerateColumns="False" onrowdeleting="GridViewDeleting" 
+            onselectedindexchanged="GridViewChanged">
+            <Columns>
+                <asp:BoundField DataField="id" />
+                <asp:BoundField DataField="thoigian" HeaderText="Thời gian" />
+                <asp:BoundField DataField="vbbd" HeaderText="Biên chế tại đơn vị/Nơi làm việc"/>
+                <asp:BoundField DataField="ndbd" HeaderText="Công việc đảm nhận"/>
+                <asp:BoundField DataField="" HeaderText = "Diện cán bộ"/>
+                <asp:BoundField DataField="ttk_qtbd" HeaderText="Thông tin bổ sung" />
+                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+            </Columns>
     </asp:GridView>
         <div class="nodata" id="divNodata" runat="server">
         </div>
