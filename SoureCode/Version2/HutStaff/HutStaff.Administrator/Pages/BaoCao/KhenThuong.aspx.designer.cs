@@ -13,15 +13,6 @@ namespace HutStaff.Administrator.Pages.BaoCao {
     public partial class KhenThuong {
         
         /// <summary>
-        /// SlideBaocao1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HutStaff.Administrator.Controls.Common.SlideBaocao SlideBaocao1;
-        
-        /// <summary>
         /// ddlHinhThucKhenThuong control.
         /// </summary>
         /// <remarks>

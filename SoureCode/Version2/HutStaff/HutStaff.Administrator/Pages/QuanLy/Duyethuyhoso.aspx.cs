@@ -121,7 +121,13 @@ namespace HutStaff.Administrator.Pages.QuanLy
 
         protected void btnDownload1_Click(object sender, EventArgs e)
         {
+
             tblData = (DataTable)(ViewState["tabledata"]);
+            if (tblData == null)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Null", "alert('Chưa có dữ liệu');", true);
+                return;
+            }
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
             cells["A1"].Formula = "Họ tên";
@@ -153,6 +159,11 @@ namespace HutStaff.Administrator.Pages.QuanLy
         protected void btnDownload2_Click(object sender, EventArgs e)
         {
             tblData = (DataTable)(ViewState["tabledata"]);
+            if (tblData == null)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Null", "alert('Chưa có dữ liệu');", true);
+                return;
+            }
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
 

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using HutStaff.BO.PagesBO.BaoCaoBO;
+using HutStaff.BO.PagesBO.TimKiem;
 using System.Data;
-
-//  by Nguyen Vuong Quyen
+using HutStaff.BO.PagesBO.BaoCaoBO;
 
 namespace HutStaff.Administrator.Pages.BaoCao
 {
@@ -34,7 +33,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
                 tbFrom.Text = "2007";
 
                 tbTo.Text = DateTime.Now.Year.ToString();
-             
+
                 DataTable table_123_dm_dv = BaoCaoBO.ViewAlldm_dv();
                 ddlUnit123.DataSource = table_123_dm_dv;
                 ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
@@ -77,11 +76,6 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
                 ViewState["tabledata"] = tblData;
             }
-        }
-
-        protected void btnExport_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void btnOk_Click(object sender, EventArgs e)
@@ -128,7 +122,13 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnDownload2_Click(object sender, EventArgs e)
         {
+
             tblData = (DataTable)(ViewState["tabledata"]);
+            if (tblData == null)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Null", "alert('Chưa có dữ liệu');", true);
+                return;
+            }
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["kt"], tblData.Columns["nkt_qtkt"] }, 2, 1);
 
 
@@ -160,7 +160,13 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnDownload1_Click(object sender, EventArgs e)
         {
+
             tblData = (DataTable)(ViewState["tabledata"]);
+            if (tblData == null)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Null", "alert('Chưa có dữ liệu');", true);
+                return;
+            }
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["kt"], tblData.Columns["nkt_qtkt"] }, 2, 1);
 
 
@@ -205,8 +211,6 @@ namespace HutStaff.Administrator.Pages.BaoCao
             }
             return cells;
         }
-
-
 
     }
 }
