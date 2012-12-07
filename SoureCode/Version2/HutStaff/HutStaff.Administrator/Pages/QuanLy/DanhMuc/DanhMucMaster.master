@@ -28,8 +28,8 @@
             CssClass="forumline" CellPadding="4" CellSpacing="1" 
             onrowdatabound="dataGridView_RowDataBound" Width="100%">
             <Columns>
-                <asp:CommandField ShowSelectButton="true" />
-                <asp:CommandField ShowDeleteButton="true" />
+                <asp:CommandField ShowSelectButton="true"  ControlStyle-CssClass="btnGrid" />
+                <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btnGrid"/>
             </Columns>
         </asp:GridView>
     </p>
