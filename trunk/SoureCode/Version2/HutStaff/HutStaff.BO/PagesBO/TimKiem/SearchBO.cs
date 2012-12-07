@@ -48,7 +48,7 @@ namespace HutStaff.BO.PagesBO.TimKiem
             return "alert('Đã gửi yêu cầu xóa của bạn.');";
         }
 
-        public static string Huyhoso_Inserts(int userId, string shccs)
+        public static string Huyhoso_Inserts(string shccs)
         {
             foreach (string shcc in shccs.Split(','))
             {
