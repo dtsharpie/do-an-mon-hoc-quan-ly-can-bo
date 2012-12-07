@@ -37,5 +37,15 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     new object[] { shcc });
             }
         }
+
+        public static void KhoiPhuc(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_huyhoso_KhoiPhuc]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
     }
 }

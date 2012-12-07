@@ -25,5 +25,11 @@ namespace HutStaff.BO.PagesBO.QuanLy
             DAL.PagesDAL.QuanLy.Huyhoso.KhongXoa(shcc);
             return "alert('Đã hủy bỏ yêu cầu xóa');";
         }
+
+        public static string KhoiPhuc(int shcc)
+        {
+            DAL.PagesDAL.QuanLy.Huyhoso.KhoiPhuc(shcc);
+            return "alert('Đã khôi phục');";
+        }
     }
 }
