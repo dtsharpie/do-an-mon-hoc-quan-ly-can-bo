@@ -319,6 +319,27 @@
                                 <%# Eval("userName") %></label>
                         </ItemTemplate>
                     </asp:TemplateField>
+                     <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy"
+                        HeaderText="Ngày yêu cầu">
+                        <ItemTemplate>
+                            <%# Eval("ngayyeucau") != DBNull.Value ? Convert.ToDateTime(Eval("ngayyeucau")).ToString("dd/MM/yyyy") : ""%>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                     <asp:TemplateField ItemStyle-CssClass="hosodahuy" HeaderStyle-CssClass="hosodahuy"
+                        HeaderText="Người duyệt">
+                        <ItemTemplate>
+                            <label class="nguoiduyet" id="<%# Eval("nguoiduetid") %>">
+                                <%# Eval("nguoiduyetname")%></label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField ItemStyle-CssClass="hosodahuy" HeaderStyle-CssClass="hosodahuy"
+                        HeaderText="Ngày duyệt">
+                        <ItemTemplate>
+                            <%# Eval("ngayduyet") != DBNull.Value ? Convert.ToDateTime(Eval("ngayduyet")).ToString("dd/MM/yyyy") : ""%>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
                     <asp:TemplateField>
                         <HeaderTemplate>
                             <input id="chkAll" name="firstColumn" type="checkbox" />

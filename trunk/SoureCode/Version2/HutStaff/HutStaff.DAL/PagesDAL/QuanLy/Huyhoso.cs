@@ -18,23 +18,23 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
             }
         }
 
-        public static void Xoa(int shcc)
+        public static void Xoa(int shcc,int userId)
         {
             using (MainDB db = new MainDB())
             {
                 db.Execute("[HutStaff_huyhoso_Xoa]",
-                    new string[] { "@shcc" },
-                    new object[] { shcc });
+                    new string[] { "@shcc" ,"@userId"},
+                    new object[] { shcc ,userId});
             }
         }
 
-        public static void Xoas(string shcc)
+        public static void Xoas(string shcc,int userId)
         {
             using (MainDB db = new MainDB())
             {
                 db.Execute("[HutStaff_huyhoso_Xoas]",
-                    new string[] { "@shcc" },
-                    new object[] { shcc });
+                    new string[] { "@shcc" , "@userId" },
+                    new object[] { shcc, userId });
             }
         }
 

@@ -15,13 +15,13 @@ namespace HutStaff.BO.PagesBO.QuanLy
 
         public static string Xoa(int shcc)
         {
-            DAL.PagesDAL.QuanLy.Huyhoso.Xoa(shcc);
+            DAL.PagesDAL.QuanLy.Huyhoso.Xoa(shcc,BO.Security.CurrentUser.GetCurrentUser().UserId);
             return "alert('Đã xóa');";
         }
 
         public static string Xoas(string shcc)
         {
-            DAL.PagesDAL.QuanLy.Huyhoso.Xoas(shcc);
+            DAL.PagesDAL.QuanLy.Huyhoso.Xoas(shcc, BO.Security.CurrentUser.GetCurrentUser().UserId);
             return "alert('Đã xóa');";
         }
 
