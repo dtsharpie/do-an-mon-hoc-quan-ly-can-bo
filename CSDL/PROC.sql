@@ -3641,6 +3641,384 @@ GO
 
 
 
+CREATE PROCEDURE [dbo].[HutStaff_huyhoso_insert]
+	-- Add the parameters for the stored procedure here
+	@userId int,
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	DEClARE @hoten nvarchar(50)
+	DECLARE @check int
+	SET @check = (  SELECT COUNT(*) FROM [huyhoso] WHERE [shcc] = @shcc )
+	IF(@check = 0 )
+	BEGIN
+		SET @hoten = ( SELECT [hodem] + ' ' + [ten] FROM [soyeu] WHERE [shcc] = @shcc )
+		INSERT INTO [dbo].[huyhoso]
+			   ([user_id]
+			   ,[hoten]
+			   ,[ngayyeucau]
+			   ,[Nguoiduyet]
+			   ,[ngayduyet]
+			   ,[yeucau]
+			   ,[duyet]
+			   ,[trangthai],
+			   [shcc])
+		 VALUES
+			   (@userId,
+			   @hoten,
+			   GETDATE(),
+			   NULL,
+			   NULL,
+			   NULL,
+			   NULL,
+			   0,
+			   @shcc)
+	END
+	ELSE 
+	BEGIN
+		UPDATE [huyhoso]
+		SET [trangthai] = 0,
+		[user_id] = @userId,
+		ngayyeucau = GETDATE(),
+		[Nguoiduyet] = NULL,
+		[ngayduyet] = NULL
+		WHERE [shcc] = @shcc
+	END
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_huyhoso_KhoiPhuc]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_huyhoso_KhoiPhuc] 
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	DELETE [huyhoso]
+	WHERE [shcc] = @shcc
+	UPDATE [soyeu]
+	SET [xoahs] = 0
+	WHERE [shcc] = @shcc
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_huyhoso_KhongXoa]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_huyhoso_KhongXoa] 
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	DELETE [huyhoso]
+	WHERE [shcc] = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_huyhoso_KhongXoas]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_huyhoso_KhongXoas] 
+	-- Add the parameters for the stored procedure here
+	@shcc nvarchar(max)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	DELETE [huyhoso]
+	WHERE [shcc] IN ( SELECT * FROM dbo.fnSplit(@shcc,','))
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_huyhoso_Search]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------
+CREATE PROC [dbo].[HutStaff_huyhoso_Search]
+	@ten nvarchar(50),
+	@trangthai int,
+	@PageSize int,
+	@PageIndex int
+AS	
+SET @ten = dbo.fLocDauTiengViet(@ten)
+	SELECT * FROM (
+		SELECT [huyhoso].shcc, [huyhoso].ngayduyet , u2.[user] as [nguoiduyetname] , u2.id as [nguoiduyetid] , [huyhoso].ngayyeucau  , hodem + ' '  + ten AS hoten, dv, tel, email, u1.id as [userId] ,u1.[user] as [userName] , ROW_NUMBER() OVER(ORDER BY ma_dvql, [huyhoso].shcc ASC) AS Row 
+		FROM [huyhoso]
+		LEFT JOIN soyeu  a
+		ON [huyhoso].shcc = a.shcc
+	    LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		LEFT JOIN [Users] as u1 ON u1.id = [huyhoso].user_id
+		LEFT JOIN [Users] as u2 ON u2.id = [huyhoso].Nguoiduyet
+		WHERE  (@ten='' or dbo.fLocDauTiengViet( hodem+' '+ten) like '%'+ @ten+ '%')
+		AND [huyhoso].trangthai = @trangthai
+) r WHERE Row >  (@PageIndex-1) * @PageSize AND Row <= @PageIndex * @PageSize
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_huyhoso_Xoa]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_huyhoso_Xoa] 
+	-- Add the parameters for the stored procedure here
+	@shcc int,
+	@userId int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	UPDATE [huyhoso]
+	SET [trangthai] = 1,
+	[Nguoiduyet] = @userId,
+	[ngayduyet] = GETDATE()
+	WHERE [shcc] = @shcc
+	UPDATE [soyeu]
+	SET [xoahs] = 1
+	WHERE [shcc] = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_huyhoso_Xoas]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_huyhoso_Xoas] 
+	-- Add the parameters for the stored procedure here
+	@shcc nvarchar(max),
+	@userId int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	UPDATE [huyhoso]
+	SET [trangthai] = 1,
+	[Nguoiduyet] = @userId,
+	[ngayduyet] = GETDATE()
+	WHERE [shcc] IN ( SELECT * FROM dbo.fnSplit(@shcc,','))
+	UPDATE [soyeu]
+	SET [xoahs] = 1
+	WHERE [shcc] IN ( SELECT * FROM dbo.fnSplit(@shcc,','))
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_Insert_Qtkt]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[HutStaff_Insert_Qtkt]
+		@shcc			INT,
+		@htkt		nvarchar(max),
+		@nkt_qtkt		DATETIME,
+		@soqd_qtkt		NVARCHAR(255),
+		@ttk_qtkt		NVARCHAR(255)
+AS
+	BEGIN
+	
+	DECLARE @ma_htkt int
+	SET @ma_htkt = ( SELECT ma_kt FROM [dm_kt] WHERE  LOWER(@htkt) LIKE '%' + LOWER([kt]) + '%'  )
+	INSERT INTO qtkt_tbl (shcc, ma_htkt, nkt_qtkt, soqd_qtkt, ttk_qtkt) 
+	VALUES
+	(
+		@shcc, @ma_htkt, @nkt_qtkt, @soqd_qtkt, @ttk_qtkt
+	)
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_search_soyeu]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------
+CREATE PROC [dbo].[HutStaff_search_soyeu]
+@ma_dv VARCHAR(6),
+	@ten NVARCHAR(50),
+	@gioitinh DECIMAL(1,0),
+	@tutuoi INT,
+	@dentuoi INT,
+	@diencb INT,
+	@khoicanbo INT,
+	@nvtruong INT,
+	@PageIndex int,
+	@PageSize int
+AS	
+SET @ten = dbo.fLocDauTiengViet(@ten)
+if(@tutuoi = -1 and @dentuoi = -1)
+	SELECT shcc, hoten, dv, tel, email FROM (
+		SELECT shcc, hodem + ' '  + ten AS hoten, dv, tel, email, ROW_NUMBER() OVER(ORDER BY ma_dvql,shcc ASC) AS Row 
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE   (@gioitinh = -1 or gt =@gioitinh)
+		 and left(ma_dvql,len(@ma_dv))=@ma_dv 
+		 and (@ten='' or dbo.fLocDauTiengViet( hodem+' '+ten) like '%'+ @ten+ '%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong)
+) r WHERE Row >  (@PageIndex-1) * @PageSize AND Row <= @PageIndex * @PageSize
+else 
+if(@tutuoi>0 and @dentuoi = -1)
+	SELECT shcc, hoten, dv, tel, email FROM (
+		SELECT shcc, hodem + ' '  + ten AS hoten, dv, tel, email, ROW_NUMBER() OVER(ORDER BY ma_dvql,shcc ASC) AS Row 
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE    (@gioitinh = -1 or gt =@gioitinh) and  left(ma_dvql,len(@ma_dv))=@ma_dv and (  @ten='' or dbo.fLocDauTiengViet( hodem+' '+ten) like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong) and year(ntns)>=@tutuoi
+	) r WHERE Row >  (@PageIndex-1) * @PageSize AND Row <= @PageIndex * @PageSize
+else
+if(@tutuoi = -1 and @dentuoi>0)
+	SELECT shcc, hoten, dv, tel, email FROM (
+		SELECT shcc, hodem + ' '  + ten AS hoten, dv, tel, email, ROW_NUMBER() OVER(ORDER BY ma_dvql,shcc ASC) AS Row 
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE    (@gioitinh = -1 or gt =@gioitinh) and  left(ma_dvql,len(@ma_dv))=@ma_dv and (@ten='' or dbo.fLocDauTiengViet( hodem+' '+ten ) like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong) and year(ntns)<=@dentuoi
+) r WHERE Row >  (@PageIndex-1) * @PageSize AND Row <= @PageIndex * @PageSize
+else
+	SELECT shcc, hoten, dv, tel, email FROM (
+	SELECT shcc, hodem + ' '  + ten AS hoten, dv, tel, email, ROW_NUMBER() OVER(ORDER BY ma_dvql,shcc ASC) AS Row 
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE    (@gioitinh = -1 or gt =@gioitinh) and  left(ma_dvql,len(@ma_dv))=@ma_dv and (@ten='' or dbo.fLocDauTiengViet( hodem+' '+ten) like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong) and year(ntns)>=@tutuoi and year(ntns) <=@dentuoi
+) r WHERE Row >  (@PageIndex-1) * @PageSize AND Row <= @PageIndex * @PageSize
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_search_soyeu_count]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[HutStaff_search_soyeu_count]
+	@ma_dv VARCHAR(6),
+	@ten NVARCHAR(50),
+	@gioitinh DECIMAL(1,0),
+	@tutuoi INT,
+	@dentuoi INT,
+	@diencb INT,
+	@khoicanbo INT,
+	@nvtruong INT,
+	@deletes nvarchar(max)
+AS	
+if(@tutuoi = -1 and @dentuoi = -1)
+		SELECT COUNT(*)
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE   (@gioitinh = -1 or gt =@gioitinh) and left(ma_dvql,len(@ma_dv))=@ma_dv and (@ten='' or hodem+' '+ten like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong)
+		and [shcc] NOT IN ( SELECT * FROM fnSplit(@deletes,',') )
+else 
+if(@tutuoi>0 and @dentuoi = -1)
+	SELECT COUNT(*)
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE    (@gioitinh = -1 or gt =@gioitinh) and  left(ma_dvql,len(@ma_dv))=@ma_dv and (@ten='' or hodem+' '+ten like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong) and year(ntns)>=@tutuoi
+		and [shcc] NOT IN ( SELECT * FROM fnSplit(@deletes,',') )
+else
+if(@tutuoi = -1 and @dentuoi>0)
+	SELECT COUNT(*)
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE    (@gioitinh = -1 or gt =@gioitinh) and  left(ma_dvql,len(@ma_dv))=@ma_dv and (@ten='' or hodem+' '+ten like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong) and year(ntns)<=@dentuoi
+		and [shcc] NOT IN ( SELECT * FROM fnSplit(@deletes,',') )
+else
+	SELECT COUNT(*)
+		FROM soyeu  a LEFT JOIN  dm_dv b ON a.ma_dvql = b.ma_dv 
+		WHERE    (@gioitinh = -1 or gt =@gioitinh) and  left(ma_dvql,len(@ma_dv))=@ma_dv and (@ten='' or hodem+' '+ten like '%'+@ten+'%')
+        and ((@diencb = -1)	or dcb=@diencb) and ((@khoicanbo = -1) or kcb=@khoicanbo)
+		and ((@nvtruong = -1) or year(ntgcm)=@nvtruong) and year(ntns)>=@tutuoi and year(ntns) <=@dentuoi
+		and [shcc] NOT IN ( SELECT * FROM fnSplit(@deletes,',') )
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_Update_Bhxh]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[HutStaff_Update_Bhxh]
+		@shcc			INT,
+		@shb			NVARCHAR(20),
+		@ndbh			datetime
+AS
+	BEGIN
+	
+	UPDATE [soyeu]
+	SET [sbh] = @shb,
+		[ndbh] = @ndbh
+	WHERE [shcc] = @shcc
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_User_Authenticate]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROCEDURE [dbo].[HutStaff_User_Authenticate]
 	@username nvarchar(500),
 	@password nvarchar(500)
@@ -3653,8 +4031,367 @@ BEGIN
     AND [isLock] = 0 
     AND ([quyen] = 0 OR [quyen] = 1)
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_Authenticate]    Script Date: 09/28/2012 00:48:51 ******/
+/****** Object:  StoredProcedure [dbo].[HutStaff_User_increment_list]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/* Store hiển thị danh sách nâng lương 
+ * loaiHanNgach: loại hạn ngạch :
+ *			Value = 2: loại 2 năm
+ *				  = 3: loại 3 năm
+ * loaibang: Loại bảng
+ *			Value = 1: Bảng danh sách đến hạn nâng lương
+ *				  = 2: Bảng danh sách xét duyệt 5%
+ *				  =	3: Bảng danh sách vượt khung
+ * thoigian: tính đến thời gian nào (tháng/năm) nhập vào 00:00:00 1/thang/nam
+ */
+ 
+
+CREATE PROC [dbo].[HutStaff_User_increment_list]
+	@pageIndex INT,
+	@pageSize INT,
+	@loaiHanNgach INT, 
+	@loaiBang INT,
+	@thoiGian DATETIME,
+	@delete nvarchar(max)
+AS
+
+DECLARE @hanNgach INT, @tLuong VARCHAR(1)
+		
+SET NOCOUNT ON
+IF (@loaiBang = 1)
+BEGIN
+    IF (@loaiHanNgach = 2)
+	BEGIN 
+		SET @hanNgach = 730
+		SET @tLuong = '2'
+	END
+	ELSE 
+	BEGIN
+		SET @hanNgach = 1095
+		SET @tLuong = '3'
+	 
+	END
+	SELECT *
+	FROM
+	(
+			SELECT sy.hodem,
+				   sy.ten,
+				   sy.shcc,
+				   qt.ma_ngach,
+				   qt.bl_dbl,
+				   qt.hsl,
+				   qt.tgbd_dbl,
+				   ttk_qtdbl,
+				   hspctn,
+				   ROW_NUMBER() OVER (ORDER BY  sy.ten ASC) Row
+			FROM   qtdbl_tbl AS qt
+				   LEFT JOIN soyeu AS sy
+						ON  qt.shcc = sy.shcc
+				   LEFT JOIN dm_ngach AS c
+						ON  qt.ma_ngach = c.ma_ngach
+			WHERE  (
+					   qt.hnay = 1
+					   AND c.ma_ngach NOT LIKE '%old'
+					   AND c.tluong LIKE (@tLuong +  '%')
+					   AND (DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= @hanNgach)
+					   AND qt.bl_dbl < c.totkhung
+					   AND (sy.dcb IN (1,2,3,4))
+					   AND [qt].shcc NOT IN ( SELECT * FROM fnSplit(@delete,',') )
+				   )
+    ) [Temp]
+	WHERE Row >  (@pageIndex-1) * @pageSize AND Row <= @pageIndex * @pageSize
+END
+
+IF (@loaiBang = 2)
+BEGIN
+    IF (@loaiHanNgach = 2)
+    BEGIN
+		SET @hanNgach = 365
+		SET @tLuong = '2'
+    END
+    ELSE 
+    BEGIN 
+		SET @hanNgach = 730
+		SET @tLuong = '3'
+    END
+	SELECT *
+	FROM
+	(
+		SELECT sy.hodem,
+			   sy.ten,
+			   sy.shcc,
+			   qt.ma_ngach,
+			   qt.bl_dbl,
+			   qt.hsl,
+			 qt.tgbd_dbl,
+			   ttk_qtdbl,
+			   hspctn,
+			    ROW_NUMBER() OVER (ORDER BY  sy.ten ASC) Row
+		FROM   qtdbl_tbl AS qt
+			   LEFT JOIN soyeu AS sy
+					ON  qt.shcc = sy.shcc
+			   LEFT JOIN dm_ngach AS c
+					ON  qt.ma_ngach = c.ma_ngach
+		WHERE  (
+				   qt.hnay = 1
+				   AND c.ma_ngach NOT LIKE '%old'
+				   AND c.tluong LIKE (@tLuong + '%')
+				   AND (DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= @hanNgach)
+				   AND qt.bl_dbl < c.totkhung
+				   AND (sy.dcb IN (1,2,3,4))
+				AND [qt].shcc NOT IN ( SELECT * FROM fnSplit(@delete,',') )
+			   )
+	) [Temp]
+	WHERE Row >  (@pageIndex-1) * @pageSize AND Row <= @pageIndex * @pageSize
+END
+
+
+IF (@loaiBang = 3)
+BEGIN
+    IF (@loaiHanNgach = 2)
+    BEGIN
+		SET @hanNgach = 730
+		SET @tLuong = '2'
+    END
+    ELSE 
+    BEGIN 
+		SET @hanNgach = 1095
+		SET @tLuong = '3'
+    END
+    
+    SELECT *
+	FROM
+	(
+		SELECT sy.hodem,
+			   sy.ten,
+			   sy.shcc,
+			   qt.ma_ngach,
+			   qt.bl_dbl,
+			   qt.tgbd_dbl,
+			   qt.hsl,
+			   ttk_qtdbl,
+			   qt.hspctn,
+			    ROW_NUMBER() OVER (ORDER BY  sy.ten ASC) Row
+		FROM   qtdbl_tbl AS qt
+			   LEFT JOIN soyeu AS sy
+					ON  qt.shcc = sy.shcc
+			   LEFT JOIN dm_ngach AS c
+					ON  qt.ma_ngach = c.ma_ngach
+		WHERE  (
+				   qt.hnay = 1
+				   AND c.ma_ngach NOT LIKE '%old'
+				   AND c.tluong LIKE  (@tLuong + '%')
+				   AND (
+							(DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= 365 AND qt.hspctn > 0.00) 
+							OR 
+							(DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= @hanNgach
+									AND qt.hspctn = 0.00
+									AND qt.bl_dbl = c.totkhung
+							 )
+						)
+					
+					AND [qt].shcc NOT IN ( SELECT * FROM fnSplit(@delete,',') )
+				   AND (sy.dcb IN (1,2,3,4))
+			   )
+    ) [Temp]
+	WHERE Row >  (@pageIndex-1) * @pageSize AND Row <= @pageIndex * @pageSize
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_User_increment_list_Count]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/* Store hiển thị danh sách nâng lương 
+ * loaiHanNgach: loại hạn ngạch :
+ *			Value = 2: loại 2 năm
+ *				  = 3: loại 3 năm
+ * loaibang: Loại bảng
+ *			Value = 1: Bảng danh sách đến hạn nâng lương
+ *				  = 2: Bảng danh sách xét duyệt 5%
+ *				  =	3: Bảng danh sách vượt khung
+ * thoigian: tính đến thời gian nào (tháng/năm) nhập vào 00:00:00 1/thang/nam
+ */
+ 
+
+CREATE PROC [dbo].[HutStaff_User_increment_list_Count]
+	@loaiHanNgach INT, 
+	@loaiBang INT,
+	@thoiGian DATETIME,
+	@delete nvarchar(max)
+AS
+
+DECLARE @hanNgach INT, @tLuong VARCHAR(1)
+		
+SET NOCOUNT ON
+IF (@loaiBang = 1)
+BEGIN
+    IF (@loaiHanNgach = 2)
+	BEGIN 
+		SET @hanNgach = 730
+		SET @tLuong = '2'
+	END
+	ELSE 
+	BEGIN
+		SET @hanNgach = 1095
+		SET @tLuong = '3'
+	 
+	END
+
+			SELECT COUNT(*)
+			FROM   qtdbl_tbl AS qt
+				   LEFT JOIN soyeu AS sy
+						ON  qt.shcc = sy.shcc
+				   LEFT JOIN dm_ngach AS c
+						ON  qt.ma_ngach = c.ma_ngach
+			WHERE  (
+					   qt.hnay = 1
+					   AND c.ma_ngach NOT LIKE '%old'
+					   AND c.tluong LIKE (@tLuong +  '%')
+					   AND (DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= @hanNgach)
+					   AND qt.bl_dbl < c.totkhung
+					   AND (sy.dcb IN (1,2,3,4))
+					   AND [qt].shcc NOT IN ( SELECT * FROM fnSplit(@delete,',') )
+				   )
+END
+
+IF (@loaiBang = 2)
+BEGIN
+    IF (@loaiHanNgach = 2)
+    BEGIN
+		SET @hanNgach = 365
+		SET @tLuong = '2'
+    END
+    ELSE 
+    BEGIN 
+		SET @hanNgach = 730
+		SET @tLuong = '3'
+    END
+		SELECT COUNT(*)
+		FROM   qtdbl_tbl AS qt
+			   LEFT JOIN soyeu AS sy
+					ON  qt.shcc = sy.shcc
+			   LEFT JOIN dm_ngach AS c
+					ON  qt.ma_ngach = c.ma_ngach
+		WHERE  (
+				   qt.hnay = 1
+				   AND c.ma_ngach NOT LIKE '%old'
+				   AND c.tluong LIKE (@tLuong + '%')
+				   AND (DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= @hanNgach)
+				   AND qt.bl_dbl < c.totkhung
+				   AND (sy.dcb IN (1,2,3,4))
+					   AND [qt].shcc NOT IN ( SELECT * FROM fnSplit(@delete,',') )
+			   )
+END
+
+
+IF (@loaiBang = 3)
+BEGIN
+    IF (@loaiHanNgach = 2)
+    BEGIN
+		SET @hanNgach = 730
+		SET @tLuong = '2'
+    END
+    ELSE 
+    BEGIN 
+		SET @hanNgach = 1095
+		SET @tLuong = '3'
+    END
+    
+		SELECT COUNT(*)
+		FROM   qtdbl_tbl AS qt
+			   LEFT JOIN soyeu AS sy
+					ON  qt.shcc = sy.shcc
+			   LEFT JOIN dm_ngach AS c
+					ON  qt.ma_ngach = c.ma_ngach
+		WHERE  (
+				   qt.hnay = 1
+				   AND c.ma_ngach NOT LIKE '%old'
+				   AND c.tluong LIKE  (@tLuong + '%')
+				   AND (
+							(DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= 365 AND qt.hspctn > 0.00) 
+							OR 
+							(DATEDIFF(dd, qt.tgbd_dbl, @thoiGian) >= @hanNgach
+									AND qt.hspctn = 0.00
+									AND qt.bl_dbl = c.totkhung
+							 )
+						)
+					
+				   AND (sy.dcb IN (1,2,3,4))
+					   AND [qt].shcc NOT IN ( SELECT * FROM fnSplit(@delete,',') )
+			   )
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_User_Soyeu_Search]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_User_Soyeu_Search]
+	-- Add the parameters for the stored procedure here
+	@pageIndex int,
+	@pageSize int,
+	@keyword nvarchar(200),
+	@xoahs int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM (
+			SELECT [soyeu].* , [dm_dv].dv as [dvql] , ROW_NUMBER() OVER (ORDER BY [shcc] DESC) Row
+			FROM   [soyeu]
+			LEFT JOIN [dm_dv]
+			ON [soyeu].ma_dvql = [dm_dv].ma_dv
+			WHERE (@keyword = '' OR LOWER([hodem] + ' ' + [ten]) LIKE '%' + @keyword + '%' )
+			AND (@xoahs = -1 OR [xoahs] = @xoahs)
+			) [Temp]
+	WHERE Row >  (@pageIndex-1) * @pageSize AND Row <= @pageIndex * @pageSize
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_User_Soyeu_SearchCount]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_User_Soyeu_SearchCount]
+	-- Add the parameters for the stored procedure here
+	@keyword nvarchar(200),
+	@xoahs int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+			SELECT COUNT(*)
+			FROM   [soyeu]
+			WHERE (@keyword = '' OR LOWER([hodem] + ' ' + [ten]) LIKE '%' + @keyword + '%' )
+			AND (@xoahs = -1 OR [xoahs] = @xoahs)
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_Authenticate]    Script Date: 12/8/2012 3:27:40 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3668,6 +4405,99 @@ BEGIN
     FROM [soyeu]
     WHERE [user] = @username AND [pass] = @password AND [xoahs] = 0
 END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_cvcq_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_cvcq_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT [qtcvkn_tbl].* , [dm_cv].cv
+	FROM [qtcvkn_tbl]
+	LEFT JOIN [dm_cv]
+	ON [qtcvkn_tbl].ma_cv = [dm_cv].ma_cv
+	WHERE [qtcvkn_tbl].shcc = @shcc
+	order by nbncvkn asc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_dbl_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_dbl_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qtdbl_tbl].*,[dm_ngach].ten_ngach
+	FROM [qtdbl_tbl]
+	LEFT JOIN [dm_ngach]
+	ON [qtdbl_tbl].ma_ngach = [dm_ngach].ma_ngach
+	WHERE [qtdbl_tbl].shcc = @shcc
+	
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_dhdp_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_dhdp_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+   SELECT [qtcd_tbl].* , [dm_dhdp].dhdp
+   FROM [qtcd_tbl]
+   LEFT JOIN [dm_dhdp]
+   ON [qtcd_tbl].ma_dh = [dm_dhdp].ma_dhdp
+   WHERE [qtcd_tbl].shcc = @shcc
+   ORDER BY ntnpdh
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_dmttp_GetAll]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE PROCEDURE [dbo].[HutStaff_ViewUser_dmttp_GetAll]
@@ -3684,8 +4514,212 @@ BEGIN
 	ON [dm_ttp].ma_ttp = [dm_dd].ma_tinh
     -- Insert statements for procedure here
 END
+
 GO
-/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_soyeu_Thongtinchung_GetById]    Script Date: 09/30/2012 22:40:31 ******/
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_nndd_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+Create PROCEDURE [dbo].[HutStaff_ViewUser_nndd_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [nndd_tbl].* , [dm_qg].qg , [dm_mdnndd].mdnndd
+    FROM [nndd_tbl]
+    LEFT JOIN [dm_qg]
+    ON [nndd_tbl].ndd = [dm_qg].ma_qg
+	LEFT JOIN [dm_mdnndd]
+	ON [nndd_tbl].md_nndd = [dm_mdnndd].ma_mdnndd
+	WHERE [nndd_tbl].shcc = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_qhgd_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_qhgd_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qhgd_tbl].* , [dm_qhgd].qhgd as [quanhegd]
+	FROM [qhgd_tbl]
+	LEFT JOIN [dm_qhgd]
+	ON [qhgd_tbl].qhgd = [dm_qhgd].ma_qhgd
+	WHERE [qhgd_tbl].shcc = @shcc
+	
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_qtbd_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_qtbd_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qtbd_tbl].*
+    FROM [qtbd_tbl]
+    WHERE [qtbd_tbl].shcc = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_qtct_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_qtct_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qtct_tbl].* , [dm_cv].cv , [dm_dcb].dcb
+    FROM [qtct_tbl]
+    LEFT JOIN [dm_cv] 
+    ON [dm_cv].ma_cv = [qtct_tbl].cvct
+    LEFT JOIN [dm_dcb]
+    ON [dm_dcb].ma_dcb = [qtct_tbl].ma_dcb
+    WHERE [qtct_tbl].shcc = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_qtdt_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_qtdt_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qtdtcm_tbl].* , [dm_vbdt].vbdt , [dm_cn].cn
+    FROM [qtdtcm_tbl]
+    LEFT JOIN [dm_vbdt]
+    ON [dm_vbdt].ma_vbdt = [qtdtcm_tbl].vbdtcm
+	LEFT JOIN [dm_cn]
+	ON [dm_cn].ma_cn = [qtdtcm_tbl].ma_cndt
+	WHERE [qtdtcm_tbl].shcc = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_qtkl_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_qtkl_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qtkl_tbl].* , [dm_kl].kl
+	FROM [qtkl_tbl]
+	LEFT JOIN [dm_kl]
+	ON [dm_kl].ma_kl = [qtkl_tbl].ma_htkl
+	WHERE [qtkl_tbl].shcc = @shcc
+	
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_qtkt_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_qtkt_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    SELECT [qtkt_tbl].* , [dm_kt].kt
+	FROM [qtkt_tbl]
+	LEFT JOIN [dm_kt]
+	ON [dm_kt].ma_kt = [qtkt_tbl].ma_htkt
+	WHERE [qtkt_tbl].shcc = @shcc
+	
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_soyeu_Thongtinchung_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3694,12 +4728,13 @@ CREATE PROCEDURE [dbo].[HutStaff_ViewUser_soyeu_Thongtinchung_GetById]
 @shcc INT	
 AS
 BEGIN
-	-- SET NOCOUNT ON added to prevent extra result sets from
-	-- interfering with SELECT statements.
+	DECLARE @hocham nvarchar(max)
+	SET @hocham = ( SELECT vbdt FROM dm_vbdt WHERE ma_vbdt = (select vbdtcm from qtdtcm_tbl where shcc=@shcc  AND hvcn_cndt = 1) )
+	
 	SET NOCOUNT ON;
 	SELECT [soyeu].* , [dm_ttp].ttp , [dm_dv].dv , [noisinh].noisinh,[quequan].quequan , [dm_dt].dt , [dm_tg].tg ,
 			[dm_gdcs].gdcs , [dm_tpxt].tpxt , [dm_tb].tb , [dm_tdhv].tdhv, [dm_tdth].tdth , [dm_tdll].tdll,[dm_tdql].tdql,
-			[dm_dcb].dcb,[dm_tthn].tthn , [dm_kcb].kcb , [hktt].hktt
+			[dm_dcb].dcb as [diencanbo],[dm_tthn].tthn as [honnhan] , [dm_kcb].kcb as [k_cb] , [hktt].hktt , @hocham as hocham
 	FROM [dbo].[soyeu]
 	LEFT JOIN [dm_ttp]
 	ON [soyeu].nc = [dm_ttp].ma_ttp
@@ -3756,7 +4791,80 @@ BEGIN
 	WHERE [soyeu].xoahs = 0
 	AND [soyeu].shcc = @shcc
 END
+
 GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_tdnn_GetById]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_tdnn_GetById]
+	-- Add the parameters for the stored procedure here
+	@shcc int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT [tdnn_tbl].ttk_tdnn , [dm_tdnn].tdnn , [dm_tnn].tnn
+	FROM [tdnn_tbl]
+	LEFT JOIN [dm_tnn]
+	ON [tdnn_tbl].ma_nn = [dm_tnn].ma_tnn
+	LEFT JOIN [dm_tdnn]
+	ON [tdnn_tbl].ma_td = [dm_tdnn].ma_tdnn
+	WHERE [tdnn_tbl].shcc = @shcc
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[HutStaff_ViewUser_UpdateInfo]    Script Date: 12/8/2012 3:27:40 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[HutStaff_ViewUser_UpdateInfo]
+	-- Add the parameters for the stored procedure here
+	@shcc int,
+	@ma_hktt int,
+	@cthktt nvarchar(255),
+	@dctt nvarchar(200),
+	@tel  nvarchar(100),
+	@email nvarchar(100),
+	@scmnd nvarchar(20),
+	@nc int,
+	@ngay_cap datetime
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	UPDATE [soyeu]
+	SET [ma_hktt] = @ma_hktt,
+		[cthktt] = @cthktt,
+		[dctt] = @dctt,
+		[tel] = @tel,
+		[email] = @email,
+		[scmnd] = @scmnd,
+		[nc] =  @nc,
+		[ngay_cap] = @ngay_cap
+	WHERE [shcc] = @shcc
+END
+
+GO
+
 
 
 
