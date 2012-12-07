@@ -28,11 +28,31 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
             }
         }
 
+        public static void Xoas(string shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_huyhoso_Xoas]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
+
         public static void KhongXoa(int shcc)
         {
             using (MainDB db = new MainDB())
             {
                 db.Execute("[HutStaff_huyhoso_KhongXoa]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
+
+        public static void KhongXoas(string shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_huyhoso_KhongXoas]",
                     new string[] { "@shcc" },
                     new object[] { shcc });
             }

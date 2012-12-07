@@ -104,6 +104,24 @@
                 }
             });
 
+            $(".btnXoa").click(function () {
+                if (confirm("Bạn chắc chắn xóa ?")) {
+                    var results = [];
+                    $("input:checkbox.chkId:checked").each(function (i) {
+                        results[i] = $(this).val();
+                    });
+
+                    if (results.length > 0) {
+                        execution({ _fn: 'HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoas',
+                            shccs: results.join(",")
+                        }, true);
+                    }
+                    else {
+                        alert('Bạn phải chọn mục cần xóa!');
+                    }
+                }
+            });
+
 
             $(".undelete-row").click(function () {
                 if (confirm("Bạn có chắc chắn hủy yêu cầu xóa?")) {
@@ -113,6 +131,24 @@
                     $(".table-result tr").not(':first').each(function (i) {
                         $(this).find("td").first().text(i + 1);
                     });
+                }
+            });
+
+            $(".btnKhongXoa").click(function () {
+                if (confirm("Bạn chắc chắn xóa ?")) {
+                    var results = [];
+                    $("input:checkbox.chkId:checked").each(function (i) {
+                        results[i] = $(this).val();
+                    });
+
+                    if (results.length > 0) {
+                        execution({ _fn: 'HutStaff.BO.PagesBO.QuanLy.Huyhoso.KhongXoas',
+                            shccs: results.join(",")
+                        }, true);
+                    }
+                    else {
+                        alert('Bạn phải chọn mục cần không xóa!');
+                    }
                 }
             });
 
