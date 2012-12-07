@@ -109,6 +109,24 @@
                 }
             });
 
+            $(".btnXoa").click(function () {
+                if (confirm("Gửi yêu cầu xóa ?")) {
+                    var results = [];
+                    $("input:checkbox.chkId:checked").each(function (i) {
+                        results[i] = $(this).val();
+                    });
+
+                    if (results.length > 0) {
+                        execution({ _fn: 'HutStaff.BO.PagesBO.TimKiem.SearchBO.Huyhoso_Inserts',
+                            shccs : results.join(",")
+                        }, true);
+                    }
+                    else {
+                        alert('Bạn phải chọn mục cần xóa!');
+                    }
+                }
+            });
+
             $('.paging_button a').click(function () {
                 if ($(this).parent().hasClass('previous')) {
                     searchCurrenPage--;
