@@ -215,17 +215,29 @@ namespace HutStaff.BO.Thongtinchung
     
 
         //Quan he gia dinh
-        public static void InsertQuanHeGiaDinh(string qhgd)
+        public static void InsertQuanHeGiaDinh(int shcc, int qhgd, string ht_qhgd, DateTime ns_qhgd, string nn_qhgd, string cv_qhgd, string no_qhgd, string nct_qhgd, int qt_qhgd, int ndc_qhgd, string ttk_qhgd)
         {
-            DAL.Thongtinchung.Thongtinchung.InsertQuanHeGiaDinh(qhgd);
+            DAL.Thongtinchung.Thongtinchung.InsertQuanHeGiaDinh(shcc, qhgd, ht_qhgd, ns_qhgd, nn_qhgd, cv_qhgd, no_qhgd, nct_qhgd, qt_qhgd, ndc_qhgd, ttk_qhgd);
         }
-        public static void UpdateQuanHeGiaDinh(int id, string qhgd)
+        public static void UpdateQuanHeGiaDinh(int id, int qhgd, string ht_qhgd, DateTime ns_qhgd, string nn_qhgd, string cv_qhgd, string no_qhgd, string nct_qhgd, int qt_qhgd, int ndc_qhgd, string ttk_qhgd)
         {
-            DAL.Thongtinchung.Thongtinchung.UpdateQuanHeGiaDinh(id, qhgd);
+            DAL.Thongtinchung.Thongtinchung.UpdateQuanHeGiaDinh(id, qhgd, ht_qhgd, ns_qhgd, nn_qhgd, cv_qhgd, no_qhgd, nct_qhgd, qt_qhgd, ndc_qhgd, ttk_qhgd);
         }
         public static void DeleteQuanHeGiaDinh(int id)
         {
             DAL.Thongtinchung.Thongtinchung.DeleteQuanHeGiaDinh(id);
+        }
+        public static DataTable FindQuanHeGiaDinhByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindQuanHeGiaDinhByID(id);
+        }
+        public static DataTable GetAllQuanHeGiaDinh()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllQuanHeGiaDinh();
+        }
+        public static DataTable GetAllDanhMucQuocGia()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllDanhMucQuocGia();
         }
 
         //Nuoc Ngoai Da Di
@@ -241,6 +253,23 @@ namespace HutStaff.BO.Thongtinchung
         {
             DAL.Thongtinchung.Thongtinchung.DeleteNuocNgoaiDaDi(id);
         }
+
+
+        public static DataTable GetAllMucDichChuyenDi()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllMucDichChuyenDi();
+        }
+
+        public static DataTable GetAllNguonKinhPhi()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllNguonKinhPhi();
+        }
+
+        public static DataTable FindNuocNgoaiDaDenByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindNuocNgoaiDaDenByID(id);
+        }
+
 
         //Qua Trinh Dao Tao
         public static void InsertQuaTrinhDaoTao(int shcc, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
@@ -268,6 +297,48 @@ namespace HutStaff.BO.Thongtinchung
         public static void DeleteQuyTrinhBoiDuong(int id)
         {
             DAL.Thongtinchung.Thongtinchung.DeleteQuyTrinhBoiDuong(id);
+        }
+
+        public static DataTable GetAllVanBang()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllVanBang();
+        }
+
+
+        public static DataTable GetAllHinhThucBoiDuong()
+
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllHinhThucBoiDuong();
+        }
+
+        public static DataTable FindQuaTrinhBoiDuongByID(int id)
+        {
+            return DAL.Thongtinchung.Thongtinchung.FindQuaTrinhBoiDuongByID(id);
+        }
+
+        //chuc danh chinh quyen
+        public static DataTable GetAllChuVuChinhQuyen()
+        {
+            return DAL.Thongtinchung.Thongtinchung.GetAllChucVuChinhQuyen();
+        }
+
+        public static void InsertChucVuChinhQuyen(int shcc,int  ma_cv, DateTime nbncvkn, DateTime nktcvkn,string ttk_qtct,string donvi)
+        {
+            DAL.Thongtinchung.Thongtinchung.InsertChucVuChinhQuyen(shcc, ma_cv, nbncvkn, nktcvkn, ttk_qtct, donvi);
+        }
+
+        public static void UpdateChucVuChinhQuyen(int id, int ma_cv, DateTime nbncvkn, DateTime nktcvkn, string ttk_qtct, string donvi)
+        {
+            DAL.Thongtinchung.Thongtinchung.UpdateChucVuChinhQuyen(id, ma_cv, nbncvkn, nktcvkn, ttk_qtct, donvi);
+        }
+        public static void DeletetChucVuChinhQuyen(int id)
+        {
+            DAL.Thongtinchung.Thongtinchung.DeleteChucVuChinhQuyen(id);
+        }
+
+        public static DataTable GetChucVuChinhQuyenByID(int id)
+        {
+           return DAL.Thongtinchung.Thongtinchung.GetChucVuChinhQuyenByID(id);
         }
     }
 }

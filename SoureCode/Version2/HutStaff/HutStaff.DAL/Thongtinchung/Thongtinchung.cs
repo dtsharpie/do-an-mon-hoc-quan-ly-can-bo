@@ -443,30 +443,54 @@ namespace HutStaff.DAL.Thongtinchung
 
 
         // Quan He Gia Dinh
-        public static void InsertQuanHeGiaDinh(string qhgd)
+        public static void InsertQuanHeGiaDinh(int shcc,int  qhgd,string ht_qhgd,DateTime ns_qhgd,string nn_qhgd, string cv_qhgd, string no_qhgd, string nct_qhgd,int qt_qhgd, int ndc_qhgd,string ttk_qhgd)
         {
             using (MainDB db = new MainDB())
             {
-                db.Execute("[sp_insert_dm_qhgd]",
-                    new string[] { "@qhgd" },
-                    new object[] { qhgd });
+                db.Execute("[sp_insert_qhgd]",
+                    new string[] { "@shcc", "@qhgd", "@ht_qhgd", "@ns_qhgd", "@nn_qhgd", "@cv_qhgd", "@no_qhgd", "@nct_qhgd", "@qt_qhgd", "@ndc_qhgd", "@ttk_qhgd" },
+                    new object[] { shcc, qhgd, ht_qhgd, ns_qhgd, nn_qhgd, cv_qhgd, no_qhgd, nct_qhgd, qt_qhgd, ndc_qhgd, ttk_qhgd });
             }
         }
 
-        public static void UpdateQuanHeGiaDinh(int id, string qhgd)
+        public static void UpdateQuanHeGiaDinh(int id, int qhgd, string ht_qhgd, DateTime ns_qhgd, string nn_qhgd, string cv_qhgd, string no_qhgd, string nct_qhgd, int qt_qhgd, int ndc_qhgd, string ttk_qhgd)
         {
             using (MainDB db = new MainDB())
             {
-                db.Execute("[sp_update_dm_qhgd]",
-                    new string[] { "@id", "@qhgd" },
-                    new object[] { id, qhgd });
+                db.Execute("[sp_update_qhgd]",
+                     new string[] { "@id", "@qhgd", "@ht_qhgd", "@ns_qhgd", "@nn_qhgd", "@cv_qhgd", "@no_qhgd", "@nct_qhgd", "@qt_qhgd", "@ndc_qhgd", "@ttk_qhgd" },
+                    new object[] { id, qhgd, ht_qhgd, ns_qhgd, nn_qhgd, cv_qhgd, no_qhgd, nct_qhgd, qt_qhgd, ndc_qhgd, ttk_qhgd });
             }
         }
 
         public static void DeleteQuanHeGiaDinh(int id)
         {
             using (MainDB db = new MainDB())
-                db.Execute("[sp_delete_dm_qhgd]", new string[] { "@id" }, new object[] { id });
+                db.Execute("[sp_delete_qhgd]", new string[] { "@id" }, new object[] { id });
+        }
+
+        public static DataTable FindQuanHeGiaDinhByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qhgd]",
+                    new string [] {"@id"},
+                    new object [] {id});
+            }
+        }
+
+        public static DataTable GetAllQuanHeGiaDinh()
+        {
+            using (MainDB db = new MainDB())
+                return db.Execute("[sp_view_all_dm_qhgd]");
+        }
+
+        public static DataTable GetAllDanhMucQuocGia()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_qg]");
+            }
         }
 
         // Nuoc Ngoai Da Di
@@ -491,6 +515,35 @@ namespace HutStaff.DAL.Thongtinchung
             using (MainDB db = new MainDB())
                 db.Execute("[sp_delete_nndd]", new string[] { "@id" }, new object[] { id });
         }
+
+
+        public static DataTable GetAllMucDichChuyenDi()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_mdnndd]");
+            }
+        }
+
+        public static DataTable GetAllNguonKinhPhi()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_nkpnndd]");
+            }
+        }
+
+
+        public static DataTable FindNuocNgoaiDaDenByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_nndd]",
+                    new string[] {"@id"},
+                    new object[] {id});
+            }
+        }
+
 
         // Qua Trinh Dao Tao
         public static void InsertQuaTrinhDaoTao(int shcc, DateTime tgbd_dtcm, DateTime tgkt_dtcm, string csdtcm, int ndtcm, int ma_cndt, int htdtcm, int vbdtcm, string xl_dtcm, int cmpcp_cndt, int hvcn_cndt, string ttk_qtdt)
@@ -535,7 +588,84 @@ namespace HutStaff.DAL.Thongtinchung
         public static void DeleteQuyTrinhBoiDuong(int id)
         {
             using (MainDB db = new MainDB())
-                db.Execute("[sp_update_qtbd]", new string[] { "@id" }, new object[] { id });
+                db.Execute("[sp_delete_qtbd]", new string[] { "@id" }, new object[] { id });
         }
+
+        public static DataTable GetAllVanBang()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_vbdt]");
+            }
+        }
+
+
+        public static DataTable GetAllHinhThucBoiDuong()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_htdt]");
+            }
+        }
+
+
+        public static DataTable FindQuaTrinhBoiDuongByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qtbd]",
+                    new string [] {"@id"},
+                    new object[] {id});
+            }
+        }
+
+
+        // chuc danh chinh quyen
+        public static DataTable GetAllChucVuChinhQuyen()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_view_all_dm_cv]");
+            }
+        }
+
+        public static void InsertChucVuChinhQuyen(int shcc,int  ma_cv, DateTime nbncvkn, DateTime nktcvkn,string ttk_qtct,string donvi)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_insert_qtcvkn]",
+                    new string[]{ "@shcc", "@ma_cv", "@nbncvkn", "@nktcvkn", "@ttk_qtct", "@donvi"},
+                new object[] {shcc, ma_cv, nbncvkn, nktcvkn, ttk_qtct, donvi});
+            }
+        }
+        public static void UpdateChucVuChinhQuyen(int id, int ma_cv, DateTime nbncvkn, DateTime nktcvkn, string ttk_qtct, string donvi)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_update_qtcvkn]",
+                    new string[] { "@id", "@ma_cv", "@nbncvkn", "@nktcvkn", "@ttk_qtct", "@donvi" },
+                new object[] { id, ma_cv, nbncvkn, nktcvkn, ttk_qtct, donvi });
+            }
+        }
+        public static void DeleteChucVuChinhQuyen(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[sp_delete_qtcvkn]",
+                    new string[] {"@id"},
+                    new object[] {id});
+            }
+        }
+
+        public static DataTable GetChucVuChinhQuyenByID(int id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("[sp_find_by_id_qtcvkn]",
+                    new string[] {"@id"},
+                    new object[] {id});
+            }
+        }
+
     }
 }

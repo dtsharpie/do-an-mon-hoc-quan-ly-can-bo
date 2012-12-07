@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using HutStaff.BO.PagesBO.TimKiem;
+using System.Globalization;
 
 namespace HutStaff.Administrator.Pages.TimKiem
 {
@@ -23,6 +24,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 if (!"".Equals(id))
                 {
                     iShcc = Convert.ToInt32(id);
+                    ViewState["ishcc"] = iShcc;
                 }
             }
             catch (Exception e1)
@@ -55,6 +57,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
         protected void Bind()
         {
             //add name
+            iShcc = Int32.Parse( ViewState["ishcc"].ToString());
             DataTable thongtinchitiet = SearchDetailBO.ThongTinChiTiet(iShcc);
             string htbHoVaTenDem = thongtinchitiet.Rows[0]["hodem"].ToString();
             string htbTen = thongtinchitiet.Rows[0]["ten"].ToString();
@@ -75,8 +78,212 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
             //
             DataTable tblData = BO.Thongtinchung.Thongtinchung.Getchucvuchinhquyen(iShcc);
-            GridViewChucVuChinhQuyen.DataSource = tblData;
-            GridViewChucVuChinhQuyen.DataBind();
+            DataColumn themColumns = tblData.Columns.Add("thoigian");
+            foreach (DataRow Row in tblData.Rows)
+            {
+                string namBatDau = !String.IsNullOrEmpty( Row["nbncvkn"].ToString()) ? Convert.ToDateTime(Row["nbncvkn"].ToString()).ToString("MM/yyyy"):"nay";
+                string namKetThuc = !String.IsNullOrEmpty(Row["nktcvkn"].ToString()) ? Convert.ToDateTime(Row["nktcvkn"].ToString()).ToString("MM/yyyy") : "nay";
+                Row["thoigian"] = string.Format("{0} > {1}", namBatDau, namKetThuc);
+            }
+
+            GridView1.DataSource = tblData;
+            GridView1.DataBind();
+
+            DataTable chucvuChinhQuyenDT = BO.Thongtinchung.Thongtinchung.GetAllChuVuChinhQuyen();
+            DropDownListBoSungDuLieuChucVu.DataSource = chucvuChinhQuyenDT;
+            DropDownListBoSungDuLieuChucVu.DataTextField = "cv";
+            DropDownListBoSungDuLieuChucVu.DataValueField = "ma_cv";
+            DropDownListBoSungDuLieuChucVu.DataBind();
+
+
+            DropDownListBoSungDuLieuDonViQuanLy.DataSource = donviquanli;
+            DropDownListBoSungDuLieuDonViQuanLy.DataTextField = "dv";
+            DropDownListBoSungDuLieuDonViQuanLy.DataValueField = "ma_dv";
+            DropDownListBoSungDuLieuDonViQuanLy.DataBind();
+
+
+        }
+
+        protected void saveButtonClick(object sender, EventArgs e)
+        {
+            if (saveButton.Text == "Ghi nhận")
+            {
+                string ngayHT = DropDownListNgayBoNhiem.SelectedValue.ToString();
+                string thangHT = DropDownListThangBoNhiem.SelectedValue.ToString();
+                string namHT = txtNamBoNhiem.Text;
+                if (namHT == "")
+                    return;
+
+                string ngaythangnamHT = string.Format("{0}/{1}/{2}",ngayHT,thangHT,namHT);
+                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+                dtfi.ShortDatePattern = "dd/MM/yyyy";
+                dtfi.DateSeparator = "/";
+                DateTime ngaythangBoNhiem = Convert.ToDateTime(ngaythangnamHT, dtfi);
+
+                string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
+                string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
+                string namKT = txtNamKetThuc.Text;
+                DateTime ngaythangKT;
+
+                if (namKT != "" && !checkBoxDennay.Checked)
+                {
+                    string ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
+                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                }
+                else
+                {
+                    string ngaythangnamKT = string.Format("01/01/1900");
+                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                }
+
+                string donvi = DropDownListBoSungDuLieuDonViQuanLy.SelectedItem.Text;
+                BO.Thongtinchung.Thongtinchung.InsertChucVuChinhQuyen(Int32.Parse(ViewState["ishcc"].ToString()), Int32.Parse(DropDownListBoSungDuLieuChucVu.SelectedValue.ToString()), ngaythangBoNhiem, ngaythangKT, txtThongTinKhac.Text,donvi);
+                Bind();
+            }
+            if (saveButton.Text == "Cập nhật")
+            {
+                string ngayHT = DropDownListNgayBoNhiem.SelectedValue.ToString();
+                string thangHT = DropDownListThangBoNhiem.SelectedValue.ToString();
+                string namHT = txtNamBoNhiem.Text;
+                if (namHT == "")
+                    return;
+
+                string ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+                dtfi.ShortDatePattern = "dd/MM/yyyy";
+                dtfi.DateSeparator = "/";
+                DateTime ngaythangBoNhiem = Convert.ToDateTime(ngaythangnamHT, dtfi);
+
+                string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
+                string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
+                string namKT = txtNamKetThuc.Text;
+                DateTime ngaythangKT;
+
+                if (namKT != "" && !checkBoxDennay.Checked)
+                {
+                    string ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
+                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                }
+                else
+                {
+                    string ngaythangnamKT = string.Format("01/01/1900");
+                    ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
+                }
+
+                string donvi = DropDownListBoSungDuLieuDonViQuanLy.SelectedItem.Text;
+                BO.Thongtinchung.Thongtinchung.UpdateChucVuChinhQuyen(Int32.Parse(ViewState["id"].ToString()), Int32.Parse(DropDownListBoSungDuLieuChucVu.SelectedValue.ToString()), ngaythangBoNhiem, ngaythangKT, txtThongTinKhac.Text, donvi);
+                Bind();
+            }
+            resetData();
+        }
+
+        protected void resetButtonClick(object sender, EventArgs e)
+        {
+            resetData();
+        }
+
+        protected void GridView1Changed(object sender, EventArgs e)
+        {
+            saveButton.Text = "Cập nhật";
+            int id = Int32.Parse(GridView1.SelectedRow.Cells[0].Text);
+            ViewState["id"] = id.ToString();
+
+            DataTable chucvuchinhquyenByID = BO.Thongtinchung.Thongtinchung.GetChucVuChinhQuyenByID(id);
+
+            DataTable chucvuChinhQuyenDT = BO.Thongtinchung.Thongtinchung.GetAllChuVuChinhQuyen();
+            DropDownListBoSungDuLieuChucVu.DataSource = chucvuChinhQuyenDT;
+            DropDownListBoSungDuLieuChucVu.DataTextField = "cv";
+            DropDownListBoSungDuLieuChucVu.DataValueField = "ma_cv";
+            DropDownListBoSungDuLieuChucVu.DataBind();
+            DropDownListBoSungDuLieuChucVu.SelectedValue = !String.IsNullOrEmpty(chucvuchinhquyenByID.Rows[0]["ma_cv"].ToString()) ? chucvuchinhquyenByID.Rows[0]["ma_cv"].ToString() : "0";
+
+            DataTable donviquanli = SearchDetailBO.getAllDonViQuanLi();
+            DropDownListBoSungDuLieuDonViQuanLy.DataSource = donviquanli;
+            DropDownListBoSungDuLieuDonViQuanLy.DataTextField = "dv";
+            DropDownListBoSungDuLieuDonViQuanLy.DataValueField = "ma_dv";
+            DropDownListBoSungDuLieuDonViQuanLy.DataBind();
+            DropDownListBoSungDuLieuDonViQuanLy.SelectedItem.Text = !String.IsNullOrEmpty(chucvuchinhquyenByID.Rows[0]["donvi"].ToString()) ? chucvuchinhquyenByID.Rows[0]["donvi"].ToString() : "Trường Đại Học Bách Khoa Hà Nội";
+
+            txtThongTinKhac.Text = !String.IsNullOrEmpty(chucvuchinhquyenByID.Rows[0]["ttk_qtct"].ToString()) ? chucvuchinhquyenByID.Rows[0]["ttk_qtct"].ToString() : "";
+
+
+            string ngaythangBD = chucvuchinhquyenByID.Rows[0]["nbncvkn"] != null ? Convert.ToDateTime(chucvuchinhquyenByID.Rows[0]["nbncvkn"]).ToString("dd/MM/yyyy") : "";
+            string ngay = ngaythangBD.Substring(0, 2);
+            DropDownListNgayBoNhiem.SelectedValue = ngay;
+            string thang = ngaythangBD.Substring(3, 2);
+            DropDownListThangBoNhiem.SelectedValue = thang;
+
+            string nam = ngaythangBD.Substring(6, 4);
+            txtNamBoNhiem.Text = nam;
+
+            //ngay ket thuc 
+            string ngaythangph = chucvuchinhquyenByID.Rows[0]["nktcvkn"] != null ? Convert.ToDateTime(chucvuchinhquyenByID.Rows[0]["nktcvkn"]).ToString("dd/MM/yyyy") : "";
+            if (ngaythangph == "")
+            {
+                DropDownListNgayKetThuc.SelectedValue = "0";
+                DropDownListThangKetThuc.SelectedValue = "0";
+                txtNamKetThuc.Text = "";
+            }
+            else
+            {
+                string ngaythangnamKT = string.Format("01/01/1900");
+                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+                dtfi.ShortDatePattern = "dd/MM/yyyy";
+                dtfi.DateSeparator = "/";
+                DateTime checkDateTime = Convert.ToDateTime(ngaythangnamKT, dtfi);
+
+                if (Convert.ToDateTime(chucvuchinhquyenByID.Rows[0]["nktcvkn"]) != checkDateTime)
+                {
+                    string ngayKT = ngaythangph.Substring(0, 2);
+                    DropDownListNgayKetThuc.SelectedValue = ngay;
+                    string thangKT = ngaythangph.Substring(3, 2);
+                    DropDownListThangKetThuc.SelectedValue = thang;
+
+                    string namKT = ngaythangph.Substring(6, 4);
+                    txtNamKetThuc.Text = nam;
+                }
+                else
+                {
+                    DropDownListNgayKetThuc.SelectedValue = "0";
+                    DropDownListThangKetThuc.SelectedValue = "0";
+                    txtNamKetThuc.Text = "";
+                    checkBoxDennay.Checked = true;
+                }
+            }
+        }
+
+        protected void Gridview1Deleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int id = Int32.Parse(GridView1.Rows[e.RowIndex].Cells[0].Text);
+            BO.Thongtinchung.Thongtinchung.DeletetChucVuChinhQuyen(id);
+            Bind();
+        }
+
+
+        public void resetData()
+        {
+            saveButton.Text = "Ghi nhận";
+            txtNamKetThuc.Text = "";
+            txtNamKetThuc.Text = "";
+            txtThongTinKhac.Text = "";
+
+            DataTable chucvuChinhQuyenDT = BO.Thongtinchung.Thongtinchung.GetAllChuVuChinhQuyen();
+            DropDownListBoSungDuLieuChucVu.DataSource = chucvuChinhQuyenDT;
+            DropDownListBoSungDuLieuChucVu.DataTextField = "cv";
+            DropDownListBoSungDuLieuChucVu.DataValueField = "ma_cv";
+            DropDownListBoSungDuLieuChucVu.DataBind();
+
+            DataTable donviquanli = SearchDetailBO.getAllDonViQuanLi();
+            DropDownListBoSungDuLieuDonViQuanLy.DataSource = donviquanli;
+            DropDownListBoSungDuLieuDonViQuanLy.DataTextField = "dv";
+            DropDownListBoSungDuLieuDonViQuanLy.DataValueField = "ma_dv";
+            DropDownListBoSungDuLieuDonViQuanLy.DataBind();
+
+            DropDownListNgayBoNhiem.SelectedValue = "0";
+            DropDownListNgayKetThuc.SelectedValue = "0";
+            DropDownListThangBoNhiem.SelectedValue = "0";
+            DropDownListThangKetThuc.SelectedValue = "0";
+
         }
     }
 }

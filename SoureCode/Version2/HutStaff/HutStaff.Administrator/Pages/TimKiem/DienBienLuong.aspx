@@ -182,18 +182,6 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtHeSoLuong1" runat="server" Width="50px"></asp:TextBox>
-                    Hệ số phụ cấp TNVK 
-                    <asp:TextBox ID="txtHeSoPhuCap" runat="server" Width="50px"></asp:TextBox>  
-                    Hệ số CLBL
-                     <asp:TextBox ID="txtHeSoTLBL" runat="server" Width="50px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Phần trăm được hưởng
-                </td>
-                <td>
-                    <asp:DropDownList ID="DropDownlistPhanTramDuocHuong" runat="server"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
