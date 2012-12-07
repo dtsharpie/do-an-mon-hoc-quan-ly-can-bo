@@ -311,23 +311,22 @@
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderText="Xóa">
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy" HeaderText="Xóa">
                         <ItemTemplate>
                             <a href="javascript:void(0)" class="delete-row" shcc="<%# Eval("shcc") %>">Xóa </a>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderText="Không xóa">
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderStyle-CssClass="hosodoihuy" HeaderText="Không xóa">
                         <ItemTemplate>
                             <a href="javascript:void(0)" class="undelete-row" shcc="<%# Eval("shcc") %>">Không xóa
                             </a>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" />
+                        <ItemStyle HorizontalAlign="Center" Width="70px" />
                     </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-CssClass="hosodahuy" HeaderText="Khôi phục">
+                    <asp:TemplateField HeaderStyle-CssClass="hosodahuy" ItemStyle-CssClass="hosodahuy" HeaderText="Khôi phục">
                         <ItemTemplate>
-                            <a href="javascript:void(0)" class="restore-row" shcc="<%# Eval("shcc") %>">Khôi phục
-                            </a>
+                            <a href="javascript:void(0)" class="restore-row" shcc="<%# Eval("shcc") %>">Khôi phục</a>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
