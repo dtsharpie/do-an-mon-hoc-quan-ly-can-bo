@@ -6,23 +6,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
+            var searchCurrenPage = 1;
+            var searchTotalPage = parseInt("<%= Pager1.TotalPage %>");
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(1).addClass('active');
-            $(".delete-row").click(function () {
-                $(this).closest("tr").remove();
-                $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
-                $(".table-result tr").not(':first').each(function (i) {
-                    $(this).find("td").first().text(i + 1);
-                });
-            });
-
-            $(".ddlPageSize").change(function () {
-                $(".ddlPageSize").val($(this).val());
-            });
-
-            $('#chkAll').change(function () {
-                selectAll($(this));
-            });
 
             function loadPage(pageIndex) {
                 var pageSize = parseInt(" <%= Pager1.PageSize %>");
@@ -105,6 +92,45 @@
                     }
                 });
             }
+
+            $(".delete-row").click(function () {
+                if (confirm("Gửi yêu cầu xóa ?")) {
+                    execution({ _fn: "HutStaff.BO.PagesBO.TimKiem.SearchBO.Huyhoso_Insert", shcc: $(this).attr("shcc") }, false);
+                    $(this).closest("tr").remove();
+                    $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
+                    $(".table-result tr").not(':first').each(function (i) {
+                        $(this).find("td").first().text(i + 1);
+                    });
+                }
+            });
+
+            $('.paging_button a').click(function () {
+                if ($(this).parent().hasClass('previous')) {
+                    searchCurrenPage--;
+                    if (searchCurrenPage < 1)
+                        searchCurrenPage = 1;
+                    loadPage(searchCurrenPage);
+                } else if ($(this).parent().hasClass('next')) {
+                    searchCurrenPage++;
+                    if (searchCurrenPage > parseInt($('.paging_button.last').attr('index')))
+                        searchCurrenPage = parseInt($('.paging_button.last').attr('index'));
+                    loadPage(searchCurrenPage);
+                } else {
+                    searchCurrenPage = parseInt($(this).attr('index'));
+                    loadPage(searchCurrenPage);
+                    GenPaging();
+                }
+            });
+
+            $('.paging_button.first a').click();
+
+            $(".ddlPageSize").change(function () {
+                $(".ddlPageSize").val($(this).val());
+            });
+
+            $('#chkAll').change(function () {
+                selectAll($(this));
+            });
         });
     </script>
 </asp:Content>
@@ -116,20 +142,22 @@
     <div id="divSearchForm" class="form-container">
         <label>
             Danh sánh</label>
-        <select style="width: 150px;" id="ddlHuyhoso">
-            <option value="0">Đợi hủy</option>
-            <option value="1">Đã hủy</option>
-        </select>
+        <asp:DropDownList ID="ddlTrangthai" runat="server">
+            <asp:ListItem Value="0" Text="Đợi hủy"></asp:ListItem>
+            <asp:ListItem Value="1" Text="Đã hủy"></asp:ListItem>
+        </asp:DropDownList>
         <label>
             Tìm kiếm theo tên</label>
-        <input id="txtTen" />
+        <asp:TextBox ID="txtTen" runat="server"></asp:TextBox>
+        <asp:Button runat="server" Style="font-weight: normal; padding: 0;" ID="btnOk" CssClass="button"
+            Text="Tìm kiếm" OnClick="btnOk_Click" />
     </div>
     <div class="table-container">
         <div class="header-table">
             <div>
                 &nbsp;
-                <input class="button-link btnXoa" type="button" value="Xóa" />
-                <input class="button-link btnKhongXoa" type="button" value="Không xóa" />
+                <input class="button-link btnXoa hosodoihuy" type="button" value="Xóa" />
+                <input class="button-link btnKhongXoa hosodoihuy" type="button" value="Không xóa" />
                 <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload1" Text="Tải về"
                     OnClick="btnDownload1_Click" />
             </div>
@@ -153,7 +181,7 @@
         </div>
         <div class="main-table">
             <div runat="server" id="divEmpty" style="text-align: center;">
-                Vui lòng chọn các tùy chọn phía trên và ấn nút "Tìm kiếm</div>
+                Không có dữ liệu</div>
             <asp:GridView ShowHeaderWhenEmpty="false" ID="grdData" runat="server" AutoGenerateColumns="False"
                 Height="20px" Width="100%" CssClass="table-result">
                 <AlternatingRowStyle CssClass="row even hide" />
@@ -204,10 +232,18 @@
                             <input shcc="chkFirstColumn<%# Eval("shcc") %>" class="chkId" name="firstColumn"
                                 type="checkbox" value="<%# Eval("shcc") %>" />
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Xóa">
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderText="Xóa">
                         <ItemTemplate>
                             <a href="javascript:void(0)" class="delete-row" shcc="<%# Eval("shcc") %>">Xóa </a>
+                        </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                    <asp:TemplateField ItemStyle-CssClass="hosodoihuy" HeaderText="Không xóa">
+                        <ItemTemplate>
+                            <a href="javascript:void(0)" class="undelete-row" shcc="<%# Eval("shcc") %>">Không xóa
+                            </a>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
@@ -217,8 +253,8 @@
         <div class="footer-table">
             <div>
                 &nbsp;
-                <input class="button-link btnXoa" type="button" value="Xóa" />
-                <input class="button-link btnKhongXoa" type="button" value="Không xóa" />
+                <input class="button-link btnXoa hosodoihuy" type="button" value="Xóa" />
+                <input class="button-link btnKhongXoa hosodoihuy" type="button" value="Không xóa" />
                 <asp:Button runat="server" CssClass="button-link btnExport" ID="btnDownload2" Text="Tải về"
                     OnClick="btnDownload2_Click" />
             </div>

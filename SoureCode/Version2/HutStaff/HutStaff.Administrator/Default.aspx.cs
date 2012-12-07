@@ -22,7 +22,6 @@ namespace HutStaff.Administrator
             {
                 ViewState["tabledata"] = tblData;
             }
-
             DataTable table_dm_dcb = BaoCaoBO.ViewAlldm_dcb();
             DataRow dr = table_dm_dcb.NewRow();
             dr[0] = -1;
@@ -92,7 +91,6 @@ namespace HutStaff.Administrator
         {
             tblData = (DataTable)(ViewState["tabledata"]);
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
-
 
             cells["A1"].Formula = "Họ tên";
             cells["A1"].ColumnWidth = 50;

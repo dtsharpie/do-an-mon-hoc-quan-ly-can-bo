@@ -31,6 +31,33 @@ namespace HutStaff.Administrator.Pages.QuanLy {
         protected global::System.Web.UI.WebControls.HiddenField hdDeletes;
         
         /// <summary>
+        /// ddlTrangthai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrangthai;
+        
+        /// <summary>
+        /// txtTen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTen;
+        
+        /// <summary>
+        /// btnOk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOk;
+        
+        /// <summary>
         /// btnDownload1 control.
         /// </summary>
         /// <remarks>

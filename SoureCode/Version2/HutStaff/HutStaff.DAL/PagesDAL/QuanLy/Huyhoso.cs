@@ -17,5 +17,25 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     new object[] { ten, trangthai, pageIndex, pageSize });
             }
         }
+
+        public static void Xoa(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_huyhoso_Xoa]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
+
+        public static void KhongXoa(int shcc)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("[HutStaff_huyhoso_KhongXoa]",
+                    new string[] { "@shcc" },
+                    new object[] { shcc });
+            }
+        }
     }
 }
