@@ -32,5 +32,6 @@
                 <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btnGrid"/>
             </Columns>
         </asp:GridView>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" />
     </p>
 </asp:Content>
