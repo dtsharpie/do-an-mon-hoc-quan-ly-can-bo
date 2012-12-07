@@ -24,7 +24,7 @@ namespace HutStaff.Administrator.Services
 
         public void ProcessRequest(HttpContext context)
         {
-            sClientScript = (HttpContext.Current.Session[HutStaff.Common.Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[HutStaff.Common.Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location=( window.location.href.indexOf('Xemthongtin') > -1 ? '/Xemthongtin' : '' ) + '/Login.aspx?action=logout';</script>" : CallMethod();
+            sClientScript = (HttpContext.Current.Session[HutStaff.Common.Constants.Session.ViewSessionName] == null && HttpContext.Current.Session[HutStaff.Common.Constants.Session.AdminSessionName] == null) ? "alert('Bạn cần xác thực lại thông tin');window.location=( window.location.href.indexOf('Xemthongtin') > -1 ? '/Xemthongtin' : '' ) + '/Login.aspx?action=logout';" : CallMethod();
             context.Response.ContentType = "application/x-javascript";
             context.Response.Write(sClientScript);
         }

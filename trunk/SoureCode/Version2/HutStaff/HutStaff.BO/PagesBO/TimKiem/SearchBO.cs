@@ -40,5 +40,11 @@ namespace HutStaff.BO.PagesBO.TimKiem
             return " $('#spSending').hide(0);alert('Đã gửi thành công');";
         }
 
+
+        public static string Huyhoso_Insert(int shcc)
+        {
+            DAL.PagesDAL.TimKiem.SearchDAL.Huyhoso_Insert(Security.CurrentUser.GetCurrentUser().UserId, shcc);
+            return "alert('Đã gửi yêu cầu xóa của bạn.');";
+        }
     }
 }

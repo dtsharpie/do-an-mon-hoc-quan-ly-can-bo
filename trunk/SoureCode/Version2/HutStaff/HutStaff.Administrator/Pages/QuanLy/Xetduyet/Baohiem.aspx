@@ -36,12 +36,12 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Số bhxh">
                         <ItemTemplate>
-                            <%# Eval("htkt") %></ItemTemplate>
+                            <%# Eval("sobh") %></ItemTemplate>
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Ngày bắt đầu đóng bhxh">
                         <ItemTemplate>
-                            <%# Eval("nam") %></ItemTemplate>
+                            <%# Eval("ngay") %></ItemTemplate>
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
                 </Columns>

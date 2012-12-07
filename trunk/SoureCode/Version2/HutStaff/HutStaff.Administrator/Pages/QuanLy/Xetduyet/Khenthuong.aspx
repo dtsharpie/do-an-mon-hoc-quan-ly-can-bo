@@ -46,7 +46,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Quyết định khen thưởng số">
                         <ItemTemplate>
-                            <%# Eval("nam") %></ItemTemplate>
+                            <%# Eval("so") %></ItemTemplate>
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Lý do">

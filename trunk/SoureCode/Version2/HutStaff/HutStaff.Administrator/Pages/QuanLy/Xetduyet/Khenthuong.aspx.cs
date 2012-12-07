@@ -118,7 +118,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet
                 DataRow dr = tblData.NewRow();
                 for (int i = 0; i < totalColumn; i++)
                 {
-                    dr[i] = worksheet.Cells[indexRow, indexColumn + i].Value != null ? worksheet.Cells[indexRow, indexColumn + i].Value.ToString() : "";
+                    dr[i] = worksheet.Cells[indexRow, indexColumn + i].Text != null ? worksheet.Cells[indexRow, indexColumn + i].Text.ToString() : "";
                 }
                 tblData.Rows.Add(dr);
                 indexRow++;
@@ -129,7 +129,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.Xetduyet
         {
             foreach (SpreadsheetGear.IRange range in row)
             {
-                if (range.Value != null && !String.IsNullOrEmpty(range.Value.ToString()))
+                if (range.Text != null && !String.IsNullOrEmpty(range.Text.ToString()))
                 {
                     return false;
                 }
