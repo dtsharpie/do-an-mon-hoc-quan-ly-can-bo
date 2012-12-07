@@ -82,26 +82,23 @@
                 </AlternatingItemTemplate>
             </asp:Repeater>
         </table>--%>
-            <asp:GridView ID="GridView1" runat="server" class="table-result" AutoGenerateColumns="False"
-                OnRowDeleting="GridViewDeleting" OnSelectedIndexChanged="GridViewChanged">
-                <Columns>
-                    <asp:BoundField DataField="id" />
-                    <asp:BoundField DataField="thoigian" HeaderText="Thời gian" />
-                    <asp:BoundField DataField="cud" HeaderText="Chức vụ" />
-                    <asp:BoundField DataField="ttk_qtct" HeaderText="Thông tin khác" />
-                    <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
-                    <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
-                </Columns>
-            </asp:GridView>
+            <div class="table-container">
+                <asp:GridView ID="GridView1" runat="server" class="table-result" AutoGenerateColumns="False"
+                    OnRowDeleting="GridViewDeleting" OnSelectedIndexChanged="GridViewChanged">
+                    <Columns>
+                        <asp:BoundField DataField="id" />
+                        <asp:BoundField DataField="thoigian" HeaderText="Thời gian" />
+                        <asp:BoundField DataField="cud" HeaderText="Chức vụ" />
+                        <asp:BoundField DataField="ttk_qtct" HeaderText="Thông tin khác" />
+                        <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+                        <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
         <br />
-        <div>
-            <table class="table-result">
-                <tr class="title">
-                    <td>
-                        Bổ sung dữ liệu
-                    </td>
-                </tr>
+        <div class="form-container">
+            <table>
                 <tr>
                     <td class="title">
                         Thời gian bắt đầu<td>
@@ -221,7 +218,7 @@
                         Chức vụ
                     </td>
                     <td>
-                        <asp:DropDownList ID="DropDownListChucVu" runat="server" />
+                        <asp:DropDownList ID="DropDownListChucVu" Width="280px" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -229,10 +226,12 @@
                         Thông tin khác
                     </td>
                     <td>
-                        <asp:TextBox ID="txtThongTinKhac" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtThongTinKhac" runat="server" Width="500px" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
+                    <td>
+                    </td>
                     <td>
                         <asp:Button ID="saveButton" OnClick="saveButtonClick" runat="server" Text="Ghi nhận" />
                         <asp:Button ID="resetButton" OnClick="resetButtonClick" runat="server" Text="Làm lại" />
