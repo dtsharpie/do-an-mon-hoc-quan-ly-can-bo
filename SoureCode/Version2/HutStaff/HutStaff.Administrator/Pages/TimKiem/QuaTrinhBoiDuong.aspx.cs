@@ -214,10 +214,15 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 string ngayHT = DropDownListNgayBatDau.SelectedValue.ToString();
                 string thangHT = DropDownListThangBatDau.SelectedValue.ToString();
                 string namHT = txtNamBatDau.Text;
+                string ngaythangnamHT;
                 if (namHT == "")
-                    return;
-
-                string ngaythangnamHT = string.Format("{0}/{1}/{2}",ngayHT,thangHT,namHT);
+                {
+                    ngaythangnamHT = "01/01/1900";
+                }
+                else
+                {
+                    ngaythangnamHT = string.Format("{0}/{1}/{2}", ngayHT, thangHT, namHT);
+                }
                 DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
                 dtfi.ShortDatePattern = "dd/MM/yyyy";
                 dtfi.DateSeparator = "/";
@@ -226,9 +231,15 @@ namespace HutStaff.Administrator.Pages.TimKiem
                 string ngayKT = DropDownListNgayKetThuc.SelectedValue.ToString();
                 string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
                 string namKT = txtNamKetThuc.Text;
-                 if (namHT == "")
-                    return;
-                string ngaythangnamKT = string.Format("{0}/{1}/{2}",ngayKT,thangKT,namKT);
+                string ngaythangnamKT;
+                if (namKT == "")
+                {
+                    ngaythangnamKT = "01/01/1900";
+                }
+                else
+                {
+                    ngaythangnamKT = string.Format("{0}/{1}/{2}", ngayKT, thangKT, namKT);
+                }
                 DateTime ngaythangKT = Convert.ToDateTime(ngaythangnamKT, dtfi);
 
                 BO.Thongtinchung.Thongtinchung.InsertQuyTrinhBoiDuong(Int32.Parse(ViewState["ishcc"].ToString()), ngaythangHuongTu, ngaythangKT, txtNoiBoiDuong.Text, Int32.Parse(DropDownListHinhThucBoiDuong.SelectedValue.ToString()), txtNoiDungBoiDuong.Text, DropDownListVanBang.SelectedItem.Text, txtDanhGia.Text, txtThongTinKhac.Text);
