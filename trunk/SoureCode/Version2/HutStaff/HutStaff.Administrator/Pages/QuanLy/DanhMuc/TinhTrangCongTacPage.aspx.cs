@@ -90,8 +90,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// </summary>
         protected override void OnDataGridViewRowDeleting(object sender, GridViewDeleteEventArgs args)
         {
-            string ma_tt = GetCellContent(args.RowIndex, 0);
-            DanhMucTable.Delete(ma_tt);
+            DanhMucTable.Delete(GetCellContent(args.RowIndex, 0));
             
             txbMaTinhTrang.Enabled = true;
             txbMaTinhTrang.ReadOnly = true;
