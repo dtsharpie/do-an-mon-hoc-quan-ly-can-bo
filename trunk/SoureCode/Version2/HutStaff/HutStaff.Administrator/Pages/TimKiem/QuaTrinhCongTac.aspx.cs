@@ -180,7 +180,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
             string thangKT = DropDownListThangKetThuc.SelectedValue.ToString();
             string namKT = txtNamKetThuc.Text;
             string ngaythangnamKT;
-            if (namHT == "")
+            if (namKT == "")
             {
                 ngaythangnamKT = "01/01/1900";
             }
