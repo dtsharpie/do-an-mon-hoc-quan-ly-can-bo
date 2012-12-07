@@ -3,7 +3,9 @@
 
 <%@ Register Src="../../../Controls/Common/SlideQuanLy.ascx" TagName="SlideQuanLy"
     TagPrefix="uc1" %>
+    
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link type="text/css" rel="stylesheet" href="/Styles/default.css"/>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#divSideBar li:eq(2) ul").css("display", "block");
@@ -22,7 +24,9 @@
         <asp:Button ID="saveButton" runat="server" Text="Lưu lại" CssClass="button" />
         <br />
         <br />
-        <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="dataGridView" runat="server" AutoGenerateColumns="false" 
+            CssClass="forumline" CellPadding="4" CellSpacing="1" 
+            onrowdatabound="dataGridView_RowDataBound" Width="100%">
             <Columns>
                 <asp:CommandField ShowSelectButton="true" />
                 <asp:CommandField ShowDeleteButton="true" />

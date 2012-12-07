@@ -63,6 +63,17 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         }
 
         #endregion
+
+        protected void dataGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            for (int i = 0; i < e.Row.Cells.Count; i++)
+            {
+                e.Row.Cells[i].Style.Add("background-color"," #EFEFEF");
+                e.Row.Cells[i].Style.Add("border-color", " #FFFFFF");
+                e.Row.Cells[i].Style.Add("font-size", " 13px");
+                e.Row.Cells[i].Style.Add("padding", " 3px");
+            }
+        }
         
     }
 }
