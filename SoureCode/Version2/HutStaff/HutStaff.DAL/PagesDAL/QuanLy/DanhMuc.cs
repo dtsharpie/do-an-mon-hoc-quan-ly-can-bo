@@ -18,5 +18,33 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     new object[] { hh });
             }
         }
+
+        public static DataTable GetDSCSDT(int pageIndex, int pageSize, ref int total)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_view_by_page_qtdtcm_tbl",
+                    new string[] { "@PageIndex", "@PageSize", "@Total" },
+                    new object[] { pageIndex, pageSize, total });
+            }
+        }
+
+        public static DataTable CountDSCSDT()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_count_csdtcm", new string[]{}, new object[]{});
+            }
+        }
+
+        public static void UpdateDSCSDT(string oldCSDTCM, string newCSDTCM)
+        {
+            using (MainDB db = new MainDB())
+            {
+                db.Execute("sp_update_csdtcm_qtdtcm",
+                    new string[] { "@old_csdtcm", "@new_csdtcm" },
+                    new object[] { oldCSDTCM, newCSDTCM });
+            }
+        }
     }
 }
