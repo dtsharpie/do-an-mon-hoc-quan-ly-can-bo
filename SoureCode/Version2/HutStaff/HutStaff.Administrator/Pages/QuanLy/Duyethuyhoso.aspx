@@ -96,8 +96,8 @@
             $(".delete-row").click(function () {
                 if (confirm("Bạn có chắc chắn muốn xóa?")) {
                     execution({ _fn: "HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoa", shcc: $(this).attr("shcc") }, false);
-                    $(this).closest("tr").remove();
                     $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
+                    $(this).closest("tr").remove();
                     $(".table-result tr").not(':first').each(function (i) {
                         $(this).find("td").first().text(i + 1);
                     });
@@ -105,16 +105,22 @@
             });
 
             $(".btnXoa").click(function () {
-                if (confirm("Bạn chắc chắn xóa ?")) {
+                if (confirm("Gửi yêu cầu xóa ?")) {
                     var results = [];
                     $("input:checkbox.chkId:checked").each(function (i) {
+                        $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                         results[i] = $(this).val();
+                        $(this).closest("tr").remove();
                     });
 
                     if (results.length > 0) {
+                        $(".table-result tr").not(':first').each(function (i) {
+                            $(this).find("td").first().text(i + 1);
+                        });
+
                         execution({ _fn: 'HutStaff.BO.PagesBO.QuanLy.Huyhoso.Xoas',
                             shccs: results.join(",")
-                        }, true);
+                        }, false);
                     }
                     else {
                         alert('Bạn phải chọn mục cần xóa!');
@@ -138,16 +144,22 @@
                 if (confirm("Bạn chắc chắn xóa ?")) {
                     var results = [];
                     $("input:checkbox.chkId:checked").each(function (i) {
+                        $("#<%= hdDeletes %>").val($("#<%= hdDeletes %>").val() + "," + $(this).val());
                         results[i] = $(this).val();
+                        $(this).closest("tr").remove();
                     });
 
                     if (results.length > 0) {
+                        $(".table-result tr").not(':first').each(function (i) {
+                            $(this).find("td").first().text(i + 1);
+                        });
+
                         execution({ _fn: 'HutStaff.BO.PagesBO.QuanLy.Huyhoso.KhongXoas',
                             shccs: results.join(",")
-                        }, true);
+                        }, false);
                     }
                     else {
-                        alert('Bạn phải chọn mục cần không xóa!');
+                        alert('Bạn phải chọn mục cần xóa!');
                     }
                 }
             });
