@@ -6,6 +6,7 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(1).addClass('active');
+            $(".ddl").chosen({ no_results_text: "Không có kết quả phù hợp" });
         });
     </script>
 </asp:Content>
@@ -13,24 +14,24 @@
         <uc1:SlideQuanLy runat="server" ID="SlideQuanLy" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div class="content">
+    <div class="form-container">
         <h2>Chuyển đổi đơn vị</h2>
-        <table>
+        <table class="table-form" width="100%">
             <tr>
                 <td>Đơn vị ban đầu</td>
                 <td></td>
                 <td>Đơn vị sẽ chuyển đến</td>
             </tr>
             <tr>
-                <td><asp:DropDownList runat="server" class="ddl" id="ddlDonViNguon" AutoPostBack="true" OnSelectedIndexChanged="ddlDonViNguon_SelectedIndexChanged"></asp:DropDownList></td>
+                <td><asp:DropDownList runat="server" CssClass="ddl" id="ddlDonViNguon" AutoPostBack="true" OnSelectedIndexChanged="ddlDonViNguon_SelectedIndexChanged"></asp:DropDownList></td>
                 <td><asp:Button runat="server" ID="btnChuyen" Text="Chuyển" OnClientClick="return confirm('Bạn có thực sự muốn chuyển đơn vị những cán bộ này không?');"
-                        onclick="btnChuyen_Click" /></td>
-                <td><asp:DropDownList runat="server" class="ddl" id="ddlDonViDich"></asp:DropDownList></td>
+                        onclick="btnChuyen_Click" CssClass="button"/></td>
+                <td><asp:DropDownList runat="server" CssClass="ddl" id="ddlDonViDich"></asp:DropDownList></td>
             </tr>
         </table>
         <asp:Label runat="server" ID="lblMessage"></asp:Label>
         <asp:GridView ID="gvCanBoChuyen" runat="server" AutoGenerateColumns="False" DataKeyNames="shcc" 
-            DataSourceID="SqlDataSource_CanBoChuyen" CellPadding="4" 
+            CellPadding="4" 
             ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
@@ -56,9 +57,5 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource_CanBoChuyen" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:QLCB %>" 
-           >
-        </asp:SqlDataSource>
     </div>
 </asp:Content>

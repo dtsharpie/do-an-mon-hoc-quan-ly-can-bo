@@ -32,21 +32,21 @@ namespace HutStaff.Administrator.Pages.QuanLy
 
         protected void btnChuyen_Click(object sender, EventArgs e)
         {
-            int iTotal = NguoiDungBO.ChuyenDonVi(ddlDonViNguon.SelectedValue, ddlDonViDich.SelectedValue);
-            //Response.Redirect(Request.Url.AbsoluteUri);
+            NguoiDungBO.ChuyenDonVi(ddlDonViNguon.SelectedValue, ddlDonViDich.SelectedValue);
             lblMessage.Text = "Đã chuyển xong.";
             gvCanBoChuyen.Visible = false;
         }
 
         protected void ddlDonViNguon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlDataSource_CanBoChuyen.SelectCommand = "SELECT [shcc], [hodem], [ten] FROM [soyeu] WHERE ma_dvql = '" + ddlDonViNguon.SelectedValue + "'";
+            DataTable table = NguoiDungBO.ViewSoyeuByDVQL(ddlDonViNguon.SelectedValue);
+            gvCanBoChuyen.DataSource = table;
             gvCanBoChuyen.DataBind();
 
             if (gvCanBoChuyen.Rows.Count == 0)
                 lblMessage.Text = "Đơn vị này hiện không có cán bộ nào!";
             else
-                lblMessage.Text = "Danh sách cán bộ sẽ chuyển";
+                lblMessage.Text = "Danh sách cán bộ sẽ chuyển:";
             gvCanBoChuyen.Visible = true;
         }
     }

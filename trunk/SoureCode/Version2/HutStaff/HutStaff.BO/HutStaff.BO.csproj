@@ -49,6 +49,7 @@
     <Compile Include="PagesBO\TimKiem\SearchDetailBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLy\Bang\SoYeu.cs" />
+    <Compile Include="QuanLy\DanhMuc\CongViecDamNhiemTable.cs" />
     <Compile Include="QuanLy\DanhMuc\DanhMucTableBase.cs" />
     <Compile Include="QuanLy\DanhMuc\DanToc.cs" />
     <Compile Include="QuanLy\DanhMuc\DiaDanh.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="QuanLy\DanhMuc\GiaDinhChinhSach.cs" />
     <Compile Include="QuanLy\DanhMuc\HocHamTable.cs" />
     <Compile Include="QuanLy\DanhMuc\KhoiCanBo.cs" />
+    <Compile Include="QuanLy\DanhMuc\MucDichDiNuocNgoaiTable.cs" />
     <Compile Include="QuanLy\DanhMuc\ThanhPhanXuatThan.cs" />
     <Compile Include="QuanLy\DanhMuc\ThuongBinh.cs" />
     <Compile Include="QuanLy\DanhMuc\TinhThanhPho.cs" />

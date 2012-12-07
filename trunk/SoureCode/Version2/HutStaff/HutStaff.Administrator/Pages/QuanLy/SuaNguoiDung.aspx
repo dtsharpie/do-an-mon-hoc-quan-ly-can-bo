@@ -6,6 +6,7 @@
         $(document).ready(function () {
             $('#divHeader .nav a').removeClass("active");
             $('#divHeader .nav a').eq(1).addClass('active');
+            $(".ddl").chosen({ no_results_text: "Không có kết quả phù hợp" });
         });
     </script>
     <script type="text/javascript">
@@ -63,10 +64,7 @@
     <div class="content" style="height:100%; width:100%;">
     <h1 id="title"></h1>
     <div style="height:100%; width:100%;">
-<%--    <form id="form1" runat="server" defaultbutton="cmdSubmit" align="center"
-        action="SuaNguoiDung.aspx" method="post" onsubmit="return ValidateForm();" 
-        style="background-color: #f2f2f2; height:100%; width:100%;">
---%>        <asp:Label runat="server" ID="lblMessage"></asp:Label>
+        <asp:Label runat="server" ID="lblMessage"></asp:Label>
         <asp:HiddenField runat="server" ID="hfAddEdit" />
         <asp:HiddenField runat="server" ID="hfUserID" />
         <div>
@@ -99,12 +97,11 @@
             </tr>
             <tr>
                 <td><asp:Button CssClass="lnk-button" runat="server" ID="cmdSubmit" Text="Tạo người dùng" UseSubmitBehavior="true" OnClientClick="return ValidateForm()" /></td>
-                <td><asp:Button CssClass="lnk-button" runat="server" Text="Cancel" OnClientClick="return Cancel();" ID="cmdCancel" UseSubmitBehavior="false"/><a id="lnkChangePass" runat="server">Đổi mật khẩu</a></td>
+                <td><asp:Button CssClass="lnk-button" runat="server" Text="Quay lại" OnClientClick="return Cancel();" ID="cmdCancel" UseSubmitBehavior="false"/><a id="lnkChangePass" runat="server">Đổi mật khẩu</a></td>
             </tr>
         </table>
         
         </div>
-    <%--</form>--%>
     </div>
     </div>
 

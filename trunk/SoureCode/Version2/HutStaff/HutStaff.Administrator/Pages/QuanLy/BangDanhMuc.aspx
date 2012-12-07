@@ -48,7 +48,7 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_cvdn.php">09 - Bảng danh mục công việc đảm nhận</a>
+                    <a href="DanhMuc/CongViecDamNhiemPage.aspx">09 - Bảng danh mục công việc đảm nhận</a>
                 </td>
                 <td class="row1">
                     <a href="DanhMuc/TenNgoaiNguPage.aspx">10 - Bảng danh mục tên ngoại ngữ </a>
@@ -131,7 +131,7 @@
                     <a href="DanhMuc/dm_ttnndd.php">29 - Bảng danh mục tình trạng đi nước ngoài</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/dm_mdnndd.php">30 - Bảng danh mục mục đích đi nước ngoài</a>
+                    <a href="DanhMuc/MucDichDiNuocNgoai.aspx">30 - Bảng danh mục mục đích đi nước ngoài</a>
                 </td>
             </tr>
             <tr>

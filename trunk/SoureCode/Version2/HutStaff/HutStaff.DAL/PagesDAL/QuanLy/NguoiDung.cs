@@ -9,6 +9,15 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
 {
     public class NguoiDung
     {
+        public static DataTable ViewAllUserWithDM()
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_view_all_user_with_dv",
+                    new string[] { },
+                    new object[] { });
+            }
+        }
         public static DataTable InsertUser(string ma_dv, string user, string passwordMD5, bool quyen, bool isLock)
         {
             using (MainDB db = new MainDB())
@@ -25,6 +34,16 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                 return db.Execute("sp_update_user",
                     new string[] { "@id", "@ma_dv", "@user", "@quyen", "@isLock" },
                     new object[] { id, ma_dv, user, quyen, isLock });
+            }
+        }
+
+        public static DataTable DeleteUser(string id)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_delete_user",
+                    new string[] { "@id" },
+                    new object[] { id });
             }
         }
 
@@ -81,13 +100,22 @@ namespace HutStaff.DAL.PagesDAL.QuanLy
                     return Int32.Parse(dt.Rows[0]["id"].ToString());
             }
         }
-        public static int ChuyenDonVi(string ma_dvqlNguon, string ma_dvqlDich)
+        public static DataTable ChuyenDonVi(string ma_dvql_nguon, string ma_dvql_dich)
         {
             using (MainDB db = new MainDB())
             {
-                string sqlCmd = "UPDATE soyeu SET ma_dvql = '" + ma_dvqlDich + "' WHERE ma_dvql = '" + ma_dvqlNguon + "'";
-
-                return db.Execute(sqlCmd).Rows.Count;
+                return db.Execute("sp_chuyen_donvi",
+                    new string[] { "@ma_dvql_nguon", "@ma_dvql_dich" },
+                    new object[] { ma_dvql_nguon, ma_dvql_dich });
+            }
+        }
+        public static DataTable ViewSoyeuByDVQL(string ma_dvql)
+        {
+            using (MainDB db = new MainDB())
+            {
+                return db.Execute("sp_view_soyeu_by_dvql",
+                    new string[] { "@ma_dvql" },
+                    new object[] { ma_dvql });
             }
         }
     }
