@@ -12,5 +12,28 @@ namespace HutStaff.BO.PagesBO.QuanLy
         {
             return DAL.PagesDAL.QuanLy.DanhMuc.InsertHH(hh);
         }
+
+        public static DataTable GetDSCSDT(int pageIndex, int pageSize, ref int total)
+        {
+            return DAL.PagesDAL.QuanLy.DanhMuc.GetDSCSDT(pageIndex, pageSize, ref total);
+        }
+
+        public static int? CountDSCSDT() 
+        {
+            DataTable table = DAL.PagesDAL.QuanLy.DanhMuc.CountDSCSDT();
+            try
+            {
+                return Int32.Parse(table.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static void UpdateDSCSDT(string oldCSDTCM, string newCSDTCM)
+        {
+            DAL.PagesDAL.QuanLy.DanhMuc.UpdateDSCSDT(oldCSDTCM, newCSDTCM);
+        }
     }
 }
