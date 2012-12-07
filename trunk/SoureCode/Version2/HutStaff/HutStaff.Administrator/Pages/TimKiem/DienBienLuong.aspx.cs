@@ -115,7 +115,7 @@ namespace HutStaff.Administrator.Pages.TimKiem
             DataColumn themColumns = ngachDataTable.Columns.Add("stupidDataBase");
             foreach (DataRow Row in ngachDataTable.Rows)
             {
-                string ten_ngach = Row["nbncvkn"].ToString();
+                string ten_ngach = Row["ten_ngach"].ToString();
                 string ma_ngach = Row["ma_ngach"].ToString();
 
                 Row["stupidDataBase"] = string.Format("{0} ({1})", ten_ngach, ma_ngach);

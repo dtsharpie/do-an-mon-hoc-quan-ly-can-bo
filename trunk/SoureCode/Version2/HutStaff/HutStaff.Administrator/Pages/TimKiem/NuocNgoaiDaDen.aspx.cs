@@ -153,24 +153,27 @@ namespace HutStaff.Administrator.Pages.TimKiem
 
             
             //ngay bat dau
-            string ngaythangDi = !String.IsNullOrEmpty(nuocdadi.Rows[0]["tgbd_bd"].ToString()) ? Convert.ToDateTime(nuocdadi.Rows[0]["tgbd_bd"].ToString()).ToString("dd/MM/yyyy") : "";
-            string ngay = ngaythangDi.Substring(0, 2);
-            DropDownListNgayBatDau.SelectedValue = ngay;
-            string thang = ngaythangDi.Substring(3, 2);
-            DropDownListThangBatDau.SelectedValue = thang;
-            try
+            string ngaythangDi = !String.IsNullOrEmpty(nuocdadi.Rows[0]["nd_nndd"].ToString()) ? Convert.ToDateTime(nuocdadi.Rows[0]["nd_nndd"].ToString()).ToString("dd/MM/yyyy") : "";
+            if (ngaythangDi == "" || ngaythangDi == "01/01/1900")
             {
+                DropDownListNgayBatDau.SelectedValue = "0";
+                DropDownListThangBatDau.SelectedValue = "0";
+                txtNamBatDau.Text = "";
+            }
+            else
+            {
+                string ngay = ngaythangDi.Substring(0, 2);
+                DropDownListNgayBatDau.SelectedValue = ngay;
+                string thang = ngaythangDi.Substring(3, 2);
+                DropDownListThangBatDau.SelectedValue = thang;
                 string nam = ngaythangDi.Substring(6, 4);
                 txtNamBatDau.Text = nam;
-            }
-            catch (Exception)
-            {
- 
+
             }
 
             //ngay ket thuc 
-            string ngaythangph = !String.IsNullOrEmpty(nuocdadi.Rows[0]["tgkt_bd"].ToString()) ? Convert.ToDateTime(nuocdadi.Rows[0]["nv_nndd"].ToString()).ToString("dd/MM/yyyy") : "";
-            if (ngaythangph == "")
+            string ngaythangph = !String.IsNullOrEmpty(nuocdadi.Rows[0]["nv_nndd"].ToString()) ? Convert.ToDateTime(nuocdadi.Rows[0]["nv_nndd"].ToString()).ToString("dd/MM/yyyy") : "";
+            if (ngaythangph == "" || ngaythangph == "01/01/1900")
             {
                 DropDownListNgayKetThuc.SelectedValue = "0";
                 DropDownListThangKetThuc.SelectedValue = "0";
@@ -178,34 +181,14 @@ namespace HutStaff.Administrator.Pages.TimKiem
             }
             else
             {
-                string ngaythangnamKT = string.Format("01/01/1900");
-                DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
-                dtfi.ShortDatePattern = "dd/MM/yyyy";
-                dtfi.DateSeparator = "/";
-                DateTime checkDateTime = Convert.ToDateTime(ngaythangnamKT, dtfi);
 
-                if (Convert.ToDateTime(nuocdadi.Rows[0]["tgkt_bd"].ToString()) != checkDateTime)
-                {
-                    string ngayKT = ngaythangph.Substring(0, 2);
-                    DropDownListNgayKetThuc.SelectedValue = ngayKT;
-                    string thangKT = ngaythangph.Substring(3, 2);
-                    DropDownListThangKetThuc.SelectedValue = thangKT;
-                    try
-                    {
-                        string namKT = ngaythangph.Substring(6, 4);
-                        txtNamKetThuc.Text = namKT;
-                    }
-                    catch (Exception)
-                    {
- 
-                    }
-                }
-                else
-                {
-                    DropDownListNgayKetThuc.SelectedValue = "0";
-                    DropDownListThangKetThuc.SelectedValue = "0";
-                    txtNamKetThuc.Text = "";
-                }
+                string ngayKT = ngaythangph.Substring(0, 2);
+                DropDownListNgayKetThuc.SelectedValue = ngayKT;
+                string thangKT = ngaythangph.Substring(3, 2);
+                DropDownListThangKetThuc.SelectedValue = thangKT;
+                string namKT = ngaythangph.Substring(6, 4);
+                txtNamKetThuc.Text = namKT;
+
             }
         }
 
