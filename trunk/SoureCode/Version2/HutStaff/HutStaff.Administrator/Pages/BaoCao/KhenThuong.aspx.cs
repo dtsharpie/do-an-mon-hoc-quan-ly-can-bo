@@ -34,9 +34,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
                 tbFrom.Text = "2007";
 
                 tbTo.Text = DateTime.Now.Year.ToString();
-
-                //dropdownlist Đơn vị cac cấp ... da làm
-                //ddlUnit123: dropdownList cua các đơn vị cấp 1,2,3
+             
                 DataTable table_123_dm_dv = BaoCaoBO.ViewAlldm_dv();
                 ddlUnit123.DataSource = table_123_dm_dv;
                 ddlUnit123.DataValueField = table_123_dm_dv.Columns[0].ColumnName;
@@ -79,11 +77,6 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
                 ViewState["tabledata"] = tblData;
             }
-
-
-
-
-
         }
 
         protected void btnExport_Click(object sender, EventArgs e)
@@ -167,7 +160,34 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnDownload1_Click(object sender, EventArgs e)
         {
+            tblData = (DataTable)(ViewState["tabledata"]);
+            cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["kt"], tblData.Columns["nkt_qtkt"] }, 2, 1);
 
+
+            cells["A1"].Formula = "Họ tên";
+            cells["A1"].ColumnWidth = 50;
+
+            cells["B1"].Formula = "Số hiệu công chức";
+            cells["B1"].ColumnWidth = 25;
+
+            cells["C1"].Formula = "Đơn vị";
+            cells["C1"].ColumnWidth = 50;
+
+            cells["D1"].Formula = "Khen thưởng";
+            cells["D1"].ColumnWidth = 75;
+
+            cells["E1"].Formula = "Năm khen thưởng";
+            cells["E1"].ColumnWidth = 25;
+
+            cells["A1:E1"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            cells["A1:E1"].Font.Bold = true;
+            workbook.Worksheets[0].Name = "Khen thưởng";
+
+            Response.Clear();
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + "khen_thuong_" + DateTime.Now.ToString("yyyyMMdd") + ".xls");
+            workbook.SaveToStream(Response.OutputStream, SpreadsheetGear.FileFormat.XLS97);
+            Response.End();
         }
 
         private SpreadsheetGear.IRange FromDataTable(SpreadsheetGear.IWorksheet worksheet, DataColumn[] columns, int indexRow, int indexColumn)

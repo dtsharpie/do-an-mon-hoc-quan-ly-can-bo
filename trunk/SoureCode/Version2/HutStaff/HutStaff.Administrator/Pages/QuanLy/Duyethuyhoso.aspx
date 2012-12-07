@@ -329,7 +329,7 @@
                      <asp:TemplateField ItemStyle-CssClass="hosodahuy" HeaderStyle-CssClass="hosodahuy"
                         HeaderText="Người duyệt">
                         <ItemTemplate>
-                            <label class="nguoiduyet" id="<%# Eval("nguoiduetid") %>">
+                            <label class="nguoiduyet" id="<%# Eval("nguoiduyetid") %>">
                                 <%# Eval("nguoiduyetname")%></label>
                         </ItemTemplate>
                     </asp:TemplateField>
