@@ -8,14 +8,14 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Thời gian
-                </td>
-                <td>
+                </th>
+                <th>
                     Chức vụ
-                <td>
+                <th>
                     Thông tin khác
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="grdData">
                 <ItemTemplate>

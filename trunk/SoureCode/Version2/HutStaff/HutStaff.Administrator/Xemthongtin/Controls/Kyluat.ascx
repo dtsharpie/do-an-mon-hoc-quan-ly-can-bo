@@ -7,21 +7,21 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Hình thức kỷ luật
-                </td>
-                <td>
+                </th>
+                <th>
                     Năm KL
-                </td>
-                <td>
+                </th>
+                <th>
                     Năm xóa
-                </td>
-                <td>
+                </th>
+                <th>
                     Lý do kỷ luật
-                </td>
-                <td>
+                </th>
+                <th>
                     Thông tin khác
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>

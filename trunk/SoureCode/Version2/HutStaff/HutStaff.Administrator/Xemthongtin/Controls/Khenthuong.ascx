@@ -8,18 +8,18 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Hình thức khen thưởng
-                </td>
-                <td>
+                </th>
+                <th>
                     Năm khen
-                </td>
-                <td>
+                </th>
+                <th>
                     Lý do khen thưởng
-                </td>
-                <td>
+                </th>
+                <th>
                     Thông tin khác
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>

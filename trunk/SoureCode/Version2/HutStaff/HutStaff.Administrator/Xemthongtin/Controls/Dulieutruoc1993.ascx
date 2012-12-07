@@ -8,24 +8,24 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Thời gian
-                </td>
-                <td>
+                </th>
+                <th>
                     Chức danh, chức vụ, ngạch lương, đơn vị công tác
-                </td>
-                <td>
+                </th>
+                <th>
                     HSL
-                </td>
-                <td>
+                </th>
+                <th>
                     Phụ cấp
-                </td>
-                <td>
+                </th>
+                <th>
                     Số tháng
-                </td>
-                <td>
+                </th>
+                <th>
                     Tổng tiền
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="grdData">
                 <ItemTemplate>

@@ -8,15 +8,15 @@
     <div class="divInfo" style="margin-top: 10px;">
         <table class="table-result">
             <tr class="title">
-                <td>
+                <th>
                     Chức danh
-                </td>
-                <td>
+                </th>
+                <th>
                     Ngày tháng năm phong
-                </td>
-                <td>
+                </th>
+                <th>
                     Thông tin khác
-                </td>
+                </th>
             </tr>
             <asp:Repeater runat="server" ID="rptData">
                 <ItemTemplate>
