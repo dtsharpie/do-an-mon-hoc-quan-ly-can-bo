@@ -84,12 +84,16 @@ namespace HutStaff.Administrator
                 spInfo1.InnerText = ". Trang " + ((Pager1.CurrentPage - 1) * Pager1.PageSize + 1).ToString() + "-" + ((Pager1.PageSize * Pager1.CurrentPage < iCount) ? Pager1.PageSize * Pager1.CurrentPage : iCount).ToString() + "/" + iCount.ToString();
                 spInfo2.InnerText = ". Trang " + ((Pager1.CurrentPage - 1) * Pager1.PageSize + 1).ToString() + "-" + ((Pager1.PageSize * Pager1.CurrentPage < iCount) ? Pager1.PageSize * Pager1.CurrentPage : iCount).ToString() + "/" + iCount.ToString();
             }
-
         }
 
         protected void btnDownload2_Click(object sender, EventArgs e)
         {
             tblData = ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).Length > 0 ? ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).CopyToDataTable() : null;
+            if (tblData == null)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Null", "alert('Chưa có dữ liệu');", true);
+                return;
+            }
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
             cells["A1"].Formula = "Họ tên";
@@ -121,6 +125,11 @@ namespace HutStaff.Administrator
         protected void btnDownload1_Click(object sender, EventArgs e)
         {
             tblData = ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).Length > 0 ? ((DataTable)(ViewState["tabledata"])).Select(GenQuery()).CopyToDataTable() : null;
+            if (tblData == null)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Null", "alert('Chưa có dữ liệu');", true);
+                return;
+            }
             cells = FromDataTable(workbook.Worksheets[0], new DataColumn[] { tblData.Columns["hoten"], tblData.Columns["shcc"], tblData.Columns["dv"], tblData.Columns["tel"], tblData.Columns["email"] }, 2, 1);
 
 
