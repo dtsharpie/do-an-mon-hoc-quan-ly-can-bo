@@ -22,6 +22,8 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
                 InsertColumn(0, "ma_dv", "Mã đơn vị");
                 InsertColumn(1, "dv", "Đơn vị");
                 FillData();
+
+                EditState = EditState.Insert;
             }
         }
 
@@ -64,7 +66,8 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 
         protected override void OnDataGridViewRowDeleting(object sender, GridViewDeleteEventArgs args)
         {
-            DanhMucTable.Delete(GetCellContent(args.RowIndex, 0));
+            string ma_dv = GetCellContent(args.RowIndex, 0);
+            DanhMucTable.Delete(ma_dv);
         }
     }
 }

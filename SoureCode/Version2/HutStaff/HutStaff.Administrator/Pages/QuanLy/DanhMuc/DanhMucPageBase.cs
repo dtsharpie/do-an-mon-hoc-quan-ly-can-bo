@@ -38,6 +38,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
             if (!Page.IsPostBack)
             {
                 this.Load += new EventHandler(OnLoaded);
+                EditState = EditState.None;
             }
         }
 
@@ -196,6 +197,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         protected void OnInsertButtonClick_(object sender, EventArgs args)
         {
             EditState = EditState.Insert;
+            Master.SaveButton.Enabled = false;
             OnInsertButtonClick(sender, args);
         }
         
@@ -204,11 +206,6 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         /// </summary>
         protected void OnSaveButtonClick_(object sender, EventArgs args)
         {
-            if (EditState == EditState.None)
-            {
-                return;
-            }
-        
             OnSaveButtonClick(sender, args);
             FillData();
         }
@@ -219,6 +216,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
         protected void OnDataGridViewSelectedIndexChanged_(object sender, EventArgs args)
         {
             EditState = EditState.Update;
+            Master.SaveButton.Enabled = true;
             OnDataGridViewSelectedIndexChanged(sender, args);
         }
         
@@ -230,6 +228,7 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
             OnDataGridViewRowDeleting(sender, args);
             FillData();
             EditState = EditState.None;
+            Master.SaveButton.Enabled = false;
         }
 
         #endregion
