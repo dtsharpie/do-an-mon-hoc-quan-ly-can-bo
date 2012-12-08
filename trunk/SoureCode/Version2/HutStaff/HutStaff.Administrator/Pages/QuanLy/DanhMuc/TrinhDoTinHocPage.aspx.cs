@@ -34,27 +34,54 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 
         protected override void OnInsertButtonClick(object sender, EventArgs args)
         {
-            string ma_tdth = txbMaTrinhDoTinHoc.Text;
-            string tdth = txbTrinhDoTinHoc.Text;
-            DanhMucTable.Insert(new string[] { ma_tdth, tdth });
+            // Chưa ở trạng thái Insert thì chuyển sang Insert.
+            if (EditState != EditState.Insert)
+            {
+                EditState = EditState.Insert;
+
+                txbMaTrinhDoTinHoc.Enabled = false;
+                txbMaTrinhDoTinHoc.Text = "Auto";
+
+                txbTrinhDoTinHoc.Text = "";
+            }
+            // Còn không thì add vào csdl.
+            else if (EditState == EditState.Insert)
+            {
+                DanhMucTable.Insert(new string[] { txbTrinhDoTinHoc.Text });
+                txbTrinhDoTinHoc.Text = "";
+            }
         }
 
         protected override void OnSaveButtonClick(object sender, EventArgs args)
         {
-            string ma_tdth = txbMaTrinhDoTinHoc.Text;
-            string tdth = txbTrinhDoTinHoc.Text;
-            DanhMucTable.Update(new string[] { ma_tdth, tdth });
+            // Không ở EditState.Update khi page vừa được load, đang ở trạng thái EditState.None
+            if (EditState == EditState.Update)
+            {
+                string ma_hh = txbMaTrinhDoTinHoc.Text;
+                string hh = txbTrinhDoTinHoc.Text;
+                DanhMucTable.Update(new string[] { ma_hh, hh });
+            }
         }
 
         protected override void OnDataGridViewSelectedIndexChanged(object sender, EventArgs args)
         {
-            txbMaTrinhDoTinHoc.Text = GetCellContent(dataGridView.SelectedIndex, 0);
-            txbTrinhDoTinHoc.Text = GetCellContent(dataGridView.SelectedIndex, 1);
+            int selectedIndex = dataGridView.SelectedIndex;
+
+            txbMaTrinhDoTinHoc.ReadOnly = true;
+            txbMaTrinhDoTinHoc.Enabled = true;
+            txbMaTrinhDoTinHoc.Text = GetCellContent(selectedIndex, 0);
+
+            txbTrinhDoTinHoc.Text = GetCellContent(selectedIndex, 1);
         }
 
         protected override void OnDataGridViewRowDeleting(object sender, GridViewDeleteEventArgs args)
         {
             DanhMucTable.Delete(GetCellContent(args.RowIndex, 0));
+
+            txbMaTrinhDoTinHoc.Enabled = true;
+            txbMaTrinhDoTinHoc.ReadOnly = true;
+            txbTrinhDoTinHoc.Text = "";
+            txbMaTrinhDoTinHoc.Text = "";
         }
     }
 }

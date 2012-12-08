@@ -5,12 +5,12 @@
         <asp:TableRow>
             <asp:TableHeaderCell Text="Mã mục đích" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbMaTinhTrang" />
+                <asp:TextBox runat="server" ID="txbMaMucDichDiNuocNgoai" />
             </asp:TableCell></asp:TableRow>
         <asp:TableRow>
             <asp:TableHeaderCell Text="Mục đích" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbTinhTrangCongTac" />
+                <asp:TextBox runat="server" ID="txbMucDichDiNuocNgoai" />
             </asp:TableCell></asp:TableRow>
     </asp:Table>
 </asp:Content>

@@ -9,7 +9,7 @@
         <asp:TableRow>
             <asp:TableHeaderCell Text="Tên quốc gia" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbTenQuocGia" />
+                <asp:TextBox runat="server" ID="txbQuocGia" />
             </asp:TableCell></asp:TableRow>
     </asp:Table>
 </asp:Content>
