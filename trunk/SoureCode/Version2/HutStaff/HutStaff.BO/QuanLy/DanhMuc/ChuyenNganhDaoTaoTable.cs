@@ -9,37 +9,58 @@ namespace HutStaff.BO.QuanLy.DanhMuc
     {
         protected override string TableName
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return "dm_cn";
+            }
         }
 
         protected override string[] CheckExistedParamNames
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] { "cn" };
+            }
         }
 
         protected override string[] DeleteParamNames
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] { "id" };
+            }
         }
 
         protected override string[] FindByIdParamNames
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] { "id" };
+            }
         }
 
         protected override string[] FindByNameParamNames
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] { "cn" };
+            }
         }
 
         protected override string[] InsertParamNames
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] { "cn" };
+            }
         }
 
         protected override string[] UpdateParamNames
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] { "id", "cn" };
+            }
         }
     }
 }

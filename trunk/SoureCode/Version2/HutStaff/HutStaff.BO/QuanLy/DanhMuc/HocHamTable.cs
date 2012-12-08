@@ -19,7 +19,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] {};
+                return new string[] { "hh" };
             }
         }
 
@@ -27,7 +27,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id" };
             }
         }
 
@@ -35,7 +35,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "id" };
             }
         }
 
@@ -43,7 +43,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                throw new NotImplementedException();
+                return new string[] { "hh" };
             }
         }
 
