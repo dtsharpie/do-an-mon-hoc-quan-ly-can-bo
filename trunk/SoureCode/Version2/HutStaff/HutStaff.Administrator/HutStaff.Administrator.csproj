@@ -656,6 +656,7 @@
     <Content Include="Pages\QuanLy\DanhMuc\ChucVuDoanThePage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\ChuyenNganhDaoTaoPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\CongViecDamNhiemPage.aspx" />
+    <Content Include="Pages\QuanLy\DanhMuc\CoSoDaoTao.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\DanhHieuPage.aspx" />
     <Content Include="Pages\QuanLy\DanhMuc\DienCanBoPage.aspx" />
@@ -1326,6 +1327,12 @@
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\CongViecDamNhiemPage.aspx.designer.cs">
       <DependentUpon>CongViecDamNhiemPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTao.aspx.cs">
+      <DependentUpon>CoSoDaoTao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTao.aspx.designer.cs">
+      <DependentUpon>CoSoDaoTao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTaoChuyenMonPage.aspx.cs">
       <DependentUpon>CoSoDaoTaoChuyenMonPage.aspx</DependentUpon>

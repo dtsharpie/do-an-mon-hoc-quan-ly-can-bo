@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HutStaff.BO.QuanLy.DanhMuc;
 
 namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 {
@@ -11,14 +12,19 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                InsertColumn(0, "ma_dhdp", "Mã số");
+                InsertColumn(1, "dhdp", "Danh hiệu được phong");
+                FillData();
+            }
         }
 
         protected override BO.QuanLy.DanhMuc.DanhMucTableBase DanhMucTable
         {
             get
             {
-                throw new NotImplementedException();
+                return new DanhHieuTable();
             }
         }
 
