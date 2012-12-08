@@ -22,20 +22,26 @@
                 <ItemTemplate>
                     <tr>
                         <td>
+                            <%# ((Eval("nbncvdt") != DBNull.Value) ? Convert.ToDateTime(Eval("nbncvdt")).ToString("MM/yyyy") : "") + ">" + ((Eval("nktcvdt") != DBNull.Value) ? Convert.ToDateTime(Eval("nktcvdt")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
+                            <%# Eval("cud") %>
                         </td>
                         <td>
+                            <%# Eval("ttk_qtct")%>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <AlternatingItemTemplate>
                     <tr class="even">
                         <td>
+                            <%# ((Eval("nbncvdt") != DBNull.Value) ? Convert.ToDateTime(Eval("nbncvdt")).ToString("MM/yyyy") : "") + ">" + ((Eval("nktcvdt") != DBNull.Value) ? Convert.ToDateTime(Eval("nktcvdt")).ToString("MM/yyyy") : "nay")%>
                         </td>
                         <td>
+                            <%# Eval("cud") %>
                         </td>
                         <td>
+                            <%# Eval("ttk_qtct")%>
                         </td>
                     </tr>
                 </AlternatingItemTemplate>

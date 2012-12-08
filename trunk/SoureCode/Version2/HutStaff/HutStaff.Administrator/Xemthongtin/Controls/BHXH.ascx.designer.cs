@@ -13,12 +13,12 @@ namespace HutStaff.Administrator.Xemthongtin.Controls {
     public partial class BHXH {
         
         /// <summary>
-        /// grdData control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater grdData;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
