@@ -158,7 +158,7 @@
                     <a href="DanhMuc/QuanHuyenPage.aspx">33 - Bảng danh mục quận, huyện Việt Nam</a>
                 </td>
                 <td class="row1">
-                    <a href="DanhMuc/CoSoDaoTaoChuyenMonPage.aspx">34 - Bảng danh mục cơ sở đào tạo chuyên
+                    <a href="DanhMuc/CoSoDaoTao.aspx">34 - Bảng danh mục cơ sở đào tạo chuyên
                         môn</a>
                 </td>
             </tr>

@@ -11,7 +11,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return "dm_cvdt";
+                return "dm_cu";
             }
         }
 
@@ -19,7 +19,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "cvdt" };
+                return new string[] { "cu" };
             }
         }
 
@@ -43,7 +43,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "cvdt" };
+                return new string[] { "cu" };
             }
         }
 
@@ -51,7 +51,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "cvdt" };
+                return new string[] { "cu" };
             }
         }
 
@@ -59,7 +59,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "id", "cvdt" };
+                return new string[] { "id", "cu" };
             }
         }
     }
