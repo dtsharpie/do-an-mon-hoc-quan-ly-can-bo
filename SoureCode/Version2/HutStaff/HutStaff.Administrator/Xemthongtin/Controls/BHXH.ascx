@@ -5,95 +5,23 @@
     </h1>
     <hr />
     <div class="divInfo" style="margin-top: 10px;">
-        <table class="table-result">
-            <tr class="title">
-                <td rowspan="2">
-                    Thời gian
-                </td>
-                <td rowspan="2">
-                    Chức danh, chức vụ, ngạch lương và đơn vị công tác
-                </td>
-                <td rowspan="2">
-                    HSL cơ bản
-                </td>
-                <td rowspan="2">
-                    Các khoản phụ cấp
-                </td>
-                <td rowspan="2">
-                    Số tháng đóng bảo hiểm
-                </td>
-                <td rowspan="2">
-                    Phụ cấp thâm niên vượt khung
-                </td>
-                <td colspan="5">
-                    Số tiền đóng BHXH 1 tháng<br />
-                    (Lương cơ bản)
-                </td>
-            </tr>
-            <tr class="title">
-                <td style="border-top: 2px solid #FFFFFF;">
-                    BHXH
-                </td>
-                <td style="border-top: 2px solid #FFFFFF;">
-                    BHYT
-                </td>
-                <td style="border-top: 2px solid #FFFFFF;">
-                    BHTN
-                </td>
-                <td style="border-top: 2px solid #FFFFFF;">
-                    Tổng tiền
-                </td>
-            </tr>
-            <asp:Repeater runat="server" ID="grdData">
-                <ItemTemplate>
-                    <tr>
-                        <td align="center">
-                        </td>
-                        <td>
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <AlternatingItemTemplate>
-                    <tr class="even">
-                        <td align="center">
-                        </td>
-                        <td>
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                        <td align="center">
-                        </td>
-                    </tr>
-                </AlternatingItemTemplate>
-            </asp:Repeater>
-        </table>
+        <asp:GridView ID="GridView1" runat="server" CssClass="table-result" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="id" Visible="false" />
+                <asp:BoundField DataField="thoigian" HeaderText="Thời gian" />
+                <%--<asp:BoundField DataField="tgbd_dbl" Visible="false" />
+                            <asp:BoundField DataField="tgkt_dbl" Visible="false" />--%>
+                <asp:BoundField DataField="mota" HeaderText="Chức danh, chức vụ, ngạch lương và đơn vị công tác" />
+                <asp:BoundField DataField="hsl" HeaderText="Hệ số lương cơ bản" />
+                <asp:BoundField DataField="hspccv" HeaderText="Phụ cấp chức vụ" />
+                <asp:BoundField DataField="hspckv" HeaderText="Phụ cấp vượt khung" />
+                <asp:BoundField DataField="hspctn" HeaderText="Phụ cấp thâm niên giáo dục" />
+                <asp:BoundField DataField="tonghsl" HeaderText="Tổng hệ số lương" />
+                <asp:BoundField DataField="sothangdongbh" HeaderText="Số tháng đóng bảo hiểm" />
+                <asp:BoundField DataField="tongtienbhxh" HeaderText="Tổng số tiền đóng BHXH" />
+                <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
+                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
+            </Columns>
+        </asp:GridView>
     </div>
 </div>

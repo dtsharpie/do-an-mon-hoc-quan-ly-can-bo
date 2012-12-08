@@ -151,8 +151,6 @@
                             <asp:BoundField DataField="tonghsl" HeaderText="Tổng hệ số lương"/>
                             <asp:BoundField DataField="sothangdongbh" HeaderText="Số tháng đóng bảo hiểm"/>
                             <asp:BoundField DataField="tongtienbhxh" HeaderText = "Tổng số tiền đóng BHXH"/>
-                            <asp:CommandField SelectText="Sửa" ShowSelectButton="True" />
-                            <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" />
                         </Columns>
                 </asp:GridView>
             </div>

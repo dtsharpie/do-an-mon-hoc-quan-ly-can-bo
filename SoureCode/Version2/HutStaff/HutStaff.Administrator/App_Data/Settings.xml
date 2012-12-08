@@ -16,7 +16,6 @@
     <menu type="view" name="Quá trình đào tạo" permission="0" alias="xtt-qua-trinh-dao-tao" path="/Xemthongtin/Controls/Quatrinhdaotao.ascx"></menu>
     <menu type="view" name="Quá trình bồi dưỡng" permission="0" alias="xtt-qua-trinh-boi-duong" path="/Xemthongtin/Controls/Quatrinhboiduong.ascx"></menu>
     <menu type="view" name="Quá trình công tác" permission="0" alias="xtt-qua-trinh-cong-tac" path="/Xemthongtin/Controls/Quatrinhcongtac.ascx"></menu>
-    <menu type="view" name="Đánh giá công chức" permission="0" alias="xtt-danh-gia-cong-chuc" path="/Xemthongtin/Controls/Danhgiacongchuc.ascx"></menu>
     <menu type="view" name="Thông tin BHXH" permission="0" alias="xtt-thong-tin-bhxh" path="/Xemthongtin/Controls/BHXH.ascx"></menu>
 
     <menu type="admin" name="Xét tăng lương" permission="0" alias="view-tang-luong" path="/Controls/Quanly/Import/TangLuong/View.ascx"></menu>
