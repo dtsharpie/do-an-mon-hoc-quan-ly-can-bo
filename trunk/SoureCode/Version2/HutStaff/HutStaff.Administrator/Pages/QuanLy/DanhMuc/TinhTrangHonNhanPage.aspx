@@ -5,11 +5,8 @@
             <asp:TableHeaderCell Text="Mã số" />
             <asp:TableCell>
                 <asp:TextBox runat="server" ID="txbMaTinhTrangHonNhan" />
-            </asp:TableCell></asp:TableRow>
-        <asp:TableRow>
+            </asp:TableCell></asp:TableRow><asp:TableRow>
             <asp:TableHeaderCell Text="Tình trạng hôn nhân" />
             <asp:TableCell>
                 <asp:TextBox runat="server" ID="txbTinhTrangHonNhan" />
-            </asp:TableCell></asp:TableRow>
-    </asp:Table>
-</asp:Content>
+            </asp:TableCell></asp:TableRow></asp:Table></asp:Content>
