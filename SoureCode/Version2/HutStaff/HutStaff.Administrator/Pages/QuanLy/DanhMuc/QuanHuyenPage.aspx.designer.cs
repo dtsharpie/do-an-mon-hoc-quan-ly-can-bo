@@ -22,30 +22,30 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc {
         protected global::System.Web.UI.WebControls.Table tblMain;
         
         /// <summary>
-        /// txbMaQuanHuyen control.
+        /// txbMaHuyen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbMaQuanHuyen;
+        protected global::System.Web.UI.WebControls.TextBox txbMaHuyen;
         
         /// <summary>
-        /// dropDownTinhThanhPho control.
+        /// txbMaTinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropDownTinhThanhPho;
+        protected global::System.Web.UI.WebControls.TextBox txbMaTinh;
         
         /// <summary>
-        /// txbQuanHuyen control.
+        /// txbTenHuyen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbQuanHuyen;
+        protected global::System.Web.UI.WebControls.TextBox txbTenHuyen;
     }
 }

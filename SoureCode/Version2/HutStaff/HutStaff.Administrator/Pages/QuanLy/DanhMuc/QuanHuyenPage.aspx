@@ -4,17 +4,17 @@
         <asp:TableRow>
             <asp:TableHeaderCell Text="Mã số quận, huyện" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbMaQuanHuyen" />
+                <asp:TextBox runat="server" ID="txbMaHuyen" />
             </asp:TableCell></asp:TableRow>
         <asp:TableRow>
             <asp:TableHeaderCell Text="Tỉnh, thành phố" />
             <asp:TableCell>
-                <asp:DropDownList runat="server"  ID="dropDownTinhThanhPho" />
+                <asp:TextBox runat="server" ID="txbMaTinh" />
             </asp:TableCell></asp:TableRow>
         <asp:TableRow>
             <asp:TableHeaderCell Text="Tên quận, huyện" />
             <asp:TableCell>
-                <asp:TextBox runat="server" ID="txbQuanHuyen" />
+                <asp:TextBox runat="server" ID="txbTenHuyen" />
             </asp:TableCell></asp:TableRow>
     </asp:Table>
 </asp:Content>
