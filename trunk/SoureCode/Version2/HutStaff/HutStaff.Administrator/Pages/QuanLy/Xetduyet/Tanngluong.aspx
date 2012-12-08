@@ -5,165 +5,78 @@
 <%@ Register Src="/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-        var deletes = [];
         $(document).ready(function () {
             $("#divSideBar li:eq(2) ul").css("display", "block");
-
-            $("a[alias='view-tang-luong']").attr("style", "background-color: rgb(247, 247, 247);");
-
-            $('.form-container').scrollToFixed({
-                marginTop: 0
-            });
-
-            $('.header-table').scrollToFixed({
-                marginTop: 35
-            });
-
-            $(".datepicker").datepicker({
-                showButtonPanel: true,
-                dateFormat: 'dd/mm/yy',
-                yearRange: "2000:2030"
-            });
-
-            $("#btnOk").click(function () {
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    deletes: deletes.join(","),
-                    thoiGian: $("#txtDate").val(),
-                    ps: $(".ddlPageSize").val()
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val()
-                }, false);
-            });
-
-            $(".ddlPageSize").change(function () {
-                $(".ddlPageSize").val($(this).val());
-            });
-
-            $(".form-container #btnRefresh").click(function () {
-                deletes = [];
-                $('.main-table').html('<table  width="100%"><tr><td style="text-align: center; vertical-align: middle; height: 500px;"><img src="/images/processing.gif" /></td></tr></table>');
-                loadControl(".pagerLoad",
-                {
-                    alias: 'pager-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val(),
-                    pi: getPager($(".paging .active").find("a").attr("href"))
-                }, true);
-
-
-                loadControl(".main-table",
-                {
-                    alias: 'danh-sach-tang-luong',
-                    loaiHanNgach: $('#ddlLoaiHanNgach').val(),
-                    loaiBang: $('#ddlLuaChonBang').val(),
-                    thoiGian: $("#txtDate").val(),
-                    deletes: deletes.join(","),
-                    ps: $(".ddlPageSize").val(),
-                    pi: getPager($(".paging .active").find("a").attr("href"))
-                }, false);
-            });
-
-            $(".btnExport").click(function () {
-                var query = "?type=1&loaihanngach=" + $('#ddlLoaiHanNgach').val() + "&loaibang=" + $('#ddlLuaChonBang').val() + "&thoigian=" + $("#txtDate").val() + "&delete=" + deletes.join(",");
-                window.open("/Services/ExportExcel.ashx" + query, "_blank");
-            });
+            $("a.view-tang-luong").attr("style", "background-color: rgb(247, 247, 247);");
         });
     </script>
-    <style type="text/css">
-        
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
     <uc1:SlideQuanLy ID="SlideQuanLy1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div class="form-container">
-        <div>
-            <label>
-                Loại hạn ngạch:</label>
-            <select style="width: 85px;" id="ddlLoaiHanNgach">
-                <option value="2">2 năm</option>
-                <option value="3">3 năm</option>
-            </select>
-            <label style="margin-left: 15px">
-                Lựa chọn bảng:</label>
-            <select id="ddlLuaChonBang">
-                <option value="1">Danh sách đến hạn nhận lương</option>
-                <option value="2">Danh sách xét duyệt 5%</option>
-                <option value="3">Danh sách vượt khung</option>
-            </select>
-            <label style="margin-left: 15px">
-                Tính đến:</label>
-            <input style="text-align: center; width: 80px;" class="datepicker" value="<%= DateTime.Now.ToString("dd/MM/yyyy") %>"
-                readonly="readonly" type="text" id="txtDate" />
-            <input style="margin-left: 15px; font-weight: normal; padding: 0;" type="button"
-                id="btnOk" class="button" value="Hiện thông tin" />
-            <input style="margin-left: 15px; font-weight: normal; padding: 0;" type="button"
-                id="btnRefresh" class="button" value="Làm mới" />
-            <span>(Hiện lại những người đã xóa)</span>
-        </div>
-    </div>
     <div class="table-container">
-        <div class="header-table">
-            <div>
-                <input class="button-link btnTangluong" type="button" value="Tăng lương" />
-                <input class="button-link btnXoa" type="button" value="Xóa" />
-                <input class="button-link btnExport" type="button" value="Tải về" />
-            </div>
-            <div>
-                Hiển thị &nbsp;
-                <select class="ddlPageSize" style="width: 60px;">
-                    <option value="10">10</option>
-                    <option value="25" selected="selected">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
-            </div>
-            <div class="pagerLoad fr">
-            </div>
-            <div class="clear">
-            </div>
+        <div>
+            Bảng mẫu
         </div>
         <div class="main-table">
-            <div class="nodata" style="text-align: center;">
-                Vui lòng chọn các tùy chọn phía trên và ấn nút "Hiện thông tin"</div>
+            <asp:GridView ID="grdData" ShowHeaderWhenEmpty="true" runat="server" AutoGenerateColumns="False"
+                Height="20px" Width="100%" CssClass="table-result">
+                <AlternatingRowStyle CssClass="even" />
+                <Columns>
+                    <asp:TemplateField HeaderText="Shcc">
+                        <ItemTemplate>
+                            <%# Eval("shcc") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Họ tên">
+                        <ItemTemplate>
+                            <%# Eval("fullname") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Ngạch">
+                        <ItemTemplate>
+                            <%# Eval("ngach") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Bậc lương">
+                        <ItemTemplate>
+                            <%# Eval("bac") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Hệ số lương">
+                        <ItemTemplate>
+                            <%# Eval("hsl") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Hệ số phụ cấp TVNK">
+                        <ItemTemplate>
+                            <%# Eval("hspctn") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Hưởng từ">
+                        <ItemTemplate>
+                            <%# Eval("huongtu") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Mốc tính lương lần sau">
+                        <ItemTemplate>
+                            <%# Eval("moctinhlansau") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                     <asp:TemplateField HeaderText="Thông tin khác">
+                        <ItemTemplate>
+                            <%# Eval("ttk") %></ItemTemplate>
+                        <ItemStyle HorizontalAlign="Right" />
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
-        <div class="footer-table">
-            <div>
-                <input class="button-link btnTangluong" type="button" value="Tăng lương" />
-                <input class="button-link btnXoa" type="button" value="Xóa" />
-                <input class="button-link btnExport" type="button" value="Tải về" />
-            </div>
-            <div>
-                Hiển thị &nbsp;
-                <select class="ddlPageSize" style="width: 60px;">
-                    <option value="10">10</option>
-                    <option value="25" selected="selected">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
-            </div>
-            <div class="pagerLoad fr">
-            </div>
-            <div class="clear">
-            </div>
+        <div>
+            <asp:Button CssClass="lnk-button" ID="btnDownload" Text="Tải về" runat="server" OnClick="btnDownload_Click" />
+            <asp:FileUpload CssClass="lnk-button" ID="fileUpload" runat="server" />
+            <asp:Button CssClass="lnk-button" ID="btnImport" Text="Import" runat="server" OnClick="btnImport_Click" />
+            <asp:Button CssClass="lnk-button" ID="btnUpdate" Text="Cập nhật" runat="server" OnClick="btnUpdate_Click" />
         </div>
     </div>
 </asp:Content>
