@@ -49,7 +49,7 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_cqtd.php">07 - Bảng danh mục cơ quan tuyển dụng</a>
+                    
                 </td>
                 <td class="row1">
                     <a href="DanhMuc/TrinhDoNgoaiNguPage.aspx">08 - Bảng danh mục trình độ ngoại ngữ</a>
@@ -139,7 +139,7 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_ttnndd.php">29 - Bảng danh mục tình trạng đi nước ngoài</a>
+                    
                 </td>
                 <td class="row1">
                     <a href="DanhMuc/MucDichDiNuocNgoai.aspx">30 - Bảng danh mục mục đích đi nước ngoài</a>
@@ -147,7 +147,7 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_ptldh.php">31 - Bảng danh mục % lương được hưởng</a>
+                    
                 </td>
                 <td class="row1">
                     <a href="DanhMuc/TinhTrangHonNhanPage.aspx">32 - Bảng danh mục tình trạng hôn nhân</a>
@@ -164,7 +164,7 @@
             </tr>
             <tr>
                 <td class="row1">
-                    <a href="DanhMuc/dm_bh.php">35 - Bảng danh mục Bảo hiểm</a>
+                    <a href="DanhMuc/MatBangBaoHiem.aspx">35 - Bảng danh mục Bảo hiểm</a>
                 </td>
                 <td class="row1">
                 </td>

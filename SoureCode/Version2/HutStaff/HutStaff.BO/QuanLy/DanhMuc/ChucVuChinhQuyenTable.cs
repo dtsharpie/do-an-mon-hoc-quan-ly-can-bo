@@ -11,7 +11,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return "dm_cvcq";
+                return "dm_cv";
             }
         }
 
