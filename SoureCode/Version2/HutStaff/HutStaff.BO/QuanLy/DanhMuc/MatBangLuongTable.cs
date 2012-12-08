@@ -5,13 +5,13 @@ using System.Text;
 
 namespace HutStaff.BO.QuanLy.DanhMuc
 {
-    public class TrinhDoTinHocTable : DanhMucTableBase
+    public class MatBangLuongTable : DanhMucTableBase
     {
         protected override string TableName
         {
             get
             {
-                return "dm_tdth";
+                return "dm_mbl";
             }
         }
 
@@ -19,7 +19,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "tdth" };
+                return new string[] { "mbl" };
             }
         }
 
@@ -43,7 +43,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "tdth" };
+                return new string[] { "mbl" };
             }
         }
 
@@ -51,7 +51,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "tdth" };
+                return new string[] { "mbl" };
             }
         }
 
@@ -59,7 +59,7 @@ namespace HutStaff.BO.QuanLy.DanhMuc
         {
             get
             {
-                return new string[] { "id", "tdth" };
+                return new string[] { "id", "mbl" };
             }
         }
     }

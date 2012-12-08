@@ -53,7 +53,7 @@ namespace HutStaff.Administrator.Pages.QuanLy
         {
             InitializeChosen();
             InitializeControlList();
-            CreateTestSample();
+            //CreateTestSample();
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace HutStaff.Administrator.Pages.QuanLy
             chzNhomMau.AddItem(new ListItem("B", "B"));
             chzNhomMau.AddItem(new ListItem("O", "O"));
 
-            chzNoiCapCmtnd.DataSource = HutStaff.BO.QuanLy.DanhMuc.TinhThanhPho.GetAll();
+            chzNoiCapCmtnd.DataSource = new TinhThanhPhoTable().GetAll();
             chzTrinhDoHocVan.DataSource = HutStaff.BO.QuanLy.DanhMuc.TrinhDoHocVan.GetAll();
             chzTrinhDoTinHoc.DataSource = HutStaff.BO.QuanLy.DanhMuc.TrinhDoTinHoc.GetAll();
             chzTrinhDoLyLuan.DataSource = HutStaff.BO.QuanLy.DanhMuc.TrinhDoLyLuan.GetAll();
@@ -186,7 +186,7 @@ namespace HutStaff.Administrator.Pages.QuanLy
             chzNoiSinh.DataSource = HutStaff.BO.QuanLy.DanhMuc.DiaDanh.GetAll();
             chzQueQuan.DataSource = HutStaff.BO.QuanLy.DanhMuc.DiaDanh.GetAll();
             chzHoKhauThuongTru.DataSource = HutStaff.BO.QuanLy.DanhMuc.DiaDanh.GetAll();
-            chzTinhTrangHonNhan.DataSource = HutStaff.BO.QuanLy.DanhMuc.TinhTrangHonNhan.GetAll();
+            chzTinhTrangHonNhan.DataSource = new TinhTrangHonNhanTable().GetAll();
             chzDanToc.DataSource = HutStaff.BO.QuanLy.DanhMuc.DanToc.GetAll();
             chzTonGiao.DataSource = HutStaff.BO.QuanLy.DanhMuc.TonGiao.GetAll();
 
