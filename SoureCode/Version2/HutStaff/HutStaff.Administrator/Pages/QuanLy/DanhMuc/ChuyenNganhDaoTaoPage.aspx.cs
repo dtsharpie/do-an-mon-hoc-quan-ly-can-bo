@@ -57,9 +57,9 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
             // Không ở EditState.Update khi page vừa được load, đang ở trạng thái EditState.None
             if (EditState == EditState.Update)
             {
-                string ma_cn = txbMaChuyenNganhDaoTao.Text;
-                string cn = txbChuyenNganhDaoTao.Text;
-                DanhMucTable.Update(new string[] { ma_cn, cn });
+                string ma_hh = txbMaChuyenNganhDaoTao.Text;
+                string hh = txbChuyenNganhDaoTao.Text;
+                DanhMucTable.Update(new string[] { ma_hh, hh });
             }
         }
 

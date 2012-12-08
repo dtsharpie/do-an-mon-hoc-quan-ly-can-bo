@@ -30,67 +30,56 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 
         #region //--------- Abstract Class Members ------//
 
-        /// <summary>
-        /// Thêm vào bảng dm_tt. Disable textbox mã tình trạng.
-        /// </summary>
         protected override void OnInsertButtonClick(object sender, EventArgs args)
         {
-            txbMaTinhTrang.Enabled = false;
-            txbMaTinhTrang.Text = "Auto";
+            // Chưa ở trạng thái Insert thì chuyển sang Insert.
+            if (EditState != EditState.Insert)
+            {
+                EditState = EditState.Insert;
 
-            txbTinhTrangCongTac.Text = "";
+                txbMaMucDichDiNuocNgoai.Enabled = false;
+                txbMaMucDichDiNuocNgoai.Text = "Auto";
+
+                txbMucDichDiNuocNgoai.Text = "";
+            }
+            // Còn không thì add vào csdl.
+            else if (EditState == EditState.Insert)
+            {
+                DanhMucTable.Insert(new string[] { txbMucDichDiNuocNgoai.Text });
+                txbMucDichDiNuocNgoai.Text = "";
+            }
         }
 
-        /// <summary>
-        /// Chỉnh sửa 1 bản ghi có sẵn.
-        /// </summary>
         protected override void OnSaveButtonClick(object sender, EventArgs args)
         {
-            if (EditState == EditState.Insert)
+            // Không ở EditState.Update khi page vừa được load, đang ở trạng thái EditState.None
+            if (EditState == EditState.Update)
             {
-                if (!String.IsNullOrEmpty(txbTinhTrangCongTac.Text))
-                {
-                    DanhMucTable.Insert(new string[] { txbTinhTrangCongTac.Text });
-                }
-            }
-            else if (EditState == EditState.Update)
-            {
-                if (!String.IsNullOrEmpty(txbTinhTrangCongTac.Text))
-                {
-                    string ma_tt = txbMaTinhTrang.Text;
-                    string tt = txbTinhTrangCongTac.Text;
-
-                    DanhMucTable.Update(new string[] { ma_tt, tt });
-                }
+                string ma_hh = txbMaMucDichDiNuocNgoai.Text;
+                string hh = txbMucDichDiNuocNgoai.Text;
+                DanhMucTable.Update(new string[] { ma_hh, hh });
             }
         }
 
-        /// <summary>
-        /// Chỉnh sửa 1 dòng. TextBox mã tình trạng được enable và cho readonly.
-        /// </summary>
         protected override void OnDataGridViewSelectedIndexChanged(object sender, EventArgs args)
         {
             int selectedIndex = dataGridView.SelectedIndex;
 
-            txbMaTinhTrang.ReadOnly = true;
-            txbMaTinhTrang.Enabled = true;
-            txbMaTinhTrang.Text = GetCellContent(selectedIndex, 0);
+            txbMaMucDichDiNuocNgoai.ReadOnly = true;
+            txbMaMucDichDiNuocNgoai.Enabled = true;
+            txbMaMucDichDiNuocNgoai.Text = GetCellContent(selectedIndex, 0);
 
-            txbTinhTrangCongTac.Text = GetCellContent(selectedIndex, 1);
+            txbMucDichDiNuocNgoai.Text = GetCellContent(selectedIndex, 1);
         }
 
-        /// <summary>
-        /// Xử lý sắp sửa xóa 1 dòng.
-        /// </summary>
         protected override void OnDataGridViewRowDeleting(object sender, GridViewDeleteEventArgs args)
         {
-            string ma_tt = GetCellContent(args.RowIndex, 0);
-            DanhMucTable.Delete(ma_tt);
+            DanhMucTable.Delete(GetCellContent(args.RowIndex, 0));
 
-            txbMaTinhTrang.Enabled = true;
-            txbMaTinhTrang.ReadOnly = true;
-            txbTinhTrangCongTac.Text = "";
-            txbMaTinhTrang.Text = "";
+            txbMaMucDichDiNuocNgoai.Enabled = true;
+            txbMaMucDichDiNuocNgoai.ReadOnly = true;
+            txbMucDichDiNuocNgoai.Text = "";
+            txbMaMucDichDiNuocNgoai.Text = "";
         }
 
         /// <summary>

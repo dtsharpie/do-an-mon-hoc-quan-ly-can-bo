@@ -23,22 +23,54 @@ namespace HutStaff.Administrator.Pages.QuanLy.DanhMuc
 
         protected override void OnInsertButtonClick(object sender, EventArgs args)
         {
-            throw new NotImplementedException();
+            // Chưa ở trạng thái Insert thì chuyển sang Insert.
+            if (EditState != EditState.Insert)
+            {
+                EditState = EditState.Insert;
+
+                txbMaKinhPhiDiNuocNgoai.Enabled = false;
+                txbMaKinhPhiDiNuocNgoai.Text = "Auto";
+
+                txbKinhPhiDiNuocNgoai.Text = "";
+            }
+            // Còn không thì add vào csdl.
+            else if (EditState == EditState.Insert)
+            {
+                DanhMucTable.Insert(new string[] { txbKinhPhiDiNuocNgoai.Text });
+                txbKinhPhiDiNuocNgoai.Text = "";
+            }
         }
 
         protected override void OnSaveButtonClick(object sender, EventArgs args)
         {
-            throw new NotImplementedException();
+            // Không ở EditState.Update khi page vừa được load, đang ở trạng thái EditState.None
+            if (EditState == EditState.Update)
+            {
+                string ma_hh = txbMaKinhPhiDiNuocNgoai.Text;
+                string hh = txbKinhPhiDiNuocNgoai.Text;
+                DanhMucTable.Update(new string[] { ma_hh, hh });
+            }
         }
 
         protected override void OnDataGridViewSelectedIndexChanged(object sender, EventArgs args)
         {
-            throw new NotImplementedException();
+            int selectedIndex = dataGridView.SelectedIndex;
+
+            txbMaKinhPhiDiNuocNgoai.ReadOnly = true;
+            txbMaKinhPhiDiNuocNgoai.Enabled = true;
+            txbMaKinhPhiDiNuocNgoai.Text = GetCellContent(selectedIndex, 0);
+
+            txbKinhPhiDiNuocNgoai.Text = GetCellContent(selectedIndex, 1);
         }
 
         protected override void OnDataGridViewRowDeleting(object sender, GridViewDeleteEventArgs args)
         {
-            throw new NotImplementedException();
+            DanhMucTable.Delete(GetCellContent(args.RowIndex, 0));
+
+            txbMaKinhPhiDiNuocNgoai.Enabled = true;
+            txbMaKinhPhiDiNuocNgoai.ReadOnly = true;
+            txbKinhPhiDiNuocNgoai.Text = "";
+            txbMaKinhPhiDiNuocNgoai.Text = "";
         }
     }
 }
