@@ -20,9 +20,9 @@ namespace HutStaff.Common
 
         public MainDB()
         {
-            dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
-            
-           
+            //dbConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["QLCB"].ConnectionString);
+
+            dbConnection = new SqlConnection("Data Source=QNV96-PC\\SQL2008;Initial Catalog=hutstaff_9_8;Integrated Security=True");
             dbConnection.Open();
         }
 
