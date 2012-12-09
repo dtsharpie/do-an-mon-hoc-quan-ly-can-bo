@@ -120,7 +120,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SideBarContentPlaceHolder" runat="server">
-    <uc1:SlideBaocao ID="SlideBaocao1" runat="server" />
+    <uc1:SlideSearch ID="SlideBaocao1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h1>
