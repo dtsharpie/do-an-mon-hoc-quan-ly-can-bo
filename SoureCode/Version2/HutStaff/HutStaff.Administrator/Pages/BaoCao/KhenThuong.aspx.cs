@@ -80,7 +80,12 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            tblData = BO.Report.Report.GetRewardList(Convert.ToInt32(ddlHinhThucKhenThuong.SelectedValue), !String.IsNullOrEmpty(tbFrom.Text) ? Convert.ToInt32(tbFrom.Text) : DateTime.MinValue.Year, !String.IsNullOrEmpty(tbTo.Text) ? Convert.ToInt32(tbTo.Text) : DateTime.MaxValue.Year, "0", Convert.ToInt32(ddlDienCanBo.SelectedValue), Convert.ToInt32(ddlKhoiCb.SelectedValue));
+            tblData = BO.Report.Report.GetRewardList(
+                Convert.ToInt32(ddlHinhThucKhenThuong.SelectedValue), 
+                !String.IsNullOrEmpty(tbFrom.Text) ? Convert.ToInt32(tbFrom.Text) : 0, 
+                !String.IsNullOrEmpty(tbTo.Text) ? Convert.ToInt32(tbTo.Text) : 0,
+                ddlUnit123.SelectedValue,
+                Convert.ToInt32(ddlDienCanBo.SelectedValue), Convert.ToInt32(ddlKhoiCb.SelectedValue));
             ViewState["tabledata"] = tblData;
             int iCount = tblData.Rows.Count;
             if (iCount == 0)
