@@ -189,7 +189,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Họ tên" ControlStyle-Width="400px">
                         <ItemTemplate>
-                            <a href="javascript:void(0)" onclick="showUrl('/Pages/Timkiem/ThongTinChiTiet.aspx?id=<%# Eval("shcc") %>','<%# Eval("hoten") %>')"
+                            <a href="javascript:void(0)" onclick="showUrl('/Pages/Timkiem/ThongTinChiTiet.aspx?id=<%# Eval("shcc") %>','<%# Eval("hodem") %>')"
                                 shcc="<%# Eval("shcc") %>">
                                 <%# Eval("hodem").ToString() + " " + Eval("ten")%></a>
                         </ItemTemplate>
