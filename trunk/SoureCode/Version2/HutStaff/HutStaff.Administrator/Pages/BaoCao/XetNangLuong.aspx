@@ -217,8 +217,6 @@
             </table>
         </div>
         <div>
-            <br />
-            <br />
             <asp:Button ID="btnDownload" runat="server" Text="Xuất báo cáo" OnClick="btnDownload_Click"
                 Visible="False" />
             <br />
@@ -286,6 +284,9 @@
                 <div class="clear">
                 </div>
             </div>
+        </div>
+        <div class="main-table">
+            <div style="text-align: center;">
         </div>
     </div>
 </asp:Content>
