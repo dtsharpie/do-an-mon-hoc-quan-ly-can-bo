@@ -19,3 +19,10 @@ C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.DAL.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\bin\Debug\HutStaff.Common.pdb
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.csprojResolveAssemblyReference.cache
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.dll
+D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.DAL\obj\Debug\HutStaff.DAL.pdb

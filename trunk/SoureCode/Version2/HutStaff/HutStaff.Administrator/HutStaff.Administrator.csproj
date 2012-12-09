@@ -1330,6 +1330,7 @@
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTao.aspx.cs">
       <DependentUpon>CoSoDaoTao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\QuanLy\DanhMuc\CoSoDaoTao.aspx.designer.cs">
       <DependentUpon>CoSoDaoTao.aspx</DependentUpon>
