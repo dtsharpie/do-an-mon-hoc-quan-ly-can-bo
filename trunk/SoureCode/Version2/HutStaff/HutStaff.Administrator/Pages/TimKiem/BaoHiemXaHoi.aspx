@@ -47,7 +47,7 @@
         <div class="divInfo" style="margin-top: 10px;">
             <asp:LinkButton ID="lbnInSoBaoHiem" runat="server" Text="In sổ bảo hiểm"></asp:LinkButton>
             <div class="table-container">
-                <%--<table class="table-result">
+                <table class="table-result">
                     <tr class="header">
                         <td rowspan="2">
                             Thời gian
@@ -136,7 +136,7 @@
                             </tr>
                         </AlternatingItemTemplate>
                     </asp:Repeater>
-                </table>--%>
+                </table>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="id" Visible="false"/>
