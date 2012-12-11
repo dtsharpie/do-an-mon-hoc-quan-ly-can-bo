@@ -267,9 +267,12 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
 		
 		public static DataTable getDienBienLuong(int iShcc)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable();           
             using (MainDB db = new MainDB())
             {
+                DataTable mocbhxh = db.Execute("sp_view_all_",
+                    new string[]{},
+                    new object[]{});
                 dt = db.Execute("[sp_find_by_iShcc_qtdbl_tbl]",
                     new string[] { "@iShcc" },
                     new object[]{iShcc});
@@ -293,6 +296,7 @@ namespace HutStaff.DAL.PagesDAL.TimKiem
                         row["thoigian"] = "";
                     }                    
                     row["mota"] = "";
+                    row["tonghsl"] = (float.Parse(row["hsl"].ToString()) + float.Parse(row["hspccv"].ToString()) + float.Parse(row["hspckv"].ToString()) + float.Parse(row["hspctn"].ToString())).ToString();
                     row["tongtienbhxh"] = "100"; // Chưa biết cách tính tổng tiền đóng bảo hiểm dựa trên các thông số đã cho
                 }
             }            
