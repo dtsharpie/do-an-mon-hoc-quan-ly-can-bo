@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="/Master/Admin.Master" AutoEventWireup="true"
     CodeBehind="XetNangLuong.aspx.cs" Inherits="HutStaff.Administrator.Pages.BaoCao.XetNangLuong" %>
 
-<%--<%@ Register Src="~/Controls/Common/SlideBaocao.ascx" TagName="SlideBaocao" TagPrefix="uc1" %>
-<%@ Register Src="~/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>--%>
 <%@ Register Src="~/Controls/Common/SlideSearch.ascx" TagName="SlideSearch" TagPrefix="uc1" %>
 <%@ Register Src="~/Controls/Common/Pager.ascx" TagName="Pager" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -208,10 +206,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="btnOk" runat="server" Text="Hiện thông tin" OnClick="btnOk_Click" Width="91px" />
+                        <asp:Button ID="btnOk" runat="server" Text="Hiện thông tin" OnClick="btnOk_Click"
+                            Width="91px" />
                     </td>
-                    <td><div style="text-align: center;">
-                    Vui lòng chọn các tùy chọn phía trên và ấn nút "Hiện thông tin"</div>
+                    <td>
+                        <div style="text-align: center;">
+                            Vui lòng chọn các tùy chọn phía trên và ấn nút "Hiện thông tin"</div>
                     </td>
                 </tr>
             </table>
@@ -236,7 +236,8 @@
                         <option value="25">25</option>
                         <option value="50" selected="selected">50</option>
                         <option value="100">100</option>
-                    </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
+                    </select>&nbsp; dòng&nbsp;&nbsp; <span runat="server" id="spInfo1" class="info">
+                    </span>
                 </div>
                 <div class="pagerLoad fr">
                     <div runat="server" id="div1" class="pagerLoad fr">
@@ -247,11 +248,12 @@
                 </div>
             </div>
             <div class="main-table">
-                
                 <br />
                 <asp:GridView ID="gvResultSearch" runat="server" CssClass="table-result" Width="100%"
                     PageSize="40" BackColor="White" BorderColor="#3366CC" BorderStyle="Groove" BorderWidth="2px"
-                    CellPadding="4" AllowPaging="True" OnPageIndexChanging="gvResultSearch_PageIndexChanging">
+                    CellPadding="4" AllowPaging="True" 
+                    OnPageIndexChanging="gvResultSearch_PageIndexChanging" 
+                    AutoGenerateSelectButton="True" ShowFooter="True" ShowHeaderWhenEmpty="True">
                     <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                     <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
                     <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
@@ -271,12 +273,12 @@
                 </div>
                 <div>
                     Hiển thị &nbsp;
-                    <select class="ddlPageSize" style="width: 60px;">
+                    <select class="ddlPageSize" style="width: 60px;" id="ddPs" runat="server">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50" selected="selected">50</option>
                         <option value="100">100</option>
-                    </select>&nbsp; dòng&nbsp;&nbsp;<span class="info"></span>
+                    </select>&nbsp; dòng&nbsp;&nbsp; <span runat="server" id="spInfo2" class="info"></span>
                 </div>
                 <div runat="server" id="divPager" class="pagerLoad fr">
                     <uc2:Pager Visible="false" ID="Pager1" runat="server" />
