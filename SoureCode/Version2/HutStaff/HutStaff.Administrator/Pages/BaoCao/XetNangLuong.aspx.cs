@@ -14,7 +14,7 @@ namespace HutStaff.Administrator.Pages.BaoCao
         private int loaiBang;
         private int thang;
         private int nam;
-
+        public static int iCount;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -81,9 +81,26 @@ namespace HutStaff.Administrator.Pages.BaoCao
 
         private void LoadDataToGridView()
         {
+            Pager1.Visible = true;
+            Pager2.Visible = true;
+            spInfo1.Visible = true;
+            spInfo2.Visible = true;
             DataTable salaryIncrementListDataTable = this.GetSalaryIncrementList();
+            iCount = salaryIncrementListDataTable.Rows.Count;
+            Pager1.PageSize = Convert.ToInt32(ddPs.Value);
+            if (iCount % Pager1.PageSize == 0)
+            {
+                Pager1.TotalPage = iCount / Pager1.PageSize;
+            }
+            else
+            {
+                Pager1.TotalPage = iCount / Pager1.PageSize + 1;
+            }
+            Pager1.CurrentPage = 1;
             gvResultSearch.DataSource = salaryIncrementListDataTable;
             gvResultSearch.DataBind();
+            spInfo1.InnerText = ". Trang " + ((Pager1.CurrentPage - 1) * Pager1.PageSize + 1).ToString() + "-" + ((Pager1.PageSize * Pager1.CurrentPage < iCount) ? Pager1.PageSize * Pager1.CurrentPage : iCount).ToString() + "/" + iCount.ToString();
+            spInfo2.InnerText = ". Trang " + ((Pager1.CurrentPage - 1) * Pager1.PageSize + 1).ToString() + "-" + ((Pager1.PageSize * Pager1.CurrentPage < iCount) ? Pager1.PageSize * Pager1.CurrentPage : iCount).ToString() + "/" + iCount.ToString();
         }
 
         protected void gvResultSearch_PageIndexChanging(object sender, GridViewPageEventArgs e)

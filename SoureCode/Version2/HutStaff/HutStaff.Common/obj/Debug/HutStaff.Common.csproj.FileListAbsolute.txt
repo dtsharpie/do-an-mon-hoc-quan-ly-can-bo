@@ -10,7 +10,3 @@ C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
 C:\Users\Ha\Desktop\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
-D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.dll
-D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.Common\bin\Debug\HutStaff.Common.pdb
-D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.dll
-D:\do an mon hoc\ASP.Net\New folder\SoureCode\Version2\HutStaff\HutStaff.Common\obj\Debug\HutStaff.Common.pdb
